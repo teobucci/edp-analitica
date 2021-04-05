@@ -1,3 +1,10 @@
 
 images/.DS_Store
 .DS_Store
+*.aux
+*.fdb_latexmk
+*.log
+*.fls
+*.out
+*.toc
+*.gz
