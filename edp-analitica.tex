@@ -1768,7 +1768,7 @@ L'analisi dimensionale è basata sul seguente teorema.
 q=f( q_{1},\dotsc,q_{n}) \tag{R}
 \label{eq:teo-pi-buckingham}
 \end{equation}
-una relazione si dice \textbf{completa} (invariante al cambio di sistema di unità di misura nell'ambito di una stessa classe).
+una relazione \textbf{completa} (invariante al cambio di sistema di unità di misura nell'ambito di una stessa classe).
 
 Sia $1\leqslant k\leqslant n$ il massimo numero di grandezze dimensionalmente indipendenti tra le $q_{1},\dotsc,q_{n}$\footnote{poi si vedrà come determinare quali sono, ci avvarremo dell'algebra lineare.}. Siano per esempio le prime $q_{1},\dotsc,q_{k}$ (si dicono \textbf{quantità primarie}).
 
@@ -1921,7 +1921,7 @@ Cos'è $c$? Non abbiamo ancora usato la conservazione dell'energia
 \end{equation*}
 che si riduce a
 \begin{equation*}
-\int _{\mathbb{R}}\frac{Q}{\sqrt{Dt}} U\left(\frac{x}{\sqrt{Dt}}\right) dx=\left\{x=y\sqrt{Dt}\right\} =Q\int _{\mathbb{R}} U(\xi) d\xi =Q
+\int _{\mathbb{R}}\frac{Q}{\sqrt{Dt}} U\left(\frac{x}{\sqrt{Dt}}\right) dx=\left\{x=\xi\sqrt{Dt}\right\} =Q\int _{\mathbb{R}} U(\xi) d\xi =Q
 \end{equation*}
 Allora possiamo procedere a determinare $c$
 \begin{equation*}
@@ -2224,11 +2224,11 @@ Da cui
 \end{equation*}
 Le $\displaystyle \xi _{j}$ sono una famiglia di variabili aleatorie iid. La posizione della particella dopo $\displaystyle N$ passi è 
 \begin{equation*}
-X_{n} =h\sum ^{N}_{j=1} \xi _{j},\ h=\sqrt{\frac{2Dt}{N}}
+X_{N} =h\sum ^{N}_{j=1} \xi _{j},\ \ h=\sqrt{\frac{2Dt}{N}}
 \end{equation*}
 dove la scelta di $\displaystyle h$ è tale che 
 \begin{equation*}
-\frac{h^{2}}{\tau } =2D
+\frac{h^{2}}{\tau } =2D,\qquad t=N\tau
 \end{equation*}
 Allora
 \begin{equation*}
@@ -2494,7 +2494,7 @@ u(x,t) =( \Gamma _{D}(\cdotp,t) *g)(x)
 
 \textbf{Problemi.}
 \begin{enumerate}
-\item L'integrale è ben definito? Se $g(x) \sim e^{m| x| },m >2$ per $| x| \rightarrow +\infty $, la gaussiana compensa potenze fino al $2$, quindi ci si aspetta che l'integrale non converga! Non posso scegliere $g$ come voglio, ma dovrò dare delle opportune condizioni all'infinito.
+\item L'integrale è ben definito? Se $g(x) \sim e^{|x|^m},m >2$ per $| x| \rightarrow +\infty $, la gaussiana compensa potenze fino al $2$, quindi ci si aspetta che l'integrale non converga! Non posso scegliere $g$ come voglio, ma dovrò dare delle opportune condizioni all'infinito.
 \item Supponiamo che converga, è vero che $u$ è soluzione dell'equazione differenziale? In altre parole posso passare sotto il segno di integrale?
 \item Supponiamo che sia soluzione, in che senso $u(x,0) =g(x)$?
 \item Se tutto sopra va bene, $u$ è anche l'unica?
@@ -2526,7 +2526,7 @@ In particolare se $g\in C(\mathbb{R})$, allora $u\in C(\mathbb{R} \times [ 0,T])
 
 Questo risponde a $1,2,3$. Occupiamoci dell'unicità.
 \begin{oss}
-In molti casi il dato iniziale $g$ è polinomiale, e il teorema è quindi soddisfatto per ogni scelta di $a$ e $c$, in particolare ci permette di estendere l'invervallo temporale quanto vogliamo esse $T< \frac{1}{4Da}$, con $a$ arbitrariamente piccolo.
+In molti casi il dato iniziale $g$ è polinomiale, e il teorema è quindi soddisfatto per ogni scelta di $a$ e $c$, in particolare ci permette di estendere l'invervallo temporale quanto vogliamo essendo $T< \frac{1}{4Da}$, con $a$ arbitrariamente piccolo.
 \end{oss}
 \begin{oss}
 [Processo regolarizzante] Il primo enunciato sottolinea che anche se il dato iniziale è discontinuo da qualche parte (può esserlo in un numero finito di punti), subito dopo il primo istante la soluzione diventa continua e $C^{\infty }$.
@@ -2568,8 +2568,8 @@ avendo riconosciuto la serie dell'esponenziale. Per $x$ fissato e $t\rightarrow 
 
 Si verifica che
 \begin{equation*}
-\Tau _{t}(x,t) =\sum\limits ^{\infty }_{k=0}\frac{h^{(k+1)}(t)}{(2k) !} x^{2k} =\sum\limits ^{\infty }_{k=2}\frac{h^{(k)}(t)}{(2k-2) !} x^{2k-2} =\Tau _{xx}(x,t)
-\end{equation*}
+\Tau _{t}(x,t) =\sum\limits ^{\infty }_{k=0}\frac{h^{(k+1)}(t)}{(2k) !} x^{2k} =\sum\limits ^{\infty }_{k=1}\frac{h^{(k)}(t)}{(2k-2) !} x^{2k-2} =\Tau _{xx}(x,t)
+\end{equation*} % TODO check, Fil dice che k parte da 1, Salsa da 2
 quindi $\Tau (x,t)$ rispetta l'equazione differenziale e anche il teorema di esistenza. Tuttavia anche la soluzione identicamente nulla è, ovviamente, soluzione del problema. Segue che \textbf{in generale la soluzione non è unica}. Il problema è che $\Tau $ cresce troppo quando $x\rightarrow \pm \infty $ per tempi $t$ piccoli a causa del termine
 \begin{equation*}
 \frac{x^{2}}{\vartheta t}
@@ -4503,7 +4503,7 @@ E abbiamo esaminato due casi
 	\FloatBarrier
 
 
-	La linea di shock è determinabile tramite la relazione di Rankin-Hugoniot.
+	La linea di shock è determinabile tramite la relazione di Rankine-Hugoniot.
 \end{enumerate}
 
 Notiamo che se $\displaystyle g'$ è concorde con $\displaystyle q''$ abbiamo un'onda di rarefazione, se sono discordi un'onda d'urto. Cerchiamo di generalizzare questa affermazione.
@@ -4668,7 +4668,7 @@ Geometricamente, $\displaystyle u$ è definita da
 
 Dopo $\displaystyle t_{s}$ la linea di livello di $\displaystyle G$ non definisce più il grafico di una funzione.
 
-Si può dimostrare però che se tracciamo una retta verticale (tagliando due aree $\displaystyle A$ e $\displaystyle B$ di ugual dimensione) otteniamo $\displaystyle s( t)$ dato dalle condizioni di Rankin-Hugoniot.
+Si può dimostrare però che se tracciamo una retta verticale (tagliando due aree $\displaystyle A$ e $\displaystyle B$ di ugual dimensione) otteniamo $\displaystyle s( t)$ dato dalle condizioni di Rankine-Hugoniot.
 
 \fg[Inserimento di uno shock con la regola di Whitham.]{0.6}{leggi-conservazione-esempio-taglio}
 
@@ -6511,7 +6511,7 @@ Alcune proposizioni
 \begin{definition}
 Uno spazio vettoriale $X$, con prodotto scalare, che sia completo rispetto alla norma indotta dal prodotto scalare si dice \textbf{Spazio di Hilbert}.
 \end{definition}
-Esempi.
+\textit{Esempi.}
 
 $\mathbb{R}^{n},L^{2}(\Omega)$ con la norma $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uvdx$
 
