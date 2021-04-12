@@ -6213,7 +6213,256 @@ Una perturbazione inizialmente localizzata in $z$ non viene avvertita nel punto 
 	\overline{t} =\frac{| p-z| }{c}
 \end{equation*}
 
+% Lezione di Fil
 
+\textit{Lezione Salsa (fatta da Verzini) (12/04/2021)}
+\section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geqslant 2$}{n > 2}}
+
+Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione di $u=u(\mathbf{x} ,t)$. L'equazione delle onde prende la forma:
+\begin{equation}
+	u_{tt} -c^{2} \Delta u=f,\ \ \mathbf{x} \in \Omega \subset \mathbb{R}^{n} ,t >0,
+\end{equation}
+$c$ ha le dimensioni di una velocità anche in questo caso, e sarà la velocità di propagazione del segnale. Vi sono particolari soluzioni, specialmente nei casi $n=2,3$. Analizziamo il caso delle onde sferiche in $n=3$. Prende la forma, dipendente \textit{solo} dal raggio:
+\begin{equation*}
+	u(\mathbf{x} ,t) =w( r,t) ,\ \ r=| \mathbf{x}| =\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}} .
+\end{equation*}
+Lavoriamo in coordinate sferiche:
+\begin{equation*}
+	\mathbf{x} =
+	\begin{pmatrix}
+		x_{1} \\
+		x_{2} \\
+		x_{3} 
+	\end{pmatrix} =
+	\begin{pmatrix}
+		r\cos \vartheta \sin \psi \\
+		r\sin \vartheta \sin \psi \\
+		\cos \psi                 
+	\end{pmatrix} .
+\end{equation*}
+\begin{nb}
+	Consideriamo le coordinate sferiche in $n$ dimensioni generiche e una funzione:
+	\begin{equation*}
+		w=w( r,\bm{\vartheta }) ,\ \ \bm{\vartheta } \in \partial B_{1} =\mathbb{S}^{n-1} ,
+	\end{equation*}
+	trascuriamo la dipendenza dal tempo. $\bm{\vartheta }$ è un vettore di angoli e $\mathbb{S}^{n-1}$ indica la sfera $( n-1)$-dimensionale di raggio unitario. Il laplaciano in coordinate sferiche generiche risulta:
+	\begin{equation}
+		\Delta w=w_{rr} +\frac{n-1}{r} w_{r} +\frac{1}{r^{2}} \Delta _{\mathbb{S}^{n-1}} w,
+	\end{equation}
+	il termine $\Delta _{\mathbb{S}^{n-1}}$ è detto \textit{operatore di Laplace-Beltrami}, ed è un mostro. Nel caso particolare di $n=3$ tale operatore prende la forma:
+	\begin{equation}
+		\Delta _{\mathbb{S}^{n-1}} =\Delta _{\mathbb{S}^{2}} =\frac{1}{(\sin \psi )^{2}}\frac{\partial ^{2}}{\partial \vartheta ^{2}} +\frac{\partial ^{2}}{\partial \psi ^{2}} +\frac{\cos \psi }{\sin \psi }\frac{\partial }{\partial \psi } .
+	\end{equation}
+\end{nb}
+La cosa positiva è che stiamo studiando un tipo particolare di onde, quelle sferiche, dove $w$ dipende solo dal raggio dal tempo, non dagli angoli, per cui tutti quei termini si annullano.
+
+L'equazione omogenea prende quindi la forma:
+\begin{equation}
+	w_{tt} -c^{2}\left( w_{rr} +\frac{\textcolor[rgb]{0.82,0.01,0.11}{2}}{r} w_{r} +0\right) =0.
+	\label{eq:equazione-onde-omogenea-polare-n-3}
+\end{equation}
+Quello che stiamo per fare funziona solo in dimensione $3$ perché nella parentesi c'è il $\textcolor[rgb]{0.82,0.01,0.11}{2}$, che viene da $n-1=3-1=2$. La magia è che in questa dimensione l'equazione si può riscrivere come funzione di $( rw)$. Moltiplichiamo per $r$:
+\begin{equation*}
+	rw_{tt} -c^{2}( rw_{rr} +2w_{r}) =0,
+\end{equation*}
+se chiamiamo $v( r,t) =rw( r,t)$, allora:
+\begin{align*}
+	v_{tt} & =rw_{tt}                                \\
+	v_{r}  & =rw_{r} +w                              \\
+	v_{rr} & =rw_{rr} +w_{r} +w_{r} =rw_{rr} +2w_{r} 
+\end{align*}
+possiamo quindi riscrivere la \eqref{eq:equazione-onde-omogenea-polare-n-3} come:
+\begin{equation}
+	( rw)_{tt} -c^{2}( rw)_{rr} =0,
+\end{equation}
+cioè:
+\begin{equation}
+	v_{tt} -c^{2} v_{rr} =0.
+\end{equation}
+È come studiare l'equazione in $1$-dimensione, abbiamo quindi la formula di d'Alembert:
+\begin{equation}
+	v( r,t) =F( r+ct) +G( r-ct) ,
+\end{equation}
+e infine tornando $w$:
+\begin{equation}
+	\boxed{w( r,t) =\underbrace{\frac{F( r+ct)}{r}}_{w_{i}( r,t)} +\underbrace{\frac{G( r-ct)}{r}}_{w_{o}( r,t)} =w_{i}( r,t) +w_{o}( r,t)} .
+\end{equation}
+Qui $r$ deve essere $\geqslant 0$, ed è una limitazione forte.
+
+I due termini prendono i nomi di:
+\begin{itemize}
+	\item \textit{outgoing wave}, $w_{o}$ è costante se $| \mathbf{x}| -ct$ è costante, sono delle superfici sferiche con raggio che si allarga.
+	\item \textit{incoming wave}, $w_{i}$ è costante se $| \mathbf{x}| +ct$ è costante. Anche qui sono sfere ma succede qualcosa di poco rassicurante, il raggio tende a $0$ e diventa addirittura negativo, perde di significato. È indice di sorgenti all'infinito e spesso viene scartata (``condizione di radiazione'').
+\end{itemize}
+\subsection{Problemi ben posti: unicità.}
+
+Sia $Q_{T} =\Omega \times ( 0,T)$ il \textit{cilindro spazio-temporale}, dove $\Omega $ è un dominio \textit{limitato} di $\mathbb{R}^{n}$. I problemi hanno la forma:
+\begin{equation}
+	\begin{cases}
+		u_{tt} -c^{2} \Delta u=f      & \text{in} \ Q_{T}                         \\
+		u(\mathbf{x} ,0) =g           & \text{in} \ \overline{\Omega }            \\
+		u_{t}(\mathbf{x} ,0) =h       & \text{in} \ \overline{\Omega }            \\
+		+\ \text{condizioni al bordo} & \text{su} \ \partial \Omega \times ( 0,T) 
+	\end{cases}
+	\label{eq:problema-generico-onde-unicita}
+\end{equation}
+Le condizioni al bordo possono essere Dirichlet, Neumann, Robin o miste, come già visto.
+
+Anche in dimensione $n >1$ ha importanza il \textbf{problema di Cauchy globale}, cioè con $\Omega =\mathbb{R}^{n}$:
+\begin{equation}
+	\begin{cases}
+		u_{tt} -c^{2} \Delta u=f & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
+		u(\mathbf{x} ,0) =g      & \text{in} \ \mathbb{R}^{n}                      \\
+		u_{t}(\mathbf{x} ,0) =h  & \text{in} \ \mathbb{R}^{n}                      
+	\end{cases}
+	\label{eq:pcg-onde-unicita}
+\end{equation}
+Vedremo che per $n=1,2,3$ le soluzioni hanno proprietà molto diverse tra loro. Mostriamo ora un semplice risultato, che useremo subito dopo nel teorema per l'unicità. Usiamo il `metodo dell'energia', definendo appunto l'energia tramite la formula:
+\begin{equation}
+	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} d\mathbf{x} ,
+\end{equation}
+Deriviamo rispetto al tempo e supponiamo di poter fare tutto in modo lecito, formalizzeremo dopo nell'enunciato del teorema:
+\begin{align*}
+	\dot{E}( t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} d\mathbf{x}                          \\
+	            & =\int _{\Omega } u_{t} u_{tt} \ d\mathbf{x} +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\mathbf{x} =( *) , 
+\end{align*}
+il secondo termine si può integrare per parti:
+\begin{equation*}
+	\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\mathbf{x} =\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma -\int _{\Omega } u_{t}\underbrace{\mathrm{div}(\mathrm{grad} u)}_{\Delta u} \ d\mathbf{x} ,
+\end{equation*}
+sostituendo:
+\begin{equation*}
+	( *) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] d\mathbf{x} ,
+\end{equation*}
+otteniamo infine:
+\begin{equation}
+	\dot{E}( t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t} f\ d\mathbf{x} .
+	\label{eq:onde-derivata-energia}
+\end{equation}
+\begin{theorem}
+	Esiste al più una soluzione di \eqref{eq:problema-generico-onde-unicita} di classe $C^{2}( Q_{T}) \cap C^{1}(\overline{Q}_{T})$.
+\end{theorem}
+\begin{dimostrazione}
+	Siano $u_{1} ,u_{2}$ due soluzioni di \eqref{eq:problema-generico-onde-unicita} con gli stessi dati iniziali e al bordo, allora $v=u_{1} -u_{2}$ è soluzione dell'\textit{omogeneo}, cioè con dati nulli. Dimostriamo che $v\equiv 0$.
+	\begin{itemize}
+		\item Caso di condizioni di Neumann/Dirichlet/misti.
+		      
+		      Neumann garantisce che $v_{\bm{\nu }} =0$ su $\partial \Omega \times ( 0,T)$, Dirichlet dice che $v=0$ su $\partial \Omega \times ( 0,T)$, cioè anche che $v_{t} =0$ sul bordo nei punti in cui vale una condizione di Dirichlet. Essendo omogeneo, la $f$ vale $0$, pertanto in questo framework si annullano sempre tutti i termini della \eqref{eq:onde-derivata-energia}:
+		      \begin{equation*}
+		      	\dot{E}( t) =0,
+		      \end{equation*}quindi è costante, in particolare è sempre uguale al suo valore iniziale:
+		      \begin{equation*}
+		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\mathbf{x} ,0) +c^{2}| \nabla v(\mathbf{x} ,0)| ^{2}\right\} d\mathbf{x} .
+		      \end{equation*}Siccome siamo con condizioni iniziale nulle:
+		      \begin{equation*}
+		      	\begin{cases}
+		      		v(\mathbf{x} ,0) =0,     & \text{in} \ \overline{\Omega } \\
+		      		v_{t}(\mathbf{x} ,0) =0, & \text{in} \ \overline{\Omega } 
+		      	\end{cases}
+		      \end{equation*}
+		      
+		      la prima ci permette anche di concludere inizialmente il gradiente è il vettore nullo\begin{equation*}
+		      \nabla v(\mathbf{x} ,0) =\mathbf{0} .
+		\end{equation*}Quindi l'energia iniziale è nulla $E( 0) =0$ e pertanto, essendo costante:
+		\begin{equation*}
+			E( t) =0,\ \forall t.
+		\end{equation*}
+		
+		Notiamo anche che l'integrale è la somma di due contributi non nulli. Affinché $E( t)$ sia sempre nulla, deve per forza essere che entrambi i due integrali sono nulli\footnote{Non può essere altrimenti: se uno desse contributo positivo, l'altro dovrebbe dare contributo negativo per compensare, ma danno entrambi contributo positivo.}:
+		\begin{equation*}
+			\int _{\Omega } v_{t}^{2} \equiv 0,\ \ \int _{\Omega }| \nabla v| ^{2} \equiv 0,\ \ \forall t,
+		\end{equation*}essendo valida per ogni $\Omega $ e per ogni tempo, per forza $v_{t} =0=\nabla v$, cioè $v$ è una quantità costante, e in particolare uguale alla condizione iniziale, che è nulla, come osservato. Quindi:
+		\begin{equation*}
+			v=0\ \ \Rightarrow \ \ u_{1} =u_{2} .
+		\end{equation*}
+		\item Caso di condizioni di Robin.
+		      
+		      Il problema ha la forma:
+		      \begin{equation*}
+		      	\begin{cases}
+		      		v_{tt} -c^{2} \Delta v=0           &                                                                 \\
+		      		\partial _{\bm{\nu }} v+\alpha v=0 & \text{su} \ \partial \Omega \times ( 0,T) ,\ \alpha \geqslant 0 \\
+		      		v(\mathbf{x} ,0) =0                & \text{in} \ \overline{\Omega }                                  \\
+		      		v_{t}(\mathbf{x} ,0) =0            & \text{in} \ \overline{\Omega }                                  
+		      	\end{cases}
+		      \end{equation*}Sappiamo già che $E( 0) =0$ e che $E( t) \geqslant 0$, vediamo cosa succede questa volta alla derivata temporale di $E( t)$:
+		      \begin{align*}
+		      	\dot{E}( t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ d\sigma +\cancel{\int _{\Omega } v_{t} f\ d\mathbf{x}} &                                          \\
+		      	            & =c^{2}\int _{\partial \Omega } v_{t}( -\alpha v) \ d\sigma                                                           & \text{(sostituendo la condizione)}       \\
+		      	            & =-c^{2} \alpha \int _{\partial \Omega } vv_{t} \ d\sigma                                                             &                                          \\
+		      	            & =-\frac{c^{2} \alpha }{2}\int _{\partial \Omega } \partial _{t}\left( v^{2}\right) \ d\sigma                         & \text{(riconoscendo una derivata)}       \\
+		      	            & =-\frac{d}{dt}\int _{\partial \Omega }\frac{c^{2} \alpha }{2} v^{2} \ d\sigma ,                                      & \text{(scambiando derivata e integrale)} 
+		      \end{align*}
+		      
+		      allora:
+		      \begin{equation*}
+		      	E( t) +\frac{c^{2} \alpha }{2}\int _{\partial \Omega } v^{2} \ d\sigma =\text{costante} =0.
+		      \end{equation*}
+		      
+		      Ragionando come prima si conclude analogamente, ricordando $\alpha \geqslant 0$.
+	\end{itemize}
+\end{dimostrazione}
+
+
+Passiamo al problema di Cauchy globale.
+
+Facciamo ora un'osservazione, ragionando in $n=2$. Supponiamo di star considerando una perturbazione governata da un'equazione delle onde omogenea $( f\equiv 0)$. Questa perturbazione è avertita nel punto $\mathbf{x}_{0}$ all'istante $t_{0}$.
+
+Ammesso che $c$ sia la velocità di propagazione, possiamo intuire che c'è un intero cono, detto \textbf{cono retrogrado}, che influenza il valore di $u(\mathbf{x}_{0} ,t_{0})$
+
+\fg[Cono retrogrado.]{0.4}{cono-retrogrado}
+
+Il \textbf{dominio di influenza} all'istante $t$ è $B_{c( t_{0} -t)}(\mathbf{x}_{0})$, cioè gli $\mathbf{x}$ tali che $| \mathbf{x} -\mathbf{x}_{0}| \leqslant c| t-t_{0}| $, quelli che mi permettono di raggiungere quel punto. L'intero dominio di influenza è questo cono retrogrado:
+\begin{equation}
+	C_{\mathbf{x}_{0} ,t_{0}} =\{(\mathbf{x} ,t) :\ | \mathbf{x} -\mathbf{x}_{0}| \leqslant c| t-t_{0}| ,\ 0\leqslant t\leqslant t_{0}\}
+\end{equation}
+Non possiamo aspettarci di definire un'energia esattamente come prima, perché essendo in $\Omega =\mathbb{R}^{n}$ gli integrali sarebbero illimitati. Vogliamo qualcosa di più limitato: integriamo su questi cerchi e otteniamo una specie di energia. Si definisce
+\begin{equation}
+	e( t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] d\mathbf{x}
+	\label{eq:energia-onde-pcg}
+\end{equation}
+\begin{theorem}
+	Se $u\in C^{2}$ è soluzione del problema di Cauchy globale \eqref{eq:pcg-onde-unicita} con $f=0$ (omogeneo), allora per ogni $t\in [ 0,t_{0}]$:
+	\begin{equation}
+		\dot{e}( t) \leqslant 0.
+	\end{equation}
+\end{theorem}
+Questo ci assicurerà l'unicità per il problema di Cauchy globale.
+\begin{dimostrazione}
+	Bisogna stare attenti perchè in \eqref{eq:energia-onde-pcg} la $t$ sta sia nel dominio di integrazione che nell'ingranda. Sfogliamo la cipolla\footnote{Cit. Gianmaria Verzini.}:
+	\begin{equation*}
+		e( t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\mathbf{x}_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ d\sigma .
+	\end{equation*}
+	Ricordando che:
+	\begin{equation*}
+		\frac{d}{dt}\int _{a}^{f( t)} g( r,t) dr=g( f( t)) \cdotp f'( t) +\int _{0}^{f( t)} g_{t}( r,t) dr,
+	\end{equation*}
+	possiamo derivare $e( t)$, ricordando che nel secondo termine l'integrale si può ricomporre:
+	\begin{align*}
+		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u}\textcolor[rgb]{0.29,0.56,0.89}{_{t}^{2}}\textcolor[rgb]{0.29,0.56,0.89}{+c}\textcolor[rgb]{0.29,0.56,0.89}{^{2}}\textcolor[rgb]{0.29,0.56,0.89}{| }\textcolor[rgb]{0.29,0.56,0.89}{\nabla u}\textcolor[rgb]{0.29,0.56,0.89}{| }\textcolor[rgb]{0.29,0.56,0.89}{^{2}}\right] d\sigma \cdotp \underbrace{\frac{d}{dt} c( t_{0} -t)}_{-c} \\
+		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u}\textcolor[rgb]{0.82,0.01,0.11}{_{t}}\right] d\mathbf{x} =( *) .                                                                                                                                                                                                 
+	\end{align*}
+	Integriamo per parti il termine rosso:
+	\begin{equation*}
+		\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u}\textcolor[rgb]{0.82,0.01,0.11}{_{t}} \ d\mathbf{x} =\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ d\sigma -\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ d\mathbf{x}
+	\end{equation*}
+	e usiamo l'equazione delle onde omogenea:
+	\begin{align*}
+		\dot{e}( t) & =\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) d\mathbf{x}                                                                                                                                                                                                                                                                                                                                                                                       \\
+		            & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \ d\sigma +c^{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t} \partial _{\bm{\nu }} u\ d\mathbf{x} \\
+		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] d\sigma                                                                          \\
+		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] d\sigma                                                                           \\
+		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}[| u_{t}| -c| \nabla u| ]^{2} d\sigma \leqslant 0.                                                                                                                                                                                                                                                                                                                                                                                       
+	\end{align*}
+\end{dimostrazione}
+\textbf{Corollario.}
+
+Se $u\in C^{2}\left(\mathbb{R}^{n} \times [ 0,+\infty )\right)$ è soluzione di problema di Cauchy globale, allora:
+	\begin{enumerate}
+		\item se $g\equiv h\equiv 0$ sulla palla iniziale $B_{ct_{0}}(\mathbf{x}_{0})$ e $f\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$ allora $u\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$;
+		\item l'eventuale soluzione è unica.
+	\end{enumerate}
+	
 
 
 
