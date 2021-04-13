@@ -6428,6 +6428,28 @@ Non possiamo aspettarci di definire un'energia esattamente come prima, perché e
 	\end{equation}
 \end{theorem}
 Questo ci assicurerà l'unicità per il problema di Cauchy globale.
+Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorema.
+\begin{nb}
+	Dimostreremo che:
+	\begin{equation*}
+		\frac{d}{dt}\int _{h( t)}^{f( t)} g( r,t) dr=g( f( t) ,t) \cdotp f'( t) -g( h( t) ,t) \cdotp h'( t) +\int _{h( t)}^{f( t)} g_{t}( r,t) dr.
+	\end{equation*}
+	Cominciamo applicando il teorema fondamentale del calcolo integrale, sottintendendo $f=f( t)$ e $h=h( t)$:
+	\begin{align*}
+	\frac{d}{dt}\int _{h( t)}^{f( t)} g( r,t) dr & =\frac{d}{dt}[ G( f,t) -G( h,t)]\\
+	 											 & =\frac{d}{dt} G( f,t) -\frac{d}{dt} G( h,t) ,
+	\end{align*}
+	applichiamo la regola della catena e ricordiamo che è una derivata totale, infatti stiamo derivando totalmente $G$ rispetto al tempo, ma il tempo compare sia dentro $f$ che nella $t$ al secondo argomento banalmente. Quindi ci sarà la somma di due termini per ogni derivata:
+	\begin{align*}
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{d}{dt} G( f,t)}\textcolor[rgb]{0.29,0.56,0.89}{-\frac{d}{dt} G( h,t)} & =\textcolor[rgb]{0.82,0.01,0.11}{g( f,t) \cdotp f'+\frac{\partial }{\partial t} G( f,t)}\textcolor[rgb]{0.29,0.56,0.89}{-g( h,t) \cdotp h'-\frac{\partial }{\partial t} G( h,t)}\\
+	 																												& =g( f,t) \cdotp f'-g( h,t) \cdotp h'-\frac{\partial }{\partial t}[ G( f,t) -G( h,t)] .
+	\end{align*}
+	L'ultimo termine si può scrivere come:
+	\begin{equation*}
+		\frac{\partial }{\partial t}[ G( f,t) -G( h,t)] =\frac{\partial }{\partial t}\int _{h}^{f} g( r,t) dr=\int _{h}^{f} g_{t}( r,t) dr,
+	\end{equation*}
+	in quanto il passaggio di integrazione con il TFCI si riferisce al primo argomento di $g$, mentre possiamo portare la derivata dentro all'integrale perché essa si riferisce al secondo argomento di $g$.
+\end{nb}
 \begin{dimostrazione}
 	Bisogna stare attenti perchè in \eqref{eq:energia-onde-pcg} la $t$ sta sia nel dominio di integrazione che nell'ingranda. Sfogliamo la cipolla\footnote{Cit. Gianmaria Verzini.}:
 	\begin{equation*}
