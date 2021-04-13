@@ -6435,16 +6435,16 @@ Questo ci assicurerà l'unicità per il problema di Cauchy globale.
 	\end{equation*}
 	Ricordando che:
 	\begin{equation*}
-		\frac{d}{dt}\int _{a}^{f( t)} g( r,t) dr=g( f( t),t) \cdotp f'( t) +\int _{0}^{f( t)} g_{t}( r,t) dr,
+		\frac{d}{dt}\int _{a}^{f( t)} g( r,t) dr=g( f( t),t) \cdotp f'( t) +\int _{a}^{f( t)} g_{t}( r,t) dr,
 	\end{equation*}
 	possiamo derivare $e( t)$, ricordando che nel secondo termine l'integrale si può ricomporre:
 	\begin{align*}
-		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u}\textcolor[rgb]{0.29,0.56,0.89}{_{t}^{2}}\textcolor[rgb]{0.29,0.56,0.89}{+c}\textcolor[rgb]{0.29,0.56,0.89}{^{2}}\textcolor[rgb]{0.29,0.56,0.89}{| }\textcolor[rgb]{0.29,0.56,0.89}{\nabla u}\textcolor[rgb]{0.29,0.56,0.89}{| }\textcolor[rgb]{0.29,0.56,0.89}{^{2}}\right] d\sigma \cdotp \underbrace{\frac{d}{dt} c( t_{0} -t)}_{-c} \\
-		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u}\textcolor[rgb]{0.82,0.01,0.11}{_{t}}\right] d\mathbf{x} =( *) .                                                                                                                                                                                                 
+		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] d\sigma \cdotp \underbrace{\frac{d}{dt} c( t_{0} -t)}_{-c} \\
+		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}}\right] d\mathbf{x}.                                                                                                                                                                                                 
 	\end{align*}
 	Integriamo per parti il termine rosso:
 	\begin{equation*}
-		\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u}\textcolor[rgb]{0.82,0.01,0.11}{_{t}} \ d\mathbf{x} =\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ d\sigma -\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ d\mathbf{x}
+		\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}} \ d\mathbf{x} =\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ d\sigma -\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ d\mathbf{x}
 	\end{equation*}
 	e usiamo l'equazione delle onde omogenea:
 	\begin{align*}
@@ -6454,6 +6454,10 @@ Questo ci assicurerà l'unicità per il problema di Cauchy globale.
 		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] d\sigma                                                                           \\
 		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}[| u_{t}| -c| \nabla u| ]^{2} d\sigma \leqslant 0.                                                                                                                                                                                                                                                                                                                                                                                       
 	\end{align*}
+	Nell'effettuare la maggiorazione abbiamo usato che:
+	\begin{equation*}
+		u_{t} \partial _{\bm{\nu }} u\leqslant |u_{t} \partial _{\bm{\nu }} u|=|u_{t} ||\partial _{\bm{\nu }} u|=|u_{t} ||\nabla u\cdotp \bm{\nu } |\leqslant |u_{t} ||\nabla u|\underbrace{|\bm{\nu } |}_{1}.
+	\end{equation*}
 \end{dimostrazione}
 \textbf{Corollario.}
 
