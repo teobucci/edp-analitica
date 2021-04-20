@@ -63,7 +63,7 @@ Revisione del \today
 
 Developed by\\
 Teo Bucci - \texttt{teobucci8@gmail.com}\\
-Filippo Cipriani - \texttt{filippcipriani@gmail.com}\\ \\
+Filippo Cipriani - \texttt{filippo.cipriani99@hotmail.it}\\ \\
 Compiled with \ensuremath\heartsuit \\
 
 %\textbf{Prefazione}
@@ -437,6 +437,8 @@ Per segnalare eventuali errori o suggerimenti potete contattare gli autori.
 
 \part{Equazioni alle Derivate Parziali}
 \chapter{Modelli matematici}
+
+\textit{Lezione Verzini 1 22/02/2021}
 
 Un modello matematico è un compromesso tra complessità del mondo reale e idee astratte della matematica. Li applicheremo spesso nel contesto della meccanica dei continui.
 
@@ -970,7 +972,7 @@ Da cui, dividendo per $\displaystyle \rho c_{v}$ e definendo \ $\displaystyle D=
 \boxed{\theta _{t} -D\Delta \theta =f}
 \end{equation*}
 
-\section{Problemi ben posti in dimensione spaziale \texorpdfstring{$n=1$}{n = 1}}
+\section{Problemi ben posti in dimensione spaziale \texorpdfstring{$n=1$}{n=1}}
 
 Considero l'evoluzione temporale della temperatura in una sbarra cilindrica di sezione trasversale $\displaystyle A$ e lunghezza $\displaystyle L$. Sotto le ipotesi:
 \begin{enumerate}
@@ -1389,7 +1391,7 @@ u(x,t) =u_{0} +[ u_{1} -u_{0}]\frac{x}{L} -\underbrace{[ u_{1} -u_{0}]\sum\limit
 
 \fg{0.7}{diffusione-soluzione-1d}
 
-\section{Problemi in dimensione \texorpdfstring{$n>1$}{n > 1}}
+\section{Problemi in dimensione \texorpdfstring{$n>1$}{n>1}}
 
 Sia $\displaystyle \Omega $ un dominio\footnote{ovvero un aperto connesso in $\displaystyle \mathbb{R}^{n}$.}. La temperatura sarà una $u=u(\mathbf{x},t)$ che soddisfa $u_{t} -D\Delta u=f$ nel \textit{cilindro spazio-temporale}
 \begin{equation*}
@@ -1674,7 +1676,7 @@ e il massimo di $u$ su tutto è
 \max_{\overline{Q}_{T}} u=1
 \end{equation*}
 Ma nel rettangolo fino a che $t=\pi /2$ il massimo non è assunto solo sulla frontiera, ma anche tutto all'interno. Si dimostra che è l'unica possibilità affinché avvenga, ovvero che \textbf{il massimo può essere assunto all'interno se fino a quel punto }$u$\textbf{ è rimasto costante (Principio di Massimo Forte).}
-\section{Soluzione fondamentale \texorpdfstring{$n=1$}{n = 1}}
+\section{Soluzione fondamentale \texorpdfstring{$n=1$}{n=1}}
 
 In $x=0$ sia concentrata una sorgente di calore \textbf{istantanea.} Indichiamo con $u^{\star }$ la temperatura della sbarra, vogliamo determinare l'evoluzione di $u^{\star },t\geqslant 0$.
 
@@ -2047,7 +2049,7 @@ Se anziché nell'origine, la sorgente unitaria fosse concentrata in un punto $\d
 \begin{nb}
 Come già osservato in precedenza, per $\displaystyle t >0$ \ $\displaystyle \Gamma _{D}$ è $\displaystyle C^{\infty }(\mathbb{R} \times (0,+\infty)) .$Si dimentica immediatamente della singolarità ed è positiva $\displaystyle \forall t >0$: la diffusione del calore è istantanea in tutta la sbarra.
 \end{nb}
-\subsection{Soluzione fondamentale in \texorpdfstring{$\displaystyle n >1$}{n > 1}}
+\subsection{Soluzione fondamentale in \texorpdfstring{$n>1$}{n>1}}
 
 Con ragionamenti analoghi otteniamo
 \begin{equation*}
@@ -2417,7 +2419,7 @@ dove i termini dipendono in questo modo
 \begin{equation*}
 \mathbf{b} =\mathbf{b}(x,t) \ \ \mathbf{v} =\mathbf{v}(x,t) \ \ c=c(x,t)
 \end{equation*}
-\section{Problema di Cauchy globale \texorpdfstring{$(n=1)$}{n = 1}}
+\section{Problema di Cauchy globale \texorpdfstring{$(n=1)$}{n=1}}
 
 Consideriamo il problema di Cauchy globale in $n=1$ dimensioni. La generalizzazione a dimensione $n >1$ è standard, quindi lavoriamo in $n=1$ per semplicità.
 \begin{equation*}
@@ -5748,7 +5750,7 @@ Equazioni delle onde
 	      Onde d'acqua \textit{lineari}, acustiche, elettromagnetiche nel vuoto.
 \end{itemize}
 
-\section{Equazione della corda vibrante in \texorpdfstring{$\displaystyle n=1$}{n=1}}
+\section{Equazione della corda vibrante in \texorpdfstring{$n=1$}{n=1}}
 
 Ricaviamo ora l'equazione della corda vibrante unidimensionale (tipicamente corda di violino o chitarra). Lavoriamo sotto le seguenti ipotesi:
 \begin{enumerate}
@@ -6013,7 +6015,7 @@ Le condizioni al bordo possono essere
 	\FloatBarrier
 	Osserviamo che se $\displaystyle k=0$ ritroviamo le condizioni di Neumann omogenee, ciò ha senso dato che è come avere una molla che pone una resistenza nulla, ovvero la corda è libera di scorrere in verticale. Viceversa se $\displaystyle k\gg \{u,u_{x}\}$ allora $\displaystyle u$ per compensare deve essere molto picolo, è come avere una molla rigidissima che sostanzialmente impone di fissare gli estremi, come nella condizione di Dirichlet.\footnote{Si veda \texttt{https://youtu.be/AEBdyFG3bz4} per ulteriori chiarificazioni.}
 \end{itemize}
-\section{Problema di Cauchy globale}
+\section{Problema di Cauchy globale \texorpdfstring{($n=1$)}{(n=1)}}
 
 Si dice problema di Cauchy globale
 \begin{equation*}
@@ -6213,10 +6215,305 @@ Una perturbazione inizialmente localizzata in $z$ non viene avvertita nel punto 
 	\overline{t} =\frac{| p-z| }{c}
 \end{equation*}
 
-% Lezione di Fil
+\textit{Lezione 17 (08/04/2021)}
 
-\textit{Lezione Salsa (fatta da Verzini) (12/04/2021)}
-\section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geqslant 2$}{n > 2}}
+Riprendiamo il \textbf{problema di Cauchy globale}
+\begin{equation}
+	\text{(PCG)} \ 
+	\begin{cases}
+		u_{tt} -c^{2} u_{xx} =0 & x\in \mathbb{R} ,t >0 \\
+		u( x,0) =g( x)          & x\in \mathbb{R}       \\
+		u_{t}( x,0) =h( x)      & x\in \mathbb{R}       
+	\end{cases}
+	\label{eq:onde-pcg-1d}
+\end{equation}
+la soluzione è data dalla \textbf{formula di d'Alembert}
+\begin{equation}
+	u( x,t) =\frac{1}{2}[ g( x+ct) +g( x-ct)] +\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) dy
+	\label{eq:onde-formula-di-dAlembert}
+\end{equation}
+Esaminiamo alcune conseguenze di questa formula:
+\begin{enumerate}
+	\item Il (PCG) \eqref{eq:onde-pcg-1d} ha un'unica soluzione \textit{regolare} data da \eqref{eq:onde-formula-di-dAlembert}. Notiamo che deve essere:
+		\begin{equation*}
+			g\in C^{2}(\mathbb{R}) ,\ h\in C^{1}(\mathbb{R}) ,
+		\end{equation*}
+		affinché $\displaystyle u$ sia\textbf{ soluzione classica}. Non c'è regolarizzazione all'avanzare del tempo.
+	\item Posso ricavare una stima di stabilità in norma $\displaystyle L^{\infty }$ con la formula di d'Alembert. Consideriamo
+		\begin{equation*}
+			g_{1} ,g_{2} ,\ h_{1} ,h_{2}\rightarrow u_{1} ,u_{2}
+		\end{equation*}
+		allora
+		\begin{equation*}
+			| u_{1}( x,t) -u_{2}( x,t)| \leqslant \Vert g_{1} -g_{2}\Vert _{L^{\infty }(\mathbb{R})} +T\Vert h_{1} -h_{2}\Vert _{L^{\infty }(\mathbb{R})}
+		\end{equation*}
+		per ogni $\displaystyle x,t\in \mathbb{R} \times [ 0,T]$.
+	\item La $\displaystyle u$ si può esprimere come somma di due funzioni
+		\begin{equation*}
+			u( x,t) =F( x-ct) +G( x+ct)
+		\end{equation*}
+		per esempio
+		\begin{align*}
+			F( x) & =\frac{1}{2} g( x) -\frac{1}{2c}\int _{0}^{x} h( y) dy \\
+			G( x) & =\frac{1}{2} g( x) +\frac{1}{2c}\int _{0}^{x} h( y) dy 
+		\end{align*}
+		quindi $\displaystyle u$ è sovrapposizione di due onde progressive.
+	\item Nonostante abbiamo assunto $\displaystyle g\in C^{2} ,\ h\in C^{1}$ la Formula di d'Alembert \eqref{eq:onde-formula-di-dAlembert} ha senso anche per $\displaystyle g$ continua e $\displaystyle h$ limitata e soddisfa l'equazione in un senso \textit{debole}
+			\fg[Corda pizzicata in un punto]{0.6}{onde-corda-pizzicata-in-un-punto}
+			
+	\item Domini di \textbf{dipendenza} e di \textbf{influenza:}
+			\fg[Domini di dipendenza e di influenza]{0.6}{onde-domini-dipendenza-influenza}
+			
+			
+			$\displaystyle g$ influisce sul valore $\displaystyle u( x,t)$ solo dai punti $\displaystyle ( x-ct,0) ,( x+ct,0)$.
+			
+			I valori di $\displaystyle h$ che influiscono su $\displaystyle u( x,t)$ sono quelli dell'intero intervallo $\displaystyle [ x-ct,x+ct]$, detto \textbf{dominio di dipendenza }del punto $\displaystyle ( x,t)$.
+	\item \textbf{Quadrilatero caratteristico}. Le rette:
+		\begin{align*}
+			x-ct & =\xi \\
+			x+ct & =\mu 
+		\end{align*}
+		sono le rette caratteristiche
+		\begin{figure}[htpb]
+			\centering
+
+			\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+			\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+			%Shape: Axis 2D [id:dp5446048811905655] 
+			\draw  (90,260) -- (450,260)(90,50) -- (90,260) -- cycle (443,255) -- (450,260) -- (443,265) (85,57) -- (90,50) -- (95,57)  ;
+			%Straight Lines [id:da957953326055226] 
+			\draw    (350,136.92) -- (250,260) ;
+			%Straight Lines [id:da929763421955655] 
+			\draw    (300,100) -- (170,260) ;
+			%Straight Lines [id:da7318835798607295] 
+			\draw    (220,130) -- (330,260) ;
+			%Straight Lines [id:da5952857018004307] 
+			\draw    (250,94.55) -- (390,260) ;
+			%Shape: Circle [id:dp5681242877578812] 
+			\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (245.5,163) .. controls (245.5,161.34) and (246.84,160) .. (248.5,160) .. controls (250.16,160) and (251.5,161.34) .. (251.5,163) .. controls (251.5,164.66) and (250.16,166) .. (248.5,166) .. controls (246.84,166) and (245.5,164.66) .. (245.5,163) -- cycle ;
+			%Shape: Circle [id:dp7348122693316455] 
+			\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (275,127.5) .. controls (275,125.84) and (276.34,124.5) .. (278,124.5) .. controls (279.66,124.5) and (281,125.84) .. (281,127.5) .. controls (281,129.16) and (279.66,130.5) .. (278,130.5) .. controls (276.34,130.5) and (275,129.16) .. (275,127.5) -- cycle ;
+			%Shape: Circle [id:dp06799940585538478] 
+			\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (316,175.27) .. controls (316,173.62) and (317.34,172.27) .. (319,172.27) .. controls (320.66,172.27) and (322,173.62) .. (322,175.27) .. controls (322,176.93) and (320.66,178.27) .. (319,178.27) .. controls (317.34,178.27) and (316,176.93) .. (316,175.27) -- cycle ;
+			%Shape: Circle [id:dp44710284173444226] 
+			\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (287,211.27) .. controls (287,209.62) and (288.34,208.27) .. (290,208.27) .. controls (291.66,208.27) and (293,209.62) .. (293,211.27) .. controls (293,212.93) and (291.66,214.27) .. (290,214.27) .. controls (288.34,214.27) and (287,212.93) .. (287,211.27) -- cycle ;
+
+			% Text Node
+			\draw (459,254.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+			% Text Node
+			\draw (81,32.4) node [anchor=north west][inner sep=0.75pt]    {$t$};
+			% Text Node
+			\draw (281,222.4) node [anchor=north west][inner sep=0.75pt]    {$A$};
+			% Text Node
+			\draw (311,182.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
+			% Text Node
+			\draw (241,172.4) node [anchor=north west][inner sep=0.75pt]    {$C$};
+			% Text Node
+			\draw (269,136.4) node [anchor=north west][inner sep=0.75pt]    {$D$};
+			% Text Node
+			\draw (162,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{1}$};
+			% Text Node
+			\draw (242,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{2}$};
+			% Text Node
+			\draw (322,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{3}$};
+			% Text Node
+			\draw (382,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{3}$};
+			% Text Node
+			\draw (301,82.4) node [anchor=north west][inner sep=0.75pt]    {$x=ct+\xi _{1}$};
+			% Text Node
+			\draw (355,120.4) node [anchor=north west][inner sep=0.75pt]    {$x=ct+\xi _{2}$};
+			% Text Node
+			\draw (152,80.4) node [anchor=north west][inner sep=0.75pt]    {$x=-ct+\xi _{4}$};
+			% Text Node
+			\draw (119,120.4) node [anchor=north west][inner sep=0.75pt]    {$x=-ct+\xi _{3}$};
+
+
+			\end{tikzpicture}
+		\end{figure}
+		\FloatBarrier
+
+	ricordando che 
+	\begin{equation*}
+		u( x,t) =F( x-ct) +G( x+ct)
+	\end{equation*}
+
+	deduciamo che sulle rette $\displaystyle x=-ct+\xi $, $\displaystyle G$ è costante, sulle rette $\displaystyle x=ct+\xi $, $\displaystyle F$ è costante. Ma allora:
+	\begin{align*}
+		F( A) & =F( B) \\
+		G( A) & =G( C) \\
+		F( D) & =F( C) \\
+		G( D) & =G( B) 
+	\end{align*}
+
+	sommo membro a membro e ottengo
+	\begin{equation*}
+		\underbrace{F( A) +G( A)}_{u( A)} +\underbrace{F( D) +G( D)}_{u( D)} =\underbrace{F( B) +G( B)}_{u( B)} +\underbrace{F( C) +G( C)}_{u( C)}
+	\end{equation*}
+
+	cioè:
+
+	\begin{equation}
+		u( A) +u( D) -u( B) -u( C) =0.
+		\label{eq:onde-uguaglianze-quadrilatero}
+	\end{equation}
+
+	Se è verificata per ogni coppia di caratteristiche questa esprime l'equazione delle onde \textbf{in forma debole.}
+
+	Usiamo la \eqref{eq:onde-uguaglianze-quadrilatero} per risolvere il problema di Cauchy-Dirichlet
+	\begin{equation*}
+		\begin{cases}
+			u_{tt} -u_{xx} =0  & 0< x< L,\ t >0          \\
+			u( x,0) =g( x)     & 0\leqslant x\leqslant L \\
+			u_{t}( x,0) =h( x) & 0\leqslant x\leqslant L \\
+			u( 0,t) =a( t)     & t >0                    \\
+			u( L,t) =b( t)     & t >0                    
+		\end{cases}
+	\end{equation*}
+
+	con un'argomentazione puramente \textit{visuale}:
+
+	\begin{figure}[htpb]
+		\centering
+		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+		
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+			%uncomment if require: \path (0,287); %set diagram left start at 0, and has height of 287
+			
+			%Straight Lines [id:da585347869552219] 
+			\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (167.57,65.44) -- (349.34,247.21) ;
+			%Straight Lines [id:da824218001234857] 
+			\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (349.34,65.44) -- (167.57,247.21) ;
+			%Straight Lines [id:da17362039318852585] 
+			\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (258.46,186.62) -- (319.04,247.21) ;
+			%Straight Lines [id:da16420672299248373] 
+			\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (258.46,186.62) -- (197.87,247.21) ;
+			%Straight Lines [id:da49220817930888017] 
+			\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (197.87,245.71) .. controls (199.54,244.04) and (201.2,244.04) .. (202.87,245.71) .. controls (204.54,247.38) and (206.2,247.38) .. (207.87,245.71) .. controls (209.54,244.04) and (211.2,244.04) .. (212.87,245.71) .. controls (214.54,247.38) and (216.2,247.38) .. (217.87,245.71) .. controls (219.54,244.04) and (221.2,244.04) .. (222.87,245.71) .. controls (224.54,247.38) and (226.2,247.38) .. (227.87,245.71) .. controls (229.54,244.04) and (231.2,244.04) .. (232.87,245.71) .. controls (234.54,247.38) and (236.2,247.38) .. (237.87,245.71) .. controls (239.54,244.04) and (241.2,244.04) .. (242.87,245.71) .. controls (244.54,247.38) and (246.2,247.38) .. (247.87,245.71) .. controls (249.54,244.04) and (251.2,244.04) .. (252.87,245.71) .. controls (254.54,247.38) and (256.2,247.38) .. (257.87,245.71) .. controls (259.54,244.04) and (261.2,244.04) .. (262.87,245.71) .. controls (264.54,247.38) and (266.2,247.38) .. (267.87,245.71) .. controls (269.54,244.04) and (271.2,244.04) .. (272.87,245.71) .. controls (274.54,247.38) and (276.2,247.38) .. (277.87,245.71) .. controls (279.54,244.04) and (281.2,244.04) .. (282.87,245.71) .. controls (284.54,247.38) and (286.2,247.38) .. (287.87,245.71) .. controls (289.54,244.04) and (291.2,244.04) .. (292.87,245.71) .. controls (294.54,247.38) and (296.2,247.38) .. (297.87,245.71) .. controls (299.54,244.04) and (301.2,244.04) .. (302.87,245.71) .. controls (304.54,247.38) and (306.2,247.38) .. (307.87,245.71) .. controls (309.54,244.04) and (311.2,244.04) .. (312.87,245.71) .. controls (314.54,247.38) and (316.2,247.38) .. (317.87,245.71) -- (319.04,245.71) -- (319.04,245.71)(197.87,248.71) .. controls (199.54,247.04) and (201.2,247.04) .. (202.87,248.71) .. controls (204.54,250.38) and (206.2,250.38) .. (207.87,248.71) .. controls (209.54,247.04) and (211.2,247.04) .. (212.87,248.71) .. controls (214.54,250.38) and (216.2,250.38) .. (217.87,248.71) .. controls (219.54,247.04) and (221.2,247.04) .. (222.87,248.71) .. controls (224.54,250.38) and (226.2,250.38) .. (227.87,248.71) .. controls (229.54,247.04) and (231.2,247.04) .. (232.87,248.71) .. controls (234.54,250.38) and (236.2,250.38) .. (237.87,248.71) .. controls (239.54,247.04) and (241.2,247.04) .. (242.87,248.71) .. controls (244.54,250.38) and (246.2,250.38) .. (247.87,248.71) .. controls (249.54,247.04) and (251.2,247.04) .. (252.87,248.71) .. controls (254.54,250.38) and (256.2,250.38) .. (257.87,248.71) .. controls (259.54,247.04) and (261.2,247.04) .. (262.87,248.71) .. controls (264.54,250.38) and (266.2,250.38) .. (267.87,248.71) .. controls (269.54,247.04) and (271.2,247.04) .. (272.87,248.71) .. controls (274.54,250.38) and (276.2,250.38) .. (277.87,248.71) .. controls (279.54,247.04) and (281.2,247.04) .. (282.87,248.71) .. controls (284.54,250.38) and (286.2,250.38) .. (287.87,248.71) .. controls (289.54,247.04) and (291.2,247.04) .. (292.87,248.71) .. controls (294.54,250.38) and (296.2,250.38) .. (297.87,248.71) .. controls (299.54,247.04) and (301.2,247.04) .. (302.87,248.71) .. controls (304.54,250.38) and (306.2,250.38) .. (307.87,248.71) .. controls (309.54,247.04) and (311.2,247.04) .. (312.87,248.71) .. controls (314.54,250.38) and (316.2,250.38) .. (317.87,248.71) -- (319.04,248.71) -- (319.04,248.71) ;
+			%Shape: Circle [id:dp9089802190336387] 
+			\draw  [draw opacity=0][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ] (254.21,156.32) .. controls (254.21,153.98) and (256.11,152.08) .. (258.46,152.08) .. controls (260.8,152.08) and (262.7,153.98) .. (262.7,156.32) .. controls (262.7,158.67) and (260.8,160.56) .. (258.46,160.56) .. controls (256.11,160.56) and (254.21,158.67) .. (254.21,156.32) -- cycle ;
+			%Straight Lines [id:da24936660071672434] 
+			\draw    (349.34,35.15) -- (349.34,247.21) ;
+			%Curve Lines [id:da8058318016956436] 
+			\draw    (349.34,171.47) .. controls (367.72,155) and (399.53,207.63) .. (409.49,158.63) ;
+			\draw [shift={(409.93,156.32)}, rotate = 460.1] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+			%Curve Lines [id:da49003643399916896] 
+			\draw    (167.57,110.88) .. controls (157.18,133.48) and (109.45,82.53) .. (107.07,123.41) ;
+			\draw [shift={(106.99,126.03)}, rotate = 270.63] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+			%Shape: Circle [id:dp3785036171458238] 
+			\draw  [draw opacity=0][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (308.41,133.09) .. controls (308.41,130.75) and (310.31,128.85) .. (312.65,128.85) .. controls (314.99,128.85) and (316.89,130.75) .. (316.89,133.09) .. controls (316.89,135.43) and (314.99,137.33) .. (312.65,137.33) .. controls (310.31,137.33) and (308.41,135.43) .. (308.41,133.09) -- cycle ;
+			%Shape: Ellipse [id:dp907927094458276] 
+			\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ] (266.48,171.47) .. controls (266.48,167.54) and (269.67,164.35) .. (273.6,164.35) .. controls (277.53,164.35) and (280.72,167.54) .. (280.72,171.47) .. controls (280.72,175.4) and (277.53,178.59) .. (273.6,178.59) .. controls (269.67,178.59) and (266.48,175.4) .. (266.48,171.47) -- cycle ;
+			%Shape: Ellipse [id:dp1490934708323064] 
+			\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ] (303.95,207.92) .. controls (303.95,203.99) and (307.13,200.81) .. (311.07,200.81) .. controls (315,200.81) and (318.19,203.99) .. (318.19,207.92) .. controls (318.19,211.86) and (315,215.04) .. (311.07,215.04) .. controls (307.13,215.04) and (303.95,211.86) .. (303.95,207.92) -- cycle ;
+			%Shape: Ellipse [id:dp17002319067581517] 
+			\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ] (342.22,171.47) .. controls (342.22,167.54) and (345.41,164.35) .. (349.34,164.35) .. controls (353.27,164.35) and (356.46,167.54) .. (356.46,171.47) .. controls (356.46,175.4) and (353.27,178.59) .. (349.34,178.59) .. controls (345.41,178.59) and (342.22,175.4) .. (342.22,171.47) -- cycle ;
+			%Shape: Axis 2D [id:dp7964277435601204] 
+			\draw  (167.57,247.21) -- (461,247.21)(167.57,30) -- (167.57,247.21) -- cycle (454,242.21) -- (461,247.21) -- (454,252.21) (162.57,37) -- (167.57,30) -- (172.57,37)  ;
+			%Shape: Rectangle [id:dp047903719911538856] 
+			\draw  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ][dash pattern={on 1.69pt off 2.76pt}][line width=1.5]  (237.27,74.53) -- (286.75,124.05) -- (258.46,152.32) -- (208.98,102.81) -- cycle ;
+			%Shape: Rectangle [id:dp2346028587722877] 
+			\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][dash pattern={on 1.69pt off 2.76pt}][line width=1.5]  (312.65,133.09) -- (348.28,168.74) -- (311.07,205.92) -- (275.44,170.27) -- cycle ;
+			
+			% Text Node
+			\draw (157.03,251.5) node [anchor=north west][inner sep=0.75pt]    {$0$};
+			% Text Node
+			\draw (349.54,251.5) node [anchor=north west][inner sep=0.75pt]    {$L$};
+			% Text Node
+			\draw (360.71,48.19) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$x-t=0$};
+			% Text Node
+			\draw (84.43,47.69) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$x+t=L$};
+			% Text Node
+			\draw (61.74,210.97) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$c=1$};
+			% Text Node
+			\draw (243.55,199.07) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$( x,t)$};
+			% Text Node
+			\draw (299.01,252.5) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$x+t$};
+			% Text Node
+			\draw (192.99,252.5) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$x-t$};
+			% Text Node
+			\draw (231.49,148.37) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$A$};
+			% Text Node
+			\draw (385.35,139.55) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$u=b( t)$};
+			% Text Node
+			\draw (80.83,129.05) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$u=a( t)$};
+			% Text Node
+			\draw (321.13,118.54) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 126; green, 211; blue, 33 }  ,opacity=1 ]  {$B$};
+			
+			
+		\end{tikzpicture}
+	\end{figure}
+	\FloatBarrier
+
+
+	nel triangolo $\displaystyle ( 0,L,A) \ u$ è determinata dalla Formula di d'Alembert. Nel triangolo di destra costruisco il quadrilatero caratteristico verde: conosco il valore di $\displaystyle u$ nei punti cerchiati in verde e \eqref{eq:onde-uguaglianze-quadrilatero} mi permette di trovare anche il valore di $\displaystyle u( B)$. Posso fare lo stesso ragionamento per ogni punto del triangolo di destra e di sinistra. Per il triangolo sopra il procedimento è analogo, costruendo un quadrilatero come quello arancione.
+\end{enumerate}
+
+\textbf{Metodo di Duhamel per il problema non omogeneo.}
+\begin{equation}
+	\begin{cases}
+		u_{tt} -c^{2} u_{xx} =f & x\in \mathbb{R} ,t >0 \\
+		u( x,0) =g( x)          & x\in \mathbb{R}       \\
+		u_{t}( x,0) =h( x)      & x\in \mathbb{R}       
+	\end{cases}
+\end{equation}
+\begin{oss}
+	Ripassiamo il metodo di variazione delle costanti per il problema:
+	\begin{equation*}
+		\begin{cases}
+			y'( t) +ay( t) =f( t) & t >0 \\
+			y( 0) =0              &      
+		\end{cases} .
+	\end{equation*}
+	La formula risolutiva è data da:
+	\begin{equation*}
+		y( t) =\int _{0}^{t}\underbrace{e^{-a( t-s)} f( s)}_{w( t;s)} ds,
+	\end{equation*}
+	esaminiamo l'integranda, trattando $\displaystyle s$ come parametro $\displaystyle ( 0\leqslant s\leqslant t)$:
+	\begin{equation}
+		w( t;s) =e^{-a( t-s)} f( s) .
+		\label{eq:osservazione-duhamel}
+	\end{equation}
+	$\displaystyle w$ soddisfa il problema di Cauchy \textit{omogeneo} con dato iniziale il secondo membro dell'equazione \eqref{eq:osservazione-duhamel} calcolato in $\displaystyle t=s$ (e non $\displaystyle t=0$):
+	\begin{equation*}
+		\begin{cases}
+			w_{t} +aw=0    & t >s \\
+			w( s,s) =f( s) & t=s  
+		\end{cases}
+	\end{equation*}
+	allora possiamo risolvere prima il problema in $\displaystyle w$ e poi calcolare la soluzione
+	\begin{equation*}
+		y( t) =\int _{0}^{t} w( t;s) ds.
+	\end{equation*}
+\end{oss}
+Applichiamo il metodo di variazione delle costanti all'equazione delle onde: Sia: 
+\begin{equation*}
+	w=w( x,t;s) ,\ \ \ \ 0\leqslant s\leqslant t,
+\end{equation*}
+soluzione di:
+\begin{equation*}
+	\begin{cases}
+		w_{tt} -c^{2} w_{xx} =0 & x\in \mathbb{R} ,t >s \\
+		w( x,s;s) =0            &                       \\
+		w_{t}( x,s;s) =f( x,s)  & x\in R,t=s            
+	\end{cases}
+\end{equation*}
+Questo problema lo sappiamo risolvere quando $\displaystyle s=0$ ma l'equazione delle onde è invariante per traslazioni temporali; per la formula di d'Alembert (partendo da $\displaystyle s$ e non da $\displaystyle 0$):
+\begin{equation*}
+	w( x,t;s) =\frac{1}{2c}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dy,
+\end{equation*}
+allora:
+\begin{align*}
+	u( x,t) =\int _{0}^{t} w( x,t;s) ds & =\frac{1}{2c}\int _{0}^{z}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds \\
+	                                    & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) dyds                            
+\end{align*}
+dove ricordiamo che $\displaystyle S_{x,t}$ è il settore in figura .
+
+
+\textit{Lezione 18 Salsa (fatta da Verzini) (12/04/2021)}
+\section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geqslant 2$}{n>2}}
 
 Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione di $u=u(\mathbf{x} ,t)$. L'equazione delle onde prende la forma:
 \begin{equation}
@@ -6254,7 +6551,7 @@ Lavoriamo in coordinate sferiche:
 		\Delta _{\mathbb{S}^{n-1}} =\Delta _{\mathbb{S}^{2}} =\frac{1}{(\sin \psi )^{2}}\frac{\partial ^{2}}{\partial \vartheta ^{2}} +\frac{\partial ^{2}}{\partial \psi ^{2}} +\frac{\cos \psi }{\sin \psi }\frac{\partial }{\partial \psi } .
 	\end{equation}
 \end{nb}
-La cosa positiva è che stiamo studiando un tipo particolare di onde, quelle sferiche, dove $w$ dipende solo dal raggio dal tempo, non dagli angoli, per cui tutti quei termini si annullano.
+La cosa positiva è che stiamo studiando un tipo particolare di onde, quelle sferiche, dove $w$ dipende solo dal raggio e dal tempo, non dagli angoli, per cui tutti quei termini si annullano.
 
 L'equazione omogenea prende quindi la forma:
 \begin{equation}
@@ -6484,11 +6781,572 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 \textbf{Corollario.}
 
 Se $u\in C^{2}\left(\mathbb{R}^{n} \times [ 0,+\infty )\right)$ è soluzione di problema di Cauchy globale, allora:
-	\begin{enumerate}
-		\item se $g\equiv h\equiv 0$ sulla palla iniziale $B_{ct_{0}}(\mathbf{x}_{0})$ e $f\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$ allora $u\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$;
-		\item l'eventuale soluzione è unica.
-	\end{enumerate}
+\begin{enumerate}
+	\item se $g\equiv h\equiv 0$ sulla palla iniziale $B_{ct_{0}}(\mathbf{x}_{0})$ e $f\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$ allora $u\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$;
+	\item l'eventuale soluzione è unica.
+\end{enumerate}
+
+\textit{Lezione 19 (13/04/2021)}
+\section{Problema di Cauchy globale \texorpdfstring{$(n=2,\ n=3)$}{(n=2, n=3)}}
+
+Riprendiamo e risolviamo il Problema di Cauchy globale
+\begin{equation*}
+	\text{(PCG)} \ 
+	\begin{cases}
+		u_{tt} -c^{2} \Delta u=0            & \mathbf{x} \in \mathbb{R}^{3} ,t >0 \\
+		u(\mathbf{x} ,0) =g(\mathbf{x})     & \mathbf{x}\mathbb{\in R}^{3}        \\
+		u_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \mathbf{x}\mathbb{\in R}^{3}        
+	\end{cases}
+\end{equation*}
+sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ è unica, dobbiamo dimostrarne l'esistenza.
+\begin{oss}
+	In $\displaystyle n=1$ la formula di d'Alembert per lo stesso problema forniva la soluzione:
+	\begin{equation}
+		u( x,t) =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[g(x+ct)+g(x-ct)]} +\underbrace{\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) dy}_{w_{h}}
+		\label{eq:onde-pcg-oss-1d-dAlembert}
+	\end{equation}
+	ma $\displaystyle w_{h}$ soddisfa il (PCG) con profilo iniziale nullo e impulso iniziale $\displaystyle h$
+	\begin{gather*}
+		w_{h}( x,0) =0,\\
+		\partial _{t} w_{h}( x,0) =h( x) ,
+	\end{gather*}
+	calcolando
+	\begin{equation*}
+		\partial _{t} w_{h}( x,t) =\frac{1}{2c}[ h( x+ct) c+ch( x-ct)] =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[h(x+ct)+h(x-ct)]}
+	\end{equation*}
+	ottengo un'espressione identica al primo termine di \eqref{eq:onde-pcg-oss-1d-dAlembert}, con $\displaystyle h$ al posto di $\displaystyle g$.
 	
+	Allora posso riscrivere la formula di d'Alembert nel seguente modo
+	\begin{equation*}
+		u( x,t) =\partial _{t} w_{g}( x,t) +w_{h}( x,t)
+	\end{equation*}
+	questa struttura della soluzione vale in ogni dimensione.
+\end{oss}
+\begin{theorem}
+	[Lemma A] Se $\displaystyle w_{g}$ è sufficientemente regolare (qui ad esempio basta $\displaystyle C^{3}$) allora $\displaystyle v=\partial _{t} w_{g}$ è soluzione di:
+	\begin{equation*}
+		\begin{cases}
+			\partial _{tt} v-c^{2} \Delta v=0 & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
+			v(\mathbf{x} ,0) =g(\mathbf{x})   & \text{in} \ \mathbb{R}^{n}                      \\
+			v_{t}(\mathbf{x} ,0) =0           & \text{in} \ \mathbb{R}^{n}                      
+		\end{cases}
+	\end{equation*}
+	Di conseguenza, la soluzione di (PCG) è data da:
+	\begin{align*}
+		u & =v+w_{h}                      \\
+		  & =\partial _{t} w_{g} +w_{h} . 
+	\end{align*}
+	Questo vale in qualunque dimensione.
+	\label{thm:lemma-A}
+\end{theorem}
+\begin{dimostrazione}
+	Deriviamo l'equazione delle onde rispetto a $\displaystyle t$ ipotizzando $\displaystyle w_{g}$ sufficientemente regolare da giustificare gli scambi di derivate:
+	\begin{equation*}
+		0=\partial _{t}\left( \partial _{tt} w_{g} -c^{2} \Delta w_{g}\right) =\left( \partial _{tt} -c^{2} \Delta \right) \partial _{t} w_{g} =\left( \partial _{tt} -c^{2} \Delta \right) v,
+	\end{equation*}
+	quindi $\displaystyle v$ è soluzione dell'equazione delle onde. Verifichiamo i dati iniziali:
+	\begin{align*}
+		v(\mathbf{x} ,0)     & =\partial _{t} w_{g}(\mathbf{x} ,0) =g( x) ,                                \\
+		v_{t}(\mathbf{x} ,0) & =\partial _{tt} w_{g}(\mathbf{x} ,0) =c^{2} \Delta w_{g}(\mathbf{x} ,0) =0. 
+	\end{align*}
+\end{dimostrazione}
+Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo con $\displaystyle g=0$ e $\displaystyle h$ qualunque.
+\subsection{Caso \texorpdfstring{$n=3$}{n=3}}
+
+D'ora in poi omettiamo il pedice in $\displaystyle w_{h}$ per comodità.
+\begin{equation*}
+	\begin{cases}
+		w_{tt} -c^{2} \Delta w=0            & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
+		w(\mathbf{x} ,0) =0                 & \text{in} \ \mathbb{R}^{3}                      \\
+		w_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \text{in} \ \mathbb{R}^{3}                      
+	\end{cases}
+\end{equation*}
+La strategia risolutiva si compone di due passi:
+\begin{enumerate}
+	\item Risolvo nel caso particolare:
+		\begin{equation*}
+			h(\mathbf{x}) =\delta _{3}(\mathbf{x})
+		\end{equation*}
+	\item Risolvo nel caso generale con:
+		\begin{equation*}
+			h(\mathbf{x}) =\int _{\mathbb{R}^{3}} \delta _{3}(\mathbf{x} -\mathbf{y}) h(\mathbf{y}) d\mathbf{y}
+		\end{equation*}
+\end{enumerate}
+
+
+
+\textbf{Passo 1}.
+
+Caso $\displaystyle h(\mathbf{x}) =\delta _{3}(\mathbf{x})$. La soluzione corrispondente che costruiamo si chiama \textbf{soluzione fondamentale dell'equazione delle onde} in $\displaystyle n=3$. Per risolvere cerchiamo di approssimare prima la delta con un'altra funzione: dall'equazione del calore sappiamo che, con $\displaystyle D=1,t=\varepsilon $ la soluzione fondamentale in $\displaystyle n=3$ è:
+\begin{equation*}
+	\Gamma (\mathbf{x} ,\varepsilon ) =\frac{1}{( 4\pi \varepsilon )^{3/2}}\exp\left\{-\frac{| \mathbf{x}| ^{2}}{4\varepsilon }\right\}\xrightarrow{\varepsilon \rightarrow 0^{+}} \delta _{3}(\mathbf{x}) .
+\end{equation*}
+Sia $\displaystyle w_{\varepsilon }(\mathbf{x} ,t)$ la soluzione di
+\begin{equation*}
+	( P_{\varepsilon }) \ 
+	\begin{cases}
+		\partial _{tt} w_{\varepsilon } -c^{2} \Delta w_{\varepsilon } =0                & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
+		w_{\varepsilon }(\mathbf{x} ,0) =0                                               & \text{in} \ \mathbb{R}^{3}                      \\
+		\partial _{t} w_{\varepsilon }(\mathbf{x} ,0) =\Gamma (\mathbf{x} ,\varepsilon ) & \text{in} \ \mathbb{R}^{3}                      
+	\end{cases}
+\end{equation*}
+Notiamo che $\displaystyle P_{\varepsilon }$ ha soluzione unica e che $\displaystyle \Gamma $ è a \textbf{simmetria radiale} (invariante per rotazioni in $\displaystyle \mathbb{R}^{3}$). Per l'unicità della soluzione possiamo scrivere:
+\begin{equation*}
+	w_{\varepsilon }(\mathbf{x} ,t) =w_{\varepsilon }( r,t) ,\ \ r=| \mathbf{x}| 
+\end{equation*}
+quindi la soluzione è un'onda sferica. Ma abbiamo visto che le onde sferiche in tre dimensioni hanno una forma particolare, data dalla \textbf{formula di Laplace, }sovrapposizione di due onde progressive (una che si allontana dall'origine e una che vi si avvicina) smorzate dal fattore $\displaystyle 1/r$. La forma generale della $\displaystyle w_{\varepsilon }$ è:
+\begin{equation*}
+	w_{\varepsilon }( r,t) =\frac{F( r-ct)}{r} +\frac{G( r+ct)}{r}
+\end{equation*}
+Non ci resta che imporre i dati iniziali per determinare $\displaystyle F$ e $\displaystyle G$. Cominciamo imponendo il dato a $\displaystyle t=0$:
+\begin{equation*}
+	w_{\varepsilon }( r,0) =0\ \ \Rightarrow \ \ F( r) +G( r) =0\ \ \Rightarrow \ \ G=-F,
+\end{equation*}
+calcoliamo la derivata nel tempo:
+\begin{equation*}
+	\partial _{t} w_{\varepsilon }( x,t) =\frac{1}{r}\{-cF'( r-ct) -cF'( r+ct)\} ,
+\end{equation*}
+e imponiamola in $\displaystyle t=0$:
+\begin{equation*}
+	\partial _{t} w_{\varepsilon }( r,0) =-\frac{2c}{r} F'( r) =\Gamma ( r,\varepsilon ) =\frac{1}{( 4\pi \varepsilon )^{3/2}}\exp\left\{-\frac{r^{2}}{4\varepsilon }\right\} ,
+\end{equation*}
+allora:
+\begin{equation*}
+	F'( r) =-\frac{r}{2c} \Gamma ( x,\varepsilon ) ,
+\end{equation*}
+quest'equazione ci darà $\displaystyle F$ a meno di una costante additiva. Tuttavia, essendo $\displaystyle G=-F$, la costante si eliderà in ogni caso alla fine.
+\begin{align*}
+	F( r) & =\int _{0}^{r} -\frac{s}{2c( 4\pi \varepsilon )^{3/2}} e^{-\frac{s^{2}}{4\varepsilon }} ds      \\
+	      & =\frac{1}{4\pi c\sqrt{4\pi \varepsilon }}\left[ e^{-\frac{s^{2}}{4\varepsilon }}\right]_{0}^{r} \\
+	      & =\frac{1}{4\pi c\sqrt{4\pi \varepsilon }}\left[ e^{-\frac{r^{2}}{4\varepsilon }} -1\right] .    
+\end{align*}
+Concludendo:
+\begin{equation*}
+	w_{\varepsilon }( r,t) =\frac{1}{4\pi cr}\left\{\textcolor[rgb]{0.25,0.46,0.02}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r-ct)^{2}}{4t}}} -\textcolor[rgb]{0.96,0.65,0.14}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r+ct)^{2}}{4t}}}\right\} ,
+\end{equation*}
+ora facendo limite per $\displaystyle \varepsilon \rightarrow 0^{+}$:
+\begin{align*}
+	\textcolor[rgb]{0.96,0.65,0.14}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r+ct)^{2}}{4t}}} & \rightarrow 0                                            \\
+	\textcolor[rgb]{0.25,0.46,0.02}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r-ct)^{2}}{4t}}} & \ \text{è la soluzione fondamentale del calore in}\ n=1 
+\end{align*}
+quindi\footnote{Prestare attenzione al fatto che la delta ora è unidimensionale.}
+\begin{equation*}
+	w_{\varepsilon }( r,t)\rightarrow \frac{\delta ( r-ct)}{4\pi cr} ,\ \ \delta _{1} =\delta 
+\end{equation*}
+Se $\displaystyle h(\mathbf{x}) =\delta _{3}(\mathbf{x} -\mathbf{y})$ allora $\displaystyle r=| \mathbf{x} -\mathbf{y}| $ e la \textbf{soluzione fondamentale} diventa:
+\begin{equation}
+	\boxed{K(\mathbf{x} ,\mathbf{y} ,t) =\frac{\delta (| \mathbf{x} -\mathbf{y}| -ct)}{4\pi c| \mathbf{x} -\mathbf{y}| }}
+\end{equation}
+\begin{oss}
+	Il supporto di K per ogni $\displaystyle t$ è:
+	\begin{equation}
+		\partial B_{ct}( x) =\{\mathbf{y} :| \mathbf{x} -\mathbf{y}| =ct\} ,
+	\end{equation}
+
+
+	\begin{figure}[H]
+		\centering
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+	%Shape: Circle [id:dp6520792810586213] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (183,146.5) .. controls (183,100.38) and (220.38,63) .. (266.5,63) .. controls (312.62,63) and (350,100.38) .. (350,146.5) .. controls (350,192.62) and (312.62,230) .. (266.5,230) .. controls (220.38,230) and (183,192.62) .. (183,146.5) -- cycle ;
+	%Shape: Circle [id:dp34345788505227715] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (158,146.5) .. controls (158,86.58) and (206.58,38) .. (266.5,38) .. controls (326.42,38) and (375,86.58) .. (375,146.5) .. controls (375,206.42) and (326.42,255) .. (266.5,255) .. controls (206.58,255) and (158,206.42) .. (158,146.5) -- cycle ;
+	%Shape: Ellipse [id:dp7365209966284754] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (183,146.5) .. controls (183,131.73) and (220.38,119.75) .. (266.5,119.75) .. controls (312.62,119.75) and (350,131.73) .. (350,146.5) .. controls (350,161.27) and (312.62,173.25) .. (266.5,173.25) .. controls (220.38,173.25) and (183,161.27) .. (183,146.5) -- cycle ;
+	%Shape: Ellipse [id:dp23486566213784] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (221.5,146.5) .. controls (221.5,100.38) and (241.65,63) .. (266.5,63) .. controls (291.35,63) and (311.5,100.38) .. (311.5,146.5) .. controls (311.5,192.62) and (291.35,230) .. (266.5,230) .. controls (241.65,230) and (221.5,192.62) .. (221.5,146.5) -- cycle ;
+	%Shape: Circle [id:dp08397572926324726] 
+	\draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (133,146.5) .. controls (133,72.77) and (192.77,13) .. (266.5,13) .. controls (340.23,13) and (400,72.77) .. (400,146.5) .. controls (400,220.23) and (340.23,280) .. (266.5,280) .. controls (192.77,280) and (133,220.23) .. (133,146.5) -- cycle ;
+	%Shape: Circle [id:dp22518247813281644] 
+	\draw  [draw opacity=0][fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ] (260,145) .. controls (260,142.24) and (262.24,140) .. (265,140) .. controls (267.76,140) and (270,142.24) .. (270,145) .. controls (270,147.76) and (267.76,150) .. (265,150) .. controls (262.24,150) and (260,147.76) .. (260,145) -- cycle ;
+	%Straight Lines [id:da8650347097728406] 
+	\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (265,145) -- (400,146.5) ;
+
+	% Text Node
+	\draw (267,148.4) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{x}}$};
+	% Text Node
+	\draw (240,257.4) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\mathbf{x})$};
+	% Text Node
+	\draw (410,132.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$t=\frac{| \mathbf{x} -\mathbf{y}| }{c}$};
+
+
+	\end{tikzpicture}
+	\end{figure}
+	\FloatBarrier
+
+	al variare del tempo ho delle onde sferiche con supporto sul bordo della palla di centro $\displaystyle \mathbf{x}$ e raggio $\displaystyle ct$: un osservatore posto in $\displaystyle \mathbf{y}$ avvertirà la perturbazione solo all'istante:
+	\begin{equation*}
+		t=\frac{| \mathbf{x} -\mathbf{y}| }{c} ,
+	\end{equation*}
+	quindi:
+	\begin{equation}
+		\bigcup _{t >0} \partial B_{ct}(\mathbf{x}) =\partial C_{(\mathbf{x} ,0)}^{*}
+	\end{equation}
+	prende il nome di \textbf{cono caratteristico in avanti}, è il dominio di influenza del punto $\displaystyle \mathbf{x}$. Una conseguenza di quest'osservazione è che in dimensione $\displaystyle n=3$ esistono i \textbf{segnali sharp} (istantanei).
+\end{oss}
+
+
+\textbf{Passo 2}.
+
+Sia $\displaystyle h=h(\mathbf{x})$ qualunque. Scriviamo $\displaystyle h$ come sovrapposizione di impulsi:
+\begin{equation*}
+	h(\mathbf{x}) =\int _{\mathbb{R}^{3}} \delta _{3}(\mathbf{x} -\mathbf{y}) h(\mathbf{y}) d\mathbf{y} ,
+\end{equation*}
+o più formalmente:
+\begin{equation*}
+	\langle \delta _{3}(\mathbf{x} -\mathbf{\cdotp }) ,h\rangle =h(\mathbf{x}) .
+\end{equation*}
+Per il \textbf{Passo }$\displaystyle 1$ a $\displaystyle \delta _{3}(\mathbf{x} -\mathbf{y})$ corrisponde la soluzione:
+\begin{equation*}
+	K(\mathbf{x} ,\mathbf{y} ,t) =\frac{\delta (| \mathbf{x} -\mathbf{y}| -ct)}{4\pi c| \mathbf{x} -\mathbf{y}| } .
+\end{equation*}
+Se non uso un impulso unitario ma un impulso di intensità $\displaystyle h(\mathbf{y})$ la soluzione diventa:
+\begin{equation*}
+	K(\mathbf{x} ,\mathbf{y} ,t) h(\mathbf{y}) .
+\end{equation*}
+Se uso $\displaystyle h$ espressa come somma di tutti gli impulsi mi basta fare l'integrale:
+\begin{equation*}
+	w_{h}(\mathbf{x} ,t) =\int _{\mathbb{R}^{3}} K(\mathbf{x} ,\mathbf{y} ,t) h(\mathbf{y}) d\mathbf{y} =\int _{\mathbb{R}^{3}}\frac{\delta (| \mathbf{x} -\mathbf{y}| -ct)}{4\pi c| \mathbf{x} -\mathbf{y}| } h(\mathbf{y}) d\mathbf{y} =( *)
+\end{equation*}
+passando in \textbf{coordinate polari} $\displaystyle (| \mathbf{x} -\mathbf{y}| =r)$ e usando una sorta di teorema di Fubini in coordinate polari:
+\begin{equation*}
+	( *) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma } =( **)
+\end{equation*}
+\begin{oss}
+	Ricordiamo che, per definizione della delta:
+	\begin{equation}
+		\int _{0}^{+\infty } \delta ( r-ct) f( r) dr=f( ct) .
+		\label{eq:onde-osservazione-delta}
+	\end{equation}
+\end{oss}
+Nel nostro caso possiamo scrivere:
+\begin{equation*}
+	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma }\right]}_{f( r)} dr,
+\end{equation*}
+applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\displaystyle \mint{-} $ indica il valor medio sulla superficie della sfera.}:
+\begin{equation*}
+	w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma } =t\underset{\partial B_{ct}(\mathbf{x})}{\mint{-} } h(\bm{\sigma }) d\bm{\sigma } .
+\end{equation*}
+\begin{theorem}
+	[Formula di Kirchoff] Siano $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$, $\displaystyle h\in C^{2}\left(\mathbb{R}^{3}\right)$. Allora:
+	\begin{equation}
+		u(\mathbf{x} ,t) =\frac{\partial }{\partial t}\left[\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} g(\bm{\sigma }) d\bm{\sigma }\right] +\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma }
+	\end{equation}
+	è l'unica soluzione $\displaystyle u\in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ del (PCG).
+\end{theorem}
+\begin{dimostrazione}
+	Poiché $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$ la funzione
+	\begin{equation*}
+		w_{g}(\mathbf{x} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} g(\bm{\sigma }) d\bm{\sigma }
+	\end{equation*}
+	soddisfa le ipotesi del Lemma A \ref{thm:lemma-A} e quindi è sufficiente controllare che
+	\begin{equation*}
+		w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma }
+	\end{equation*}
+	soddisfa l'equazione delle onde e le condizioni iniziali e al bordo
+	\begin{gather*}
+		w_{h}(\mathbf{x} ,0) =0,\\
+		\partial _{t} w_{h}(\mathbf{x} ,0) =h(\mathbf{x}) .
+	\end{gather*}
+	Notiamo che $\displaystyle h\in C^{2}\left(\mathbb{R}^{3}\right) \Rightarrow w_{h} \in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$.
+
+	Effettuando il cambio di variabili
+	\begin{equation*}
+		\bm{\sigma } =\mathbf{x} +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\mathbf{0}) ,\ \ d\bm{\sigma } =c^{2} t^{2} d\mathbf{w}
+	\end{equation*}
+	possiamo scrivere
+	\begin{equation*}
+		w_{h}(\mathbf{x} ,t) =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\mathbf{x} +ct\mathbf{w}) d\mathbf{w} .
+	\end{equation*}
+	Cominciamo coi dati iniziali
+	\begin{align*}
+		w_{h}(\mathbf{x} ,0)               & =0,                                                                                                                                                                                                                                              \\
+		\partial _{t} w_{h}(\mathbf{x} ,t) & =\frac{1}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\mathbf{x} +ct\mathbf{w}) d\mathbf{w} +\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x} +ct\mathbf{w})\cdotp \mathbf{w} d\mathbf{w} ,} \\
+		\partial _{t} w_{h}(\mathbf{x} ,0) & =h(\mathbf{x}) .                                                                                                                                                                                                                                 
+	\end{align*}
+	Per quanto riguarda l'equazione osserviamo che:
+	\begin{align*}
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x}+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \partial _{\bm{\nu }} h(\bm{\sigma })\bm{\sigma } & \text{(divergenza)}    \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}                  & \text{(Gauss)}         \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
+	\end{align*}
+	quindi:
+	\begin{equation*}
+		\partial _{tt} w_{h}(\mathbf{x} ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\mathbf{x} +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } ,
+	\end{equation*}
+	i primi due termini sono uguali (si vede svolgendo i passaggi di prima per tornare indietro), pertanto:
+	\begin{equation*}
+		\partial _{tt} w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } .
+	\end{equation*}
+	Calcoliamo il laplaciamo:
+	\begin{align*}
+		\Delta w_{h}(\mathbf{x} ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \Delta h(\mathbf{x} +ct\mathbf{w}) d\mathbf{w} \\
+		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } , 
+	\end{align*}
+	ma allora:
+	\begin{equation*}
+		\partial _{tt} w_{h} -c^{2} \Delta w_{h} =0.
+	\end{equation*}
+\end{dimostrazione}
+\begin{oss}
+	[In $\displaystyle \mathbb{R}^{3}$] Supponiamo di essere in $\displaystyle \mathbf{x}$ e interpretiamo $\displaystyle u(\mathbf{x} ,t)$ come perturbazione avvertita in $\displaystyle \mathbf{x}$ al tempo $\displaystyle t$:
+
+
+	\begin{figure}[H]
+		\centering
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,373); %set diagram left start at 0, and has height of 373
+
+	%Shape: Polygon Curved [id:ds54562981881079] 
+	\draw   (146.5,137) .. controls (166.5,127) and (199.5,120.5) .. (236.5,137) .. controls (273.5,153.5) and (287.5,207.5) .. (236.5,197) .. controls (185.5,186.5) and (183.5,180.5) .. (146.5,197) .. controls (109.5,213.5) and (126.5,147) .. (146.5,137) -- cycle ;
+	%Shape: Circle [id:dp07642569052374215] 
+	\draw  [draw opacity=0][fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ] (330.17,160.25) .. controls (330.17,158.46) and (331.62,157) .. (333.42,157) .. controls (335.21,157) and (336.67,158.46) .. (336.67,160.25) .. controls (336.67,162.04) and (335.21,163.5) .. (333.42,163.5) .. controls (331.62,163.5) and (330.17,162.04) .. (330.17,160.25) -- cycle ;
+	%Shape: Circle [id:dp6347669466866901] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (267.38,157) .. controls (267.38,120.53) and (296.94,90.96) .. (333.42,90.96) .. controls (369.89,90.96) and (399.46,120.53) .. (399.46,157) .. controls (399.46,193.47) and (369.89,223.04) .. (333.42,223.04) .. controls (296.94,223.04) and (267.38,193.47) .. (267.38,157) -- cycle ;
+	%Shape: Circle [id:dp412768595425119] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (310.27,160.25) .. controls (310.27,147.47) and (320.63,137.1) .. (333.42,137.1) .. controls (346.2,137.1) and (356.56,147.47) .. (356.56,160.25) .. controls (356.56,173.03) and (346.2,183.4) .. (333.42,183.4) .. controls (320.63,183.4) and (310.27,173.03) .. (310.27,160.25) -- cycle ;
+	%Shape: Circle [id:dp4930495096553891] 
+	\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (124.88,182.31) .. controls (124.88,87.65) and (201.61,10.92) .. (296.27,10.92) .. controls (390.93,10.92) and (467.67,87.65) .. (467.67,182.31) .. controls (467.67,276.97) and (390.93,353.71) .. (296.27,353.71) .. controls (201.61,353.71) and (124.88,276.97) .. (124.88,182.31) -- cycle ;
+
+	% Text Node
+	\draw (135.5,157.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\text{supporto dei dati} \ g,h$};
+	% Text Node
+	\draw (336.17,143.9) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\mathbf{x}$};
+	% Text Node
+	\draw (259.17,223.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\mathbf{x})_{\min}$};
+	% Text Node
+	\draw (137.67,231.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\mathbf{x})_{\max}$};
+	% Text Node
+	\draw (161.17,200.9) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$t_{\min} < t< t_{\max}$};
+
+
+	\end{tikzpicture}
+	\end{figure}
+	\FloatBarrier
+
+	La formula di Kirchoff ci dice che la perturbazione dipende dai valori di $\displaystyle g$ ed $\displaystyle h$ su $\displaystyle \partial B_{ct}(\mathbf{x})$.
+
+	Se $\displaystyle t$ è piccolo non avverto nulla, il tempo minimo per cui avvertirò la perturbazione sarà nell'istante $\displaystyle t_{\min}$ quando il bordo della sfera interseca per la prima volta il supporto, fino all'istante $\displaystyle t_{\max}$ oltre al quale non avvertirò più nulla. Questo fenomeno prende il nome di \textbf{principio di Huygens forte }(esistenza di segnali Sharp).
+\end{oss}
+
+\subsection{Caso \texorpdfstring{$n=2$}{n=2}}
+
+Risolviamo il problema di Cauchy globale in dimensione $\displaystyle n=2$:
+\begin{equation*}
+	( PCG_{2}) \ 
+	\begin{cases}
+		u_{tt} -c^{2} \Delta u=0            & \mathbf{x} \in \mathbb{R}^{2} ,\ t >0,\ \mathbf{x} = 
+		\begin{pmatrix}
+		x_{1}\\
+		x_{2}
+		\end{pmatrix}\\
+		u(\mathbf{x} ,0) =0                 & \mathbf{x}\mathbb{\in R}^{2}                         \\
+		u_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \mathbf{x}\mathbb{\in R}^{2}                         
+	\end{cases}
+\end{equation*}
+utilizzando il metodo della \textbf{discesa di Hadamard}: considero $\displaystyle ( PCG_{2})$ come un problema in dimensione $\displaystyle 3$:
+\begin{equation}
+	(\mathbf{x} ,x_{3}) \in \mathbb{R}^{3} ,\ h(\mathbf{x} ,x_{3}) =h(\mathbf{x})
+\end{equation}
+Cerco $\displaystyle w=w(\mathbf{x} ,x_{3})$ soluzione di
+\begin{equation*}
+	\begin{cases}
+		w_{tt} -c^{2} \Delta _{3} w(\mathbf{x} ,x_{3}) =0 & \text{in} \ \mathbb{R}^{3} ,\ t >0 \\
+		w(\mathbf{x} ,x_{3} ,0) =0                        &                                    \\
+		w_{t}(\mathbf{x} ,x_{3} ,0) =h(\mathbf{x})        &                                    
+	\end{cases}
+\end{equation*}
+questo problema lo so risolvere grazie alla formula di Kirchoff
+\begin{equation*}
+	w(\mathbf{x} ,x_{3} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x} ,x_{3})} h(\bm{\sigma }) d\bm{\sigma } d\sigma _{3} ,\ \ \bm{\sigma } =( \sigma _{1} ,\sigma _{2})
+\end{equation*}
+devo far vedere che in realtà $\displaystyle w(\mathbf{x} ,x_{3}) =w(\mathbf{x})$, cioè che non c'è reale dipendenza da $\displaystyle x_{3}$.
+
+Osservo che la superficie sferica $\displaystyle \partial B_{ct}(\mathbf{x} ,x_{3})$ è unione dei due emisferi di equazione:
+\begin{equation*}
+	y_{3} =F_{\pm }(\mathbf{y}) =x_{3} \pm \sqrt{c^{2} t^{2} -r^{2}}
+\end{equation*}
+dove
+\begin{equation*}
+	r^{2} =| \mathbf{x} -\mathbf{y}| ^{2} =( x_{1} -y_{1})^{2} +( x_{2} -y_{2})^{2} .
+\end{equation*}
+Su entrambi gli emisferi $\displaystyle ( d\mathbf{y} =dy_{1} dy_{2})$
+\begin{equation*}
+	d\bm{\sigma } =\sqrt{1+| \nabla F_{\pm }(\mathbf{y})| ^{2}} d\mathbf{y} =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} d\mathbf{y} =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} d\mathbf{y}
+\end{equation*}
+quindi
+\begin{equation*}
+	w\left(\mathbf{x} ,\cancel{x_{3}} ,t\right) =\frac{1}{2\pi c}\int _{B_{ct}(\mathbf{x})}\frac{h(\mathbf{y})}{\sqrt{c^{2} t^{2} -| \mathbf{x} -\mathbf{y}| ^{2}}} d\mathbf{y}
+\end{equation*}
+non dipende da $\displaystyle x_{3}$! Allora usando ancora una volta il Lemma A \ref{thm:lemma-A} otteniamo il seguente teorema.
+\begin{theorem}
+	[Formula di Poisson] Siano $\displaystyle g\in C^{3}\left(\mathbb{R}^{2}\right)$ e $\displaystyle h\in C^{2}\left(\mathbb{R}^{2}\right)$. Allora:
+	\begin{equation}
+		u(\mathbf{x} ,t) =\frac{1}{2\pi c}\left\{\frac{\partial }{\partial t}\int _{B_{ct}(\mathbf{x})}\frac{g(\mathbf{y})}{\sqrt{c^{2} t^{2} -| \mathbf{x} -\mathbf{y}| ^{2}}} d\mathbf{y} +\ \int _{B_{ct}(\mathbf{x})}\frac{h(\mathbf{y})}{\sqrt{c^{2} t^{2} -| \mathbf{x} -\mathbf{y}| ^{2}}} d\mathbf{y}\right\}
+	\end{equation}
+	è l'unica soluzione $\displaystyle \in C^{2}\left(\mathbb{R}^{2} \times [ 0,+\infty )\right)$ del $\displaystyle PGC_{2}$.
+\end{theorem}
+Una differenza fondamentale è che gli integrali sono su tutta la sfera piena, non solo sulla superficie come in tre dimensioni: dopo $\displaystyle t_{\max}$ continuo a percepire la perturbazione. Di conseguenza \textit{il principio di Huygens forte non vale in dimensione }$\displaystyle 2$ e non esistono segnali \textit{istantanei}.
+
+Il fenomeno si può osservare ponendo un turacciolo in acqua calma e lasciando cadere un sasso poco distante. Il tappo rimane in quiete fino all'arrivo del primo fronte d'onda ma persiste nell'oscillazione anche dopo che questo è passato.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6864,7 +7722,7 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 \begin{equation*}
 \Vert P_{V} x-x\Vert =\inf_{v\in V}\Vert v-x\Vert 
 \end{equation*}
-\textit{Lezione 2 (04/03/2021)}
+\textit{Lezione Verzini 2 (04/03/2021)}
 
 \textbf{Inoltre:}
 \begin{enumerate}
@@ -7122,7 +7980,7 @@ per Cauchy-Schwartz. Quindi $\displaystyle L$ è lineare e continuo (limitato) a
 \end{equation*}
 Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle \Vert L\Vert _{*} \geqslant \Vert u\Vert $ allora $\displaystyle \Vert L\Vert _{*} =\Vert u\Vert $. Il teorema che vedremo ora ci confermerà che questo non è solo un esempio, ma l'unico caso possibile.
 
-\textit{Lezione 3 (18/03/2021)}
+\textit{Lezione Verzini 3 (18/03/2021)}
 \begin{theorem}
 [di rappresentazione di Riesz] Sia $H$ uno spazio di Hilbert, allora $\forall L\in H^{*}$ esiste un unico vettore $u\in H$ tale che
 \begin{equation*}
@@ -7474,7 +8332,7 @@ Ma ciò è assurdo, è quindi negata la supposizione iniziale e $R(A) =H$.
 \end{dimostrazione}
 
 \chapter{Distribuzioni e spazi di Sobolev}
-\textit{Lezione 4 (25/03/21)}
+\textit{Lezione Verzini 4 (25/03/21)}
 \section{Richiami su funzioni test e distribuzioni}
 
 Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$, $\displaystyle n\geqslant 1$. 
@@ -7768,8 +8626,7 @@ Riassumendo\footnote{il simbolo $\displaystyle \delta _{3}$ non indica la Delta 
 \end{gather*}
 La derivata classica e debole non coincidono.
 
-\chapter{Spazi di Sobolev}
-\textit{Lezione 5 Verzini (01/04/2021)}
+\textit{Lezione Verzini 5 (01/04/2021)}
 
 Lavoreremo con uno specifico spazio di Sobolev sono ``spazi di funzioni $L^{p}$ aventi derivate $L^{p}$''. Lavoreremo con due spazi di Sobolev, il primo sarà $H^{1}$ e il secondo $H^{1}_{0} \subseteq H^{1}$.
 
@@ -8014,15 +8871,15 @@ In realtà abbiamo dimostrato anche la seconda parte
 \end{dimostrazione}
 Definiamo il secondo spazio di Sobolev: un sottospazio di funzioni \textit{nulle al bordo.}
 \begin{definition}
-	La chiusura di $\mathcal{D}( \Omega )$ rispetto alla norma $H^{1}$
-	\begin{align*}
-		H^{1}_{0}( \Omega ) & =\overline{\mathcal{D}( \Omega )}^{\Vert \cdotp \Vert _{H^{1}( \Omega )}}                                                                                                                                                                                                                             \\
-		                    & =\bigg\{u\in H^{1}( \Omega ) :\exists ( \varphi _{k})_{k} \subset \mathcal{D}( \Omega ) \ \text{t.c.} \ \underbrace{\varphi _{k}\rightarrow u\ \text{in} \ L^{2} ,\ \nabla \varphi _{k}\rightarrow \nabla u\ \text{in} \ L^{2}}_{\text{cioè} \ \varphi _{k}\rightarrow u\ \text{in} \ H^{1}}\bigg\} 
-	\end{align*}
+	La chiusura di $\mathcal{D}( \Omega )$ rispetto alla norma $H^{1}$ prende il nome di spazio $H^{1}_{0}$:
+	\begin{equation*}
+		H^{1}_{0}( \Omega )  =\overline{\mathcal{D}( \Omega )}^{\Vert \cdotp \Vert _{H^{1}( \Omega )}}                                                                                                                                                                                                                             
+		                     =\bigg\{u\in H^{1}( \Omega ) :\exists ( \varphi _{k})_{k} \subset \mathcal{D}( \Omega ) \ \text{t.c.} \ \underbrace{\varphi _{k}\rightarrow u\ \text{in} \ L^{2} ,\ \nabla \varphi _{k}\rightarrow \nabla u\ \text{in} \ L^{2}}_{\text{cioè} \ \varphi _{k}\rightarrow u\ \text{in} \ H^{1}}\bigg\} 
+	\end{equation*}
 \end{definition}
 Commento per capire questo oggetto
 \begin{equation*}
-	\overline{\mathcal{D}( \Omega )}^{\Vert \cdotp \Vert _{L^{2}( \Omega )}} =?=L^{2}( \Omega )
+	\overline{\mathcal{D}( \Omega )}^{\Vert \cdotp \Vert _{L^{2}( \Omega )}} =L^{2}( \Omega )
 \end{equation*}
 questo equivale a dire che $\mathcal{D}( \Omega )$ è denso in $L^{2}( \Omega )$. L'idea della dimostrazione di questa roba è la seguente. Ci sono due parti. Una parte è che posso approssimare le funzioni di $L^{2}$ con funzioni $C^{\infty }$ (questa è la parte facile). Per quanto brutta sia una funzione, discontinua o anche peggio, se invece che lei prendiamo delle \textit{medie} di lei in delle palle molto piccole, sostanzialmente la media varia in modo più regolare.
 
@@ -8087,6 +8944,337 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	Un'immediata conseguenza è che l'unica costante che può appartenere ad $H^{1}_{0}$ è la costante nulla, ulteriore indice che \textit{ci stanno le cose che si annullano al bordo.}
 \end{oss}
 
+\textit{Lezione Verzini 6 (08/04/2021)}
+\begin{oss}
+	$\displaystyle u( x) \equiv c$ costante allora $\displaystyle u\in H^{1}( \Omega )$, $\displaystyle ( |\Omega |< +\infty )$ ma
+	\begin{equation*}
+		u\in H_{0}^{1}( \Omega ) \ \ \Leftrightarrow \ \ c=0
+	\end{equation*}
+\end{oss}
+\begin{dimostrazione}
+	Si svolge in due passi. Sfruttiamo il fatto che $\displaystyle \mathcal{D}( \Omega )$ è denso in $\displaystyle H_{0}^{1}( \Omega )$:
+	\begin{enumerate}
+		\item dimostro la Disuguaglianza di Poincaré (DP) in $\displaystyle \mathcal{D}( \Omega )$,
+		\item per approssimazione estendo ad $\displaystyle H_{0}^{1}( \Omega )$.
+	\end{enumerate}
+	
+	\textbf{Passo 1.}
+	
+	Fisso una funzione test $\displaystyle \varphi \in \mathcal{D}( \Omega )$ e costruisco un apposito campo vettoriale $\displaystyle \mathbf{F}(\mathbf{x}) =\varphi ^{2}(\mathbf{x})\mathbf{x}$ su cui applicare il teorema della divergenza
+	\begin{equation*}
+		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\mathbf{x} =\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu } \ d\sigma 
+	\end{equation*}
+	Per applicare il teorema della divergenza devo controllare due cose:
+	\begin{enumerate}
+		\item Il campo deve essere di classe $\displaystyle C^{1}$ fino al bordo: in questo caso $\displaystyle \varphi $ è $\displaystyle C^{\infty }$ fino al bordo quindi non ho problemi.
+		\item Il bordo del dominio deve essere sufficientemente regolare, ad esempio Lipschitziano (in modo tale che la normale sia definita quasi ovunque). Non ho alcuna ipotesi però sul dominio $\displaystyle \Omega $ nel teorema: so solo che $\displaystyle \varphi $ è a supporto compatto, eventualmente molto brutto, contenuto in $\displaystyle \Omega $ \textit{limitato}, allora esiste una palla (centrata nell'origine, ma non importa) che contiene $\displaystyle \Omega $
+		      \begin{equation*}
+		      	B_{M}(\mathbf{0}) \supset \Omega 
+		      \end{equation*}
+		      
+		      \begin{figure}[H]
+		      	\centering
+		      	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+		      	
+		      	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		      		%uncomment if require: \path (0,206); %set diagram left start at 0, and has height of 206
+		      		
+		      		%Shape: Ellipse [id:dp028463181051103792] 
+		      		\draw   (114.2,103.68) .. controls (114.2,53.6) and (154.8,13) .. (204.88,13) .. controls (254.97,13) and (295.57,53.6) .. (295.57,103.68) .. controls (295.57,153.77) and (254.97,194.37) .. (204.88,194.37) .. controls (154.8,194.37) and (114.2,153.77) .. (114.2,103.68) -- cycle ;
+		      		%Shape: Polygon Curved [id:ds6991047652266367] 
+		      		\draw   (136.62,61.43) .. controls (149,32.34) and (151.59,55.66) .. (207.86,62.19) .. controls (264.13,68.73) and (248.57,88.03) .. (271.52,100.09) .. controls (294.47,112.14) and (221.5,78.87) .. (227.56,95.54) .. controls (233.63,112.21) and (229.08,119.79) .. (247.27,128.88) .. controls (265.46,137.98) and (191.44,118.4) .. (221.75,163.87) .. controls (252.07,209.34) and (200.28,160.71) .. (169.97,115.24) .. controls (139.65,69.77) and (124.24,90.53) .. (136.62,61.43) -- cycle ;
+		      		%Shape: Polygon Curved [id:ds5733783657314724] 
+		      		\draw  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ][dash pattern={on 5.63pt off 4.5pt}][line width=1.5]  (151.33,76.44) .. controls (133.97,45.72) and (227.01,79.22) .. (215.66,105.26) .. controls (204.3,131.31) and (168.69,107.15) .. (151.33,76.44) -- cycle ;
+		      		
+		      		% Text Node
+		      		\draw (292.28,49.94) node [anchor=north west][inner sep=0.75pt]    {$B_{M}(\mathbf{0})$};
+		      		% Text Node
+		      		\draw (234.31,49.81) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
+		      		% Text Node
+		      		\draw (173.72,90.86) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$\varphi \neq 0$};
+		      		
+		      		
+		      	\end{tikzpicture}
+		      \end{figure}
+		      \FloatBarrier
+		      
+		      
+		      allora $\displaystyle \varphi \in \mathcal{D}( B_{M}(\mathbf{0}))$ (basta estenderla a $\displaystyle 0$ fuori) e posso applicare il teorema della divergenza direttamente su $\displaystyle B_{M}(\mathbf{0})$.
+	\end{enumerate}
+	
+	Ma allora essendo $\displaystyle \varphi $ a supporto compatto anche il campo è supporto compatto e si annulla sul bordo:
+	\begin{equation}
+		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\mathbf{x} =\underbrace{\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu }\ d\sigma }_{=0} =0
+		\label{eq:af-dim-poincare}
+	\end{equation}
+	Ricordiamo la formula di derivazione di Leibniz:
+	\begin{equation*}
+		\mathrm{div}( f\mathbf{G}) =\nabla f\cdotp \mathbf{G} +f\mathrm{div}\mathbf{G} .
+	\end{equation*}
+	Posso modificare la \eqref{eq:af-dim-poincare}:
+	\begin{align*}
+		0 & =\int _{\Omega }\mathrm{div}\mathbf{F} \ d\mathbf{x} =\int _{\Omega }\mathrm{div}\left( \varphi ^{2}(\mathbf{x})\mathbf{x}\right) \ d\mathbf{x}                                              \\
+		  & =\int _{\Omega }\left[\underbrace{2\varphi \nabla \varphi }_{\nabla \left( \varphi ^{2}\right)} \cdotp \mathbf{x} +\varphi ^{2}\underbrace{\mathrm{div}\mathbf{x}}_{=n}\right] d\mathbf{x} , 
+	\end{align*}
+	cioè, usando Cauchy-Schwarz:
+	\begin{align*}
+		n\int _{\Omega } \varphi ^{2} d\mathbf{x} =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \mathbf{x} \ d\mathbf{x} & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \mathbf{x} d\mathbf{x}\right| \\
+		                                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \mathbf{x}| d\mathbf{x} ,          
+	\end{align*}
+	per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\mathbf{0})$, per cui se $\displaystyle \mathbf{x} \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \mathbf{x}| \leqslant M$. Infine per Holder:
+	\begin{align*}
+		n\int _{\Omega } \varphi ^{2} d\mathbf{x} & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | d\mathbf{x}                                                  \\
+		                                          & \leqslant 2M\left(\int _{\Omega } \varphi ^{2}\right)^{1/2}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} , 
+	\end{align*}
+	quindi semplificando una norma $\displaystyle L^{2}$ di $\displaystyle \varphi $ ottengo:
+	\begin{equation*}
+		\left(\int _{\Omega } \varphi ^{2} d\mathbf{x}\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{c_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
+	\end{equation*}
+	\textbf{Passo 2.}
+	
+	Per il passo 1 so che 
+	\begin{equation*}
+		\exists \ c_{P} :\ \Vert \varphi \Vert _{L^{2}} \leqslant c_{P}\Vert \nabla \varphi \Vert _{L^{2}} ,\ \ \forall \varphi \in \mathcal{D}( \Omega ) .
+	\end{equation*}
+	Ma per inclusione densa:
+	\begin{equation*}
+		u\in H_{0}^{1}( \Omega ) \ \ \Leftrightarrow \ \ \varphi _{n}\xrightarrow{L^{2}} u,\ \nabla \varphi _{n}\xrightarrow{L^{2}} \nabla u,
+	\end{equation*}
+	allora per continuità della norma, facendo il limite ottengo
+	\begin{gather*}
+		\Vert \varphi _{n}\Vert _{L^{2}} \leqslant c_{P}\Vert \nabla \varphi _{n}\Vert _{L^{2}}\\
+		\downarrow \\
+		\Vert u\Vert _{L^{2}} \leqslant c_{P}\Vert \nabla u\Vert _{L^{2}}
+	\end{gather*}
+\end{dimostrazione}
+\begin{oss}
+	Con la dimostrazione ho trovato anche una stima della costante $\displaystyle c_{P}$:
+	\begin{equation*}
+		c_{P} =\frac{2M}{n} .
+	\end{equation*}
+	Tuttavia non è la migliore costante possibile. Quest'ultima si trova pensando a:
+	\begin{equation*}
+		\Vert u\Vert _{L^{2}}^{2} \leqslant c_{P}^{2}\Vert \nabla u\Vert _{L^{2}}^{2}
+	\end{equation*}
+	che è equivalente a dire che
+	\begin{equation*}
+		\frac{1}{c_{P}^{2}} \leqslant \frac{\Vert \nabla u\Vert _{L^{2}}^{2}}{\Vert u\Vert _{L^{2}}^{2}} ,
+	\end{equation*}
+	la migliore costante si trova per il valore che minimizza $\displaystyle c_{P}$, cioè che massimizza $\displaystyle 1/c_{P}^{2}$, cioè che minimizza il secondo termine:
+	\begin{equation}
+		\frac{1}{c_{P}^{2}} =\lambda _{1}( \Omega ) =\min_{u\in H_{0}^{1}( \Omega ) ,\ u\neq 0}\frac{\int _{\Omega }| \nabla u| ^{2}}{\int _{\Omega } u^{2}}
+	\end{equation}
+	$\displaystyle \lambda _{1}$ è il primo autovalore di $\displaystyle -\Delta $ con condizione di Dirichlet e assume significati fisici importanti:
+	\begin{itemize}
+		\item la frequenza di base di vibrazione di $\displaystyle \Omega $,
+		\item è legato alla \textit{sopravvivenza} in fenomenti di reazione-diffusione.
+	\end{itemize}
+\end{oss}
+\begin{oss}
+	In generale:
+	\begin{equation*}
+		\Vert u\Vert _{H_{1}( \Omega )}^{2} =\Vert u\Vert _{L^{2}( \Omega )}^{2} +\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}
+	\end{equation*}
+	Se $\displaystyle u\in H_{0}^{1}( \Omega )$:
+	\begin{equation}
+		\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2} \leqslant \Vert u\Vert _{L^{2}( \Omega )}^{2} +\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2} \leqslant \left( c_{P}^{2} +1\right)\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}
+		\label{eq:af-stima-poincare}
+	\end{equation}
+	Quindi in $\displaystyle H_{0}^{1}$ (che ricordiamo è spazio di Hilbert essenso sottospazio chiuso di uno spazio di Hilbert) ci sono due norme equivalenti:
+	\begin{equation*}
+		\Vert u\Vert _{H^{1}( \Omega )} \ \ \ \ \ \ \Vert \nabla u\Vert _{L^{2}( \Omega )}
+	\end{equation*}
+\end{oss}
+A seconda che si preferisca un'analisi numerica o teorica si usano, rispettavemente, la prima o la seconda norma.
+\chapter{Un'applicazione: formulazione variazionale per l'equazione di Poisson}
+
+Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ dominio limitato, $\displaystyle f:\Omega \rightarrow \mathbb{R}$, sia dato il problema
+\begin{equation}
+	\begin{cases}
+		-\Delta u=f & \mathbf{x} \in \Omega          \\
+		u=0         & \mathbf{x} \in \partial \Omega 
+	\end{cases}
+	\label{eq:af-problema-poisson}
+\end{equation}
+\vspace*{0.5cm}
+\begin{center}
+	\textbf{Nozioni di soluzione.}
+\end{center}
+\begin{center}
+	%\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+	{\renewcommand{\arraystretch}{2.8}% for the vertical padding
+	\begin{tabular}{|l|l|}
+		\hline 
+		$u$ soluzione classica                               & \makecell[l]{$\displaystyle u\in C^{2}( \Omega ) \cap C(\overline{\Omega })$ e verifica il sistema. \\Questo forza che $\displaystyle f\in C( \Omega )$, ci impedisce di studiare\\forzanti con discontinuità.} \\
+		\hline 
+		\makecell[l]{$u$ soluzione debole\\(o variazionale)} & useremo questa! \\
+		\hline 
+		$u$ soluzione forte                                  & \makecell[l]{$\displaystyle u\in H^{2}( \Omega ) ,\ f\in L^{2}( \Omega )$                           \\Non si usano molto.} \\
+		\hline 
+		$u$ soluzione distribuzionale                        & \makecell[l]{$\displaystyle u\in \mathcal{D} '( \Omega ) ,\ f\in \mathcal{D} '( \Omega )$           \\L'identità vale nel senso delle distribuzioni.\\Non possiamo formalizzare quanto vale al bordo.} \\
+		\hline
+	\end{tabular}
+	}
+\end{center}
+\vspace*{0.5cm}
+La nozione di soluzione debole permette di scaricare eventuali \textit{debolezze} della funzione su proprietà più regolari delle funzione test, tramite integrazione per parti. 
+
+Come si costruisce la \textbf{formulazione variazionale}?
+\begin{itemize}
+	\item Scelgo uno spazio di funzioni test adatto al problema. Con Dirichlet si usa $\displaystyle \mathcal{D}( \Omega )$.
+	\item Suppongo $\displaystyle u$ soluzione classica di \eqref{eq:af-problema-poisson}, allora $\displaystyle \forall \varphi \in \mathcal{D}( \Omega )$ moltiplico e integro:
+	      \begin{equation*}
+	      	-\Delta u=f\ \ \Rightarrow \ \ \int _{\Omega } -\Delta u\ \varphi \ d\mathbf{x} =\int _{\Omega } f\ \varphi \ d\mathbf{x}
+	      \end{equation*}
+	      
+	      integro per parti
+	      \begin{equation*}
+	      	-\underbrace{\int _{\partial \Omega } \varphi \partial _{\bm{\nu }} u\ d\sigma }_{=0\ \text{(supp. comp.)}} +\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\mathbf{x} =\int _{\Omega } f\varphi \ d\mathbf{x}
+	      \end{equation*}
+	      \newpage
+	      e ottengo\footnote{Vale anche il \textbf{principio di coerenza}: partendo dalla formulazione variazionale posso tornare indietro. Sia $\displaystyle u\in C^{2}( \Omega ) \cap C(\overline{\Omega })$ e tale che:
+	      	\begin{equation*}
+	      		\int _{\Omega } \nabla u\cdotp \nabla \varphi =\int _{\Omega } f\varphi ,\ \ \forall \varphi \in \mathcal{D} .
+	      	\end{equation*}
+	      	Posso integrare per parti
+	      	\begin{equation*}
+	      		\cancel{\int _{\partial \Omega } \partial _{\nu } u\varphi d\sigma } -\int _{\Omega } \Delta u\varphi =\int _{\Omega } f\varphi \ \ \Rightarrow \ \ \int _{\Omega }( -\Delta u-f) \varphi =0,\ \ \forall \varphi 
+	      	\end{equation*}
+	      	Ho una proprietà vera per tutte le funzioni test, che sono dense in $\displaystyle L^{2}( \Omega )$, posso \textit{portare} questa proprietà in $\displaystyle L^{2}$:
+	      	\begin{equation*}
+	      		( -\Delta u-f,w)_{L^{2}} =\int _{\Omega }( -\Delta u-f) w=0,\ \ \forall w\in L^{2}( \Omega ) .
+	      	\end{equation*}
+	      	Quindi 
+	      	\begin{equation*}
+	      		-\Delta u-f=0\ \text{q.o. in} \ \Omega ,
+	      	\end{equation*}
+	      	ma essendo $\displaystyle u$ di classe $\displaystyle C^{2}$ (quindi $\displaystyle \Delta u$ continuo) e $\displaystyle f$ continua, allora abbiamo due \textit{funzioni continue uguali quasi ovunque}, quindi sono \textit{uguali ovunque}:
+	      	\begin{equation*}
+	      		-\Delta u=f\ \text{ovunque in} \ \Omega .
+	      	\end{equation*}}
+	      \begin{equation}
+	      	\boxed{\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\mathbf{x} =\int _{\Omega } f\varphi \ d\mathbf{x} ,\ \ \forall \varphi \in \mathcal{D}( \Omega )}
+	      \end{equation}
+\end{itemize}
+
+Ora vorrei passare dallo spazio delle funzioni test a uno spazio di Hilbert: ambientiamo in \textbf{spazi di Sobolev. }So che l'insieme delle funzioni test è denso in $\displaystyle H_{0}^{1}( \Omega )$. Adesso bastano le derivate prime di $\displaystyle u$, e non serve che siano continue, basta che siano integrabili.
+\begin{gather*}
+	\int _{\Omega } \nabla u\cdotp \nabla \varphi _{n} \ d\mathbf{x} =\int _{\Omega } f\varphi _{n} \ d\mathbf{x} ,\ \ \forall \varphi _{n} \in \mathcal{D}( \Omega )\\
+	\downarrow \varphi _{n}\xrightarrow{H^{1}} v\\
+	\int _{\Omega } \nabla u\cdotp \nabla v\ d\mathbf{x} =\int _{\Omega } fv\ d\mathbf{x} ,\ \ \forall v\in H_{0}^{1}( \Omega )
+\end{gather*}
+Allora ho finalmente trovato la mia \textbf{formulazione debole (o variazionale)} del problema \eqref{eq:af-problema-poisson}: 
+\begin{equation}
+	\boxed{\text{Trovare} \ u\in H_{0}^{1}( \Omega ) :\int _{\Omega } \nabla u\cdotp \nabla v\ d\mathbf{x} =\int _{\Omega } fv\ d\mathbf{x} ,\ \ \forall v\in H_{0}^{1}( \Omega )}
+\end{equation}
+questa formulazione ha senso per funzioni molto \textit{meno regolari} di quelle richieste dal problema classico (basta $\displaystyle u\in H_{0}^{1}( \Omega )$).
+
+Posso risolvere il problema (ovvero dimostrarne unicità ed esistenza) con Lax-Milgram o Riesz. Riscrivendo la formulazione variazionale in termini dei teoremi, dobbiamo trovare:
+\begin{equation*}
+	u\in V\ \text{t.c.} \ a( u,v) =Fv,\ \ \forall v\in V
+\end{equation*}
+con:
+\begin{itemize}
+	\item $\displaystyle V=H_{0}^{1}( \Omega )$ (Hilbert)
+	\item $\displaystyle a( u,v) =\int _{\Omega } \nabla u\cdotp \nabla v\ d\mathbf{x}$ (forma bilineare)
+	\item $\displaystyle Fv=\int _{\Omega } fv\ d\mathbf{x}$ (lineare)
+\end{itemize}
+
+Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme:
+\begin{enumerate}
+	\item Punto di vista \textbf{``analitico''}: 
+	      \begin{equation*}
+	      	\boxed{\Vert u\Vert _{H_{0}^{1}} =\Vert \nabla u\Vert _{L^{2}}} \ \ \Rightarrow \ \ a( u,v) =( u,v)_{H_{0}^{1}} .
+	      \end{equation*}
+	      
+	      Per il teorema di \textbf{Riesz }se $\displaystyle F\in V^{*}$\footnote{La notazione indica il duale.}
+	      \begin{equation*}
+	      	\exists !\ u,\ \Vert u\Vert =\Vert F\Vert _{*}
+	      \end{equation*}
+	\item Punto di vista \textbf{``numerico''}:
+	      \begin{equation*}
+	      	\boxed{\Vert u\Vert _{H_{0}^{1}} =\Vert u\Vert _{H^{1}}}
+	      \end{equation*}
+	      
+	      cioè anche
+	      \begin{equation*}
+	      	\Vert u\Vert _{H_{0}^{1}}^{2} =\Vert u\Vert _{H^{1}}^{2} =\Vert u\Vert _{L^{2}}^{2} +\Vert \nabla u\Vert _{L^{2}}^{2}
+	      \end{equation*}
+	      
+	      Applico Lax-Milgram. Devo verificare:\footnote{Con Riesz non era necessario usando il prodotto scalare.}
+	      \begin{itemize}
+	      	\item $\displaystyle a$ continua
+	      	      \begin{equation*}
+	      	      	| a( u,v)| =\left| \int _{\Omega } \nabla u\cdotp \nabla v\right| \leqslant \Vert \nabla u\Vert _{L^{2}}\Vert \nabla v\Vert _{L^{2}} \leqslant \Vert u\Vert _{H^{1}}\Vert v\Vert _{H^{1}}
+	      	      \end{equation*}
+	      	\item $\displaystyle a$ coerciva
+	      	      \begin{equation*}
+	      	      	a( u,u) =\int _{\Omega }| \nabla u| ^{2} dx\overset{?}{\geqslant } \alpha \Vert u\Vert _{H^{1}( \Omega )}^{2}
+	      	      \end{equation*}
+	      	      
+	      	      per Poincaré usato come in \eqref{eq:af-stima-poincare}
+	      	      \begin{equation*}
+	      	      	\int _{\Omega }| \nabla u| ^{2} dx\geqslant \frac{1}{1+c_{P}^{2}}\Vert u\Vert _{H^{1}( \Omega )}^{2} .
+	      	      \end{equation*}
+	      \end{itemize}
+\end{enumerate}
+
+In entrambi i casi mi manca in realtà un ultimo tassello: $\displaystyle F$ deve essere \textbf{lineare e continuo}.
+
+È chiaramente lineare, quindi dimostro la continuità con la limitatezza. Facendo la nostra ultima ipotesi, ovvero $\displaystyle f\in L^{2}( \Omega )$, e applicando \textbf{Cauchy-Schwartz}
+\begin{align*}
+	| Fv| =\left| \int _{\Omega } fv\ d\mathbf{x}\right| & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert v\Vert _{L^{2}( \Omega )} =( *)  &                                  \\
+	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert v\Vert _{H^{1}( \Omega )}        & \text{(per approccio numerico)}  \\
+	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert \nabla v\Vert _{L^{2}( \Omega )} & \text{(per approccio analitico)} 
+\end{align*}
+In entrambi i casi possiamo concludere:
+\begin{theorem}
+	Data $\displaystyle f\in L^{2}( \Omega ) \ \exists !\ u\in H_{0}^{1}( \Omega )$ soluzione variazionale del problema di Dirichlet e ho anche una \textit{stima di stabilità}:
+	\begin{equation*}
+		\Vert u\Vert _{H^{1}( \Omega )} \leqslant \left( 1+c_{P}^{2}\right)\Vert f\Vert _{L^{2}( \Omega )}
+	\end{equation*}
+\end{theorem}
+Dove la stima di stabilità è ricavata da
+\begin{equation*}
+	\Vert u\Vert _{V} \leqslant \frac{1}{\alpha }\Vert F\Vert _{*} ,\ \text{con} \ \alpha =\frac{1}{1+c_{P}^{2}} ,\ \Vert F\Vert _{*} \leqslant \Vert f\Vert _{L^{2}} .
+\end{equation*}
+Notiamo anche che $\displaystyle f\in L^{2}$ è una richiesta molto ragionevole e consente, oltre che funzioni discontinue, anche funzioni che esplodono! È già molto meno bella rispetto a quanto chiedevamo che fosse continua.
+
+Il fatto è che se $\displaystyle f\in L^{2}$ allora esiste un'unica soluzione in $\displaystyle H_{0}^{1}$, ma se è continua non è detto che esista (se esiste è unica).
+
+
+
+Solo per completezza (questo argomento sarà trattato nella parte numerica) vediamo cosa succede con condizioni al bordo diverse. Lavoriamo in $\displaystyle n=1$ con un'equazione di diffusione-reazione lineare
+\begin{equation*}
+	\begin{cases}
+		-u''( x) +\mu ( x) u=f( x)   & a< x< b            \\
+		u'( b) +\alpha u( b) =u_{1}  &                    \\
+		-u'( a) +\alpha u( a) =u_{0} & \alpha \geqslant 0 
+	\end{cases}
+\end{equation*}
+Con $\displaystyle \alpha =0$ ho Neumann, con $\displaystyle \alpha  >0$ ho Robin.
+
+Sia $\displaystyle v\in C^{\infty }([ a,b])$ (molto regolare, ma non si anulla al bordo), moltiplico l'equazione e integro
+\begin{equation*}
+	\int _{a}^{b} -u''v+\mu uv=\int _{a}^{b} fv
+\end{equation*}
+integrando per parti
+\begin{equation*}
+	-u'( b) v( b) +u'( a) v( a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
+\end{equation*}
+per tentare di dare una formulazione debole devo prendere
+\begin{gather*}
+	u\in H^{1}( a,b)\\
+	v\in H^{1}( a,b)
+\end{gather*}
+allora $\displaystyle v( a)$, $\displaystyle v( b)$ hanno senso (essendo $\displaystyle v$ continua fino al bordo). Le derivate di $\displaystyle u,v$ sono funzioni di $\displaystyle L^{2}$ quindi il problema sta nei termini $\displaystyle u'( a)$, $\displaystyle u'( b)$ che non hanno senso. Posso risolvere utilizzando le condizioni al bordo:
+\begin{equation*}
+	-\underbrace{( u_{1} -\alpha u( b))}_{u'( b)} v( b) +\underbrace{( \alpha u( a) -u_{0})}_{u'( a)} v( a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
+\end{equation*}
+ora possiamo distinguere cose che sono bilineari e cose che sono semplicemente lineari. Ciò che contiene $\displaystyle u$ va a sinistra, ciò che è senza $\displaystyle u$ va a destra:
+\begin{equation*}
+	\underbrace{\alpha u( b) v( b) +\alpha u( a) v( a) +\int _{a}^{b}[ u'v'+\mu uv]}_{a( u,v)} =\underbrace{u_{1} v( b) +u_{0} v( a) +\int _{a}^{b} fv}_{Fv} .
+\end{equation*}
 
 
 
