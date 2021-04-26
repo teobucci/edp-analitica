@@ -3932,7 +3932,7 @@ Nel caso in cui fosse possibile passare sotto il segno di integrale, l'integrale
 \end{equation}
 mentre l'altro termine si può scrivere naturalmente come\footnote{Teorema fondamentale del calcolo integrale.}
 \begin{equation*}
-	q( u( x_{1} ,t)) -q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} dx
+	-q( u( x_{1} ,t)) +q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} dx
 \end{equation*}
 che per arbitrarietà dell'intervallo implica proprio la legge di conservazione
 \begin{equation*}
@@ -4043,7 +4043,7 @@ Ipotesi di base
 \begin{itemize}
 	\item una sola corsia, senza sorpassi
 	\item assenza di caselli (assenza di \textit{sorgenti} o \textit{pozzi} di auto)
-	\item la veloctià è funzione di $\rho $, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori $v=v( \rho )$. Se aumenta la densità diminuisce la velocità $\frac{dv}{d\rho } \leqslant 0$.
+	\item la velocità è funzione di $\rho $, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori $v=v( \rho )$. Se aumenta la densità diminuisce la velocità $\frac{dv}{d\rho } \leqslant 0$.
 \end{itemize}
 
 Abbiamo
@@ -4158,7 +4158,7 @@ Problema: \eqref{eq:lc-sol-ro-traffico} dà sempre soluzione? No.
 
 \fg{0.4}{leggi-conservazione-shock}
 
-Se due caratteristiche si intersecano, il valore nell'intersezione sono in presenza di un'ambiguità. Motiviamo con due esempi.
+Se due caratteristiche si intersecano, il valore nell'intersezione non è determinato: sono in presenza di un'ambiguità. Motiviamo con due esempi.
 \subsection{Coda al semaforo}
 
 Modellizziamo il problema come
@@ -4250,7 +4250,7 @@ Strategia per costruire \textbf{una}\footnote{Nesssuno ci dice che sia l'unica.}
 	      
 	      possiamo ricavare $x_{0}$ in funzione di $x,t$ nella regione intermedia
 	      \begin{equation*}
-	      	\Rightarrow \ \ x=-v_{m} +\left( v_{m}\frac{2}{\varepsilon } t+1\right) x_{0} \ \ \Rightarrow \ \ x_{0} =\varepsilon \frac{x+v_{m}}{2v_{m} t+\varepsilon }
+	      	\Rightarrow \ \ x=-v_{m}t +\left( v_{m}\frac{2}{\varepsilon } t+1\right) x_{0} \ \ \Rightarrow \ \ x_{0} =\varepsilon \frac{x+v_{m}t}{2v_{m} t+\varepsilon }
 	      \end{equation*}
 	      
 	      \fg{0.7}{leggi-conservazione-semaforo-ventaglio-caratteristiche}
@@ -4517,7 +4517,7 @@ Prendiamo la soluzione
 \end{equation*}
 Sulla caratteristica
 \begin{equation*}
-	x=q'( g( \xi )) +\xi 
+	x=q'( g( \xi ))t +\xi 
 \end{equation*}
 abbiamo che 
 \begin{equation*}
@@ -4616,7 +4616,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la ca
 	$\displaystyle u$ è definita univocamente per il teorema del Dini. Dimostriamo che $\displaystyle u\in C^{1}$. Sempre usando il teorema del Dini
 	\begin{gather*}
 		u_{t} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t) q'( u)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}\\
-		u_{x} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
+		u_{x} =-\frac{G_{x}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
 	\end{gather*}
 	allora
 	\begin{equation*}
