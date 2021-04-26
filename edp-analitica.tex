@@ -1545,7 +1545,7 @@ da cui la tesi.
 \textit{Lezione 6 (8/3/2021)}
 \section{Conseguenze del principio di massimo debole}
 
-Sia $u\in C^{1,2}(Q_{T}) \cap C(\overline{Q}_{T})$ soluzione di
+Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ soluzione di
 \begin{equation*}
 u_{t} -D\Delta u=0\ \ \text{in} \ Q_{T}
 \end{equation*}
@@ -1573,7 +1573,7 @@ u\leqslant v\ \text{in tutto} \ Q_{T}
 \Vert u-v\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant \Vert u-v\Vert _{L^{\infty }( \partial _{p} Q_{T})} +T\Vert f_{1} -f_{2}\Vert _{L^{\infty }(Q_{T})}
 \end{equation*}
 
-Questo implica l'\textbf{unicità per il problema di Cauchy-Dirichlet} in $C^{1,2}(Q_{T}) \cap C(\overline{Q}_{T})$. Stessi dati sulla frontiera e stessa sorgente esogena, allora $u=v$, infatti
+Questo implica l'\textbf{unicità per il problema di Cauchy-Dirichlet} in $C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$. Stessi dati sulla frontiera e stessa sorgente esogena, allora $u=v$, infatti
 \begin{enumerate}
 \item Sia $u$ soluzione di\begin{equation*}
 \begin{cases}
@@ -2047,7 +2047,7 @@ Se anziché nell'origine, la sorgente unitaria fosse concentrata in un punto $\d
 \end{itemize}
 \end{itemize}
 \begin{nb}
-Come già osservato in precedenza, per $\displaystyle t >0$ \ $\displaystyle \Gamma _{D}$ è $\displaystyle C^{\infty }(\mathbb{R} \times (0,+\infty)) .$Si dimentica immediatamente della singolarità ed è positiva $\displaystyle \forall t >0$: la diffusione del calore è istantanea in tutta la sbarra.
+Come già osservato in precedenza, per $\displaystyle t >0$ \ $\displaystyle \Gamma _{D}$ è $\displaystyle C^{\infty }(\mathbb{R} \times (0,+\infty))$. Si dimentica immediatamente della singolarità ed è positiva $\displaystyle \forall t >0$: la diffusione del calore è istantanea in tutta la sbarra.
 \end{nb}
 \subsection{Soluzione fondamentale in \texorpdfstring{$n>1$}{n>1}}
 
@@ -7521,7 +7521,7 @@ $\{x_{n}\}_{n}$ convergente $\Rightarrow \{x_{n}\}_{n}$ è di Cauchy, infatti
 \begin{equation*}
 0\leqslant \Vert x_{n} -x_{m}\Vert =\Vert x_{n} -\overline{x} +\overline{x} -x_{m}\Vert \leqslant \Vert x_{n} -\overline{x}\Vert +\Vert \overline{x} -x_{m}\Vert \rightarrow 0
 \end{equation*}
-questa è la parte inutile, è più utile il contrario, vedere il comportamento delle approssimazioni dedurre se c'è convergenza a qualcosa! In generale non è vero che una successione di Cauchy è convergente, per questo motivo lavoriamo in Spazi di Banach.
+questa è la parte inutile, è più utile il contrario, vedere il comportamento delle approssimazioni e dedurre se c'è convergenza a qualcosa! In generale non è vero che una successione di Cauchy è convergente, per questo motivo lavoriamo in Spazi di Banach.
 \begin{definition}
 Se ``di Cauchy'' implica convergente, allora $X$ è completo.
 \end{definition}
@@ -7647,7 +7647,7 @@ Uno spazio vettoriale $X$, con prodotto scalare, che sia completo rispetto alla 
 \end{definition}
 \textit{Esempi.}
 
-$\mathbb{R}^{n},L^{2}(\Omega)$ con la norma $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uvdx$
+$\mathbb{R}^{n},L^{2}(\Omega)$ con la norma indotta dal prodotto scalare $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uvdx$
 
 In uno spazio con prodotto scalare possiamo definire l'\textbf{ortogonalità}
 \begin{equation*}
@@ -8296,7 +8296,7 @@ Se $u\in \mathrm{Ker} A$ allora $Au=0$, usando la stima $\Vert u\Vert \leqslant 
 
 L'immagine è un sottospazio, analogo a come visto prima.
 
-Dimostriamo che è chiuso, ovvero che considerando ogni successione conenuta nell'immagine $(y_{n})_{n} \subset R(A)$ che tende a un certo valore $y_{n}\rightarrow \overline{y}$ allora quel valore sta nell'immagine $\overline{y} \in R(A)$\footnote{ricordiamo che la definizione è \textit{interessante} se consideriamo i punti del bordo in particolare.}.
+Dimostriamo che è chiuso, ovvero che considerando ogni successione contenuta nell'immagine $(y_{n})_{n} \subset R(A)$ che tende a un certo valore $y_{n}\rightarrow \overline{y}$ allora quel valore sta nell'immagine $\overline{y} \in R(A)$\footnote{ricordiamo che la definizione è \textit{interessante} se consideriamo i punti del bordo in particolare.}.
 
 Questi valori dell'immagine sono associati agli elementi del dominio $y_{n} =Au_{n}$, ci piacerebbe dire che $\overline{y} =A\overline{u}$, con $\overline{u} =\lim u_{n}$, \textbf{ma questo limite non è detto che esista! In un sacco di situazioni concrete salta!}
 
@@ -8306,7 +8306,7 @@ Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una s
 \end{equation*}
 la successione $y_{n}$ è convergente, quindi anche di Cauchy, allora l'ultimo termine tende a $0$, in particolare quindi anche $u_{n}$ è di Cauchy, ma essendo $H$ completo è anche convergente a un certo $\overline{u} \in H$.
 
-Usanndo la continuità di $A$, $Au_{n}\rightarrow A\overline{u}$, quindi $\overline{y} =A\overline{u} \in R(A)$.
+Usando la continuità di $A$, $Au_{n}\rightarrow A\overline{u}$, quindi $\overline{y} =A\overline{u} \in R(A)$.
 
 
 
@@ -8473,7 +8473,7 @@ Usiamo ora l'identità di Green
 	\mathrm{div}( g\mathbf{F}) =\nabla g\cdotp \mathbf{F} +g\mathrm{div}\mathbf{F} \ \ \text{con} \ g=\frac{1}{| \mathbf{x}| ^{3}} \ \text{e} \ \mathbf{F} =\mathbf{x}
 \end{equation*}
 \begin{equation*}
-	\mathrm{div}\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \mathbf{x}| ^{3}}\right) \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}}\mathrm{div}\mathbf{x}\right) =-\left( -\frac{3}{| \mathbf{x}| ^{4}}\frac{\mathbf{x}}{| \mathbf{x}| } +\frac{1}{| \mathbf{x}| ^{3}} 3\right)
+	\mathrm{div}\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \mathbf{x}| ^{3}}\right) \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}}\mathrm{div}\mathbf{x}\right) =-\left( -\frac{3}{| \mathbf{x}| ^{4}}\frac{\mathbf{x}}{| \mathbf{x}| } \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}} 3\right)
 \end{equation*}
 e troviamo
 \begin{equation*}
@@ -8585,7 +8585,7 @@ Di questi termini
 \int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \partial _{\bm{\nu }} \varphi (\mathbf{x}) d\sigma =-\int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \nabla \varphi (\mathbf{x}) \cdotp \frac{\mathbf{x}}{| \mathbf{x}| } d\sigma 
 \end{equation*}
 \item $\displaystyle \partial _{\bm{\nu }}\left(\frac{1}{| \mathbf{x}| }\right) =\nabla \left(\frac{1}{| \mathbf{x}| }\right) \cdotp \bm{\nu }$, con $\displaystyle \bm{\nu }$ identica a prima\begin{equation*}
-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) \partial _{\nu }\left(\frac{1}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) \cdotp \left( -\frac{\mathbf{x}}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\frac{| \mathbf{x}| ^{2}}{| \mathbf{x}| ^{4}} d\sigma 
+-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) \partial _{\nu }\left(\frac{1}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) \cdotp \left( -\frac{\mathbf{x}}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\frac{| \mathbf{x}| ^{2}}{| \mathbf{x}| ^{4}} d\sigma 
 \end{equation*}
 \end{itemize}
 
