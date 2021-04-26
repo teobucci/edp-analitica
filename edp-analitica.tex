@@ -2672,7 +2672,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 \textit{Lezione 9 (16/03/2021)}
 
 \begin{theorem}
-	Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ un dominio limitato regolare. Allora esiste al più una funzione $\displaystyle u$ di classe $\displaystyle C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $\displaystyle \Delta u=f$ in $\displaystyle \Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
+	Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ un dominio limitato regolare. Allora esiste al più una funzione $\displaystyle u$ di classe $\displaystyle C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $\displaystyle -\Delta u=f$ in $\displaystyle \Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
 \end{theorem}
 \begin{dimostrazione}
 	Siano $\displaystyle u$ e $\displaystyle v$ soluzioni di uno dei problemi indicati con lo stesso dato al bordo $\displaystyle g$. Sia $\displaystyle w=u-v$, allora $\displaystyle w$ è armonica in $\displaystyle \Omega $
@@ -2694,7 +2694,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 		      Essendo $\displaystyle w=0$ su $\displaystyle \partial \Omega $ si trova
 		      
 		      \begin{align*}
-		      	\int _{\Omega }| \nabla w| ^{2} =0\ \&\Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } &                                                          \\
+		      	\int _{\Omega }| \nabla w| ^{2} =0\ &\Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } &                                                          \\
 		      	                                      & \Rightarrow \ \ w=\text{cost. in} \ \Omega               
 		      \end{align*}
 		      
@@ -3010,7 +3010,7 @@ in tutti i punti interni ad $\displaystyle A$!
 E invece sulla $\displaystyle \partial A$? Ovviamente se 
 \begin{align*}
 	x\in \Gamma                       & \ \ \Rightarrow \ \ P(x,\Gamma) =1 \\
-	x\in \partial \Gamma \backslash A & \ \ \Rightarrow \ \ P(x,\Gamma) =0 
+	x\in \partial  A \backslash \Gamma & \ \ \Rightarrow \ \ P(x,\Gamma) =0 
 \end{align*}
 Quindi
 \begin{equation*}
@@ -3177,7 +3177,7 @@ Come nel caso discreto il principio di massimo era implicato dalla proprietà de
 	\begin{equation*}
 		m=u(p) \leqslant u(y) \ \forall y\in \Omega 
 	\end{equation*}
-	Vogliamo dimostrare che $\displaystyle u(x) =m\ \forall y\in \Omega $.
+	Vogliamo dimostrare che $\displaystyle u(x) =m\ \forall x\in \Omega $.
 	
 	Sia $\displaystyle q\in \Omega $ arbitrario. Poiché $\displaystyle \Omega $ è connesso, possiamo trovare una sequenza finita di sfere $\displaystyle B(x_{j}) \subset \subset \Omega,\ j=0,..,N$ tali che
 	\begin{itemize}
@@ -3277,7 +3277,7 @@ Dal principio di massimo segue come corollario:
 \end{dimostrazione}
 \textit{Lezione 10 (18/03/2021)}
 
-Se abbiamo $\Delta u=0$ in $\Omega $ ha la proprietà di media in $\Omega $ $\Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
+Se abbiamo $\Delta u=0$ in $\Omega $ abbiamo la proprietà di media in $\Omega $ $\Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
 \section{Laplaciano in coordinate cilindriche}
 
 Consideriamo $p_{1} =p_{2} =0$ per comodità.
@@ -3320,9 +3320,10 @@ u_{yy} & =u_{ry} r_{y} +u_{r} r_{yy} +u_{\vartheta y} \vartheta _{y} +u_{\varthe
 \end{equation*}
 mettendo insieme otteniamo
 \begin{equation*}
-\nabla ^{2} u=u_{rr} +\frac{1}{r} u_{r} +\frac{1}{r^{2}} u_{\vartheta \vartheta }
+\Delta u=u_{rr} +\frac{1}{r} u_{r} +\frac{1}{r^{2}} u_{\vartheta \vartheta }
 \end{equation*}
 \section{Formula di Poisson per il cerchio}
+Lavoreremo per tutta la sezione in $\displaystyle \mathbb{R}^{2}$ per poi generalizzare.
 \begin{theorem}
 L'\textbf{unica} soluzione $u\in C^{2}(B_{R}(p)) \cap C\left(\overline{B_{R}(p)}\right)$ del problema di Dirichlet
 \begin{equation*}
@@ -3497,7 +3498,7 @@ U(r,\vartheta) & =\frac{1}{\pi }\int ^{2\pi }_{0} G(\varphi)\left\{-\frac{1}{2} 
 \end{align*}
 Osserviamo che il valore al centro del cerchio
 \begin{equation*}
-u(0,0) =\frac{1}{2\pi }\int ^{2\pi }_{0} G(\varphi) d\varphi 
+U(0,0) =\frac{1}{2\pi }\int ^{2\pi }_{0} G(\varphi) d\varphi 
 \end{equation*}
 non è altro che la media dei valori assunti da $G$ sul bordo.
 
