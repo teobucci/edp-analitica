@@ -3135,7 +3135,7 @@ Dove la funzione Gamma di Eulero è definita come
 	}
 	\begin{align*}
 		\int ^{R}_{0} r^{n-1} u(x) & =\frac{1}{w_{n}}\int ^{R}_{0} dr\int _{\partial B_{r}(x)} u(\sigma) d\sigma \ \rightarrow \ \text{con fubini} \\
-		\frac{R^{n}}{n} u(x)       & =\frac{1}{w_{n}}\int _{B_{R}(x)} u(y) d(y)                                                                    
+		\frac{R^{n}}{n} u(x)       & =\frac{1}{w_{n}}\int _{B_{R}(x)} u(y) dy                                                                    
 	\end{align*}
 	Da cui 
 	\begin{equation*}
@@ -3905,7 +3905,7 @@ cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote
 \begin{equation*}
 	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\nu } G( x,y) \ d\sigma }
 \end{equation*}
-questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque di coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
+questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
 
 Sono equazioni differenziali del tipo
@@ -4606,7 +4606,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la ca
 	\FloatBarrier
 \end{nb}
 \begin{theorem}
-	Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'( \xi ) q''( g( \xi )) \geqslant 0\ \forall \in \mathbb{R}$. Allora l'equazione
+	Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'( \xi ) q''( g( \xi )) \geqslant 0\ \forall \xi \in \mathbb{R}$. Allora l'equazione
 	\begin{equation*}
 		G( x,t,u) =u-g( x-q'( u) t) =0
 	\end{equation*}
@@ -4926,7 +4926,7 @@ assurdo.
 		\end{pmatrix} \ dl\\
 		                                                & =\int _{K\cap \Gamma }\left[ -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ dl                                                           
 	\end{align*}
-	A questo punto mettiamo mettiamo insieme, possiamo tranquillamente portare tutto sotto lo stesso integrale
+	A questo punto mettiamo insieme, possiamo tranquillamente portare tutto sotto lo stesso integrale
 	\begin{equation*}
 		0=\int _{K\cap \Gamma }\left[ q\left( u^{+}\right) n_{x} +u^{+} n_{t} -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ dl\ \ \forall v
 	\end{equation*}
@@ -5252,7 +5252,7 @@ Conseguenze:
 		q'( u_{+}) < \dot{s} < q'( u_{-})
 	\end{equation*}
 
-	La pendenza di una linea d'urto è minore di quella delle caratteristiche che vi arrivano da sinistra e maggiore di quella delle caratteristiche che vi arrivano da destra: le caratteristiche \textbf{entrano }nella linea d'urto, non è possibile percorrere a ritroso nel tempo una caratteristica e impattersi in uno shock
+	La pendenza di una linea d'urto è minore di quella delle caratteristiche che vi arrivano da sinistra e maggiore di quella delle caratteristiche che vi arrivano da destra: le caratteristiche \textbf{entrano }nella linea d'urto, non è possibile percorrere a ritroso nel tempo una caratteristica e imbattersi in uno shock
 
 	\begin{figure}[htpb]
 		\centering
@@ -5328,7 +5328,7 @@ Possiamo applicare questo teorema per risolvere il problema \eqref{eq:teo-quasi-
 \end{equation*}
 noto come \textbf{Problema di Riemann}, con $\displaystyle u_{L} \neq u_{R}$ e costanti.
 \begin{theorem}
-	Sia $\displaystyle q$ strettamente concava o convessa con $\displaystyle q''\geqslant h >0$ o $\displaystyle q''\leqslant -h< 0$. Allora l'unica soluzione entropica del problema di Riemann è data da:
+	Sia $\displaystyle q$ strettamente convessa o concava con $\displaystyle q''\geqslant h >0$ o $\displaystyle q''\leqslant -h< 0$. Allora l'unica soluzione entropica del problema di Riemann è data da:
 	\begin{itemize}
 		\item Se $\displaystyle q''\geqslant h >0$ e $\displaystyle u_{R} < u_{L}$, oppure $\displaystyle q''\leqslant -h< 0$ e $\displaystyle u_{R}  >u_{L}$
 		      
