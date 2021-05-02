@@ -3824,7 +3824,7 @@ Vediamo la dimostrazione del teorema.
 		      Maggioriamo
 		      
 		      \begin{equation*}
-		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} =\frac{1}{4\pi }\max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
+		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} = 4\pi \max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
 		      \end{equation*}
 		      
 		      Il secondo termine tende a
@@ -3889,7 +3889,7 @@ Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \end{equation}
 da cui
 \begin{align*}
-	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nu } u-\left(\cancel{\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nu } v\right) \\
+	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nu } u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nu } v\right) \\
 	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\int _{\partial \Omega }( v\partial _{\nu } u-u\partial _{\nu } v) d\sigma                                                                                                                                 
 \end{align*}
 sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordando che $\Delta v=\Delta _{y} g=0$
@@ -4101,7 +4101,7 @@ il modello più semplice è l'interpolazione lineare che realizza queste due con
 
 di conseguenza
 \begin{equation*}
-	\Rightarrow \ \ q( \rho ) =v_{m}\left( \rho -\frac{\rho ^{2}}{\rho _{m}}\right) \ \ \Rightarrow \ \ q'( \rho ) =v_{m}\left( 1-\frac{2\rho }{\rho _{m}}\right) \ \ \Rightarrow \ \ q''( \rho ) =-\frac{2}{\rho _{m}} < 0
+	\Rightarrow \ \ q( \rho ) =v_{m}\left( \rho -\frac{\rho ^{2}}{\rho _{m}}\right) \ \ \Rightarrow \ \ q'( \rho ) =v_{m}\left( 1-\frac{2\rho }{\rho _{m}}\right) \ \ \Rightarrow \ \ q''( \rho ) =-\frac{2v_{m}}{\rho _{m}} < 0
 \end{equation*}
 da cui
 \begin{equation*}
@@ -4725,7 +4725,7 @@ Possiamo tornare indietro?
 				
 Partendo dalla formulazione debole \eqref{eq:formulazione-debole} e integrando per parti in senso inverso il primo termine, stavolta coi ruoli delle funzioni invertiti rispetto al primo passaggio
 \begin{equation}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u+q( u)] v\ dxdt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) dx-\int _{\mathbb{R}} v( x,0) g( x) dx}_{-\int _{\mathbb{R}}[ g( x) -u( x,0)] v( x,0) dx} =0
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t}+q( u)_{x}] v\ dxdt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) dx-\int _{\mathbb{R}} v( x,0) g( x) dx}_{-\int _{\mathbb{R}}[ g( x) -u( x,0)] v( x,0) dx} =0
 \label{eq:formulazione-debole-passaggio-1}
 \end{equation}
 Che è valida per ogni funzione test, scelgo quindi $v$ test con supporto in $\mathbb{R} \times \textcolor[rgb]{0.82,0.01,0.11}{(} 0,+\infty )$, annullando tutto il secondo termine
@@ -4810,7 +4810,7 @@ assurdo.
 \begin{theorem}
 	Sia $u$ soluzione debole tale che
 	\begin{enumerate}
-		\item ha una linea di discontinuità a salto $x=\dot{s}( t)$ di classe $C^{1}$
+		\item ha una linea di discontinuità a salto $x=s( t)$ di classe $C^{1}$
 		\item fuori da $\Gamma $ è soluzione classica di $u_{t} +q( u)_{x} =0$
 		\item il salto $\left[ u^{+} -u^{-}\right]_{|\Gamma }$ varia con continuità
 	\end{enumerate}
