@@ -4433,7 +4433,7 @@ non è sempre valida. Nel caso del traffico ad esempio $\displaystyle q$ è conc
 	% Text Node
 	\draw (137,106.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
 	% Text Node
-	\draw (240,106.4) node [anchor=north west][inner sep=0.75pt]    {$\rho /m$};
+	\draw (240,106.4) node [anchor=north west][inner sep=0.75pt]    {$\rho _{m}$};
 	% Text Node
 	\draw (293,34.4) node [anchor=north west][inner sep=0.75pt]    {$q''< 0$};
 	% Text Node
@@ -4617,7 +4617,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la ca
 	$\displaystyle u$ è definita univocamente per il teorema del Dini. Dimostriamo che $\displaystyle u\in C^{1}$. Sempre usando il teorema del Dini
 	\begin{gather*}
 		u_{t} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t) q'( u)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}\\
-		u_{x} =-\frac{G_{x}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
+		u_{x} =-\frac{G_{x}( x,t,u)}{G_{u}( x,t,u)} =\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
 	\end{gather*}
 	allora
 	\begin{equation*}
@@ -6322,7 +6322,7 @@ Esaminiamo alcune conseguenze di questa formula:
 			% Text Node
 			\draw (322,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{3}$};
 			% Text Node
-			\draw (382,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{3}$};
+			\draw (382,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{4}$};
 			% Text Node
 			\draw (301,82.4) node [anchor=north west][inner sep=0.75pt]    {$x=ct+\xi _{1}$};
 			% Text Node
@@ -6508,7 +6508,7 @@ Questo problema lo sappiamo risolvere quando $\displaystyle s=0$ ma l'equazione 
 \end{equation*}
 allora:
 \begin{align*}
-	u( x,t) =\int _{0}^{t} w( x,t;s) ds & =\frac{1}{2c}\int _{0}^{z}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds \\
+	u( x,t) =\int _{0}^{t} w( x,t;s) ds & =\frac{1}{2c}\int _{0}^{t}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds \\
 	                                    & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) dyds                            
 \end{align*}
 dove ricordiamo che $\displaystyle S_{x,t}$ è il settore in figura .
