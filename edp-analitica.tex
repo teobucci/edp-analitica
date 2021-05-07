@@ -6660,7 +6660,7 @@ otteniamo infine:
 		      	\end{cases}
 		      \end{equation*}
 		      
-		      la prima ci permette anche di concludere inizialmente il gradiente è il vettore nullo\begin{equation*}
+		      la prima ci permette anche di concludere inizialmente che il gradiente è il vettore nullo\begin{equation*}
 		      \nabla v(\mathbf{x} ,0) =\mathbf{0} .
 		\end{equation*}Quindi l'energia iniziale è nulla $E( 0) =0$ e pertanto, essendo costante:
 		\begin{equation*}
@@ -6906,7 +6906,7 @@ Non ci resta che imporre i dati iniziali per determinare $\displaystyle F$ e $\d
 \end{equation*}
 calcoliamo la derivata nel tempo:
 \begin{equation*}
-	\partial _{t} w_{\varepsilon }( x,t) =\frac{1}{r}\{-cF'( r-ct) -cF'( r+ct)\} ,
+	\partial _{t} w_{\varepsilon }( r,t) =\frac{1}{r}\{-cF'( r-ct) -cF'( r+ct)\} ,
 \end{equation*}
 e imponiamola in $\displaystyle t=0$:
 \begin{equation*}
@@ -7072,11 +7072,11 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	\end{align*}
 	Per quanto riguarda l'equazione osserviamo che:
 	\begin{align*}
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x}+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \partial _{\bm{\nu }} h(\bm{\sigma })\bm{\sigma } & \text{(divergenza)}    \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}                  & \text{(Gauss)}         \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x}+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \partial _{\bm{\nu }} h(\bm{\sigma })d\bm{\sigma } & \text{(cambio variabili)}    \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}                  & \text{(Gauss)}         \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
 	\end{align*}
-	quindi:
+	Ora è in una forma adatta ad essere derivata, quindi:
 	\begin{equation*}
 		\partial _{tt} w_{h}(\mathbf{x} ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\mathbf{x} +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } ,
 	\end{equation*}
