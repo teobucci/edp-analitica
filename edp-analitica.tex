@@ -1801,6 +1801,8 @@ e il massimo di $u$ su tutto è
 \max_{\overline{Q}_{T}} u=1
 \end{equation*}
 Ma nel rettangolo fino a che $t=\pi /2$ il massimo non è assunto solo sulla frontiera, ma anche tutto all'interno. Si dimostra che è l'unica possibilità affinché avvenga, ovvero che \textbf{il massimo può essere assunto all'interno se fino a quel punto }$u$\textbf{ è rimasto costante (Principio di Massimo Forte).}
+\fg[Principio di massimo forte. Si può notare come una volta usciti dalla zona dove si assume il massimo, non viene più raggiunto nei tempi successivi.]{0.6}{fig-max-forte}
+
 \section{Soluzione fondamentale \texorpdfstring{$n=1$}{n=1}}
 
 In $x=0$ sia concentrata una sorgente di calore \textbf{istantanea.} Indichiamo con $u^{\star }$ la temperatura della sbarra, vogliamo determinare l'evoluzione di $u^{\star },t\geqslant 0$.
@@ -2070,7 +2072,7 @@ Nel caso in cui $Q=1$ si ottiene la \textbf{soluzione fondamentale.}
 \boxed{\Gamma _{D}(x,t) =\frac{1}{\sqrt{4\pi Dt}} e^{-\frac{x^{2}}{4Dt}}}
 \end{equation*}
 Che ricorda la densità di probabilità di una normale.
-
+\fg[Soluzione fondamentale con $D=1$. Si può notare il picco iniziale che viene poi smussato.]{0.6}{fig-soluzione-fondamentale-calore}
 
 
 \textbf{Dimostrazione in due righe del Teorema di Pitagora.}\footnote{Ovvero: come sparare a una mosca con un cannone (cit. S. Salsa).}
@@ -2422,10 +2424,8 @@ Che cos'è il termine $\displaystyle v$ che abbiamo definito? Le sue dimensioni 
 \end{equation*}
 $\displaystyle q_{0} -p_{0}$ codifica la tendenza del moto continuo ad andare verso una direzione privilegiata: se $\displaystyle v >0$ il moto tenderà al limite ad andare verso sinistra, se $\displaystyle v< 0$ invece tenderà verso destra. In altre parole, esiste una corrente di intensità $\displaystyle | v| $ che trasporta la particella in una direzione mentre questa diffonde con costante $\displaystyle D$.
 \begin{equation*}
-p_{t} =\underbrace{Dp_{xx}}_{\mathrm{diffusione}} +\underbrace{vp_{x}}_{ \begin{array}{l}
-\mathrm{deriva/drift}\\
-\mathrm{trasporto}
-\end{array}}
+p_{t} =\underbrace{Dp_{xx}}_{\text{diffusione}} +\underbrace{vp_{x}}_{ \text{trasporto}}
+
 \end{equation*}
 La passeggiata aleatoria è diventata un processo di \textbf{diffusione con deriva.}
 \section{Inquinante in un canale}
@@ -3366,7 +3366,7 @@ Dal principio di massimo segue come corollario:
 			u=g        & \text{su}\mathrm{\ \partial \Omega } 
 		\end{cases}
 	\end{equation*}
-	ha al massimo una soluzione $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega \ })$. Inoltre, siano $\displaystyle g_{1},g_{2} \in C( \partial \Omega)$, e $\displaystyle u_{1},u_{2}$ le corrispondenti soluzioni. Allora
+	ha al massimo una soluzione $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega})$. Inoltre, siano $\displaystyle g_{1},g_{2} \in C( \partial \Omega)$, e $\displaystyle u_{1},u_{2}$ le corrispondenti soluzioni. Allora
 	\begin{enumerate}
 		\item \textbf{Confronto: }se $\displaystyle g_{1} \geqslant g_{2}$ su $\displaystyle \partial \Omega \ \Rightarrow \ u_{1} \geqslant u_{2}$ su $\displaystyle \Omega $
 		\item \textbf{Stabilità }(in norma $\displaystyle L^{\infty }(\Omega)) :$ 
