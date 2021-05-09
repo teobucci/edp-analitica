@@ -12,7 +12,17 @@
 \newcommand{\x}{\mathbf{x}}
 \newcommand{\y}{\mathbf{y}}
 
+\newcounter{conteggioS}
+\newcommand{\LezioneS}[1]{
+	\stepcounter{conteggioS}
+	\textit{Lezione Salsa \arabic{conteggioS} #1}
+	}
 
+\newcounter{conteggioV}
+\newcommand{\LezioneV}[1]{
+	\stepcounter{conteggioV}
+	\textit{Lezione Verzini \arabic{conteggioV} #1}
+	}
 
 
 
@@ -447,7 +457,28 @@ Per segnalare eventuali errori o suggerimenti potete contattare gli autori.
 \part{Equazioni alle Derivate Parziali}
 \chapter{Modelli matematici}
 
-\textit{Lezione Verzini 1 22/02/2021}
+%TODO
+\LezioneS{22/02/2021}
+
+\LezioneS{22/02/2021}
+
+\LezioneS{22/02/2021}
+
+\LezioneS{22/02/2021}
+
+\LezioneV{22/02/2021}
+
+\LezioneV{22/02/2021}
+
+\LezioneV{22/02/2021}
+
+\LezioneV{22/02/2021}
+
+
+
+
+
+\textit{Lezione 1 22/02/2021}
 
 Un modello matematico è un compromesso tra complessità del mondo reale e idee astratte della matematica. Li applicheremo spesso nel contesto della meccanica dei continui.
 
@@ -700,6 +731,23 @@ $\mathbb{R}^{n}$ è sia aperto che chiuso, ma allora anche il suo complementare,
 \bigcup _{A\in \mathcal{F}} A\supset E
 \end{equation*}
 \end{definition}
+
+\begin{figure}[htpb]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{copertura-2d}
+         \caption{2D.}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{copertura-3d}
+         \caption{3D.}
+     \end{subfigure}
+        \caption{Copertura di un insieme.}
+\end{figure}
+
 \textit{Esempio.}
 
 Tipici esempi di compatti sono gli intervalli \textbf{chiusi} e \textbf{limitati} in $\mathbb{R}$
@@ -2424,8 +2472,7 @@ Che cos'è il termine $\displaystyle v$ che abbiamo definito? Le sue dimensioni 
 \end{equation*}
 $\displaystyle q_{0} -p_{0}$ codifica la tendenza del moto continuo ad andare verso una direzione privilegiata: se $\displaystyle v >0$ il moto tenderà al limite ad andare verso sinistra, se $\displaystyle v< 0$ invece tenderà verso destra. In altre parole, esiste una corrente di intensità $\displaystyle | v| $ che trasporta la particella in una direzione mentre questa diffonde con costante $\displaystyle D$.
 \begin{equation*}
-p_{t} =\underbrace{Dp_{xx}}_{\text{diffusione}} +\underbrace{vp_{x}}_{ \text{trasporto}}
-
+	p_{t} = \underbrace{Dp_{xx}}_{\text{diffusione}}   +  \underbrace{vp_{x}}_{\text{trasporto}}
 \end{equation*}
 La passeggiata aleatoria è diventata un processo di \textbf{diffusione con deriva.}
 \section{Inquinante in un canale}
