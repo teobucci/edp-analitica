@@ -16,13 +16,13 @@
 \newcounter{conteggioS}
 \newcommand{\LezioneS}[1]{
 	\stepcounter{conteggioS}
-	\textit{Lezione Salsa \arabic{conteggioS} #1}
+	\textit{Lezione Salsa \arabic{conteggioS} (#1)}
 	}
 
 \newcounter{conteggioV}
 \newcommand{\LezioneV}[1]{
 	\stepcounter{conteggioV}
-	\textit{Lezione Verzini \arabic{conteggioV} #1}
+	\textit{Lezione Verzini \arabic{conteggioV} (#1)}
 	}
 
 
@@ -458,28 +458,7 @@ Per segnalare eventuali errori o suggerimenti potete contattare gli autori.
 \part{Equazioni alle Derivate Parziali}
 \chapter{Modelli matematici}
 
-%TODO
 \LezioneS{22/02/2021}
-
-\LezioneS{22/02/2021}
-
-\LezioneS{22/02/2021}
-
-\LezioneS{22/02/2021}
-
-\LezioneV{22/02/2021}
-
-\LezioneV{22/02/2021}
-
-\LezioneV{22/02/2021}
-
-\LezioneV{22/02/2021}
-
-
-
-
-
-\textit{Lezione 1 22/02/2021}
 
 Un modello matematico è un compromesso tra complessità del mondo reale e idee astratte della matematica. Li applicheremo spesso nel contesto della meccanica dei continui.
 
@@ -617,7 +596,7 @@ e dedurre subito che
 
 
 
-\textit{Lezione 2 23/02/2021}
+\LezioneS{23/02/2021}
 \section{Topologia di \texorpdfstring{$\mathbb{R}^{n}$}{Rn}}
 \begin{definition}
 [Palla aperta] Definiamo il concetto generale di intorno \textbf{aperto}, di raggio $\displaystyle r$ centrato in $\displaystyle \x$
@@ -1010,7 +989,7 @@ in particolare se $v=1$
 \int _{\Omega } \Delta u\ dx=\int _{\partial \Omega } \partial _{\bm{\nu}} u\ d\sigma 
 \label{eq:id-green-v1}
 \end{equation}
-\textit{Lezione 3 25/2/2021}
+\LezioneS{25/2/2021}
 \section{Ripasso}
 
 Consideriamo un dominio $\Omega \subseteq \mathbb{R}^{n}$, $(a,b) \subseteq \mathbb{R}$, $f:\Omega \times (a,b)\rightarrow \mathbb{R}$ e consideriamo
@@ -1121,7 +1100,7 @@ Per l'arbitrarietà di $\displaystyle V$ deduciamo la \textbf{legge fondamentale
 \end{equation*}
 
 
-\textit{Lezione 4 1/3/2021}
+\LezioneS{1/3/2021}
 
 Per ricavare l'\textbf{equazione del calore} occorrono delle leggi costitutive per le quantità $\displaystyle e$ e $\displaystyle \mathbf{q}$:
 \begin{itemize}
@@ -1405,7 +1384,7 @@ Unendo le soluzioni dei due problemi ottengo infinite soluzioni numerabili
 \begin{equation*}
 U_{m}(y,s) =A_{m} e^{-m^{2} \pi ^{2} s}\sin(m\pi y) \ \ \ \ m=1,2,\dotsc 
 \end{equation*}
-\textit{Lezione 5 2/3/2021}
+\LezioneS{2/3/2021}
 
 Nessuna di queste infinite soluzioni soddisfa la condizione iniziale $U(y,0) =y$, cerchiamo quindi di ottenere ciò che vogliamo sovrapponendo le infinite soluzioni
 \begin{equation*}
@@ -1716,7 +1695,7 @@ d'altro canto, essendo l'insieme a destra compreso in quello di sinistra, il mas
 \end{equation*}
 da cui la tesi.
 \end{dimostrazione}
-\textit{Lezione 6 (8/3/2021)}
+\LezioneS{8/3/2021}
 \section{Conseguenze del principio di massimo debole}
 
 Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ soluzione di
@@ -2178,7 +2157,7 @@ Quindi
 a^{2}\mathcal{F}^{\star }(\varphi) =b^{2}\mathcal{F}^{\star }(\varphi) +c^{2}\mathcal{F}^{\star }(\varphi) \ \ \Rightarrow \ \ a^{2} =b^{2} +c^{2}\\
 \qed 
 \end{gather*}
-\textit{Lezione 7 (9/3/2021)}
+\LezioneS{9/3/2021}
 \subsection{Modellazione matematica della sorgente d'origine}
 
 Per giungere alla soluzione fondamentale siamo partiti dall'evoluzione della temperatura causata da una sorgente istantanea e concentrata nell'origine. Qual è il modello matematico più adatto a descriverla?
@@ -2564,7 +2543,7 @@ Sostituendo in \eqref{eq:inquinante-in-canale} si trova
 \begin{equation*}
 \boxed{c_{t} =Dc_{xx} -vc_{x}}
 \end{equation*}
-\textit{Lezione 8 (15/03/2021)}
+\LezioneS{15/03/2021}
 
 Consideriamo un modello del tipo
 \begin{equation}
@@ -2842,7 +2821,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 \item \textbf{Robin} $\partial _{\nu } u+\alpha u=h$, con $\alpha  >0$
 \item miste
 \end{itemize}
-\textit{Lezione 9 (16/03/2021)}
+\LezioneS{16/03/2021}
 
 \begin{theorem}
 	Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ un dominio limitato regolare. Allora esiste al più una funzione $\displaystyle u$ di classe $\displaystyle C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $\displaystyle -\Delta u=f$ in $\displaystyle \Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
@@ -3448,7 +3427,7 @@ Dal principio di massimo segue come corollario:
 		      da cui l'unicità.
 	\end{enumerate}
 \end{dimostrazione}
-\textit{Lezione 10 (18/03/2021)}
+\LezioneS{18/03/2021}
 
 Se abbiamo $\Delta u=0$ in $\Omega $ abbiamo la proprietà di media in $\Omega $ $\Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
 \section{Laplaciano in coordinate cilindriche}
@@ -3731,7 +3710,7 @@ possiamo passare al limite sotto il segno di integrale perché il denominatore n
 
 \end{dimostrazione}
 
-\textit{Lezione 11 (22/03/2021)}
+\LezioneS{22/03/2021}
 
 Possiamo generalizzare la (16) per un numero generico $\displaystyle n$ di dimensioni
 \begin{equation*}
@@ -4020,7 +3999,7 @@ Vediamo la dimostrazione del teorema.
 	\end{itemize}
 \end{dimostrazione}
 
-\textit{Lezione 12 (23/03/2021)}
+\LezioneS{23/03/2021}
 \section{Soluzione di Green}
 
 Richiamiamo la formula della lezione scorsa
@@ -4569,7 +4548,7 @@ Siccome $s( 0) =0$ la linea d'urto è data da
 \end{equation*}
 La linea d'urto rappresenta \textit{l'ingorgo} che si propaga all'indietro.
 
-\textit{Lezione 13 (25/03/2021)}
+\LezioneS{25/03/2021}
 \section{Ritorno al metodo delle caratteristiche}
 
 Riprendiamo la soluzione dell'onda progressiva con velocità locale ottenuta dal metodo delle caratteristiche: dato il problema
@@ -4848,7 +4827,7 @@ Si può dimostrare però che se tracciamo una retta verticale (tagliando due are
 
 \fg[Inserimento di uno shock con la regola di Whitham.]{0.6}{leggi-conservazione-esempio-taglio}
 
-\textit{Lezione 14 (29/03/2021)}
+\LezioneS{29/03/2021}
 \section{Soluzione debole}
 
 Abbiamo notato una serie di problemi nel determinare la soluzione di (P) nel caso in cui $g$ avesse una qualche discontinuità
@@ -5303,7 +5282,7 @@ Questo è uno \textbf{shock non fisico}. È come se partendo da un punto su una 
 
 
 
-\textit{Lezione 15 (30/03/2021)}
+\LezioneS{30/03/2021}
 \subsection{Condizione di entropia}
 
 Abbiamo risposto al primo quesito, dando un senso al concetto di soluzione quando si presentano discontinuità (grazie alle soluzioni deboli e Rankine-Hugoniot), e dimostrato che l'unicità non è garantita. Ora dobbiamo definire un criterio di selezione che individui possibilmente un'unica soluzione accettabile dal punto di vista del significato fisico del problema.
@@ -6082,7 +6061,7 @@ L'\textbf{energia meccanica totale }della corda risulta essere
 \end{equation*}
 
 
-\textit{Lezione 16 (01/04/2021)}
+\LezioneS{01/04/2021}
 
 Abbiamo calcolato l'energia totale al tempo $t$ immagazzinata nella corda
 \begin{equation*}
@@ -6389,7 +6368,7 @@ Una perturbazione inizialmente localizzata in $z$ non viene avvertita nel punto 
 	\overline{t} =\frac{| p-z| }{c}
 \end{equation*}
 
-\textit{Lezione 17 (08/04/2021)}
+\LezioneS{08/04/2021}
 
 Riprendiamo il \textbf{problema di Cauchy globale}
 \begin{equation}
@@ -6686,7 +6665,8 @@ allora:
 dove ricordiamo che $\displaystyle S_{x,t}$ è il settore in figura .
 
 
-\textit{Lezione 18 Salsa (fatta da Verzini) (12/04/2021)}
+\LezioneS{12/04/2021}
+% (fatta da Verzini)
 \section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geqslant 2$}{n>2}}
 
 Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione di $u=u(\x ,t)$. L'equazione delle onde prende la forma:
@@ -6960,7 +6940,7 @@ Se $u\in C^{2}\left(\mathbb{R}^{n} \times [ 0,+\infty )\right)$ è soluzione di 
 	\item l'eventuale soluzione è unica.
 \end{enumerate}
 
-\textit{Lezione 19 (13/04/2021)}
+\LezioneS{13/04/2021}
 \section{Problema di Cauchy globale \texorpdfstring{$(n=2,\ n=3)$}{(n=2, n=3)}}
 
 Riprendiamo e risolviamo il Problema di Cauchy globale
@@ -7645,7 +7625,7 @@ Il fenomeno si può osservare ponendo un turacciolo in acqua calma e lasciando c
 \part{Analisi Funzionale}
 
 \chapter{Introduzione}
-\textit{Lezione 1 (25/02/2021)}
+\LezioneV{25/02/2021}
 
 Sia $X$ spazio vettoriale normato reale, stiamo chiedendo due cose: combinazioni lineari e la presenza di una norma. Una norma è un operatore $\Vert \cdotp \Vert :X\rightarrow \mathbb{R}$ tale che
 \begin{itemize}
@@ -7896,7 +7876,7 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 	\begin{equation*}
 		\Vert P_{V} x-x\Vert =\inf_{v\in V}\Vert v-x\Vert 
 	\end{equation*}
-	\textit{Lezione Verzini 2 (04/03/2021)}
+	\LezioneV{04/03/2021}
 	
 	\textbf{Inoltre:}
 	\begin{enumerate}
@@ -8154,7 +8134,7 @@ per Cauchy-Schwartz. Quindi $\displaystyle L$ è lineare e continuo (limitato) a
 \end{equation*}
 Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle \Vert L\Vert _{*} \geqslant \Vert u\Vert $ allora $\displaystyle \Vert L\Vert _{*} =\Vert u\Vert $. Il teorema che vedremo ora ci confermerà che questo non è solo un esempio, ma l'unico caso possibile.
 
-\textit{Lezione Verzini 3 (18/03/2021)}
+\LezioneV{18/03/2021}
 \begin{theorem}
 	[di rappresentazione di Riesz] Sia $H$ uno spazio di Hilbert, allora $\forall L\in H^{*}$ esiste un unico vettore $u\in H$ tale che
 	\begin{equation*}
@@ -8506,7 +8486,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 \end{dimostrazione}
 
 \chapter{Distribuzioni e spazi di Sobolev}
-\textit{Lezione Verzini 4 (25/03/21)}
+\LezioneV{25/03/21}
 \section{Richiami su funzioni test e distribuzioni}
 
 Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$, $\displaystyle n\geqslant 1$. 
@@ -8801,7 +8781,7 @@ Riassumendo\footnote{il simbolo $\displaystyle \delta _{3}$ non indica la Delta 
 La derivata classica e debole non coincidono.
 
 \section{Spazi di Sobolev}
-\textit{Lezione Verzini 5 (01/04/2021)}
+\LezioneV{01/04/2021}
 
 Lavoreremo con uno specifico spazio di Sobolev sono ``spazi di funzioni $L^{p}$ aventi derivate $L^{p}$''. Lavoreremo con due spazi di Sobolev, il primo sarà $H^{1}$ e il secondo $H^{1}_{0} \subseteq H^{1}$.
 
@@ -9119,7 +9099,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	Un'immediata conseguenza è che l'unica costante che può appartenere ad $H^{1}_{0}$ è la costante nulla, ulteriore indice che \textit{ci stanno le cose che si annullano al bordo.}
 \end{oss}
 
-\textit{Lezione Verzini 6 (08/04/2021)}
+\LezioneV{08/04/2021}
 \begin{oss}
 	$\displaystyle u( x) \equiv c$ costante allora $\displaystyle u\in H^{1}( \Omega )$, $\displaystyle ( |\Omega |< +\infty )$ ma
 	\begin{equation*}
