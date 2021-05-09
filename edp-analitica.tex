@@ -493,7 +493,7 @@ Si perviene quindi a equazioni o sistemi di equazioni ordinarie o alle derivate 
 
 Una EDP è un'equazione della forma
 \begin{equation*}
-F( \mathbf{x},t,u,u_{t},u_{x_{j}},u_{x_{i} x_{j}},\dotsc)=0 \qquad \mathbf{x}\in \mathbb{R} ^{n} 
+F( \x,t,u,u_{t},u_{x_{j}},u_{x_{i} x_{j}},\dotsc)=0 \qquad \x\in \mathbb{R} ^{n} 
 \end{equation*}
 L'ordine di un'equazione è l'ordine massimo di derivazione.
 
@@ -620,7 +620,7 @@ e dedurre subito che
 \textit{Lezione 2 23/02/2021}
 \section{Topologia di \texorpdfstring{$\mathbb{R}^{n}$}{Rn}}
 \begin{definition}
-[Palla aperta] Definiamo il concetto generale di intorno \textbf{aperto}, di raggio $\displaystyle r$ centrato in $\displaystyle \mathbf{x}$
+[Palla aperta] Definiamo il concetto generale di intorno \textbf{aperto}, di raggio $\displaystyle r$ centrato in $\displaystyle \x$
 \begin{equation*}
 B_{r}(\x) =\left\{\y\in \mathbb{R}^{n} :| \y-\x| < r\right\}
 \end{equation*}
@@ -1567,7 +1567,7 @@ u(x,t) =u_{0} +[ u_{1} -u_{0}]\frac{x}{L} -\underbrace{[ u_{1} -u_{0}]\sum\limit
 
 \section{Problemi in dimensione \texorpdfstring{$n>1$}{n>1}}
 
-Sia $\displaystyle \Omega $ un dominio\footnote{ovvero un aperto connesso in $\displaystyle \mathbb{R}^{n}$.}. La temperatura sarà una $u=u(\mathbf{x},t)$ che soddisfa $u_{t} -D\Delta u=f$ nel \textit{cilindro spazio-temporale}
+Sia $\displaystyle \Omega $ un dominio\footnote{ovvero un aperto connesso in $\displaystyle \mathbb{R}^{n}$.}. La temperatura sarà una $u=u(\x,t)$ che soddisfa $u_{t} -D\Delta u=f$ nel \textit{cilindro spazio-temporale}
 \begin{equation*}
 Q_{T} =\Omega \times (0,T)
 \end{equation*}
@@ -1577,7 +1577,7 @@ Q_{T} =\Omega \times (0,T)
 Occorre assegnare
 \begin{itemize}
 \item \textit{condizione iniziale}\begin{equation*}
-u(\mathbf{x},0) =g(\mathbf{x}) \ \ \mathbf{x} \in \overline{\Omega }
+u(\x,0) =g(\x) \ \ \x \in \overline{\Omega }
 \end{equation*}
 \item \textit{condizioni sul bordo} $\partial \Omega $
 \begin{itemize}
@@ -1599,15 +1599,15 @@ Il problema è quindi determinare $u$ tale che
 \begin{equation*}
 \begin{cases}
 u_{t} -D\Delta u=f & \text{in} \ Q_{T}\\
-u(\mathbf{x},0) =g(\mathbf{x}) & \text{in} \ \overline{\Omega }\\
+u(\x,0) =g(\x) & \text{in} \ \overline{\Omega }\\
 +\ \text{condizioni al bordo} & \text{su} \ \partial \Omega \times ( 0,T]
 \end{cases}
 \end{equation*}
 \textbf{Problema di Cauchy globale.}
 \begin{equation*}
 \begin{cases}
-u_{t} -D\Delta u=f & \mathbf{x} \in \mathbb{R}^{n},0< t< T\\
-u(\mathbf{x},0) =g(\mathbf{x}) & \mathbf{x} \in \mathbb{R}^{n}\\
+u_{t} -D\Delta u=f & \x \in \mathbb{R}^{n},0< t< T\\
+u(\x,0) =g(\x) & \x \in \mathbb{R}^{n}\\
 \mathrm{+\ condizioni\ all'\infty } & 
 \end{cases}
 \end{equation*}
@@ -2229,15 +2229,15 @@ Come già osservato in precedenza, per $\displaystyle t >0$ \ $\displaystyle \Ga
 
 Con ragionamenti analoghi otteniamo
 \begin{equation*}
-\Gamma _{D}(\mathbf{x},t) =\frac{1}{(4\pi Dt)^{n/2}} e^{-\frac{| \mathbf{x}| ^{2}}{4Dt}}
+\Gamma _{D}(\x,t) =\frac{1}{(4\pi Dt)^{n/2}} e^{-\frac{| \x| ^{2}}{4Dt}}
 \end{equation*}
 e come condizione iniziale
 \begin{gather*}
-``\ \Gamma _{D}(\mathbf{x},0) =\delta _{n}(0) \ "\\
-\int _{\mathbb{R}^{n}} \Gamma _{D}(\mathbf{x},0) \varphi (\mathbf{x}) d\mathbf{x} =\langle \delta _{n},\varphi \rangle =\varphi (0)
+``\ \Gamma _{D}(\x,0) =\delta _{n}(0) \ "\\
+\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,0) \varphi (\x) d\x =\langle \delta _{n},\varphi \rangle =\varphi (0)
 \end{gather*}
 l'interpretazione della soluzione fondamentale è analoga e la conservazione dell'energia si esprime come\begin{equation*}
-\int _{\mathbb{R}^{n}} \Gamma _{D}(\mathbf{x},t) d\mathbf{x} =1,\ \forall t >0
+\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,t) d\x =1,\ \forall t >0
 \end{equation*}
 \section{Passeggiata aleatoria simmetrica (unidimensionale)}
 
@@ -3681,21 +3681,21 @@ p_{2}
 \end{pmatrix}$ il centro del cerchio, con $\mathbf{\sigma } =\begin{pmatrix}
 p_{1} +R\cos \varphi \\
 p_{2} +R\sin \varphi 
-\end{pmatrix}$ un punto sul bordo, con $\mathbf{x} =\begin{pmatrix}
+\end{pmatrix}$ un punto sul bordo, con $\x =\begin{pmatrix}
 p_{1} +r\cos \vartheta \\
 p_{2} +r\sin \vartheta 
 \end{pmatrix}$ un punto del cerchio. Il differenziale si trova come determinante dello Jacobiano $d\mathbf{\sigma } =Rd\varphi $. Questo ci permette anche di riscrivere il denominatore
 \begin{align*}
-| \mathbf{x} -\mathbf{\sigma }| ^{2} & =( R\cos \varphi -r\cos \vartheta)^{2} +( R\sin \varphi -r\sin \vartheta)^{2}\\
+| \x -\mathbf{\sigma }| ^{2} & =( R\cos \varphi -r\cos \vartheta)^{2} +( R\sin \varphi -r\sin \vartheta)^{2}\\
  & =R^{2}\cos^{2} \varphi +r^{2}\cos^{2} \vartheta -2rR\cos \varphi \cos \vartheta +R^{2}\sin^{2} \varphi +r^{2}\sin^{2} \vartheta -2rR\sin \varphi \sin \vartheta \\
  & =R^{2} +r^{2} -2rR(\cos \varphi \cos \vartheta -\sin \varphi \sin \vartheta)\\
  & =R^{2} +r^{2} -2rR\cos( \varphi -\vartheta)
 \end{align*}}
 \begin{equation}
-u(\mathbf{x}) =\frac{R^{2} -| \mathbf{x} -\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\mathbf{\sigma })}{| \mathbf{x} -\mathbf{\sigma }| ^{2}} d\sigma 
+u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\mathbf{\sigma })}{| \x -\mathbf{\sigma }| ^{2}} d\sigma 
 \label{eq:poisson-cerchio}
 \end{equation}
-Se $\mathbf{x} \in B_{R}(\mathbf{p})$, cioè dentro e non sul bordo
+Se $\x \in B_{R}(\mathbf{p})$, cioè dentro e non sul bordo
 
 
 
@@ -3717,7 +3717,7 @@ Se $\mathbf{x} \in B_{R}(\mathbf{p})$, cioè dentro e non sul bordo
 	% Text Node
 	\draw (317,66.4) node [anchor=north west][inner sep=0.75pt]    {$\partial B_{R}(\mathbf{p})$};
 	% Text Node
-	\draw (255,73.4) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{x}$};
+	\draw (255,73.4) node [anchor=north west][inner sep=0.75pt]    {$\x$};
 
 
 	\end{tikzpicture}
@@ -3735,7 +3735,7 @@ possiamo passare al limite sotto il segno di integrale perché il denominatore n
 
 Possiamo generalizzare la (16) per un numero generico $\displaystyle n$ di dimensioni
 \begin{equation*}
-	u(\mathbf{x}) =\frac{R^{2} -| \mathbf{x} -\mathbf{p}| ^{2}}{w_{n} R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\mathbf{\sigma })}{| \mathbf{x} -\mathbf{\sigma }| ^{n}} d\mathbf{\sigma }
+	u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{w_{n} R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\mathbf{\sigma })}{| \x -\mathbf{\sigma }| ^{n}} d\mathbf{\sigma }
 \end{equation*}
 con $\displaystyle u\in C^{\infty }( B_{R}(\mathbf{p})) \cap C\left(\overline{B_{R}}(\mathbf{p})\right)$.
 \section{Soluzione fondamentale per l'operatore di Laplace}
@@ -6689,17 +6689,17 @@ dove ricordiamo che $\displaystyle S_{x,t}$ è il settore in figura .
 \textit{Lezione 18 Salsa (fatta da Verzini) (12/04/2021)}
 \section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geqslant 2$}{n>2}}
 
-Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione di $u=u(\mathbf{x} ,t)$. L'equazione delle onde prende la forma:
+Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione di $u=u(\x ,t)$. L'equazione delle onde prende la forma:
 \begin{equation}
-	u_{tt} -c^{2} \Delta u=f,\ \ \mathbf{x} \in \Omega \subset \mathbb{R}^{n} ,t >0,
+	u_{tt} -c^{2} \Delta u=f,\ \ \x \in \Omega \subset \mathbb{R}^{n} ,t >0,
 \end{equation}
 $c$ ha le dimensioni di una velocità anche in questo caso, e sarà la velocità di propagazione del segnale. Vi sono particolari soluzioni, specialmente nei casi $n=2,3$. Analizziamo il caso delle onde sferiche in $n=3$. Prende la forma, dipendente \textit{solo} dal raggio:
 \begin{equation*}
-	u(\mathbf{x} ,t) =w( r,t) ,\ \ r=| \mathbf{x}| =\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}} .
+	u(\x ,t) =w( r,t) ,\ \ r=| \x| =\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}} .
 \end{equation*}
 Lavoriamo in coordinate sferiche:
 \begin{equation*}
-	\mathbf{x} =
+	\x =
 	\begin{pmatrix}
 		x_{1} \\
 		x_{2} \\
@@ -6762,8 +6762,8 @@ Qui $r$ deve essere $\geqslant 0$, ed è una limitazione forte.
 
 I due termini prendono i nomi di:
 \begin{itemize}
-	\item \textit{outgoing wave}, $w_{o}$ è costante se $| \mathbf{x}| -ct$ è costante, sono delle superfici sferiche con raggio che si allarga.
-	\item \textit{incoming wave}, $w_{i}$ è costante se $| \mathbf{x}| +ct$ è costante. Anche qui sono sfere ma succede qualcosa di poco rassicurante, il raggio tende a $0$ e diventa addirittura negativo, perde di significato. È indice di sorgenti all'infinito e spesso viene scartata (``condizione di radiazione'').
+	\item \textit{outgoing wave}, $w_{o}$ è costante se $| \x| -ct$ è costante, sono delle superfici sferiche con raggio che si allarga.
+	\item \textit{incoming wave}, $w_{i}$ è costante se $| \x| +ct$ è costante. Anche qui sono sfere ma succede qualcosa di poco rassicurante, il raggio tende a $0$ e diventa addirittura negativo, perde di significato. È indice di sorgenti all'infinito e spesso viene scartata (``condizione di radiazione'').
 \end{itemize}
 \subsection{Problemi ben posti: unicità.}
 
@@ -6771,8 +6771,8 @@ Sia $Q_{T} =\Omega \times ( 0,T)$ il \textit{cilindro spazio-temporale}, dove $\
 \begin{equation}
 	\begin{cases}
 		u_{tt} -c^{2} \Delta u=f      & \text{in} \ Q_{T}                         \\
-		u(\mathbf{x} ,0) =g           & \text{in} \ \overline{\Omega }            \\
-		u_{t}(\mathbf{x} ,0) =h       & \text{in} \ \overline{\Omega }            \\
+		u(\x ,0) =g           & \text{in} \ \overline{\Omega }            \\
+		u_{t}(\x ,0) =h       & \text{in} \ \overline{\Omega }            \\
 		+\ \text{condizioni al bordo} & \text{su} \ \partial \Omega \times ( 0,T) 
 	\end{cases}
 	\label{eq:problema-generico-onde-unicita}
@@ -6783,31 +6783,31 @@ Anche in dimensione $n >1$ ha importanza il \textbf{problema di Cauchy globale},
 \begin{equation}
 	\begin{cases}
 		u_{tt} -c^{2} \Delta u=f & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
-		u(\mathbf{x} ,0) =g      & \text{in} \ \mathbb{R}^{n}                      \\
-		u_{t}(\mathbf{x} ,0) =h  & \text{in} \ \mathbb{R}^{n}                      
+		u(\x ,0) =g      & \text{in} \ \mathbb{R}^{n}                      \\
+		u_{t}(\x ,0) =h  & \text{in} \ \mathbb{R}^{n}                      
 	\end{cases}
 	\label{eq:pcg-onde-unicita}
 \end{equation}
 Vedremo che per $n=1,2,3$ le soluzioni hanno proprietà molto diverse tra loro. Mostriamo ora un semplice risultato, che useremo subito dopo nel teorema per l'unicità. Usiamo il `metodo dell'energia', definendo appunto l'energia tramite la formula:
 \begin{equation}
-	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} d\mathbf{x} ,
+	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} d\x ,
 \end{equation}
 Deriviamo rispetto al tempo e supponiamo di poter fare tutto in modo lecito, formalizzeremo dopo nell'enunciato del teorema:
 \begin{align*}
-	\dot{E}( t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} d\mathbf{x}                          \\
-	            & =\int _{\Omega } u_{t} u_{tt} \ d\mathbf{x} +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\mathbf{x} =( *) , 
+	\dot{E}( t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} d\x                          \\
+	            & =\int _{\Omega } u_{t} u_{tt} \ d\x +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\x =( *) , 
 \end{align*}
 il secondo termine si può integrare per parti:
 \begin{equation*}
-	\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\mathbf{x} =\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma -\int _{\Omega } u_{t}\underbrace{\mathrm{div}(\mathrm{grad} u)}_{\Delta u} \ d\mathbf{x} ,
+	\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\x =\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma -\int _{\Omega } u_{t}\underbrace{\mathrm{div}(\mathrm{grad} u)}_{\Delta u} \ d\x ,
 \end{equation*}
 sostituendo:
 \begin{equation*}
-	( *) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] d\mathbf{x} ,
+	( *) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] d\x ,
 \end{equation*}
 otteniamo infine:
 \begin{equation}
-	\dot{E}( t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t} f\ d\mathbf{x} .
+	\dot{E}( t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t} f\ d\x .
 	\label{eq:onde-derivata-energia}
 \end{equation}
 \begin{theorem}
@@ -6823,17 +6823,17 @@ otteniamo infine:
 		      	\dot{E}( t) =0,
 		      \end{equation*}quindi è costante, in particolare è sempre uguale al suo valore iniziale:
 		      \begin{equation*}
-		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\mathbf{x} ,0) +c^{2}| \nabla v(\mathbf{x} ,0)| ^{2}\right\} d\mathbf{x} .
+		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} d\x .
 		      \end{equation*}Siccome siamo con condizioni iniziale nulle:
 		      \begin{equation*}
 		      	\begin{cases}
-		      		v(\mathbf{x} ,0) =0,     & \text{in} \ \overline{\Omega } \\
-		      		v_{t}(\mathbf{x} ,0) =0, & \text{in} \ \overline{\Omega } 
+		      		v(\x ,0) =0,     & \text{in} \ \overline{\Omega } \\
+		      		v_{t}(\x ,0) =0, & \text{in} \ \overline{\Omega } 
 		      	\end{cases}
 		      \end{equation*}
 		      
 		      la prima ci permette anche di concludere inizialmente che il gradiente è il vettore nullo\begin{equation*}
-		      \nabla v(\mathbf{x} ,0) =\mathbf{0} .
+		      \nabla v(\x ,0) =\mathbf{0} .
 		\end{equation*}Quindi l'energia iniziale è nulla $E( 0) =0$ e pertanto, essendo costante:
 		\begin{equation*}
 			E( t) =0,\ \forall t.
@@ -6853,12 +6853,12 @@ otteniamo infine:
 		      	\begin{cases}
 		      		v_{tt} -c^{2} \Delta v=0           &                                                                 \\
 		      		\partial _{\bm{\nu }} v+\alpha v=0 & \text{su} \ \partial \Omega \times ( 0,T) ,\ \alpha \geqslant 0 \\
-		      		v(\mathbf{x} ,0) =0                & \text{in} \ \overline{\Omega }                                  \\
-		      		v_{t}(\mathbf{x} ,0) =0            & \text{in} \ \overline{\Omega }                                  
+		      		v(\x ,0) =0                & \text{in} \ \overline{\Omega }                                  \\
+		      		v_{t}(\x ,0) =0            & \text{in} \ \overline{\Omega }                                  
 		      	\end{cases}
 		      \end{equation*}Sappiamo già che $E( 0) =0$ e che $E( t) \geqslant 0$, vediamo cosa succede questa volta alla derivata temporale di $E( t)$:
 		      \begin{align*}
-		      	\dot{E}( t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ d\sigma +\cancel{\int _{\Omega } v_{t} f\ d\mathbf{x}} &                                          \\
+		      	\dot{E}( t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ d\sigma +\cancel{\int _{\Omega } v_{t} f\ d\x} &                                          \\
 		      	            & =c^{2}\int _{\partial \Omega } v_{t}( -\alpha v) \ d\sigma                                                           & \text{(sostituendo la condizione)}       \\
 		      	            & =-c^{2} \alpha \int _{\partial \Omega } vv_{t} \ d\sigma                                                             &                                          \\
 		      	            & =-\frac{c^{2} \alpha }{2}\int _{\partial \Omega } \partial _{t}\left( v^{2}\right) \ d\sigma                         & \text{(riconoscendo una derivata)}       \\
@@ -6877,19 +6877,19 @@ otteniamo infine:
 
 Passiamo al problema di Cauchy globale.
 
-Facciamo ora un'osservazione, ragionando in $n=2$. Supponiamo di star considerando una perturbazione governata da un'equazione delle onde omogenea $( f\equiv 0)$. Questa perturbazione è avertita nel punto $\mathbf{x}_{0}$ all'istante $t_{0}$.
+Facciamo ora un'osservazione, ragionando in $n=2$. Supponiamo di star considerando una perturbazione governata da un'equazione delle onde omogenea $( f\equiv 0)$. Questa perturbazione è avertita nel punto $\x_{0}$ all'istante $t_{0}$.
 
-Ammesso che $c$ sia la velocità di propagazione, possiamo intuire che c'è un intero cono, detto \textbf{cono retrogrado}, che influenza il valore di $u(\mathbf{x}_{0} ,t_{0})$
+Ammesso che $c$ sia la velocità di propagazione, possiamo intuire che c'è un intero cono, detto \textbf{cono retrogrado}, che influenza il valore di $u(\x_{0} ,t_{0})$
 
 \fg[Cono retrogrado.]{0.4}{cono-retrogrado}
 
-Il \textbf{dominio di influenza} all'istante $t$ è $B_{c( t_{0} -t)}(\mathbf{x}_{0})$, cioè gli $\mathbf{x}$ tali che $| \mathbf{x} -\mathbf{x}_{0}| \leqslant c| t-t_{0}| $, quelli che mi permettono di raggiungere quel punto. L'intero dominio di influenza è questo cono retrogrado:
+Il \textbf{dominio di influenza} all'istante $t$ è $B_{c( t_{0} -t)}(\x_{0})$, cioè gli $\x$ tali che $| \x -\x_{0}| \leqslant c| t-t_{0}| $, quelli che mi permettono di raggiungere quel punto. L'intero dominio di influenza è questo cono retrogrado:
 \begin{equation}
-	C_{\mathbf{x}_{0} ,t_{0}} =\{(\mathbf{x} ,t) :\ | \mathbf{x} -\mathbf{x}_{0}| \leqslant c| t-t_{0}| ,\ 0\leqslant t\leqslant t_{0}\}
+	C_{\x_{0} ,t_{0}} =\{(\x ,t) :\ | \x -\x_{0}| \leqslant c| t-t_{0}| ,\ 0\leqslant t\leqslant t_{0}\}
 \end{equation}
 Non possiamo aspettarci di definire un'energia esattamente come prima, perché essendo in $\Omega =\mathbb{R}^{n}$ gli integrali sarebbero illimitati. Vogliamo qualcosa di più limitato: integriamo su questi cerchi e otteniamo una specie di energia. Si definisce
 \begin{equation}
-	e( t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] d\mathbf{x}
+	e( t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] d\x
 	\label{eq:energia-onde-pcg}
 \end{equation}
 \begin{theorem}
@@ -6924,7 +6924,7 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 \begin{dimostrazione}
 	Bisogna stare attenti perchè in \eqref{eq:energia-onde-pcg} la $t$ sta sia nel dominio di integrazione che nell'ingranda. Sfogliamo la cipolla\footnote{Cit. Gianmaria Verzini.}:
 	\begin{equation*}
-		e( t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\mathbf{x}_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ d\sigma .
+		e( t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ d\sigma .
 	\end{equation*}
 	Ricordando che:
 	\begin{equation*}
@@ -6932,20 +6932,20 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 	\end{equation*}
 	possiamo derivare $e( t)$, ricordando che nel secondo termine l'integrale si può ricomporre:
 	\begin{align*}
-		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] d\sigma \cdotp \underbrace{\frac{d}{dt} c( t_{0} -t)}_{-c} \\
-		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}}\right] d\mathbf{x}.                                                                                                                                                                                                 
+		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] d\sigma \cdotp \underbrace{\frac{d}{dt} c( t_{0} -t)}_{-c} \\
+		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}}\right] d\x.                                                                                                                                                                                                 
 	\end{align*}
 	Integriamo per parti il termine rosso:
 	\begin{equation*}
-		\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}} \ d\mathbf{x} =\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ d\sigma -\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ d\mathbf{x}
+		\int _{B_{c( t_{0} -t)}(\x_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}} \ d\x =\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ d\sigma -\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ d\x
 	\end{equation*}
 	e usiamo l'equazione delle onde omogenea:
 	\begin{align*}
-		\dot{e}( t) & =\int _{B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) d\mathbf{x}                                                                                                                                                                                                                                                                                                                                                                                       \\
-		            & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \ d\sigma +c^{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})} u_{t} \partial _{\bm{\nu }} u\ d\mathbf{x} \\
-		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] d\sigma                                                                          \\
-		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] d\sigma                                                                           \\
-		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\mathbf{x}_{0})}[| u_{t}| -c| \nabla u| ]^{2} d\sigma \leqslant 0.                                                                                                                                                                                                                                                                                                                                                                                       
+		\dot{e}( t) & =\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) d\x                                                                                                                                                                                                                                                                                                                                                                                       \\
+		            & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \ d\sigma +c^{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t} \partial _{\bm{\nu }} u\ d\x \\
+		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] d\sigma                                                                          \\
+		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] d\sigma                                                                           \\
+		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}[| u_{t}| -c| \nabla u| ]^{2} d\sigma \leqslant 0.                                                                                                                                                                                                                                                                                                                                                                                       
 	\end{align*}
 	Nell'effettuare la maggiorazione abbiamo usato che:
 	\begin{equation*}
@@ -6956,7 +6956,7 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 
 Se $u\in C^{2}\left(\mathbb{R}^{n} \times [ 0,+\infty )\right)$ è soluzione di problema di Cauchy globale, allora:
 \begin{enumerate}
-	\item se $g\equiv h\equiv 0$ sulla palla iniziale $B_{ct_{0}}(\mathbf{x}_{0})$ e $f\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$ allora $u\equiv 0$ su $C_{\mathbf{x}_{0} ,t_{0}}$;
+	\item se $g\equiv h\equiv 0$ sulla palla iniziale $B_{ct_{0}}(\x_{0})$ e $f\equiv 0$ su $C_{\x_{0} ,t_{0}}$ allora $u\equiv 0$ su $C_{\x_{0} ,t_{0}}$;
 	\item l'eventuale soluzione è unica.
 \end{enumerate}
 
@@ -6967,9 +6967,9 @@ Riprendiamo e risolviamo il Problema di Cauchy globale
 \begin{equation*}
 	\text{(PCG)} \ 
 	\begin{cases}
-		u_{tt} -c^{2} \Delta u=0            & \mathbf{x} \in \mathbb{R}^{3} ,t >0 \\
-		u(\mathbf{x} ,0) =g(\mathbf{x})     & \mathbf{x}\mathbb{\in R}^{3}        \\
-		u_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \mathbf{x}\mathbb{\in R}^{3}        
+		u_{tt} -c^{2} \Delta u=0            & \x \in \mathbb{R}^{3} ,t >0 \\
+		u(\x ,0) =g(\x)     & \x\mathbb{\in R}^{3}        \\
+		u_{t}(\x ,0) =h(\x) & \x\mathbb{\in R}^{3}        
 	\end{cases}
 \end{equation*}
 sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ è unica, dobbiamo dimostrarne l'esistenza.
@@ -7001,8 +7001,8 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	\begin{equation*}
 		\begin{cases}
 			\partial _{tt} v-c^{2} \Delta v=0 & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
-			v(\mathbf{x} ,0) =g(\mathbf{x})   & \text{in} \ \mathbb{R}^{n}                      \\
-			v_{t}(\mathbf{x} ,0) =0           & \text{in} \ \mathbb{R}^{n}                      
+			v(\x ,0) =g(\x)   & \text{in} \ \mathbb{R}^{n}                      \\
+			v_{t}(\x ,0) =0           & \text{in} \ \mathbb{R}^{n}                      
 		\end{cases}
 	\end{equation*}
 	Di conseguenza, la soluzione di (PCG) è data da:
@@ -7020,8 +7020,8 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	\end{equation*}
 	quindi $\displaystyle v$ è soluzione dell'equazione delle onde. Verifichiamo i dati iniziali:
 	\begin{align*}
-		v(\mathbf{x} ,0)     & =\partial _{t} w_{g}(\mathbf{x} ,0) =g( x) ,                                \\
-		v_{t}(\mathbf{x} ,0) & =\partial _{tt} w_{g}(\mathbf{x} ,0) =c^{2} \Delta w_{g}(\mathbf{x} ,0) =0. 
+		v(\x ,0)     & =\partial _{t} w_{g}(\x ,0) =g( x) ,                                \\
+		v_{t}(\x ,0) & =\partial _{tt} w_{g}(\x ,0) =c^{2} \Delta w_{g}(\x ,0) =0. 
 	\end{align*}
 \end{dimostrazione}
 Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo con $\displaystyle g=0$ e $\displaystyle h$ qualunque.
@@ -7031,19 +7031,19 @@ D'ora in poi omettiamo il pedice in $\displaystyle w_{h}$ per comodità.
 \begin{equation*}
 	\begin{cases}
 		w_{tt} -c^{2} \Delta w=0            & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
-		w(\mathbf{x} ,0) =0                 & \text{in} \ \mathbb{R}^{3}                      \\
-		w_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \text{in} \ \mathbb{R}^{3}                      
+		w(\x ,0) =0                 & \text{in} \ \mathbb{R}^{3}                      \\
+		w_{t}(\x ,0) =h(\x) & \text{in} \ \mathbb{R}^{3}                      
 	\end{cases}
 \end{equation*}
 La strategia risolutiva si compone di due passi:
 \begin{enumerate}
 	\item Risolvo nel caso particolare:
 		\begin{equation*}
-			h(\mathbf{x}) =\delta _{3}(\mathbf{x})
+			h(\x) =\delta _{3}(\x)
 		\end{equation*}
 	\item Risolvo nel caso generale con:
 		\begin{equation*}
-			h(\mathbf{x}) =\int _{\mathbb{R}^{3}} \delta _{3}(\mathbf{x} -\mathbf{y}) h(\mathbf{y}) d\mathbf{y}
+			h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) d\y
 		\end{equation*}
 \end{enumerate}
 
@@ -7051,22 +7051,22 @@ La strategia risolutiva si compone di due passi:
 
 \textbf{Passo 1}.
 
-Caso $\displaystyle h(\mathbf{x}) =\delta _{3}(\mathbf{x})$. La soluzione corrispondente che costruiamo si chiama \textbf{soluzione fondamentale dell'equazione delle onde} in $\displaystyle n=3$. Per risolvere cerchiamo di approssimare prima la delta con un'altra funzione: dall'equazione del calore sappiamo che, con $\displaystyle D=1,t=\varepsilon $ la soluzione fondamentale in $\displaystyle n=3$ è:
+Caso $\displaystyle h(\x) =\delta _{3}(\x)$. La soluzione corrispondente che costruiamo si chiama \textbf{soluzione fondamentale dell'equazione delle onde} in $\displaystyle n=3$. Per risolvere cerchiamo di approssimare prima la delta con un'altra funzione: dall'equazione del calore sappiamo che, con $\displaystyle D=1,t=\varepsilon $ la soluzione fondamentale in $\displaystyle n=3$ è:
 \begin{equation*}
-	\Gamma (\mathbf{x} ,\varepsilon ) =\frac{1}{( 4\pi \varepsilon )^{3/2}}\exp\left\{-\frac{| \mathbf{x}| ^{2}}{4\varepsilon }\right\}\xrightarrow{\varepsilon \rightarrow 0^{+}} \delta _{3}(\mathbf{x}) .
+	\Gamma (\x ,\varepsilon ) =\frac{1}{( 4\pi \varepsilon )^{3/2}}\exp\left\{-\frac{| \x| ^{2}}{4\varepsilon }\right\}\xrightarrow{\varepsilon \rightarrow 0^{+}} \delta _{3}(\x) .
 \end{equation*}
-Sia $\displaystyle w_{\varepsilon }(\mathbf{x} ,t)$ la soluzione di
+Sia $\displaystyle w_{\varepsilon }(\x ,t)$ la soluzione di
 \begin{equation*}
 	( P_{\varepsilon }) \ 
 	\begin{cases}
 		\partial _{tt} w_{\varepsilon } -c^{2} \Delta w_{\varepsilon } =0                & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
-		w_{\varepsilon }(\mathbf{x} ,0) =0                                               & \text{in} \ \mathbb{R}^{3}                      \\
-		\partial _{t} w_{\varepsilon }(\mathbf{x} ,0) =\Gamma (\mathbf{x} ,\varepsilon ) & \text{in} \ \mathbb{R}^{3}                      
+		w_{\varepsilon }(\x ,0) =0                                               & \text{in} \ \mathbb{R}^{3}                      \\
+		\partial _{t} w_{\varepsilon }(\x ,0) =\Gamma (\x ,\varepsilon ) & \text{in} \ \mathbb{R}^{3}                      
 	\end{cases}
 \end{equation*}
 Notiamo che $\displaystyle P_{\varepsilon }$ ha soluzione unica e che $\displaystyle \Gamma $ è a \textbf{simmetria radiale} (invariante per rotazioni in $\displaystyle \mathbb{R}^{3}$). Per l'unicità della soluzione possiamo scrivere:
 \begin{equation*}
-	w_{\varepsilon }(\mathbf{x} ,t) =w_{\varepsilon }( r,t) ,\ \ r=| \mathbf{x}| 
+	w_{\varepsilon }(\x ,t) =w_{\varepsilon }( r,t) ,\ \ r=| \x| 
 \end{equation*}
 quindi la soluzione è un'onda sferica. Ma abbiamo visto che le onde sferiche in tre dimensioni hanno una forma particolare, data dalla \textbf{formula di Laplace, }sovrapposizione di due onde progressive (una che si allontana dall'origine e una che vi si avvicina) smorzate dal fattore $\displaystyle 1/r$. La forma generale della $\displaystyle w_{\varepsilon }$ è:
 \begin{equation*}
@@ -7107,14 +7107,14 @@ quindi\footnote{Prestare attenzione al fatto che la delta ora è unidimensionale
 \begin{equation*}
 	w_{\varepsilon }( r,t)\rightarrow \frac{\delta ( r-ct)}{4\pi cr} ,\ \ \delta _{1} =\delta 
 \end{equation*}
-Se $\displaystyle h(\mathbf{x}) =\delta _{3}(\mathbf{x} -\mathbf{y})$ allora $\displaystyle r=| \mathbf{x} -\mathbf{y}| $ e la \textbf{soluzione fondamentale} diventa:
+Se $\displaystyle h(\x) =\delta _{3}(\x -\y)$ allora $\displaystyle r=| \x -\y| $ e la \textbf{soluzione fondamentale} diventa:
 \begin{equation}
-	\boxed{K(\mathbf{x} ,\mathbf{y} ,t) =\frac{\delta (| \mathbf{x} -\mathbf{y}| -ct)}{4\pi c| \mathbf{x} -\mathbf{y}| }}
+	\boxed{K(\x ,\y ,t) =\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| }}
 \end{equation}
 \begin{oss}
 	Il supporto di K per ogni $\displaystyle t$ è:
 	\begin{equation}
-		\partial B_{ct}( x) =\{\mathbf{y} :| \mathbf{x} -\mathbf{y}| =ct\} ,
+		\partial B_{ct}( x) =\{\y :| \x -\y| =ct\} ,
 	\end{equation}
 
 
@@ -7141,54 +7141,54 @@ Se $\displaystyle h(\mathbf{x}) =\delta _{3}(\mathbf{x} -\mathbf{y})$ allora $\d
 	\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (265,145) -- (400,146.5) ;
 
 	% Text Node
-	\draw (267,148.4) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{x}}$};
+	\draw (267,148.4) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{0.82,0.01,0.11}{\x}$};
 	% Text Node
-	\draw (240,257.4) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\mathbf{x})$};
+	\draw (240,257.4) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\x)$};
 	% Text Node
-	\draw (410,132.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$t=\frac{| \mathbf{x} -\mathbf{y}| }{c}$};
+	\draw (410,132.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$t=\frac{| \x -\y| }{c}$};
 
 
 	\end{tikzpicture}
 	\end{figure}
 	\FloatBarrier
 
-	al variare del tempo ho delle onde sferiche con supporto sul bordo della palla di centro $\displaystyle \mathbf{x}$ e raggio $\displaystyle ct$: un osservatore posto in $\displaystyle \mathbf{y}$ avvertirà la perturbazione solo all'istante:
+	al variare del tempo ho delle onde sferiche con supporto sul bordo della palla di centro $\displaystyle \x$ e raggio $\displaystyle ct$: un osservatore posto in $\displaystyle \y$ avvertirà la perturbazione solo all'istante:
 	\begin{equation*}
-		t=\frac{| \mathbf{x} -\mathbf{y}| }{c} ,
+		t=\frac{| \x -\y| }{c} ,
 	\end{equation*}
 	quindi:
 	\begin{equation}
-		\bigcup _{t >0} \partial B_{ct}(\mathbf{x}) =\partial C_{(\mathbf{x} ,0)}^{*}
+		\bigcup _{t >0} \partial B_{ct}(\x) =\partial C_{(\x ,0)}^{*}
 	\end{equation}
-	prende il nome di \textbf{cono caratteristico in avanti}, è il dominio di influenza del punto $\displaystyle \mathbf{x}$. Una conseguenza di quest'osservazione è che in dimensione $\displaystyle n=3$ esistono i \textbf{segnali sharp} (istantanei).
+	prende il nome di \textbf{cono caratteristico in avanti}, è il dominio di influenza del punto $\displaystyle \x$. Una conseguenza di quest'osservazione è che in dimensione $\displaystyle n=3$ esistono i \textbf{segnali sharp} (istantanei).
 \end{oss}
 
 
 \textbf{Passo 2}.
 
-Sia $\displaystyle h=h(\mathbf{x})$ qualunque. Scriviamo $\displaystyle h$ come sovrapposizione di impulsi:
+Sia $\displaystyle h=h(\x)$ qualunque. Scriviamo $\displaystyle h$ come sovrapposizione di impulsi:
 \begin{equation*}
-	h(\mathbf{x}) =\int _{\mathbb{R}^{3}} \delta _{3}(\mathbf{x} -\mathbf{y}) h(\mathbf{y}) d\mathbf{y} ,
+	h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) d\y ,
 \end{equation*}
 o più formalmente:
 \begin{equation*}
-	\langle \delta _{3}(\mathbf{x} -\mathbf{\cdotp }) ,h\rangle =h(\mathbf{x}) .
+	\langle \delta _{3}(\x -\mathbf{\cdotp }) ,h\rangle =h(\x) .
 \end{equation*}
-Per il \textbf{Passo }$\displaystyle 1$ a $\displaystyle \delta _{3}(\mathbf{x} -\mathbf{y})$ corrisponde la soluzione:
+Per il \textbf{Passo }$\displaystyle 1$ a $\displaystyle \delta _{3}(\x -\y)$ corrisponde la soluzione:
 \begin{equation*}
-	K(\mathbf{x} ,\mathbf{y} ,t) =\frac{\delta (| \mathbf{x} -\mathbf{y}| -ct)}{4\pi c| \mathbf{x} -\mathbf{y}| } .
+	K(\x ,\y ,t) =\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| } .
 \end{equation*}
-Se non uso un impulso unitario ma un impulso di intensità $\displaystyle h(\mathbf{y})$ la soluzione diventa:
+Se non uso un impulso unitario ma un impulso di intensità $\displaystyle h(\y)$ la soluzione diventa:
 \begin{equation*}
-	K(\mathbf{x} ,\mathbf{y} ,t) h(\mathbf{y}) .
+	K(\x ,\y ,t) h(\y) .
 \end{equation*}
 Se uso $\displaystyle h$ espressa come somma di tutti gli impulsi mi basta fare l'integrale:
 \begin{equation*}
-	w_{h}(\mathbf{x} ,t) =\int _{\mathbb{R}^{3}} K(\mathbf{x} ,\mathbf{y} ,t) h(\mathbf{y}) d\mathbf{y} =\int _{\mathbb{R}^{3}}\frac{\delta (| \mathbf{x} -\mathbf{y}| -ct)}{4\pi c| \mathbf{x} -\mathbf{y}| } h(\mathbf{y}) d\mathbf{y} =( *)
+	w_{h}(\x ,t) =\int _{\mathbb{R}^{3}} K(\x ,\y ,t) h(\y) d\y =\int _{\mathbb{R}^{3}}\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| } h(\y) d\y =( *)
 \end{equation*}
-passando in \textbf{coordinate polari} $\displaystyle (| \mathbf{x} -\mathbf{y}| =r)$ e usando una sorta di teorema di Fubini in coordinate polari:
+passando in \textbf{coordinate polari} $\displaystyle (| \x -\y| =r)$ e usando una sorta di teorema di Fubini in coordinate polari:
 \begin{equation*}
-	( *) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma } =( **)
+	( *) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\x)} h(\bm{\sigma }) d\bm{\sigma } =( **)
 \end{equation*}
 \begin{oss}
 	Ricordiamo che, per definizione della delta:
@@ -7199,67 +7199,67 @@ passando in \textbf{coordinate polari} $\displaystyle (| \mathbf{x} -\mathbf{y}|
 \end{oss}
 Nel nostro caso possiamo scrivere:
 \begin{equation*}
-	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma }\right]}_{f( r)} dr,
+	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\x)} h(\bm{\sigma }) d\bm{\sigma }\right]}_{f( r)} dr,
 \end{equation*}
 applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\displaystyle \mint{-} $ indica il valor medio sulla superficie della sfera.}:
 \begin{equation*}
-	w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma } =t\underset{\partial B_{ct}(\mathbf{x})}{\mint{-} } h(\bm{\sigma }) d\bm{\sigma } .
+	w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma } =t\underset{\partial B_{ct}(\x)}{\mint{-} } h(\bm{\sigma }) d\bm{\sigma } .
 \end{equation*}
 \begin{theorem}
 	[Formula di Kirchoff] Siano $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$, $\displaystyle h\in C^{2}\left(\mathbb{R}^{3}\right)$. Allora:
 	\begin{equation}
-		u(\mathbf{x} ,t) =\frac{\partial }{\partial t}\left[\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} g(\bm{\sigma }) d\bm{\sigma }\right] +\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma }
+		u(\x ,t) =\frac{\partial }{\partial t}\left[\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\bm{\sigma }) d\bm{\sigma }\right] +\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma }
 	\end{equation}
 	è l'unica soluzione $\displaystyle u\in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ del (PCG).
 \end{theorem}
 \begin{dimostrazione}
 	Poiché $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$ la funzione
 	\begin{equation*}
-		w_{g}(\mathbf{x} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} g(\bm{\sigma }) d\bm{\sigma }
+		w_{g}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\bm{\sigma }) d\bm{\sigma }
 	\end{equation*}
 	soddisfa le ipotesi del Lemma A \ref{thm:lemma-A} e quindi è sufficiente controllare che
 	\begin{equation*}
-		w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} h(\bm{\sigma }) d\bm{\sigma }
+		w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma }
 	\end{equation*}
 	soddisfa l'equazione delle onde e le condizioni iniziali e al bordo
 	\begin{gather*}
-		w_{h}(\mathbf{x} ,0) =0,\\
-		\partial _{t} w_{h}(\mathbf{x} ,0) =h(\mathbf{x}) .
+		w_{h}(\x ,0) =0,\\
+		\partial _{t} w_{h}(\x ,0) =h(\x) .
 	\end{gather*}
 	Notiamo che $\displaystyle h\in C^{2}\left(\mathbb{R}^{3}\right) \Rightarrow w_{h} \in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$.
 
 	Effettuando il cambio di variabili
 	\begin{equation*}
-		\bm{\sigma } =\mathbf{x} +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\mathbf{0}) ,\ \ d\bm{\sigma } =c^{2} t^{2} d\mathbf{w}
+		\bm{\sigma } =\x +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\mathbf{0}) ,\ \ d\bm{\sigma } =c^{2} t^{2} d\mathbf{w}
 	\end{equation*}
 	possiamo scrivere
 	\begin{equation*}
-		w_{h}(\mathbf{x} ,t) =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\mathbf{x} +ct\mathbf{w}) d\mathbf{w} .
+		w_{h}(\x ,t) =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\x +ct\mathbf{w}) d\mathbf{w} .
 	\end{equation*}
 	Cominciamo coi dati iniziali
 	\begin{align*}
-		w_{h}(\mathbf{x} ,0)               & =0,                                                                                                                                                                                                                                              \\
-		\partial _{t} w_{h}(\mathbf{x} ,t) & =\frac{1}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\mathbf{x} +ct\mathbf{w}) d\mathbf{w} +\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x} +ct\mathbf{w})\cdotp \mathbf{w} d\mathbf{w} ,} \\
-		\partial _{t} w_{h}(\mathbf{x} ,0) & =h(\mathbf{x}) .                                                                                                                                                                                                                                 
+		w_{h}(\x ,0)               & =0,                                                                                                                                                                                                                                              \\
+		\partial _{t} w_{h}(\x ,t) & =\frac{1}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\x +ct\mathbf{w}) d\mathbf{w} +\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\mathbf{0})}\nabla h(\x +ct\mathbf{w})\cdotp \mathbf{w} d\mathbf{w} ,} \\
+		\partial _{t} w_{h}(\x ,0) & =h(\x) .                                                                                                                                                                                                                                 
 	\end{align*}
 	Per quanto riguarda l'equazione osserviamo che:
 	\begin{align*}
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x}+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \partial _{\bm{\nu }} h(\bm{\sigma })d\bm{\sigma } & \text{(cambio variabili)}    \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}                  & \text{(Gauss)}         \\
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\x+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \partial _{\bm{\nu }} h(\bm{\sigma })d\bm{\sigma } & \text{(cambio variabili)}    \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{B_{ct}(\x)} \Delta h(\y) d\y                  & \text{(Gauss)}         \\
 		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
 	\end{align*}
 	Ora è in una forma adatta ad essere derivata, quindi:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\mathbf{x} ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\mathbf{x} +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } ,
+		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) d\y} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } ,
 	\end{equation*}
 	i primi due termini sono uguali (si vede svolgendo i passaggi di prima per tornare indietro), pertanto:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } .
+		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } .
 	\end{equation*}
 	Calcoliamo il laplaciamo:
 	\begin{align*}
-		\Delta w_{h}(\mathbf{x} ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \Delta h(\mathbf{x} +ct\mathbf{w}) d\mathbf{w} \\
-		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } , 
+		\Delta w_{h}(\x ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \Delta h(\x +ct\mathbf{w}) d\mathbf{w} \\
+		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } , 
 	\end{align*}
 	ma allora:
 	\begin{equation*}
@@ -7267,7 +7267,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	\end{equation*}
 \end{dimostrazione}
 \begin{oss}
-	[In $\displaystyle \mathbb{R}^{3}$] Supponiamo di essere in $\displaystyle \mathbf{x}$ e interpretiamo $\displaystyle u(\mathbf{x} ,t)$ come perturbazione avvertita in $\displaystyle \mathbf{x}$ al tempo $\displaystyle t$:
+	[In $\displaystyle \mathbb{R}^{3}$] Supponiamo di essere in $\displaystyle \x$ e interpretiamo $\displaystyle u(\x ,t)$ come perturbazione avvertita in $\displaystyle \x$ al tempo $\displaystyle t$:
 
 
 	\begin{figure}[H]
@@ -7291,11 +7291,11 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	% Text Node
 	\draw (135.5,157.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\text{supporto dei dati} \ g,h$};
 	% Text Node
-	\draw (336.17,143.9) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\mathbf{x}$};
+	\draw (336.17,143.9) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\x$};
 	% Text Node
-	\draw (259.17,223.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\mathbf{x})_{\min}$};
+	\draw (259.17,223.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\x)_{\min}$};
 	% Text Node
-	\draw (137.67,231.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\mathbf{x})_{\max}$};
+	\draw (137.67,231.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\partial B_{ct}(\x)_{\max}$};
 	% Text Node
 	\draw (161.17,200.9) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$t_{\min} < t< t_{\max}$};
 
@@ -7304,7 +7304,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	\end{figure}
 	\FloatBarrier
 
-	La formula di Kirchoff ci dice che la perturbazione dipende dai valori di $\displaystyle g$ ed $\displaystyle h$ su $\displaystyle \partial B_{ct}(\mathbf{x})$.
+	La formula di Kirchoff ci dice che la perturbazione dipende dai valori di $\displaystyle g$ ed $\displaystyle h$ su $\displaystyle \partial B_{ct}(\x)$.
 
 	Se $\displaystyle t$ è piccolo non avverto nulla, il tempo minimo per cui avvertirò la perturbazione sarà nell'istante $\displaystyle t_{\min}$ quando il bordo della sfera interseca per la prima volta il supporto, fino all'istante $\displaystyle t_{\max}$ oltre al quale non avvertirò più nulla. Questo fenomeno prende il nome di \textbf{principio di Huygens forte }(esistenza di segnali Sharp).
 \end{oss}
@@ -7315,54 +7315,54 @@ Risolviamo il problema di Cauchy globale in dimensione $\displaystyle n=2$:
 \begin{equation*}
 	( PCG_{2}) \ 
 	\begin{cases}
-		u_{tt} -c^{2} \Delta u=0            & \mathbf{x} \in \mathbb{R}^{2} ,\ t >0,\ \mathbf{x} = 
+		u_{tt} -c^{2} \Delta u=0            & \x \in \mathbb{R}^{2} ,\ t >0,\ \x = 
 		\begin{pmatrix}
 		x_{1}\\
 		x_{2}
 		\end{pmatrix}\\
-		u(\mathbf{x} ,0) =0                 & \mathbf{x}\mathbb{\in R}^{2}                         \\
-		u_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \mathbf{x}\mathbb{\in R}^{2}                         
+		u(\x ,0) =0                 & \x\mathbb{\in R}^{2}                         \\
+		u_{t}(\x ,0) =h(\x) & \x\mathbb{\in R}^{2}                         
 	\end{cases}
 \end{equation*}
 utilizzando il metodo della \textbf{discesa di Hadamard}: considero $\displaystyle ( PCG_{2})$ come un problema in dimensione $\displaystyle 3$:
 \begin{equation}
-	(\mathbf{x} ,x_{3}) \in \mathbb{R}^{3} ,\ h(\mathbf{x} ,x_{3}) =h(\mathbf{x})
+	(\x ,x_{3}) \in \mathbb{R}^{3} ,\ h(\x ,x_{3}) =h(\x)
 \end{equation}
-Cerco $\displaystyle w=w(\mathbf{x} ,x_{3})$ soluzione di
+Cerco $\displaystyle w=w(\x ,x_{3})$ soluzione di
 \begin{equation*}
 	\begin{cases}
-		w_{tt} -c^{2} \Delta _{3} w(\mathbf{x} ,x_{3}) =0 & \text{in} \ \mathbb{R}^{3} ,\ t >0 \\
-		w(\mathbf{x} ,x_{3} ,0) =0                        &                                    \\
-		w_{t}(\mathbf{x} ,x_{3} ,0) =h(\mathbf{x})        &                                    
+		w_{tt} -c^{2} \Delta _{3} w(\x ,x_{3}) =0 & \text{in} \ \mathbb{R}^{3} ,\ t >0 \\
+		w(\x ,x_{3} ,0) =0                        &                                    \\
+		w_{t}(\x ,x_{3} ,0) =h(\x)        &                                    
 	\end{cases}
 \end{equation*}
 questo problema lo so risolvere grazie alla formula di Kirchoff
 \begin{equation*}
-	w(\mathbf{x} ,x_{3} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\mathbf{x} ,x_{3})} h(\bm{\sigma }) d\bm{\sigma } d\sigma _{3} ,\ \ \bm{\sigma } =( \sigma _{1} ,\sigma _{2})
+	w(\x ,x_{3} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x ,x_{3})} h(\bm{\sigma }) d\bm{\sigma } d\sigma _{3} ,\ \ \bm{\sigma } =( \sigma _{1} ,\sigma _{2})
 \end{equation*}
-devo far vedere che in realtà $\displaystyle w(\mathbf{x} ,x_{3}) =w(\mathbf{x})$, cioè che non c'è reale dipendenza da $\displaystyle x_{3}$.
+devo far vedere che in realtà $\displaystyle w(\x ,x_{3}) =w(\x)$, cioè che non c'è reale dipendenza da $\displaystyle x_{3}$.
 
-Osservo che la superficie sferica $\displaystyle \partial B_{ct}(\mathbf{x} ,x_{3})$ è unione dei due emisferi di equazione:
+Osservo che la superficie sferica $\displaystyle \partial B_{ct}(\x ,x_{3})$ è unione dei due emisferi di equazione:
 \begin{equation*}
-	y_{3} =F_{\pm }(\mathbf{y}) =x_{3} \pm \sqrt{c^{2} t^{2} -r^{2}}
+	y_{3} =F_{\pm }(\y) =x_{3} \pm \sqrt{c^{2} t^{2} -r^{2}}
 \end{equation*}
 dove
 \begin{equation*}
-	r^{2} =| \mathbf{x} -\mathbf{y}| ^{2} =( x_{1} -y_{1})^{2} +( x_{2} -y_{2})^{2} .
+	r^{2} =| \x -\y| ^{2} =( x_{1} -y_{1})^{2} +( x_{2} -y_{2})^{2} .
 \end{equation*}
-Su entrambi gli emisferi $\displaystyle ( d\mathbf{y} =dy_{1} dy_{2})$
+Su entrambi gli emisferi $\displaystyle ( d\y =dy_{1} dy_{2})$
 \begin{equation*}
-	d\bm{\sigma } =\sqrt{1+| \nabla F_{\pm }(\mathbf{y})| ^{2}} d\mathbf{y} =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} d\mathbf{y} =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} d\mathbf{y}
+	d\bm{\sigma } =\sqrt{1+| \nabla F_{\pm }(\y)| ^{2}} d\y =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} d\y =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} d\y
 \end{equation*}
 quindi
 \begin{equation*}
-	w\left(\mathbf{x} ,\cancel{x_{3}} ,t\right) =\frac{1}{2\pi c}\int _{B_{ct}(\mathbf{x})}\frac{h(\mathbf{y})}{\sqrt{c^{2} t^{2} -| \mathbf{x} -\mathbf{y}| ^{2}}} d\mathbf{y}
+	w\left(\x ,\cancel{x_{3}} ,t\right) =\frac{1}{2\pi c}\int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y
 \end{equation*}
 non dipende da $\displaystyle x_{3}$! Allora usando ancora una volta il Lemma A \ref{thm:lemma-A} otteniamo il seguente teorema.
 \begin{theorem}
 	[Formula di Poisson] Siano $\displaystyle g\in C^{3}\left(\mathbb{R}^{2}\right)$ e $\displaystyle h\in C^{2}\left(\mathbb{R}^{2}\right)$. Allora:
 	\begin{equation}
-		u(\mathbf{x} ,t) =\frac{1}{2\pi c}\left\{\frac{\partial }{\partial t}\int _{B_{ct}(\mathbf{x})}\frac{g(\mathbf{y})}{\sqrt{c^{2} t^{2} -| \mathbf{x} -\mathbf{y}| ^{2}}} d\mathbf{y} +\ \int _{B_{ct}(\mathbf{x})}\frac{h(\mathbf{y})}{\sqrt{c^{2} t^{2} -| \mathbf{x} -\mathbf{y}| ^{2}}} d\mathbf{y}\right\}
+		u(\x ,t) =\frac{1}{2\pi c}\left\{\frac{\partial }{\partial t}\int _{B_{ct}(\x)}\frac{g(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y +\ \int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y\right\}
 	\end{equation}
 	è l'unica soluzione $\displaystyle \in C^{2}\left(\mathbb{R}^{2} \times [ 0,+\infty )\right)$ del $\displaystyle PGC_{2}$.
 \end{theorem}
@@ -7649,24 +7649,24 @@ Il fenomeno si può osservare ponendo un turacciolo in acqua calma e lasciando c
 
 Sia $X$ spazio vettoriale normato reale, stiamo chiedendo due cose: combinazioni lineari e la presenza di una norma. Una norma è un operatore $\Vert \cdotp \Vert :X\rightarrow \mathbb{R}$ tale che
 \begin{itemize}
-\item $\Vert x\Vert \geqslant 0,\forall x\in X$ e $\Vert x\Vert =0\Leftrightarrow x=0$
-\item $\Vert \lambda x\Vert =| \lambda | \Vert x\Vert,\forall x\in X,\forall \lambda \in \mathbb{R}$
-\item $\Vert x+y\Vert \leqslant \Vert x\Vert +\Vert y\Vert $
+	\item $\Vert x\Vert \geqslant 0,\forall x\in X$ e $\Vert x\Vert =0\Leftrightarrow x=0$
+	\item $\Vert \lambda x\Vert =| \lambda | \Vert x\Vert,\forall x\in X,\forall \lambda \in \mathbb{R}$
+	\item $\Vert x+y\Vert \leqslant \Vert x\Vert +\Vert y\Vert $
 \end{itemize}
 
 La norma permette di definire
 \begin{itemize}
-\item la distanza $\text{dist}(x,y) =\Vert x-y\Vert $
-\item le palle aperte $B_{r}(x) =\{y\in X:\Vert x-y\Vert < r\}$
-\begin{itemize}
-\item la topologia (aperto, chiuso, ...)
-\end{itemize}
+	\item la distanza $\text{dist}(x,y) =\Vert x-y\Vert $
+	\item le palle aperte $B_{r}(x) =\{y\in X:\Vert x-y\Vert < r\}$
+	      \begin{itemize}
+	      	\item la topologia (aperto, chiuso, ...)
+	      \end{itemize}
 \end{itemize}
 \begin{nb}
-In $\mathrm{dim}(X) =+\infty $ la nozione di compatto è solo quella definizione
-\begin{equation*}
-\text{chiuso e limitato} \nRightarrow K\ \text{compatto}
-\end{equation*}
+	In $\mathrm{dim}(X) =+\infty $ la nozione di compatto è solo quella definizione
+	\begin{equation*}
+		\text{chiuso e limitato} \nRightarrow K\ \text{compatto}
+	\end{equation*}
 \end{nb}
 La completezza di uno spazio è importante per costruire successioni approssimanti di una soluzione che \textit{tendano} effettivamente a qualcosa.
 
@@ -7674,51 +7674,51 @@ La completezza di uno spazio è importante per costruire successioni approssiman
 
 Sia $\{x_{n}\}_{n} \subset X$ successione.
 \begin{definition}
-Definiamo la convergenza e la continuità
-\begin{enumerate}
-\item $x_{n}\rightarrow \overline{x}$ per $x\rightarrow +\infty $ se $\Vert x_{n} -\overline{x}\Vert \rightarrow 0$
-\item avendo la convergenza, possiamo definire la continuità
-
-$f:X\rightarrow Y$ è continua se $x_{n}\rightarrow \overline{x} \Rightarrow f(x_{n})\rightarrow f(\overline{x})$
-\end{enumerate}
+	Definiamo la convergenza e la continuità
+	\begin{enumerate}
+		\item $x_{n}\rightarrow \overline{x}$ per $x\rightarrow +\infty $ se $\Vert x_{n} -\overline{x}\Vert \rightarrow 0$
+		\item avendo la convergenza, possiamo definire la continuità
+		      
+		      $f:X\rightarrow Y$ è continua se $x_{n}\rightarrow \overline{x} \Rightarrow f(x_{n})\rightarrow f(\overline{x})$
+	\end{enumerate}
 \end{definition}
 
 \textit{Esercizio.} Dimostrare che la norma $\Vert \cdotp \Vert $ è una funzione continua
 \begin{definition}
-$\{x_{n}\}_{n\in \mathbb{N}} \subset X$ si dice di Cauchy (o fondamentale) se
-\begin{equation*}
-\Vert x_{n} -x_{m}\Vert \rightarrow 0\ \ \ \ \text{per} \ n,m\rightarrow \infty 
-\end{equation*}
+	$\{x_{n}\}_{n\in \mathbb{N}} \subset X$ si dice di Cauchy (o fondamentale) se
+	\begin{equation*}
+		\Vert x_{n} -x_{m}\Vert \rightarrow 0\ \ \ \ \text{per} \ n,m\rightarrow \infty 
+	\end{equation*}
 \end{definition}
 $\{x_{n}\}_{n}$ convergente $\Rightarrow \{x_{n}\}_{n}$ è di Cauchy, infatti
 \begin{equation*}
-0\leqslant \Vert x_{n} -x_{m}\Vert =\Vert x_{n} -\overline{x} +\overline{x} -x_{m}\Vert \leqslant \Vert x_{n} -\overline{x}\Vert +\Vert \overline{x} -x_{m}\Vert \rightarrow 0
+	0\leqslant \Vert x_{n} -x_{m}\Vert =\Vert x_{n} -\overline{x} +\overline{x} -x_{m}\Vert \leqslant \Vert x_{n} -\overline{x}\Vert +\Vert \overline{x} -x_{m}\Vert \rightarrow 0
 \end{equation*}
 questa è la parte inutile, è più utile il contrario, vedere il comportamento delle approssimazioni e dedurre se c'è convergenza a qualcosa! In generale non è vero che una successione di Cauchy è convergente, per questo motivo lavoriamo in Spazi di Banach.
 \begin{definition}
-Se ``di Cauchy'' implica convergente, allora $X$ è completo.
+	Se ``di Cauchy'' implica convergente, allora $X$ è completo.
 \end{definition}
 \begin{definition}
-$X$ si dice Spazio di Banach se è uno spazio vettoriale normato e completo rispetto a quella norma.
+	$X$ si dice Spazio di Banach se è uno spazio vettoriale normato e completo rispetto a quella norma.
 \end{definition}
 Esempi di spazi di Banach.
 \begin{itemize}
-\item $\mathbb{R}^{n}$ con la norma euclidea è completo
-\item $L^{p}(\Omega),\Omega \subset \mathbb{R}^{n}$ dominio\footnote{cioè aperto e connesso.} con la norma\begin{equation*}
-\Vert u\Vert _{L^{p}(\Omega)} =\left(\int _{\Omega }| u| ^{p} dx\right)^{1/p} \ \ 1\leqslant p< \infty 
-\end{equation*}
-\item $C(\overline{\Omega })$, con $\Omega $ limitato con la norma\begin{equation*}
-\Vert u\Vert _{C(\overline{\Omega })} =\max_{\overline{\Omega }}| u| 
-\end{equation*}
+	\item $\mathbb{R}^{n}$ con la norma euclidea è completo
+	\item $L^{p}(\Omega),\Omega \subset \mathbb{R}^{n}$ dominio\footnote{cioè aperto e connesso.} con la norma\begin{equation*}
+	      \Vert u\Vert _{L^{p}(\Omega)} =\left(\int _{\Omega }| u| ^{p} dx\right)^{1/p} \ \ 1\leqslant p< \infty 
+	\end{equation*}
+	\item $C(\overline{\Omega })$, con $\Omega $ limitato con la norma\begin{equation*}
+	      \Vert u\Vert _{C(\overline{\Omega })} =\max_{\overline{\Omega }}| u| 
+	\end{equation*}
 \end{itemize}
 \begin{definition}
-Supponiamo di avere due norme $\Vert \cdotp \Vert _{1} :X\rightarrow \mathbb{R}$, $\Vert \cdotp \Vert _{2} :X\rightarrow \mathbb{R}$. Si dicono \textbf{equivalenti} se inducono la stessa convergenza, cioè se $\exists 0< c_{1} \leqslant c_{2}$, non dipendenti da $x$, tali che
-\begin{equation*}
-c_{1}\Vert x\Vert _{1} \leqslant \Vert x\Vert _{2} \leqslant c_{2}\Vert x\Vert _{1} \ \ \forall x\in X
-\end{equation*}
+	Supponiamo di avere due norme $\Vert \cdotp \Vert _{1} :X\rightarrow \mathbb{R}$, $\Vert \cdotp \Vert _{2} :X\rightarrow \mathbb{R}$. Si dicono \textbf{equivalenti} se inducono la stessa convergenza, cioè se $\exists 0< c_{1} \leqslant c_{2}$, non dipendenti da $x$, tali che
+	\begin{equation*}
+		c_{1}\Vert x\Vert _{1} \leqslant \Vert x\Vert _{2} \leqslant c_{2}\Vert x\Vert _{1} \ \ \forall x\in X
+	\end{equation*}
 \end{definition}
 \begin{nb}
-In $\mathbb{R}^{n}$ non abbiamo insistito su questa cosa perché tutte le norme sono equivalenti, gli spazi sono tutti isomorfi.
+	In $\mathbb{R}^{n}$ non abbiamo insistito su questa cosa perché tutte le norme sono equivalenti, gli spazi sono tutti isomorfi.
 \end{nb}
 \textit{Esempio.}
 
@@ -7726,97 +7726,97 @@ $X=C([ -1,1]) \subset L^{2}(-1,1)$. In $X$ uso $\Vert v\Vert _{2} =\left(\int ^{
 
 Consideriamo la seguente successione
 \begin{equation*}
-v_{n}(x) =\begin{cases}
-0, & -1\leqslant x\leqslant 0\\
-nx, & 0\leqslant x\leqslant \frac{1}{n}\\
-1, & \frac{1}{n} \leqslant x\leqslant 1
-\end{cases}
+	v_{n}(x) =\begin{cases}
+	0, & -1\leqslant x\leqslant 0\\
+	nx, & 0\leqslant x\leqslant \frac{1}{n}\\
+	1, & \frac{1}{n} \leqslant x\leqslant 1
+	\end{cases}
 \end{equation*}
 
 
 
 \begin{figure}[htpb]
 	\centering
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,197); %set diagram left start at 0, and has height of 197
-
-%Shape: Axis 2D [id:dp7510112278083159] 
-\draw  (141,140.7) -- (472,140.7)(284,6) -- (284,157.7) (465,135.7) -- (472,140.7) -- (465,145.7) (279,13) -- (284,6) -- (289,13)  ;
-%Straight Lines [id:da35643943970375824] 
-\draw [color={rgb, 255:red, 208; green, 2; blue, 27 } ,draw opacity=1 ][line width=2.25]    (453,76) -- (358,76) -- (284.7,142.53) -- (164.7,142.53) ;
-%Straight Lines [id:da14888962981095388] 
-\draw  [dash pattern={on 0.84pt off 2.51pt}]  (358,76) -- (357.7,142.53) ;
-%Straight Lines [id:da7820546278212102] 
-\draw [color={rgb, 255:red, 126; green, 211; blue, 33 } ,draw opacity=1 ][line width=1.5]    (453,74) -- (318,74) -- (284.7,140.53) -- (164.7,140.53) ;
-%Straight Lines [id:da933791757163982] 
-\draw  [dash pattern={on 0.84pt off 2.51pt}]  (318,74) -- (317.7,140.53) ;
-%Straight Lines [id:da44978431803839936] 
-\draw  [dash pattern={on 0.84pt off 2.51pt}]  (284,74) -- (318,74) ;
-
-% Text Node
-\draw (167,154.4) node [anchor=north west][inner sep=0.75pt]    {$-1$};
-% Text Node
-\draw (386,152.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
-% Text Node
-\draw (348,149.4) node [anchor=north west][inner sep=0.75pt]    {$\frac{1}{m}$};
-% Text Node
-\draw (308,149.4) node [anchor=north west][inner sep=0.75pt]    {$\frac{1}{n}$};
-% Text Node
-\draw (264,64.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
-
-
-\end{tikzpicture}
-
+	
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+	
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		%uncomment if require: \path (0,197); %set diagram left start at 0, and has height of 197
+		
+		%Shape: Axis 2D [id:dp7510112278083159] 
+		\draw  (141,140.7) -- (472,140.7)(284,6) -- (284,157.7) (465,135.7) -- (472,140.7) -- (465,145.7) (279,13) -- (284,6) -- (289,13)  ;
+		%Straight Lines [id:da35643943970375824] 
+		\draw [color={rgb, 255:red, 208; green, 2; blue, 27 } ,draw opacity=1 ][line width=2.25]    (453,76) -- (358,76) -- (284.7,142.53) -- (164.7,142.53) ;
+		%Straight Lines [id:da14888962981095388] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (358,76) -- (357.7,142.53) ;
+		%Straight Lines [id:da7820546278212102] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 } ,draw opacity=1 ][line width=1.5]    (453,74) -- (318,74) -- (284.7,140.53) -- (164.7,140.53) ;
+		%Straight Lines [id:da933791757163982] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (318,74) -- (317.7,140.53) ;
+		%Straight Lines [id:da44978431803839936] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (284,74) -- (318,74) ;
+		
+		% Text Node
+		\draw (167,154.4) node [anchor=north west][inner sep=0.75pt]    {$-1$};
+		% Text Node
+		\draw (386,152.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+		% Text Node
+		\draw (348,149.4) node [anchor=north west][inner sep=0.75pt]    {$\frac{1}{m}$};
+		% Text Node
+		\draw (308,149.4) node [anchor=north west][inner sep=0.75pt]    {$\frac{1}{n}$};
+		% Text Node
+		\draw (264,64.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+		
+		
+	\end{tikzpicture}
+	
 \end{figure}
 \FloatBarrier
 
 Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leqslant n$
 \begin{align*}
-\Vert v_{n} -v_{m}\Vert ^{2}_{2} & =\int ^{1}_{-1}(v_{n}(x) -v_{m}(x))^{2} dx\\
- & =\cancel{\int ^{0}_{-1}} +\int ^{1/n}_{0} +\int ^{1/m}_{1/n} +\cancel{\int ^{1}_{1/m}}\\
- & =\int ^{1/n}_{0}(n-m)^{2} x^{2} dx+\int ^{1/m}_{1/n}(1-mx)^{2} dx\rightarrow 0
+	\Vert v_{n} -v_{m}\Vert ^{2}_{2} & =\int ^{1}_{-1}(v_{n}(x) -v_{m}(x))^{2} dx                                             \\
+	                                 & =\cancel{\int ^{0}_{-1}} +\int ^{1/n}_{0} +\int ^{1/m}_{1/n} +\cancel{\int ^{1}_{1/m}} \\
+	                                 & =\int ^{1/n}_{0}(n-m)^{2} x^{2} dx+\int ^{1/m}_{1/n}(1-mx)^{2} dx\rightarrow 0         
 \end{align*}
 È convergente a Heaviside, ma non è continua, quindi è \textit{fuori} dallo spazio delle funzioni continue.
 
 Se inoltre consideriamo la norma solita delle funzioni continue notiamo che
 \begin{equation*}
-\Vert v_{n} -v_{m}\Vert _{C([ -1,1])} =\max_{x\in [ -1,1]}(v_{n}(x) -v_{m}(x)) =1-\frac{m}{n} \nrightarrow 0
+	\Vert v_{n} -v_{m}\Vert _{C([ -1,1])} =\max_{x\in [ -1,1]}(v_{n}(x) -v_{m}(x)) =1-\frac{m}{n} \nrightarrow 0
 \end{equation*}
 per $n,m\rightarrow \infty $, infatti se scegliamo $\displaystyle n=2m$ il limite tenderebbe a $\displaystyle 1/2$.
 
 In questo esempio:
 \begin{itemize}
-\item La successione è di Cauchy ma non converge
-\item Lo spazio con $\Vert \cdotp \Vert _{2}$ non è completo
-\item $\Vert \cdotp \Vert _{2}$ e $\Vert \cdotp \Vert _{C}$ non sono equivalenti
+	\item La successione è di Cauchy ma non converge
+	\item Lo spazio con $\Vert \cdotp \Vert _{2}$ non è completo
+	\item $\Vert \cdotp \Vert _{2}$ e $\Vert \cdotp \Vert _{C}$ non sono equivalenti
 \end{itemize}
 \begin{definition}
-[Prodotto scalare] $(\cdotp,\cdotp) :X\times X\rightarrow \mathbb{R}$ tale che
-\begin{itemize}
-\item $(v,v) \geqslant 0$ e $(v,v) =0\Leftrightarrow v=0$
-\item $(u,v) =(v,u),\forall u,v\in X$
-\item $( \lambda _{1} u_{1} +\lambda _{2} u_{2},v) =\lambda _{1}(u_{1},v) +\lambda _{2}(u_{2},v),\forall \lambda _{1},\lambda _{2} \in \mathbb{R},\forall u_{1},u_{2},v\in X$
-\end{itemize}
+	[Prodotto scalare] $(\cdotp,\cdotp) :X\times X\rightarrow \mathbb{R}$ tale che
+	\begin{itemize}
+		\item $(v,v) \geqslant 0$ e $(v,v) =0\Leftrightarrow v=0$
+		\item $(u,v) =(v,u),\forall u,v\in X$
+		\item $( \lambda _{1} u_{1} +\lambda _{2} u_{2},v) =\lambda _{1}(u_{1},v) +\lambda _{2}(u_{2},v),\forall \lambda _{1},\lambda _{2} \in \mathbb{R},\forall u_{1},u_{2},v\in X$
+	\end{itemize}
 \end{definition}
 \begin{definition}
-Norma indotta dal prodotto scalare
-\begin{equation*}
-\Vert v\Vert =\sqrt{(v,v)}
-\end{equation*}
+	Norma indotta dal prodotto scalare
+	\begin{equation*}
+		\Vert v\Vert =\sqrt{(v,v)}
+	\end{equation*}
 \end{definition}
 Esercizio. Verificare che il prodotto scalare è continuo rispetto alla norma indotta e che $\Vert \cdotp \Vert $ è una norma.
 \begin{theorem}
-Alcune proposizioni
-\begin{enumerate}
-\item Cauchy-Schwarz $| (u,v)| \leqslant \Vert u\Vert \cdotp \Vert v\Vert $
-\item Identità del parallelogramma\footnote{la somma dei quadrati sulle diagonali è uguale alla somma dei quadrati su tutti i lati.} $\Vert u+v\Vert ^{2} +\Vert u-v\Vert ^{2} =2\Vert u\Vert ^{2} +2\Vert v\Vert ^{2}$, vale solo se la norma è indotta da un prodotto scalare
-\end{enumerate}
+	Alcune proposizioni
+	\begin{enumerate}
+		\item Cauchy-Schwarz $| (u,v)| \leqslant \Vert u\Vert \cdotp \Vert v\Vert $
+		\item Identità del parallelogramma\footnote{la somma dei quadrati sulle diagonali è uguale alla somma dei quadrati su tutti i lati.} $\Vert u+v\Vert ^{2} +\Vert u-v\Vert ^{2} =2\Vert u\Vert ^{2} +2\Vert v\Vert ^{2}$, vale solo se la norma è indotta da un prodotto scalare
+	\end{enumerate}
 \end{theorem}
 \begin{definition}
-Uno spazio vettoriale $X$, con prodotto scalare, che sia completo rispetto alla norma indotta dal prodotto scalare si dice \textbf{Spazio di Hilbert}.
+	Uno spazio vettoriale $X$, con prodotto scalare, che sia completo rispetto alla norma indotta dal prodotto scalare si dice \textbf{Spazio di Hilbert}.
 \end{definition}
 \textit{Esempi.}
 
@@ -7824,278 +7824,278 @@ $\mathbb{R}^{n},L^{2}(\Omega)$ con la norma indotta dal prodotto scalare $(u,v)_
 
 In uno spazio con prodotto scalare possiamo definire l'\textbf{ortogonalità}
 \begin{equation*}
-u\perp v\Leftrightarrow (u,v) =0
+	u\perp v\Leftrightarrow (u,v) =0
 \end{equation*}
 \section{Approssimazione di vettori}
 
 Chiameremo $H$ un generico spazio di Hilbert. Considerando $\displaystyle H$ e $V\subset H$ sottospazio\footnote{$u,v\in V\Rightarrow \lambda u+\mu v\in V$.}, $x\in H$, vogliamo trovare il vettore di $V$ che meglio approssima $x$. Stiamo cercando $\overline{v} \in V$ tale che
 \begin{equation*}
-\Vert x-\overline{v}\Vert =\inf_{v\in V}\Vert x-v\Vert 
+	\Vert x-\overline{v}\Vert =\inf_{v\in V}\Vert x-v\Vert 
 \end{equation*}
 
 
 
 \begin{figure}[htpb]
 	\centering
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,198); %set diagram left start at 0, and has height of 198
-
-%Straight Lines [id:da9073640143708681] 
-\draw    (301,113.41) -- (242.55,66.01) ;
-\draw [shift={(241,64.75)}, rotate = 399.03999999999996] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-%Shape: Axis 2D [id:dp9737576348755399] 
-\draw  (131,112.25) -- (471,112.25)(301,13.66) -- (301,180.75) (464,107.25) -- (471,112.25) -- (464,117.25) (296,20.66) -- (301,13.66) -- (306,20.66)  ;
-%Straight Lines [id:da5543961945984461] 
-\draw    (212,41.41) -- (390,185.41) ;
-%Straight Lines [id:da7822239085129437] 
-\draw    (301,113.41) -- (325.31,47.13) ;
-\draw [shift={(326,45.25)}, rotate = 470.14] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-%Straight Lines [id:da5022645915295285] 
-\draw    (370.5,169.75) -- (326.67,47.13) ;
-\draw [shift={(326,45.25)}, rotate = 430.33000000000004] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-%Straight Lines [id:da8728054276938597] 
-\draw    (241,64.75) -- (324.05,45.7) ;
-\draw [shift={(326,45.25)}, rotate = 527.0799999999999] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-%Straight Lines [id:da7420419315205793] 
-\draw [color={rgb, 255:red, 126; green, 211; blue, 33 } ,draw opacity=1 ][line width=1.5]    (281.29,97) -- (323.38,48.28) ;
-\draw [shift={(326,45.25)}, rotate = 490.83] [fill={rgb, 255:red, 126; green, 211; blue, 33 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
-%Straight Lines [id:da5034396510582315] 
-\draw [color={rgb, 255:red, 126; green, 211; blue, 33 } ,draw opacity=1 ][line width=2.25]    (301,113.41) -- (285.9,100.84) ;
-\draw [shift={(281.29,97)}, rotate = 399.77] [fill={rgb, 255:red, 126; green, 211; blue, 33 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (13.44,-3.36) -- (0,0) -- (13.44,3.36) -- cycle    ;
-%Straight Lines [id:da8018205092868931] 
-\draw    (301,113.41) -- (368.95,168.49) ;
-\draw [shift={(370.5,169.75)}, rotate = 219.03] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-
-% Text Node
-\draw (439,19.4) node [anchor=north west][inner sep=0.75pt]    {$H$};
-% Text Node
-\draw (214.5,20.9) node [anchor=north west][inner sep=0.75pt]    {$V$};
-% Text Node
-\draw (327.14,26.61) node [anchor=north west][inner sep=0.75pt]    {$x$};
-% Text Node
-\draw (355.43,90.04) node [anchor=north west][inner sep=0.75pt]    {$x-v$};
-
-
-\end{tikzpicture}
-
+	
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+	
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		%uncomment if require: \path (0,198); %set diagram left start at 0, and has height of 198
+		
+		%Straight Lines [id:da9073640143708681] 
+		\draw    (301,113.41) -- (242.55,66.01) ;
+		\draw [shift={(241,64.75)}, rotate = 399.03999999999996] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+		%Shape: Axis 2D [id:dp9737576348755399] 
+		\draw  (131,112.25) -- (471,112.25)(301,13.66) -- (301,180.75) (464,107.25) -- (471,112.25) -- (464,117.25) (296,20.66) -- (301,13.66) -- (306,20.66)  ;
+		%Straight Lines [id:da5543961945984461] 
+		\draw    (212,41.41) -- (390,185.41) ;
+		%Straight Lines [id:da7822239085129437] 
+		\draw    (301,113.41) -- (325.31,47.13) ;
+		\draw [shift={(326,45.25)}, rotate = 470.14] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+		%Straight Lines [id:da5022645915295285] 
+		\draw    (370.5,169.75) -- (326.67,47.13) ;
+		\draw [shift={(326,45.25)}, rotate = 430.33000000000004] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+		%Straight Lines [id:da8728054276938597] 
+		\draw    (241,64.75) -- (324.05,45.7) ;
+		\draw [shift={(326,45.25)}, rotate = 527.0799999999999] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+		%Straight Lines [id:da7420419315205793] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 } ,draw opacity=1 ][line width=1.5]    (281.29,97) -- (323.38,48.28) ;
+		\draw [shift={(326,45.25)}, rotate = 490.83] [fill={rgb, 255:red, 126; green, 211; blue, 33 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
+		%Straight Lines [id:da5034396510582315] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 } ,draw opacity=1 ][line width=2.25]    (301,113.41) -- (285.9,100.84) ;
+		\draw [shift={(281.29,97)}, rotate = 399.77] [fill={rgb, 255:red, 126; green, 211; blue, 33 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (13.44,-3.36) -- (0,0) -- (13.44,3.36) -- cycle    ;
+		%Straight Lines [id:da8018205092868931] 
+		\draw    (301,113.41) -- (368.95,168.49) ;
+		\draw [shift={(370.5,169.75)}, rotate = 219.03] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+		
+		% Text Node
+		\draw (439,19.4) node [anchor=north west][inner sep=0.75pt]    {$H$};
+		% Text Node
+		\draw (214.5,20.9) node [anchor=north west][inner sep=0.75pt]    {$V$};
+		% Text Node
+		\draw (327.14,26.61) node [anchor=north west][inner sep=0.75pt]    {$x$};
+		% Text Node
+		\draw (355.43,90.04) node [anchor=north west][inner sep=0.75pt]    {$x-v$};
+		
+		
+	\end{tikzpicture}
+	
 \end{figure}
 \FloatBarrier
 
 $\displaystyle \overline{v}$ è la proiezione su $V$ di $x$, che indicheremo come $P_{V} x$, è l'elemento di minima distanza (\textit{se esiste}).
 \begin{itemize}
-\item in $\mathrm{dim} < +\infty $ esiste sempre (Gram-Schmidt).
-\item in $\mathrm{dim} =\infty $ non è detto, servono ipotesi in più.
+	\item in $\mathrm{dim} < +\infty $ esiste sempre (Gram-Schmidt).
+	\item in $\mathrm{dim} =\infty $ non è detto, servono ipotesi in più.
 \end{itemize}
 
 Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdotte, ma non c'è \textit{la migliore}, questo ci dice che le funzioni continue non sono un sottospazio \textit{chiuso}.
 \begin{theorem}
-[delle Proiezioni] Sia $H$ di Hilbert, $V$ sottospazio vettoriale di $H$ \textbf{chiuso}\footnote{in senso topologico, deve contenere tutti i suoi punti di frontiera.}, $x\in H$. Allora $\exists !P_{V} x\in V$ tale che
-\begin{equation*}
-\Vert P_{V} x-x\Vert =\inf_{v\in V}\Vert v-x\Vert 
-\end{equation*}
-\textit{Lezione Verzini 2 (04/03/2021)}
-
-\textbf{Inoltre:}
-\begin{enumerate}
-\item $\displaystyle x\in V\ \Leftrightarrow \ x=P_{V} x$
-\item Definendo $\displaystyle Q_{V} x=x-P_{V} x\ \Rightarrow \ (Q_{V} x,v) =0\ \forall v\in V$
-
-($\displaystyle \Longrightarrow \Vert x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +\Vert Q_{V} x\Vert ^{2}$ teorema di Pitagora)
-
-cioè $\displaystyle Q_{V} x\in V^{\bot }$
-\end{enumerate}
+	[delle Proiezioni] Sia $H$ di Hilbert, $V$ sottospazio vettoriale di $H$ \textbf{chiuso}\footnote{in senso topologico, deve contenere tutti i suoi punti di frontiera.}, $x\in H$. Allora $\exists !P_{V} x\in V$ tale che
+	\begin{equation*}
+		\Vert P_{V} x-x\Vert =\inf_{v\in V}\Vert v-x\Vert 
+	\end{equation*}
+	\textit{Lezione Verzini 2 (04/03/2021)}
+	
+	\textbf{Inoltre:}
+	\begin{enumerate}
+		\item $\displaystyle x\in V\ \Leftrightarrow \ x=P_{V} x$
+		\item Definendo $\displaystyle Q_{V} x=x-P_{V} x\ \Rightarrow \ (Q_{V} x,v) =0\ \forall v\in V$
+		      
+		      ($\displaystyle \Longrightarrow \Vert x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +\Vert Q_{V} x\Vert ^{2}$ teorema di Pitagora)
+		      
+		      cioè $\displaystyle Q_{V} x\in V^{\bot }$
+	\end{enumerate}
 \end{theorem}
 \begin{nb}
-Se $\displaystyle \mathrm{dim} H\mathrm{=+\infty }$ non è detto che i sottospazi siano chiusi, a differenza di spazi a dimensione finita, però se
-\begin{equation*}
-\mathrm{dim} V< +\infty,\ V\subset H\ \ \Rightarrow \ V\ \text{chiuso}
-\end{equation*}
-e in ogni caso $\displaystyle V^{\bot }$è chiuso.
+	Se $\displaystyle \mathrm{dim} H\mathrm{=+\infty }$ non è detto che i sottospazi siano chiusi, a differenza di spazi a dimensione finita, però se
+	\begin{equation*}
+		\mathrm{dim} V< +\infty,\ V\subset H\ \ \Rightarrow \ V\ \text{chiuso}
+	\end{equation*}
+	e in ogni caso $\displaystyle V^{\bot }$è chiuso.
 \end{nb}
 
 \begin{dimostrazione}[Teorema delle Proiezioni]
-
-\begin{itemize}
-\item Esistenza\begin{equation*}
-d=\inf_{v\in V}\Vert v-x\Vert,\ d\geqslant 0
-\end{equation*}
-
-ovvero, per definizione di $\displaystyle \inf$
-\begin{enumerate}
-\item $\displaystyle \Vert v-x\Vert \geqslant d,\ \forall v\in V$
-\item $\displaystyle \forall \varepsilon \ \exists v_{\varepsilon } \in V$ tale che $\displaystyle \Vert v_{\varepsilon } -x\Vert \leqslant d+\varepsilon $ \ $ $
-\end{enumerate}
-
-uso la definizione per costruire una ``successione minimizzante''
-\begin{equation}
-(v_{n})_{n\in \mathbb{N}} \subset V:\ d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n} \ \ \left( \varepsilon =\frac{1}{n},\ n\in \mathbb{N}\right)
-\label{eq:teo-proiez-suc-min}
-\end{equation}
-
-voglio dimostrare che la successione converga, ma per farlo prima devo dimostrare che è una successione di Cauchy. Uso l'identità del parallelogramma riscritta nel seguente modo\begin{equation*}
-\Vert a-b\Vert ^{2} =2\Vert a\Vert ^{2} +2\Vert b\Vert ^{2} -\Vert a+b\Vert ^{2}
-\end{equation*}
-
-con $\displaystyle a=v_{n} -x$, $\displaystyle b=v_{m} -x$, i termini dell'identità diventano:\begin{equation*}
-\begin{array}{ l }
-\Vert a-b\Vert ^{2} =\Vert v_{n} -v_{m}\Vert ^{2}\\
-\Vert a+b\Vert ^{2} =\Vert v_{n} +v_{m} -2x\Vert ^{2} =4\bigg\Vert \underbrace{\frac{v_{n} +v_{m}}{2}}_{\in V} -x\bigg\Vert ^{2} \geqslant 4d^{2}
-\end{array}
-\end{equation*}
-
-dove l'ultima disuguaglianza vale perché $\displaystyle \Vert v-x\Vert \geqslant d,\ \forall v\in V$ (definizione di $\displaystyle \inf$) e $\displaystyle \frac{v_{n} +v_{m}}{2} \in V$, essendo $\displaystyle V$ un sottospazio.
-
-La norma di $\displaystyle a$ e di $\displaystyle b$ tenderà a $\displaystyle d$ per il teorema dei carabinieri e per \eqref{eq:teo-proiez-suc-min}. Sostituendo nell'identità\begin{align*}
-0 & \leqslant \Vert v_{n} -v_{m}\Vert ^{2}\\
- & =2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4\left\Vert \frac{v_{n} +v_{m}}{2} -x\right\Vert ^{2}\\
- & \leqslant 2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4d^{2}\\
- & \xrightarrow[n,m\rightarrow \infty ]{} 2d^{2} +2d^{2} -4d^{2} =0
-\end{align*}
-
-Quindi la mia successione minimizzante è di Cauchy. Ma poiché $\displaystyle H$ è di Hilbert, ogni successione di Cauchy è convergente\begin{equation*}
-v_{n}\xrightarrow{n\rightarrow \infty }\overline{v} \in H
-\end{equation*}
-
-e poiché $\displaystyle V$ è chiuso, $\displaystyle \overline{v} \in V$. Allora prendendo la definizione della mia successione \begin{equation*}
-d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n}
-\end{equation*}
-
-e facendone il limite per $\displaystyle n\rightarrow \infty $ ottengo\footnote{In questo passaggio è usata la continuità della norma (conseguenza banale della disuguaglianza triangolare)}\begin{equation*}
-d\leqslant \Vert x-\overline{v}\Vert \leqslant d
-\end{equation*}
-
-Definisco la proiezione di $\displaystyle x$ su $\displaystyle V$: $\displaystyle \boxed{P_{V} x=\overline{v}}$
-\item Unicità
-
-Per assurdo\begin{equation*}
-\overline{v},\overline{w} \in V,\ \ \Vert \overline{v} -x\Vert =\Vert \overline{w} -x\Vert =d
-\end{equation*}
-
-Usando l'identità del parallelogramma con $\displaystyle a=\overline{v} -x$, $\displaystyle b=\overline{w} -x$:\begin{equation*}
-\Vert \overline{v} -\overline{w}\Vert ^{2} +\Vert \overline{v} +\overline{w} -2x\Vert ^{2} =4d^{2}
-\end{equation*}
-
-Sfruttando gli stessi passaggi dell'esistenza osservo che $\displaystyle \Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\displaystyle \Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$ \begin{equation*}
-\Rightarrow \ \ \Vert \overline{v} -\overline{w}\Vert ^{2} =0\ \ \Rightarrow \ \ \overline{v} =\overline{w}
-\end{equation*}
-\item Inoltre (punto 1)
-
-conseguenza banale, se $\displaystyle x\in V$ \begin{equation*}
-d=\inf_{v\in V}\Vert v-x\Vert =0
-\end{equation*}
-
-$\displaystyle \Rightarrow \ \Vert x-P_{V} x\Vert =0\ \Rightarrow \ x=P_{V} x$ 
-\item Inoltre (punto 2)
-
-$\displaystyle Q_{V} x=x-P_{V} x$
-
-Osservo che $\displaystyle \forall v\in V,\ t\in \mathbb{R} \Longrightarrow (P_{V} x-tv) \in V$
-
-
-
-
-\begin{figure}[H]
-	\centering
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,98); %set diagram left start at 0, and has height of 98
-
-%Straight Lines [id:da1966060419350555] 
-\draw [color={rgb, 255:red, 0; green, 0; blue, 0 } ,draw opacity=1 ]   (90,60) -- (360,60) ;
-%Straight Lines [id:da864357839898725] 
-\draw [line width=1.5]    (150,60) -- (206,60) ;
-\draw [shift={(210,60)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
-%Straight Lines [id:da07495012975809501] 
-\draw [line width=1.5]    (210,60) -- (266,60) ;
-\draw [shift={(270,60)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
-%Straight Lines [id:da21049925432833838] 
-\draw [line width=1.5]    (150,60) -- (206.67,22.22) ;
-\draw [shift={(210,20)}, rotate = 506.31] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
-%Straight Lines [id:da673978991154291] 
-\draw  [dash pattern={on 0.84pt off 2.51pt}]  (210,20) -- (210,60) ;
-
-% Text Node
-\draw (182,65.4) node [anchor=north west][inner sep=0.75pt]    {$P_{V} x$};
-% Text Node
-\draw (272,65.4) node [anchor=north west][inner sep=0.75pt]    {$tv$};
-% Text Node
-\draw (217,12.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
-% Text Node
-\draw (367,52.4) node [anchor=north west][inner sep=0.75pt]    {$V$};
-
-
-\end{tikzpicture}
-
-\end{figure}
-\FloatBarrier
-\begin{align*}
-d^{2} & \leqslant \Vert -(P_{V} x-tv) +x\Vert ^{2} =\Vert Q_{V} x+tv\Vert ^{2}\\
- & =\Vert Q_{V} x\Vert ^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}\\
- & =d^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}\\
- & \\
- & \Rightarrow \ \ \Vert v\Vert ^{2} t^{2} +2(Q_{V} x,v) t\geqslant 0,\ \forall t\in \mathbb{R},\ \forall v\in V
-\end{align*}
-
-Per analogia con l'equazione di una parabola\begin{equation*}
-at^{2} +bt+c\geqslant 0,\ \forall t\in \mathbb{R} \ \ \Rightarrow \ \ b^{2} -4ac\leqslant 0
-\end{equation*}
-
-Con $\displaystyle a=\Vert v\Vert ^{2},\ b=2(Q_{V} x,v)$
-
-Ma se $\displaystyle c=0\ \Rightarrow \ b\ =0$, da cui la tesi.
-\item Teorema di Pitagora\begin{equation*}
-\Vert x\Vert ^{2} =\Vert P_{V} x+Q_{V} x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +2(P_{V} x,Q_{V} x) +\Vert Q_{V} x\Vert ^{2}
-\end{equation*}
-
-dove il prodotto scalare è nullo per l'ortogonalità appena dimostrata.
-\end{itemize}
+	
+	\begin{itemize}
+		\item Esistenza\begin{equation*}
+		      d=\inf_{v\in V}\Vert v-x\Vert,\ d\geqslant 0
+		\end{equation*}
+		
+		ovvero, per definizione di $\displaystyle \inf$
+		\begin{enumerate}
+			\item $\displaystyle \Vert v-x\Vert \geqslant d,\ \forall v\in V$
+			\item $\displaystyle \forall \varepsilon \ \exists v_{\varepsilon } \in V$ tale che $\displaystyle \Vert v_{\varepsilon } -x\Vert \leqslant d+\varepsilon $ \ $ $
+		\end{enumerate}
+		
+		uso la definizione per costruire una ``successione minimizzante''
+		\begin{equation}
+			(v_{n})_{n\in \mathbb{N}} \subset V:\ d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n} \ \ \left( \varepsilon =\frac{1}{n},\ n\in \mathbb{N}\right)
+			\label{eq:teo-proiez-suc-min}
+		\end{equation}
+		
+		voglio dimostrare che la successione converga, ma per farlo prima devo dimostrare che è una successione di Cauchy. Uso l'identità del parallelogramma riscritta nel seguente modo\begin{equation*}
+		\Vert a-b\Vert ^{2} =2\Vert a\Vert ^{2} +2\Vert b\Vert ^{2} -\Vert a+b\Vert ^{2}
+		\end{equation*}
+		
+		con $\displaystyle a=v_{n} -x$, $\displaystyle b=v_{m} -x$, i termini dell'identità diventano:\begin{equation*}
+		\begin{array}{ l }
+			\Vert a-b\Vert ^{2} =\Vert v_{n} -v_{m}\Vert ^{2}                                                                                                 \\
+			\Vert a+b\Vert ^{2} =\Vert v_{n} +v_{m} -2x\Vert ^{2} =4\bigg\Vert \underbrace{\frac{v_{n} +v_{m}}{2}}_{\in V} -x\bigg\Vert ^{2} \geqslant 4d^{2} 
+		\end{array}
+		\end{equation*}
+		
+		dove l'ultima disuguaglianza vale perché $\displaystyle \Vert v-x\Vert \geqslant d,\ \forall v\in V$ (definizione di $\displaystyle \inf$) e $\displaystyle \frac{v_{n} +v_{m}}{2} \in V$, essendo $\displaystyle V$ un sottospazio.
+		
+		La norma di $\displaystyle a$ e di $\displaystyle b$ tenderà a $\displaystyle d$ per il teorema dei carabinieri e per \eqref{eq:teo-proiez-suc-min}. Sostituendo nell'identità\begin{align*}
+		0 & \leqslant \Vert v_{n} -v_{m}\Vert ^{2}\\
+		& =2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4\left\Vert \frac{v_{n} +v_{m}}{2} -x\right\Vert ^{2}\\
+		& \leqslant 2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4d^{2}\\
+		& \xrightarrow[n,m\rightarrow \infty ]{} 2d^{2} +2d^{2} -4d^{2} =0
+		\end{align*}
+		
+		Quindi la mia successione minimizzante è di Cauchy. Ma poiché $\displaystyle H$ è di Hilbert, ogni successione di Cauchy è convergente\begin{equation*}
+		v_{n}\xrightarrow{n\rightarrow \infty }\overline{v} \in H
+		\end{equation*}
+		
+		e poiché $\displaystyle V$ è chiuso, $\displaystyle \overline{v} \in V$. Allora prendendo la definizione della mia successione \begin{equation*}
+		d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n}
+		\end{equation*}
+		
+		e facendone il limite per $\displaystyle n\rightarrow \infty $ ottengo\footnote{In questo passaggio è usata la continuità della norma (conseguenza banale della disuguaglianza triangolare)}\begin{equation*}
+		d\leqslant \Vert x-\overline{v}\Vert \leqslant d
+		\end{equation*}
+		
+		Definisco la proiezione di $\displaystyle x$ su $\displaystyle V$: $\displaystyle \boxed{P_{V} x=\overline{v}}$
+		\item Unicità
+		      
+		      Per assurdo\begin{equation*}
+		      \overline{v},\overline{w} \in V,\ \ \Vert \overline{v} -x\Vert =\Vert \overline{w} -x\Vert =d
+		\end{equation*}
+		
+		Usando l'identità del parallelogramma con $\displaystyle a=\overline{v} -x$, $\displaystyle b=\overline{w} -x$:\begin{equation*}
+		\Vert \overline{v} -\overline{w}\Vert ^{2} +\Vert \overline{v} +\overline{w} -2x\Vert ^{2} =4d^{2}
+		\end{equation*}
+		
+		Sfruttando gli stessi passaggi dell'esistenza osservo che $\displaystyle \Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\displaystyle \Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$ \begin{equation*}
+		\Rightarrow \ \ \Vert \overline{v} -\overline{w}\Vert ^{2} =0\ \ \Rightarrow \ \ \overline{v} =\overline{w}
+		\end{equation*}
+		\item Inoltre (punto 1)
+		      
+		      conseguenza banale, se $\displaystyle x\in V$ \begin{equation*}
+		      d=\inf_{v\in V}\Vert v-x\Vert =0
+		\end{equation*}
+		
+		$\displaystyle \Rightarrow \ \Vert x-P_{V} x\Vert =0\ \Rightarrow \ x=P_{V} x$ 
+		\item Inoltre (punto 2)
+		      
+		      $\displaystyle Q_{V} x=x-P_{V} x$
+		      
+		      Osservo che $\displaystyle \forall v\in V,\ t\in \mathbb{R} \Longrightarrow (P_{V} x-tv) \in V$
+		      
+		      
+		      
+		      
+		      \begin{figure}[H]
+		      	\centering
+		      	
+		      	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+		      	
+		      	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		      		%uncomment if require: \path (0,98); %set diagram left start at 0, and has height of 98
+		      		
+		      		%Straight Lines [id:da1966060419350555] 
+		      		\draw [color={rgb, 255:red, 0; green, 0; blue, 0 } ,draw opacity=1 ]   (90,60) -- (360,60) ;
+		      		%Straight Lines [id:da864357839898725] 
+		      		\draw [line width=1.5]    (150,60) -- (206,60) ;
+		      		\draw [shift={(210,60)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
+		      		%Straight Lines [id:da07495012975809501] 
+		      		\draw [line width=1.5]    (210,60) -- (266,60) ;
+		      		\draw [shift={(270,60)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
+		      		%Straight Lines [id:da21049925432833838] 
+		      		\draw [line width=1.5]    (150,60) -- (206.67,22.22) ;
+		      		\draw [shift={(210,20)}, rotate = 506.31] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (15.6,-3.9) -- (0,0) -- (15.6,3.9) -- cycle    ;
+		      		%Straight Lines [id:da673978991154291] 
+		      		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (210,20) -- (210,60) ;
+		      		
+		      		% Text Node
+		      		\draw (182,65.4) node [anchor=north west][inner sep=0.75pt]    {$P_{V} x$};
+		      		% Text Node
+		      		\draw (272,65.4) node [anchor=north west][inner sep=0.75pt]    {$tv$};
+		      		% Text Node
+		      		\draw (217,12.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+		      		% Text Node
+		      		\draw (367,52.4) node [anchor=north west][inner sep=0.75pt]    {$V$};
+		      		
+		      		
+		      	\end{tikzpicture}
+		      	
+		      \end{figure}
+		      \FloatBarrier
+		      \begin{align*}
+		      	d^{2} & \leqslant \Vert -(P_{V} x-tv) +x\Vert ^{2} =\Vert Q_{V} x+tv\Vert ^{2}                                        \\
+		      	      & =\Vert Q_{V} x\Vert ^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}                                               \\
+		      	      & =d^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}                                                                 \\
+		      	      &                                                                                                               \\
+		      	      & \Rightarrow \ \ \Vert v\Vert ^{2} t^{2} +2(Q_{V} x,v) t\geqslant 0,\ \forall t\in \mathbb{R},\ \forall v\in V 
+		      \end{align*}
+		      
+		      Per analogia con l'equazione di una parabola\begin{equation*}
+		      at^{2} +bt+c\geqslant 0,\ \forall t\in \mathbb{R} \ \ \Rightarrow \ \ b^{2} -4ac\leqslant 0
+		\end{equation*}
+		
+		Con $\displaystyle a=\Vert v\Vert ^{2},\ b=2(Q_{V} x,v)$
+		
+		Ma se $\displaystyle c=0\ \Rightarrow \ b\ =0$, da cui la tesi.
+		\item Teorema di Pitagora\begin{equation*}
+		      \Vert x\Vert ^{2} =\Vert P_{V} x+Q_{V} x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +2(P_{V} x,Q_{V} x) +\Vert Q_{V} x\Vert ^{2}
+		\end{equation*}
+		
+		dove il prodotto scalare è nullo per l'ortogonalità appena dimostrata.
+	\end{itemize}
 \end{dimostrazione}
 \section{Operatori lineari}
 \begin{definition}
-[Operatore lineare] $\displaystyle H_{1},H_{2}$ di Hilbert, $\displaystyle L:H_{1}\rightarrow H_{2}$ è lineare se $\displaystyle L(\lambda u+\mu v) =\lambda L(u) +\mu L(v),\ u,v\in H_{1},\ \lambda,\mu \in \mathbb{R}$
+	[Operatore lineare] $\displaystyle H_{1},H_{2}$ di Hilbert, $\displaystyle L:H_{1}\rightarrow H_{2}$ è lineare se $\displaystyle L(\lambda u+\mu v) =\lambda L(u) +\mu L(v),\ u,v\in H_{1},\ \lambda,\mu \in \mathbb{R}$
 \end{definition}
 \begin{nb}
-In spazi infinito dimensionali $\displaystyle L$ lineare $\displaystyle \nRightarrow $$\displaystyle L$ continuo, per cui lo richiederò come ipotesi.
+	In spazi infinito dimensionali $\displaystyle L$ lineare $\displaystyle \nRightarrow $$\displaystyle L$ continuo, per cui lo richiederò come ipotesi.
 \end{nb}
 \begin{definition}
-[Operatore limitato] $\displaystyle L$ (lineare) si dice limitato se $\displaystyle \exists c\geqslant 0$ t.c. $\displaystyle \Vert Lv\Vert _{H_{2}} \leqslant c\Vert v\Vert _{H_{1}} \forall v\in H_{1}$
+	[Operatore limitato] $\displaystyle L$ (lineare) si dice limitato se $\displaystyle \exists c\geqslant 0$ t.c. $\displaystyle \Vert Lv\Vert _{H_{2}} \leqslant c\Vert v\Vert _{H_{1}} \forall v\in H_{1}$
 \end{definition}
 Osserviamo che 
 \begin{equation*}
-c\geqslant \frac{\Vert Lv\Vert _{H_{2}}}{\Vert v\Vert _{H_{1}}} =\left\Vert \frac{1}{\Vert v\Vert _{1}} Lv\right\Vert _{2} =\left\Vert L\left(\frac{v}{\Vert v\Vert _{1}}\right)\right\Vert _{2}
+	c\geqslant \frac{\Vert Lv\Vert _{H_{2}}}{\Vert v\Vert _{H_{1}}} =\left\Vert \frac{1}{\Vert v\Vert _{1}} Lv\right\Vert _{2} =\left\Vert L\left(\frac{v}{\Vert v\Vert _{1}}\right)\right\Vert _{2}
 \end{equation*}
 dove $\displaystyle \frac{v}{\Vert v\Vert _{1}}$ ha norma 1, quindi $\displaystyle L$ è limitato se e solo se
 \begin{equation*}
-\sup _{\Vert x\Vert =1}\Vert Lx\Vert _{2} =k< +\infty 
+	\sup _{\Vert x\Vert =1}\Vert Lx\Vert _{2} =k< +\infty 
 \end{equation*}
 $\displaystyle k$ è la miglior costante di limitatezza e prende il nome di \textbf{norma operatoriale}.
 \begin{theorem}
-Sia $\displaystyle L$ un operatore lineare. Allora
-\begin{equation}
-L\ \text{continuo} \ \ \Leftrightarrow \ \ L\ \text{limitato}
-\label{eq:continuo-limitato}
-\end{equation}
+	Sia $\displaystyle L$ un operatore lineare. Allora
+	\begin{equation}
+		L\ \text{continuo} \ \ \Leftrightarrow \ \ L\ \text{limitato}
+		\label{eq:continuo-limitato}
+	\end{equation}
 \end{theorem}
 \begin{dimostrazione}[di $\displaystyle (\Leftarrow)$]
-$\displaystyle L$ limitato $\displaystyle \Rightarrow \Vert Lx\Vert _{2} \leqslant C\Vert x\Vert _{1},\ x=v-v_{0}$
-\begin{equation*}
-0\leqslant \Vert Lv-Lv_{0}\Vert _{2} =\Vert L(v-v_{0})\Vert _{2} \leqslant c\Vert v-v_{0}\Vert _{1}
-\end{equation*}
-(ho dimostrato così che $\displaystyle L$ è Lipschitz-continua).
+	$\displaystyle L$ limitato $\displaystyle \Rightarrow \Vert Lx\Vert _{2} \leqslant C\Vert x\Vert _{1},\ x=v-v_{0}$
+	\begin{equation*}
+		0\leqslant \Vert Lv-Lv_{0}\Vert _{2} =\Vert L(v-v_{0})\Vert _{2} \leqslant c\Vert v-v_{0}\Vert _{1}
+	\end{equation*}
+	(ho dimostrato così che $\displaystyle L$ è Lipschitz-continua).
 \end{dimostrazione}
 \begin{definition}
-$\displaystyle \mathcal{L}(H_{1},H_{2}) =\{L:H_{1}\rightarrow H_{2}$ lineari e continui$\displaystyle \}$
-\begin{equation*}
-\Vert L\Vert _{\mathcal{L}(H_{1},H_{2})} =\text{(miglior costante di limitatezza)} =\sup _{\Vert x\Vert _{1} =1}\Vert Lx\Vert _{2}
-\end{equation*}
+	$\displaystyle \mathcal{L}(H_{1},H_{2}) =\{L:H_{1}\rightarrow H_{2}$ lineari e continui$\displaystyle \}$
+	\begin{equation*}
+		\Vert L\Vert _{\mathcal{L}(H_{1},H_{2})} =\text{(miglior costante di limitatezza)} =\sup _{\Vert x\Vert _{1} =1}\Vert Lx\Vert _{2}
+	\end{equation*}
 \end{definition}
 \begin{theorem}
-$\displaystyle \mathcal{L}(H_{1},H_{2})$ è di Banach.
+	$\displaystyle \mathcal{L}(H_{1},H_{2})$ è di Banach.
 \end{theorem}
 \textbf{Esempio importante (immersione)}
 
@@ -8107,34 +8107,34 @@ Data un'immersione $\displaystyle L(x) =x$, quando è continua? Per \eqref{eq:co
 
 Un esempio pratico è lo spazio $\displaystyle C([ 0,1]) \subset L^{2}(0,1)$, nel primo usiamo come norma il max, nel secondo la norma $\displaystyle \left(\int | \cdot | ^{2}\right)^{1/2}$, quindi possiamo misurare gli elementi di $\displaystyle C([ 0,1])$ con entrambe le norme. La notazione per indicare l'immersione è
 \begin{equation*}
-\ C([ 0,1]) \hookrightarrow L^{2}(0,1)
+	\ C([ 0,1]) \hookrightarrow L^{2}(0,1)
 \end{equation*}
 Dimostriamo ora la limitatezza dell'immersione (e quindi la continuità)
 \begin{equation*}
-\Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u^{2}\right) \cdot \int ^{1}_{0} 1dx} =\max_{[ 0,1]}| u| 
+	\Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u^{2}\right) \cdot \int ^{1}_{0} 1dx} =\max_{[ 0,1]}| u| 
 \end{equation*}
 \begin{definition}
-[Funzionale] Sia $\displaystyle H_{1} =H$ spazio di Hilbert, $\displaystyle H_{2} =\mathbb{R}$, $\displaystyle L:H\rightarrow \mathbb{R}$ è detto funzionale.
+	[Funzionale] Sia $\displaystyle H_{1} =H$ spazio di Hilbert, $\displaystyle H_{2} =\mathbb{R}$, $\displaystyle L:H\rightarrow \mathbb{R}$ è detto funzionale.
 \end{definition}
 \begin{definition}
-[Spazio duale] È detto spazio duale di $\displaystyle H$, denotato con $\displaystyle H^{*}$
-\begin{equation*}
-H^{*} =\mathcal{L}(H,\mathbb{R}) =\left\{L:H\rightarrow \mathbb{R} \ \text{funzionali lineari e continui}\right\}
-\end{equation*}
-con norma
-\begin{equation*}
-\Vert L\Vert _{H^{*}} =\Vert L\Vert _{*} =\sup _{\Vert v\Vert =1}| Lv| 
-\end{equation*}
+	[Spazio duale] È detto spazio duale di $\displaystyle H$, denotato con $\displaystyle H^{*}$
+	\begin{equation*}
+		H^{*} =\mathcal{L}(H,\mathbb{R}) =\left\{L:H\rightarrow \mathbb{R} \ \text{funzionali lineari e continui}\right\}
+	\end{equation*}
+	con norma
+	\begin{equation*}
+		\Vert L\Vert _{H^{*}} =\Vert L\Vert _{*} =\sup _{\Vert v\Vert =1}| Lv| 
+	\end{equation*}
 \end{definition}
 \textbf{Esempio 1.}
 
 Sia $\displaystyle H=L^{2}(0,1),\ L:L^{2}(0,1)\rightarrow \mathbb{R},\ Lv=\int ^{1/2}_{0} v(x) dx$. Verifico che $\displaystyle L\in H^{*}$, ovvero che sia lineare, ben definito e continuo (limitato). L'operatore è chiaramente lineare perchè definito con integrale, è ben definito e continuo perché
 \begin{equation*}
-| Lv| =\left| \int ^{1/2}_{0} v(x) dx\right| \leqslant \int ^{1/2}_{0}| v(x)| dx\leqslant \int ^{1}_{0}| v(x)| dx
+	| Lv| =\left| \int ^{1/2}_{0} v(x) dx\right| \leqslant \int ^{1/2}_{0}| v(x)| dx\leqslant \int ^{1}_{0}| v(x)| dx
 \end{equation*}
 Utilizzando la disuguaglianza di Holder posso maggiorare l'ultimo termine
 \begin{equation*}
-\leqslant \left(\int ^{1}_{0} 1^{2}\right)^{1/2}\left(\int ^{1}_{0} v^{2}\right)^{1/2} =\Vert v\Vert _{L^{2}(0,1)}
+	\leqslant \left(\int ^{1}_{0} 1^{2}\right)^{1/2}\left(\int ^{1}_{0} v^{2}\right)^{1/2} =\Vert v\Vert _{L^{2}(0,1)}
 \end{equation*}
 Quindi $\displaystyle L\in H^{*},\ \Vert L\Vert _{*} \leqslant 1$.
 
@@ -8146,363 +8146,363 @@ Sia $\displaystyle H$ spazio di Hilbert, $\displaystyle u\in H$ fissato. Definis
 
 $\displaystyle L:v\rightarrow (u,v)$ è lineare (per linearità del prodotto scalare), inoltre
 \begin{equation*}
-| Lv| =| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert 
+	| Lv| =| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert 
 \end{equation*}
 per Cauchy-Schwartz. Quindi $\displaystyle L$ è lineare e continuo (limitato) allora $\displaystyle L\in H^{*}$, e $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $. Ma possiamo anche osservare che 
 \begin{equation*}
-\Vert L\Vert _{*} =\sup _{\Vert v\Vert =1}| Lv| \geqslant \left| L\left(\frac{u}{\Vert u\Vert }\right)\right| =\frac{1}{\Vert u\Vert }(u,u) =\frac{1}{\Vert u\Vert }\Vert u\Vert ^{2} =\Vert u\Vert 
+	\Vert L\Vert _{*} =\sup _{\Vert v\Vert =1}| Lv| \geqslant \left| L\left(\frac{u}{\Vert u\Vert }\right)\right| =\frac{1}{\Vert u\Vert }(u,u) =\frac{1}{\Vert u\Vert }\Vert u\Vert ^{2} =\Vert u\Vert 
 \end{equation*}
 Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle \Vert L\Vert _{*} \geqslant \Vert u\Vert $ allora $\displaystyle \Vert L\Vert _{*} =\Vert u\Vert $. Il teorema che vedremo ora ci confermerà che questo non è solo un esempio, ma l'unico caso possibile.
 
 \textit{Lezione Verzini 3 (18/03/2021)}
 \begin{theorem}
-[di rappresentazione di Riesz] Sia $H$ uno spazio di Hilbert, allora $\forall L\in H^{*}$ esiste un unico vettore $u\in H$ tale che
-\begin{equation*}
-Lv=(u,v),\ \ \forall v\in H
-\end{equation*}
-Inoltre
-\begin{equation*}
-\Vert u\Vert =\Vert L\Vert _{*}
-\end{equation*}
+	[di rappresentazione di Riesz] Sia $H$ uno spazio di Hilbert, allora $\forall L\in H^{*}$ esiste un unico vettore $u\in H$ tale che
+	\begin{equation*}
+		Lv=(u,v),\ \ \forall v\in H
+	\end{equation*}
+	Inoltre
+	\begin{equation*}
+		\Vert u\Vert =\Vert L\Vert _{*}
+	\end{equation*}
 \end{theorem}
 \begin{oss}
-Il teorema di rappresentazione di Riesz è in realtà un teorema di buona posizione, dimostra infatti che
-\begin{equation*}
-\langle\langle \ \text{dato} \ L\in H^{*} \ \text{trovare} \ u\in H\ \text{tale che} \ Lv=(u,v),\ \forall v\in H\ \rangle\rangle 
-\end{equation*}
-è ben posto: garantisce l'esistenza e unicità di $\displaystyle u$, inoltre dati $\displaystyle L_{1},L_{2}$ e le soluzioni $\displaystyle u_{1},u_{2}$
-\begin{gather*}
-(u_{1},v) =L_{1} v\\
-(u_{2},v) =L_{2} v
-\end{gather*}
-Per il principio di sovrapposizione (il problema è lineare):
-\begin{equation*}
-(u_{1} -u_{2},v) =(L_{1} -L_{2}) v\ \ \Rightarrow \ \ \Vert u_{1} -u_{2}\Vert =\Vert L_{1} -L_{2}\Vert _{*}
-\end{equation*}
-il problema è stabile (dipende con continuità dai dati).
+	Il teorema di rappresentazione di Riesz è in realtà un teorema di buona posizione, dimostra infatti che
+	\begin{equation*}
+		\langle\langle \ \text{dato} \ L\in H^{*} \ \text{trovare} \ u\in H\ \text{tale che} \ Lv=(u,v),\ \forall v\in H\ \rangle\rangle 
+	\end{equation*}
+	è ben posto: garantisce l'esistenza e unicità di $\displaystyle u$, inoltre dati $\displaystyle L_{1},L_{2}$ e le soluzioni $\displaystyle u_{1},u_{2}$
+	\begin{gather*}
+		(u_{1},v) =L_{1} v\\
+		(u_{2},v) =L_{2} v
+	\end{gather*}
+	Per il principio di sovrapposizione (il problema è lineare):
+	\begin{equation*}
+		(u_{1} -u_{2},v) =(L_{1} -L_{2}) v\ \ \Rightarrow \ \ \Vert u_{1} -u_{2}\Vert =\Vert L_{1} -L_{2}\Vert _{*}
+	\end{equation*}
+	il problema è stabile (dipende con continuità dai dati).
 \end{oss}
 \begin{dimostrazione}
-L'ultima affermazione in realtà l'abbiamo già dimostrata nell'esempio 2.
-\textit{Esistenza.}
-\begin{itemize}
-\item Caso $1$: $\mathrm{Ker} L=H$
+	L'ultima affermazione in realtà l'abbiamo già dimostrata nell'esempio 2.
+	\textit{Esistenza.}
+	\begin{itemize}
+		\item Caso $1$: $\mathrm{Ker} L=H$
+		      
+		      ovvero $Lv=0,\forall v$, in tal caso scelgo $u=0$.
+		\item Caso $2$: $\mathrm{Ker} L\varsubsetneqq H$
+		      
+		      ovvero esiste un vettore $z_{0} \in H$ che non appartiene al nucleo $Lz_{0} \neq 0$. L'idea geometrica è molto semplice, vogliamo usare il teorema delle proiezioni e scegliere come $u$ il vettore ortogonale al nucleo, normalizzato
+		      
+		      
+		      
+		      
+		      \begin{figure}[H]
+		      	\centering
+		      	
+		      	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+		      	
+		      	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		      		%uncomment if require: \path (0,152); %set diagram left start at 0, and has height of 152
+		      		
+		      		%Straight Lines [id:da7968494763005547] 
+		      		\draw [color={rgb, 255:red, 0; green, 0; blue, 0 } ,draw opacity=1 ][line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (256,26) -- (326,13.44) ;
+		      		%Shape: Polygon [id:ds47696393353033595] 
+		      		\draw   (330,140) -- (180,120) -- (240,50) -- (390,70) -- cycle ;
+		      		%Straight Lines [id:da04367598648625459] 
+		      		\draw [line width=2.25]    (256,96) -- (322.12,18.01) ;
+		      		\draw [shift={(326,13.44)}, rotate = 490.29] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
+		      		%Straight Lines [id:da8880773272488094] 
+		      		\draw [color={rgb, 255:red, 208; green, 2; blue, 27 } ,draw opacity=1 ][line width=2.25]    (256,96) -- (320.09,84.5) ;
+		      		\draw [shift={(326,83.44)}, rotate = 529.8299999999999] [fill={rgb, 255:red, 208; green, 2; blue, 27 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
+		      		%Straight Lines [id:da3687846316598724] 
+		      		\draw [color={rgb, 255:red, 208; green, 2; blue, 27 } ,draw opacity=1 ][line width=2.25]    (256,96) -- (256,29.44) ;
+		      		\draw [shift={(256,23.44)}, rotate = 450] [fill={rgb, 255:red, 208; green, 2; blue, 27 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
+		      		%Straight Lines [id:da07890995266380374] 
+		      		\draw [color={rgb, 255:red, 0; green, 0; blue, 0 } ,draw opacity=1 ][line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (326,86) -- (326,13.44) ;
+		      		
+		      		% Text Node
+		      		\draw (392,73.4) node [anchor=north west][inner sep=0.75pt]    {$\mathrm{Ker} L$};
+		      		% Text Node
+		      		\draw (333,8.4) node [anchor=north west][inner sep=0.75pt]    {$z_{0}$};
+		      		% Text Node
+		      		\draw (237,17.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
+		      		
+		      		
+		      	\end{tikzpicture}
+		      	
+		      \end{figure}
+		      \FloatBarrier
+		      
+		      
+		      Scegliamo quindi $H,V=\mathrm{Ker} L,x=z_{0}$, dobiamo verificare che $V$ è un sottospazio chiuso topologicamente per applicare le proiezioni.
+		      \begin{itemize}
+		      	\item È un sottospazio, vogliamo dimostrare che\begin{equation*}
+		      	      v_{1},v_{2} \in \mathrm{Ker} L\ \ \Rightarrow \ \ \lambda _{1} v_{1} +\lambda _{2} v_{2} \in \mathrm{Ker} L
+		      	\end{equation*}
+		      	
+		      	ovvero che\begin{equation*}
+		      	Lv_{1} =Lv_{2} =0\ \ \Rightarrow \ \ L( \lambda _{1} v_{1} +\lambda _{2} v_{2}) =0
+		      	\end{equation*}
+		      	
+		      	ma per \textbf{linearità} di $L$ è soddisfatta\begin{equation*}
+		      	L( \lambda _{1} v_{1} +\lambda _{2} v_{2}) =\lambda _{1} Lv_{1} +\lambda _{2} Lv_{2} =0
+		      	\end{equation*}
+		      	\item Che sia chiuso è leggermente più delicato, osserviamo intanto che per definizione\begin{equation*}
+		      	      \text{chiuso} \ \ \Leftrightarrow \ \ \left\{\begin{array}{ l }
+		      	      (v_{n})_{n} \subset \mathrm{Ker} L\\
+		      	      v_{n}\rightarrow \overline{v} \in H
+		      	\end{array} \Rightarrow \overline{v} \in \mathrm{Ker} L\right\}
+		      	\end{equation*}nel nostro caso\begin{equation*}
+		      	(v_{n})_{n} \subset \mathrm{Ker} L\ \ \Leftrightarrow \ \ Lv_{n} =0
+		      	\end{equation*}è vero che $L\overline{v} =0$? Sì grazie alla \textbf{continuità}.
+		      \end{itemize}
+		      
+		      Allora possiamo applicare il teorema delle proiezioni\begin{equation*}
+		      z=\frac{z_{0} -P_{\mathrm{Ker} L} z_{0}}{\Vert z_{0} -P_{\mathrm{Ker} L} z_{0}\Vert }
+		\end{equation*}con questa scelta, si ha $z\in (\mathrm{Ker} L)^{\perp }$ e $\Vert z\Vert =1$. Abbiamo\begin{equation*}
+		v\in H\ \ \ \ z\in (\mathrm{Ker} L)^{\perp }
+		\end{equation*}costruiamo $w\in \mathrm{Ker} L$ che sia combinazione di quei due\begin{equation*}
+		w=v-\frac{Lv}{Lz} z\ \ \Rightarrow \ \ Lw=L\left( v-\frac{Lv}{Lz} z\right) =Lv-\frac{Lv}{Lz} Lz=0
+		\end{equation*}Notiamo che dato che $w\in \mathrm{Ker} L,z\in (\mathrm{Ker} L)^{\perp }$ allora $(w,z) =0$, pertanto\begin{equation*}
+		0=(w,z) =\left( v-\frac{Lv}{Lz} z,z\right) =(v,z) -\frac{Lv}{Lz}\underbrace{(z,z)}_{\Vert z\Vert ^{2} =1}
+		\end{equation*}infine\begin{equation*}
+		Lv=Lz(z,v) =(\underbrace{(Lz) z}_{u},v),\ \ \forall v\in H
+		\end{equation*}
+	\end{itemize}
 
-ovvero $Lv=0,\forall v$, in tal caso scelgo $u=0$.
-\item Caso $2$: $\mathrm{Ker} L\varsubsetneqq H$
+	\textit{Unicità.}
 
-ovvero esiste un vettore $z_{0} \in H$ che non appartiene al nucleo $Lz_{0} \neq 0$. L'idea geometrica è molto semplice, vogliamo usare il teorema delle proiezioni e scegliere come $u$ il vettore ortogonale al nucleo, normalizzato
-
-
-
-
-\begin{figure}[H]
-	\centering
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,152); %set diagram left start at 0, and has height of 152
-
-%Straight Lines [id:da7968494763005547] 
-\draw [color={rgb, 255:red, 0; green, 0; blue, 0 } ,draw opacity=1 ][line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (256,26) -- (326,13.44) ;
-%Shape: Polygon [id:ds47696393353033595] 
-\draw   (330,140) -- (180,120) -- (240,50) -- (390,70) -- cycle ;
-%Straight Lines [id:da04367598648625459] 
-\draw [line width=2.25]    (256,96) -- (322.12,18.01) ;
-\draw [shift={(326,13.44)}, rotate = 490.29] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
-%Straight Lines [id:da8880773272488094] 
-\draw [color={rgb, 255:red, 208; green, 2; blue, 27 } ,draw opacity=1 ][line width=2.25]    (256,96) -- (320.09,84.5) ;
-\draw [shift={(326,83.44)}, rotate = 529.8299999999999] [fill={rgb, 255:red, 208; green, 2; blue, 27 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
-%Straight Lines [id:da3687846316598724] 
-\draw [color={rgb, 255:red, 208; green, 2; blue, 27 } ,draw opacity=1 ][line width=2.25]    (256,96) -- (256,29.44) ;
-\draw [shift={(256,23.44)}, rotate = 450] [fill={rgb, 255:red, 208; green, 2; blue, 27 } ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
-%Straight Lines [id:da07890995266380374] 
-\draw [color={rgb, 255:red, 0; green, 0; blue, 0 } ,draw opacity=1 ][line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (326,86) -- (326,13.44) ;
-
-% Text Node
-\draw (392,73.4) node [anchor=north west][inner sep=0.75pt]    {$\mathrm{Ker} L$};
-% Text Node
-\draw (333,8.4) node [anchor=north west][inner sep=0.75pt]    {$z_{0}$};
-% Text Node
-\draw (237,17.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
-
-
-\end{tikzpicture}
-
-\end{figure}
-\FloatBarrier
-
-
-Scegliamo quindi $H,V=\mathrm{Ker} L,x=z_{0}$, dobiamo verificare che $V$ è un sottospazio chiuso topologicamente per applicare le proiezioni.
-\begin{itemize}
-\item È un sottospazio, vogliamo dimostrare che\begin{equation*}
-v_{1},v_{2} \in \mathrm{Ker} L\ \ \Rightarrow \ \ \lambda _{1} v_{1} +\lambda _{2} v_{2} \in \mathrm{Ker} L
-\end{equation*}
-
-ovvero che\begin{equation*}
-Lv_{1} =Lv_{2} =0\ \ \Rightarrow \ \ L( \lambda _{1} v_{1} +\lambda _{2} v_{2}) =0
-\end{equation*}
-
-ma per \textbf{linearità} di $L$ è soddisfatta\begin{equation*}
-L( \lambda _{1} v_{1} +\lambda _{2} v_{2}) =\lambda _{1} Lv_{1} +\lambda _{2} Lv_{2} =0
-\end{equation*}
-\item Che sia chiuso è leggermente più delicato, osserviamo intanto che per definizione\begin{equation*}
-\text{chiuso} \ \ \Leftrightarrow \ \ \left\{\begin{array}{ l }
-(v_{n})_{n} \subset \mathrm{Ker} L\\
-v_{n}\rightarrow \overline{v} \in H
-\end{array} \Rightarrow \overline{v} \in \mathrm{Ker} L\right\}
-\end{equation*}nel nostro caso\begin{equation*}
-(v_{n})_{n} \subset \mathrm{Ker} L\ \ \Leftrightarrow \ \ Lv_{n} =0
-\end{equation*}è vero che $L\overline{v} =0$? Sì grazie alla \textbf{continuità}.
-\end{itemize}
-
-Allora possiamo applicare il teorema delle proiezioni\begin{equation*}
-z=\frac{z_{0} -P_{\mathrm{Ker} L} z_{0}}{\Vert z_{0} -P_{\mathrm{Ker} L} z_{0}\Vert }
-\end{equation*}con questa scelta, si ha $z\in (\mathrm{Ker} L)^{\perp }$ e $\Vert z\Vert =1$. Abbiamo\begin{equation*}
-v\in H\ \ \ \ z\in (\mathrm{Ker} L)^{\perp }
-\end{equation*}costruiamo $w\in \mathrm{Ker} L$ che sia combinazione di quei due\begin{equation*}
-w=v-\frac{Lv}{Lz} z\ \ \Rightarrow \ \ Lw=L\left( v-\frac{Lv}{Lz} z\right) =Lv-\frac{Lv}{Lz} Lz=0
-\end{equation*}Notiamo che dato che $w\in \mathrm{Ker} L,z\in (\mathrm{Ker} L)^{\perp }$ allora $(w,z) =0$, pertanto\begin{equation*}
-0=(w,z) =\left( v-\frac{Lv}{Lz} z,z\right) =(v,z) -\frac{Lv}{Lz}\underbrace{(z,z)}_{\Vert z\Vert ^{2} =1}
-\end{equation*}infine\begin{equation*}
-Lv=Lz(z,v) =(\underbrace{(Lz) z}_{u},v),\ \ \forall v\in H
-\end{equation*}
-\end{itemize}
-
-\textit{Unicità.}
-
-Supponiamo che questo vettore $u$ non sia unico, cioè che ne esistano due $u_{1},u_{2} \in H$ tali che
-\begin{gather*}
-(u_{1},v) =Lv,\ \forall v\in H\\
-(u_{2},v) =Lv,\ \forall v\in H
-\end{gather*}
-sottraiamo membro a membro
-\begin{equation*}
-(u_{1} -u_{2},v) =0,\ \ \forall v\in H
-\end{equation*}
-questo implica che $u_{1} -u_{2} =0$.\footnote{Questa ultima implicazione non può essere fatta con troppa leggerezza, infatti siamo in uno spazio astratto e l'unica cosa che abbiamo sono le definizioni e i teoremi. Il fatto che quella cosa valga per ogni $v$, significa in particolare che vale anche per $v=u_{1} -u_{2}$, degli altri infiniti $v$ non ci interessa. Con tale scelta
-\begin{equation*}
-0=( u_{1} -u_{2},u_{1} -u_{2}) =\Vert u_{1} -u_{2}\Vert ^{2}
-\end{equation*}
-Per la proprietà di annullamento della norma
-\begin{equation*}
-\Vert u_{1} -u_{2}\Vert ^{2} =0\ \ \Leftrightarrow \ \ u_{1} -u_{2} =0
-\end{equation*}
-Alternativamente per la proprietà di annullamento del prodotto scalare
-\begin{equation*}
-( u_{1} -u_{2},u_{1} -u_{2}) =0\ \ \Leftrightarrow \ \ u_{1} -u_{2} =0
-\end{equation*}}
+	Supponiamo che questo vettore $u$ non sia unico, cioè che ne esistano due $u_{1},u_{2} \in H$ tali che
+	\begin{gather*}
+		(u_{1},v) =Lv,\ \forall v\in H\\
+		(u_{2},v) =Lv,\ \forall v\in H
+	\end{gather*}
+	sottraiamo membro a membro
+	\begin{equation*}
+		(u_{1} -u_{2},v) =0,\ \ \forall v\in H
+	\end{equation*}
+	questo implica che $u_{1} -u_{2} =0$.\footnote{Questa ultima implicazione non può essere fatta con troppa leggerezza, infatti siamo in uno spazio astratto e l'unica cosa che abbiamo sono le definizioni e i teoremi. Il fatto che quella cosa valga per ogni $v$, significa in particolare che vale anche per $v=u_{1} -u_{2}$, degli altri infiniti $v$ non ci interessa. Con tale scelta
+		\begin{equation*}
+			0=( u_{1} -u_{2},u_{1} -u_{2}) =\Vert u_{1} -u_{2}\Vert ^{2}
+		\end{equation*}
+		Per la proprietà di annullamento della norma
+		\begin{equation*}
+			\Vert u_{1} -u_{2}\Vert ^{2} =0\ \ \Leftrightarrow \ \ u_{1} -u_{2} =0
+		\end{equation*}
+		Alternativamente per la proprietà di annullamento del prodotto scalare
+		\begin{equation*}
+			( u_{1} -u_{2},u_{1} -u_{2}) =0\ \ \Leftrightarrow \ \ u_{1} -u_{2} =0
+		\end{equation*}}
 \end{dimostrazione}
 \begin{definition}
-La scrittura $a:H\times H\rightarrow \mathbb{R}$ denota una \textbf{forma bilineare} se
-\begin{itemize}
-\item fissato $u$,\begin{equation*}
-v\mapsto a(u,v) \ \ \text{è lineare in} \ v
-\end{equation*}
-\item fissato $v$,\begin{equation*}
-u\mapsto a(u,v) \ \ \text{è lineare in} \ u
-\end{equation*}
-\end{itemize}
+	La scrittura $a:H\times H\rightarrow \mathbb{R}$ denota una \textbf{forma bilineare} se
+	\begin{itemize}
+		\item fissato $u$,\begin{equation*}
+		      v\mapsto a(u,v) \ \ \text{è lineare in} \ v
+		\end{equation*}
+		\item fissato $v$,\begin{equation*}
+		      u\mapsto a(u,v) \ \ \text{è lineare in} \ u
+		\end{equation*}
+	\end{itemize}
 \end{definition}
 \begin{definition}
-Inoltre
-\begin{itemize}
-\item $a$ si dice \textbf{simmetrica} se
-
-\begin{equation*}
-a(u,v) =a(v,u),\ \ \forall v,u\in H
-\end{equation*}
-
-in generale non lo sarà, ma un esempio ne è il prodotto scalare.
-\item $a$ si dice \textbf{continua} (\textbf{limitata}) se
-
-\begin{equation*}
-\exists M:\ \ | a(u,v)| \leqslant M\Vert u\Vert \Vert v\Vert,\ \ \forall v,u
-\end{equation*}
-\item $a$ si dice \textbf{coerciva/coercitiva} se
-
-\begin{equation*}
-\exists \alpha  >0\ \text{(costante di coercività)} :\ \ a(u,u) \geqslant \alpha \Vert u\Vert ^{2}
-\end{equation*}
-\end{itemize}
+	Inoltre
+	\begin{itemize}
+		\item $a$ si dice \textbf{simmetrica} se
+		      
+		      \begin{equation*}
+		      	a(u,v) =a(v,u),\ \ \forall v,u\in H
+		      \end{equation*}
+		      
+		      in generale non lo sarà, ma un esempio ne è il prodotto scalare.
+		\item $a$ si dice \textbf{continua} (\textbf{limitata}) se
+		      
+		      \begin{equation*}
+		      	\exists M:\ \ | a(u,v)| \leqslant M\Vert u\Vert \Vert v\Vert,\ \ \forall v,u
+		      \end{equation*}
+		\item $a$ si dice \textbf{coerciva/coercitiva} se
+		      
+		      \begin{equation*}
+		      	\exists \alpha  >0\ \text{(costante di coercività)} :\ \ a(u,u) \geqslant \alpha \Vert u\Vert ^{2}
+		      \end{equation*}
+	\end{itemize}
 \end{definition}
 Il prodotto scalare è un caso particolare di forma bilineare simmetrica $a(u,v) =(u,v)$, vediamo quanto valgono le costanti $M$ e $\alpha $. Per Cauchy-Schwarz
 \begin{equation*}
-| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert \ \ \Rightarrow \ \ M=1
+	| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert \ \ \Rightarrow \ \ M=1
 \end{equation*}
 Per definizione di norma indotta dal prodotto scalare
 \begin{equation*}
-(u,u) =\Vert u\Vert ^{2} \ \ \Rightarrow \ \ \alpha =1
+	(u,u) =\Vert u\Vert ^{2} \ \ \Rightarrow \ \ \alpha =1
 \end{equation*}
 Il teorema di Lax-Milgram generalizza queste nozioni e ci permette di risolvere\footnote{esistenza, unicità e dipendenza continua.} il seguente problema.\footnote{da qui nascono i metodi di Galerkin.}
 \begin{definition}
-[Problema Variazionale Astratto, PVA] Dato $L\in H^{*}$ trovare $u\in H$ tale che
-\begin{equation*}
-a(u,v) =Lv,\ \ \forall v\in H
-\end{equation*}
-dove $a$ è una forma bilineare.
+	[Problema Variazionale Astratto, PVA] Dato $L\in H^{*}$ trovare $u\in H$ tale che
+	\begin{equation*}
+		a(u,v) =Lv,\ \ \forall v\in H
+	\end{equation*}
+	dove $a$ è una forma bilineare.
 \end{definition}
 Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è ben posto per il teorema di Riesz.
 \begin{theorem}
-[di Lax-Milgram] Siano
-\begin{itemize}
-\item $H$ spazio di Hilbert
-\item $a$ forma bilineare continua e coerciva
-\item $L\in H^{*}$
-\end{itemize}
-
-Allora $\exists !\ \overline{u} \in H$ soluzione di (PVA). Inoltre (\textbf{stima di stabilità})
-\begin{equation*}
-\Vert \overline{u}\Vert \leqslant \frac{1}{\alpha }\Vert L\Vert _{*}
-\end{equation*}
-dove $\alpha $ è la costante di coercività, ci interessa che sia più grande possibile.
+	[di Lax-Milgram] Siano
+	\begin{itemize}
+		\item $H$ spazio di Hilbert
+		\item $a$ forma bilineare continua e coerciva
+		\item $L\in H^{*}$
+	\end{itemize}
+	
+	Allora $\exists !\ \overline{u} \in H$ soluzione di (PVA). Inoltre (\textbf{stima di stabilità})
+	\begin{equation*}
+		\Vert \overline{u}\Vert \leqslant \frac{1}{\alpha }\Vert L\Vert _{*}
+	\end{equation*}
+	dove $\alpha $ è la costante di coercività, ci interessa che sia più grande possibile.
 \end{theorem}
 \begin{oss}
-La stabilità è utile considerando due dati vicini e due soluzioni vicine. Prendiamo ad esempio due soluzioni $u_{1},u_{2}$ soluzioni del (PVA) coi dati $L_{1} v,L_{2} v$
-\begin{gather*}
-a(u_{1},v) =L_{1} v,\ \ \forall v\in H\\
-a(u_{2},v) =L_{2} v,\ \ \forall v\in H
-\end{gather*}
-Facciamo la differenza e usiamo la linearità
-\begin{equation*}
-a(u_{1} -u_{2},v) =(L_{1} -L_{2}) v
-\end{equation*}
-La stima di stabilità ci dice che
-\begin{equation*}
-\Vert u_{1} -u_{2}\Vert \leqslant \frac{1}{\alpha }\Vert L_{1} -L_{2}\Vert _{*}
-\end{equation*}
-Ovvero a \textit{dati vicini} sono associate \textit{soluzioni vicine}, a patto che $\alpha $ sia sufficientemente grande.
+	La stabilità è utile considerando due dati vicini e due soluzioni vicine. Prendiamo ad esempio due soluzioni $u_{1},u_{2}$ soluzioni del (PVA) coi dati $L_{1} v,L_{2} v$
+	\begin{gather*}
+		a(u_{1},v) =L_{1} v,\ \ \forall v\in H\\
+		a(u_{2},v) =L_{2} v,\ \ \forall v\in H
+	\end{gather*}
+	Facciamo la differenza e usiamo la linearità
+	\begin{equation*}
+		a(u_{1} -u_{2},v) =(L_{1} -L_{2}) v
+	\end{equation*}
+	La stima di stabilità ci dice che
+	\begin{equation*}
+		\Vert u_{1} -u_{2}\Vert \leqslant \frac{1}{\alpha }\Vert L_{1} -L_{2}\Vert _{*}
+	\end{equation*}
+	Ovvero a \textit{dati vicini} sono associate \textit{soluzioni vicine}, a patto che $\alpha $ sia sufficientemente grande.
 \end{oss}
 \begin{dimostrazione}
-Proponiamo un'overview dei passi della dimostrazione
-\begin{enumerate}
-\item[(0)] Riscrittura del problema in termini di $A$
-\item[(1)] $A$ è lineare
-\item[(2)] $A$ è continuo (ovvero limitato)
-\item[(3)] $A$ è iniettivo (ovvero $\mathrm{Ker} A=\{0\}$)
-\item[(3.5)] l'immagine $R(A)$ è un sottospazio chiuso, cosa \textbf{non} vera in generale
-\item[(4)] $A$ è suriettivo (ovvero $R(A) =H$)
-\end{enumerate}
-Procediamo quindi con la dimostrazione
-\begin{itemize}
-\item[(0)]
+	Proponiamo un'overview dei passi della dimostrazione
+	\begin{enumerate}
+		\item[(0)] Riscrittura del problema in termini di $A$
+		\item[(1)] $A$ è lineare
+		\item[(2)] $A$ è continuo (ovvero limitato)
+		\item[(3)] $A$ è iniettivo (ovvero $\mathrm{Ker} A=\{0\}$)
+		\item[(3.5)] l'immagine $R(A)$ è un sottospazio chiuso, cosa \textbf{non} vera in generale
+		\item[(4)] $A$ è suriettivo (ovvero $R(A) =H$)
+	\end{enumerate}
+	Procediamo quindi con la dimostrazione
+	\begin{itemize}
+		\item[(0)]
 
-Notiamo che la $v$ è una sorta di \textit{funzione test}, infatti vogliamo ottenere una cosa che vale per infiniti $v$. Al secondo membro del (PVA), per ipotesi $L\in H^{*}$, allora per Riesz $\exists !\ z\in H$ tale che $Lv=(z,v),\forall v$ e inoltre $\Vert z\Vert =\Vert L\Vert _{*}$. Vogliamo applicarlo anche al primo membro. Per definizione di forma bilineare, $\forall u$ fissato, l'applicazione $v\mapsto a(u,v)$ è lineare e continua in $v$, infatti\footnote{usando la continuità di $a$.}
-\begin{equation*}
-\text{continua} \ \ \Leftrightarrow \ \ | a(u,v)| \leqslant \underbrace{M\Vert u\Vert }_{C}\Vert v\Vert \leqslant C\Vert v\Vert 
-\end{equation*}
-allora per Riesz per ogni $u$ fissato $\exists !\ h=A(u) \in H$ tale che
-\begin{equation*}
-a(u,v) =(h,v),\ \ \forall v
-\end{equation*}
-cioè ho definito un'applicazione $A:H\rightarrow H$ tale che
-\begin{equation*}
-\boxed{a(u,v) =(A(u),v),\ \forall v\in H}
-\end{equation*}
-noi vogliamo dimostrare su $A$, ma abbiamo proprietà su $a$, questa relazione è la \textbf{chiave!}
+		Notiamo che la $v$ è una sorta di \textit{funzione test}, infatti vogliamo ottenere una cosa che vale per infiniti $v$. Al secondo membro del (PVA), per ipotesi $L\in H^{*}$, allora per Riesz $\exists !\ z\in H$ tale che $Lv=(z,v),\forall v$ e inoltre $\Vert z\Vert =\Vert L\Vert _{*}$. Vogliamo applicarlo anche al primo membro. Per definizione di forma bilineare, $\forall u$ fissato, l'applicazione $v\mapsto a(u,v)$ è lineare e continua in $v$, infatti\footnote{usando la continuità di $a$.}
+		\begin{equation*}
+			\text{continua} \ \ \Leftrightarrow \ \ | a(u,v)| \leqslant \underbrace{M\Vert u\Vert }_{C}\Vert v\Vert \leqslant C\Vert v\Vert 
+		\end{equation*}
+		allora per Riesz per ogni $u$ fissato $\exists !\ h=A(u) \in H$ tale che
+		\begin{equation*}
+			a(u,v) =(h,v),\ \ \forall v
+		\end{equation*}
+		cioè ho definito un'applicazione $A:H\rightarrow H$ tale che
+		\begin{equation*}
+			\boxed{a(u,v) =(A(u),v),\ \forall v\in H}
+		\end{equation*}
+		noi vogliamo dimostrare su $A$, ma abbiamo proprietà su $a$, questa relazione è la \textbf{chiave!}
 
-Avendo così usato due volte il teorema di Riesz per passare da due operatori lineari a due prodotti scalari, il (PVA) diventa
-\begin{equation*}
-(A(u),v) =(z,v) \ \ \forall v\in H
-\end{equation*}
-Sottraiamo membro a membro e deduciamo, con la proprietà di annullamento del prodotto scalare
-\begin{equation*}
-(A(u) -z,v) =0,\ \forall v\in H\ \ \Rightarrow \ \ \boxed{A(u) =z}
-\end{equation*}
-risolvere (PVA) quindi \textit{è come} trovare l'operatore \textit{inverso} di $A$.
-
-
-
-\item[(1)]
-
-Dobbiamo sempre lavorare con il prodotto scalare di $A$ per qualcosa, in modo da usare la chiave trovata al passo precedente
-\begin{equation*}
-( A( \lambda u_{1} +\mu u_{2}),v) =a( \lambda u_{1} +\mu u_{2},v) =(*)
-\end{equation*}
-da qui è tutto automatico
-\begin{align*}
-(*) & =\lambda a(u_{1},v) +\mu a(u_{2},v)\\
- & =\lambda (A(u_{1}),v) +\mu (A(u_{2}),v)\\
- & =(\lambda A(u_{1}) +\mu A(u_{2}),v) \ \ \forall v\in H
-\end{align*}
-cioè $A( \lambda u_{1} +\mu u_{2}) =\lambda A(u_{1}) +\mu A(u_{2})$.
-
-D'ora in poi useremo la \textbf{notazione}
-\begin{equation*}
-A(u) =Au
-\end{equation*}
-
-
-\item[(2)]
-
-Notiamo che
-\begin{equation*}
-\Vert Au\Vert ^{2} =(Au,Au) =a(u,Au) \leqslant | a(u,Au)| \leqslant M\Vert u\Vert \Vert Au\Vert 
-\end{equation*}
-allora
-\begin{equation*}
-\Vert Au\Vert \leqslant M\Vert u\Vert 
-\end{equation*}
-Se $\Vert Au\Vert $ fosse stato $0$ non avrei avuto nulla dimostrare, per cui ho potuto semplificare.
+		Avendo così usato due volte il teorema di Riesz per passare da due operatori lineari a due prodotti scalari, il (PVA) diventa
+		\begin{equation*}
+			(A(u),v) =(z,v) \ \ \forall v\in H
+		\end{equation*}
+		Sottraiamo membro a membro e deduciamo, con la proprietà di annullamento del prodotto scalare
+		\begin{equation*}
+			(A(u) -z,v) =0,\ \forall v\in H\ \ \Rightarrow \ \ \boxed{A(u) =z}
+		\end{equation*}
+		risolvere (PVA) quindi \textit{è come} trovare l'operatore \textit{inverso} di $A$.
 
 
 
-\item[(3)]
+		\item[(1)]
 
-È l'unico in cui non possiamo mettere il pilota automatico. Qui troveremo anche la stima di stabilità. Per farlo dobbiamo partire dalla coercività
-\begin{equation*}
-\alpha \Vert u\Vert ^{2} \leqslant a(u,u) =(Au,u) \leqslant | (Au,u)| \underbrace{\leqslant }_{\text{C.S.}}\Vert Au\Vert \Vert u\Vert \ \ \alpha  >0
-\end{equation*}
-Possiamo dividere per $u$ perché se fosse $0$ sarebbe soddisfatta già, otteniamo la stima di stabilità
-\begin{equation*}
-\Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert 
-\end{equation*}
-Nel nuovo (PVA) $Au=z$ e ricordiamo che $z$ era il vettore che rappresentava $L$ (come visto al passo 0)
-\begin{equation*}
-\Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert =\frac{1}{\alpha }\Vert z\Vert =\frac{1}{\alpha }\Vert L\Vert _{*}
-\end{equation*}
-Se $u\in \mathrm{Ker} A$ allora $Au=0$, usando la stima $\Vert u\Vert \leqslant 0$, allora $u=0$. Quindi $\mathrm{Ker} A=\{0\}$, ovvero $A$ è iniettivo.
+		Dobbiamo sempre lavorare con il prodotto scalare di $A$ per qualcosa, in modo da usare la chiave trovata al passo precedente
+		\begin{equation*}
+			( A( \lambda u_{1} +\mu u_{2}),v) =a( \lambda u_{1} +\mu u_{2},v) =(*)
+		\end{equation*}
+		da qui è tutto automatico
+		\begin{align*}
+			(*) & =\lambda a(u_{1},v) +\mu a(u_{2},v)\\
+			    & =\lambda (A(u_{1}),v) +\mu (A(u_{2}),v)\\
+			    & =(\lambda A(u_{1}) +\mu A(u_{2}),v) \ \ \forall v\in H
+		\end{align*}
+		cioè $A( \lambda u_{1} +\mu u_{2}) =\lambda A(u_{1}) +\mu A(u_{2})$.
+
+		D'ora in poi useremo la \textbf{notazione}
+		\begin{equation*}
+			A(u) =Au
+		\end{equation*}
 
 
+		\item[(2)]
 
-\item[(3.5)]
-
-L'immagine è un sottospazio, analogo a come visto prima.
-
-Dimostriamo che è chiuso, ovvero che considerando ogni successione contenuta nell'immagine $(y_{n})_{n} \subset R(A)$ che tende a un certo valore $y_{n}\rightarrow \overline{y}$ allora quel valore sta nell'immagine $\overline{y} \in R(A)$\footnote{ricordiamo che la definizione è \textit{interessante} se consideriamo i punti del bordo in particolare.}.
-
-Questi valori dell'immagine sono associati agli elementi del dominio $y_{n} =Au_{n}$, ci piacerebbe dire che $\overline{y} =A\overline{u}$, con $\overline{u} =\lim u_{n}$, \textbf{ma questo limite non è detto che esista! In un sacco di situazioni concrete salta!}
-
-Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una successione di Cauchy, usando la stima di stabilità del passo 3
-\begin{equation*}
-0\leqslant \Vert u_{n} -u_{m}\Vert \underbrace{\leqslant }_{(3)}\frac{1}{\alpha }\Vert A(u_{n} -u_{m})\Vert \underbrace{\leqslant }_{\text{lin.}}\frac{1}{\alpha }\Vert Au_{n} -Au_{m}\Vert =\frac{1}{\alpha }\Vert y_{n} -y_{m}\Vert 
-\end{equation*}
-la successione $y_{n}$ è convergente, quindi anche di Cauchy, allora l'ultimo termine tende a $0$, in particolare quindi anche $u_{n}$ è di Cauchy, ma essendo $H$ completo è anche convergente a un certo $\overline{u} \in H$.
-
-Usando la continuità di $A$, $Au_{n}\rightarrow A\overline{u}$, quindi $\overline{y} =A\overline{u} \in R(A)$.
+		Notiamo che
+		\begin{equation*}
+			\Vert Au\Vert ^{2} =(Au,Au) =a(u,Au) \leqslant | a(u,Au)| \leqslant M\Vert u\Vert \Vert Au\Vert 
+		\end{equation*}
+		allora
+		\begin{equation*}
+			\Vert Au\Vert \leqslant M\Vert u\Vert 
+		\end{equation*}
+		Se $\Vert Au\Vert $ fosse stato $0$ non avrei avuto nulla dimostrare, per cui ho potuto semplificare.
 
 
 
-\item[(4)]
+		\item[(3)]
 
-Supponiamo per assurdo che
-\begin{equation*}
-R(A) \varsubsetneqq H
-\end{equation*}
-cioè esiste $z_{0} \in H$, $z_{0} \notin R(A)$. Per il teorema delle proiezioni\footnote{che possiamo applicare avendo dimostrato che l'immagine $R(A)$ è un sottospazio chiuso al passo 3.5}
-\begin{equation*}
-z=\frac{z_{0} -P_{R(A)} z_{0}}{\Vert z_{0} -P_{R(A)} z_{0}\Vert } \ \ \Rightarrow \ \ z\in (R(A))^{\perp },\ \Vert z\Vert =1
-\end{equation*}
-A questo punto notiamo che
-\begin{equation*}
-z\in (R(A))^{\perp },\ \ Az\in R(A) \ \ \Rightarrow \ \ (z,Az) =0
-\end{equation*}
-Andando alla definizione di $A$
-\begin{equation*}
-(z,Az) =a(z,z) \geqslant \alpha \Vert z\Vert ^{2} =\alpha  >0
-\end{equation*}
-Ma ciò è assurdo, è quindi negata la supposizione iniziale e $R(A) =H$.
-\end{itemize}
+		È l'unico in cui non possiamo mettere il pilota automatico. Qui troveremo anche la stima di stabilità. Per farlo dobbiamo partire dalla coercività
+		\begin{equation*}
+			\alpha \Vert u\Vert ^{2} \leqslant a(u,u) =(Au,u) \leqslant | (Au,u)| \underbrace{\leqslant }_{\text{C.S.}}\Vert Au\Vert \Vert u\Vert \ \ \alpha  >0
+		\end{equation*}
+		Possiamo dividere per $u$ perché se fosse $0$ sarebbe soddisfatta già, otteniamo la stima di stabilità
+		\begin{equation*}
+			\Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert 
+		\end{equation*}
+		Nel nuovo (PVA) $Au=z$ e ricordiamo che $z$ era il vettore che rappresentava $L$ (come visto al passo 0)
+		\begin{equation*}
+			\Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert =\frac{1}{\alpha }\Vert z\Vert =\frac{1}{\alpha }\Vert L\Vert _{*}
+		\end{equation*}
+		Se $u\in \mathrm{Ker} A$ allora $Au=0$, usando la stima $\Vert u\Vert \leqslant 0$, allora $u=0$. Quindi $\mathrm{Ker} A=\{0\}$, ovvero $A$ è iniettivo.
+
+
+
+		\item[(3.5)]
+
+		L'immagine è un sottospazio, analogo a come visto prima.
+
+		Dimostriamo che è chiuso, ovvero che considerando ogni successione contenuta nell'immagine $(y_{n})_{n} \subset R(A)$ che tende a un certo valore $y_{n}\rightarrow \overline{y}$ allora quel valore sta nell'immagine $\overline{y} \in R(A)$\footnote{ricordiamo che la definizione è \textit{interessante} se consideriamo i punti del bordo in particolare.}.
+
+		Questi valori dell'immagine sono associati agli elementi del dominio $y_{n} =Au_{n}$, ci piacerebbe dire che $\overline{y} =A\overline{u}$, con $\overline{u} =\lim u_{n}$, \textbf{ma questo limite non è detto che esista! In un sacco di situazioni concrete salta!}
+
+		Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una successione di Cauchy, usando la stima di stabilità del passo 3
+		\begin{equation*}
+			0\leqslant \Vert u_{n} -u_{m}\Vert \underbrace{\leqslant }_{(3)}\frac{1}{\alpha }\Vert A(u_{n} -u_{m})\Vert \underbrace{\leqslant }_{\text{lin.}}\frac{1}{\alpha }\Vert Au_{n} -Au_{m}\Vert =\frac{1}{\alpha }\Vert y_{n} -y_{m}\Vert 
+		\end{equation*}
+		la successione $y_{n}$ è convergente, quindi anche di Cauchy, allora l'ultimo termine tende a $0$, in particolare quindi anche $u_{n}$ è di Cauchy, ma essendo $H$ completo è anche convergente a un certo $\overline{u} \in H$.
+
+		Usando la continuità di $A$, $Au_{n}\rightarrow A\overline{u}$, quindi $\overline{y} =A\overline{u} \in R(A)$.
+
+
+
+		\item[(4)]
+
+		Supponiamo per assurdo che
+		\begin{equation*}
+			R(A) \varsubsetneqq H
+		\end{equation*}
+		cioè esiste $z_{0} \in H$, $z_{0} \notin R(A)$. Per il teorema delle proiezioni\footnote{che possiamo applicare avendo dimostrato che l'immagine $R(A)$ è un sottospazio chiuso al passo 3.5}
+		\begin{equation*}
+			z=\frac{z_{0} -P_{R(A)} z_{0}}{\Vert z_{0} -P_{R(A)} z_{0}\Vert } \ \ \Rightarrow \ \ z\in (R(A))^{\perp },\ \Vert z\Vert =1
+		\end{equation*}
+		A questo punto notiamo che
+		\begin{equation*}
+			z\in (R(A))^{\perp },\ \ Az\in R(A) \ \ \Rightarrow \ \ (z,Az) =0
+		\end{equation*}
+		Andando alla definizione di $A$
+		\begin{equation*}
+			(z,Az) =a(z,z) \geqslant \alpha \Vert z\Vert ^{2} =\alpha  >0
+		\end{equation*}
+		Ma ciò è assurdo, è quindi negata la supposizione iniziale e $R(A) =H$.
+	\end{itemize}
 \end{dimostrazione}
 
 \chapter{Distribuzioni e spazi di Sobolev}
@@ -8556,11 +8556,11 @@ Indichiamo \textit{l'azione di }$\displaystyle F$\textit{ su }$\displaystyle \va
 	\end{equation*}
 	è formalmente errata, poiché col simbolo di integrale non si intende l'integrale che siamo soliti fare. Svolgiamo effettivamente un integrale se $\displaystyle u\in L^{2}( \Omega )$, in questo caso allora $\displaystyle Lu\in \mathcal{D} '( \Omega )$ e quando scriviamo 
 	\begin{equation*}
-		\langle u,\varphi \rangle =\int _{\Omega } u(\mathbf{x}) \varphi (\mathbf{x}) d\mathbf{x}
+		\langle u,\varphi \rangle =\int _{\Omega } u(\x) \varphi (\x) d\x
 	\end{equation*}
 	sottointendiamo in realtà
 	\begin{equation*}
-		\langle Lu,\varphi \rangle =\int _{\Omega } u(\mathbf{x}) \varphi (\mathbf{x}) d\mathbf{x}
+		\langle Lu,\varphi \rangle =\int _{\Omega } u(\x) \varphi (\x) d\x
 	\end{equation*}
 \end{nb}
 Esistono distribuzioni che non sono funzioni, come la $\displaystyle \delta _{n}$, ma nel caso in cui coincidano con delle funzioni il minimo sindacale è \ 
@@ -8573,10 +8573,10 @@ che è anche un'immersione continua.
 	\begin{equation*}
 		\langle \partial _{x_{i}} F,\varphi \rangle =-\langle F,\partial _{x_{i}} \varphi \rangle 
 	\end{equation*}
-	Se $\displaystyle F\in C^{1}(\overline{\Omega }) \subset \mathcal{D} '( \Omega ) ,\ \langle F,\varphi \rangle =\int _{\Omega } F\varphi d\mathbf{x}$, derivata debole e \textit{classica} coincidono (il $\displaystyle -$ salta fuori dall'integrazione per parti)
+	Se $\displaystyle F\in C^{1}(\overline{\Omega }) \subset \mathcal{D} '( \Omega ) ,\ \langle F,\varphi \rangle =\int _{\Omega } F\varphi d\x$, derivata debole e \textit{classica} coincidono (il $\displaystyle -$ salta fuori dall'integrazione per parti)
 	\begin{align*}
-		\langle \underbrace{\partial _{x_{i}} F}_{\text{classica}} ,\varphi \rangle & =\int _{\Omega } \partial _{x_{i}} F(\mathbf{x}) \varphi (\mathbf{x}) d\mathbf{x}                                                                              \\
-		                                                                            & =\underbrace{\cancel{\int _{\partial \Omega } ...\varphi }}_{\varphi \text{ supp. comp.}} -\int _{\Omega } F(\mathbf{x}) \partial _{x_{i}} \varphi (\mathbf{x})d\mathbf{x} \\
+		\langle \underbrace{\partial _{x_{i}} F}_{\text{classica}} ,\varphi \rangle & =\int _{\Omega } \partial _{x_{i}} F(\x) \varphi (\x) d\x                                                                              \\
+		                                                                            & =\underbrace{\cancel{\int _{\partial \Omega } ...\varphi }}_{\varphi \text{ supp. comp.}} -\int _{\Omega } F(\x) \partial _{x_{i}} \varphi (\x)d\x \\
 		                                                                            & =-\langle F,\partial _{x_{i}} \varphi\rangle =\langle \underbrace{\partial _{x_{i}} F}_{\text{debole}} ,\varphi \rangle                                              
 	\end{align*}
 \end{definition}
@@ -8616,11 +8616,11 @@ Da cui\footnote{Prestare attenzione all'utilizzo alternato, nei vari punti, di s
 
 Svolgiamo ora un esercizio (in buona parte di Analisi 2) per dimostrare come derivata debole e derivata classica possano non coincidere. Sia
 \begin{equation*}
-	\mathbf{x} =( x_{1} ,x_{2} ,x_{3}) \in \mathbb{R}^{3} \ \ \Rightarrow \ \ | \mathbf{x}| =\sqrt{x^{2}_{1} +x^{2}_{2} +x^{2}_{3}}
+	\x =( x_{1} ,x_{2} ,x_{3}) \in \mathbb{R}^{3} \ \ \Rightarrow \ \ | \x| =\sqrt{x^{2}_{1} +x^{2}_{2} +x^{2}_{3}}
 \end{equation*}
 Sia 
 \begin{equation*}
-	u(\mathbf{x}) =\frac{1}{| \mathbf{x}| } ,\ \mathbf{x} \neq \mathbf{0}
+	u(\x) =\frac{1}{| \x| } ,\ \x \neq \mathbf{0}
 \end{equation*}
 Vogliamo trovare $\displaystyle \Delta u$.
 
@@ -8630,27 +8630,27 @@ Vogliamo trovare $\displaystyle \Delta u$.
 
 Osserviamo inanzitutto 
 \begin{equation*}
-	\partial _{x_{i}}| \mathbf{x}| =\frac{2x_{i}}{2\sqrt{x^{2}_{1} +x^{2}_{2} +x^{2}_{3}}} =\frac{x_{i}}{| \mathbf{x}| } \ \ \Rightarrow \ \ \nabla | \mathbf{x}| =\frac{\mathbf{x}}{| \mathbf{x}| }
+	\partial _{x_{i}}| \x| =\frac{2x_{i}}{2\sqrt{x^{2}_{1} +x^{2}_{2} +x^{2}_{3}}} =\frac{x_{i}}{| \x| } \ \ \Rightarrow \ \ \nabla | \x| =\frac{\x}{| \x| }
 \end{equation*}
 E per la regola della funzione composta
 \begin{equation}
-	\nabla f(| \mathbf{x}| ) =f'(\mathbf{x}) \nabla | \mathbf{x}| =f'(\mathbf{x})\frac{\mathbf{x}}{| \mathbf{x}| }
+	\nabla f(| \x| ) =f'(\x) \nabla | \x| =f'(\x)\frac{\x}{| \x| }
 	\label{eq:chain-rule-composta}
 \end{equation}
 Allora possiamo calcolare $\displaystyle \Delta u$ usando \eqref{eq:chain-rule-composta}:
 \begin{equation*}
-	\Delta u(\mathbf{x}) =\Delta \left(\frac{1}{| \mathbf{x}| }\right) =\mathrm{div}\left( \nabla \left(\frac{1}{| \mathbf{x}| }\right)\right) =\mathrm{div}\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right)
+	\Delta u(\x) =\Delta \left(\frac{1}{| \x| }\right) =\mathrm{div}\left( \nabla \left(\frac{1}{| \x| }\right)\right) =\mathrm{div}\left( -\frac{\x}{| \x| ^{3}}\right)
 \end{equation*}
 Usiamo ora l'identità di Green 
 \begin{equation*}
-	\mathrm{div}( g\mathbf{F}) =\nabla g\cdotp \mathbf{F} +g\mathrm{div}\mathbf{F} \ \ \text{con} \ g=\frac{1}{| \mathbf{x}| ^{3}} \ \text{e} \ \mathbf{F} =\mathbf{x}
+	\mathrm{div}( g\mathbf{F}) =\nabla g\cdotp \mathbf{F} +g\mathrm{div}\mathbf{F} \ \ \text{con} \ g=\frac{1}{| \x| ^{3}} \ \text{e} \ \mathbf{F} =\x
 \end{equation*}
 \begin{equation*}
-	\mathrm{div}\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \mathbf{x}| ^{3}}\right) \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}}\mathrm{div}\mathbf{x}\right) =-\left( -\frac{3}{| \mathbf{x}| ^{4}}\frac{\mathbf{x}}{| \mathbf{x}| } \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}} 3\right)
+	\mathrm{div}\left( -\frac{\x}{| \x| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \x| ^{3}}\right) \cdotp \x +\frac{1}{| \x| ^{3}}\mathrm{div}\x\right) =-\left( -\frac{3}{| \x| ^{4}}\frac{\x}{| \x| } \cdotp \x +\frac{1}{| \x| ^{3}} 3\right)
 \end{equation*}
 e troviamo
 \begin{equation*}
-	\Delta u(\mathbf{x}) =-\left( -\frac{3}{| \mathbf{x}| ^{3}} +\frac{3}{| \mathbf{x}| ^{3}}\right) =0
+	\Delta u(\x) =-\left( -\frac{3}{| \x| ^{3}} +\frac{3}{| \x| ^{3}}\right) =0
 \end{equation*}
 Quindi $\displaystyle u$ è armonica in $\displaystyle \mathbb{R}^{3} \backslash \{\mathbf{0}\}$.
 
@@ -8664,17 +8664,17 @@ Per poter fare la derivata distribuzionale dobbiamo prima chiederci
 \end{equation*}
 L'unico problema della funzione è, ovviamente, nell'origine. Se l'integrale su una palla unitaria centrata nell'origine convergerà la condizione sarà soddisfatta.
 \begin{equation*}
-	\int _{B_{1}(\mathbf{0})}\frac{1}{| \mathbf{x}| } d\mathbf{x} =\int ^{1}_{0}\left(\int _{\partial B_{r}}\frac{1}{| \mathbf{x}| } d\sigma \right) dr=\int ^{1}_{0}\frac{1}{r} 4\pi r^{2} dr< +\infty 
+	\int _{B_{1}(\mathbf{0})}\frac{1}{| \x| } d\x =\int ^{1}_{0}\left(\int _{\partial B_{r}}\frac{1}{| \x| } d\sigma \right) dr=\int ^{1}_{0}\frac{1}{r} 4\pi r^{2} dr< +\infty 
 \end{equation*}
 Abbiamo utilizzato una formula di coarea (o integrazione per bucce) 
 \begin{equation*}
-	\int _{B_{R}} fd\mathbf{x} =\int ^{R}_{0}\left(\int _{\partial B_{r}} fd\sigma \right) dr
+	\int _{B_{R}} fd\x =\int ^{R}_{0}\left(\int _{\partial B_{r}} fd\sigma \right) dr
 \end{equation*}
 Quindi $\displaystyle u\in L^{1}_{\text{loc}} \Rightarrow u\in \mathcal{D} '\left(\mathbb{R}^{3}\right)$.
 
 Per calcolare $\displaystyle \Delta u$ in $\displaystyle \mathcal{D} '\left(\mathbb{R}^{3}\right)$ prendiamo una funzione test $\displaystyle \varphi \in \mathcal{D}\left(\mathbb{R}^{3}\right)$
 \begin{equation*}
-	\langle \Delta u,\varphi \rangle =\langle u,\Delta \varphi \rangle \underbrace{=}_{u\in L^{1}_{\text{loc}}}\int _{\mathbb{R}^{3}}\frac{1}{| \mathbf{x}| } \Delta \varphi (\mathbf{x}) d\mathbf{x} \ 
+	\langle \Delta u,\varphi \rangle =\langle u,\Delta \varphi \rangle \underbrace{=}_{u\in L^{1}_{\text{loc}}}\int _{\mathbb{R}^{3}}\frac{1}{| \x| } \Delta \varphi (\x) d\x \ 
 \end{equation*}
 Quest'integrale presenta due problemi
 \begin{enumerate}
@@ -8682,60 +8682,60 @@ Quest'integrale presenta due problemi
 	      \begin{equation*}
 	      	\text{supp} \varphi \subset B_{R}(\mathbf{0})
 	      \end{equation*}
-	      
+	      	      
 	      poiché $\displaystyle \varphi $ è a supporto compatto mi basterà limitare il dominio di integrazione a tale palla
 	\item Ho una \textbf{singolarità} nell'origine: aggiriamo il problema integrando su un dominio $\displaystyle B_{R}(\mathbf{0}) \backslash B_{\varepsilon }(\mathbf{0})$ e facendo il limite per $\displaystyle \varepsilon \rightarrow 0$
-
-	\begin{figure}[htpb]
-		\centering
-	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-	%uncomment if require: \path (0,251); %set diagram left start at 0, and has height of 251
-
-	%Straight Lines [id:da018527204913219464] 
-	\draw    (74.4,123.02) -- (378.17,122.31) ;
-	\draw [shift={(380.17,122.31)}, rotate = 539.87] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-	%Straight Lines [id:da8598068958336733] 
-	\draw    (226.66,236.38) -- (227.9,10.94) ;
-	\draw [shift={(227.91,8.94)}, rotate = 450.32] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
-	%Shape: Ellipse [id:dp6985117247796604] 
-	\draw  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] (180.89,122.66) .. controls (180.89,97.04) and (201.66,76.27) .. (227.28,76.27) .. controls (252.91,76.27) and (273.68,97.04) .. (273.68,122.66) .. controls (273.68,148.28) and (252.91,169.05) .. (227.28,169.05) .. controls (201.66,169.05) and (180.89,148.28) .. (180.89,122.66) -- cycle ;
-	%Straight Lines [id:da5357301688162748] 
-	\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (195.8,89) -- (214.64,109.14) ;
-	\draw [shift={(216,110.6)}, rotate = 226.91] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (7.2,-1.8) -- (0,0) -- (7.2,1.8) -- cycle    ;
-	%Straight Lines [id:da996019003751347] 
-	\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (297.75,64) -- (324.79,41.56) ;
-	\draw [shift={(326.33,40.28)}, rotate = 500.31] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (7.2,-1.8) -- (0,0) -- (7.2,1.8) -- cycle    ;
-	%Shape: Ellipse [id:dp7419991498839904] 
-	\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] (136.12,122.66) .. controls (136.12,72.31) and (176.94,31.5) .. (227.28,31.5) .. controls (277.63,31.5) and (318.45,72.31) .. (318.45,122.66) .. controls (318.45,173.01) and (277.63,213.82) .. (227.28,213.82) .. controls (176.94,213.82) and (136.12,173.01) .. (136.12,122.66) -- cycle ;
-
-	% Text Node
-	\draw (320.45,126.06) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$B_{R}$};
-	% Text Node
-	\draw (275.68,126.06) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$B_{\varepsilon }$};
-	% Text Node
-	\draw (328.93,39.81) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
-	% Text Node
-	\draw (191.73,99.01) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
-
-
-	\end{tikzpicture}
-	\end{figure}
-	\FloatBarrier
-	\begin{equation}
-		\int _{\mathbb{R}^{3}}\frac{1}{| \mathbf{x}| } \Delta \varphi (\mathbf{x}) d\mathbf{x} \ =\lim _{\varepsilon \rightarrow 0}\int _{B_{R} \backslash B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \Delta \varphi (\mathbf{x}) d\mathbf{x}
-		\label{eq:esempio-derivata-limite}
-	\end{equation}
+	      
+	      \begin{figure}[htpb]
+	      	\centering
+	      	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+	      	
+	      	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	      		%uncomment if require: \path (0,251); %set diagram left start at 0, and has height of 251
+	      		
+	      		%Straight Lines [id:da018527204913219464] 
+	      		\draw    (74.4,123.02) -- (378.17,122.31) ;
+	      		\draw [shift={(380.17,122.31)}, rotate = 539.87] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	      		%Straight Lines [id:da8598068958336733] 
+	      		\draw    (226.66,236.38) -- (227.9,10.94) ;
+	      		\draw [shift={(227.91,8.94)}, rotate = 450.32] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	      		%Shape: Ellipse [id:dp6985117247796604] 
+	      		\draw  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] (180.89,122.66) .. controls (180.89,97.04) and (201.66,76.27) .. (227.28,76.27) .. controls (252.91,76.27) and (273.68,97.04) .. (273.68,122.66) .. controls (273.68,148.28) and (252.91,169.05) .. (227.28,169.05) .. controls (201.66,169.05) and (180.89,148.28) .. (180.89,122.66) -- cycle ;
+	      		%Straight Lines [id:da5357301688162748] 
+	      		\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (195.8,89) -- (214.64,109.14) ;
+	      		\draw [shift={(216,110.6)}, rotate = 226.91] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (7.2,-1.8) -- (0,0) -- (7.2,1.8) -- cycle    ;
+	      		%Straight Lines [id:da996019003751347] 
+	      		\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (297.75,64) -- (324.79,41.56) ;
+	      		\draw [shift={(326.33,40.28)}, rotate = 500.31] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (7.2,-1.8) -- (0,0) -- (7.2,1.8) -- cycle    ;
+	      		%Shape: Ellipse [id:dp7419991498839904] 
+	      		\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] (136.12,122.66) .. controls (136.12,72.31) and (176.94,31.5) .. (227.28,31.5) .. controls (277.63,31.5) and (318.45,72.31) .. (318.45,122.66) .. controls (318.45,173.01) and (277.63,213.82) .. (227.28,213.82) .. controls (176.94,213.82) and (136.12,173.01) .. (136.12,122.66) -- cycle ;
+	      		
+	      		% Text Node
+	      		\draw (320.45,126.06) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$B_{R}$};
+	      		% Text Node
+	      		\draw (275.68,126.06) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$B_{\varepsilon }$};
+	      		% Text Node
+	      		\draw (328.93,39.81) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
+	      		% Text Node
+	      		\draw (191.73,99.01) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
+	      		
+	      		
+	      	\end{tikzpicture}
+	      \end{figure}
+	      \FloatBarrier
+	      \begin{equation}
+	      	\int _{\mathbb{R}^{3}}\frac{1}{| \x| } \Delta \varphi (\x) d\x \ =\lim _{\varepsilon \rightarrow 0}\int _{B_{R} \backslash B_{\varepsilon }}\frac{1}{| \x| } \Delta \varphi (\x) d\x
+	      	\label{eq:esempio-derivata-limite}
+	      \end{equation}
 \end{enumerate}
 
-Ora $\displaystyle \frac{1}{| \mathbf{x}| }$ è $\displaystyle C^{\infty }$ nel dominio di integrazione e posso applicare la formula di integrazione per parti che ricordiamo qua sotto
+Ora $\displaystyle \frac{1}{| \x| }$ è $\displaystyle C^{\infty }$ nel dominio di integrazione e posso applicare la formula di integrazione per parti che ricordiamo qua sotto
 \begin{equation*}
 	\int _{\Omega } u\Delta v=\int _{\partial \Omega } u\partial _{\nu } v-\int _{\Omega } \nabla u\cdotp \nabla v=\int _{\partial \Omega } u\partial _{\bm{\nu }} v-\int _{\partial \Omega } v\partial _{\bm{\nu }} u+\int _{\Omega } v\Delta u
 \end{equation*}
 con 
 \begin{equation*}
-	u=\frac{1}{| \mathbf{x}| } ,\ v=\varphi (\mathbf{x}) ,\ \partial \Omega =\partial B_{R} \cup \partial B_{\varepsilon }
+	u=\frac{1}{| \x| } ,\ v=\varphi (\x) ,\ \partial \Omega =\partial B_{R} \cup \partial B_{\varepsilon }
 \end{equation*}
 La normale $\displaystyle \bm{\nu }$ sarà diretta verso l'esterno o l'interno a seconda che mi trovi rispettivamente su $\displaystyle \partial B_{R}$ o $\displaystyle \partial B\varepsilon $.
 
@@ -8746,57 +8746,57 @@ Osserviamo inoltre che essendo $\displaystyle \varphi \in \mathcal{D}\left(\math
 Applicando il tutto a \eqref{eq:esempio-derivata-limite} otteniamo
 
 \begin{equation}
-\lim _{\varepsilon \rightarrow 0}\left[\int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \partial _{\bm{\nu }} \varphi (\mathbf{x}) d\sigma -\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) \partial _{\bm{\nu }}\left(\frac{1}{| \mathbf{x}| }\right) d\sigma +\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\mathbf{x}) \Delta \left(\frac{1}{| \mathbf{x}| }\right) d\mathbf{x}\right]
-\label{eq:esempio-derivata-limite-2}
+	\lim _{\varepsilon \rightarrow 0}\left[\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu }} \varphi (\x) d\sigma -\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\bm{\nu }}\left(\frac{1}{| \x| }\right) d\sigma +\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x\right]
+	\label{eq:esempio-derivata-limite-2}
 \end{equation}
 Di questi termini
 \begin{itemize}
-\item essendo $\displaystyle \Delta u=0$ la derivata classica in $\displaystyle B_{R} \backslash B_{\varepsilon }$:\begin{equation*}
-\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\mathbf{x}) \Delta \left(\frac{1}{| \mathbf{x}| }\right) d\mathbf{x} =0
-\end{equation*}
-\item  $\displaystyle \partial _{\bm{\nu }} \varphi =\nabla \varphi \cdotp \bm{\nu }$, dove $\displaystyle \bm{\nu } =-\frac{\mathbf{x}}{| \mathbf{x}| }$ essendo orientata in dentro\begin{equation*}
-\int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \partial _{\bm{\nu }} \varphi (\mathbf{x}) d\sigma =-\int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \nabla \varphi (\mathbf{x}) \cdotp \frac{\mathbf{x}}{| \mathbf{x}| } d\sigma 
-\end{equation*}
-\item $\displaystyle \partial _{\bm{\nu }}\left(\frac{1}{| \mathbf{x}| }\right) =\nabla \left(\frac{1}{| \mathbf{x}| }\right) \cdotp \bm{\nu }$, con $\displaystyle \bm{\nu }$ identica a prima\begin{equation*}
--\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) \partial _{\nu }\left(\frac{1}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) \cdotp \left( -\frac{\mathbf{x}}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\frac{| \mathbf{x}| ^{2}}{| \mathbf{x}| ^{4}} d\sigma 
-\end{equation*}
+	\item essendo $\displaystyle \Delta u=0$ la derivata classica in $\displaystyle B_{R} \backslash B_{\varepsilon }$:\begin{equation*}
+	      \int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x =0
+	\end{equation*}
+	\item  $\displaystyle \partial _{\bm{\nu }} \varphi =\nabla \varphi \cdotp \bm{\nu }$, dove $\displaystyle \bm{\nu } =-\frac{\x}{| \x| }$ essendo orientata in dentro\begin{equation*}
+	      \int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu }} \varphi (\x) d\sigma =-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } d\sigma 
+	\end{equation*}
+	\item $\displaystyle \partial _{\bm{\nu }}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \bm{\nu }$, con $\displaystyle \bm{\nu }$ identica a prima\begin{equation*}
+	      -\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\nu }\left(\frac{1}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{| \x| ^{2}}{| \x| ^{4}} d\sigma 
+	\end{equation*}
 \end{itemize}
 
-Inoltre su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \mathbf{x}| =\varepsilon $. Possiamo riscrivere \eqref{eq:esempio-derivata-limite-2}:
+Inoltre su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $. Possiamo riscrivere \eqref{eq:esempio-derivata-limite-2}:
 \begin{equation*}
-	\lim _{\varepsilon \rightarrow 0}\left[ -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\mathbf{x}) \cdotp \mathbf{x} d\sigma -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) d\sigma \right]
+	\lim _{\varepsilon \rightarrow 0}\left[ -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma \right]
 \end{equation*}
 Se entrambi i termini tendono a $0$ allora la mia derivata distribuzionale coinciderà con quella classica. Esaminiamoli separatamente:
 \begin{itemize}
 	\item primo termine
 	      
 	      \begin{equation*}
-	      	\left| -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\mathbf{x}) \cdotp \mathbf{x} d\sigma \right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\mathbf{x})| \cdotp | \mathbf{x}| d\sigma 
+	      	\left| -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma \right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| d\sigma 
 	      \end{equation*}
 	      
-	      $\displaystyle | \nabla \varphi (\mathbf{x})| \leqslant c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \mathbf{x}| =\varepsilon $
+	      $\displaystyle | \nabla \varphi (\x)| \leqslant c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $
 	      \begin{equation*}
-	      	\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi | \cdotp | \mathbf{x}| d\sigma \leqslant \frac{c}{\varepsilon }\int _{\partial B_{\varepsilon }} d\sigma =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\rightarrow 0
+	      	\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi | \cdotp | \x| d\sigma \leqslant \frac{c}{\varepsilon }\int _{\partial B_{\varepsilon }} d\sigma =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\rightarrow 0
 	      \end{equation*}
 	\item secondo termine
 	      
 	      \begin{equation*}
-	      	-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) d\sigma =-4\pi \frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) d\sigma =-4\pi \frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) d\sigma 
+	      	-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =-4\pi \frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =-4\pi \frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma 
 	      \end{equation*}
 	      
 	      Ma essendo $\displaystyle \varphi $ continua ora posso usare il teorema della media integrale\begin{equation*}
-	      \exists \mathbf{x}_{\varepsilon } \in \partial B_{\varepsilon } :\frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) d\sigma =\varphi (\mathbf{x}_{\varepsilon })\xrightarrow{\varepsilon \rightarrow 0} \varphi (\mathbf{0})
+	      \exists \x_{\varepsilon } \in \partial B_{\varepsilon } :\frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =\varphi (\x_{\varepsilon })\xrightarrow{\varepsilon \rightarrow 0} \varphi (\mathbf{0})
 	\end{equation*}
 	
 	e ottengo\begin{equation*}
-	-4\pi \frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) d\sigma \rightarrow -4\pi \varphi (\mathbf{0})
+	-4\pi \frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma \rightarrow -4\pi \varphi (\mathbf{0})
 	\end{equation*}
 \end{itemize}
 
 Riassumendo\footnote{il simbolo $\displaystyle \delta _{3}$ non indica la Delta centrata in $\displaystyle 3$, ma la delta tridimensionale centrata in $\displaystyle 0$.}
 \begin{gather*}
 	\langle \Delta u,\varphi \rangle =-4\pi \varphi (\mathbf{0}) =-4\pi \langle \delta _{3} ,\varphi \rangle \\
-	\Rightarrow \ -\Delta \left(\frac{1}{4\pi }\frac{1}{| \mathbf{x}| }\right) =\delta_{3}  \ \text{in} \ \mathcal{D} '\left(\mathbb{R}^{3}\right)
+	\Rightarrow \ -\Delta \left(\frac{1}{4\pi }\frac{1}{| \x| }\right) =\delta_{3}  \ \text{in} \ \mathcal{D} '\left(\mathbb{R}^{3}\right)
 \end{gather*}
 La derivata classica e debole non coincidono.
 
@@ -8814,7 +8814,7 @@ Consideriamo $\Omega \subset \mathbb{R}^{n}$ dominio (cioè aperto connesso)\foo
 \end{definition}
 Questo spazio è dotato di prodotto scalare
 \begin{equation*}
-	( u,v)_{H^{1}( \Omega )} =( \nabla u,\nabla v)_{L^{2}( \Omega )} +( u,v)_{L^{2}( \Omega )} =\int _{\Omega }[ \nabla u(\mathbf{x}) \cdotp \nabla v(\mathbf{x}) +u(\mathbf{x}) v(\mathbf{x})] d\mathbf{x}
+	( u,v)_{H^{1}( \Omega )} =( \nabla u,\nabla v)_{L^{2}( \Omega )} +( u,v)_{L^{2}( \Omega )} =\int _{\Omega }[ \nabla u(\x) \cdotp \nabla v(\x) +u(\x) v(\x)] d\x
 \end{equation*}
 In particolare vale il seguente risultato delle norme
 \begin{equation*}
@@ -8858,21 +8858,21 @@ $H^{1}( \Omega )$ può contenere anche delle funzioni discontinue.
 
 \textit{Esempio.}
 \begin{equation*}
-	B_{1}(\mathbf{0}) \subset \mathbb{R}^{3} ,\ \ u(\mathbf{x}) =| \mathbf{x}| ^{-a} \ \ ( a >0)
+	B_{1}(\mathbf{0}) \subset \mathbb{R}^{3} ,\ \ u(\x) =| \x| ^{-a} \ \ ( a >0)
 \end{equation*}
 È una funzione non definita in $\mathbf{0}$, per quali valori di $a$ si ha che $u\in H^{1}( B_{1})$?
 \begin{enumerate}
 	\item $u\overset{?}{\in } L^{2}( B_{1}) :$\begin{align*}
-	      \int _{B_{1}} u^{2}(\mathbf{x}) d\mathbf{x} & =\int _{B_{1}}| \mathbf{x}| ^{-2a} d\mathbf{x} =\int ^{1}_{0}\left[\int _{\partial B_{r}}| \mathbf{x}| ^{-2a} d\sigma \right] dr\\
+	      \int _{B_{1}} u^{2}(\x) d\x & =\int _{B_{1}}| \x| ^{-2a} d\x =\int ^{1}_{0}\left[\int _{\partial B_{r}}| \x| ^{-2a} d\sigma \right] dr\\
 	      & =\int ^{1}_{0}| r| ^{-2a} \cdotp 4\pi r^{2} dr=4\pi \int ^{1}_{0} r^{2-2a} dr\\
 	      & < +\infty \ \ \Leftrightarrow \ \ 2-2a >-1\ \ \Leftrightarrow \ \ a< \frac{3}{2}
 	\end{align*}
 	\item Calcoliamo il gradiente\begin{equation*}
-	      \nabla u(\mathbf{x}) =-a| \mathbf{x}| ^{-a-1} \cdotp \frac{\mathbf{x}}{| \mathbf{x}| } =-a| \mathbf{x}| ^{-a-2}\mathbf{x}
+	      \nabla u(\x) =-a| \x| ^{-a-1} \cdotp \frac{\x}{| \x| } =-a| \x| ^{-a-2}\x
 	\end{equation*}
 	
 	per quali valori sta in $L^{2}$? $\nabla u\overset{?}{\in } L^{2}( B_{1}) :$\begin{align*}
-	\int _{B_{1}} a^{2}| \mathbf{x}| ^{-2a-4+2} d\mathbf{x} & =\int ^{1}_{0}\left[ a^{2} r^{-2a-2} \cdotp 4\pi r^{2}\right] dr\\
+	\int _{B_{1}} a^{2}| \x| ^{-2a-4+2} d\x & =\int ^{1}_{0}\left[ a^{2} r^{-2a-2} \cdotp 4\pi r^{2}\right] dr\\
 	& =a^{2} 4\pi \int ^{1}_{0} r^{-2a} dr\\
 	& < +\infty \ \ \Leftrightarrow \ \ -2a >-1\ \ \Leftrightarrow \ \ a< \frac{1}{2}
 	\end{align*}
@@ -8893,8 +8893,8 @@ a questo punto $u\in L^{1}_{\mathrm{loc}}$, scrivo l'integrale, tolgo la palla n
 L'obiettivo finale sarà risolvere
 \begin{equation*}
 	\begin{cases}
-		-\Delta u=f(\mathbf{x}) & \mathbf{x} \in \Omega          \\
-		u=0                     & \mathbf{x} \in \partial \Omega 
+		-\Delta u=f(\x) & \x \in \Omega          \\
+		u=0                     & \x \in \partial \Omega 
 	\end{cases}
 \end{equation*}
 \begin{oss}
@@ -9135,9 +9135,9 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	
 	\textbf{Passo 1.}
 	
-	Fisso una funzione test $\displaystyle \varphi \in \mathcal{D}( \Omega )$ e costruisco un apposito campo vettoriale $\displaystyle \mathbf{F}(\mathbf{x}) =\varphi ^{2}(\mathbf{x})\mathbf{x}$ su cui applicare il teorema della divergenza
+	Fisso una funzione test $\displaystyle \varphi \in \mathcal{D}( \Omega )$ e costruisco un apposito campo vettoriale $\displaystyle \mathbf{F}(\x) =\varphi ^{2}(\x)\x$ su cui applicare il teorema della divergenza
 	\begin{equation*}
-		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\mathbf{x} =\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu } \ d\sigma 
+		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu } \ d\sigma 
 	\end{equation*}
 	Per applicare il teorema della divergenza devo controllare due cose:
 	\begin{enumerate}
@@ -9179,7 +9179,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	
 	Ma allora essendo $\displaystyle \varphi $ a supporto compatto anche il campo è supporto compatto e si annulla sul bordo:
 	\begin{equation}
-		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\mathbf{x} =\underbrace{\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu }\ d\sigma }_{=0} =0
+		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\underbrace{\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu }\ d\sigma }_{=0} =0
 		\label{eq:af-dim-poincare}
 	\end{equation}
 	Ricordiamo la formula di derivazione di Leibniz:
@@ -9188,22 +9188,22 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	\end{equation*}
 	Posso modificare la \eqref{eq:af-dim-poincare}:
 	\begin{align*}
-		0 & =\int _{\Omega }\mathrm{div}\mathbf{F} \ d\mathbf{x} =\int _{\Omega }\mathrm{div}\left( \varphi ^{2}(\mathbf{x})\mathbf{x}\right) \ d\mathbf{x}                                              \\
-		  & =\int _{\Omega }\left[\underbrace{2\varphi \nabla \varphi }_{\nabla \left( \varphi ^{2}\right)} \cdotp \mathbf{x} +\varphi ^{2}\underbrace{\mathrm{div}\mathbf{x}}_{=n}\right] d\mathbf{x} , 
+		0 & =\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\int _{\Omega }\mathrm{div}\left( \varphi ^{2}(\x)\x\right) \ d\x                                              \\
+		  & =\int _{\Omega }\left[\underbrace{2\varphi \nabla \varphi }_{\nabla \left( \varphi ^{2}\right)} \cdotp \x +\varphi ^{2}\underbrace{\mathrm{div}\x}_{=n}\right] d\x , 
 	\end{align*}
 	cioè, usando Cauchy-Schwarz:
 	\begin{align*}
-		n\int _{\Omega } \varphi ^{2} d\mathbf{x} =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \mathbf{x} \ d\mathbf{x} & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \mathbf{x} d\mathbf{x}\right| \\
-		                                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \mathbf{x}| d\mathbf{x} ,          
+		n\int _{\Omega } \varphi ^{2} d\x =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \x \ d\x & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \x d\x\right| \\
+		                                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \x| d\x ,          
 	\end{align*}
-	per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\mathbf{0})$, per cui se $\displaystyle \mathbf{x} \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \mathbf{x}| \leqslant M$. Infine per Holder:
+	per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\mathbf{0})$, per cui se $\displaystyle \x \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \x| \leqslant M$. Infine per Holder:
 	\begin{align*}
-		n\int _{\Omega } \varphi ^{2} d\mathbf{x} & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | d\mathbf{x}                                                  \\
+		n\int _{\Omega } \varphi ^{2} d\x & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | d\x                                                  \\
 		                                          & \leqslant 2M\left(\int _{\Omega } \varphi ^{2}\right)^{1/2}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} , 
 	\end{align*}
 	quindi semplificando una norma $\displaystyle L^{2}$ di $\displaystyle \varphi $ ottengo:
 	\begin{equation*}
-		\left(\int _{\Omega } \varphi ^{2} d\mathbf{x}\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{c_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
+		\left(\int _{\Omega } \varphi ^{2} d\x\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{c_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
 	\end{equation*}
 	\textbf{Passo 2.}
 	
@@ -9266,8 +9266,8 @@ A seconda che si preferisca un'analisi numerica o teorica si usano, rispettaveme
 Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ dominio limitato, $\displaystyle f:\Omega \rightarrow \mathbb{R}$, sia dato il problema
 \begin{equation}
 	\begin{cases}
-		-\Delta u=f & \mathbf{x} \in \Omega          \\
-		u=0         & \mathbf{x} \in \partial \Omega 
+		-\Delta u=f & \x \in \Omega          \\
+		u=0         & \x \in \partial \Omega 
 	\end{cases}
 	\label{eq:af-problema-poisson}
 \end{equation}
@@ -9299,12 +9299,12 @@ Come si costruisce la \textbf{formulazione variazionale}?
 	\item Scelgo uno spazio di funzioni test adatto al problema. Con Dirichlet si usa $\displaystyle \mathcal{D}( \Omega )$.
 	\item Suppongo $\displaystyle u$ soluzione classica di \eqref{eq:af-problema-poisson}, allora $\displaystyle \forall \varphi \in \mathcal{D}( \Omega )$ moltiplico e integro:
 	      \begin{equation*}
-	      	-\Delta u=f\ \ \Rightarrow \ \ \int _{\Omega } -\Delta u\ \varphi \ d\mathbf{x} =\int _{\Omega } f\ \varphi \ d\mathbf{x}
+	      	-\Delta u=f\ \ \Rightarrow \ \ \int _{\Omega } -\Delta u\ \varphi \ d\x =\int _{\Omega } f\ \varphi \ d\x
 	      \end{equation*}
 	      
 	      integro per parti
 	      \begin{equation*}
-	      	-\underbrace{\int _{\partial \Omega } \varphi \partial _{\bm{\nu }} u\ d\sigma }_{=0\ \text{(supp. comp.)}} +\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\mathbf{x} =\int _{\Omega } f\varphi \ d\mathbf{x}
+	      	-\underbrace{\int _{\partial \Omega } \varphi \partial _{\bm{\nu }} u\ d\sigma }_{=0\ \text{(supp. comp.)}} +\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\x =\int _{\Omega } f\varphi \ d\x
 	      \end{equation*}
 	      \newpage
 	      e ottengo\footnote{Vale anche il \textbf{principio di coerenza}: partendo dalla formulazione variazionale posso tornare indietro. Sia $\displaystyle u\in C^{2}( \Omega ) \cap C(\overline{\Omega })$ e tale che:
@@ -9328,19 +9328,19 @@ Come si costruisce la \textbf{formulazione variazionale}?
 	      		-\Delta u=f\ \text{ovunque in} \ \Omega .
 	      	\end{equation*}}
 	      \begin{equation}
-	      	\boxed{\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\mathbf{x} =\int _{\Omega } f\varphi \ d\mathbf{x} ,\ \ \forall \varphi \in \mathcal{D}( \Omega )}
+	      	\boxed{\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\x =\int _{\Omega } f\varphi \ d\x ,\ \ \forall \varphi \in \mathcal{D}( \Omega )}
 	      \end{equation}
 \end{itemize}
 
 Ora vorrei passare dallo spazio delle funzioni test a uno spazio di Hilbert: ambientiamo in \textbf{spazi di Sobolev. }So che l'insieme delle funzioni test è denso in $\displaystyle H_{0}^{1}( \Omega )$. Adesso bastano le derivate prime di $\displaystyle u$, e non serve che siano continue, basta che siano integrabili.
 \begin{gather*}
-	\int _{\Omega } \nabla u\cdotp \nabla \varphi _{n} \ d\mathbf{x} =\int _{\Omega } f\varphi _{n} \ d\mathbf{x} ,\ \ \forall \varphi _{n} \in \mathcal{D}( \Omega )\\
+	\int _{\Omega } \nabla u\cdotp \nabla \varphi _{n} \ d\x =\int _{\Omega } f\varphi _{n} \ d\x ,\ \ \forall \varphi _{n} \in \mathcal{D}( \Omega )\\
 	\downarrow \varphi _{n}\xrightarrow{H^{1}} v\\
-	\int _{\Omega } \nabla u\cdotp \nabla v\ d\mathbf{x} =\int _{\Omega } fv\ d\mathbf{x} ,\ \ \forall v\in H_{0}^{1}( \Omega )
+	\int _{\Omega } \nabla u\cdotp \nabla v\ d\x =\int _{\Omega } fv\ d\x ,\ \ \forall v\in H_{0}^{1}( \Omega )
 \end{gather*}
 Allora ho finalmente trovato la mia \textbf{formulazione debole (o variazionale)} del problema \eqref{eq:af-problema-poisson}: 
 \begin{equation}
-	\boxed{\text{Trovare} \ u\in H_{0}^{1}( \Omega ) :\int _{\Omega } \nabla u\cdotp \nabla v\ d\mathbf{x} =\int _{\Omega } fv\ d\mathbf{x} ,\ \ \forall v\in H_{0}^{1}( \Omega )}
+	\boxed{\text{Trovare} \ u\in H_{0}^{1}( \Omega ) :\int _{\Omega } \nabla u\cdotp \nabla v\ d\x =\int _{\Omega } fv\ d\x ,\ \ \forall v\in H_{0}^{1}( \Omega )}
 \end{equation}
 questa formulazione ha senso per funzioni molto \textit{meno regolari} di quelle richieste dal problema classico (basta $\displaystyle u\in H_{0}^{1}( \Omega )$).
 
@@ -9351,8 +9351,8 @@ Posso risolvere il problema (ovvero dimostrarne unicità ed esistenza) con Lax-M
 con:
 \begin{itemize}
 	\item $\displaystyle V=H_{0}^{1}( \Omega )$ (Hilbert)
-	\item $\displaystyle a( u,v) =\int _{\Omega } \nabla u\cdotp \nabla v\ d\mathbf{x}$ (forma bilineare)
-	\item $\displaystyle Fv=\int _{\Omega } fv\ d\mathbf{x}$ (lineare)
+	\item $\displaystyle a( u,v) =\int _{\Omega } \nabla u\cdotp \nabla v\ d\x$ (forma bilineare)
+	\item $\displaystyle Fv=\int _{\Omega } fv\ d\x$ (lineare)
 \end{itemize}
 
 Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme:
@@ -9398,7 +9398,7 @@ In entrambi i casi mi manca in realtà un ultimo tassello: $\displaystyle F$ dev
 
 È chiaramente lineare, quindi dimostro la continuità con la limitatezza. Facendo la nostra ultima ipotesi, ovvero $\displaystyle f\in L^{2}( \Omega )$, e applicando \textbf{Cauchy-Schwartz}
 \begin{align*}
-	| Fv| =\left| \int _{\Omega } fv\ d\mathbf{x}\right| & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert v\Vert _{L^{2}( \Omega )} =( *)  &                                  \\
+	| Fv| =\left| \int _{\Omega } fv\ d\x\right| & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert v\Vert _{L^{2}( \Omega )} =( *)  &                                  \\
 	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert v\Vert _{H^{1}( \Omega )}        & \text{(per approccio numerico)}  \\
 	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}( \Omega )}\Vert \nabla v\Vert _{L^{2}( \Omega )} & \text{(per approccio analitico)} 
 \end{align*}
