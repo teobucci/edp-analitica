@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper,twoside,openright]{book}
 
-\input{../../../../Libri/template_dispense.tex}
+%\input{../../../../Libri/template_dispense.tex}
+\input{template_dispense.tex}
 
 	\usepackage{geometry}
 	\geometry{
@@ -968,7 +969,7 @@ Possiamo descrivere il pezzo di bordo dentro la sferetta tramite un grafico cart
 
 Le coppie $( \varphi,\mathcal{N})$ sono dette \textbf{carte locali}.
 
-Se $\Omega $ è \textbf{limitato}, può essere descritto da un numero finito di carte locali $( \varphi _{p},B_{p})$.
+Se $\Omega $ è \textbf{limitato}, può essere descritto da un numero finito di carte locali $( \varphi _{p},\mathcal{N}_{p})$.
 
 Se $\varphi _{p}$ è Lipschitziana il dominio si dice \textbf{dominio Lipschitziano.}
 \begin{definition}
@@ -1718,7 +1719,7 @@ da cui la tesi.
 \textit{Lezione 6 (8/3/2021)}
 \section{Conseguenze del principio di massimo debole}
 
-Sia $u\in C^{1,2}(Q_{T}) \cap C(\overline{Q}_{T})$ soluzione di
+Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ soluzione di
 \begin{equation*}
 u_{t} -D\Delta u=0\ \ \text{in} \ Q_{T}
 \end{equation*}
@@ -1746,7 +1747,7 @@ u\leqslant v\ \text{in tutto} \ Q_{T}
 \Vert u-v\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant \Vert u-v\Vert _{L^{\infty }( \partial _{p} Q_{T})} +T\Vert f_{1} -f_{2}\Vert _{L^{\infty }(Q_{T})}
 \end{equation*}
 
-Questo implica l'\textbf{unicità per il problema di Cauchy-Dirichlet} in $C^{1,2}(Q_{T}) \cap C(\overline{Q}_{T})$. Stessi dati sulla frontiera e stessa sorgente esogena, allora $u=v$, infatti
+Questo implica l'\textbf{unicità per il problema di Cauchy-Dirichlet} in $C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$. Stessi dati sulla frontiera e stessa sorgente esogena, allora $u=v$, infatti
 \begin{enumerate}
 \item Sia $u$ soluzione di\begin{equation*}
 \begin{cases}
@@ -2222,7 +2223,7 @@ Se anziché nell'origine, la sorgente unitaria fosse concentrata in un punto $\d
 \end{itemize}
 \end{itemize}
 \begin{nb}
-Come già osservato in precedenza, per $\displaystyle t >0$ \ $\displaystyle \Gamma _{D}$ è $\displaystyle C^{\infty }(\mathbb{R} \times (0,+\infty)) .$Si dimentica immediatamente della singolarità ed è positiva $\displaystyle \forall t >0$: la diffusione del calore è istantanea in tutta la sbarra.
+Come già osservato in precedenza, per $\displaystyle t >0$ \ $\displaystyle \Gamma _{D}$ è $\displaystyle C^{\infty }(\mathbb{R} \times (0,+\infty))$. Si dimentica immediatamente della singolarità ed è positiva $\displaystyle \forall t >0$: la diffusione del calore è istantanea in tutta la sbarra.
 \end{nb}
 \subsection{Soluzione fondamentale in \texorpdfstring{$n>1$}{n>1}}
 
@@ -2844,7 +2845,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 \textit{Lezione 9 (16/03/2021)}
 
 \begin{theorem}
-	Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ un dominio limitato regolare. Allora esiste al più una funzione $\displaystyle u$ di classe $\displaystyle C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $\displaystyle \Delta u=f$ in $\displaystyle \Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
+	Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ un dominio limitato regolare. Allora esiste al più una funzione $\displaystyle u$ di classe $\displaystyle C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $\displaystyle -\Delta u=f$ in $\displaystyle \Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
 \end{theorem}
 \begin{dimostrazione}
 	Siano $\displaystyle u$ e $\displaystyle v$ soluzioni di uno dei problemi indicati con lo stesso dato al bordo $\displaystyle g$. Sia $\displaystyle w=u-v$, allora $\displaystyle w$ è armonica in $\displaystyle \Omega $
@@ -2866,7 +2867,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 		      Essendo $\displaystyle w=0$ su $\displaystyle \partial \Omega $ si trova
 		      
 		      \begin{align*}
-		      	\int _{\Omega }| \nabla w| ^{2} =0\ \&\Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } &                                                          \\
+		      	\int _{\Omega }| \nabla w| ^{2} =0\ &\Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } &                                                          \\
 		      	                                      & \Rightarrow \ \ w=\text{cost. in} \ \Omega               
 		      \end{align*}
 		      
@@ -3182,7 +3183,7 @@ in tutti i punti interni ad $\displaystyle A$!
 E invece sulla $\displaystyle \partial A$? Ovviamente se 
 \begin{align*}
 	x\in \Gamma                       & \ \ \Rightarrow \ \ P(x,\Gamma) =1 \\
-	x\in \partial \Gamma \backslash A & \ \ \Rightarrow \ \ P(x,\Gamma) =0 
+	x\in \partial  A \backslash \Gamma & \ \ \Rightarrow \ \ P(x,\Gamma) =0 
 \end{align*}
 Quindi
 \begin{equation*}
@@ -3307,7 +3308,7 @@ Dove la funzione Gamma di Eulero è definita come
 	}
 	\begin{align*}
 		\int ^{R}_{0} r^{n-1} u(x) & =\frac{1}{w_{n}}\int ^{R}_{0} dr\int _{\partial B_{r}(x)} u(\sigma) d\sigma \ \rightarrow \ \text{con fubini} \\
-		\frac{R^{n}}{n} u(x)       & =\frac{1}{w_{n}}\int _{B_{R}(x)} u(y) d(y)                                                                    
+		\frac{R^{n}}{n} u(x)       & =\frac{1}{w_{n}}\int _{B_{R}(x)} u(y) dy                                                                    
 	\end{align*}
 	Da cui 
 	\begin{equation*}
@@ -3349,7 +3350,7 @@ Come nel caso discreto il principio di massimo era implicato dalla proprietà de
 	\begin{equation*}
 		m=u(p) \leqslant u(y) \ \forall y\in \Omega 
 	\end{equation*}
-	Vogliamo dimostrare che $\displaystyle u(x) =m\ \forall y\in \Omega $.
+	Vogliamo dimostrare che $\displaystyle u(x) =m\ \forall x\in \Omega $.
 	
 	Sia $\displaystyle q\in \Omega $ arbitrario. Poiché $\displaystyle \Omega $ è connesso, possiamo trovare una sequenza finita di sfere $\displaystyle B(x_{j}) \subset \subset \Omega,\ j=0,..,N$ tali che
 	\begin{itemize}
@@ -3449,7 +3450,7 @@ Dal principio di massimo segue come corollario:
 \end{dimostrazione}
 \textit{Lezione 10 (18/03/2021)}
 
-Se abbiamo $\Delta u=0$ in $\Omega $ ha la proprietà di media in $\Omega $ $\Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
+Se abbiamo $\Delta u=0$ in $\Omega $ abbiamo la proprietà di media in $\Omega $ $\Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
 \section{Laplaciano in coordinate cilindriche}
 
 Consideriamo $p_{1} =p_{2} =0$ per comodità.
@@ -3492,9 +3493,10 @@ u_{yy} & =u_{ry} r_{y} +u_{r} r_{yy} +u_{\vartheta y} \vartheta _{y} +u_{\varthe
 \end{equation*}
 mettendo insieme otteniamo
 \begin{equation*}
-\nabla ^{2} u=u_{rr} +\frac{1}{r} u_{r} +\frac{1}{r^{2}} u_{\vartheta \vartheta }
+\Delta u=u_{rr} +\frac{1}{r} u_{r} +\frac{1}{r^{2}} u_{\vartheta \vartheta }
 \end{equation*}
 \section{Formula di Poisson per il cerchio}
+Lavoreremo per tutta la sezione in $\displaystyle \mathbb{R}^{2}$ per poi generalizzare.
 \begin{theorem}
 L'\textbf{unica} soluzione $u\in C^{2}(B_{R}(p)) \cap C\left(\overline{B_{R}(p)}\right)$ del problema di Dirichlet
 \begin{equation*}
@@ -3669,7 +3671,7 @@ U(r,\vartheta) & =\frac{1}{\pi }\int ^{2\pi }_{0} G(\varphi)\left\{-\frac{1}{2} 
 \end{align*}
 Osserviamo che il valore al centro del cerchio
 \begin{equation*}
-u(0,0) =\frac{1}{2\pi }\int ^{2\pi }_{0} G(\varphi) d\varphi 
+U(0,0) =\frac{1}{2\pi }\int ^{2\pi }_{0} G(\varphi) d\varphi 
 \end{equation*}
 non è altro che la media dei valori assunti da $G$ sul bordo.
 
@@ -3995,7 +3997,7 @@ Vediamo la dimostrazione del teorema.
 		      Maggioriamo
 		      
 		      \begin{equation*}
-		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} =\frac{1}{4\pi }\max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
+		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} = 4\pi \max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
 		      \end{equation*}
 		      
 		      Il secondo termine tende a
@@ -4060,7 +4062,7 @@ Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \end{equation}
 da cui
 \begin{align*}
-	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nu } u-\left(\cancel{\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nu } v\right) \\
+	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nu } u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nu } v\right) \\
 	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\int _{\partial \Omega }( v\partial _{\nu } u-u\partial _{\nu } v) d\sigma                                                                                                                                 
 \end{align*}
 sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordando che $\Delta v=\Delta _{y} g=0$
@@ -4076,7 +4078,7 @@ cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote
 \begin{equation*}
 	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\nu } G( x,y) \ d\sigma }
 \end{equation*}
-questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque di coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
+questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
 
 Sono equazioni differenziali del tipo
@@ -4103,7 +4105,7 @@ Nel caso in cui fosse possibile passare sotto il segno di integrale, l'integrale
 \end{equation}
 mentre l'altro termine si può scrivere naturalmente come\footnote{Teorema fondamentale del calcolo integrale.}
 \begin{equation*}
-	q( u( x_{1} ,t)) -q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} dx
+	-q( u( x_{1} ,t)) +q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} dx
 \end{equation*}
 che per arbitrarietà dell'intervallo implica proprio la legge di conservazione
 \begin{equation*}
@@ -4214,7 +4216,7 @@ Ipotesi di base
 \begin{itemize}
 	\item una sola corsia, senza sorpassi
 	\item assenza di caselli (assenza di \textit{sorgenti} o \textit{pozzi} di auto)
-	\item la veloctià è funzione di $\rho $, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori $v=v( \rho )$. Se aumenta la densità diminuisce la velocità $\frac{dv}{d\rho } \leqslant 0$.
+	\item la velocità è funzione di $\rho $, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori $v=v( \rho )$. Se aumenta la densità diminuisce la velocità $\frac{dv}{d\rho } \leqslant 0$.
 \end{itemize}
 
 Abbiamo
@@ -4272,7 +4274,7 @@ il modello più semplice è l'interpolazione lineare che realizza queste due con
 
 di conseguenza
 \begin{equation*}
-	\Rightarrow \ \ q( \rho ) =v_{m}\left( \rho -\frac{\rho ^{2}}{\rho _{m}}\right) \ \ \Rightarrow \ \ q'( \rho ) =v_{m}\left( 1-\frac{2\rho }{\rho _{m}}\right) \ \ \Rightarrow \ \ q''( \rho ) =-\frac{2}{\rho _{m}} < 0
+	\Rightarrow \ \ q( \rho ) =v_{m}\left( \rho -\frac{\rho ^{2}}{\rho _{m}}\right) \ \ \Rightarrow \ \ q'( \rho ) =v_{m}\left( 1-\frac{2\rho }{\rho _{m}}\right) \ \ \Rightarrow \ \ q''( \rho ) =-\frac{2v_{m}}{\rho _{m}} < 0
 \end{equation*}
 da cui
 \begin{equation*}
@@ -4329,7 +4331,7 @@ Problema: \eqref{eq:lc-sol-ro-traffico} dà sempre soluzione? No.
 
 \fg{0.4}{leggi-conservazione-shock}
 
-Se due caratteristiche si intersecano, il valore nell'intersezione sono in presenza di un'ambiguità. Motiviamo con due esempi.
+Se due caratteristiche si intersecano, il valore nell'intersezione non è determinato: sono in presenza di un'ambiguità. Motiviamo con due esempi.
 \subsection{Coda al semaforo}
 
 Modellizziamo il problema come
@@ -4421,7 +4423,7 @@ Strategia per costruire \textbf{una}\footnote{Nesssuno ci dice che sia l'unica.}
 	      
 	      possiamo ricavare $x_{0}$ in funzione di $x,t$ nella regione intermedia
 	      \begin{equation*}
-	      	\Rightarrow \ \ x=-v_{m} +\left( v_{m}\frac{2}{\varepsilon } t+1\right) x_{0} \ \ \Rightarrow \ \ x_{0} =\varepsilon \frac{x+v_{m}}{2v_{m} t+\varepsilon }
+	      	\Rightarrow \ \ x=-v_{m}t +\left( v_{m}\frac{2}{\varepsilon } t+1\right) x_{0} \ \ \Rightarrow \ \ x_{0} =\varepsilon \frac{x+v_{m}t}{2v_{m} t+\varepsilon }
 	      \end{equation*}
 	      
 	      \fg{0.7}{leggi-conservazione-semaforo-ventaglio-caratteristiche}
@@ -4603,7 +4605,7 @@ non è sempre valida. Nel caso del traffico ad esempio $\displaystyle q$ è conc
 	% Text Node
 	\draw (137,106.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
 	% Text Node
-	\draw (240,106.4) node [anchor=north west][inner sep=0.75pt]    {$\rho /m$};
+	\draw (240,106.4) node [anchor=north west][inner sep=0.75pt]    {$\rho _{m}$};
 	% Text Node
 	\draw (293,34.4) node [anchor=north west][inner sep=0.75pt]    {$q''< 0$};
 	% Text Node
@@ -4688,7 +4690,7 @@ Prendiamo la soluzione
 \end{equation*}
 Sulla caratteristica
 \begin{equation*}
-	x=q'( g( \xi )) +\xi 
+	x=q'( g( \xi ))t +\xi 
 \end{equation*}
 abbiamo che 
 \begin{equation*}
@@ -4777,7 +4779,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la ca
 	\FloatBarrier
 \end{nb}
 \begin{theorem}
-	Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'( \xi ) q''( g( \xi )) \geqslant 0\ \forall \in \mathbb{R}$. Allora l'equazione
+	Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'( \xi ) q''( g( \xi )) \geqslant 0\ \forall \xi \in \mathbb{R}$. Allora l'equazione
 	\begin{equation*}
 		G( x,t,u) =u-g( x-q'( u) t) =0
 	\end{equation*}
@@ -4787,7 +4789,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la ca
 	$\displaystyle u$ è definita univocamente per il teorema del Dini. Dimostriamo che $\displaystyle u\in C^{1}$. Sempre usando il teorema del Dini
 	\begin{gather*}
 		u_{t} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t) q'( u)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}\\
-		u_{x} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
+		u_{x} =-\frac{G_{x}( x,t,u)}{G_{u}( x,t,u)} =\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
 	\end{gather*}
 	allora
 	\begin{equation*}
@@ -4896,7 +4898,7 @@ Possiamo tornare indietro?
 				
 Partendo dalla formulazione debole \eqref{eq:formulazione-debole} e integrando per parti in senso inverso il primo termine, stavolta coi ruoli delle funzioni invertiti rispetto al primo passaggio
 \begin{equation}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u+q( u)] v\ dxdt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) dx-\int _{\mathbb{R}} v( x,0) g( x) dx}_{-\int _{\mathbb{R}}[ g( x) -u( x,0)] v( x,0) dx} =0
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t}+q( u)_{x}] v\ dxdt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) dx-\int _{\mathbb{R}} v( x,0) g( x) dx}_{-\int _{\mathbb{R}}[ g( x) -u( x,0)] v( x,0) dx} =0
 \label{eq:formulazione-debole-passaggio-1}
 \end{equation}
 Che è valida per ogni funzione test, scelgo quindi $v$ test con supporto in $\mathbb{R} \times \textcolor[rgb]{0.82,0.01,0.11}{(} 0,+\infty )$, annullando tutto il secondo termine
@@ -4981,7 +4983,7 @@ assurdo.
 \begin{theorem}
 	Sia $u$ soluzione debole tale che
 	\begin{enumerate}
-		\item ha una linea di discontinuità a salto $x=\dot{s}( t)$ di classe $C^{1}$
+		\item ha una linea di discontinuità a salto $x=s( t)$ di classe $C^{1}$
 		\item fuori da $\Gamma $ è soluzione classica di $u_{t} +q( u)_{x} =0$
 		\item il salto $\left[ u^{+} -u^{-}\right]_{|\Gamma }$ varia con continuità
 	\end{enumerate}
@@ -5097,7 +5099,7 @@ assurdo.
 		\end{pmatrix} \ dl\\
 		                                                & =\int _{K\cap \Gamma }\left[ -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ dl                                                           
 	\end{align*}
-	A questo punto mettiamo mettiamo insieme, possiamo tranquillamente portare tutto sotto lo stesso integrale
+	A questo punto mettiamo insieme, possiamo tranquillamente portare tutto sotto lo stesso integrale
 	\begin{equation*}
 		0=\int _{K\cap \Gamma }\left[ q\left( u^{+}\right) n_{x} +u^{+} n_{t} -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ dl\ \ \forall v
 	\end{equation*}
@@ -5423,7 +5425,7 @@ Conseguenze:
 		q'( u_{+}) < \dot{s} < q'( u_{-})
 	\end{equation*}
 
-	La pendenza di una linea d'urto è minore di quella delle caratteristiche che vi arrivano da sinistra e maggiore di quella delle caratteristiche che vi arrivano da destra: le caratteristiche \textbf{entrano }nella linea d'urto, non è possibile percorrere a ritroso nel tempo una caratteristica e impattersi in uno shock
+	La pendenza di una linea d'urto è minore di quella delle caratteristiche che vi arrivano da sinistra e maggiore di quella delle caratteristiche che vi arrivano da destra: le caratteristiche \textbf{entrano }nella linea d'urto, non è possibile percorrere a ritroso nel tempo una caratteristica e imbattersi in uno shock
 
 	\begin{figure}[htpb]
 		\centering
@@ -5499,7 +5501,7 @@ Possiamo applicare questo teorema per risolvere il problema \eqref{eq:teo-quasi-
 \end{equation*}
 noto come \textbf{Problema di Riemann}, con $\displaystyle u_{L} \neq u_{R}$ e costanti.
 \begin{theorem}
-	Sia $\displaystyle q$ strettamente concava o convessa con $\displaystyle q''\geqslant h >0$ o $\displaystyle q''\leqslant -h< 0$. Allora l'unica soluzione entropica del problema di Riemann è data da:
+	Sia $\displaystyle q$ strettamente convessa o concava con $\displaystyle q''\geqslant h >0$ o $\displaystyle q''\leqslant -h< 0$. Allora l'unica soluzione entropica del problema di Riemann è data da:
 	\begin{itemize}
 		\item Se $\displaystyle q''\geqslant h >0$ e $\displaystyle u_{R} < u_{L}$, oppure $\displaystyle q''\leqslant -h< 0$ e $\displaystyle u_{R}  >u_{L}$
 		      
@@ -6216,7 +6218,7 @@ Risolviamo il Problema di Cauchy \textit{omogeneo} ($f=0$) per arrivare alla \te
 	\end{equation*}
 	è data da
 	\begin{equation}
-		u( x,t) =\varphi ( x\mp ct) +\int ^{t}_{0} f( \mp c( t-s) ,s) ds
+		u( x,t) =\varphi ( x\mp ct) +\int ^{t}_{0} f(x \mp c( t-s) ,s) ds
 		\label{eq:premessa-d-alembert}
 	\end{equation}
 \end{nb}
@@ -6492,7 +6494,7 @@ Esaminiamo alcune conseguenze di questa formula:
 			% Text Node
 			\draw (322,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{3}$};
 			% Text Node
-			\draw (382,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{3}$};
+			\draw (382,261.9) node [anchor=north west][inner sep=0.75pt]    {$\xi _{4}$};
 			% Text Node
 			\draw (301,82.4) node [anchor=north west][inner sep=0.75pt]    {$x=ct+\xi _{1}$};
 			% Text Node
@@ -6678,7 +6680,7 @@ Questo problema lo sappiamo risolvere quando $\displaystyle s=0$ ma l'equazione 
 \end{equation*}
 allora:
 \begin{align*}
-	u( x,t) =\int _{0}^{t} w( x,t;s) ds & =\frac{1}{2c}\int _{0}^{z}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds \\
+	u( x,t) =\int _{0}^{t} w( x,t;s) ds & =\frac{1}{2c}\int _{0}^{t}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds \\
 	                                    & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) dyds                            
 \end{align*}
 dove ricordiamo che $\displaystyle S_{x,t}$ è il settore in figura .
@@ -6830,7 +6832,7 @@ otteniamo infine:
 		      	\end{cases}
 		      \end{equation*}
 		      
-		      la prima ci permette anche di concludere inizialmente il gradiente è il vettore nullo\begin{equation*}
+		      la prima ci permette anche di concludere inizialmente che il gradiente è il vettore nullo\begin{equation*}
 		      \nabla v(\mathbf{x} ,0) =\mathbf{0} .
 		\end{equation*}Quindi l'energia iniziale è nulla $E( 0) =0$ e pertanto, essendo costante:
 		\begin{equation*}
@@ -7076,7 +7078,7 @@ Non ci resta che imporre i dati iniziali per determinare $\displaystyle F$ e $\d
 \end{equation*}
 calcoliamo la derivata nel tempo:
 \begin{equation*}
-	\partial _{t} w_{\varepsilon }( x,t) =\frac{1}{r}\{-cF'( r-ct) -cF'( r+ct)\} ,
+	\partial _{t} w_{\varepsilon }( r,t) =\frac{1}{r}\{-cF'( r-ct) -cF'( r+ct)\} ,
 \end{equation*}
 e imponiamola in $\displaystyle t=0$:
 \begin{equation*}
@@ -7242,11 +7244,11 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	\end{align*}
 	Per quanto riguarda l'equazione osserviamo che:
 	\begin{align*}
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x}+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \partial _{\bm{\nu }} h(\bm{\sigma })\bm{\sigma } & \text{(divergenza)}    \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}                  & \text{(Gauss)}         \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\mathbf{x}+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \partial _{\bm{\nu }} h(\bm{\sigma })d\bm{\sigma } & \text{(cambio variabili)}    \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}                  & \text{(Gauss)}         \\
+		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
 	\end{align*}
-	quindi:
+	Ora è in una forma adatta ad essere derivata, quindi:
 	\begin{equation*}
 		\partial _{tt} w_{h}(\mathbf{x} ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\mathbf{x} +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\bm{\sigma }) d\bm{\sigma } ,
 	\end{equation*}
@@ -7692,7 +7694,7 @@ $\{x_{n}\}_{n}$ convergente $\Rightarrow \{x_{n}\}_{n}$ è di Cauchy, infatti
 \begin{equation*}
 0\leqslant \Vert x_{n} -x_{m}\Vert =\Vert x_{n} -\overline{x} +\overline{x} -x_{m}\Vert \leqslant \Vert x_{n} -\overline{x}\Vert +\Vert \overline{x} -x_{m}\Vert \rightarrow 0
 \end{equation*}
-questa è la parte inutile, è più utile il contrario, vedere il comportamento delle approssimazioni dedurre se c'è convergenza a qualcosa! In generale non è vero che una successione di Cauchy è convergente, per questo motivo lavoriamo in Spazi di Banach.
+questa è la parte inutile, è più utile il contrario, vedere il comportamento delle approssimazioni e dedurre se c'è convergenza a qualcosa! In generale non è vero che una successione di Cauchy è convergente, per questo motivo lavoriamo in Spazi di Banach.
 \begin{definition}
 Se ``di Cauchy'' implica convergente, allora $X$ è completo.
 \end{definition}
@@ -7818,7 +7820,7 @@ Uno spazio vettoriale $X$, con prodotto scalare, che sia completo rispetto alla 
 \end{definition}
 \textit{Esempi.}
 
-$\mathbb{R}^{n},L^{2}(\Omega)$ con la norma $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uvdx$
+$\mathbb{R}^{n},L^{2}(\Omega)$ con la norma indotta dal prodotto scalare $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uvdx$
 
 In uno spazio con prodotto scalare possiamo definire l'\textbf{ortogonalità}
 \begin{equation*}
@@ -8467,7 +8469,7 @@ Se $u\in \mathrm{Ker} A$ allora $Au=0$, usando la stima $\Vert u\Vert \leqslant 
 
 L'immagine è un sottospazio, analogo a come visto prima.
 
-Dimostriamo che è chiuso, ovvero che considerando ogni successione conenuta nell'immagine $(y_{n})_{n} \subset R(A)$ che tende a un certo valore $y_{n}\rightarrow \overline{y}$ allora quel valore sta nell'immagine $\overline{y} \in R(A)$\footnote{ricordiamo che la definizione è \textit{interessante} se consideriamo i punti del bordo in particolare.}.
+Dimostriamo che è chiuso, ovvero che considerando ogni successione contenuta nell'immagine $(y_{n})_{n} \subset R(A)$ che tende a un certo valore $y_{n}\rightarrow \overline{y}$ allora quel valore sta nell'immagine $\overline{y} \in R(A)$\footnote{ricordiamo che la definizione è \textit{interessante} se consideriamo i punti del bordo in particolare.}.
 
 Questi valori dell'immagine sono associati agli elementi del dominio $y_{n} =Au_{n}$, ci piacerebbe dire che $\overline{y} =A\overline{u}$, con $\overline{u} =\lim u_{n}$, \textbf{ma questo limite non è detto che esista! In un sacco di situazioni concrete salta!}
 
@@ -8477,7 +8479,7 @@ Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una s
 \end{equation*}
 la successione $y_{n}$ è convergente, quindi anche di Cauchy, allora l'ultimo termine tende a $0$, in particolare quindi anche $u_{n}$ è di Cauchy, ma essendo $H$ completo è anche convergente a un certo $\overline{u} \in H$.
 
-Usanndo la continuità di $A$, $Au_{n}\rightarrow A\overline{u}$, quindi $\overline{y} =A\overline{u} \in R(A)$.
+Usando la continuità di $A$, $Au_{n}\rightarrow A\overline{u}$, quindi $\overline{y} =A\overline{u} \in R(A)$.
 
 
 
@@ -8644,7 +8646,7 @@ Usiamo ora l'identità di Green
 	\mathrm{div}( g\mathbf{F}) =\nabla g\cdotp \mathbf{F} +g\mathrm{div}\mathbf{F} \ \ \text{con} \ g=\frac{1}{| \mathbf{x}| ^{3}} \ \text{e} \ \mathbf{F} =\mathbf{x}
 \end{equation*}
 \begin{equation*}
-	\mathrm{div}\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \mathbf{x}| ^{3}}\right) \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}}\mathrm{div}\mathbf{x}\right) =-\left( -\frac{3}{| \mathbf{x}| ^{4}}\frac{\mathbf{x}}{| \mathbf{x}| } +\frac{1}{| \mathbf{x}| ^{3}} 3\right)
+	\mathrm{div}\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \mathbf{x}| ^{3}}\right) \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}}\mathrm{div}\mathbf{x}\right) =-\left( -\frac{3}{| \mathbf{x}| ^{4}}\frac{\mathbf{x}}{| \mathbf{x}| } \cdotp \mathbf{x} +\frac{1}{| \mathbf{x}| ^{3}} 3\right)
 \end{equation*}
 e troviamo
 \begin{equation*}
@@ -8756,7 +8758,7 @@ Di questi termini
 \int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \partial _{\bm{\nu }} \varphi (\mathbf{x}) d\sigma =-\int _{\partial B_{\varepsilon }}\frac{1}{| \mathbf{x}| } \nabla \varphi (\mathbf{x}) \cdotp \frac{\mathbf{x}}{| \mathbf{x}| } d\sigma 
 \end{equation*}
 \item $\displaystyle \partial _{\bm{\nu }}\left(\frac{1}{| \mathbf{x}| }\right) =\nabla \left(\frac{1}{| \mathbf{x}| }\right) \cdotp \bm{\nu }$, con $\displaystyle \bm{\nu }$ identica a prima\begin{equation*}
-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) \partial _{\nu }\left(\frac{1}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) \cdotp \left( -\frac{\mathbf{x}}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\frac{| \mathbf{x}| ^{2}}{| \mathbf{x}| ^{4}} d\sigma 
+-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x}) \partial _{\nu }\left(\frac{1}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\left( -\frac{\mathbf{x}}{| \mathbf{x}| ^{3}}\right) \cdotp \left( -\frac{\mathbf{x}}{| \mathbf{x}| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\mathbf{x})\frac{| \mathbf{x}| ^{2}}{| \mathbf{x}| ^{4}} d\sigma 
 \end{equation*}
 \end{itemize}
 
@@ -8798,6 +8800,7 @@ Riassumendo\footnote{il simbolo $\displaystyle \delta _{3}$ non indica la Delta 
 \end{gather*}
 La derivata classica e debole non coincidono.
 
+\section{Spazi di Sobolev}
 \textit{Lezione Verzini 5 (01/04/2021)}
 
 Lavoreremo con uno specifico spazio di Sobolev sono ``spazi di funzioni $L^{p}$ aventi derivate $L^{p}$''. Lavoreremo con due spazi di Sobolev, il primo sarà $H^{1}$ e il secondo $H^{1}_{0} \subseteq H^{1}$.
@@ -9006,7 +9009,7 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	( *) & =-\int ^{b}_{a}\left[\int ^{b}_{s} u'( s) \varphi '( x) dx\right] ds      &                            \\
 	     & =-\int ^{b}_{a} u'( s)\left[\int ^{b}_{s} \varphi '( x) dx\right] ds      &                            \\
 	     & =-\int ^{b}_{a} u'( s)\left[\cancel{\varphi ( b)} -\varphi ( s)\right] ds &                            \\
-	     & =\int ^{b}_{a} u'( s) \varphi ( s)] ds                                    &                            \\
+	     & =\int ^{b}_{a} u'( s) \varphi ( s) ds                                    &                            \\
 	     & =\langle u',\varphi \rangle                                               & \text{anche} \ u'\in L^{2} 
 \end{align*}
 ho dimostrato che $v'=u'$ in $\mathcal{D} '( a,b)$.
@@ -9452,5 +9455,5 @@ ora possiamo distinguere cose che sono bilineari e cose che sono semplicemente l
 
 
 
-
+% TODO appendice analisi
 \end{document}
