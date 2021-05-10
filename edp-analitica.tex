@@ -2565,7 +2565,7 @@ Se $c=0$ abbiamo la solita $\Gamma $ che si trasporta, se $c\gtrless 0$ la $\Gam
 
 L'equazione generale in $n$ dimensioni è
 \begin{equation*}
-u_{t} =\mathrm{div}(A(x,t) \nabla u) +\mathrm{div}(\mathbf{b} u) +\mathbf{v} u+cu
+u_{t} = \underbrace{\mathrm{div}(A \nabla u)}_{\text{diffusione}} + \underbrace{\mathrm{div}(\mathbf{b} u) +\mathbf{v} \cdot\nabla u}_{\text{trasporto}} + \underbrace{cu}_{\text{reazione}}
 \end{equation*}
 dove i termini dipendono in questo modo
 \begin{equation*}
