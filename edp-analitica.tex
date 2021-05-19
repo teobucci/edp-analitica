@@ -10,8 +10,9 @@
 	}
 
 \usepackage{bm} % per avere le lettere greche in bold con \bm{\sigma}
-\newcommand{\x}{\mathbf{x}}
-\newcommand{\y}{\mathbf{y}}
+\newcommand{\x}{\x}
+\newcommand{\y}{\y}
+\newcommand{\zer}{\mathbf{0}}
 
 \newcounter{conteggioS}
 \newcommand{\LezioneS}[1]{
@@ -963,28 +964,28 @@ Poiché il grafico di una funzione Lipschiziana può presentare angoli e/o spigo
 \end{theorem}
 \section{Formule di integrazione per parti}
 
-Sia $\Omega $ di classe $C^{1}$
+Sia $\Omega $ di classe $C^{1}$. Consideriamo una funzione vettoriale $\mathbf{F}:\mathbb{R}^{n}\to\mathbb{R}^{m}$. Vale il teorema della divergenza
 \begin{equation*}
-d\sigma =\sqrt{1+| \nabla \varphi (y')| ^{2}} dy'
-\end{equation*}
-Consideriamo una funzione vettoriale $\mathbf{F}:\mathbb{R}^{n}\to\mathbb{R}^{m}$. Vale il teorema della divergenza
-\begin{equation*}
-\int _{\Omega }\mathrm{div}\mathbf{F}\ dx=\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu}\ d\sigma \qquad \text{dove}\ \bm{\nu}\ \text{è il versore normale.}
+\int _{\Omega }\mathrm{div}\mathbf{G}\ dx=\int _{\partial \Omega }\mathbf{G} \cdotp \bm{\nu}\ d\sigma \qquad \text{dove}\ \bm{\nu}\ \text{è il versore normale.}
 \end{equation*}
 Sia $v$ una funzione scalare scalare $v:\mathbb{R}^{n}\to \mathbb{R}$, vale la regola di derivazione di Leibniz estesa a più dimensioni:
 \begin{equation*}
-\mathrm{div}(v\mathbf{F}) =v\mathrm{div}(\mathbf{F}) +\nabla v\cdotp \mathbf{F} \ \ \Rightarrow \ \ v\mathrm{div}(\mathbf{F}) =\mathrm{div}(v\mathbf{F}) -\nabla v\cdotp \mathbf{F}
+\mathrm{div}(v\mathbf{F}) =v\mathrm{div}(\mathbf{F}) +\nabla v\cdotp \mathbf{F}
+\end{equation*}
+da cui ricaviamo
+\begin{equation*}
+	v\mathrm{div}(\mathbf{F}) = -\nabla v\cdotp \mathbf{F} + \mathrm{div}(v\mathbf{F})
 \end{equation*}
 Integrando e applicando il teorema della divergenza otteniamo una \textbf{formula di integrazione per parti} in $\mathbb{R}^{n}$
 \begin{equation}
-\boxed{\int _{\Omega } v\ \mathrm{div}(\mathbf{F}) =\int _{\partial \Omega } v\mathbf{F} \cdotp \bm{\nu} \ d\sigma -\int _{\Omega } \nabla v\cdotp \mathbf{F}}
+\boxed{\int _{\Omega } v\ \mathrm{div}(\mathbf{F}) = -\int _{\Omega } \nabla v\cdotp \mathbf{F} + \int _{\partial \Omega } v\mathbf{F} \cdotp \bm{\nu} \ d\sigma}
 \end{equation}
 Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\bm{\nu} = \partial\bm{nu}u$. Tale formula diventa l'\textbf{identità di Green}:
 \begin{equation}
 \boxed{\int _{\Omega } v\Delta u\ dx=-\int _{\Omega } \nabla v\cdotp \nabla u+\int _{\partial \Omega } v\partial _{\bm{\nu}} u\ d\sigma }
 \label{eq:id-green}
 \end{equation}
-in particolare se $v=1$
+In particolare se $v=1$
 \begin{equation}
 \int _{\Omega } \Delta u\ dx=\int _{\partial \Omega } \partial _{\bm{\nu}} u\ d\sigma 
 \label{eq:id-green-v1}
@@ -1033,47 +1034,81 @@ Dimensionalmente:
 
 Casi particolari:
 \begin{itemize}
-\item Se $u_{t} =0$ l'equazione risulta $-\Delta u=f$, la versione stazionaria, un'equazione di Poisson.
+\item Se $u_{t} =0$ l'equazione risulta $-\Delta u=f$, la versione stazionaria, un'\textbf{equazione di Poisson}.
 \item Se $f=0$ otteniamo l'equazione omogenea $u_{t} -D\Delta u=0$.
 \item Se $f=0$ e $u_{t} =0$ otteniamo un'equazione di Laplace $\Delta u=0$.
 \end{itemize}
 
 \textbf{Proprietà dell'omogenea.}
 \begin{itemize}
-\item Principio di sovrapposizione (linearità).
+\item \emph{Principio di sovrapposizione (linearità).}
 
 Siano $\alpha,\beta \in \mathbb{R}$ e $u_{1},u_{2}$ soluzioni. Allora $\alpha u_{1} +\beta u_{2}$ sono soluzioni.
-\item più in generale, se $a_{k},k\geqslant 0,a_{k}\rightarrow 0$ abbastanza rapidamente e $u_{k},\forall k$, è soluzione dell'omogenea, allora è soluzione anche
 
+Più in generale, se $a_{k},k\geqslant 0,a_{k}\rightarrow 0$ abbastanza rapidamente e $u_{k},\forall k$, è soluzione dell'omogenea, allora è soluzione anche
 \begin{equation*}
-\sum\limits ^{\infty }_{k=0} a_{k} u_{k}(x,t)
+u(x,t) = \sum\limits ^{\infty }_{k=0} a_{k} u_{k}(x,t)
 \end{equation*}
-\item Riflessione temporale.
 
-Se $u=u(x,t)$ è soluzione dell'omogenea, poniamo $v(x,t) =u(x,-t)$. Allora $v$ è soluzione dell'\textit{equazione backward}
+\item \emph{Riflessione temporale.}
 
+Se $u=u(x,t)$ è soluzione dell'omogenea, poniamo $v(x,t) =u(x,-t)$. Allora $v$ è soluzione dell'\textbf{equazione backward}
 \begin{equation*}
 v_{t}\textcolor[rgb]{0.82,0.01,0.11}{+} D\Delta v=0
 \end{equation*}
-\item invece $v(x,t) =u(-x,t)$ è ancora soluzione
-\item Invarianza rispetto a traslazione nello spazio e nel tempo.
+\item \emph{Simmetria spaziale.}
+
+Se $u=u(x,t)$ è soluzione dell'omogenea, $v(x,t) =u(-x,t)$ è ancora soluzione.
+
+\item \emph{Invarianza rispetto a traslazione nello spazio e nel tempo.}
 
 La funzione $v(x,t) =u(x-y,t-s)$ è ancora soluzione nel dominio traslato.
 \end{itemize}
-\section{Conduzione del calore}
 
-Faremo la seguente ipotesi.
+\section{Conduzione del calore}
+Faremo le seguenti ipotesi.
 
 Corpo (rigido) omogeneo (densità $\rho $ costante) isotropo (propagazione uniforme in ogni direzione) può ricevere calore da sorgente esterna di intensità $r$.
 
+Il calore è una forma di energia misurato in calorie ($1$ cal = 4,182 Joule).
+\begin{equation*}
+	[r] =\text{cal} \times \text{tempo}^{-1} \times \text{massa}^{-1}
+\end{equation*}
 
-
-Il calore è una forma di energia misurato in calorie ($1$ cal = 4,182 Joule)
-
-$[ r] =\text{cal} \times \text{tempo}^{-1} \times \text{massa}^{-1}$
 \subsection{Legge di conservazione dell'energia}
 
 Consideriamo un volumetto (di controllo) all'interno di un corpo rigido. Il tasso di variazione dell'energia interna a $V$ è uguale al contributo fornito dalla sorgente esterna + quello dovuto al flusso di calore netto, per conduzione, attraverso il bordo $\partial V$ di $V$. Traduciamo in formule.
+\begin{figure}[htpb]
+	\centering
+	
+
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,202); %set diagram left start at 0, and has height of 202
+
+	%Shape: Circle [id:dp4776865069078362] 
+	\draw   (181,103) .. controls (181,63.24) and (213.24,31) .. (253,31) .. controls (292.76,31) and (325,63.24) .. (325,103) .. controls (325,142.76) and (292.76,175) .. (253,175) .. controls (213.24,175) and (181,142.76) .. (181,103) -- cycle ;
+	%Curve Lines [id:da18441231349656295] 
+	\draw    (253,31) .. controls (219,46.06) and (215,153.06) .. (253,175) ;
+	%Curve Lines [id:da32271069130490604] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (253,175) .. controls (291,156.06) and (293,49.06) .. (253,31) ;
+	%Straight Lines [id:da8341320487347765] 
+	\draw    (320,76) -- (355.18,59.89) ;
+	\draw [shift={(357,59.06)}, rotate = 515.4] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+
+	% Text Node
+	\draw (175,29.4) node [anchor=north west][inner sep=0.75pt]    {$V$};
+	% Text Node
+	\draw (319,146.4) node [anchor=north west][inner sep=0.75pt]    {$\partial V$};
+	% Text Node
+	\draw (361,50.4) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{\nu }$};
+
+
+	\end{tikzpicture}
+\end{figure}
+\FloatBarrier
+
 \begin{enumerate}
 \item $e=e(x,t)$ è l'energia interna per unità di massa, di conseguenza il tasso di variazione è descritto da\begin{equation*}
 \frac{d}{dt}\int _{V} e\rho dx
@@ -1081,7 +1116,8 @@ Consideriamo un volumetto (di controllo) all'interno di un corpo rigido. Il tass
 \item La sorgente esterna è descritta da\begin{equation*}
 \int _{V} r\rho dx
 \end{equation*}
-\item Il flusso attraverso $\partial V$ lo descriviamo tramite un vettore flusso di calore $\mathbf{q}$, che misura il calore per unità di area. Consideriamo anche $\displaystyle \bm{\nu}$ versore normale uscente, allora dal momento che la componente tangente non comporta una variazione di calore nel corpo, il flusso entrante è dato da\begin{equation*}
+\item Il flusso attraverso $\partial V$ lo descriviamo tramite un vettore flusso di calore $\mathbf{q}$, che misura il calore per unità di area. Consideriamo anche $\displaystyle \bm{\nu}$ versore normale \emph{uscente}, allora dal momento che la componente tangente non comporta una variazione di calore nel corpo, il flusso entrante è dato da
+\begin{equation*}
 -\int _{\partial V}\mathbf{q} \cdotp \bm{\nu} \ d\sigma 
 \end{equation*}
 \end{enumerate}
@@ -1104,33 +1140,33 @@ Per l'arbitrarietà di $\displaystyle V$ deduciamo la \textbf{legge fondamentale
 
 Per ricavare l'\textbf{equazione del calore} occorrono delle leggi costitutive per le quantità $\displaystyle e$ e $\displaystyle \mathbf{q}$:
 \begin{itemize}
-\item \textbf{Legge di Fourier }(proporzionalità flusso - gradiente della temperatura)\textbf{:}\begin{equation*}
+\item \textbf{Legge di Fourier} (proporzionalità lineare tra flusso e gradiente della temperatura):
+\begin{equation*}
 \mathbf{q} =-k\nabla \theta 
-\end{equation*}dove $\displaystyle k >0$ è la conduttività termica (dipendente dal materiale), $\displaystyle \theta $ la temperatura (assoluta) e il segno meno indica che il flusso del calore avviene verso zone a temperatura minore
-\item \textbf{Proporzionalità energia interna - temperatura assoluta:}\begin{equation*}
+\end{equation*}dove $\displaystyle k >0$ è la conduttività termica (dipendente dal materiale), $\displaystyle \theta $ la temperatura (assoluta) e il segno meno indica che il flusso del calore avviene verso zone a temperatura minore.
+\item \textbf{Proporzionalità lineare tra energia interna e temperatura assoluta:}
+\begin{equation*}
 e=c_{v} \theta 
-\end{equation*}dove $\displaystyle c_{v}$ è il calore specifico a volume costante
+\end{equation*}
+dove $\displaystyle c_{v}$ è il calore specifico a volume costante
 \end{itemize}
-
-
-
 $\displaystyle k$ e $\displaystyle c_{v}$ sono costanti in condizioni standard, per cui li supporrò tali.
 
 Sostituendo le relazioni costitutive nella \textbf{legge fondamentale della conduzione del calore} ottengo:
 \begin{equation*}
-\rho c_{v} \theta _{t} =k\Delta \theta \ +\ r\rho 
+\boxed{\rho c_{v} \theta _{t} =k\Delta \theta \ +\ r\rho }
 \end{equation*}
-Da cui, dividendo per $\displaystyle \rho c_{v}$ e definendo \ $\displaystyle D=\frac{k}{\rho c_{v}}$ coefficiente di diffusione, e $\displaystyle {\textstyle f=\frac{r}{c_{v}}}$, deduco l'\textbf{equazione del calore:}
+Da cui, dividendo per $\displaystyle \rho c_{v}$, deduco l'\textbf{equazione del calore} in dimensione $n$ generica:
 \begin{equation*}
-\boxed{\theta _{t} -D\Delta \theta =f}
+D=\frac{k}{\rho c_{v}} \quad \text{coefficiente di diffusione,} \quad f=\frac{r}{c_{v}}, \qquad \boxed{\theta _{t} -D\Delta \theta =f}
 \end{equation*}
 
 \section{Problemi ben posti in dimensione spaziale \texorpdfstring{$n=1$}{n=1}}
 
 Considero l'evoluzione temporale della temperatura in una sbarra cilindrica di sezione trasversale $\displaystyle A$ e lunghezza $\displaystyle L$. Sotto le ipotesi:
 \begin{enumerate}
-\item  raggio $\displaystyle A\ll L$
-\item  sbarra isolata termicamente lungo la superficie laterale
+\item  raggio $\ll$ lunghezza;
+\item  sbarra isolata termicamente lungo la superficie laterale.
 \end{enumerate}
 
 Posso assumere che il flusso di calore avvenga in una sola direzione (l'asse $\displaystyle x$):
@@ -1149,22 +1185,27 @@ Da cui l'\textbf{equazione del calore monodimensionale:}
 
 \textbf{Condizioni al bordo per garantire la buona posizione:}
 \begin{itemize}
-\item Condizione \textbf{iniziale} (o di Cauchy): assegna il profilo iniziale di temperatura\begin{equation*}
+\item Condizione \textbf{iniziale} (o di Cauchy) a $t=0$: assegna il profilo iniziale di temperatura
+\begin{equation*}
 u(x,0) =g(x),\ 0\leqslant x\leqslant L
 \end{equation*}
 \item Condizione \textbf{agli estremi} $\displaystyle x=0,\ x=L$
 \begin{itemize}
-\item Condizioni di \textbf{Dirichlet} (temperatura agli estremi)\begin{equation*}
-u(0,t) =h_{1}(t),\ u(L,t) =h_{2}(t),\ t\in ( 0,T]
-\end{equation*}
-\item Condizioni di \textbf{Neumann} (flusso entrante agli estremi)\begin{equation*}
--ku_{x}(0,t) =h_{1}(t),\ ku_{x}(L,t) =h_{2}(t),\ t\in ( 0,T]
-\end{equation*}
+\item Condizioni di \textbf{Dirichlet} (temperatura agli estremi) per $t\in (0,T]$
+\begin{align*}
+u(0,t) =h_{1}(t)\\
+u(L,t) =h_{2}(t)
+\end{align*}
+\item Condizioni di \textbf{Neumann} (flusso entrante agli estremi) per $t\in (0,T]$
+\begin{align*}
+-ku_{x}(0,t) =h_{1}(t)\\
+ ku_{x}(L,t) =h_{2}(t)
+\end{align*}
 \item Condizioni di \textbf{radiazione} o di Robin (in uno o due estremi)\begin{equation*}
 ku_{x}(L,t) =\gamma (U-u(L,t)),\ t\in ( 0,T]
 \end{equation*}
 
-dove $\displaystyle \gamma  >0$ è una costante di proporzionalità e $\displaystyle U$ è la temperatura ambiente\footnote{Segue dalla legge lineare di raffreddamento di Newton ma vale solo se la differenza relativa tra le temperature è bassa: $\displaystyle | U-u(L,t)| \leqslant u(L,t)$}. Ponendo $\displaystyle \alpha =\frac{\gamma }{k}  >0$ e $\displaystyle \beta =\frac{}{}\frac{\gamma U}{k}$ posso riscrivere la condizione:\begin{equation*}
+dove $\displaystyle \gamma  >0$ è una costante di proporzionalità e $\displaystyle U$ è la temperatura ambiente. Ponendo $\displaystyle \alpha =\frac{\gamma }{k}  >0$ e $\displaystyle \beta =\frac{}{}\frac{\gamma U}{k}$ posso riscrivere la condizione:\begin{equation*}
 u_{x}(L,t) +\alpha u(L,t) =\beta,\ t\in ( 0,T]
 \end{equation*}
 \item Condizioni \textbf{miste}
@@ -1173,56 +1214,53 @@ u_{x}(L,t) +\alpha u(L,t) =\beta,\ t\in ( 0,T]
 
 
 \begin{nb}
-Nessuna condizione finale per $\displaystyle 0< x< L,\ t=T$ è assegnata: le condizioni assegnate sono unicamente sulla \textbf{frontiera parabolica} di $\displaystyle Q_{T} =(0,L) \times (0,T)$, formata dai 3 segmenti rossi indicati in figura
-
-
-
+La soluzione è cercata per i punti nell'insieme $\displaystyle Q_{T} =( 0,L) \times ( 0,T)$, aperto connesso. Nessuna condizione finale per $\displaystyle 0< x< L,\ t=T$ è assegnata: le condizioni assegnate sono unicamente sulla \textbf{frontiera parabolica} di $\displaystyle Q_{T}$, formata dai 3 segmenti in grassetto. A breve ne formalizzeremo la definizione.
 \begin{figure}[H]
 	\centering
 
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,242); %set diagram left start at 0, and has height of 242
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,191); %set diagram left start at 0, and has height of 191
 
-%Shape: Axis 2D [id:dp16320631359033122] 
-\draw  (102.47,209.75) -- (387.47,209.75)(130.97,14) -- (130.97,231.5) (380.47,204.75) -- (387.47,209.75) -- (380.47,214.75) (125.97,21) -- (130.97,14) -- (135.97,21)  ;
-%Straight Lines [id:da8618748502187668] 
-\draw [color={rgb, 255:red, 253; green, 0; blue, 0 } ,draw opacity=1 ][line width=3]    (280,80) -- (280,210) -- (130.97,209.75) -- (130,80) ;
-%Straight Lines [id:da3361298498798142] 
-\draw [color={rgb, 255:red, 255; green, 0; blue, 0 } ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (130,80) -- (280,80) ;
+	%Shape: Axis 2D [id:dp16320631359033122] 
+	\draw  (130,160) -- (387.47,160)(130,20) -- (130,160) -- cycle (380.47,155) -- (387.47,160) -- (380.47,165) (125,27) -- (130,20) -- (135,27)  ;
+	%Straight Lines [id:da8618748502187668] 
+	\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=3]    (320,60) -- (320,160) -- (130.97,159.81) -- (130,60) ;
+	%Straight Lines [id:da3361298498798142] 
+	\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (130,60) -- (320,60) ;
 
-% Text Node
-\draw (371,212.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
-% Text Node
-\draw (111,12.4) node [anchor=north west][inner sep=0.75pt]    {$t$};
-% Text Node
-\draw (191,130.4) node [anchor=north west][inner sep=0.75pt]    {$Q_{T}$};
-% Text Node
-\draw (111,212.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
-% Text Node
-\draw (271,212.4) node [anchor=north west][inner sep=0.75pt]    {$L$};
-% Text Node
-\draw (105,72.4) node [anchor=north west][inner sep=0.75pt]    {$T$};
+	% Text Node
+	\draw (371,163.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+	% Text Node
+	\draw (111,12.4) node [anchor=north west][inner sep=0.75pt]    {$t$};
+	% Text Node
+	\draw (213,80.4) node [anchor=north west][inner sep=0.75pt]    {$Q_{T}$};
+	% Text Node
+	\draw (112,163.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+	% Text Node
+	\draw (311,163.4) node [anchor=north west][inner sep=0.75pt]    {$L$};
+	% Text Node
+	\draw (111,52.4) node [anchor=north west][inner sep=0.75pt]    {$T$};
+	% Text Node
+	\draw (326,60.4) node [anchor=north west][inner sep=0.75pt]    {$\partial _{p} Q_{T}$};
 
-
-\end{tikzpicture}
-
+	\end{tikzpicture}
 \end{figure}
 \FloatBarrier
 \end{nb}
-In alcuni casi $\displaystyle x$ può variare in intervalli illimitati del tipo $\displaystyle (0,\infty)$ o $\displaystyle \mathbb{R}$ (sbarra ideale infinita). Il problema di Cauchy globale richiede allora delle condizioni aggiuntive che vedremo più avanti
-
-$\displaystyle \begin{cases}
-u_{t} -Du_{xx} =f & x\in \mathbb{R},\ 0< t< T\\
-u(x,0) =g(x) & x\in \mathbb{R}\\
-+\ \mathrm{condizioni\ } x\rightarrow \infty  & 
-\end{cases}$
-
+In alcuni casi $\displaystyle x$ può variare in intervalli illimitati del tipo $\displaystyle (0,\infty)$ o $\displaystyle \mathbb{R}$ (sbarra ideale infinita). Il problema di Cauchy globale richiede allora delle condizioni aggiuntive che vedremo più avanti.
+\begin{equation*}
+	\begin{cases}
+	u_{t} -Du_{xx} =f & x\in \mathbb{R},\ 0< t< T\\
+	u(x,0) =g(x) & x\in \mathbb{R}\\
+	\text{condizioni\ } x\rightarrow \infty  & 
+	\end{cases}
+\end{equation*}
 
 \section{Metodo di separazione delle variabili}
 
-Esaminiamo un modello della sbarra in dimensione n=1. Sotto opportune ipotesi si può dimostrare facilmente che il problema è ben posto utilizzando il metodo di separazione delle variabili. Consideriamo la seguente situazione:
+Esaminiamo un modello della sbarra in dimensione $n=1$. Sotto opportune ipotesi si può dimostrare facilmente che il problema è ben posto utilizzando il metodo di separazione delle variabili. Consideriamo il seguente problema di Cauchy-Dirichlet:
 \begin{equation*}
 \begin{cases}
 u_{t} -Du_{xx} =0 & 0< x< L,\ t >0\\
@@ -1239,67 +1277,158 @@ Attraverso un \textbf{ragionamento euristico} possiamo provare a capire come si 
 
 \textbf{Variabili adimensionali}
 
-Per motivi numerici e modellistici è utile riscrivere il problema di partenza utilizzando delle quantità indipendenti dalle unità di misura, riscalando spazio, tempo e temperatura
+Per motivi numerici e modellistici è utile riscrivere il problema di partenza utilizzando delle quantità \emph{indipendenti dalle unità di misura}, riscalando spazio, tempo e temperatura
 
 \begin{itemize}
-\item \textbf{Spazio}: riscalo usando la lunghezza della sbarra $\displaystyle L$ \begin{equation*}
-y=x/L,\ 0< y< 1
+\item \textbf{Spazio}: riscalo usando la lunghezza della sbarra $\displaystyle L$
+\begin{equation*}
+y=\frac{x}{L},\ 0< y< 1
 \end{equation*}
-\item \textbf{Tempo}: osserviamo che le dimensioni di $\displaystyle D$ sono\begin{equation*}
-[ D] =lunghezza^{2} \times tempo^{-1}
-\end{equation*}Definisco $\displaystyle \tau =\frac{L^{2}}{D}$, ha le dimensioni di un tempo e dipende dalle caratteristiche fisiche del problema. Riscalo il tempo usando la costante $\displaystyle \tau $\begin{equation*}
-s=t/\tau 
+\item \textbf{Tempo}: osserviamo che le dimensioni di $\displaystyle D$ sono
+\begin{equation*}
+[D] =\text{lunghezza}^{2} \times \text{tempo}^{-1}
 \end{equation*}
-\item \textbf{Temperatura}: definisco\begin{equation*}
-v(y,s) =\frac{u(Ly,\tau s) -u_{0}}{u_{1} -u_{0}}
-\end{equation*}osservo che $\displaystyle v(y,0) =0,\ v(0,s) =0,\ v(1,s) =1,$ inoltre\begin{equation*}
-v_{s} =\frac{u_{t} \tau }{u_{1} -u_{0}},\ v_{yy} =\frac{L^{2} u_{xx}}{u_{1} -u_{0}}
-\end{equation*}sostituendo $\displaystyle u_{t} =Du_{xx}$ ottengo\begin{equation*}
-v_{s} =\frac{L^{2} u_{xx}}{u_{1} -u_{0}}
+Definisco $\displaystyle \tau =\frac{L^{2}}{D}$, che ha le dimensioni di un tempo e dipende dalle caratteristiche fisiche del problema. Riscalo il tempo usando la costante $\tau$
+\begin{equation*}
+	s=\frac{t}{\tau}
+\end{equation*}
+\item \textbf{Temperatura}: definisco
+\begin{equation*}
+\vartheta (y,s) =\frac{u(Ly,\tau s) -u_{0}}{u_{1} -u_{0}}
+\end{equation*}
+osservo che
+\begin{align*}
+\vartheta ( y,0) & =0, & \vartheta ( 1,s) & =1,\\
+\vartheta ( 0,s) & =0. &  & 
+\end{align*}
+inoltre
+\begin{equation*}
+\vartheta _{s} =\frac{u_{t} \tau }{u_{1} -u_{0}} ,\qquad \vartheta _{yy} =\frac{L^{2} u_{xx}}{u_{1} -u_{0}}
+\end{equation*}
+sostituendo $u_{t} =Du_{xx}$ e $\tau =L^{2} /D$ ottengo\begin{equation*}
+\vartheta _{s} =\frac{u_{t} \cdotp \tau }{u_{1} -u_{0}} =\frac{Du_{xx} \cdotp \frac{L^{2}}{D}}{u_{1} -u_{0}} =\frac{L^{2} u_{xx}}{u_{1} -u_{0}} =\vartheta _{yy} .
 \end{equation*}
 \end{itemize}
-$\displaystyle v$ soddisfa l'equazione del calore senza il termine $\displaystyle D$, normalizzato a 1. Posso riscrivere il mio problema in forma adimensionale.
+quindi $\vartheta(y,s)$ soddisfa l'equazione del calore senza il termine $D$, normalizzato a 1. Posso riscrivere il mio problema in forma adimensionale.
 
 \begin{equation*}
 \begin{cases}
-v_{s} -v_{yy} =0 & 0< y< 1,s >0\\
-v(y,0) =0 & 0< y< 1\\
-v(0,s) =0,\ v(1,s) =1 & s >0
+\vartheta_{s} -\vartheta_{yy} =0 & 0< y< 1,s >0\\
+\vartheta(y,0) =0 & 0< y< 1\\
+\vartheta(0,s) =0,\ \vartheta(1,s) =1 & s >0
 \end{cases}
 \end{equation*}
 
+\begin{figure}[htpb]
+	\centering
+	
 
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+	%Shape: Square [id:dp9691905531249321] 
+	\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=0.2 ] (150,90) -- (251,90) -- (251,191) -- (150,191) -- cycle ;
+	%Shape: Axis 2D [id:dp1818781205642106] 
+	\draw  (150,191) -- (300,191)(150,60) -- (150,191) -- cycle (293,186) -- (300,191) -- (293,196) (145,67) -- (150,60) -- (155,67)  ;
+	%Straight Lines [id:da8052084024636774] 
+	\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=3]    (250,91) -- (250,191) -- (150.51,190.81) -- (150,91) ;
+
+	% Text Node
+	\draw (301,192.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+	% Text Node
+	\draw (131,52.4) node [anchor=north west][inner sep=0.75pt]    {$s$};
+	% Text Node
+	\draw (137,192.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+	% Text Node
+	\draw (241.67,195.07) node [anchor=north west][inner sep=0.75pt]    {$1$};
+	% Text Node
+	\draw (177,201.4) node [anchor=north west][inner sep=0.75pt]    {$\vartheta =0$};
+	% Text Node
+	\draw (255,132.4) node [anchor=north west][inner sep=0.75pt]    {$\vartheta =1$};
+	% Text Node
+	\draw (101,132.4) node [anchor=north west][inner sep=0.75pt]    {$\vartheta =0$};
+
+
+	\end{tikzpicture}
+\end{figure}
+\FloatBarrier
 
 \textbf{Condizioni omogenee}
 
-Il problema in forma adimensionale presenta ancora una condizione non omogenea $\displaystyle v(1,s) =1$. Per usare il metodo di separazione delle variabili è necessario che tutto il sistema sia omogeneo. 
+Il problema in forma adimensionale presenta ancora una condizione non omogenea $\displaystyle \vartheta(1,s) =1$. Per usare il metodo di separazione delle variabili è necessario che tutto il sistema sia omogeneo. 
 
-Prendiamo in considerazione la soluzione stazionaria, per definizione essa non dipende dal tempo ($\displaystyle v^{st}(y)$) e si dimentica delle condizioni iniziali. Il sistema assume la forma
+Prendiamo in considerazione la soluzione stazionaria, per definizione essa non dipende dal tempo ($\vartheta^{st}(y)$) e si dimentica delle condizioni iniziali. Il sistema assume la forma
 
 \begin{equation*}
 \begin{cases}
-v_{yy} =0 & 0< y< 1\\
-v(0) =0,\ v(1) =1 & 
+\vartheta_{yy}^{st} =0 & 0< y< 1\\
+\vartheta(0) =0,\ \vartheta(1) =1 & 
 \end{cases}
 \end{equation*}
 
-Da cui integrando si ricava 
+Da cui integrando e imponendo le condizioni agli estremi si ricava 
 
 \begin{equation*}
-v^{st}(y) =y
+\vartheta^{st}(y) =y
 \end{equation*}
 
 \begin{nb}
-Ritornando alla forma dimensionale l'equazione diventa
+Ritornando alla forma dimensionale l'equazione stazionaria diventa
 \begin{align*}
-u^{st}(x) &=u_{0} +(u_{1} -u_{0})v^{st}\\
+u^{st}(x) &=u_{0} +(u_{1} -u_{0})\vartheta^{st}(y)\\
 		& = u_{0} +(u_{1} -u_{0})y\\
 		& = u_{0} +(u_{1} -u_{0}) \frac{x}{L}
 \end{align*}
 La soluzione stazionaria corrisponde dunque ad un flusso uniforme di calore lungo la sbarra del valore 
 \begin{equation*}
-\text{flusso} = -k u^{st}_{x}  = -\frac{k}{L}(u_{1} -u_{0})
+\text{flusso} = -k u^{st}_{x} = -\frac{k}{L}(u_{1} -u_{0})
 \end{equation*}
+\begin{figure}[H]
+	\centering
+	
+
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,156); %set diagram left start at 0, and has height of 156
+
+	%Straight Lines [id:da4473395182507709] 
+	\draw    (160,110) -- (348,110) ;
+	\draw [shift={(350,110)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	%Straight Lines [id:da2693667751308695] 
+	\draw [line width=1.5]    (160,90) -- (310,50) ;
+	\draw [shift={(310,50)}, rotate = 345.07] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]      (0, 0) circle [x radius= 4.36, y radius= 4.36]   ;
+	\draw [shift={(160,90)}, rotate = 345.07] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]      (0, 0) circle [x radius= 4.36, y radius= 4.36]   ;
+	%Straight Lines [id:da6337447168637611] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (160,90) -- (160,110) ;
+	%Straight Lines [id:da7853861441036836] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (310,50) -- (310,110) ;
+	%Straight Lines [id:da4325323423726595] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (160,50) -- (310,50) ;
+	%Straight Lines [id:da5448326316082119] 
+	\draw    (160,110) -- (160,22) ;
+	\draw [shift={(160,20)}, rotate = 450] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+
+	% Text Node
+	\draw (130,42.4) node [anchor=north west][inner sep=0.75pt]    {$u_{1}$};
+	% Text Node
+	\draw (130,80.4) node [anchor=north west][inner sep=0.75pt]    {$u_{0}$};
+	% Text Node
+	\draw (154,112.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+	% Text Node
+	\draw (304,112.4) node [anchor=north west][inner sep=0.75pt]    {$L$};
+	% Text Node
+	\draw (352,113.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+	% Text Node
+	\draw (141,12.4) node [anchor=north west][inner sep=0.75pt]    {$u$};
+
+
+	\end{tikzpicture}
+	\caption{Soluzione stazionaria $u^{st}(x)$.}
+\end{figure}
+\FloatBarrier
 \end{nb}
 
 
@@ -1307,15 +1436,15 @@ La soluzione stazionaria corrisponde dunque ad un flusso uniforme di calore lung
 Definendo a questo punto il \textbf{regime transitorio:}
 
 \begin{equation*}
-U(y,s) =v^{st}(y) -v(y,s) =y-v(y,s)
+U(y,s) =\vartheta^{st}(y) -\vartheta(y,s) =y-\vartheta(y,s)
 \end{equation*}
 esso tenderà a 0 per $\displaystyle s\rightarrow \infty $. $\displaystyle U$ soddisfa ancora l'equazione del calore e posso riscrivere il sistema con condizioni omogenee
 \begin{equation*}
-\boxed{\begin{cases}
+\begin{cases}
 U_{s} -U_{yy} =0 & 0< y< 1,\ s >0\\
 U(0,s) =U(1,s) =0 & s >0\\
 U(y,0) =y & 0\leqslant y\leqslant 1
-\end{cases}}
+\end{cases}
 \end{equation*}
 \textbf{Applicazione del metodo}
 
@@ -1336,7 +1465,7 @@ Da cui dividendo per $\displaystyle w(s) v(y)$ e separando:
 \begin{equation*}
 \frac{w'(s)}{w(s)} =\frac{v'' (y)}{v(y)} =\lambda 
 \end{equation*}
-Dove $\displaystyle \lambda $ è una costante: infatti perché l'identità tra i due rapporti sia valida per ogni $\displaystyle s >0$ ed ogni $\displaystyle y\in (0,1)$, essendo il primo membro funzione della sola variabile $\displaystyle s$ ed il secondo della sola variabile $\displaystyle y$, l'unica possibilità è che siano entrambi uguali ad una costante comune. Posso dividere il mio problema iniziale in due sottoproblemi
+Dove $\displaystyle \lambda $ è una costante: infatti affinché l'identità tra i due rapporti sia valida per ogni $\displaystyle s >0$ ed ogni $\displaystyle y\in (0,1)$, essendo il primo membro funzione della sola variabile $\displaystyle s$ ed il secondo della sola variabile $\displaystyle y$, l'unica possibilità è che siano entrambi uguali ad una costante comune. Posso dividere il mio problema iniziale in due sottoproblemi
 \begin{itemize}
 \item \textbf{Problema 1}\begin{equation*}
 \begin{cases}
@@ -1352,12 +1481,12 @@ Si presentano 3 casi
 v(0) =c_{1} +c_{2} =0\\
 v(1) =c_{1} e^{\sqrt{\lambda }} +c_{2} e^{-\sqrt{\lambda }} =0
 \end{cases}
-\end{equation*}da cui $\displaystyle c_{1} =c_{2} =0$, per cui otteniamo soluzioni banali
-\item $\displaystyle \lambda =0$, l'integrale generale è $\displaystyle v(y) =c_{1} y+c_{2}$, che unito alle condizioni al bordo dà $\displaystyle c_{1} =c_{2} =0$, soluzioni banali
+\end{equation*}da cui $\displaystyle c_{1} =c_{2} =0$, per cui otteniamo soluzioni banali e le scartiamo.
+\item $\displaystyle \lambda =0$, l'integrale generale è $\displaystyle v(y) =c_{1} y+c_{2}$, che unito alle condizioni al bordo dà $\displaystyle c_{1} =c_{2} =0$, soluzioni banali. Scartiamo anche queste.
 \item $\displaystyle \lambda =-\mu ^{2} < 0$, l'integrale generale è $\displaystyle v(y) =c_{1}\cos(\mu y) +c_{2}\sin(\mu y)$, le condizioni al bordo\begin{equation*}
 \begin{cases}
 v(0) =c_{1} =0\\
-v(1) =c_{1}\cos(\mu) +c_{2}\sin(\mu) =c_{2}\sin(\mu) =0
+v(1) =\cancel{c_{1}\cos(\mu)} +c_{2}\sin(\mu) =c_{2}\sin(\mu) =0
 \end{cases}
 \end{equation*}
 
@@ -1392,10 +1521,10 @@ Nessuna di queste infinite soluzioni soddisfa la condizione iniziale $U(y,0) =y$
 \end{equation*}
 Imponiamo la condizione iniziale, per farlo risulta
 \begin{equation}
-U(y,0) =\sum\limits ^{\infty }_{m=1} A_{m}\sin(m\pi y) =y
+U(y,s=0) =\sum\limits ^{\infty }_{m=1} A_{m}\sin(m\pi y) =y
 \label{eq:diff-cond-iniziale}
 \end{equation}
-quell'uguaglianza ad $y$ è da intendersi nel senso $L^{2}$, nello specifico dobbiamo sviluppare la funzione $f(y) =y$ in serie di Fourier nell'intervallo $(0,1)$ per calcolare i coefficienti che garantiscono la condizione iniziale.
+quell'uguaglianza ad $y$ è da intendersi nel senso $L^{2}$, nello specifico dobbiamo sviluppare la funzione $f(y) =y$ in serie di Fourier nell'intervallo $(0,1)$ per calcolare i coefficienti $A_{m}$ che garantiscono la condizione iniziale.
 
 
 
@@ -1412,15 +1541,15 @@ a_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\cos\left(\frac{2\pi m}{T} y\right) dy\
 \end{equation*}
 Ricordiamo l'\textbf{identità di Parseval}
 \begin{equation*}
-\frac{2}{T}\int ^{T/2}_{-T/2}[ f(y)]^{2} dy=\frac{a^{2}_{0}}{2} +\sum\limits ^{\infty }_{m=1}\left( a^{2}_{m} +b^{2}_{m}\right)
+\frac{1}{T}\int ^{T/2}_{-T/2}[ f(y)]^{2} dy=\frac{a^{2}_{0}}{2} +\sum\limits ^{\infty }_{m=1}\left( a^{2}_{m} +b^{2}_{m}\right)
 \end{equation*}
 Nel nostro caso vogliamo sviluppare la funzione $2$-periodica
 \begin{equation*}
 f:[ -1,1]\rightarrow \mathbb{R} \ \ f(y) =y
 \end{equation*}
-È dispari traslata, quindi è composta da soli seni
+È dispari, quindi è composta da soli seni, ovvero $a_{m}=0$ per ogni $m$.
 \begin{align*}
-b_{m} & =\int ^{1}_{-1} y\sin(m\pi y) dy=2\int ^{1}_{0} y\sin(m\pi y) dy\\
+b_{m} & = \frac{2}{1-(-1)}\int ^{1}_{-1} y\sin(m\pi y) dy \overset{\text{pari}}{=}2\int ^{1}_{0} y\sin(m\pi y) dy\\
  & \overset{\text{ipp}}{=}\left[ -\frac{2}{m\pi } y\cos(m\pi y)\right]^{1}_{0} +\frac{2}{m\pi }\int ^{1}_{0}\cos(m\pi y) dy\\
  & =-2\frac{\cos(m\pi)}{m\pi } +\cancel{\frac{2}{m^{2} \pi ^{2}}[\sin(m\pi y)]^{1}_{0}} =\frac{2}{\pi }\frac{(-1)^{m+1}}{m}
 \end{align*}
@@ -1433,7 +1562,7 @@ Lo sviluppo è valido nell'intervallo $(-1,1)$, agli estremi è nulla, e converg
 
 La nostra soluzione \textit{candidata} è quindi, a seguito di \eqref{eq:diff-cond-iniziale} e \eqref{eq:diff-y-fourier} uguagliando i coefficienti
 \begin{equation}
-\boxed{U(y,s) =\sum\limits ^{\infty }_{m=1}\frac{2}{\pi }\frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}}
+A_{m} = \frac{2}{\pi }\frac{(-1)^{m+1}}{m} \qquad \boxed{U(y,s) =\sum\limits ^{\infty }_{m=1}\frac{2}{\pi }\frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}}
 \label{eq:diff-candidata}
 \end{equation}
 \textbf{Questioni aperte}
@@ -1453,7 +1582,7 @@ U(y,s)\rightarrow y\ \text{per} \ s\rightarrow 0^{+}
 \end{itemize}
 
 \textbf{Risposte}
-\begin{itemize}
+\begin{itemize} % TODO aggiusta, guarda note scritte
 \item \textbf{Q1} Consideriamo \eqref{eq:diff-candidata} e \eqref{eq:diff-y-fourier}. Per Parseval\begin{gather*}
 \int ^{1}_{0}[ U(y,s) -y]^{2} dy=\frac{2}{\pi ^{2}}\sum\limits ^{\infty }_{m=1}\frac{\left( e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}}\\
 \Rightarrow \ \ \frac{\left( e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}} \leqslant \frac{1}{m^{2}} \ \text{per} \ s\geqslant 0
@@ -1516,22 +1645,26 @@ ma $w^{2}$ è continua per $s >0$ e non negativa. Non può essere che $w=0$ per 
 \left| \frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}\right| \leqslant \frac{e^{-m^{2} \pi ^{2}}}{m}
 \end{equation*}
 
-quindi per il test di Weierstrass la serie converge uniformemente in $\displaystyle [ 0,1] \times [ 1,\infty)$, posso passare al limite sotto il segno di somma: $\displaystyle U(y,s) =\sum\limits ^{\infty }_{m=1}\frac{2}{\pi }\frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}\xrightarrow{s\rightarrow \infty } 0$ uniformemente per $\displaystyle y\in [ 0,1]$
+quindi per il test di Weierstrass la serie converge uniformemente in $\displaystyle [ 0,1] \times [ 1,\infty)$, posso passare al limite sotto il segno di somma:
+\begin{equation*}
+	\lim_{s \to \infty} U(y,s) = \lim_{s \to \infty} \sum\limits ^{\infty }_{m=1}\cdots = \sum\limits ^{\infty }_{m=1} \lim_{s \to \infty} \cdots = 0
+\end{equation*}
 \end{itemize}
 
 
 
 \textbf{Ritorno alle origini.}
 
-Avevamo definito\begin{equation*}
-v(y,s) =\frac{u(Ly,\tau s) -u_{0}}{u_{1} -u_{0}} \ \ \Rightarrow \ \ u(Ly,\tau s) =u_{0} +[ u_{1} -u_{0}] v(y,s)
+Avevamo definito
+\begin{equation*}
+\vartheta(y,s) =\frac{u(Ly,\tau s) -u_{0}}{u_{1} -u_{0}} \ \ \Rightarrow \ \ u(Ly,\tau s) =u_{0} +[ u_{1} -u_{0}] \vartheta(y,s)
 \end{equation*}
 
 e anche
 \begin{equation*}
-v(y,s) =y-U(y,s) \ \ \ \ s=\frac{t}{\tau } \ \ \ \ y=\frac{x}{L} \ \ \ \ \tau =\frac{L^{2}}{D}
+\vartheta(y,s) =y-U(y,s) \ \ \ \ s=\frac{t}{\tau } \ \ \ \ y=\frac{x}{L} \ \ \ \ \tau =\frac{L^{2}}{D}
 \end{equation*}
-da cui possiamo riscrivere la soluzione nelle variabili originali
+da cui possiamo finalmente riscrivere la soluzione nelle variabili originali
 \begin{align*}
 u(x,t) & =u_{0} +[ u_{1} -u_{0}](y-U(y,s))\\
  & =u_{0} +[ u_{1} -u_{0}] y-[ u_{1} -u_{0}] U(y,s)\\
@@ -1587,7 +1720,7 @@ u(\x,0) =g(\x) & \text{in} \ \overline{\Omega }\\
 \begin{cases}
 u_{t} -D\Delta u=f & \x \in \mathbb{R}^{n},0< t< T\\
 u(\x,0) =g(\x) & \x \in \mathbb{R}^{n}\\
-\mathrm{+\ condizioni\ all'\infty } & 
++\ \text{condizioni all'}\infty & 
 \end{cases}
 \end{equation*}
 \begin{definition}
@@ -1609,7 +1742,7 @@ C^{1} & \text{rispetto a} \ t
 \end{equation*}
 \textit{su misura} per l'equazione del calore.
 \begin{theorem}
-[Principio di massimo debole] Sia $Q_{T} =\Omega \times (0,T)$, $\Omega $ dominio limitato. Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ tale che
+[Principio di massimo (risp. minimo) debole] Sia $Q_{T} =\Omega \times (0,T)$, $\Omega $ dominio limitato. Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ tale che
 \begin{equation*}
 u_{t} -D\Delta u=q\leqslant 0\ \ \text{in} \ Q_{T} \ \ \left(\text{risp.} \ \geqslant 0\right)
 \end{equation*}
@@ -1618,18 +1751,13 @@ Allora il massimo (risp. minimo) di $u$ è assunto sulla frontiera parabolica di
 \max_{\overline{Q}_{T}} u=\max_{\partial _{p} Q_{T}} u\ \ \ \ \left(\text{risp.} \ \min_{\overline{Q}_{T}} u=\min_{\partial _{p} Q_{T}} u\right)
 \end{equation*}
 \end{theorem}
+La dicitura \emph{debole} è dovuta al fatto che garantisce che il massimo viene certamente assunto sulla frontiera parabolica, ma non esclude che sia assunto anche dentro. Per questo, servirà il Massimo Forte.
 \begin{dimostrazione}
-Sia $w=u-\varepsilon t$, allora
+Sia $\varepsilon >0$, definiamo $w=u-\varepsilon t$, allora
 \begin{equation}
 w_{t} -D\Delta w=q-\varepsilon < 0
 \label{eq:max-deb-contr-1}
 \end{equation}
-Affermo che
-\begin{equation*}
-\max_{\overline{Q}_{T-\varepsilon }} w=\max_{\partial _{p} Q_{T-\varepsilon }} w
-\end{equation*}
-
-
 
 \begin{figure}[H]
 	\centering
@@ -1665,19 +1793,22 @@ Affermo che
 \end{figure}
 \FloatBarrier
 
-Se non fosse vero esisterebbe $(x_{0},t_{0}) \in \overline{Q}_{T-\varepsilon } \setminus \partial _{p} Q_{T-\varepsilon }$ punto di massimo per $w$, tale punto può trovarsi o all'interno o sul tappo superiore
+Supponiamo che esista un punto $(x_{0},t_{0}) \in \overline{Q}_{T-\varepsilon } \setminus \partial _{p} Q_{T-\varepsilon }$ punto di massimo per $w$, tale punto può trovarsi o all'interno o sul tappo superiore. Quindi, per definizione stessa di massimo:
 \begin{equation*}
 \begin{array}{ l l l }
 \text{all'interno} & w_{t} =0 & \Delta w\leqslant 0\\
 \text{sul tappo} & w_{t} \geqslant 0 & \Delta w\leqslant 0
 \end{array}
 \end{equation*}
-in entrambi i casi
+sul tappo è $w_{t}\geq 0$ perché potrebbe star crescendo ancora. Tuttavia in entrambi i casi
 \begin{equation}
 w_{t} -D\Delta w\geqslant 0
 \label{eq:max-deb-contr-2}
 \end{equation}
-le \eqref{eq:max-deb-contr-1} e \eqref{eq:max-deb-contr-2} sono in contraddizione, quindi è vero.
+le \eqref{eq:max-deb-contr-1} e \eqref{eq:max-deb-contr-2} sono in contraddizione, quindi il massimo sta sulla frontiera parabolica:
+\begin{equation*}
+	\max_{\overline{Q}_{T-\varepsilon }} w=\max_{\partial _{p} Q_{T-\varepsilon }} w
+\end{equation*}
 
 Inoltre $w\leqslant u$ e $u=w+\varepsilon t\leqslant w+\varepsilon T$
 \begin{align*}
@@ -1718,17 +1849,18 @@ Allora
 \item \textit{Confronto.} Se $f_{1} \leqslant f_{2}$ in $Q_{T}$ e $u\leqslant v$ su $\partial _{p} Q_{T}$ allora\begin{equation*}
 u\leqslant v\ \text{in tutto} \ Q_{T}
 \end{equation*}
-\item Vale la stima\begin{equation*}
+\item Vale la stima
+\begin{equation*}
 \max_{\overline{Q}_{T}}| u-v| \leqslant \max_{\partial _{p} Q_{T}}| u-v| +T\sup _{Q_{T}}| f_{1} -f_{2}| 
 \end{equation*}
 
-È una stabilità in norma $L^{\infty }$\begin{equation*}
+È una stabilità in norma $L^{\infty }$
+\begin{equation*}
 \Vert u-v\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant \Vert u-v\Vert _{L^{\infty }( \partial _{p} Q_{T})} +T\Vert f_{1} -f_{2}\Vert _{L^{\infty }(Q_{T})}
+\label{diffusione-stima-stabilita}
 \end{equation*}
 
-Questo implica l'\textbf{unicità per il problema di Cauchy-Dirichlet} in $C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$. Stessi dati sulla frontiera e stessa sorgente esogena, allora $u=v$, infatti
-\begin{enumerate}
-\item Sia $u$ soluzione di\begin{equation*}
+Questo implica l'\textbf{unicità e la dipendenza continua dai dati per il problema di Cauchy-Dirichlet} in $C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$. Se uguali dati sulla frontiera e stessa sorgente esogena, allora $u=v$, infatti sia $u$ soluzione di\begin{equation*}
 \begin{cases}
 u_{t} -D\Delta u=f & \text{in} \ Q_{T}\\
 u=h & \text{su} \ S_{T}\\
@@ -1736,18 +1868,17 @@ u=g & \text{per} \ t=0\ \text{in} \ \overline{\Omega }
 \end{cases}
 \end{equation*}se $v$ è un'altra soluzione allora $w=u-v$ soddisfa\begin{equation*}
 \begin{cases}
-w_{t} -D\Delta w=f & \text{in} \ Q_{T}\\
+w_{t} -D\Delta w=0 & \text{in} \ Q_{T}\\
 w=0 & \text{su} \ S_{T}\\
 w=0 & \text{per} \ t=0\ \text{in} \ \overline{\Omega }
 \end{cases}
-\end{equation*}allora abbiamo\begin{equation*}
-\Vert w\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant 0+0\ \ \Rightarrow \ \ u=v
+\end{equation*}
+allora \eqref{diffusione-stima-stabilita} diventa
+\begin{equation*}
+\Vert w\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant 0+0\ \ \Rightarrow \ \ u=v.
 \end{equation*}
 \end{enumerate}
-\end{enumerate}
 \subsection{Principio di massimo forte}
-
-Perché si chiama principio di massimo debole?
 
 Se prendiamo un problema del tipo
 
@@ -1828,7 +1959,7 @@ e il massimo di $u$ su tutto è
 \begin{equation*}
 \max_{\overline{Q}_{T}} u=1
 \end{equation*}
-Ma nel rettangolo fino a che $t=\pi /2$ il massimo non è assunto solo sulla frontiera, ma anche tutto all'interno. Si dimostra che è l'unica possibilità affinché avvenga, ovvero che \textbf{il massimo può essere assunto all'interno se fino a quel punto }$u$\textbf{ è rimasto costante (Principio di Massimo Forte).}
+Tuttavia nel rettangolo fino a che $t=\pi /2$ il massimo non è assunto solo sulla frontiera, ma anche tutto all'interno. Si dimostra che è l'unica possibilità affinché avvenga, ovvero che \textbf{il massimo può essere assunto all'interno solo se fino a quel punto }$u$\textbf{ è rimasto costante (Principio di Massimo Forte).}
 \fg[Principio di massimo forte. Si può notare come una volta usciti dalla zona dove si assume il massimo, non viene più raggiunto nei tempi successivi.]{0.6}{fig-max-forte}
 
 \section{Soluzione fondamentale \texorpdfstring{$n=1$}{n=1}}
@@ -2078,7 +2209,7 @@ Cos'è $c$? Non abbiamo ancora usato la conservazione dell'energia
 \end{equation*}
 che si riduce a
 \begin{equation*}
-\int _{\mathbb{R}}\frac{Q}{\sqrt{Dt}} U\left(\frac{x}{\sqrt{Dt}}\right) dx=\left\{x=\xi\sqrt{Dt}\right\} =Q\int _{\mathbb{R}} U(\xi) d\xi =Q
+Q = \int _{\mathbb{R}}\frac{Q}{\sqrt{Dt}} U\left(\frac{x}{\sqrt{Dt}}\right) dx=\left\{\xi=\frac{x}{\sqrt{Dt}}\right\} = Q\int _{\mathbb{R}} U(\xi) d\xi
 \end{equation*}
 Allora possiamo procedere a determinare $c$
 \begin{equation*}
@@ -2089,7 +2220,7 @@ d\xi =2dz
 \end{equation*}
 Ricordando l'integrale di Gauss
 \begin{equation*}
-2c\underbrace{\int _{\mathbb{R}} e^{-z^{2}} dz}_{\sqrt{\pi }} =1\ \ \Rightarrow \ \ c=\frac{1}{2\sqrt{\pi }}
+2c\underbrace{\int _{\mathbb{R}} e^{-z^{2}} dz}_{\sqrt{\pi }} =1\ \ \Rightarrow \ \ c=\frac{1}{\sqrt{4\pi }}
 \end{equation*}
 Infine
 \begin{equation*}
@@ -2099,7 +2230,7 @@ Nel caso in cui $Q=1$ si ottiene la \textbf{soluzione fondamentale.}
 \begin{equation*}
 \boxed{\Gamma _{D}(x,t) =\frac{1}{\sqrt{4\pi Dt}} e^{-\frac{x^{2}}{4Dt}}}
 \end{equation*}
-Che ricorda la densità di probabilità di una normale.
+Che ricorda la densità di probabilità di una normale di media $\mu=0$ e varianza $\sigma ^2 =2Dt$.
 \fg[Soluzione fondamentale con $D=1$. Si può notare il picco iniziale che viene poi smussato.]{0.6}{fig-soluzione-fondamentale-calore}
 
 
@@ -2190,7 +2321,7 @@ Il limite che abbiamo fatto sopra è un limite nel senso delle distribuzioni, in
 \end{equation*}
 Se anziché nell'origine, la sorgente unitaria fosse concentrata in un punto $\displaystyle y$, dovrei modellarla con la distribuzione di Dirac in $\displaystyle y$, $\displaystyle \delta (x-y)$, e la funzione $\displaystyle \Gamma _{D}(x-y,t)$ è l'unica soluzione (grazie all'invarianza per traslazione spaziale) che soddisfi la condizione iniziale 
 \begin{equation*}
-\Gamma _{D}(x-y,0) =\delta (x-y)
+``\ \Gamma _{D}(x-y,0) =\delta (x-y)\ "
 \end{equation*}
 \subsection{Interpretazione della \texorpdfstring{$\displaystyle \Gamma _{D}(x,t)$}{soluzione}}
 \begin{itemize}
@@ -2212,19 +2343,19 @@ Con ragionamenti analoghi otteniamo
 \end{equation*}
 e come condizione iniziale
 \begin{gather*}
-``\ \Gamma _{D}(\x,0) =\delta _{n}(0) \ "\\
-\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,0) \varphi (\x) d\x =\langle \delta _{n},\varphi \rangle =\varphi (0)
+``\ \Gamma _{D}(\x,0) =\delta _{n}(\zer) \ "\\
+\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,0) \varphi (\x) d\x =\langle \delta _{n},\varphi \rangle =\varphi (\zer)
 \end{gather*}
 l'interpretazione della soluzione fondamentale è analoga e la conservazione dell'energia si esprime come\begin{equation*}
 \int _{\mathbb{R}^{n}} \Gamma _{D}(\x,t) d\x =1,\ \forall t >0
 \end{equation*}
 \section{Passeggiata aleatoria simmetrica (unidimensionale)}
 
-Esploriamo ora la connesione tra modelli \textbf{deterministici} e \textbf{probabilistici}. Vogliamo costruire modelli \textbf{continui} (nel nostro caso del tipo del moto browniano) come limite di modelli \textbf{discreti stocastici}.
+Esploriamo ora la connesione tra modelli \textbf{deterministici} analizzati fin'ora e \textbf{probabilistici}. Vogliamo costruire modelli \textbf{continui} (nel nostro caso del tipo del moto browniano) come limite di modelli \textbf{discreti stocastici}.
 
 Nel realizzare il procedimento si vede come l'equazione del calore possa essere approssimata con un'equazione alle differenze, risultato utile per alcuni metodi numerici che permettono il calcolo approssimato delle soluzioni.
 
-Il nostro modello discreto, dato un passo spaziale di lunghezza $\displaystyle h$ e un intervallo temporale di durata $\displaystyle \tau $, prevede una particella di massa unitaria in moto lungo un asse (asse $\displaystyle x$) con le seguenti regole
+Il nostro modello discreto, dato un passo spaziale di lunghezza $\displaystyle h$ e un intervallo temporale di durata $\displaystyle \tau $, prevede \textbf{una} particella di \textbf{massa unitaria} in moto lungo un asse (asse $\displaystyle x$) con le seguenti regole
 \begin{enumerate}
 \item la particella si muove, in un tempo $\displaystyle \tau $, di $\displaystyle h$, partendo da $\displaystyle x=0$.
 \item la particella si muove verso destra o sinistra con probabilità $\displaystyle 1/2$, in modo indipendente dai passi precedenti.
@@ -2242,7 +2373,7 @@ p(x,t) =\text{probabilità di trovare la particella in} \ x\ \text{al tempo} \ t
 \end{equation*}
 Se $\displaystyle x=mh$ è la posizione della particella dopo $\displaystyle N$ passi, avrò fatto:
 \begin{itemize}
-\item $\displaystyle k$ passi a destra
+\item $\displaystyle k$ passi a destra ($k$ è una variabile aleatoria)
 \item $\displaystyle N-k$ passi a sinistra
 \end{itemize}
 
@@ -2255,16 +2386,16 @@ dunque
 p(x,t) & =p_{k} =\frac{\text{\#cammini con} \ k\ \text{passi a destra}}{\text{\#cammini con} \ N\ \text{passi}}\\
  & =\frac{\binom{N}{k}}{2^{N}} =\binom{N}{k}\left(\frac{1}{2}\right)^{k}\left( 1-\frac{1}{2}\right)^{N-k}
 \end{align*}
-$\displaystyle k$ ha legge binomiale di parametri $\displaystyle Bi\left( N,\frac{1}{2}\right)$.
+$\displaystyle k$ ha legge binomiale di parametri $\displaystyle Bi\left( N,\frac{1}{2}\right)$. % TODO arrivato qui
 \begin{itemize}
 \item valore atteso di $\displaystyle k$\begin{equation*}
-\langle k\rangle =\frac{N}{2}
+\mathbb{E}[k]=\langle k\rangle =Np=\frac{N}{2}
 \end{equation*}
 \item varianza di $\displaystyle k$\begin{equation*}
-\langle k^{2} \rangle -\langle k\rangle ^{2} =\frac{N}{4}
+\mathrm{Var}[k]=\langle k^{2} \rangle -\langle k\rangle ^{2} =np(1-p)=\frac{N}{4}
 \end{equation*}
 \item momento secondo di $\displaystyle k$\begin{equation*}
-\langle k^{2} \rangle =\frac{N}{4} +\langle k\rangle ^{2} =\frac{N^{2} +N}{4}
+\mathbb{E}[k^2]=\langle k^{2} \rangle =\frac{N}{4} +\langle k\rangle ^{2} =\frac{N+N^2}{4}
 \end{equation*}
 \end{itemize}
 
@@ -2274,8 +2405,9 @@ Da cui si possono calcolare media e varianza di $\displaystyle x$:
 \langle x\rangle =h\langle m\rangle =h\langle 2k-N\rangle =h( 2\langle k\rangle -N) =0
 \end{equation*}
 \item varianza di $\displaystyle x$\begin{align*}
-\langle x^{2} \rangle  & =h^{2} \langle m^{2} \rangle =h^{2} \langle 4k^{2} -4Nk+N^{2} \rangle \\
+\mathrm{Var}[x]=\langle x^{2} \cancel{\rangle -\langle x \rangle^2}  & =h^{2} \langle m^{2} \rangle =h^{2} \langle 4k^{2} -4Nk+N^{2} \rangle \\
  & =h^{2}\left( 4\langle k^{2} \rangle -4N\langle k\rangle +N^{2}\right)\\
+ & =h^{2}\left( 4 \frac{N+N^2}{4} -4 N \frac{N}{2} + N^2 \right)\\
  & =h^{2}\left( N^{2} +N-2N^{2} +N^{2}\right)\\
  & =h^{2} N
 \end{align*}
@@ -2283,7 +2415,7 @@ Da cui si possono calcolare media e varianza di $\displaystyle x$:
 
 Questi due valori sono \textbf{caratteristiche essenziali della passeggiata} da cui posso ricavare 
 \begin{equation*}
-\frac{\langle x^{2} \rangle }{t} =\frac{h^{2} N}{\tau N} =\frac{h^{2}}{\tau }
+\frac{\mathrm{Var[x]}}{t}=\frac{\langle x^{2} \rangle }{t} =\frac{h^{2} N}{\tau N} =\frac{h^{2}}{\tau }
 \end{equation*}
 prendendo la deviazione standard 
 \begin{equation*}
@@ -2368,7 +2500,7 @@ Inoltre
 la velocità di spostamento diventa sempre più elevata.
 \subsection{Dalla passeggiata aleatoria al moto browniano}
 
-Che cosa è diventata la passeggiata aleatoria? Poniamo $\displaystyle x_{j} =x(jh)$ posizione raggiunta dopo $\displaystyle j$ passi. Introduco la variabile aleatoria
+Che cosa è diventata la passeggiata aleatoria? Poniamo $x_{j} =x(jh)$ la posizione raggiunta dopo $j\geq 1$ passi. Introduco la variabile aleatoria
 \begin{equation*}
 \xi _{j} =\frac{x_{j} -x_{j-1}}{h} =\begin{cases}
 1, & p=\frac{1}{2}\\
@@ -2377,7 +2509,7 @@ Che cosa è diventata la passeggiata aleatoria? Poniamo $\displaystyle x_{j} =x(
 \end{equation*}
 Da cui
 \begin{equation*}
-\langle \xi _{j} \rangle =0,\ \langle \xi ^{2}_{j} \rangle =1
+\langle \xi _{j} \rangle =0,\qquad \langle \xi ^{2}_{j} \rangle =1
 \end{equation*}
 Le $\displaystyle \xi _{j}$ sono una famiglia di variabili aleatorie iid. La posizione della particella dopo $\displaystyle N$ passi è 
 \begin{equation*}
@@ -2387,14 +2519,24 @@ dove la scelta di $\displaystyle h$ è tale che
 \begin{equation*}
 \frac{h^{2}}{\tau } =2D,\qquad t=N\tau
 \end{equation*}
-Allora
+Ricordiamo il TCL
 \begin{equation*}
-\ X_{N} =\sqrt{2Dt}\frac{\sum\nolimits ^{N}_{j=1} \xi _{j}}{\sqrt{N}},\ \ \sqrt{N} =\sqrt{\mathrm{Var}\sum ^{N}_{j=1} \xi _{j}}
+\overline{X}_{n} =\frac{1}{n}\sum _{i=1}^{n} X_{i} ,\ \ \sigma ^{2} =\mathrm{Var}[ X_{i}] ,\ \ \mu =\mathbb{E}[ X_{i}] \ \ \Rightarrow \ \ \frac{\overline{X}_{n} -\mu }{\sigma /\sqrt{n}}\xrightarrow{\mathcal{L}}\mathcal{N}( 0,1)
 \end{equation*}
-sui cui passando al limite per $\displaystyle N\rightarrow \infty $, grazie al Teorema Centrale Limite ottengo che $\displaystyle X_{N}$ converge in legge ad una normale:
+Nel nostro caso
 \begin{equation*}
-X_{N}\xrightarrow{\mathrm{in\ legge}} N(0,2Dt)
+\frac{\frac{1}{N}\sum _{j=1}^{N} \xi _{j} -0}{1/\sqrt{N}}\xrightarrow{\mathcal{L}}\mathcal{N}( 0,1)
 \end{equation*}
+ovvero:
+\begin{align*}
+\frac{1}{\sqrt{N}}\sum _{j=1}^{N} \xi _{j} & \xrightarrow{\mathcal{L}}\mathcal{N}( 0,1)\\
+\frac{\sqrt{2Dt}}{\sqrt{2Dt}}\frac{1}{\sqrt{N}}\sum _{j=1}^{N} \xi _{j} & \xrightarrow{\mathcal{L}}\mathcal{N}( 0,1)\\
+\frac{\sqrt{2Dt}}{\sqrt{N}}\sum _{j=1}^{N} \xi _{j} & \xrightarrow{\mathcal{L}}\mathcal{N}( 0,2Dt)
+\end{align*}
+Quindi
+\begin{equation}
+X_{N}\xrightarrow{\mathcal{L}}\mathcal{N}( 0,2Dt) .
+\end{equation}
 che ha come densità proprio la soluzione fondamentale $\displaystyle \Gamma _{D}$.
 
 La passeggiata aleatoria è diventata al limite un moto continuo che, per $\displaystyle D=1/2$, prende il nome di \textbf{moto browniano}.
@@ -2439,8 +2581,12 @@ Il termine $\displaystyle \textcolor[rgb]{0.29,0.56,0.89}{\frac{h^{2}}{\tau }}$,
 \textcolor[rgb]{0.96,0.65,0.14}{\frac{(q_{0} -p_{0}) h}{\tau }}=\frac{q_{0} -p_{0}}{h}\textcolor[rgb]{0.29,0.56,0.89}{\frac{h^{2}}{\tau }}
 \end{equation*}
 Assumiamo dunque 
-\begin{equation*}
+\begin{equation}
 \lim _{h\rightarrow 0}\frac{q_{0} -p_{0}}{h}=\beta,\ \ \beta \ \text{finito}
+\end{equation}
+Questo equivale a chiedere che
+\begin{equation*}
+p_{0} =\frac{1}{2} -\frac{\beta }{2} h+o( h) ,\ \ \ \ q_{0} =\frac{1}{2} +\frac{\beta }{2} h+o( h)
 \end{equation*}
 Passando al limite per $\displaystyle h,\tau \rightarrow 0$ sotto queste ipotesi otteniamo
 \begin{equation*}
@@ -2535,7 +2681,7 @@ q(x,t) =-Dc_{x}(x,t)
 \end{equation*}
 \end{itemize}
 
-Poiché nel nostro caso sono presenti sia trasporto che diffusione, sovrapporremo i due effetti:
+Poiché nel caso dell'inquinante sono presenti sia trasporto che diffusione, sovrapporremo i due effetti:
 \begin{equation*}
 q=\text{diffusione} +\text{trasporto} =vc-Dc_{x},\ \ [ q] =MT^{-1}
 \end{equation*}
@@ -2557,10 +2703,10 @@ I vari termini rappresentano
 \item $cu$, \textbf{reazione} ($c >0$, crescita, oppure $c< 0$ decadimento, esponenziale)
 \end{itemize}
 
-Qual'è la soluzione fondamentale per \eqref{eq:modello-dif-trasp-rea}, cioè quella soluzione che al tempo iniziale assume distribuzione Dirac in $x=0$?. Si può dimostrare che è
-\begin{equation*}
+Qual'è la soluzione fondamentale per \eqref{eq:modello-dif-trasp-rea}, cioè quella soluzione che al tempo iniziale assume distribuzione Dirac in $x=0$? Si può dimostrare che è
+\begin{equation}
 \boxed{\Gamma ^{\star }(x,t) =\frac{1}{\sqrt{4\pi Dt}} e^{ct}\exp\left\{-\frac{(x+bt)^{2}}{4Dt}\right\}}
-\end{equation*}
+\end{equation}
 Se $c=0$ abbiamo la solita $\Gamma $ che si trasporta, se $c\gtrless 0$ la $\Gamma $ viene accentuata o smorzata esponenzialmente.
 
 L'equazione generale in $n$ dimensioni è
@@ -2697,34 +2843,41 @@ Se $g$ è limitata (cioè $a=0$ in (G)) allora $u$ è definita in $\mathbb{R} \t
 \end{oss}
 \subsection{Unicità}
 
-In generale non c'è unicità, vediamo il controesempio di Tychonov
+In generale non c'è unicità, vediamo il controesempio di Tychonov. Sia $h$ la funzione definita da:
 \begin{equation*}
 h(t) =\begin{cases}
 e^{-t^{-2}}, & t >0\\
 0, & t\leqslant 0
-\end{cases} \ \ \text{cioè tale che} \ h^{(k)}(t)\xrightarrow{t\rightarrow 0} 0,\ \forall k=0,1,2\dotsc 
+\end{cases} \qquad \text{cioè tale che} \ h^{(k)}(t)\xrightarrow{t\rightarrow 0} 0,\ \forall k=0,1,2\dotsc 
 \end{equation*}
 La funzione costruita come
-\begin{equation*}
+\begin{equation}
+\tag{Tychonov}
 \Tau (x,t) =\sum\limits ^{\infty }_{k=0}\frac{h^{(k)}(t)}{(2k) !} x^{2k}
-\end{equation*}
-è soluzione dell'equazione $\Tau _{t} -\Tau _{xx} =0,\ \Tau (x,0) =0$ assunto con continuità.
+\end{equation}
+è soluzione dell'equazione del calore $\Tau _{t} -\Tau _{xx} =0$ col dato iniziale $\Tau (x,0)=0$ assunto con continuità.
+\begin{dimostrazione}
+	\ \\
+	\begin{enumerate}
+	\item[(DE)] Si verifica che\begin{equation*}
+	\Tau _{t}( x,t) =\sum\limits _{k=0}^{\infty }\frac{h^{( k+1)}( t)}{( 2k) !} x^{2k} =\sum\limits _{k=1}^{\infty }\frac{h^{( k)}( t)}{( 2k-2) !} x^{2k-2} =\Tau _{xx}( x,t)
+	\end{equation*}
+	\item[(IC)] Si dimostra per induzione che $\exists \vartheta  >0$ tale che $\forall t >0$\begin{equation*}
+	\left| h^{( k)}( t)\right| \leqslant \frac{k!}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right)
+	\end{equation*}possiamo eseguire una maggiorazione\begin{align*}
+	| \Tau ( x,t)|  & =\sum\limits _{k=0}^{\infty }\frac{1}{( 2k) !} x^{2k}\left| h^{( k)}( t)\right|  & \\
+	 & \leqslant \sum\limits _{k=0}^{\infty }\frac{1}{( 2k) !} x^{2k}\frac{k!}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right) & \text{(usando la maggiorazione)}\\
+	 & < \sum\limits _{k=0}^{\infty }\frac{1}{k!} x^{2k}\frac{1}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right) & \frac{k!}{( 2k) !} < \frac{1}{k!}\\
+	 & =\underbrace{\sum\limits _{k=0}^{\infty }\frac{\left(\frac{x^{2}}{\vartheta t}\right)^{k}}{k!}}_{\exp\left(\frac{x^{2}}{\vartheta t}\right)}\exp\left( -\frac{1}{2} t^{-2}\right) & \\
+	 & =\exp\left(\frac{x^{2}}{\vartheta t} -\frac{1}{2} t^{-2}\right) & \text{(serie esponenziale)}
+	\end{align*}
 
-Si dimostra per induzione che $\exists \vartheta  >0$ tale che $\forall t >0$
-\begin{equation*}
-\left| h^{(k)}(t)\right| \leqslant \frac{k!}{(\vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right)
-\end{equation*}
-è chiaro che
-\begin{equation*}
-| \Tau (x,t)| \leqslant \sum\limits ^{\infty }_{k=0}\underbrace{\frac{k!}{(2k) !}}_{< \frac{1}{k!}}\frac{x^{2k}}{(\vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right) \leqslant \exp\left(\frac{x^{2}}{\vartheta t} -\frac{1}{2t^{2}}\right)
-\end{equation*}
-avendo riconosciuto la serie dell'esponenziale. Per $x$ fissato e $t\rightarrow 0$, allora $| \Tau (x,t)| \rightarrow 0$.
+	Per $x$ fissato e $t\rightarrow 0$, allora $| \Tau ( x,t)| \rightarrow 0$.
+	\end{enumerate}
+\end{dimostrazione}
+Quindi $\Tau ( x,t)$ rispetta l'equazione differenziale e anche il teorema di esistenza. Tuttavia \textbf{anche la soluzione identicamente nulla è, ovviamente, soluzione del problema}. Segue che \textbf{in generale la soluzione non è unica}.
 
-Si verifica che
-\begin{equation*}
-\Tau _{t}(x,t) =\sum\limits ^{\infty }_{k=0}\frac{h^{(k+1)}(t)}{(2k) !} x^{2k} =\sum\limits ^{\infty }_{k=1}\frac{h^{(k)}(t)}{(2k-2) !} x^{2k-2} =\Tau _{xx}(x,t)
-\end{equation*} % TODO check, Fil dice che k parte da 1, Salsa da 2
-quindi $\Tau (x,t)$ rispetta l'equazione differenziale e anche il teorema di esistenza. Tuttavia anche la soluzione identicamente nulla è, ovviamente, soluzione del problema. Segue che \textbf{in generale la soluzione non è unica}. Il problema è che $\Tau $ cresce troppo quando $x\rightarrow \pm \infty $ per tempi $t$ piccoli a causa del termine
+Il problema è che $\Tau $ cresce troppo quando $x\rightarrow \pm \infty $ per tempi $t$ piccoli a causa del termine
 \begin{equation*}
 \frac{x^{2}}{\vartheta t}
 \end{equation*}
@@ -2747,7 +2900,7 @@ u(x,t) \leqslant Ce^{Ax^{2}} \ \ \ \ \left( \geqslant -Ce^{Ax^{2}}\right)
 \end{enumerate}
 Allora
 \begin{equation*}
-\sup _{\mathbb{R} \times [ 0,T]} u(x,t) \leqslant \sup _{\mathbb{R}} u(x,0) \ \ \ \ (\inf_{\mathbb{R} \times [ 0,T]} u(x,t) \geqslant \inf_{\mathbb{R}} u(x,0))
+\sup _{\mathbb{R} \times [ 0,T]} u(x,t) \leqslant \sup _{\mathbb{R}} u(x,0) \qquad \left(\inf_{\mathbb{R} \times [ 0,T]} u(x,t) \geqslant \inf_{\mathbb{R}} u(x,0)\right)
 \end{equation*}
 \end{theorem}
 
@@ -2778,14 +2931,14 @@ definita nel teorema di Esistenza è unica all'interno della Classe di Tychonov,
 \end{definition}
 da dove viene fuori?
 \begin{itemize}
-\item Temperatura a regime stazionario con $D=1$ dell'equazione del calore.
+\item Temperatura a regime stazionario $u_{t}=0$ con $D=1$ dell'equazione del calore.
 \item $\mathbf{E}$ campo elettrostatico generato da una distribuzione di carica $\rho $ in $\Omega \subset \mathbb{R}^{3}$ in unità $Mks$:\begin{equation*}
 \mathrm{div}\mathbf{E} =\frac{4\pi \rho }{\varepsilon }
 \end{equation*}
 
 $\varepsilon $ costante dielettrica.
 
-Se il campo è conservativo esiste uno scalare $u$, potenziale elettrostatico, tale che $\nabla u=-\mathbf{E}$ allora\begin{equation*}
+Se il campo è conservativo esiste uno scalare $u$, detto potenziale elettrostatico, tale che $\nabla u=-\mathbf{E}$ allora\begin{equation*}
 \mathrm{div}\mathbf{E} =-\mathrm{div}(\nabla u) =-\Delta u=\frac{4\pi \rho }{\varepsilon }
 \end{equation*}
 
@@ -2817,65 +2970,54 @@ v=xy
 Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 \begin{itemize}
 \item \textbf{Dirichlet} $u=g$ su $\partial \Omega $
-\item \textbf{Neumann} $\partial _{\nu } u=h$ su $\partial \Omega $
-\item \textbf{Robin} $\partial _{\nu } u+\alpha u=h$, con $\alpha  >0$
+\item \textbf{Neumann} $\partial _{\bm{\nu} } u=h$ su $\partial \Omega $
+\item \textbf{Robin} $\partial _{\bm{\nu} } u+\alpha u=h$, con $\alpha  >0$
 \item miste
 \end{itemize}
 \LezioneS{16/03/2021}
 
-\begin{theorem}
-	Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ un dominio limitato regolare. Allora esiste al più una funzione $\displaystyle u$ di classe $\displaystyle C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $\displaystyle -\Delta u=f$ in $\displaystyle \Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
+\begin{theorem}[Unicità]
+	Sia $\Omega \subset \mathbb{R}^{n}$ un dominio \textbf{limitato} regolare. Allora esiste al più una funzione $u$ di classe $C^{2}(\Omega) \cap C^{1}(\overline{\Omega })$ soluzione di $-\Delta u=f$ in $\Omega $ con condizioni di Dirichlet o Robin. Nel caso di Neumann, due soluzioni differiscono per una costante.
 \end{theorem}
 \begin{dimostrazione}
-	Siano $\displaystyle u$ e $\displaystyle v$ soluzioni di uno dei problemi indicati con lo stesso dato al bordo $\displaystyle g$. Sia $\displaystyle w=u-v$, allora $\displaystyle w$ è armonica in $\displaystyle \Omega $
+	Siano $u$ e $v$ soluzioni di uno dei problemi indicati con lo stesso dato al bordo $g$. Sia $w=u-v$, allora $w$ è armonica in $\Omega $
 	\begin{equation*}
 		\Delta w=\Delta u-\Delta v=-f+f=0
 	\end{equation*}
-	con dato al bordo $\displaystyle g=0$. Moltiplicando per $\displaystyle w$ e integrando su $\displaystyle \Omega $
+	con dato al bordo $g=0$. Moltiplicando per $w$ e integrando su $\Omega $
 	\begin{equation*}
 		\int _{\Omega } w\Delta w=0
 	\end{equation*}
 	Da cui, utilizzando l'identità di Green \eqref{eq:id-green}
 	\begin{equation*}
-		-\int _{\Omega }| \nabla w| ^{2} +\int _{\partial \Omega } w\partial _{\nu } w\ d\sigma =0\ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =\int _{\partial \Omega } w\partial _{\nu } w\ d\sigma 
+		-\int _{\Omega }| \nabla w| ^{2} +\int _{\partial \Omega } w\partial _{\bm{\nu}} w\ d\sigma =0\ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =\int _{\partial \Omega } w\partial _{\bm{\nu}} w\ d\sigma 
 	\end{equation*}
 	Ora analizziamo nello specifico i tre possibili casi:
 	\begin{itemize}
-		\item \textbf{Dirichlet}
-		      
-		      Essendo $\displaystyle w=0$ su $\displaystyle \partial \Omega $ si trova
-		      
-		      \begin{align*}
-		      	\int _{\Omega }| \nabla w| ^{2} =0\ &\Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } &                                                          \\
-		      	                                      & \Rightarrow \ \ w=\text{cost. in} \ \Omega               
-		      \end{align*}
-		      
-		      Ma dato che $\displaystyle w=0$ su $\displaystyle \partial \Omega $, la costante deve essere $\displaystyle 0$, da cui $\displaystyle w\equiv 0$.
-		\item \textbf{Robin}
-		      
-		      Essendo $\displaystyle \partial _{\nu } w=-\alpha w$
-		      
-		      \begin{align*}
-		      	\int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} d\sigma & \leqslant 0                                    \\
-		      	                                                                                & \Rightarrow \ \ \nabla w=0\ \text{in} \ \Omega \\
-		      	                                                                                & \Rightarrow \ \ w=\text{cost. in} \ \Omega     
-		      \end{align*}
-		      
-		      ma allora $\displaystyle w=0$ su $\displaystyle \partial \Omega \Rightarrow w\equiv 0$ in $\displaystyle \Omega $.
-		\item \textbf{Neumann}
-		      
-		      Essendo $\displaystyle \partial _{\nu } w=0$
-		      
-		      \begin{equation*}
-		      	\int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
-		      \end{equation*}
-		      
-		      Non posso fare alcuna affermazione aggiuntiva.
+		\item \textbf{Dirichlet}\begin{equation*}
+		w=0\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
+		\end{equation*}
+
+		Ma dato che $\displaystyle w=0$ su $\displaystyle \partial \Omega $ ed essendo $\displaystyle C^{1}$ fino al bordo, la costante deve essere $\displaystyle 0$, da cui $\displaystyle w\equiv 0$.
+		\item \textbf{Robin}\begin{equation*}
+		\partial _{\nu } w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} d\sigma \leqslant 0
+		\end{equation*}
+
+		ma essendo il primo integrale $\displaystyle \geqslant 0$, allora deve essere nullo come prima:\begin{equation*}
+		\int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
+		\end{equation*}
+
+		Ma dato che è costante, la derivata normale sul bordo è nulla $\displaystyle \partial _{\nu } w=0=-\alpha w$, quindi $\displaystyle w=0$ sul bordo e, come prima, essendo $\displaystyle C^{1}$ fino al bordo, la costante è nulla, da cui $\displaystyle w\equiv 0$.
+		\item \textbf{Neumann}\begin{equation*}
+		\partial _{\nu } w=0\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
+		\end{equation*}
+
+		Non posso fare alcuna affermazione aggiuntiva.
 	\end{itemize}
 \end{dimostrazione}
 Nel caso Neumann non vale l'unicità, ma in generale non vale neanche l'esistenza, infatti da 
 \begin{equation*}
-	-\Delta u=f,\ \partial _{\nu } u=g\ \text{su} \ \partial \Omega 
+	-\Delta u=f,\ \partial _{\bm{\nu}} u=g\ \text{su} \ \partial \Omega 
 \end{equation*}
 integrando su $\displaystyle \Omega $ si trova
 \begin{equation*}
@@ -2883,13 +3025,17 @@ integrando su $\displaystyle \Omega $ si trova
 \end{equation*}
 e applicando il teorema di Gauss \eqref{eq:id-green-v1}
 \begin{equation*}
-	\Rightarrow \ \ -\int _{\partial \Omega } \partial _{\nu } ud\sigma =\int _{\Omega } f\ \ \Rightarrow \ \ \boxed{\int _{\Omega } f+\int _{\partial \Omega } gd\sigma =0}
+-\int _{\partial \Omega } \partial _{\nu } ud\sigma =\int _{\Omega } f
 \end{equation*}
-Abbiamo trovato una condizione necessaria per la risolubilità del problema di Neumann. Per esempio:
+Abbiamo trovato una \textbf{condizione necessaria per la risolubilità del problema di Neumann}:
+\begin{equation}
+\boxed{\int _{\Omega } f+\int _{\partial \Omega } gd\sigma =0}
+\end{equation}
+Per esempio:
 \begin{equation*}
 	\begin{cases}
 		-\Delta u=1          & \text{in} \ \Omega \\
-		\partial _{\nu } u=0 &                    
+		\partial _{\bm{\nu}} u=0 &                    
 	\end{cases}
 \end{equation*}
 non ha soluzione! La condizione necessaria che abbiamo trovato infatti darebbe
@@ -2901,41 +3047,44 @@ non ha soluzione! La condizione necessaria che abbiamo trovato infatti darebbe
 Per esaminare le proprietà delle funzioni armoniche torniamo ad esplorare il legame tra modelli discreti e continui, probabilistici e deterministici. Ritorniamo alla passeggiata aleatoria, lavorando questa volta in dimensione $\displaystyle n=2$. Allora detti $\displaystyle h >0$ passo spaziale, e $\displaystyle \tau  >0$ passo temporale, introduciamo $\displaystyle h\mathbb{Z}^{2}$ il reticolo dei punti 
 \begin{equation*}
 	\begin{cases}
-		x=(x_{1},x_{2}) &                 \\
+		\x=(x_{1},x_{2}) &                 \\
 		x_{1} =mh         & m\in \mathbb{Z} \\
 		x_{2} =nh         & n\in \mathbb{Z} 
 	\end{cases}
 \end{equation*}
-La particella si muove in ciascuna delle quattro direzioni con probabilità identica $\displaystyle 1/4$, e i versori degli assi $\displaystyle x_{1},x_{2}$ sono rispettivamente $\displaystyle \vec{e}_{1},\vec{e}_{2}$.
+La particella si muove in ciascuna delle quattro direzioni con probabilità identica $\displaystyle 1/4$, e i versori degli assi $\displaystyle x_{1},x_{2}$ sono rispettivamente $\displaystyle \mathbf{e}_{1},\mathbf{e}_{2}$.
 
-Sia $\displaystyle p(x,t) =p(x_{1},x_{2},t)$ la probabilità di trovare la particella nel punto $\displaystyle x$ al tempo $\displaystyle t$. Come nella precedente passeggiata cerchiamo di ricavare un'equazione alle differenze per $\displaystyle p$ col teorema delle probabilità totali.
+Sia $\displaystyle p(x,t) =p(x_{1},x_{2},t)$ la probabilità di trovare la particella nel punto $\x$ al tempo $t$. Come nella precedente passeggiata cerchiamo di ricavare un'equazione alle differenze finite per $p$ col teorema delle probabilità totali.
 \begin{equation*}
-	p( x_{1},x_{2},t+\tau) =\frac{1}{4}\{p( x-h\vec{e}_{1},t) +p( x+h\vec{e}_{1},t) +p( x-h\vec{e}_{2},t) +p( x+h\vec{e}_{2},t)\}
+	p( x_{1},x_{2},t+\tau) =\frac{1}{4}\{p( \x-h\mathbf{e}_{1},t) +p( \x+h\mathbf{e}_{1},t) +p( \x-h\mathbf{e}_{2},t) +p( \x+h\mathbf{e}_{2},t)\}
 \end{equation*}
-Quella che troviamo è esattamente la media aritmetica dei valori di $\displaystyle p(\cdotp,t)$ nei punti dell'intorno discreto di $\displaystyle x$ di raggio $\displaystyle h$. 
+Quella che troviamo è esattamente la media aritmetica dei valori di $p(\cdotp,t)$ nei punti dell'intorno discreto di $\x$ di raggio $h$. 
 
-Trascurando per ora il tempo, definisco l'operatore di media su una generica funzione $\displaystyle u=u(x),\ x\in h\mathbb{Z}^{2}$
+Trascurando per ora il tempo, definisco l'operatore di media su una generica funzione $u=u(\x),\x\in h\mathbb{Z}^{2}$
 \begin{equation*}
-	M_{h} u(x) =\frac{1}{4}\sum _{| x-y| =h} u(y)
+	M_{h} u(\x) =\frac{1}{4}\sum _{| \x-\y| =h} u(\y)
 \end{equation*}
 In questo modo posso riscrivere l'equazione alle differenze sfruttando l'operatore
 \begin{equation*}
-	p( x_{1},x_{2},t+\tau) =M_{h} p(x,t)
+	p( x_{1},x_{2},t+\tau) =M_{h} p(\x,t)
 \end{equation*}
-Sviluppando fino al secondo ordino con Taylor
-\begin{gather*}
-	M_{h} u(x) =\frac{1}{4}\bigg\{ 4u(x) +\underbrace{h^{2} u_{x_{1} x_{1}}(x) +h^{2} u_{x_{2} x_{2}}(x)}_{h^{2} \Delta u(x)}\bigg\} +o\left(h^{2}\right)\\
-	\Rightarrow \ \ \lim _{h\rightarrow 0}\frac{M_{h} u(x) -u(x)}{h^{2}} =\frac{1}{4} \Delta u(x)
-\end{gather*}
-In base a questo risultato è coerente definire il laplaciano discreto
+Sviluppando fino al secondo ordine con Taylor e elidendo opportunamente i termini:
+\begin{equation*}
+M_{h} u(\x) =\frac{1}{4}\bigg[4u(\x) +\underbrace{h^{2} u_{x_{1} x_{1}}(\x) +h^{2} u_{x_{2} x_{2}}(\x)}_{h^{2} \Delta u(\x)}\bigg] +o\left( h^{2}\right)
+\end{equation*}
+passando al limite:
+\begin{equation*}
+\lim _{h\rightarrow 0}\frac{M_{h} u(\x) -u(\x)}{h^{2}} =\frac{1}{4} \Delta u(\x)
+\end{equation*}
+In base a questo risultato è coerente definire il \textbf{laplaciano discreto}
 \begin{equation}
-	\Delta ^{*}_{h} u(x) =\frac{4}{h^{2}}(M_{h} u(x) -u(x))
+	\Delta ^{*}_{h} u(\x) =\frac{4}{h^{2}}(M_{h} u(\x) -u(\x))
 \end{equation}
-Se $\displaystyle \Delta ^{*}_{h} u=0$ (ovvero se in ogni punto $\displaystyle x$ la funzione coincide con la media dei propri valori nei punti dell'intorno discreto di $\displaystyle x$ di raggio $\displaystyle h$) la funzione verrà chiamata \textbf{d-armonica} (dove d sta per discreto).
+Se $\displaystyle \Delta ^{*}_{h} u=0$ (ovvero se in ogni punto $\x$ la funzione coincide con la media dei propri valori nei punti dell'intorno discreto di $\x$ di raggio $\displaystyle h$) la funzione verrà chiamata \textbf{d-armonica} (dove `d' sta per discreto).
 
 Cerchiamo ora di definire il problema di Dirichlet discreto nel reticolo: per farlo servono prima delle nozioni di topologia discreta.
 
-Sia $\displaystyle A\in h\mathbb{Z}^{2}$. Diciamo che $\displaystyle x\in A$ è
+Sia $\displaystyle A \subset h\mathbb{Z}^{2}$. Diciamo che $\x\in A$ è
 \begin{itemize}
 	\item \textbf{interno} ad $\displaystyle A$ se il suo intorno discreto di raggio $\displaystyle h$ è contenuto in $\displaystyle A$;
 	\item \textbf{punto di frontiera} se non è interno ad $\displaystyle A$ ma il suo intorno discreto di raggio $\displaystyle h$ contiene almeno un punto interno;
@@ -3099,11 +3248,9 @@ $\displaystyle A$ è detto \textbf{connesso} se non ha punti isolati e $\display
 \end{equation}
 Proprietà di una soluzione di \eqref{eq:pb-dirichlet-discreto}:
 \begin{enumerate}
-	\item \textbf{Principio di massimo}. Se $\displaystyle u$ assume massimo o minimo in un punto interno ad $\displaystyle A$, allora $\displaystyle u$ è costante. Infatti
+	\item \textbf{Principio di massimo}. Se $u$ assume massimo o minimo in un punto interno ad $A$, allora $u$ è costante. Infatti
 		\begin{figure}[htpb]
 	      	\centering
-	      	
-
 	      	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 	      	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -3134,9 +3281,9 @@ Proprietà di una soluzione di \eqref{eq:pb-dirichlet-discreto}:
 	      	\end{tikzpicture}
 		\end{figure}
 		\FloatBarrier
-		$\displaystyle \Rightarrow u=M$ nei punti del suo intorno discreto (visto che il punto centrale è la media dei 4 punti, tutti devono essere punti di massimo). Reiterando il ragionamento per ogni altro punto dell'intorno posso propagarlo fino alla frontiera.
-	\item $\displaystyle u$ assume max e min su $\displaystyle \partial A$ (immediata conseguenza del punto 1)
-	\item La soluzione di \eqref{eq:pb-dirichlet-discreto} è unica
+		Se $u=M$ al centro e $u$ è la media dei punti del suo intorno discreto, anch'essi devono essere punti di massimo. Reiterando il ragionamento per ogni altro punto dell'intorno posso propagarlo fino alla frontiera.
+	\item $u$ assume massimo e minimo su $\partial A$ (immediata conseguenza del punto 1).
+	\item La soluzione di \eqref{eq:pb-dirichlet-discreto} è unica. Infatti se fossero $2$, la differenza $w=v-u$ sarebbe armonica e nulla al bordo, ma essendo il massimo e minimo assunti sul bordo, segue che $w=0$ in tutto il dominio.
 \end{enumerate}
 Posso risolvere il problema di Dirichlet discreto con metodi probabilistici, tornando alla passeggiata aleatoria. 
 
@@ -3154,36 +3301,20 @@ Facciamo vedere che è d-armonica nei punti interni ad $\displaystyle A$, cioè 
 \end{equation*}
 Da cui
 \begin{gather*}
-	M_{h} w_{\Gamma }(x) -w_{\Gamma }(x) =0\\
-	\Rightarrow \ \ \Delta ^{*}_{h} w_{\Gamma } =\frac{4}{h^{2}}( M_{h} w_{\Gamma }(x) -w_{\Gamma }(x)) =0
+	M_{h} w_{\Gamma }(x) -w_{\Gamma }(x) =0 \quad \Rightarrow \quad \Delta ^{*}_{h} w_{\Gamma } =\frac{4}{h^{2}}( M_{h} w_{\Gamma }(x) -w_{\Gamma }(x)) =0
 \end{gather*}
-in tutti i punti interni ad $\displaystyle A$! 
-
-E invece sulla $\displaystyle \partial A$? Ovviamente se 
-\begin{align*}
-	x\in \Gamma                       & \ \ \Rightarrow \ \ P(x,\Gamma) =1 \\
-	x\in \partial  A \backslash \Gamma & \ \ \Rightarrow \ \ P(x,\Gamma) =0 
-\end{align*}
-Quindi
-\begin{equation*}
-	w_{\Gamma }(x) =\begin{cases}
-	1 & x\in \Gamma \\
-	0 & x\in \partial A\backslash \Gamma 
-	\end{cases}
-\end{equation*}
-Ma allora prendendo $\displaystyle \Gamma =\partial A$, $\displaystyle w_{\partial A}(x) =P(x,\partial A)$ è soluzione del problema di Dirichlet discreto con valore 1 sul bordo ($\displaystyle g\equiv 1)$
+in tutti i punti interni ad $A$! In particolare se $\Gamma =\partial A$, $w_{\partial A}(x) =P(x,\partial A)$ è soluzione del problema di Dirichlet discreto con valore 1 sul bordo ($g\equiv 1)$
 \begin{equation*}
 	\begin{cases}
-		\Delta ^{*}_{h} w_{\Gamma }(x) =0 & x\ \text{interno ad} \ A \\
+		\Delta ^{*}_{h} w_{\partial A}(x) =0 & x\ \text{interno ad} \ A \\
 		w_{\partial A}(x) =1              & x\in \partial A          
 	\end{cases}
 \end{equation*}
-Ma anche la funzione $\displaystyle z(x) \equiv 1$ è d-armonica, con gli stessi valori al bordo e soluzione dello stesso problema di Dirichlet. Poiché per la terza proprietà, la soluzione è unica 
+Ma anche la funzione $z(x) \equiv 1$ è d-armonica, con gli stessi valori al bordo e soluzione dello stesso problema di Dirichlet. Poiché per la terza proprietà, la soluzione è unica 
 \begin{gather*}
-	w_{\partial A}(x) =z(x) \equiv 1\ \forall x\in A\\
-	\Rightarrow \ \ w_{\partial A}(x) =P(x,\partial A) =1\ \forall x\in A
+	w_{\partial A}(x) =z(x) \equiv 1\ \forall x\in A \quad \Rightarrow \quad w_{\partial A}(x) =P(x,\partial A) =1\ \forall x\in A
 \end{gather*}
-La probabilità di raggiungere la frontiera di $\displaystyle A$ partendo da un qualunque punto interno di $\displaystyle A$ è uguale a $\displaystyle 1$. Se invece prendiamo la funzione
+La probabilità di raggiungere la frontiera di $A$ partendo da un \textbf{qualunque punto interno di} $A$ è uguale a $1$. Se invece prendiamo la funzione
 \begin{equation*}
 	\Gamma \longmapsto P(x,\Gamma),\ x\ \text{fissato}
 \end{equation*}
@@ -3193,27 +3324,33 @@ con $\displaystyle P(x,\partial A) =1$, prendendo $\displaystyle \Gamma _{1},\Ga
 \end{equation*}
 è additiva e definisce dunque una misura di probabilità su $\displaystyle \partial A$, $\displaystyle \forall x\in A$ fissato. Fatti tutti questi passaggi possiamo ora costruire la soluzione $\displaystyle u$.
 \begin{theorem}
-	Il valore della soluzione $\displaystyle u$ in $\displaystyle x\in A$ è il valore atteso dei guadagni $\displaystyle g(y)$ rispetto alla distribuzione di probabilità $\displaystyle P(x,\Gamma)$ cioè
+	Il valore della soluzione $u$ di \eqref{eq:pb-dirichlet-discreto} è il valore atteso dei guadagni $g(y)$ rispetto alla distribuzione di probabilità $P(x,\Gamma)$ cioè
 	\begin{equation*}
 		u(x) =\sum _{y\in \partial A} g(y) P(x,\{y\})
 	\end{equation*}
 \end{theorem}
-\begin{dimostrazione}
-	$\displaystyle u$ è d-armonica, essendolo $\displaystyle x\longmapsto P(x,\{y\})$: ogni addendo
-	\begin{equation*}
-		g(y) P(x,\{y\}) =g(y) w_{\{y\}}(x)
-	\end{equation*}
-	è d-armonico in $\displaystyle A$. Inoltre se $\displaystyle z\in \partial A$ allora $\displaystyle u(z) =g(z)$ poiché
-	\begin{equation*}
-		u(z) =\sum _{y\in \partial A} g(y) P(z,\{y\})
-	\end{equation*}
-	ed ogni termine nella somma è uguale a $\displaystyle g(z)$ se $\displaystyle y=z$ oppure a zero se $\displaystyle y\neq z$, infatti
-	\begin{equation*}
-		\begin{cases}
-			P(z,\{y\}) =1 & z=y,\ z\in \partial A     \\
-			P(z,\{y\}) =0 & z\neq y,\ z\in \partial A 
-		\end{cases}
-	\end{equation*}
+\begin{dimostrazione} Dimostriamo in due passi.
+	\begin{itemize}
+		\item Ogni addendo
+		\begin{equation*}
+			g(y) P(x,\{y\}) =g(y) w_{\{y\}}(x)
+		\end{equation*}
+		è d-armonico in $A$, quindi anche $u$ lo è.
+
+		\item Se $x\in \partial A$, notiamo che
+		\begin{equation*}
+			\begin{cases}
+				P(x,\{y\}) =1 & x=y,     \\
+				P(x,\{y\}) =0 & x\neq y.
+			\end{cases}
+		\end{equation*}
+		Nella soluzione in esame
+		\begin{equation*}
+			u(x) =\sum _{y\in \partial A} g(y) P(x,\{y\})
+		\end{equation*}
+		per le $x$ sul bordo, ogni termine nella somma è uguale a $g(x)$ se $y=x$ oppure a zero se $\displaystyle y\neq x$ (\textit{accendi e spegni}).
+		La condizione al bordo $u(x) =g(x)$ è quindi rispettata.
+	\end{itemize}
 \end{dimostrazione}
 \section{Funzioni armoniche}
 
@@ -3235,7 +3372,8 @@ Dove la funzione Gamma di Eulero è definita come
 	\Gamma (s) =\int ^{+\infty }_{0} t^{s-1} e^{-t} dt
 \end{equation*}
 \begin{theorem}
-	Sia $\displaystyle u$ armonica in $\displaystyle \Omega \subseteq \mathbb{R}^{n}$. $\displaystyle \forall $ sfera $\displaystyle B_{R}(x) \subset \subset \Omega $ valgono le seguenti formule:\footnote{Nota che $\displaystyle w_{n} R^{n-1}$ è la misura $\displaystyle | \partial B_{R}(x)| $, mentre $\displaystyle \frac{w_{n} R^{n}}{n}$ è semplicemente la misura $\displaystyle | B_{R}(x)| $. I due coefficienti moltiplicativi nelle formule non fanno altro che riscalare rispettivamente per la misura della superficie della sfera e per la misura della sfera stessa: da questo deriva l'interpretazione di ``proprietà di media''.}
+\label{thm:armonica-allora-pdm}
+	Sia $u$ armonica ($u\in C^{2}(\Omega)$ e $\Delta u=0$) con $\Omega \subset \mathbb{R}^{n}$. Allora per ogni sfera $B_{R}(x) \subset \subset \Omega $ valgono le seguenti formule:\footnote{Nota che $w_{n} R^{n-1}$ è la misura $| \partial B_{R}(x)| $, mentre $\frac{w_{n} R^{n}}{n}$ è semplicemente la misura $| B_{R}(x)| $. I due coefficienti moltiplicativi nelle formule non fanno altro che riscalare rispettivamente per la misura della superficie della sfera e per la misura della sfera stessa: da questo deriva l'interpretazione di ``proprietà di media''.}
 	\begin{equation}
 		u(x) =\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(x)} u(\sigma) d\sigma 
 		\label{eq:lap-prop-media-i}
@@ -3248,117 +3386,184 @@ Dove la funzione Gamma di Eulero è definita come
 \begin{dimostrazione}
 	Dimostriamo prima la \eqref{eq:lap-prop-media-i}. Per $\displaystyle 0< r< R$ definiamo
 	\begin{equation*}
-		g(r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(x)} u(\sigma) d\sigma 
+	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \sigma ) d\sigma 
 	\end{equation*}
-	Voglio dimostrare che $\displaystyle g(r)$ è costante e quindi che $\displaystyle g'(r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \sigma =x+r\sigma '$, allora $\displaystyle \sigma '\in \partial B_{1}(0)$ e
+	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \mathbf{\sigma } '=\frac{\mathbf{\sigma } -\x}{r}$, ovvero $\displaystyle \mathbf{\sigma } =\x +r\mathbf{\sigma } '$, in modo dale che $\displaystyle \mathbf{\sigma } '\in \partial B_{1}(\mathbf{0})$ e
 	\begin{equation*}
-		d\sigma =r^{n-1} d\sigma '
+	d\mathbf{\sigma } =r^{n-1} d\mathbf{\sigma } '
 	\end{equation*}
+	quest'ultima considerazione si può intuire considerando la seguente figura
+	\begin{figure}[htpb]
+		\centering
+		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		%uncomment if require: \path (0,225); %set diagram left start at 0, and has height of 225
+
+		%Shape: Circle [id:dp16163150313387842] 
+		\draw   (75,152.5) .. controls (75,117.98) and (102.98,90) .. (137.5,90) .. controls (172.02,90) and (200,117.98) .. (200,152.5) .. controls (200,187.02) and (172.02,215) .. (137.5,215) .. controls (102.98,215) and (75,187.02) .. (75,152.5) -- cycle ;
+		%Curve Lines [id:da2589776684776446] 
+		\draw    (102,44) .. controls (186,32) and (252,63) .. (280,158) ;
+		%Straight Lines [id:da7532946855418718] 
+		\draw    (137.5,152.5) -- (158,43) ;
+		%Straight Lines [id:da8053969796158809] 
+		\draw    (137.5,152.5) -- (251,98) ;
+		%Straight Lines [id:da30147052897616433] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (137.5,152.5) -- (165.67,207.67) ;
+		%Straight Lines [id:da5002817700179074] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (277,147.67) -- (137.5,152.5) ;
+		%Curve Lines [id:da48420367449440693] 
+		\draw [line width=2.25]    (149.33,91) .. controls (168.33,94.33) and (181.67,104.33) .. (194.25,125.25) ;
+		%Curve Lines [id:da6329692248801806] 
+		\draw [line width=2.25]    (158,43) .. controls (190.33,45.67) and (228.33,63) .. (251,98) ;
+
+		% Text Node
+		\draw (125.33,154.73) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{0}$};
+		% Text Node
+		\draw (167.67,211.07) node [anchor=north west][inner sep=0.75pt]    {$r$};
+		% Text Node
+		\draw (201.33,152.57) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{\sigma }$};
+		% Text Node
+		\draw (279,151.07) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{\sigma } '$};
+		% Text Node
+		\draw (175.33,84.57) node [anchor=north west][inner sep=0.75pt]    {$d\mathbf{\sigma }$};
+		% Text Node
+		\draw (212,41.23) node [anchor=north west][inner sep=0.75pt]    {$d\mathbf{\sigma } '$};
+		% Text Node
+		\draw (97,68.4) node [anchor=north west][inner sep=0.75pt]    {$B_{r}(\mathbf{0})$};
+		% Text Node
+		\draw (102.33,18.4) node [anchor=north west][inner sep=0.75pt]    {$B_{1}(\x)$};
+		% Text Node
+		\draw (7.67,34.4) node [anchor=north west][inner sep=0.75pt]    {$\text{se} \ r< 1$};
+		% Text Node
+		\draw (318.67,49.23) node [anchor=north west][inner sep=0.75pt]    {$ \begin{array}{l}
+		\mathbf{\sigma } =r\mathbf{\sigma } '\\
+		d\mathbf{\sigma } =rd\mathbf{\sigma } '
+		\end{array}$};
+		\end{tikzpicture}
+	\end{figure}
+	\FloatBarrier
+
+	Il concetto si estende opportunamente a $\displaystyle n$ dimensioni: le lunghezze diventano superfici, poi volumi, ecc.
 	\begin{equation*}
-		g(r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(0)}\cancel{r^{n-1}} u(x+r\sigma ') d\sigma '=\frac{1}{w_{n}}\int _{\partial B_{1}(0)} u(x+r\sigma ') d\sigma '
+	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\mathbf{0})}\cancel{r^{n-1}} u(\x +r\mathbf{\sigma } ') d\mathbf{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} u(\x +r\mathbf{\sigma } ') d\mathbf{\sigma } '
 	\end{equation*}
-	Calcoliamo la derivata
+	La regione di integrazione ora non dipende da $\displaystyle r$. Calcoliamo la derivata:
 	\begin{equation*}
-		g'(r) =\frac{1}{w_{n}}\int _{\partial B_{1}(0)}\frac{d}{dr} u(x+r\sigma ') d\sigma '=\frac{1}{w_{n}}\int _{\partial B_{1}(0)} \nabla u(x+r\sigma ') \cdotp \sigma 'd\sigma '
+	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})}\frac{d}{dr} u(\x +r\mathbf{\sigma } ') d\mathbf{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} \nabla u(\x +r\mathbf{\sigma } ') \cdotp \mathbf{\sigma } 'd\mathbf{\sigma } '
 	\end{equation*}
-	Usando il teorema della divergenza
+	Sulla sfera $\displaystyle \partial B_{1}(\mathbf{0})$, il vettore coincide col vettore normale $\displaystyle \mathbf{\sigma } '=\mathbf{\nu }$. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
 	\begin{equation*}
-		g'(r) =\frac{r}{w_{n}}\int _{B_{1}(0)} \Delta u(x+ry) dy
+	g'( r) =\frac{r}{w_{n}}\int _{B_{1}(\mathbf{0})} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
 	\end{equation*}
-	Ma, essendo $\displaystyle u$ armonica
-	\begin{equation*}
-		g'(r) =\frac{r}{w_{n}}\int _{B_{1}(0)} \Delta u(x+ry) dy=0
-	\end{equation*}
-	Dunque $\displaystyle g$ è costante. Inoltre\footnote{La prima relazione vale per continuità di $\displaystyle u$}
+	Dunque $\displaystyle g$ è costante. Quindi per continuità di $\displaystyle u$:
 	\begin{align*}
-		g(r)\xrightarrow{r\rightarrow 0^{+}} & u(x)                                                                 \\
-		g(r)\xrightarrow{r\rightarrow R}     & \frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(x)} u(\sigma) d\sigma 
+		g( r) & \xrightarrow{r\rightarrow 0^{+}} u( x)\\
+		g( r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\mathbf{\sigma }) d\mathbf{\sigma }
 	\end{align*}
 	Eguagliando i due termini otteniamo la \eqref{eq:lap-prop-media-i}.
 	
-	Per ottenere la \eqref{eq:lap-prop-media-ii} partendo da
+	Per ottenere la \eqref{eq:lap-prop-media-ii} enunciamo ulteriori risultati separatamente per mettere in luce alcuni aspetti.
+\end{dimostrazione}
+
+\begin{definition}[PDM]
+	Più in generale si dice che una funzione $u\in C( \Omega )$ su $\Omega \subset \mathbb{R}^{n}$ soddisfa la proprietà di media superficiale se vale \eqref{eq:lap-prop-media-i} e soddisfa la proprietà di media volumentrica se vale \eqref{eq:lap-prop-media-ii}.
+\end{definition}
+\begin{theorem}
+	Se $u\in C( \Omega )$ allora le due \eqref{eq:lap-prop-media-i} e \eqref{eq:lap-prop-media-ii} sono equivalenti.
+\end{theorem}
+\begin{dimostrazione}
+	Partiamo da
 	\begin{equation*}
-		u(x) =\frac{1}{w_{n} r^{n-1}}\int _{\partial Br(x)} u(\sigma) d\sigma 
+		u(\x) =\frac{1}{w_{n} r^{n-1}}\int _{\partial Br(\x)} u(\mathbf{\sigma }) d\mathbf{\sigma }
 	\end{equation*}
-	moltiplichiamo per $\displaystyle r^{n-1}$ e integriamo tra $\displaystyle 0$ ed $\displaystyle R$:\footnote{Riordinando gli integrali con fubini sul membro di destra otteniamo una formula di ``riduzione per bucce''
-		\begin{equation*}
-			\int _{B_{R}(x)} f(y) dy=\int ^{R}_{0}\left(\int _{\partial B_{r}(x)} fd\sigma \right) dr
-		\end{equation*}
+	moltiplichiamo per $r^{n-1}$ e integriamo tra $0$ ed $R$:\footnote{Riordinando gli integrali con fubini sul membro di destra otteniamo una formula di "riduzione per bucce" 
+	\begin{equation*}
+		\int _{B_{R}( x)} f( y) dy=\int _{0}^{R}\left(\int _{\partial B_{r}( x)} fd\sigma \right) dr
+	\end{equation*}
 	}
 	\begin{align*}
-		\int ^{R}_{0} r^{n-1} u(x) & =\frac{1}{w_{n}}\int ^{R}_{0} dr\int _{\partial B_{r}(x)} u(\sigma) d\sigma \ \rightarrow \ \text{con fubini} \\
-		\frac{R^{n}}{n} u(x)       & =\frac{1}{w_{n}}\int _{B_{R}(x)} u(y) dy                                                                    
+		\int _{0}^{R} r^{n-1} u(\x) dr & =\frac{1}{w_{n}}\int _{0}^{R} dr\int _{\partial B_{r}(\x)} u(\mathbf{\sigma }) d\mathbf{\sigma } & \\
+		u(\x)\left[\frac{r^{n}}{n}\right]_{0}^{R} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) d\y & \text{(Fubini)}\\
+		u(\x)\frac{R^{n}}{n} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) d\y & 
 	\end{align*}
 	Da cui 
 	\begin{equation*}
-		u(x) =\frac{n}{w^{n} R^{n}}\int _{B_{R}(x)} u(y) dy
+		u(\x) =\frac{n}{w^{n} R^{n}}\int _{B_{R}(\x)} u(\y) d\y
 	\end{equation*}
+	Il risultato inverso si ottiene ripercorrendo i passaggi all'indietro.
 \end{dimostrazione}
+Abbiamo quindi dimostrato che sotto ipotesi più generali, ovvero $u$ solo continua, le due sono equivalenti. È chiaro che sotto ipotesi più strette, $u\in C^{2}$, devono ancora essere equivalenti, pertanto lo sono anche nel contesto del teorema \ref{thm:armonica-allora-pdm}, questo ne conclude la dimostrazione.
+
 Abbiamo dimostrato che se una funzione è armonica allora vale la proprietà di media, ma è vero anche il contrario:
 \begin{theorem}
-	Sia $\displaystyle \Omega \subseteq \mathbb{R}^{n}$ dominio e $\displaystyle u\in C(\Omega)$. Se $\displaystyle u$ ha la proprietà di media in $\displaystyle \Omega $, allora $\displaystyle u\in C^{\infty }(\Omega)$ e $\displaystyle \Delta u=0$ in $\displaystyle \Omega $.
+	Sia $\Omega \subset \mathbb{R}^{n}$ un dominio limitato. Se $u\in C(\Omega)$ e ha la proprietà di media in $\Omega $, allora $u\in C^{\infty }(\Omega)$ e $\Delta u=0$ in $\Omega $.
 \end{theorem}
+Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprietà di media.
 \begin{dimostrazione}
-	Basta dimostrare che $\displaystyle u\in C^{\infty }(B)$ e $\displaystyle \Delta u=0$ in $\displaystyle B$, dove $\displaystyle B$ è una qualunque sfera contenuta in $\displaystyle \Omega $. Sia dunque $\displaystyle B\subset \subset \Omega $ e sia $\displaystyle v$ la soluzione di 
+	Basta dimostrare che $u\in C^{\infty }(B)$ e $\Delta u=0$ in $B$, dove $B$ è una qualunque sfera contenuta in $\Omega $. Sia dunque $B\subset \subset \Omega $ e sia $v$ la soluzione di 
 	\begin{equation*}
 		\begin{cases}
 			\Delta v=0 & \text{in} \ B          \\
 			v=u        & \text{su} \ \partial B 
 		\end{cases}
 	\end{equation*}
-	$\displaystyle v\in C^{\infty }(B) \cap C(\overline{B})$ perchè soluzione del problema di Poisson\footnote{Vedi il prossimo capitolo su formula di Poisson.}. Anche $\displaystyle v$, essendo armonica in $\displaystyle B$, ha la proprietà di media in $\displaystyle B$. Definisco
+	$v\in C^{\infty }(B) \cap C(\overline{B})$ perchè soluzione del problema di Poisson\footnote{Vedi il prossimo capitolo su formula di Poisson.}. Anche $v$, essendo armonica in $B$, ha la proprietà di media in $B$. Definisco
 	\begin{equation*}
 		\ w=u-v
 	\end{equation*}
-	Anch'essa ha la proprietà della media in $\displaystyle B$, essendo la pdm additiva. Da ciò segue che $\displaystyle w$ assume massimo e minimo su $\displaystyle \partial B$, ma essendo $\displaystyle w=0$ su $\displaystyle \partial B$
+	Anch'essa ha la proprietà della media in $B$, essendo la pdm additiva. Dal teorema \ref{thm:principio-di-massimo-armoniche} segue che $w$ assume massimo e minimo su $\partial B$, ma essendo $w=0$ su $\partial B$, allora
 	\begin{equation*}
-		\Rightarrow \ w=0\ \text{in} \ \overline{B} \ \ \Rightarrow \ u=v\ \text{in} \ \overline{B}
+		w=0\ \text{in} \ \overline{B} \quad \Rightarrow \quad u=v\ \text{in} \ \overline{B}.
 	\end{equation*}
 \end{dimostrazione}
 \subsection{Principio di massimo}
 
-Come nel caso discreto il principio di massimo era implicato dalla proprietà della media, nel caso continuo le funzioni che godono della proprietà della media in $\displaystyle \Omega $ non possono assumere massimi o minimi globali in punti interni ad $\displaystyle \Omega $, a meno che non siano costanti. Inoltre se $\displaystyle \Omega $ è limitato e $\displaystyle u$ (non costante) è continua in $\displaystyle \overline{\Omega }$, segue che $\displaystyle u$ assume massimo e minimo solo su $\displaystyle \partial \Omega $. 
 \begin{theorem}
-	[Principio di massimo] Sia $\displaystyle \Omega \subseteq \mathbb{R}^{n}$ e $\displaystyle u\in C(\Omega)$. Se $\displaystyle u$ ha la proprietà della media in $\displaystyle \Omega $, e $\displaystyle u$ assume massimo o minimo in un punto di $\displaystyle \Omega $, allora $\displaystyle u$ è costante. Inoltre, se $\displaystyle \Omega $ è limitato e $\displaystyle u$ (non costante)$\displaystyle \in C(\overline{\Omega })$ allora
+\label{thm:principio-di-massimo-armoniche}
+	[Principio di massimo] Sia $\Omega \subseteq \mathbb{R}^{n}$ e $u\in C(\Omega)$. Se $u$ ha la proprietà della media in $\Omega $, e $u$ assume massimo o minimo in un punto di $\Omega $, allora $u$ è costante. Inoltre, se $\Omega $ è limitato e $u\in C(\overline{\Omega })$ (non costante) allora assume il massimo sul bordo:
 	\begin{equation*}
-		u(x) < \max_{\partial \Omega } u,\ u(x)  >\min_{\partial \Omega } u\ \ \forall x\in \Omega 
+		u(\x) < \max_{\partial \Omega } u,\ u(\x)  >\min_{\partial \Omega } u\ \ \forall \x\in \Omega 
 	\end{equation*}
 \end{theorem}
+È implicito che in un dominio illimitato, non essendoci bordo, la soluzione è per forza costante.
 \begin{dimostrazione}
-	Sia $\displaystyle p\in \Omega $ punto di minimo
+	Sia $\displaystyle \mathbf{p}\in \Omega $ punto di minimo
 	\begin{equation*}
-		m=u(p) \leqslant u(y) \ \forall y\in \Omega 
+		m=u(\mathbf{p}) \leqslant u(\y) \ \forall \y\in \Omega 
 	\end{equation*}
 	Vogliamo dimostrare che $\displaystyle u(x) =m\ \forall x\in \Omega $.
 	
-	Sia $\displaystyle q\in \Omega $ arbitrario. Poiché $\displaystyle \Omega $ è connesso, possiamo trovare una sequenza finita di sfere $\displaystyle B(x_{j}) \subset \subset \Omega,\ j=0,..,N$ tali che
+	Sia $\displaystyle \mathbf{q}\in \Omega $ arbitrario. Poiché $\displaystyle \Omega $ è connesso, possiamo trovare una sequenza finita di sfere $\displaystyle B(\x_{j}) \subset \subset \Omega,\ j=0,..,N$ tali che
 	\begin{itemize}
-		\item $\displaystyle x_{0} =p,\ x_{N} =q$
-		\item $\displaystyle x_{j} \in B(x_{j-1})$
+		\item $\displaystyle \x_{0} =\mathbf{p},\ x_{N} =\mathbf{q}$
+		\item $\displaystyle \x_{j} \in B(\x_{j-1})$
 	\end{itemize}
-	\fg[Sequenza di cerchi sovrapposti che connettono i punti $p$ e $q$]{0.25}{laplace-dim-principio-massimo}
-	Per assurdo supponiamo esista $\displaystyle z\in B(p)$ tale che $\displaystyle u(z)  >m$. Sia $\displaystyle B_{r}(z) \subset B(p)$
+	\fg[Sequenza di cerchi sovrapposti che connettono i punti $\mathbf{p}$ e $\mathbf{q}$]{0.25}{laplace-dim-principio-massimo}
+	Per assurdo supponiamo esista $\displaystyle \mathbf{z}\in B(\mathbf{p})$ tale che $\displaystyle u(\mathbf{z})  >m$. Sia $\displaystyle B_{r}(\mathbf{z}) \subset B(\mathbf{p})$
 	
 	\begin{figure}[H]
 		\centering
 		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-		%uncomment if require: \path (0,117); %set diagram left start at 0, and has height of 117
+		%uncomment if require: \path (0,152); %set diagram left start at 0, and has height of 152
 
 		%Shape: Circle [id:dp06686904773347901] 
-		\draw   (206.46,56.77) .. controls (206.46,30.94) and (227.4,10) .. (253.23,10) .. controls (279.06,10) and (300,30.94) .. (300,56.77) .. controls (300,82.6) and (279.06,103.54) .. (253.23,103.54) .. controls (227.4,103.54) and (206.46,82.6) .. (206.46,56.77) -- cycle ;
-		%Shape: Circle [id:dp1943751883500897] 
-		\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=3]  (250,58) .. controls (250,56.9) and (250.9,56) .. (252,56) .. controls (253.1,56) and (254,56.9) .. (254,58) .. controls (254,59.1) and (253.1,60) .. (252,60) .. controls (250.9,60) and (250,59.1) .. (250,58) -- cycle ;
-		%Shape: Circle [id:dp09002262431454922] 
-		\draw  [draw opacity=0][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ][line width=3]  (270,38) .. controls (270,36.9) and (270.9,36) .. (272,36) .. controls (273.1,36) and (274,36.9) .. (274,38) .. controls (274,39.1) and (273.1,40) .. (272,40) .. controls (270.9,40) and (270,39.1) .. (270,38) -- cycle ;
-		%Shape: Circle [id:dp04152500828404748] 
-		\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] (260.53,38) .. controls (260.53,31.67) and (265.67,26.53) .. (272,26.53) .. controls (278.33,26.53) and (283.47,31.67) .. (283.47,38) .. controls (283.47,44.33) and (278.33,49.47) .. (272,49.47) .. controls (265.67,49.47) and (260.53,44.33) .. (260.53,38) -- cycle ;
+		\draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.3 ][line width=1.5]  (184.83,73.39) .. controls (184.83,33.76) and (216.97,1.62) .. (256.61,1.62) .. controls (296.24,1.62) and (328.38,33.76) .. (328.38,73.39) .. controls (328.38,113.03) and (296.24,145.17) .. (256.61,145.17) .. controls (216.97,145.17) and (184.83,113.03) .. (184.83,73.39) -- cycle ;
+		%Shape: Ellipse [id:dp1943751883500897] 
+		\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=3]  (253.96,73.39) .. controls (253.96,71.94) and (255.15,70.75) .. (256.61,70.75) .. controls (258.06,70.75) and (259.25,71.94) .. (259.25,73.39) .. controls (259.25,74.85) and (258.06,76.04) .. (256.61,76.04) .. controls (255.15,76.04) and (253.96,74.85) .. (253.96,73.39) -- cycle ;
+		%Shape: Ellipse [id:dp04152500828404748] 
+		\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 135; blue, 149 }  ,fill opacity=1 ][line width=1.5]  (256.96,46.98) .. controls (256.96,32.59) and (268.63,20.92) .. (283.02,20.92) .. controls (297.41,20.92) and (309.08,32.59) .. (309.08,46.98) .. controls (309.08,61.37) and (297.41,73.04) .. (283.02,73.04) .. controls (268.63,73.04) and (256.96,61.37) .. (256.96,46.98) -- cycle ;
+		%Shape: Ellipse [id:dp09002262431454922] 
+		\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=3]  (280.38,46.98) .. controls (280.38,45.52) and (281.56,44.34) .. (283.02,44.34) .. controls (284.48,44.34) and (285.66,45.52) .. (285.66,46.98) .. controls (285.66,48.44) and (284.48,49.62) .. (283.02,49.62) .. controls (281.56,49.62) and (280.38,48.44) .. (280.38,46.98) -- cycle ;
+		%Shape: Circle [id:dp12636405764113223] 
+		\draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=1.5]  (255.52,46.98) .. controls (255.52,31.79) and (267.83,19.48) .. (283.02,19.48) .. controls (298.21,19.48) and (310.52,31.79) .. (310.52,46.98) .. controls (310.52,62.17) and (298.21,74.48) .. (283.02,74.48) .. controls (267.83,74.48) and (255.52,62.17) .. (255.52,46.98) -- cycle ;
 
 		% Text Node
-		\draw (247,63.4) node [anchor=north west][inner sep=0.75pt]    {$p$};
+		\draw (255.96,76.79) node [anchor=north west][inner sep=0.75pt]    {$p$};
 		% Text Node
-		\draw (277,43.4) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{1,0,0}{z}$};
+		\draw (285.02,50.38) node [anchor=north west][inner sep=0.75pt]    {$z$};
 
 
 		\end{tikzpicture}
@@ -3367,20 +3572,19 @@ Come nel caso discreto il principio di massimo era implicato dalla proprietà de
 	
 	Dalla proprietà della media so che 
 	\begin{equation*}
-		m=u(p) =\frac{1}{| B(p)| }\int _{B(p)} u(y) dy
+	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u( y) dy=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}( z)} u( y) dy} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u( y) dy}\right]
 	\end{equation*}
+	Sul primo integrale $\displaystyle u( y) \geqslant m$.
+
+	Sul secondo integrale posso sfruttare ancora la proprietà della media:
 	\begin{equation*}
-		m=\frac{1}{| B(p)| }\bigg\{\int _{B(p) \backslash B_{r}(z)}\underbrace{u(y)}_{\geqslant m} dy+\int _{B_{r}(z)} u(y) dy\bigg\}
-	\end{equation*}
-	Sul secondo termine posso sfruttare ancora la proprietà della media
-	\begin{equation*}
-		\int _{B_{r}(z)} u(y) dy=u(z)| B_{r(z)}|  >m| B_{r}(z)| 
+		\int _{B_{r}(\mathbf{z})} u(y) dy=u(\mathbf{z})| B_{r(\mathbf{z})}|  >m| B_{r}(\mathbf{z})| 
 	\end{equation*}
 	Ma allora ottengo una contraddizione
 	\begin{equation*}
-		m >\frac{1}{| B(p)| }\{m| B(p) \backslash B_{r}(z)| +m| B_{r}(z)| \} =m
+		m >\frac{1}{| B(\mathbf{p})| }\{m| B(\mathbf{p}) \backslash B_{r}(\mathbf{z})| +m| B_{r}(\mathbf{z})| \} =m
 	\end{equation*}
-	Deduco che $\displaystyle u=m$ in tutto $\displaystyle B(p)$ e quindi anche in $\displaystyle x_{1}$ (poiché $\displaystyle x_{j} \in B(x_{j-1})$) allora posso ripetere il ragionamento che ho fatto trovando $\displaystyle u=m$ in $\displaystyle B(x_{1})$ ed iterando fino all'ultima sfera trovo $\displaystyle u(q) =m$.
+	Deduco che $\displaystyle u=m$ in tutto $\displaystyle B(\mathbf{p})$ e quindi anche in $\displaystyle x_{1}$ (poiché $\displaystyle x_{j} \in B(x_{j-1})$) allora posso ripetere il ragionamento che ho fatto trovando $\displaystyle u=m$ in $\displaystyle B(x_{1})$ ed iterando fino all'ultima sfera trovo $\displaystyle u(q) =m$.
 \end{dimostrazione}
 \subsection{Conseguenze del principio di massimo}
 
@@ -3396,7 +3600,7 @@ Dal principio di massimo segue come corollario:
 	ha al massimo una soluzione $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega})$. Inoltre, siano $\displaystyle g_{1},g_{2} \in C( \partial \Omega)$, e $\displaystyle u_{1},u_{2}$ le corrispondenti soluzioni. Allora
 	\begin{enumerate}
 		\item \textbf{Confronto: }se $\displaystyle g_{1} \geqslant g_{2}$ su $\displaystyle \partial \Omega \ \Rightarrow \ u_{1} \geqslant u_{2}$ su $\displaystyle \Omega $
-		\item \textbf{Stabilità }(in norma $\displaystyle L^{\infty }(\Omega)) :$ 
+		\item \textbf{Stabilità }(in norma $\displaystyle L^{\infty }(\Omega)$): 
 		      \begin{equation}
 		      	| u_{1}(x) -u_{2}(x)| \leqslant \max_{\partial \Omega }| g_{1} -g_{2}| \ \forall x\in \overline{\Omega }
 		      	\label{eq:lap-stabilita}
@@ -3866,22 +4070,22 @@ Questo potenziale è detto \textbf{potenziale Newtoniano} di $\displaystyle f$. 
 		u(x) =\underbrace{-\int _{\Omega } \Phi (x-y) \Delta u(y) dy}_{ \begin{array}{l}
 			\text{potenziale Newtoniano di}\\
 			f=\Delta u
-			\end{array}} +\underbrace{\int _{\partial \Omega } \Phi (x-y) \partial _{\nu } u(\sigma) d\sigma }_{ \begin{array}{l}
+			\end{array}} +\underbrace{\int _{\partial \Omega } \Phi (x-y) \partial _{\bm{\nu}} u(\sigma) d\sigma }_{ \begin{array}{l}
 			\text{potenziale di strato semplice}\\
-			\text{con densità} \ \partial _{\nu } u
-			\end{array}}\underbrace{-\int _{\partial \Omega } \partial _{\nu } \Phi (x-\sigma) u(\sigma) d\sigma }_{ \begin{array}{l}
+			\text{con densità} \ \partial _{\bm{\nu}} u
+			\end{array}}\underbrace{-\int _{\partial \Omega } \partial _{\bm{\nu}} \Phi (x-\sigma) u(\sigma) d\sigma }_{ \begin{array}{l}
 			\text{potenziale di doppio strato}\\
 			\text{con momento} \ \mu 
 			\end{array}}
 	\end{equation*}
 \end{theorem}
-In pratica, ogni funzione regolare $\displaystyle u$ può essere scritta come somma di un potenziale di volume (Newtoniano) con densità $\displaystyle -\Delta u$, di un potenziale di strato semplice causato da una densità di cariche $\displaystyle \partial _{\nu } u$ sulla $\displaystyle \partial \Omega $ e da un potenziale di doppio strato generato da dei dipoli elettrici con momento $\displaystyle \mu $.
+In pratica, ogni funzione regolare $\displaystyle u$ può essere scritta come somma di un potenziale di volume (Newtoniano) con densità $\displaystyle -\Delta u$, di un potenziale di strato semplice causato da una densità di cariche $\displaystyle \partial _{\bm{\nu}} u$ sulla $\displaystyle \partial \Omega $ e da un potenziale di doppio strato generato da dei dipoli elettrici con momento $\displaystyle \mu $.
 
 Vediamo la dimostrazione del teorema.
 \begin{dimostrazione}
 	Ricordiamo innanzitutto l'identità di Green con $\displaystyle u,v\in C^{2}(\overline{\Omega })$
 	\begin{equation*}
-		\int _{\Omega }( v\Delta u-u\Delta v) dx=\int _{\partial \Omega }( v\partial _{\nu } u-u\partial _{\nu } v) d\sigma 
+		\int _{\Omega }( v\Delta u-u\Delta v) dx=\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\sigma 
 	\end{equation*}
 	Applichiamo l'identità di Green utilizzando come funzione $\displaystyle u$ la stessa dell'enunciato del teorema. Per la funzione $\displaystyle v$ dobbiamo trovare un'alternativa, infatti, con $\displaystyle x$ fissato
 	\begin{equation*}
@@ -3932,7 +4136,7 @@ Vediamo la dimostrazione del teorema.
 	
 	Usando l'identità di Green con questa scelta di $\displaystyle u$ e $\displaystyle v$ ottengo
 	\begin{equation*}
-		\frac{1}{4\pi }\int _{\Omega _{\varepsilon }}\frac{1}{| x-y| } \Delta u(y) dy=\frac{1}{4\pi }\int _{\partial \Omega _{\varepsilon }}\frac{1}{| x-\sigma | } \partial _{\nu } u(\sigma) d\sigma -\frac{1}{4\pi }\int _{\partial \Omega _{\varepsilon }} u(\sigma) \partial _{\nu }\frac{1}{| x-\sigma | } d\sigma 
+		\frac{1}{4\pi }\int _{\Omega _{\varepsilon }}\frac{1}{| x-y| } \Delta u(y) dy=\frac{1}{4\pi }\int _{\partial \Omega _{\varepsilon }}\frac{1}{| x-\sigma | } \partial _{\bm{\nu}} u(\sigma) d\sigma -\frac{1}{4\pi }\int _{\partial \Omega _{\varepsilon }} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma 
 	\end{equation*}
 	Inoltre
 	\begin{equation*}
@@ -3964,37 +4168,37 @@ Vediamo la dimostrazione del teorema.
 		\item \textbf{Termine 2}
 		      
 		      \begin{equation*}
-		      	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma =\int _{\partial \Omega }\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma +\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma 
+		      	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma =\int _{\partial \Omega }\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma +\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma 
 		      \end{equation*}
 		      
 		      Ricordando che 
 		      
 		      \begin{equation*}
-		      	| \partial _{\nu } u(\sigma)| =| \nabla u(\sigma) \cdotp \nu | \leqslant \max| \nabla u| 
+		      	| \partial _{\bm{\nu}} u(\sigma)| =| \nabla u(\sigma) \cdotp \nu | \leqslant \max| \nabla u| 
 		      \end{equation*}
 		      
 		      Maggioriamo
 		      
 		      \begin{equation*}
-		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\nu } u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} = 4\pi \max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
+		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} = 4\pi \max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
 		      \end{equation*}
 		      
 		      Il secondo termine tende a
 		      
 		      \begin{equation*}
-		      	\int _{\partial \Omega }\frac{1}{| x-\sigma | } \partial _{\nu } u(\sigma) d\sigma 
+		      	\int _{\partial \Omega }\frac{1}{| x-\sigma | } \partial _{\bm{\nu}} u(\sigma) d\sigma 
 		      \end{equation*}
 		\item \textbf{Termine 3}\begin{equation*}
-		      \int _{\partial \Omega _{\varepsilon }} u(\sigma) \partial _{\nu }\frac{1}{| x-\sigma | } d\sigma =\int _{\partial \Omega } u(\sigma) \partial _{\nu }\frac{1}{| x-\sigma | } d\sigma +\int _{\partial B_{\varepsilon }(x)} u(\sigma) \partial _{\nu }\frac{1}{| x-\sigma | } d\sigma 
+		      \int _{\partial \Omega _{\varepsilon }} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma =\int _{\partial \Omega } u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma +\int _{\partial B_{\varepsilon }(x)} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma 
 		\end{equation*}
 		
 		Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(x)$\begin{gather*}
 		\nabla _{y}\frac{1}{| x-y| } =-\frac{1}{| x-y| ^{2}}(-(x-y)) =\frac{x-y}{| x-y| ^{3}}\\
-		\Rightarrow \ \ \partial _{\nu }\frac{1}{| x-\sigma | } =\frac{x-\sigma }{\varepsilon ^{3}}\frac{x-\sigma }{\varepsilon } =\frac{1}{\varepsilon ^{2}}
+		\Rightarrow \ \ \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } =\frac{x-\sigma }{\varepsilon ^{3}}\frac{x-\sigma }{\varepsilon } =\frac{1}{\varepsilon ^{2}}
 		\end{gather*}
 		
 		Da cui\begin{equation*}
-		\int _{\partial B_{\varepsilon }(x)} u(\sigma) \partial _{\nu }\frac{1}{| x-\sigma | } d\sigma =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(x)} u(\sigma) d\sigma \xrightarrow{\varepsilon \rightarrow 0} 4\pi u(x)
+		\int _{\partial B_{\varepsilon }(x)} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(x)} u(\sigma) d\sigma \xrightarrow{\varepsilon \rightarrow 0} 4\pi u(x)
 		\end{equation*}
 	\end{itemize}
 \end{dimostrazione}
@@ -4004,7 +4208,7 @@ Vediamo la dimostrazione del teorema.
 
 Richiamiamo la formula della lezione scorsa
 \begin{equation}
-	u( x) =-\int _{\Omega } \Phi ( x-y) \Delta u( y) \ dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\nu } u( \sigma ) \ d\sigma -\int _{\partial \Omega } \partial _{\nu } \Phi ( x-\sigma ) u( \sigma ) \ d\sigma 
+	u( x) =-\int _{\Omega } \Phi ( x-y) \Delta u( y) \ dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u( \sigma ) \ d\sigma -\int _{\partial \Omega } \partial _{\bm{\nu}} \Phi ( x-\sigma ) u( \sigma ) \ d\sigma 
 	\label{eq:richiamo-formula-green}
 \end{equation}
 che ci proponiamo di usare per ottenere una formula di rappresentazione \textbf{in funzione dei dati} del seguente problema di Dirichlet
@@ -4015,7 +4219,7 @@ che ci proponiamo di usare per ottenere una formula di rappresentazione \textbf{
 	\end{cases}
 	\label{eq:sol-green-pb-dirichlet}
 \end{equation}
-Non so nulla del termine $\partial _{\nu } u( \sigma )$, l'idea è di andare a cercare una funzione $g=g( x,y)$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli
+Non so nulla del termine $\partial _{\bm{\nu}} u( \sigma )$, l'idea è di andare a cercare una funzione $g=g( x,y)$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli
 \begin{equation}
 	\begin{cases}
 		-\Delta _{y} g=0,                & \text{in} \ \Omega          \\
@@ -4041,21 +4245,21 @@ Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \end{equation}
 da cui
 \begin{align*}
-	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nu } u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nu } v\right) \\
-	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\int _{\partial \Omega }( v\partial _{\nu } u-u\partial _{\nu } v) d\sigma                                                                                                                                 
+	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\bm{\nu}} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\bm{\nu}} v\right) \\
+	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\sigma                                                                                                                                 
 \end{align*}
 sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordando che $\Delta v=\Delta _{y} g=0$
 \begin{align*}
-	-\int _{\Omega } g( x,y) f( y) dy & =\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\nu } u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\nu } g( x,\sigma ) \ d\sigma                                  \\
-	0                                 & =\int _{\Omega } g( x,y) f( y) dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\nu } u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\nu } g( x,\sigma ) \ d\sigma 
+	-\int _{\Omega } g( x,y) f( y) dy & =\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} g( x,\sigma ) \ d\sigma                                  \\
+	0                                 & =\int _{\Omega } g( x,y) f( y) dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} g( x,\sigma ) \ d\sigma 
 \end{align*}
 facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa
 \begin{equation*}
-	u( x) =\int _{\Omega }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} f( y) dy+0-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\nu }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} d\sigma 
+	u( x) =\int _{\Omega }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} f( y) dy+0-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}}\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} d\sigma 
 \end{equation*}
 cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote{Si noti che anche se $G$ è nulla sul bordo, non è detto che la sua derivata normale sia nulla, è facile rendersene conto pensando al caso unidimensionale.}
 \begin{equation*}
-	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\nu } G( x,y) \ d\sigma }
+	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} G( x,y) \ d\sigma }
 \end{equation*}
 questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
@@ -8711,7 +8915,7 @@ Quest'integrale presenta due problemi
 
 Ora $\displaystyle \frac{1}{| \x| }$ è $\displaystyle C^{\infty }$ nel dominio di integrazione e posso applicare la formula di integrazione per parti che ricordiamo qua sotto
 \begin{equation*}
-	\int _{\Omega } u\Delta v=\int _{\partial \Omega } u\partial _{\nu } v-\int _{\Omega } \nabla u\cdotp \nabla v=\int _{\partial \Omega } u\partial _{\bm{\nu }} v-\int _{\partial \Omega } v\partial _{\bm{\nu }} u+\int _{\Omega } v\Delta u
+	\int _{\Omega } u\Delta v=\int _{\partial \Omega } u\partial _{\bm{\nu}} v-\int _{\Omega } \nabla u\cdotp \nabla v=\int _{\partial \Omega } u\partial _{\bm{\nu }} v-\int _{\partial \Omega } v\partial _{\bm{\nu }} u+\int _{\Omega } v\Delta u
 \end{equation*}
 con 
 \begin{equation*}
@@ -8738,7 +8942,7 @@ Di questi termini
 	      \int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu }} \varphi (\x) d\sigma =-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } d\sigma 
 	\end{equation*}
 	\item $\displaystyle \partial _{\bm{\nu }}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \bm{\nu }$, con $\displaystyle \bm{\nu }$ identica a prima\begin{equation*}
-	      -\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\nu }\left(\frac{1}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{| \x| ^{2}}{| \x| ^{4}} d\sigma 
+	      -\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{| \x| ^{2}}{| \x| ^{4}} d\sigma 
 	\end{equation*}
 \end{itemize}
 
@@ -9028,8 +9232,8 @@ Definiamo il secondo spazio di Sobolev: un sottospazio di funzioni \textit{nulle
 \begin{definition}
 	La chiusura di $\mathcal{D}( \Omega )$ rispetto alla norma $H^{1}$ prende il nome di spazio $H^{1}_{0}$:
 	\begin{equation*}
-		H^{1}_{0}( \Omega )  =\overline{\mathcal{D}( \Omega )}^{\Vert \cdotp \Vert _{H^{1}( \Omega )}}                                                                                                                                                                                                                             
-		                     =\bigg\{u\in H^{1}( \Omega ) :\exists ( \varphi _{k})_{k} \subset \mathcal{D}( \Omega ) \ \text{t.c.} \ \underbrace{\varphi _{k}\rightarrow u\ \text{in} \ L^{2} ,\ \nabla \varphi _{k}\rightarrow \nabla u\ \text{in} \ L^{2}}_{\text{cioè} \ \varphi _{k}\rightarrow u\ \text{in} \ H^{1}}\bigg\} 
+		H^{1}_{0}( \Omega ) =\overline{\mathcal{D}( \Omega )}^{\Vert \cdotp \Vert _{H^{1}( \Omega )}}                                                                                                                                                                                                                             
+		                    =\bigg\{u\in H^{1}( \Omega ) :\exists ( \varphi _{k})_{k} \subset \mathcal{D}( \Omega ) \ \text{t.c.} \ \underbrace{\varphi _{k}\rightarrow u\ \text{in} \ L^{2} ,\ \nabla \varphi _{k}\rightarrow \nabla u\ \text{in} \ L^{2}}_{\text{cioè} \ \varphi _{k}\rightarrow u\ \text{in} \ H^{1}}\bigg\} 
 	\end{equation*}
 \end{definition}
 Commento per capire questo oggetto
@@ -9293,7 +9497,7 @@ Come si costruisce la \textbf{formulazione variazionale}?
 	      	\end{equation*}
 	      	Posso integrare per parti
 	      	\begin{equation*}
-	      		\cancel{\int _{\partial \Omega } \partial _{\nu } u\varphi d\sigma } -\int _{\Omega } \Delta u\varphi =\int _{\Omega } f\varphi \ \ \Rightarrow \ \ \int _{\Omega }( -\Delta u-f) \varphi =0,\ \ \forall \varphi 
+	      		\cancel{\int _{\partial \Omega } \partial _{\bm{\nu}} u\varphi d\sigma } -\int _{\Omega } \Delta u\varphi =\int _{\Omega } f\varphi \ \ \Rightarrow \ \ \int _{\Omega }( -\Delta u-f) \varphi =0,\ \ \forall \varphi 
 	      	\end{equation*}
 	      	Ho una proprietà vera per tutte le funzioni test, che sono dense in $\displaystyle L^{2}( \Omega )$, posso \textit{portare} questa proprietà in $\displaystyle L^{2}$:
 	      	\begin{equation*}
@@ -9422,11 +9626,11 @@ per tentare di dare una formulazione debole devo prendere
 	u\in H^{1}( a,b)\\
 	v\in H^{1}( a,b)
 \end{gather*}
-allora $\displaystyle v( a)$, $\displaystyle v( b)$ hanno senso (essendo $\displaystyle v$ continua fino al bordo). Le derivate di $\displaystyle u,v$ sono funzioni di $\displaystyle L^{2}$ quindi il problema sta nei termini $\displaystyle u'( a)$, $\displaystyle u'( b)$ che non hanno senso. Posso risolvere utilizzando le condizioni al bordo:
+allora $v(a)$, $v(b)$ hanno senso (essendo $v$ continua fino al bordo). Le derivate di $u,v$ sono funzioni di $L^{2}$ quindi il problema sta nei termini $u'(a)$, $u'(b)$ che non hanno senso. Posso risolvere utilizzando le condizioni al bordo:
 \begin{equation*}
 	-\underbrace{( u_{1} -\alpha u( b))}_{u'( b)} v( b) +\underbrace{( \alpha u( a) -u_{0})}_{u'( a)} v( a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
 \end{equation*}
-ora possiamo distinguere cose che sono bilineari e cose che sono semplicemente lineari. Ciò che contiene $\displaystyle u$ va a sinistra, ciò che è senza $\displaystyle u$ va a destra:
+ora possiamo distinguere cose che sono bilineari e cose che sono semplicemente lineari. Ciò che contiene $u$ va a sinistra, ciò che è senza $u$ va a destra:
 \begin{equation*}
 	\underbrace{\alpha u( b) v( b) +\alpha u( a) v( a) +\int _{a}^{b}[ u'v'+\mu uv]}_{a( u,v)} =\underbrace{u_{1} v( b) +u_{0} v( a) +\int _{a}^{b} fv}_{Fv} .
 \end{equation*}
