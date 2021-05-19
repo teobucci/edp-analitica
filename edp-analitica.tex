@@ -10,8 +10,8 @@
 	}
 
 \usepackage{bm} % per avere le lettere greche in bold con \bm{\sigma}
-\newcommand{\x}{\x}
-\newcommand{\y}{\y}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
 \newcommand{\zer}{\mathbf{0}}
 
 \newcounter{conteggioS}
@@ -1694,13 +1694,13 @@ u(\x,0) =g(\x) \ \ \x \in \overline{\Omega }
 \item \textit{condizioni sul bordo} $\partial \Omega $
 \begin{itemize}
 \item \textbf{Dirichlet}, si assegna la temperatura\begin{equation*}
-u(\mathbf{\sigma },t) =h(\mathbf{\sigma },t) \ \ \ \ \mathbf{\sigma } \in \partial \Omega,t\in ( 0,T]
+u(\bm{\sigma },t) =h(\bm{\sigma },t) \ \ \ \ \bm{\sigma } \in \partial \Omega,t\in ( 0,T]
 \end{equation*}
 \item \textbf{Neumann}, si assegna il flusso attraverso $\partial \Omega $. Indichiamo con $\bm{\nu}$ il versore normale al bordo in funzione del punto. Ricordiamo che $\partial _{\bm{\nu}} u=\nabla u\cdotp \bm{\nu}$. Si assegna\begin{equation}
-\partial _{\bm{\nu}}u(\mathbf{\sigma },t) =h(\mathbf{\sigma },t) \ \ \ \ \mathbf{\sigma } \in \partial \Omega,t\in ( 0,T]
+\partial _{\bm{\nu}}u(\bm{\sigma },t) =h(\bm{\sigma },t) \ \ \ \ \bm{\sigma } \in \partial \Omega,t\in ( 0,T]
 \end{equation}
 \item \textbf{Robin}, si assegna $(\alpha  >0)$\begin{equation*}
-\partial _{\bm{\nu}} u(\mathbf{\sigma },t) +\alpha u(\mathbf{\sigma },t) =\beta \ \ \ \ \mathbf{\sigma } \in \partial \Omega,t\in ( 0,T]
+\partial _{\bm{\nu}} u(\bm{\sigma },t) +\alpha u(\bm{\sigma },t) =\beta \ \ \ \ \bm{\sigma } \in \partial \Omega,t\in ( 0,T]
 \end{equation*}
 \end{itemize}
 \end{itemize}
@@ -2386,7 +2386,7 @@ dunque
 p(x,t) & =p_{k} =\frac{\text{\#cammini con} \ k\ \text{passi a destra}}{\text{\#cammini con} \ N\ \text{passi}}\\
  & =\frac{\binom{N}{k}}{2^{N}} =\binom{N}{k}\left(\frac{1}{2}\right)^{k}\left( 1-\frac{1}{2}\right)^{N-k}
 \end{align*}
-$\displaystyle k$ ha legge binomiale di parametri $\displaystyle Bi\left( N,\frac{1}{2}\right)$. % TODO arrivato qui
+$\displaystyle k$ ha legge binomiale di parametri $\displaystyle Bi\left( N,\frac{1}{2}\right)$.
 \begin{itemize}
 \item valore atteso di $\displaystyle k$\begin{equation*}
 \mathbb{E}[k]=\langle k\rangle =Np=\frac{N}{2}
@@ -3373,27 +3373,27 @@ Dove la funzione Gamma di Eulero è definita come
 \end{equation*}
 \begin{theorem}
 \label{thm:armonica-allora-pdm}
-	Sia $u$ armonica ($u\in C^{2}(\Omega)$ e $\Delta u=0$) con $\Omega \subset \mathbb{R}^{n}$. Allora per ogni sfera $B_{R}(x) \subset \subset \Omega $ valgono le seguenti formule:\footnote{Nota che $w_{n} R^{n-1}$ è la misura $| \partial B_{R}(x)| $, mentre $\frac{w_{n} R^{n}}{n}$ è semplicemente la misura $| B_{R}(x)| $. I due coefficienti moltiplicativi nelle formule non fanno altro che riscalare rispettivamente per la misura della superficie della sfera e per la misura della sfera stessa: da questo deriva l'interpretazione di ``proprietà di media''.}
+	Sia $u$ armonica ($u\in C^{2}(\Omega)$ e $\Delta u=0$) con $\Omega \subset \mathbb{R}^{n}$. Allora per ogni sfera $B_{R}(\x) \subset \subset \Omega $ valgono le seguenti formule:\footnote{Nota che $w_{n} R^{n-1}$ è la misura $| \partial B_{R}(\x)| $, mentre $\frac{w_{n} R^{n}}{n}$ è semplicemente la misura $| B_{R}(\x)| $. I due coefficienti moltiplicativi nelle formule non fanno altro che riscalare rispettivamente per la misura della superficie della sfera e per la misura della sfera stessa: da questo deriva l'interpretazione di ``proprietà di media''.}
 	\begin{equation}
-		u(x) =\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(x)} u(\sigma) d\sigma 
+		u(\x) =\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\bm{\sigma}) d\bm{\sigma} 
 		\label{eq:lap-prop-media-i}
 	\end{equation}
 	\begin{equation}
-		u(x) =\frac{n}{w_{n} R^{n}}\int _{B_{R}(x)} u(y) dy
+		u(\x) =\frac{n}{w_{n} R^{n}}\int _{B_{R}(\x)} u(\y) d\y
 		\label{eq:lap-prop-media-ii}
 	\end{equation}
 \end{theorem}
 \begin{dimostrazione}
 	Dimostriamo prima la \eqref{eq:lap-prop-media-i}. Per $\displaystyle 0< r< R$ definiamo
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \sigma ) d\sigma 
+	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \bm{\sigma} ) d\bm{\sigma} 
 	\end{equation*}
-	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \mathbf{\sigma } '=\frac{\mathbf{\sigma } -\x}{r}$, ovvero $\displaystyle \mathbf{\sigma } =\x +r\mathbf{\sigma } '$, in modo dale che $\displaystyle \mathbf{\sigma } '\in \partial B_{1}(\mathbf{0})$ e
+	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \bm{\sigma } '=\frac{\bm{\sigma } -\x}{r}$, ovvero $\displaystyle \bm{\sigma } =\x +r\bm{\sigma } '$, in modo dale che $\displaystyle \bm{\sigma } '\in \partial B_{1}(\mathbf{0})$ e
 	\begin{equation*}
-	d\mathbf{\sigma } =r^{n-1} d\mathbf{\sigma } '
+	d\bm{\sigma } =r^{n-1} d\bm{\sigma } '
 	\end{equation*}
 	quest'ultima considerazione si può intuire considerando la seguente figura
-	\begin{figure}[htpb]
+	\begin{figure}[H]
 		\centering
 		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
@@ -3422,13 +3422,13 @@ Dove la funzione Gamma di Eulero è definita come
 		% Text Node
 		\draw (167.67,211.07) node [anchor=north west][inner sep=0.75pt]    {$r$};
 		% Text Node
-		\draw (201.33,152.57) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{\sigma }$};
+		\draw (201.33,152.57) node [anchor=north west][inner sep=0.75pt]    {$\bm{\sigma }$};
 		% Text Node
-		\draw (279,151.07) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{\sigma } '$};
+		\draw (279,151.07) node [anchor=north west][inner sep=0.75pt]    {$\bm{\sigma } '$};
 		% Text Node
-		\draw (175.33,84.57) node [anchor=north west][inner sep=0.75pt]    {$d\mathbf{\sigma }$};
+		\draw (175.33,84.57) node [anchor=north west][inner sep=0.75pt]    {$d\bm{\sigma }$};
 		% Text Node
-		\draw (212,41.23) node [anchor=north west][inner sep=0.75pt]    {$d\mathbf{\sigma } '$};
+		\draw (212,41.23) node [anchor=north west][inner sep=0.75pt]    {$d\bm{\sigma } '$};
 		% Text Node
 		\draw (97,68.4) node [anchor=north west][inner sep=0.75pt]    {$B_{r}(\mathbf{0})$};
 		% Text Node
@@ -3437,8 +3437,8 @@ Dove la funzione Gamma di Eulero è definita come
 		\draw (7.67,34.4) node [anchor=north west][inner sep=0.75pt]    {$\text{se} \ r< 1$};
 		% Text Node
 		\draw (318.67,49.23) node [anchor=north west][inner sep=0.75pt]    {$ \begin{array}{l}
-		\mathbf{\sigma } =r\mathbf{\sigma } '\\
-		d\mathbf{\sigma } =rd\mathbf{\sigma } '
+		\bm{\sigma } =r\bm{\sigma } '\\
+		d\bm{\sigma } =rd\bm{\sigma } '
 		\end{array}$};
 		\end{tikzpicture}
 	\end{figure}
@@ -3446,20 +3446,20 @@ Dove la funzione Gamma di Eulero è definita come
 
 	Il concetto si estende opportunamente a $\displaystyle n$ dimensioni: le lunghezze diventano superfici, poi volumi, ecc.
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\mathbf{0})}\cancel{r^{n-1}} u(\x +r\mathbf{\sigma } ') d\mathbf{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} u(\x +r\mathbf{\sigma } ') d\mathbf{\sigma } '
+	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\mathbf{0})}\cancel{r^{n-1}} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} u(\x +r\bm{\sigma } ') d\bm{\sigma } '
 	\end{equation*}
 	La regione di integrazione ora non dipende da $\displaystyle r$. Calcoliamo la derivata:
 	\begin{equation*}
-	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})}\frac{d}{dr} u(\x +r\mathbf{\sigma } ') d\mathbf{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} \nabla u(\x +r\mathbf{\sigma } ') \cdotp \mathbf{\sigma } 'd\mathbf{\sigma } '
+	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})}\frac{d}{dr} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} \nabla u(\x +r\bm{\sigma } ') \cdotp \bm{\sigma } 'd\bm{\sigma } '
 	\end{equation*}
-	Sulla sfera $\displaystyle \partial B_{1}(\mathbf{0})$, il vettore coincide col vettore normale $\displaystyle \mathbf{\sigma } '=\mathbf{\nu }$. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
+	Sulla sfera $\displaystyle \partial B_{1}(\mathbf{0})$, il vettore coincide col vettore normale $\displaystyle \bm{\sigma } '=\mathbf{\nu }$. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
 	\begin{equation*}
 	g'( r) =\frac{r}{w_{n}}\int _{B_{1}(\mathbf{0})} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
 	\end{equation*}
 	Dunque $\displaystyle g$ è costante. Quindi per continuità di $\displaystyle u$:
 	\begin{align*}
-		g( r) & \xrightarrow{r\rightarrow 0^{+}} u( x)\\
-		g( r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\mathbf{\sigma }) d\mathbf{\sigma }
+		g( r) & \xrightarrow{r\rightarrow 0^{+}} u(\x)\\
+		g( r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\bm{\sigma }) d\bm{\sigma }
 	\end{align*}
 	Eguagliando i due termini otteniamo la \eqref{eq:lap-prop-media-i}.
 	
@@ -3467,7 +3467,7 @@ Dove la funzione Gamma di Eulero è definita come
 \end{dimostrazione}
 
 \begin{definition}[PDM]
-	Più in generale si dice che una funzione $u\in C( \Omega )$ su $\Omega \subset \mathbb{R}^{n}$ soddisfa la proprietà di media superficiale se vale \eqref{eq:lap-prop-media-i} e soddisfa la proprietà di media volumentrica se vale \eqref{eq:lap-prop-media-ii}.
+	Più in generale si dice che una funzione $u\in C( \Omega )$ in $\Omega \subset \mathbb{R}^{n}$ soddisfa la proprietà di media superficiale se vale \eqref{eq:lap-prop-media-i} e soddisfa la proprietà di media volumentrica se vale \eqref{eq:lap-prop-media-ii}.
 \end{definition}
 \begin{theorem}
 	Se $u\in C( \Omega )$ allora le due \eqref{eq:lap-prop-media-i} e \eqref{eq:lap-prop-media-ii} sono equivalenti.
@@ -3475,7 +3475,7 @@ Dove la funzione Gamma di Eulero è definita come
 \begin{dimostrazione}
 	Partiamo da
 	\begin{equation*}
-		u(\x) =\frac{1}{w_{n} r^{n-1}}\int _{\partial Br(\x)} u(\mathbf{\sigma }) d\mathbf{\sigma }
+		u(\x) =\frac{1}{w_{n} r^{n-1}}\int _{\partial Br(\x)} u(\bm{\sigma }) d\bm{\sigma }
 	\end{equation*}
 	moltiplichiamo per $r^{n-1}$ e integriamo tra $0$ ed $R$:\footnote{Riordinando gli integrali con fubini sul membro di destra otteniamo una formula di "riduzione per bucce" 
 	\begin{equation*}
@@ -3483,7 +3483,7 @@ Dove la funzione Gamma di Eulero è definita come
 	\end{equation*}
 	}
 	\begin{align*}
-		\int _{0}^{R} r^{n-1} u(\x) dr & =\frac{1}{w_{n}}\int _{0}^{R} dr\int _{\partial B_{r}(\x)} u(\mathbf{\sigma }) d\mathbf{\sigma } & \\
+		\int _{0}^{R} r^{n-1} u(\x) dr & =\frac{1}{w_{n}}\int _{0}^{R} dr\int _{\partial B_{r}(\x)} u(\bm{\sigma }) d\bm{\sigma } & \\
 		u(\x)\left[\frac{r^{n}}{n}\right]_{0}^{R} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) d\y & \text{(Fubini)}\\
 		u(\x)\frac{R^{n}}{n} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) d\y & 
 	\end{align*}
@@ -3519,28 +3519,28 @@ Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprie
 \end{dimostrazione}
 \subsection{Principio di massimo}
 
-\begin{theorem}
-\label{thm:principio-di-massimo-armoniche}
-	[Principio di massimo] Sia $\Omega \subseteq \mathbb{R}^{n}$ e $u\in C(\Omega)$. Se $u$ ha la proprietà della media in $\Omega $, e $u$ assume massimo o minimo in un punto di $\Omega $, allora $u$ è costante. Inoltre, se $\Omega $ è limitato e $u\in C(\overline{\Omega })$ (non costante) allora assume il massimo sul bordo:
+\begin{theorem}[Principio di massimo]
+	\label{thm:principio-di-massimo-armoniche}
+	Sia $\Omega \subseteq \mathbb{R}^{n}$ e $u\in C(\Omega)$. Se $u$ ha la proprietà della media in $\Omega $, e $u$ assume massimo o minimo in un punto di $\Omega $, allora $u$ è costante. Inoltre, se $\Omega $ è limitato e $u\in C(\overline{\Omega })$ (non costante) allora assume il massimo sul bordo:
 	\begin{equation*}
 		u(\x) < \max_{\partial \Omega } u,\ u(\x)  >\min_{\partial \Omega } u\ \ \forall \x\in \Omega 
 	\end{equation*}
 \end{theorem}
 È implicito che in un dominio illimitato, non essendoci bordo, la soluzione è per forza costante.
 \begin{dimostrazione}
-	Sia $\displaystyle \mathbf{p}\in \Omega $ punto di minimo
+	Sia $\mathbf{p}\in \Omega $ punto di minimo
 	\begin{equation*}
 		m=u(\mathbf{p}) \leqslant u(\y) \ \forall \y\in \Omega 
 	\end{equation*}
-	Vogliamo dimostrare che $\displaystyle u(x) =m\ \forall x\in \Omega $.
+	Vogliamo dimostrare che $u(x) =m\ \forall x\in \Omega $.
 	
-	Sia $\displaystyle \mathbf{q}\in \Omega $ arbitrario. Poiché $\displaystyle \Omega $ è connesso, possiamo trovare una sequenza finita di sfere $\displaystyle B(\x_{j}) \subset \subset \Omega,\ j=0,..,N$ tali che
+	Sia $\mathbf{q}\in \Omega $ arbitrario. Poiché $\Omega $ è connesso, possiamo trovare una sequenza finita di sfere $B(\x_{j}) \subset \subset \Omega,\ j=0,..,N$ tali che
 	\begin{itemize}
-		\item $\displaystyle \x_{0} =\mathbf{p},\ x_{N} =\mathbf{q}$
-		\item $\displaystyle \x_{j} \in B(\x_{j-1})$
+		\item $\x_{0} =\mathbf{p},\ x_{N} =\mathbf{q}$
+		\item $\x_{j} \in B(\x_{j-1})$
 	\end{itemize}
 	\fg[Sequenza di cerchi sovrapposti che connettono i punti $\mathbf{p}$ e $\mathbf{q}$]{0.25}{laplace-dim-principio-massimo}
-	Per assurdo supponiamo esista $\displaystyle \mathbf{z}\in B(\mathbf{p})$ tale che $\displaystyle u(\mathbf{z})  >m$. Sia $\displaystyle B_{r}(\mathbf{z}) \subset B(\mathbf{p})$
+	Per assurdo supponiamo esista $\mathbf{z}\in B(\mathbf{p})$ tale che $u(\mathbf{z})  >m$. Sia $B_{r}(\mathbf{z}) \subset B(\mathbf{p})$
 	
 	\begin{figure}[H]
 		\centering
@@ -3572,25 +3572,26 @@ Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprie
 	
 	Dalla proprietà della media so che 
 	\begin{equation*}
-	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u( y) dy=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}( z)} u( y) dy} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u( y) dy}\right]
+	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u(\y) d\y=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}( z)} u(\y) d\y} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u(\y) d\y}\right]
 	\end{equation*}
-	Sul primo integrale $\displaystyle u( y) \geqslant m$.
+	Sul primo integrale $u( y) \geqslant m$.
 
 	Sul secondo integrale posso sfruttare ancora la proprietà della media:
 	\begin{equation*}
-		\int _{B_{r}(\mathbf{z})} u(y) dy=u(\mathbf{z})| B_{r(\mathbf{z})}|  >m| B_{r}(\mathbf{z})| 
+		\int _{B_{r}(\mathbf{z})} u(\y) d\y=u(\mathbf{z})| B_{r(\mathbf{z})}|  >m| B_{r}(\mathbf{z})| 
 	\end{equation*}
 	Ma allora ottengo una contraddizione
 	\begin{equation*}
 		m >\frac{1}{| B(\mathbf{p})| }\{m| B(\mathbf{p}) \backslash B_{r}(\mathbf{z})| +m| B_{r}(\mathbf{z})| \} =m
 	\end{equation*}
-	Deduco che $\displaystyle u=m$ in tutto $\displaystyle B(\mathbf{p})$ e quindi anche in $\displaystyle x_{1}$ (poiché $\displaystyle x_{j} \in B(x_{j-1})$) allora posso ripetere il ragionamento che ho fatto trovando $\displaystyle u=m$ in $\displaystyle B(x_{1})$ ed iterando fino all'ultima sfera trovo $\displaystyle u(q) =m$.
+	Deduco che $u=m$ in tutto $B(\mathbf{p})$ e quindi anche in $\x_{1}$ (poiché $\x_{j} \in B(\x_{j-1})$) allora posso ripetere il ragionamento che ho fatto trovando $u=m$ in $B(\x_{1})$ ed iterando fino all'ultima sfera trovo $u(\mathbf{q}) =m$.
 \end{dimostrazione}
 \subsection{Conseguenze del principio di massimo}
 
-Dal principio di massimo segue come corollario:
+Dal principio di massimo segue l'unicità per il problema di Dirichlet.
 \begin{theorem}
-	Sia $\displaystyle \Omega $ dominio limitato e $\displaystyle g\in C( \partial \Omega)$. Il problema 
+\label{thm:armoniche-unicita-dirichlet}
+	Sia $\displaystyle \Omega $ dominio limitato e $\displaystyle g\in C( \partial \Omega)$. Il problema di Dirichlet
 	\begin{equation*}
 		\begin{cases}
 			\Delta u=0 & \text{in} \ \Omega                   \\
@@ -3599,10 +3600,10 @@ Dal principio di massimo segue come corollario:
 	\end{equation*}
 	ha al massimo una soluzione $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega})$. Inoltre, siano $\displaystyle g_{1},g_{2} \in C( \partial \Omega)$, e $\displaystyle u_{1},u_{2}$ le corrispondenti soluzioni. Allora
 	\begin{enumerate}
-		\item \textbf{Confronto: }se $\displaystyle g_{1} \geqslant g_{2}$ su $\displaystyle \partial \Omega \ \Rightarrow \ u_{1} \geqslant u_{2}$ su $\displaystyle \Omega $
+		\item \textbf{Confronto:} se $\displaystyle g_{1} \geqslant g_{2}$ su $\displaystyle \partial \Omega$ e $g_{1}\neq g_{2}$ in almeno un punto di $\Omega$, allora $u_{1} \geqslant u_{2}$ su $\displaystyle \Omega $.
 		\item \textbf{Stabilità }(in norma $\displaystyle L^{\infty }(\Omega)$): 
 		      \begin{equation}
-		      	| u_{1}(x) -u_{2}(x)| \leqslant \max_{\partial \Omega }| g_{1} -g_{2}| \ \forall x\in \overline{\Omega }
+		      	\max_{\partial \Omega }| u_{1} -u_{2}| \leqslant \max_{\partial \Omega }| g_{1} -g_{2}| \quad \forall \x\in \overline{\Omega }
 		      	\label{eq:lap-stabilita}
 		      \end{equation}
 	\end{enumerate}
@@ -3610,9 +3611,9 @@ Dal principio di massimo segue come corollario:
 \begin{dimostrazione}
 	Procediamo coi vari passi
 	\begin{enumerate}
-		\item Sia $\displaystyle w=u_{1} -u_{2}$. Allora $\displaystyle w=g_{1} -g_{2}$ è armonica ed è $\displaystyle \geqslant 0$ su $\displaystyle \partial \Omega $. Poiché $\displaystyle g_{1} -g_{2}$ differiscono in almeno un punto di $\displaystyle \partial \Omega $, $\displaystyle w$ non è costante e per il principio di massimo
+		\item Sia $w=u_{1} -u_{2}$. Allora $w$ è armonica e uguale a $w=g_{1}-g_{2}$ sul bordo $\partial \Omega$. Poiché $g_{1}$ e $g_{2}$ differiscono in almeno un punto di $\partial \Omega $, $w$ non è costante e per il principio di massimo
 		      \begin{equation*}
-		      	w(x)  >\min_{\partial \Omega } w(x) =\min_{\partial \Omega } \ (g_{1} -g_{2}) \geqslant 0\ \forall x\in \Omega 
+		      	w(x)  >\min_{\partial \Omega } w =\min_{\partial \Omega } \ (g_{1} -g_{2}) \geqslant 0\ \forall x\in \Omega 
 		      \end{equation*}
 		      Quindi
 		      \begin{equation*}
@@ -3633,7 +3634,7 @@ Dal principio di massimo segue come corollario:
 \end{dimostrazione}
 \LezioneS{18/03/2021}
 
-Se abbiamo $\Delta u=0$ in $\Omega $ abbiamo la proprietà di media in $\Omega $ $\Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
+Se abbiamo $\Delta u=0$ in $\Omega $ abbiamo la proprietà di media in $\Omega \Rightarrow $ principio di massimo $\Rightarrow $ unicità per il problema di Dirichlet.
 \section{Laplaciano in coordinate cilindriche}
 
 Consideriamo $p_{1} =p_{2} =0$ per comodità.
@@ -3678,10 +3679,11 @@ mettendo insieme otteniamo
 \begin{equation*}
 \Delta u=u_{rr} +\frac{1}{r} u_{r} +\frac{1}{r^{2}} u_{\vartheta \vartheta }
 \end{equation*}
-\section{Formula di Poisson per il cerchio}
+\section{Formula di Poisson per il cerchio} % TODO arrivato qui
 Lavoreremo per tutta la sezione in $\displaystyle \mathbb{R}^{2}$ per poi generalizzare.
+Abbiamo visto l'unicità del problema di Dirichlet nel teorema \ref{thm:armoniche-unicita-dirichlet}, vediamo ora anche l'esistenza nel caso di domini radiali, il caso della Formula di Poisson.
 \begin{theorem}
-L'\textbf{unica} soluzione $u\in C^{2}(B_{R}(p)) \cap C\left(\overline{B_{R}(p)}\right)$ del problema di Dirichlet
+L'unica soluzione $u\in C^{2}(B_{R}(p)) \cap C\left(\overline{B_{R}(p)}\right)$ del problema di Dirichlet
 \begin{equation*}
 \begin{cases}
 \Delta u=0, & \text{in} \ B_{R}(p)\\
@@ -3861,21 +3863,21 @@ non è altro che la media dei valori assunti da $G$ sul bordo.
 Tornando alle variabili originali\footnote{Denotiamo con $\mathbf{p} =\begin{pmatrix}
 p_{1}\\
 p_{2}
-\end{pmatrix}$ il centro del cerchio, con $\mathbf{\sigma } =\begin{pmatrix}
+\end{pmatrix}$ il centro del cerchio, con $\bm{\sigma } =\begin{pmatrix}
 p_{1} +R\cos \varphi \\
 p_{2} +R\sin \varphi 
 \end{pmatrix}$ un punto sul bordo, con $\x =\begin{pmatrix}
 p_{1} +r\cos \vartheta \\
 p_{2} +r\sin \vartheta 
-\end{pmatrix}$ un punto del cerchio. Il differenziale si trova come determinante dello Jacobiano $d\mathbf{\sigma } =Rd\varphi $. Questo ci permette anche di riscrivere il denominatore
+\end{pmatrix}$ un punto del cerchio. Il differenziale si trova come determinante dello Jacobiano $d\bm{\sigma } =Rd\varphi $. Questo ci permette anche di riscrivere il denominatore
 \begin{align*}
-| \x -\mathbf{\sigma }| ^{2} & =( R\cos \varphi -r\cos \vartheta)^{2} +( R\sin \varphi -r\sin \vartheta)^{2}\\
+| \x -\bm{\sigma }| ^{2} & =( R\cos \varphi -r\cos \vartheta)^{2} +( R\sin \varphi -r\sin \vartheta)^{2}\\
  & =R^{2}\cos^{2} \varphi +r^{2}\cos^{2} \vartheta -2rR\cos \varphi \cos \vartheta +R^{2}\sin^{2} \varphi +r^{2}\sin^{2} \vartheta -2rR\sin \varphi \sin \vartheta \\
  & =R^{2} +r^{2} -2rR(\cos \varphi \cos \vartheta -\sin \varphi \sin \vartheta)\\
  & =R^{2} +r^{2} -2rR\cos( \varphi -\vartheta)
 \end{align*}}
 \begin{equation}
-u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\mathbf{\sigma })}{| \x -\mathbf{\sigma }| ^{2}} d\sigma 
+u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\bm{\sigma })}{| \x -\bm{\sigma }| ^{2}} d\sigma 
 \label{eq:poisson-cerchio}
 \end{equation}
 Se $\x \in B_{R}(\mathbf{p})$, cioè dentro e non sul bordo
@@ -3918,7 +3920,7 @@ possiamo passare al limite sotto il segno di integrale perché il denominatore n
 
 Possiamo generalizzare la (16) per un numero generico $\displaystyle n$ di dimensioni
 \begin{equation*}
-	u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{w_{n} R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\mathbf{\sigma })}{| \x -\mathbf{\sigma }| ^{n}} d\mathbf{\sigma }
+	u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{w_{n} R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\bm{\sigma })}{| \x -\bm{\sigma }| ^{n}} d\bm{\sigma }
 \end{equation*}
 con $\displaystyle u\in C^{\infty }( B_{R}(\mathbf{p})) \cap C\left(\overline{B_{R}}(\mathbf{p})\right)$.
 \section{Soluzione fondamentale per l'operatore di Laplace}
