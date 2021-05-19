@@ -980,7 +980,7 @@ Integrando e applicando il teorema della divergenza otteniamo una \textbf{formul
 \begin{equation}
 \boxed{\int _{\Omega } v\ \mathrm{div}(\mathbf{F}) = -\int _{\Omega } \nabla v\cdotp \mathbf{F} + \int _{\partial \Omega } v\mathbf{F} \cdotp \bm{\nu} \ d\sigma}
 \end{equation}
-Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\bm{\nu} = \partial\bm{nu}u$. Tale formula diventa l'\textbf{identità di Green}:
+Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\bm{\nu} = \partial\bm{\nu}u$. Tale formula diventa l'\textbf{identità di Green}:
 \begin{equation}
 \boxed{\int _{\Omega } v\Delta u\ dx=-\int _{\Omega } \nabla v\cdotp \nabla u+\int _{\partial \Omega } v\partial _{\bm{\nu}} u\ d\sigma }
 \label{eq:id-green}
@@ -4033,33 +4033,35 @@ Torniamo in dimensione $\displaystyle n=3$. Supponiamo che $\displaystyle \frac{
 \begin{equation*}
 	\Phi (x-y) f(y) dy
 \end{equation*}
-Il potenziale totale si ottiene integrando
-\begin{equation*}
+Il potenziale totale si ottiene sommando tutti i contributi
+\begin{equation}
 	\mathcal{N}_{f}(x) =\int _{\mathbb{R}^{3}} \Phi (x-y) f(y) dy=\frac{1}{4\pi }\int _{\mathbb{R}^{3}}\frac{f(y)}{| x-y| } dy=(\Phi \ast f)(x)
-\end{equation*}
+\end{equation}
 Questo potenziale è detto \textbf{potenziale Newtoniano} di $\displaystyle f$. Formalmente, nel senso delle distribuzioni e sotto opportune ipotesi per $\displaystyle f$\footnote{Per $\displaystyle x$ fissato $\displaystyle \frac{1}{| x-y| } \in L^{1}(B(0))$, quindi dovrò controllare solo il comportamento di $\displaystyle f(y)$.}:
 \begin{equation*}
 	-\Delta \mathcal{N}_{f}(x) =( -\Delta \Phi \ast f)(x) =( \delta _{3} \ast f)(x) =\int _{\mathbb{R}^{3}} \delta _{3}(x-y) f(y) dy=f(x)
 \end{equation*}
+Formalizziamo in un teorema
 \begin{theorem}
 	Sia $\displaystyle f\in C^{2}\left(\mathbb{R}^{3}\right)$ a supporto compatto. Allora $\displaystyle \mathcal{N}_{f} \in C^{2}\left(\mathbb{R}^{3}\right)$ ed è l'unica soluzione dell'equazione di Poisson
 	\begin{equation*}
 		-\Delta u=f\ \text{in} \ \mathbb{R}^{3}
 	\end{equation*}
-	che si annulla all'infinito.
+	\textbf{che si annulla all'infinito}.
 \end{theorem}
+In generale anche $\mathcal{N}_{f}+c$ è soluzione, ma questa è quella che si annulla all'infinito.
 \begin{nb}
 	Per $\displaystyle n=2$ il potenziale Newtoniano si chiama potenziale logaritmico
-	\begin{equation*}
+	\begin{equation}
 		\mathcal{L}_{f}(x) =-\frac{1}{2\pi }\int _{\mathbb{R}^{2}}\log| x-y| f(y) dy
-	\end{equation*}
-	e vale un risultato simile: se $\displaystyle f\in C^{2}$, $\displaystyle \mathcal{L}_{f} \in C^{2}$ ed è l'unica soluzione di 
+	\end{equation}
+	e vale un risultato simile: se $\displaystyle f\in C^{2}(\mathbb{R}^{2})$, allora $\displaystyle \mathcal{L}_{f} \in C^{2}(\mathbb{R}^{2})$ ed è l'unica soluzione di 
 	\begin{equation*}
 		-\Delta u=f\ \text{in} \ \mathbb{R}^{2}
 	\end{equation*}
 	con andamento asintotico
 	\begin{equation*}
-		u(x) =-\frac{M}{2\pi }\log| x| +o\left(\frac{1}{| x| }\right),\ | x| \rightarrow +\infty 
+		u(x) =-\frac{M}{2\pi }\log| x| +o\left(\frac{1}{| x| }\right),\quad | x| \rightarrow +\infty 
 	\end{equation*}
 	Dove $\displaystyle M$ è la carica totale
 	\begin{equation*}
@@ -4067,151 +4069,170 @@ Questo potenziale è detto \textbf{potenziale Newtoniano} di $\displaystyle f$. 
 	\end{equation*}
 \end{nb}
 \section{La funzione di Green}
+Abbiamo considerato tutto $\mathbb{R} ^{n} $, ma se invece consideriamo una regione finita dobbiamo tenere conto del bordo. Richiediamo che sia regolare in modo da considerare le derivate normali.
 \begin{theorem}
-	Sia $\displaystyle \Omega \subset \mathbb{R}^{3}$ un dominio limitato e regolare, sia $\displaystyle u\in C^{2}(\overline{\Omega }$). Allora:
+	Sia $\displaystyle \Omega \subset \mathbb{R}^{3}$ un \textbf{dominio limitato e regolare}, sia $\displaystyle u\in C^{2}(\overline{\Omega }$). Allora la soluzione del problema di Dirichlet $\Delta u=f$ con $u=g$ al bordo è:
 	\begin{equation*}
-		u(x) =\underbrace{-\int _{\Omega } \Phi (x-y) \Delta u(y) dy}_{ \begin{array}{l}
+		u(x) =\underbrace{-\int _{\Omega } \Phi (x-y) \Delta f(y) dy}_{ \begin{array}{l}
 			\text{potenziale Newtoniano di}\\
 			f=\Delta u
-			\end{array}} +\underbrace{\int _{\partial \Omega } \Phi (x-y) \partial _{\bm{\nu}} u(\sigma) d\sigma }_{ \begin{array}{l}
+			\end{array}} +\underbrace{\int _{\partial \Omega } \Phi (x-\sigma) \partial _{\bm{\nu}} u(\sigma) d\sigma }_{ \begin{array}{l}
 			\text{potenziale di strato semplice}\\
 			\text{con densità} \ \partial _{\bm{\nu}} u
-			\end{array}}\underbrace{-\int _{\partial \Omega } \partial _{\bm{\nu}} \Phi (x-\sigma) u(\sigma) d\sigma }_{ \begin{array}{l}
+			\end{array}}\underbrace{-\int _{\partial \Omega } u(\sigma) \partial _{\bm{\nu}} \Phi (x-\sigma) d\sigma }_{ \begin{array}{l}
 			\text{potenziale di doppio strato}\\
 			\text{con momento} \ \mu 
 			\end{array}}
 	\end{equation*}
 \end{theorem}
-In pratica, ogni funzione regolare $\displaystyle u$ può essere scritta come somma di un potenziale di volume (Newtoniano) con densità $\displaystyle -\Delta u$, di un potenziale di strato semplice causato da una densità di cariche $\displaystyle \partial _{\bm{\nu}} u$ sulla $\displaystyle \partial \Omega $ e da un potenziale di doppio strato generato da dei dipoli elettrici con momento $\displaystyle \mu $.
+In pratica, ogni funzione regolare $\displaystyle u$ può essere scritta come somma di un potenziale di volume (Newtoniano) con densità $\displaystyle -\Delta u$, di un potenziale di strato semplice causato da una densità di cariche $\displaystyle \partial _{\bm{\nu}} u$ superficiali sul bordo $\displaystyle \partial \Omega $ e da un potenziale di doppio strato generato da dei dipoli elettrici con momento $\displaystyle \mu $.
 
 Vediamo la dimostrazione del teorema.
 \begin{dimostrazione}
 	Ricordiamo innanzitutto l'identità di Green con $\displaystyle u,v\in C^{2}(\overline{\Omega })$
 	\begin{equation*}
-		\int _{\Omega }( v\Delta u-u\Delta v) dx=\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\sigma 
+	\int _{\Omega }( v\Delta u-u\Delta v) d\mathbf{x} =\int _{\partial \Omega }( v\partial _{\mathbf{\nu }} u-u\partial _{\mathbf{\nu }} v) d\bm{\sigma }
 	\end{equation*}
-	Applichiamo l'identità di Green utilizzando come funzione $\displaystyle u$ la stessa dell'enunciato del teorema. Per la funzione $\displaystyle v$ dobbiamo trovare un'alternativa, infatti, con $\displaystyle x$ fissato
+	Applichiamo l'identità di Green utilizzando come funzione $\displaystyle u$ la stessa dell'enunciato del teorema. Per la funzione $\displaystyle v$ dobbiamo trovare un'alternativa, infatti, con $\displaystyle \mathbf{x}$ fissato
 	\begin{equation*}
-		v(y) =\Phi (x-y) =\frac{1}{4\pi }\frac{1}{| x-y| } \notin C^{2}(\Omega)
+	v(\mathbf{y}) =\Phi (\mathbf{x} -\mathbf{y}) =\frac{1}{4\pi }\frac{1}{| \mathbf{x} -\mathbf{y}| } \notin C^{2}( \Omega )
 	\end{equation*}
 	Con $\displaystyle \Omega $ dominio limitato, definisco 
 	\begin{equation*}
-		\Omega _{\varepsilon } =\Omega \setminus \overline{B}_{\varepsilon }(x)
+	\Omega _{\varepsilon } =\Omega \setminus \overline{B}_{\varepsilon }(\mathbf{x})
 	\end{equation*}
-	
 	\begin{figure}[H]
 		\centering
 		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-		%uncomment if require: \path (0,86); %set diagram left start at 0, and has height of 86
+		%uncomment if require: \path (0,141); %set diagram left start at 0, and has height of 141
 
 		%Shape: Ellipse [id:dp8534708959725636] 
-		\draw   (100,39.65) .. controls (100,26.04) and (159.99,15) .. (234,15) .. controls (308.01,15) and (368,26.04) .. (368,39.65) .. controls (368,53.27) and (308.01,64.3) .. (234,64.3) .. controls (159.99,64.3) and (100,53.27) .. (100,39.65) -- cycle ;
+		\draw   (100,73.1) .. controls (100,41.01) and (159.99,15) .. (234,15) .. controls (308.01,15) and (368,41.01) .. (368,73.1) .. controls (368,105.19) and (308.01,131.2) .. (234,131.2) .. controls (159.99,131.2) and (100,105.19) .. (100,73.1) -- cycle ;
 		%Shape: Ellipse [id:dp5474821128070129] 
-		\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=3]  (222,40.6) .. controls (222,39.77) and (221.33,39.1) .. (220.5,39.1) .. controls (219.67,39.1) and (219,39.77) .. (219,40.6) .. controls (219,41.43) and (219.67,42.1) .. (220.5,42.1) .. controls (221.33,42.1) and (222,41.43) .. (222,40.6) -- cycle ;
+		\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=3]  (222,70.6) .. controls (222,69.77) and (221.33,69.1) .. (220.5,69.1) .. controls (219.67,69.1) and (219,69.77) .. (219,70.6) .. controls (219,71.43) and (219.67,72.1) .. (220.5,72.1) .. controls (221.33,72.1) and (222,71.43) .. (222,70.6) -- cycle ;
 		%Shape: Ellipse [id:dp9123452672283427] 
-		\draw  [color={rgb, 255:red, 251; green, 0; blue, 0 }  ,draw opacity=1 ] (200.5,40.6) .. controls (200.5,29.55) and (209.45,20.6) .. (220.5,20.6) .. controls (231.55,20.6) and (240.5,29.55) .. (240.5,40.6) .. controls (240.5,51.65) and (231.55,60.6) .. (220.5,60.6) .. controls (209.45,60.6) and (200.5,51.65) .. (200.5,40.6) -- cycle ;
+		\draw  [color={rgb, 255:red, 251; green, 0; blue, 0 }  ,draw opacity=1 ] (178.1,70.6) .. controls (178.1,47.18) and (197.08,28.2) .. (220.5,28.2) .. controls (243.92,28.2) and (262.9,47.18) .. (262.9,70.6) .. controls (262.9,94.02) and (243.92,113) .. (220.5,113) .. controls (197.08,113) and (178.1,94.02) .. (178.1,70.6) -- cycle ;
 		%Straight Lines [id:da4961016004934615] 
-		\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (107.2,47.65) -- (96.09,64.79) ;
-		\draw [shift={(95,66.47)}, rotate = 302.96] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (9.6,-2.4) -- (0,0) -- (9.6,2.4) -- cycle    ;
-		%Straight Lines [id:da17326606651197296] 
-		\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (201.2,37.58) -- (211.42,38.99) ;
-		\draw [shift={(213.4,39.27)}, rotate = 187.85] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (4.8,-1.2) -- (0,0) -- (4.8,1.2) -- cycle    ;
+		\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (114.2,99.65) -- (98.36,116.74) ;
+		\draw [shift={(97,118.2)}, rotate = 312.83000000000004] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+		%Straight Lines [id:da5401738716118851] 
+		\draw [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ]   (205.2,31.65) -- (217.18,58.38) ;
+		\draw [shift={(218,60.2)}, rotate = 245.85] [fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
 
 		% Text Node
-		\draw (123.2,34.8) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
+		\draw (107.2,59.8) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
 		% Text Node
-		\draw (227.23,33.5) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x$};
+		\draw (266.83,64) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\partial B_{\varepsilon }(\mathbf{x})$};
 		% Text Node
-		\draw (244.83,41) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\partial B_{\varepsilon }( x)$};
+		\draw (80.2,104.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\mathbf{\nu }$};
 		% Text Node
-		\draw (85.2,47.8) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\vec{\nu }$};
+		\draw (196.2,40.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\mathbf{\nu }$};
 		% Text Node
-		\draw (209.2,43.8) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\vec{\nu }$};
+		\draw (221,74) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{x}$};
 
 
 		\end{tikzpicture}
 	\end{figure}
 	\FloatBarrier
-	
-	In $\displaystyle \Omega _{\varepsilon }$, $\displaystyle v(y) =\Phi (x-y) \in C^{2}\left(\overline{\Omega _{\varepsilon }}\right)$ e inoltre $\displaystyle \Delta v=0$ in $\displaystyle \Omega _{\varepsilon }$.
-	
-	Usando l'identità di Green con questa scelta di $\displaystyle u$ e $\displaystyle v$ ottengo
+
+	In $\displaystyle \Omega _{\varepsilon }$, $\displaystyle v(\mathbf{y}) \in C^{2}\left(\overline{\Omega _{\varepsilon }}\right)$ e inoltre $\displaystyle \Delta v=0$ in $\displaystyle \Omega _{\varepsilon }$.
+
+	Si trova tutto a partire dall'identità di Green con questa scelta di $\displaystyle u$ e $\displaystyle v$ si elide il termine $\displaystyle u\Delta v=0$.
 	\begin{equation*}
-		\frac{1}{4\pi }\int _{\Omega _{\varepsilon }}\frac{1}{| x-y| } \Delta u(y) dy=\frac{1}{4\pi }\int _{\partial \Omega _{\varepsilon }}\frac{1}{| x-\sigma | } \partial _{\bm{\nu}} u(\sigma) d\sigma -\frac{1}{4\pi }\int _{\partial \Omega _{\varepsilon }} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma 
+	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \mathbf{x} -\mathbf{y}| } f(\mathbf{y}) d\mathbf{y}}_{( 1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } \partial _{\mathbf{\nu }} u(\bm{\sigma }) d\bm{\sigma }}_{( 2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }}_{( 3)}
 	\end{equation*}
 	Inoltre
 	\begin{equation*}
-		\partial \Omega _{\varepsilon } =\partial \Omega \cup \partial B_{\varepsilon }(x)
+	\partial \Omega _{\varepsilon } =\partial \Omega \cup \partial B_{\varepsilon }(\mathbf{x})
 	\end{equation*}
-	E su $\displaystyle \partial B_{\varepsilon }(x)$
+	E su $\displaystyle \partial B_{\varepsilon }(\mathbf{x})$
 	\begin{equation*}
-		\nu (\sigma) =\frac{x-\sigma }{| x-\sigma | } =\frac{x-\sigma }{\varepsilon }
+	\mathbf{\nu }(\bm{\sigma }) =\frac{\mathbf{x} -\bm{\sigma }}{| \mathbf{x} -\bm{\sigma }| } =\frac{\mathbf{x} -\bm{\sigma }}{\varepsilon }
 	\end{equation*}
 	Studiamo come si comporta ciascun termine dell'identità al limite per $\displaystyle \varepsilon \rightarrow 0$
 	\begin{itemize}
-		\item \textbf{Termine 1}
-		      
-		      \begin{equation*}
-		      	\int _{\Omega _{\varepsilon }}\frac{1}{| x-y| } \Delta u(y) dy=\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(y)\frac{\Delta u(y)}{| x-y| }}_{g_{\varepsilon }(y)} dy
-		      \end{equation*}
-		      
-		      Con 
-		      
-		      \begin{equation*}
-		      	| g_{\varepsilon }(y)| \leqslant \max| \Delta u| \frac{1}{| x-y| }
-		      \end{equation*}
-		      
-		      Posso usare il teorema di convergenza dominata e passare al limite sotto il segno di integrale, il primo termine tende a
-		      
-		      \begin{equation*}
-		      	\int _{\Omega }\frac{1}{| x-y| } \Delta u(y) dy
-		      \end{equation*}
-		\item \textbf{Termine 2}
-		      
-		      \begin{equation*}
-		      	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma =\int _{\partial \Omega }\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma +\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma 
-		      \end{equation*}
-		      
-		      Ricordando che 
-		      
-		      \begin{equation*}
-		      	| \partial _{\bm{\nu}} u(\sigma)| =| \nabla u(\sigma) \cdotp \nu | \leqslant \max| \nabla u| 
-		      \end{equation*}
-		      
-		      Maggioriamo
-		      
-		      \begin{equation*}
-		      	\int _{\partial B_{\varepsilon }(x)}\frac{\partial _{\bm{\nu}} u(\sigma)}{| x-\sigma | } d\sigma \leqslant \frac{1}{\varepsilon }\max| \nabla u| \cdotp 4\pi \varepsilon ^{2} = 4\pi \max| \nabla u| \cdotp \varepsilon \xrightarrow{\varepsilon \rightarrow 0} 0
-		      \end{equation*}
-		      
-		      Il secondo termine tende a
-		      
-		      \begin{equation*}
-		      	\int _{\partial \Omega }\frac{1}{| x-\sigma | } \partial _{\bm{\nu}} u(\sigma) d\sigma 
-		      \end{equation*}
-		\item \textbf{Termine 3}\begin{equation*}
-		      \int _{\partial \Omega _{\varepsilon }} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma =\int _{\partial \Omega } u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma +\int _{\partial B_{\varepsilon }(x)} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma 
-		\end{equation*}
-		
-		Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(x)$\begin{gather*}
-		\nabla _{y}\frac{1}{| x-y| } =-\frac{1}{| x-y| ^{2}}(-(x-y)) =\frac{x-y}{| x-y| ^{3}}\\
-		\Rightarrow \ \ \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } =\frac{x-\sigma }{\varepsilon ^{3}}\frac{x-\sigma }{\varepsilon } =\frac{1}{\varepsilon ^{2}}
-		\end{gather*}
-		
-		Da cui\begin{equation*}
-		\int _{\partial B_{\varepsilon }(x)} u(\sigma) \partial _{\bm{\nu}}\frac{1}{| x-\sigma | } d\sigma =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(x)} u(\sigma) d\sigma \xrightarrow{\varepsilon \rightarrow 0} 4\pi u(x)
-		\end{equation*}
+	\item \textbf{Termine 1}
+
+	\begin{equation*}
+	( 1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \mathbf{x} -\mathbf{y}| } f(\mathbf{y}) d\mathbf{y} =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\mathbf{y})\frac{f(\mathbf{y})}{| \mathbf{x} -\mathbf{y}| }}_{g_{\varepsilon }(\mathbf{y})} d\mathbf{y}
+	\end{equation*}
+
+	Con 
+
+	\begin{equation*}
+	| g_{\varepsilon }(\mathbf{y})| \leqslant \max\frac{| f| }{| \mathbf{x} -\mathbf{y}| }
+	\end{equation*}
+
+	Posso usare il teorema di convergenza dominata e passare al limite sotto il segno di integrale, il primo termine tende a
+
+	\begin{equation*}
+	( 1)\rightarrow \int _{\Omega }\frac{1}{| \mathbf{x} -\mathbf{y}| } f(\mathbf{y}) d\mathbf{y}
+	\end{equation*}
+
+	A meno del coefficiente, questo è diventato il potenziale Newtoniano.
+	\item \textbf{Termine 2}
+
+	\begin{equation*}
+	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }( x)}\right)\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }
+	\end{equation*}
+
+	Di questi, quello sul bordo della palla andrà a zero.
+
+	Ricordando che
+
+	\begin{equation*}
+	| \partial _{\mathbf{\nu }} u(\bm{\sigma })| =| \nabla u(\bm{\sigma }) \cdotp \mathbf{\nu }| \leqslant \max| \nabla u| 
+	\end{equation*}
+
+	maggioriamo\begin{align*}
+	\left| \int _{\partial B_{\varepsilon }(\mathbf{x})}\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }\right|  & \leqslant \int _{\partial B_{\varepsilon }(\mathbf{x})}\frac{| \partial _{\mathbf{\nu }} u(\bm{\sigma })| }{\underbrace{| \mathbf{x} -\bm{\sigma }| }_{=\varepsilon }} d\bm{\sigma }\\
+	 & \leqslant \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\mathbf{x})}\max| \nabla u| d\bm{\sigma }\\
+	 & =\frac{\max| \nabla u| }{\varepsilon }\int _{\partial B_{\varepsilon }(\mathbf{x})} d\bm{\sigma }\\
+	 & =\frac{\max| \nabla u| }{\varepsilon } \cdotp 4\pi \varepsilon ^{2}\rightarrow 0
+	\end{align*}
+
+	L'altro non dipende da $\displaystyle \varepsilon $ quindi rimane così.\begin{equation*}
+	( 2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }
+	\end{equation*}
+
+	A meno del coefficiente, questo è diventato il potenziale di strato semplice.
+	\item \textbf{Termine 3}
+
+	Da qui spunteranno sia il potenziale di doppio strato, che la $\displaystyle u$ stessa.
+
+	\begin{equation*}
+	( 3) =\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\mathbf{x})}\right) u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }
+	\end{equation*}
+
+	L'integrale su $\displaystyle \partial \Omega $ è già il potenziale di doppio strato, ci manca da far vedere che l'altro tende a $\displaystyle u$, a meno del coefficiente. Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(\mathbf{x})$ con la regola della catena\begin{equation*}
+	\nabla _{\bm{\sigma }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } =-\frac{1}{| \mathbf{x} -\bm{\sigma }| ^{2}} \cdotp \frac{\mathbf{x} -\bm{\sigma }}{| \mathbf{x} -\bm{\sigma }| }( -1) =\frac{\mathbf{x} -\bm{\sigma }}{| \mathbf{x} -\bm{\sigma }| ^{3}} =\frac{\mathbf{x} -\bm{\sigma }}{\varepsilon ^{3}}
+	\end{equation*}
+
+	quindi\begin{equation*}
+	\partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } =\nabla \frac{1}{| \mathbf{x} -\bm{\sigma }| } \cdotp \mathbf{\nu } =\frac{\mathbf{x} -\bm{\sigma }}{\varepsilon ^{3}} \cdotp \frac{\mathbf{x} -\bm{\sigma }}{\varepsilon } =\frac{1}{\varepsilon ^{2}}
+	\end{equation*}
+
+	Da cui\begin{align*}
+	\int _{\partial B_{\varepsilon }(\mathbf{x})} u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } & =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\mathbf{x})} u(\bm{\sigma }) d\bm{\sigma }\\
+	 & =\frac{4\pi \varepsilon ^{2}}{\varepsilon ^{2}} \cdotp \underbrace{\frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\mathbf{x})} u(\bm{\sigma }) d\bm{\sigma }}_{\rightarrow u(\mathbf{x})}\rightarrow 4\pi u(\mathbf{x})
+	\end{align*}
+
+	quindi\begin{equation*}
+	( 3)\rightarrow \int _{\partial \Omega } u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } +4\pi u(\mathbf{x})
+	\end{equation*}
+
+	Riassemblando i vari pezzi si ottiene la tesi.
 	\end{itemize}
 \end{dimostrazione}
 
 \LezioneS{23/03/2021}
-\section{Soluzione di Green}
+\section{Funzione di Green e formula di rappresentazione}
 
 Richiamiamo la formula della lezione scorsa
 \begin{equation}
-	u( x) =-\int _{\Omega } \Phi ( x-y) \Delta u( y) \ dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u( \sigma ) \ d\sigma -\int _{\partial \Omega } \partial _{\bm{\nu}} \Phi ( x-\sigma ) u( \sigma ) \ d\sigma 
+	u( x) =-\int _{\Omega } \Phi ( x-y) \Delta u( y) \ dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \underbrace{\partial _{\bm{\nu}} u( \sigma )}_{?} \ d\sigma -\int _{\partial \Omega } \partial _{\bm{\nu}} \Phi ( x-\sigma ) u( \sigma ) \ d\sigma 
 	\label{eq:richiamo-formula-green}
 \end{equation}
 che ci proponiamo di usare per ottenere una formula di rappresentazione \textbf{in funzione dei dati} del seguente problema di Dirichlet
@@ -4222,7 +4243,7 @@ che ci proponiamo di usare per ottenere una formula di rappresentazione \textbf{
 	\end{cases}
 	\label{eq:sol-green-pb-dirichlet}
 \end{equation}
-Non so nulla del termine $\partial _{\bm{\nu}} u( \sigma )$, l'idea è di andare a cercare una funzione $g=g( x,y)$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli
+Non so nulla del termine $\partial _{\bm{\nu}} u( \sigma )$, l'idea è di andare a cercare una funzione $G$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli. Sia $g(x,y)$ la soluzione di un certo problema
 \begin{equation}
 	\begin{cases}
 		-\Delta _{y} g=0,                & \text{in} \ \Omega          \\
@@ -4230,11 +4251,11 @@ Non so nulla del termine $\partial _{\bm{\nu}} u( \sigma )$, l'idea è di andare
 	\end{cases}
 	\label{eq:sol-green-pb-unico}
 \end{equation}
-Ciò è molto semplice, infatti basta definire la seguente \textbf{funzione di Green per l'operatore di Laplace in }$\Omega $
+Basta definire la seguente \textbf{funzione di Green per l'operatore di Laplace in} $\Omega $
 \begin{equation*}
 	\boxed{G( x,y) =\Phi ( x-y) -g( x,y)}
 \end{equation*}
-ottenendo
+ottenendo, siccome il laplaciano di $g$ è nullo,
 \begin{equation*}
 	\begin{cases}
 		-\Delta _{y} G( x,y) =\delta ( x) & \text{in} \ \Omega          \\
@@ -4248,22 +4269,22 @@ Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \end{equation}
 da cui
 \begin{align*}
-	\int _{\Omega } v\Delta u-u\Delta v      & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\bm{\nu}} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\bm{\nu}} v\right) \\
-	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\sigma                                                                                                                                 
+	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\bm{\nu}} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\bm{\nu}} v\right) \\
+	 & =\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\sigma                                                                                                                                 
 \end{align*}
-sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordando che $\Delta v=\Delta _{y} g=0$
+sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordiamo che $\Delta v=\Delta _{y} g=0$
 \begin{align*}
-	-\int _{\Omega } g( x,y) f( y) dy & =\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} g( x,\sigma ) \ d\sigma                                  \\
+	-\int _{\Omega } \underbrace{g( x,y)}_{v} \underbrace{f( y)}_{\Delta u} dy & =\int _{\partial \Omega } \underbrace{\Phi ( x-\sigma )}_{v} \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \underbrace{\varphi ( \sigma )}_{u} \partial _{\bm{\nu}} \underbrace{g( x,\sigma )}_{v} \ d\sigma                                  \\
 	0                                 & =\int _{\Omega } g( x,y) f( y) dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} g( x,\sigma ) \ d\sigma 
 \end{align*}
-facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa
+facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa scompare il termine con la derivata normale sul bordo
 \begin{equation*}
 	u( x) =\int _{\Omega }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} f( y) dy+0-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}}\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} d\sigma 
 \end{equation*}
 cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote{Si noti che anche se $G$ è nulla sul bordo, non è detto che la sua derivata normale sia nulla, è facile rendersene conto pensando al caso unidimensionale.}
-\begin{equation*}
+\begin{equation}
 	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} G( x,y) \ d\sigma }
-\end{equation*}
+\end{equation}
 questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
 
