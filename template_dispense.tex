@@ -457,9 +457,9 @@ innerbottommargin=5pt]{dimBox}
 \usepackage[hidelinks]{hyperref} % Rende l'indice interattivo e hidelinks nasconde il bordo rosso dai riferimenti
 
 %% Questo fa si che la numerazione dei capitoli venga resettata se si inizia una nuova "Parte"
-\makeatletter
-\@addtoreset{chapter}{part}
-\makeatother 
+%\makeatletter
+%\@addtoreset{chapter}{part}
+%\makeatother 
 
 \newcommand{\nocontentsline}[3]{} % QUESTO COMANDO E QUELLO DOPO SERVONO PER AVERE IL COMANDO \tocless DA METTERE PRIMA DI UNA SEZIONE CHE NON VOGLIO FAR APPARIRE NELL'INDICE
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
