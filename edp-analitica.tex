@@ -3303,7 +3303,14 @@ Da cui
 \begin{gather*}
 	M_{h} w_{\Gamma }(x) -w_{\Gamma }(x) =0 \quad \Rightarrow \quad \Delta ^{*}_{h} w_{\Gamma } =\frac{4}{h^{2}}( M_{h} w_{\Gamma }(x) -w_{\Gamma }(x)) =0
 \end{gather*}
-in tutti i punti interni ad $A$! In particolare se $\Gamma =\partial A$, $w_{\partial A}(x) =P(x,\partial A)$ è soluzione del problema di Dirichlet discreto con valore 1 sul bordo ($g\equiv 1)$
+in tutti i punti interni ad $A$!
+
+Quindi:
+\begin{align*}
+	x\in \Gamma &\implies P(x,\Gamma )=1\\
+	x\in \partial A\setminus\Gamma &\implies P(x,\Gamma )=0
+\end{align*}
+In particolare se $\Gamma =\partial A$, $w_{\partial A}(x) =P(x,\partial A)$ è soluzione del problema di Dirichlet discreto con valore 1 sul bordo ($g\equiv 1)$
 \begin{equation*}
 	\begin{cases}
 		\Delta ^{*}_{h} w_{\partial A}(x) =0 & x\ \text{interno ad} \ A \\
@@ -6338,7 +6345,7 @@ Ricaviamo ora l'equazione della corda vibrante unidimensionale (tipicamente cord
 \begin{enumerate}
 	\item Vibrazioni della corda \textbf{piccole} (relativamente alla lunghezza): i cambiamenti del profilo della corda rispetto all'orizzontale sono \textit{piccoli.}
 	\item Lo spostamento di ogni punto della corda è \textbf{verticale.}
-	\item Lo spostamento verticale $\displaystyle u$ di un punto dipende solo dalla sua posizione a riposo sulla corda e dal tempo. Quindi\begin{equation*}
+	\item Lo spostamento verticale $\displaystyle u$ di un punto dipende solo dalla sua posizione sulla corda $x$ e dal tempo $t$. Quindi\begin{equation*}
 	      u=u( x,t)
 	\end{equation*}
 	
@@ -6357,86 +6364,159 @@ Ricaviamo ora l'equazione della corda vibrante unidimensionale (tipicamente cord
 
 
 
-Sia $\displaystyle \rho =\rho ( x,t)$ la densità lineare di massa al tempo $\displaystyle t$ e $\displaystyle \rho _{0} =\rho _{0}( x)$ la densità a riposo. Prendiamo in esame un tratto di corda corrispondente ad un intervallo arbitrario $\displaystyle [ x,x+\Delta x]$ e indichiamo con $\displaystyle \Delta s$ l'elemento di lunghezza corrispondente al tempo $\displaystyle t$. La legge di conservazione della massa impone
+Sia $\displaystyle \rho =\rho ( x,t)$ la densità lineare di massa al tempo $\displaystyle t$ e $\displaystyle \rho _{0} =\rho _{0}( x)$ la densità a riposo. Prendiamo in esame un tratto di corda corrispondente ad un intervallo arbitrario $\displaystyle [ x,x+\Delta x]$ e indichiamo con $\displaystyle \Delta s$ l'elemento di lunghezza corrispondente, al tempo $\displaystyle t$. La legge di conservazione della massa impone
 \begin{equation*}
 	\rho _{0}( x) \Delta x=\rho ( x,t) \Delta s,\ t\geqslant 0
 \end{equation*}
-L'equazione del bilancio del momento si ricava uguagliando la forza totale agente sul generico tratto considerato al tasso di variazione del momento lineare. Poiché il moto è verticale, le componenti orizzontali delle forze devono bilanciarsi. Indicando con $\displaystyle \tau ( x,t)$ la tensione (scalare) in $\displaystyle x$
+L'equazione del bilancio del momento si ricava uguagliando la forza totale agente sul generico tratto considerato al tasso di variazione del momento lineare. Poiché il moto è verticale, le componenti orizzontali delle forze devono bilanciarsi: $R_{x}=0$. Indicando con $\displaystyle \tau ( x,t)$ la tensione (scalare, ma non adimensionale) in $\displaystyle x$
 
-\fg[Tensione agli estremi di un piccolo arco di corda]{0.6}{onde-tensione-arco}
+\begin{figure}[htpb]
+	\centering
+	
+
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,229); %set diagram left start at 0, and has height of 229
+
+	%Straight Lines [id:da6928670195910238] 
+	\draw    (120,180) -- (398,180) ;
+	\draw [shift={(400,180)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	%Straight Lines [id:da6098006131722913] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (190,180) -- (190,110) ;
+	%Straight Lines [id:da4857013571855955] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (310,180) -- (310,70) ;
+	%Curve Lines [id:da45458961680801546] 
+	\draw [line width=1.5]    (190,110) .. controls (238,81.7) and (258,78.7) .. (310,70) ;
+	%Straight Lines [id:da8988348549437535] 
+	\draw    (190,110) -- (151.6,138.8) ;
+	\draw [shift={(150,140)}, rotate = 323.13] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	%Straight Lines [id:da8586274723376333] 
+	\draw    (310,70) -- (388.02,60.25) ;
+	\draw [shift={(390,60)}, rotate = 532.87] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	%Straight Lines [id:da16414524179036505] 
+	\draw    (190,110) -- (260,110) ;
+	%Straight Lines [id:da5815732755450487] 
+	\draw    (190,110) -- (230,80) ;
+	%Straight Lines [id:da18438798249466148] 
+	\draw    (310,70) -- (420,70) ;
+	%Straight Lines [id:da613841499053857] 
+	\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=2.25]    (190,110) -- (156,110) ;
+	\draw [shift={(150,110)}, rotate = 360] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
+	%Straight Lines [id:da869175453205467] 
+	\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=2.25]    (310,70) -- (384,70) ;
+	\draw [shift={(390,70)}, rotate = 180] [fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (19.2,-4.8) -- (0,0) -- (19.2,4.8) -- cycle    ;
+
+	% Text Node
+	\draw (341,22.4) node [anchor=north west][inner sep=0.75pt]    {$\tau ( x+\Delta x,t)$};
+	% Text Node
+	\draw (81,132.4) node [anchor=north west][inner sep=0.75pt]    {$-\tau ( x,t)$};
+	% Text Node
+	\draw (291,182.4) node [anchor=north west][inner sep=0.75pt]    {$x+\Delta x$};
+	% Text Node
+	\draw (181,182.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+	% Text Node
+	\draw (221,92.4) node [anchor=north west][inner sep=0.75pt]    {$\alpha ( x,t)$};
+	% Text Node
+	\draw (399,52.4) node [anchor=north west][inner sep=0.75pt]    {$\alpha ( x+\Delta t,t)$};
+	% Text Node
+	\draw (241,52.4) node [anchor=north west][inner sep=0.75pt]    {$\Delta s$};
+
+
+	\end{tikzpicture}
+	\caption{Tensione agli estremi di un piccolo arco di corda.}
+\end{figure}
+\FloatBarrier
+
+%\fg[Tensione agli estremi di un piccolo arco di corda]{0.6}{onde-tensione-arco}
+
 
 \begin{equation*}
-	\tau ( x+\Delta x,t)\cos \alpha ( x+\Delta x,t) -\tau ( x,t)\cos \alpha ( x,t) =0
+0=R_{x} =\textcolor[rgb]{0.82,0.01,0.11}{\tau ( x+\Delta x,t)\cos \alpha ( x+\Delta x,t)} -\textcolor[rgb]{0.49,0.83,0.13}{\tau ( x,t)\cos \alpha ( x,t)}
 \end{equation*}
-Dividendo per $\displaystyle \Delta x$ e facendo il limite per $\displaystyle \Delta x\rightarrow 0$
-\begin{gather*}
-	\frac{\partial }{\partial x}[ \tau ( x,t)\cos \alpha ( x,t)] =0\\
-	\Rightarrow \ \tau ( x,t)\cos \alpha ( x,t) =\tau _{0}( t) \ \left( \geqslant 0\ \text{è intensità}\right)
-\end{gather*}
+Dividendo per $\displaystyle \Delta x$ e facendo il limite per $\displaystyle \Delta x\rightarrow 0$ diventa una derivata
+\begin{equation*}
+\frac{\partial }{\partial x}[ \tau ( x,t)\cos \alpha ( x,t)] =0
+\end{equation*}
+Questa è la tensione orizzontale, e risulta costante per $\displaystyle x$ fissato
+\begin{equation*}
+\tau _{oriz}( x,t) =\tau ( x,t)\cos \alpha ( x,t) =\tau _{0}( t)
+\end{equation*}
+dove $\displaystyle \tau _{0}( t) \geqslant 0$ perché un'intensità.
+
 Calcoliamo le componenti verticali delle forze agenti sul tratto considerato
 \begin{equation*}
-	\tau _{vert}( x,t) =\tau ( x,t)\sin \alpha ( x,t) =\underbrace{\tau ( x,t)\cos \alpha ( x,t)}_{\tau _{0}( t)}\underbrace{\tan \alpha ( x,t)}_{u_{x}( x,t)} =\tau _{0}( t) u_{x}( x,t)
+\tau _{vert}( x,t) =\tau ( x,t)\sin \alpha ( x,t) =\underbrace{\tau ( x,t)\cos \alpha ( x,t)}_{\tau _{0}( t)}\underbrace{\tan \alpha ( x,t)}_{u_{x}( x,t)} =\tau _{0}( t) u_{x}( x,t)
 \end{equation*}
 Dunque la risultante verticale è
-\begin{equation*}
-	\tau _{vert}( x+\Delta x,t) -\tau _{vert}( x,t) =\tau _{0}( t)[ u_{x}( x+\Delta x,t) -u_{x}( x,t)]
-\end{equation*}
-Consideriamo ora le forze di volume verticali come il peso o carichi esterni. Sia $\displaystyle f=f( x,t)$ l'intensità per unità di massa della risultante di tali forze. Per la legge di conservazione della massa, la forza agente sul tratto di corda esaminato è 
-\begin{equation*}
-	\rho ( x,t) f( x,t) \Delta s=\rho _{0}( x) f( x,t) \Delta x
-\end{equation*}
+\begin{align*}
+\text{tensioni} & =\tau _{vert}( x+\Delta x,t) -\tau _{vert}( x,t)\\
+ & =\textcolor[rgb]{0.29,0.56,0.89}{\tau _{0}( t)[ u_{x}( x+\Delta x,t) -u_{x}( x,t)}]
+\end{align*}
+Consideriamo ora le forze esterne di \textbf{volume} \textbf{verticali} come il peso o carichi esterni. Sia $\displaystyle f=f( x,t)$ l'intensità per unità di massa della risultante di tali forze. Per la legge di conservazione della massa, la forza agente sul tratto di corda esaminato è
+\begin{align*}
+\text{forze di volume} & =\rho ( x,t) f( x,t) \Delta s\\
+ & =\textcolor[rgb]{0.96,0.65,0.14}{\rho _{0}( x) f( x,t) \Delta x}
+\end{align*}
 Applichiamo ora la seconda legge di Newton: le forze agenti sono
 \begin{align*}
-	\tau _{vert}( x+\Delta x,t) -\tau _{vert}( x,t) & =\tau _{0}( t)[ u_{x}( x+\Delta x,t) -u_{x}( x,t)] & \text{tensione}        \\
-	\rho ( x,t) f( x,t) \Delta s                    & =\rho _{0}( x) f( x,t) \Delta x                    & \text{forze di volume} 
+\text{forze risultanti} & =\text{tensioni} +\text{forze di volume}
 \end{align*}
-osservando che $\displaystyle u_{tt}$ è l'accelerazione scalare, la somma delle forze dovrà essere uguale a
+mentre
+\begin{align*}
+\text{massa} \cdotp \text{accelerazione} & =\rho ( x) u_{tt} \Delta s\\
+ & =\textcolor[rgb]{0.56,0.07,1}{\rho _{0}( x) u_{tt} \Delta x}
+\end{align*}
+osservando che $\displaystyle u_{tt}$ è l'accelerazione scalare.
+
+Quindi
 \begin{equation*}
-	\rho ( x) u_{tt} \Delta s=\rho _{0}( x) u_{tt} \Delta x
+\text{massa} \cdotp \text{accelerazione} =\text{forze risultanti}
 \end{equation*}
 da cui si ricava
 \begin{equation*}
-	\rho _{0}( x) u_{tt} \Delta x=\tau _{0}( t)[ u_{x}( x+\Delta x,t) -u_{x}( x,t)] +\rho _{0}( x) f( x,t) \Delta x
+\textcolor[rgb]{0.56,0.07,1}{\rho _{0}( x) u_{tt} \Delta x} =\textcolor[rgb]{0.29,0.56,0.89}{\tau }\textcolor[rgb]{0.29,0.56,0.89}{_{0}}\textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{t}\textcolor[rgb]{0.29,0.56,0.89}{)}\textcolor[rgb]{0.29,0.56,0.89}{[}\textcolor[rgb]{0.29,0.56,0.89}{u}\textcolor[rgb]{0.29,0.56,0.89}{_{x}}\textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{x+\Delta x,t}\textcolor[rgb]{0.29,0.56,0.89}{)}\textcolor[rgb]{0.29,0.56,0.89}{-u}\textcolor[rgb]{0.29,0.56,0.89}{_{x}}\textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{x,t}\textcolor[rgb]{0.29,0.56,0.89}{)}] +\textcolor[rgb]{0.96,0.65,0.14}{\rho }\textcolor[rgb]{0.96,0.65,0.14}{_{0}}\textcolor[rgb]{0.96,0.65,0.14}{(}\textcolor[rgb]{0.96,0.65,0.14}{x}\textcolor[rgb]{0.96,0.65,0.14}{)}\textcolor[rgb]{0.96,0.65,0.14}{f}\textcolor[rgb]{0.96,0.65,0.14}{(}\textcolor[rgb]{0.96,0.65,0.14}{x,t}\textcolor[rgb]{0.96,0.65,0.14}{)}\textcolor[rgb]{0.96,0.65,0.14}{\Delta x}
 \end{equation*}
 dividendo per $\displaystyle \Delta x$ e passando al limite per $\displaystyle \Delta x\rightarrow 0$ ottengo
 \begin{equation*}
-	\rho _{0}( x) u_{tt} =\tau _{0}( t) u_{xx} +\rho _{0} f( x,t)
+\rho _{0}( x) u_{tt} =\tau _{0}( t) u_{xx} +\rho _{0} f( x,t)
 \end{equation*}
 Da cui, definita
 \begin{equation*}
-	c^{2} =\frac{\tau _{0}( t)}{\rho _{0}( x)}
+c^{2} =\frac{\tau _{0}( t)}{\rho _{0}( x)}
 \end{equation*}
 arrivo all'equazione della corda vibrante
-\begin{equation*}
-	\boxed{u_{tt} -c^{2} u_{xx} =f( x,t)}
-\end{equation*}
+\begin{equation}
+\boxed{u_{tt} -c^{2} u_{xx} =f( x,t)}
+\end{equation}
 \begin{nb}
-	Le dimensioni di $\displaystyle c$ sono
+	Le dimensioni di $\displaystyle c^{2}$ e $\displaystyle c$ sono
 	\begin{equation*}
-		[ c] =\text{lunghezza} \times \text{tempo}^{-1}
+		[ c]^{2} =\frac{[ F]}{[ M] /[ L]} =\frac{\cancel{[ M]}\frac{[ L]}{[ T]^{2}}}{\cancel{[ M]} /[ L]} =\frac{[ L]^{2}}{[ T]^{2}} \ \ \Rightarrow \ \ [ c] =\frac{[ L]}{[ T]}
 	\end{equation*}
-	quelle di una velocità.
+	quelle di una velocità
 \end{nb}
 \begin{nb}
 	Se la corda è omogenea
 	\begin{equation*}
-		\Rightarrow \rho _{0}( x) =\rho _{0} \ \text{cost.}
+		\rho _{0}( x) =\rho _{0} \ \text{costante}
 	\end{equation*}
-	Se è anche perfettamente elastica
+	Se la corda è perfettamente elastica
 	\begin{equation*}
-		\Rightarrow \tau _{0}( t) =\tau _{0} \ \text{cost.}
+		\tau _{0}( t) =\tau _{0} \ \text{costante}
 	\end{equation*}
+	Allora sotto entrambe le ipotesi
 	\begin{equation*}
-		\Rightarrow \ c^{2} =\frac{\tau _{0}( t)}{\rho _{0}( x)} \ \text{cost.}
+		c^{2} =\frac{\tau _{0}( t)}{\rho _{0}( x)} \ \text{costante}
 	\end{equation*}
 	D'ora in poi lavoreremo sempre sotto queste ipotesi.
 \end{nb}
 \section{Energia}
 
 Consideriamo una corda a riposo (al tempo $\displaystyle t=0$) in posizione orizzontale sull'asse $\displaystyle x$, occupante un segmento $\displaystyle [ 0,L]$. Essendo $\displaystyle u_{t}( x,t)$ la velocità di vibrazione verticale della particella di corda in $\displaystyle x$, l'\textbf{energia cinetica totale }durante la vibrazione è
-\begin{equation*}
+\begin{equation}
 	E_{cin}( t) =\frac{1}{2}\int ^{L}_{0} \rho _{0} u^{2}_{t} dx
-\end{equation*}
+\end{equation}
 La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle forze elastiche. In un elemento di corda con lunghezza a riposo $\displaystyle dx$, l'allungamento dovuto alle forze elastiche è pari a
 
 
@@ -6474,20 +6554,20 @@ La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle fo
 \FloatBarrier
 
 \begin{equation*}
-	ds-dx=\sqrt{1+u^{2}_{x}} dx-dx=\underbrace{\left(\sqrt{1+u^{2}_{x}} -1\right)}_{\text{al primo ordine} ,\ |u_{x} |\ll 1} dx\cong \frac{1}{2} u^{2}_{x} dx
+	\text{allungamento} = ds-dx=\sqrt{1+u^{2}_{x}} dx-dx=\underbrace{\left(\sqrt{1+u^{2}_{x}} -1\right)}_{|u_{x} |\ll 1} dx\cong\footnote{Per $\varepsilon \ll 1$, $\sqrt{1+\varepsilon}\approx 1+\varepsilon/2 $} \frac{1}{2} u^{2}_{x} dx
 \end{equation*}
-Quindi il lavoro compiuto da tali forze\footnote{Stiamo trattando piccole vibrazioni, $\displaystyle \tau $ non dipende da $\displaystyle x$.} è
+Quindi il lavoro compiuto da tali forze elastiche\footnote{Stiamo trattando piccole vibrazioni, $\displaystyle \tau $ non dipende da $\displaystyle x$.} è
 \begin{equation*}
-	dW=\frac{1}{2} \tau _{0} u^{2}_{x} dx
+	dW= \text{forza}\cdot\text{allungamento}= \frac{1}{2} \tau _{0} u^{2}_{x} dx
 \end{equation*}
 Sommando i contributi di tutti gli elementi ottengo l'energia potenziale totale
-\begin{equation*}
+\begin{equation}
 	E_{pot}( t) =\frac{1}{2}\int ^{L}_{0} \tau _{0} u^{2}_{x} dx
-\end{equation*}
+\end{equation}
 L'\textbf{energia meccanica totale }della corda risulta essere
-\begin{equation*}
+\begin{equation}
 	E( t) =E_{cin}( t) +E_{pot}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] dx
-\end{equation*}
+\end{equation}
 
 
 \LezioneS{01/04/2021}
@@ -6796,10 +6876,15 @@ Una perturbazione inizialmente localizzata in $z$ non viene avvertita nel punto 
 \begin{equation*}
 	\overline{t} =\frac{| p-z| }{c}
 \end{equation*}
+e poi viene continuata ad essere avvertita anche per tempi successivi perché rimane nel settore.
+
+Nel caso invece in cui il dato è trasportato esclusivamente lungo la caratteristica il segnale è istantaneo, tale caso si ha quando $h=0$.
+
+Questo evidenzia la caratteristica intermedia del caso in dimensione $n=1$, mentre vedremo che la caratteristica di ammettere segnali istantanei dipende dalla dimensione $n$ dello spazio, se è pari o dispari.
 
 \LezioneS{08/04/2021}
 
-Riprendiamo il \textbf{problema di Cauchy globale}
+Riprendiamo il \textbf{problema di Cauchy globale} omogeneo.
 \begin{equation}
 	\text{(PCG)} \ 
 	\begin{cases}
@@ -6816,7 +6901,7 @@ la soluzione è data dalla \textbf{formula di d'Alembert}
 \end{equation}
 Esaminiamo alcune conseguenze di questa formula:
 \begin{enumerate}
-	\item Il (PCG) \eqref{eq:onde-pcg-1d} ha un'unica soluzione \textit{regolare} data da \eqref{eq:onde-formula-di-dAlembert}. Notiamo che deve essere:
+	\item Il (PCG) \eqref{eq:onde-pcg-1d} ha un'\textbf{unica} soluzione \textit{regolare} data da \eqref{eq:onde-formula-di-dAlembert}. Notiamo che deve essere:
 		\begin{equation*}
 			g\in C^{2}(\mathbb{R}) ,\ h\in C^{1}(\mathbb{R}) ,
 		\end{equation*}
@@ -6829,15 +6914,15 @@ Esaminiamo alcune conseguenze di questa formula:
 		\begin{equation*}
 			| u_{1}( x,t) -u_{2}( x,t)| \leqslant \Vert g_{1} -g_{2}\Vert _{L^{\infty }(\mathbb{R})} +T\Vert h_{1} -h_{2}\Vert _{L^{\infty }(\mathbb{R})}
 		\end{equation*}
-		per ogni $\displaystyle x,t\in \mathbb{R} \times [ 0,T]$.
+		per ogni $x\in \mathbb{R}, t\in [0,T]$.
 	\item La $\displaystyle u$ si può esprimere come somma di due funzioni
 		\begin{equation*}
 			u( x,t) =F( x-ct) +G( x+ct)
 		\end{equation*}
 		per esempio
 		\begin{align*}
-			F( x) & =\frac{1}{2} g( x) -\frac{1}{2c}\int _{0}^{x} h( y) dy \\
-			G( x) & =\frac{1}{2} g( x) +\frac{1}{2c}\int _{0}^{x} h( y) dy 
+			F( x+ct) & =\frac{1}{2} g( x+ct) -\frac{1}{2c}\int _{0}^{x+ct} h( y) dy \\
+			G( x-ct) & =\frac{1}{2} g( x-ct) +\frac{1}{2c}\int _{x-ct}^{0} h( y) dy 
 		\end{align*}
 		quindi $\displaystyle u$ è sovrapposizione di due onde progressive.
 	\item Nonostante abbiamo assunto $\displaystyle g\in C^{2} ,\ h\in C^{1}$ la Formula di d'Alembert \eqref{eq:onde-formula-di-dAlembert} ha senso anche per $\displaystyle g$ continua e $\displaystyle h$ limitata e soddisfa l'equazione in un senso \textit{debole}
@@ -6855,7 +6940,7 @@ Esaminiamo alcune conseguenze di questa formula:
 			x-ct & =\xi \\
 			x+ct & =\mu 
 		\end{align*}
-		sono le rette caratteristiche
+		sono le rette caratteristiche \emph{che trasportano i dati iniziali}
 		\begin{figure}[htpb]
 			\centering
 
@@ -7033,12 +7118,12 @@ Esaminiamo alcune conseguenze di questa formula:
 	nel triangolo $\displaystyle ( 0,L,A) \ u$ è determinata dalla Formula di d'Alembert. Nel triangolo di destra costruisco il quadrilatero caratteristico verde: conosco il valore di $\displaystyle u$ nei punti cerchiati in verde e \eqref{eq:onde-uguaglianze-quadrilatero} mi permette di trovare anche il valore di $\displaystyle u( B)$. Posso fare lo stesso ragionamento per ogni punto del triangolo di destra e di sinistra. Per il triangolo sopra il procedimento è analogo, costruendo un quadrilatero come quello arancione.
 \end{enumerate}
 
-\textbf{Metodo di Duhamel per il problema non omogeneo.}
+\subsection{Metodo di Duhamel per il problema non omogeneo con IC omogenee.}
 \begin{equation}
 	\begin{cases}
 		u_{tt} -c^{2} u_{xx} =f & x\in \mathbb{R} ,t >0 \\
-		u( x,0) =g( x)          & x\in \mathbb{R}       \\
-		u_{t}( x,0) =h( x)      & x\in \mathbb{R}       
+		u( x,0) =0          & x\in \mathbb{R}       \\
+		u_{t}( x,0) =0      & x\in \mathbb{R}       
 	\end{cases}
 \end{equation}
 \begin{oss}
@@ -7070,29 +7155,59 @@ Esaminiamo alcune conseguenze di questa formula:
 		y( t) =\int _{0}^{t} w( t;s) ds.
 	\end{equation*}
 \end{oss}
-Applichiamo il metodo di variazione delle costanti all'equazione delle onde: Sia: 
-\begin{equation*}
-	w=w( x,t;s) ,\ \ \ \ 0\leqslant s\leqslant t,
-\end{equation*}
-soluzione di:
-\begin{equation*}
-	\begin{cases}
-		w_{tt} -c^{2} w_{xx} =0 & x\in \mathbb{R} ,t >s \\
-		w( x,s;s) =0            &                       \\
-		w_{t}( x,s;s) =f( x,s)  & x\in R,t=s            
-	\end{cases}
-\end{equation*}
-Questo problema lo sappiamo risolvere quando $\displaystyle s=0$ ma l'equazione delle onde è invariante per traslazioni temporali; per la formula di d'Alembert (partendo da $\displaystyle s$ e non da $\displaystyle 0$):
-\begin{equation*}
-	w( x,t;s) =\frac{1}{2c}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dy,
-\end{equation*}
-allora:
-\begin{align*}
-	u( x,t) =\int _{0}^{t} w( x,t;s) ds & =\frac{1}{2c}\int _{0}^{t}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds \\
-	                                    & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) dyds                            
-\end{align*}
-dove ricordiamo che $\displaystyle S_{x,t}$ è il settore in figura .
 
+\begin{theorem}
+[Metodo di Duhamel] Se $\displaystyle w( x,t;s)$, con $\displaystyle 0\leqslant s\leqslant t$, è soluzione di
+\begin{equation*}
+\begin{cases}
+w_{tt} -c^{2} w_{xx} =\boxed{0} & x\in \mathbb{R} ,\boxed{t >s}\\
+w( x,s;s) =0 & x\in \mathbb{R} ,t=s\\
+w_{t}( x,s;s) =f( x,s) & x\in \mathbb{R} ,t=s
+\end{cases}
+\end{equation*}
+allora
+\begin{equation*}
+u( x,t) =\int _{0}^{t} w( x,t;s) ds\ \ \ \ x\in \mathbb{R} ,t >0
+\end{equation*}
+è soluzione di
+\begin{equation*}
+\begin{cases}
+u_{tt} -c^{2} u_{xx} =f & x\in \mathbb{R} ,t >0\\
+u( x,0) =0 & x\in \mathbb{R}\\
+u_{t}( x,0) =0 & x\in \mathbb{R}
+\end{cases}
+\end{equation*}
+\end{theorem}
+\begin{dimostrazione}
+Calcoliamo i vari termini
+\begin{align*}
+u_{t}( x,t) & =\underbrace{w( x,t;t)}_{=0} +\int _{0}^{t} w_{t}( x,t;s) ds\\
+ & \\
+u_{tt}( x,t) & =\underbrace{w_{t}( x,t;t)}_{=f( x,t)} +\int _{0}^{t} w_{tt}( x,t;s) ds\\
+ & \\
+c^{2} u_{xx}( x,t) & =\int _{0}^{t}\underbrace{c^{2} w_{xx}( x,t;s)}_{w_{tt}( x,t;s)} ds
+\end{align*}
+Quindi l'equazione non omogenea è rispettata
+\begin{equation*}
+u_{tt}( x,t) -c^{2} u_{xx}( x,t) =f( x,t) +\int _{0}^{t} w_{tt}( x,t;s) ds-\int _{0}^{t} w_{tt}( x,t;s) ds=f( x,t)
+\end{equation*}
+e anche le condizioni al bordo
+\begin{align*}
+u( x,0) & =\int _{0}^{0} w( x,t;s) ds=0\\
+u_{t}( x,0) & =\int _{0}^{0} w_{t}( x,t;s) ds=0
+\end{align*}
+\end{dimostrazione}
+Ottimo, ma noi tale problema lo sappiamo risolvere lo sappiamo risolvere quando $\displaystyle s=0$. Tuttavia l'equazione delle onde \textbf{è invariante per traslazioni temporali}, quindi usiamo la formula di d'Alembert (partendo da $\displaystyle s$ e non da $\displaystyle 0$):
+\begin{equation*}
+w( x,t;s) =\frac{1}{2c}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dy
+\end{equation*}
+allora grazie a Duhamel
+\begin{align*}
+u( x,t) & =\int _{0}^{t} w( x,t;s) ds\\
+ & =\frac{1}{2c}\int _{0}^{t}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds\\
+ & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) dyds
+\end{align*}
+dove ricordiamo che $\displaystyle S_{x,t}$ è il settore.
 
 \LezioneS{12/04/2021}
 % (fatta da Verzini)
@@ -7102,7 +7217,7 @@ Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione d
 \begin{equation}
 	u_{tt} -c^{2} \Delta u=f,\ \ \x \in \Omega \subset \mathbb{R}^{n} ,t >0,
 \end{equation}
-$c$ ha le dimensioni di una velocità anche in questo caso, e sarà la velocità di propagazione del segnale. Vi sono particolari soluzioni, specialmente nei casi $n=2,3$. Analizziamo il caso delle onde sferiche in $n=3$. Prende la forma, dipendente \textit{solo} dal raggio:
+$c$ ha le dimensioni di una velocità anche in questo caso, e sarà la velocità di propagazione del segnale. Vi sono \textbf{particolari soluzioni}, specialmente nei casi $n=2,3$. Analizziamo il caso delle \textbf{onde sferiche} in $n=3$ e studiamo il \textbf{caso omogeneo}. La soluzione prende la forma, dipendente \textit{solo} dal raggio:
 \begin{equation*}
 	u(\x ,t) =w( r,t) ,\ \ r=| \x| =\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}} .
 \end{equation*}
@@ -7188,16 +7303,7 @@ Sia $Q_{T} =\Omega \times ( 0,T)$ il \textit{cilindro spazio-temporale}, dove $\
 \end{equation}
 Le condizioni al bordo possono essere Dirichlet, Neumann, Robin o miste, come già visto.
 
-Anche in dimensione $n >1$ ha importanza il \textbf{problema di Cauchy globale}, cioè con $\Omega =\mathbb{R}^{n}$:
-\begin{equation}
-	\begin{cases}
-		u_{tt} -c^{2} \Delta u=f & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
-		u(\x ,0) =g      & \text{in} \ \mathbb{R}^{n}                      \\
-		u_{t}(\x ,0) =h  & \text{in} \ \mathbb{R}^{n}                      
-	\end{cases}
-	\label{eq:pcg-onde-unicita}
-\end{equation}
-Vedremo che per $n=1,2,3$ le soluzioni hanno proprietà molto diverse tra loro. Mostriamo ora un semplice risultato, che useremo subito dopo nel teorema per l'unicità. Usiamo il `metodo dell'energia', definendo appunto l'energia tramite la formula:
+Mostriamo ora un semplice risultato, che useremo subito dopo nel teorema per l'unicità. Usiamo il `metodo dell'energia', definendo appunto l'energia tramite la formula:
 \begin{equation}
 	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} d\x ,
 \end{equation}
@@ -7233,7 +7339,7 @@ otteniamo infine:
 		      \end{equation*}quindi è costante, in particolare è sempre uguale al suo valore iniziale:
 		      \begin{equation*}
 		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} d\x .
-		      \end{equation*}Siccome siamo con condizioni iniziale nulle:
+		      \end{equation*}Siccome siamo con \textbf{condizioni inizial nulle}:
 		      \begin{equation*}
 		      	\begin{cases}
 		      		v(\x ,0) =0,     & \text{in} \ \overline{\Omega } \\
@@ -7248,7 +7354,7 @@ otteniamo infine:
 			E( t) =0,\ \forall t.
 		\end{equation*}
 		
-		Notiamo anche che l'integrale è la somma di due contributi non nulli. Affinché $E( t)$ sia sempre nulla, deve per forza essere che entrambi i due integrali sono nulli\footnote{Non può essere altrimenti: se uno desse contributo positivo, l'altro dovrebbe dare contributo negativo per compensare, ma danno entrambi contributo positivo.}:
+		Notiamo anche che l'integrale è la somma di due contributi non negativi. Affinché $E( t)$ sia sempre nulla, deve per forza essere che entrambi i due integrali sono nulli\footnote{Non può essere altrimenti: se uno desse contributo positivo, l'altro dovrebbe dare contributo negativo per compensare, ma danno entrambi contributo positivo.}:
 		\begin{equation*}
 			\int _{\Omega } v_{t}^{2} \equiv 0,\ \ \int _{\Omega }| \nabla v| ^{2} \equiv 0,\ \ \forall t,
 		\end{equation*}essendo valida per ogni $\Omega $ e per ogni tempo, per forza $v_{t} =0=\nabla v$, cioè $v$ è una quantità costante, e in particolare uguale alla condizione iniziale, che è nulla, come osservato. Quindi:
@@ -7285,6 +7391,15 @@ otteniamo infine:
 
 
 Passiamo al problema di Cauchy globale.
+
+\begin{equation}
+	\begin{cases}
+		u_{tt} -c^{2} \Delta u=f & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
+		u(\x ,0) =g      & \text{in} \ \mathbb{R}^{n}                      \\
+		u_{t}(\x ,0) =h  & \text{in} \ \mathbb{R}^{n}                      
+	\end{cases}
+	\label{eq:pcg-onde-unicita}
+\end{equation}
 
 Facciamo ora un'osservazione, ragionando in $n=2$. Supponiamo di star considerando una perturbazione governata da un'equazione delle onde omogenea $( f\equiv 0)$. Questa perturbazione è avertita nel punto $\x_{0}$ all'istante $t_{0}$.
 
@@ -7377,8 +7492,8 @@ Riprendiamo e risolviamo il Problema di Cauchy globale
 	\text{(PCG)} \ 
 	\begin{cases}
 		u_{tt} -c^{2} \Delta u=0            & \x \in \mathbb{R}^{3} ,t >0 \\
-		u(\x ,0) =g(\x)     & \x\mathbb{\in R}^{3}        \\
-		u_{t}(\x ,0) =h(\x) & \x\mathbb{\in R}^{3}        
+		u(\x ,0) =g(\x)     & \x\in\mathbb{R}^{3}        \\
+		u_{t}(\x ,0) =h(\x) & \x\in\mathbb{R}^{3}        
 	\end{cases}
 \end{equation*}
 sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ è unica, dobbiamo dimostrarne l'esistenza.
@@ -7393,7 +7508,7 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 		w_{h}( x,0) =0,\\
 		\partial _{t} w_{h}( x,0) =h( x) ,
 	\end{gather*}
-	calcolando
+	calcolando la derivata per un tempo $t$ generico
 	\begin{equation*}
 		\partial _{t} w_{h}( x,t) =\frac{1}{2c}[ h( x+ct) c+ch( x-ct)] =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[h(x+ct)+h(x-ct)]}
 	\end{equation*}
@@ -7403,37 +7518,47 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	\begin{equation*}
 		u( x,t) =\partial _{t} w_{g}( x,t) +w_{h}( x,t)
 	\end{equation*}
-	questa struttura della soluzione vale in ogni dimensione.
 \end{oss}
 \begin{theorem}
-	[Lemma A] Se $\displaystyle w_{g}$ è sufficientemente regolare (qui ad esempio basta $\displaystyle C^{3}$) allora $\displaystyle v=\partial _{t} w_{g}$ è soluzione di:
+	[Lemma A] In dimensione $\displaystyle n$ generica, sia $\displaystyle w_{h}$ la soluzione di
 	\begin{equation*}
-		\begin{cases}
-			\partial _{tt} v-c^{2} \Delta v=0 & \text{in} \ \mathbb{R}^{n} \times ( 0,+\infty ) \\
-			v(\x ,0) =g(\x)   & \text{in} \ \mathbb{R}^{n}                      \\
-			v_{t}(\x ,0) =0           & \text{in} \ \mathbb{R}^{n}                      
-		\end{cases}
+	\begin{cases}
+	w_{tt} v-c^{2} \Delta w=0 & \mathbf{x} \in \mathbb{R}^{n} ,t >0\\
+	w(\mathbf{x} ,0) =0 & \mathbf{x} \in \mathbb{R}^{n}\\
+	w_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \mathbf{x} \in \mathbb{R}^{n}
+	\end{cases}
 	\end{equation*}
-	Di conseguenza, la soluzione di (PCG) è data da:
+	se $\displaystyle w_{g}$ è sufficientemente regolare (qui ad esempio basta $\displaystyle C^{3}$) allora
+	\begin{equation*}
+	v=\partial _{t} w_{g}
+	\end{equation*}
+	è soluzione di:
+	\begin{equation*}
+	\begin{cases}
+	\partial _{tt} v-c^{2} \Delta v=0 & \mathbf{x} \in \mathbb{R}^{n} ,t >0\\
+	v(\mathbf{x} ,0) =g(\mathbf{x}) & \mathbf{x} \in \mathbb{R}^{n}\\
+	v_{t}(\mathbf{x} ,0) =0 & \mathbf{x} \in \mathbb{R}^{n}
+	\end{cases}
+	\end{equation*}
+	Come corollario, essendo il problema \textbf{omogeneo} possiamo sommare le soluzioni. La soluzione di (PCG) è data da:
 	\begin{align*}
-		u & =v+w_{h}                      \\
-		  & =\partial _{t} w_{g} +w_{h} . 
+	u & =v+w_{h}\\
+	 & =\partial _{t} w_{g} +w_{h} .
 	\end{align*}
-	Questo vale in qualunque dimensione.
 	\label{thm:lemma-A}
 \end{theorem}
 \begin{dimostrazione}
 	Deriviamo l'equazione delle onde rispetto a $\displaystyle t$ ipotizzando $\displaystyle w_{g}$ sufficientemente regolare da giustificare gli scambi di derivate:
 	\begin{equation*}
-		0=\partial _{t}\left( \partial _{tt} w_{g} -c^{2} \Delta w_{g}\right) =\left( \partial _{tt} -c^{2} \Delta \right) \partial _{t} w_{g} =\left( \partial _{tt} -c^{2} \Delta \right) v,
+		0=\partial _{t}\underbrace{\left( \partial _{tt} w_{g} -c^{2} \Delta w_{g}\right)}_{=0\ \text{per ipotesi}} =\left( \partial _{tt} -c^{2} \Delta \right) \partial _{t} w_{g} =\left( \partial _{tt} -c^{2} \Delta \right) v,
 	\end{equation*}
 	quindi $\displaystyle v$ è soluzione dell'equazione delle onde. Verifichiamo i dati iniziali:
 	\begin{align*}
-		v(\x ,0)     & =\partial _{t} w_{g}(\x ,0) =g( x) ,                                \\
-		v_{t}(\x ,0) & =\partial _{tt} w_{g}(\x ,0) =c^{2} \Delta w_{g}(\x ,0) =0. 
+		v(\mathbf{x} ,0) & =\partial _{t} w_{g}(\mathbf{x} ,0) =g(\mathbf{x}) ,\\
+	v_{t}(\mathbf{x} ,0) & =\partial _{tt} w_{g}(\mathbf{x} ,0) =c^{2} \Delta \underbrace{w_{g}(\mathbf{x} ,0)}_{=0} =0.
 	\end{align*}
 \end{dimostrazione}
-Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo con $\displaystyle g=0$ e $\displaystyle h$ qualunque.
+Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo con $\displaystyle g=0$ e $\displaystyle h$ qualunque, per poi costruire la soluzione come appena visto.
 \subsection{Caso \texorpdfstring{$n=3$}{n=3}}
 
 D'ora in poi omettiamo il pedice in $\displaystyle w_{h}$ per comodità.
@@ -7577,7 +7702,7 @@ Se $\displaystyle h(\x) =\delta _{3}(\x -\y)$ allora $\displaystyle r=| \x -\y| 
 
 Sia $\displaystyle h=h(\x)$ qualunque. Scriviamo $\displaystyle h$ come sovrapposizione di impulsi:
 \begin{equation*}
-	h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) d\y ,
+	``\ h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) d\y \ "
 \end{equation*}
 o più formalmente:
 \begin{equation*}
@@ -7630,7 +7755,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	\begin{equation*}
 		w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma }
 	\end{equation*}
-	soddisfa l'equazione delle onde e le condizioni iniziali e al bordo
+	soddisfa l'equazione delle onde e le condizioni iniziali
 	\begin{gather*}
 		w_{h}(\x ,0) =0,\\
 		\partial _{t} w_{h}(\x ,0) =h(\x) .
@@ -7651,21 +7776,23 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 		\partial _{t} w_{h}(\x ,t) & =\frac{1}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\x +ct\mathbf{w}) d\mathbf{w} +\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\mathbf{0})}\nabla h(\x +ct\mathbf{w})\cdotp \mathbf{w} d\mathbf{w} ,} \\
 		\partial _{t} w_{h}(\x ,0) & =h(\x) .                                                                                                                                                                                                                                 
 	\end{align*}
-	Per quanto riguarda l'equazione osserviamo che:
+	Per quanto riguarda l'equazione torniamo alle variabili originali:
 	\begin{align*}
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}\nabla h(\x+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \partial _{\bm{\nu }} h(\bm{\sigma })d\bm{\sigma } & \text{(cambio variabili)}    \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{B_{ct}(\x)} \Delta h(\y) d\y                  & \text{(Gauss)}         \\
-		                                                                                                                                                                                  & =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\bm{\sigma }) d\bm{\sigma } ,               & \text{(coord. polari)} 
+		\mathbf{w} & =\text{versore normale esterno} & \\
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}}\textcolor[rgb]{0.82,0.01,0.11}{\nabla h}\textcolor[rgb]{0.82,0.01,0.11}{(}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{x}}\textcolor[rgb]{0.82,0.01,0.11}{+ct}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{)}\textcolor[rgb]{0.82,0.01,0.11}{\cdotp }\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{d}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\mathbf{0})}\underbrace{\nabla h(\mathbf{x} +ct\mathbf{w})}_{\nabla h(\mathbf{x} +ct\mathbf{w}) =\nabla h(\mathbf{\sigma })} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{d\mathbf{\sigma }} & \\
+	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \nabla h(\mathbf{\sigma }) \cdotp \mathbf{\nu } \ d\mathbf{\sigma } & \\
+	 	& =\frac{1}{4\pi ct}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y} & \text{(Teo. divergenza)}\\
+	 	& =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } , & \text{(coord. polari)}
 	\end{align*}
-	Ora è in una forma adatta ad essere derivata, quindi:
+	quindi:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) d\y} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } ,
+		\partial _{tt} w_{h}(\mathbf{x} ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\mathbf{x} +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } ,
 	\end{equation*}
 	i primi due termini sono uguali (si vede svolgendo i passaggi di prima per tornare indietro), pertanto:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } .
+		\partial _{tt} w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } .
 	\end{equation*}
-	Calcoliamo il laplaciamo:
+	Calcoliamo il laplaciano di $\displaystyle w_{h}$:
 	\begin{align*}
 		\Delta w_{h}(\x ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \Delta h(\x +ct\mathbf{w}) d\mathbf{w} \\
 		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } , 
@@ -8300,6 +8427,7 @@ $\displaystyle \overline{v}$ è la proiezione su $V$ di $x$, che indicheremo com
 \end{itemize}
 
 Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdotte, ma non c'è \textit{la migliore}, questo ci dice che le funzioni continue non sono un sottospazio \textit{chiuso}.
+\subsection{Teorema delle Proiezioni}
 \begin{theorem}
 	[delle Proiezioni] Sia $H$ di Hilbert, $V$ sottospazio vettoriale di $H$ \textbf{chiuso}\footnote{in senso topologico, deve contenere tutti i suoi punti di frontiera.}, $x\in H$. Allora $\exists !P_{V} x\in V$ tale che
 	\begin{equation*}
@@ -8564,6 +8692,7 @@ per Cauchy-Schwartz. Quindi $\displaystyle L$ è lineare e continuo (limitato) a
 Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle \Vert L\Vert _{*} \geqslant \Vert u\Vert $ allora $\displaystyle \Vert L\Vert _{*} =\Vert u\Vert $. Il teorema che vedremo ora ci confermerà che questo non è solo un esempio, ma l'unico caso possibile.
 
 \LezioneV{18/03/2021}
+\subsection{Teorema di rappresentazione di Riesz}
 \begin{theorem}
 	[di rappresentazione di Riesz] Sia $H$ uno spazio di Hilbert, allora $\forall L\in H^{*}$ esiste un unico vettore $u\in H$ tale che
 	\begin{equation*}
@@ -8752,6 +8881,7 @@ Il teorema di Lax-Milgram generalizza queste nozioni e ci permette di risolvere\
 	dove $a$ è una forma bilineare.
 \end{definition}
 Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è ben posto per il teorema di Riesz.
+\subsection{Teorema di Lax-Milgram}
 \begin{theorem}
 	[di Lax-Milgram] Siano
 	\begin{itemize}
