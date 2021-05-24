@@ -1102,7 +1102,7 @@ Consideriamo un volumetto (di controllo) all'interno di un corpo rigido. Il tass
 	% Text Node
 	\draw (319,146.4) node [anchor=north west][inner sep=0.75pt]    {$\partial V$};
 	% Text Node
-	\draw (361,50.4) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{\nu }$};
+	\draw (361,50.4) node [anchor=north west][inner sep=0.75pt]    {$\bm{\nu}$};
 
 
 	\end{tikzpicture}
@@ -3395,7 +3395,7 @@ Dove la funzione Gamma di Eulero è definita come
 	\begin{equation*}
 	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \bm{\sigma} ) d\bm{\sigma} 
 	\end{equation*}
-	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \bm{\sigma } '=\frac{\bm{\sigma } -\x}{r}$, ovvero $\displaystyle \bm{\sigma } =\x +r\bm{\sigma } '$, in modo dale che $\displaystyle \bm{\sigma } '\in \partial B_{1}(\mathbf{0})$ e
+	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \bm{\sigma } '=\frac{\bm{\sigma } -\x}{r}$, ovvero $\displaystyle \bm{\sigma } =\x +r\bm{\sigma } '$, in modo dale che $\displaystyle \bm{\sigma } '\in \partial B_{1}(\zer)$ e
 	\begin{equation*}
 	d\bm{\sigma } =r^{n-1} d\bm{\sigma } '
 	\end{equation*}
@@ -3425,7 +3425,7 @@ Dove la funzione Gamma di Eulero è definita come
 		\draw [line width=2.25]    (158,43) .. controls (190.33,45.67) and (228.33,63) .. (251,98) ;
 
 		% Text Node
-		\draw (125.33,154.73) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{0}$};
+		\draw (125.33,154.73) node [anchor=north west][inner sep=0.75pt]    {$\zer$};
 		% Text Node
 		\draw (167.67,211.07) node [anchor=north west][inner sep=0.75pt]    {$r$};
 		% Text Node
@@ -3437,7 +3437,7 @@ Dove la funzione Gamma di Eulero è definita come
 		% Text Node
 		\draw (212,41.23) node [anchor=north west][inner sep=0.75pt]    {$d\bm{\sigma } '$};
 		% Text Node
-		\draw (97,68.4) node [anchor=north west][inner sep=0.75pt]    {$B_{r}(\mathbf{0})$};
+		\draw (97,68.4) node [anchor=north west][inner sep=0.75pt]    {$B_{r}(\zer)$};
 		% Text Node
 		\draw (102.33,18.4) node [anchor=north west][inner sep=0.75pt]    {$B_{1}(\x)$};
 		% Text Node
@@ -3453,15 +3453,15 @@ Dove la funzione Gamma di Eulero è definita come
 
 	Il concetto si estende opportunamente a $\displaystyle n$ dimensioni: le lunghezze diventano superfici, poi volumi, ecc.
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\mathbf{0})}\cancel{r^{n-1}} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} u(\x +r\bm{\sigma } ') d\bm{\sigma } '
+	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\zer)}\cancel{r^{n-1}} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} u(\x +r\bm{\sigma } ') d\bm{\sigma } '
 	\end{equation*}
 	La regione di integrazione ora non dipende da $\displaystyle r$. Calcoliamo la derivata:
 	\begin{equation*}
-	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})}\frac{d}{dr} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\mathbf{0})} \nabla u(\x +r\bm{\sigma } ') \cdotp \bm{\sigma } 'd\bm{\sigma } '
+	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)}\frac{d}{dr} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} \nabla u(\x +r\bm{\sigma } ') \cdotp \bm{\sigma } 'd\bm{\sigma } '
 	\end{equation*}
-	Sulla sfera $\displaystyle \partial B_{1}(\mathbf{0})$, il vettore coincide col vettore normale $\displaystyle \bm{\sigma } '=\mathbf{\nu }$. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
+	Sulla sfera $\displaystyle \partial B_{1}(\zer)$, il vettore coincide col vettore normale $\displaystyle \bm{\sigma } '=\bm{\nu}$. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
 	\begin{equation*}
-	g'( r) =\frac{r}{w_{n}}\int _{B_{1}(\mathbf{0})} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
+	g'( r) =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
 	\end{equation*}
 	Dunque $\displaystyle g$ è costante. Quindi per continuità di $\displaystyle u$:
 	\begin{align*}
@@ -4098,15 +4098,15 @@ Vediamo la dimostrazione del teorema.
 \begin{dimostrazione}
 	Ricordiamo innanzitutto l'identità di Green con $\displaystyle u,v\in C^{2}(\overline{\Omega })$
 	\begin{equation*}
-	\int _{\Omega }( v\Delta u-u\Delta v) d\mathbf{x} =\int _{\partial \Omega }( v\partial _{\mathbf{\nu }} u-u\partial _{\mathbf{\nu }} v) d\bm{\sigma }
+	\int _{\Omega }( v\Delta u-u\Delta v) d\x =\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\bm{\sigma }
 	\end{equation*}
-	Applichiamo l'identità di Green utilizzando come funzione $\displaystyle u$ la stessa dell'enunciato del teorema. Per la funzione $\displaystyle v$ dobbiamo trovare un'alternativa, infatti, con $\displaystyle \mathbf{x}$ fissato
+	Applichiamo l'identità di Green utilizzando come funzione $\displaystyle u$ la stessa dell'enunciato del teorema. Per la funzione $\displaystyle v$ dobbiamo trovare un'alternativa, infatti, con $\displaystyle \x$ fissato
 	\begin{equation*}
-	v(\mathbf{y}) =\Phi (\mathbf{x} -\mathbf{y}) =\frac{1}{4\pi }\frac{1}{| \mathbf{x} -\mathbf{y}| } \notin C^{2}( \Omega )
+	v(\y) =\Phi (\x -\y) =\frac{1}{4\pi }\frac{1}{| \x -\y| } \notin C^{2}( \Omega )
 	\end{equation*}
 	Con $\displaystyle \Omega $ dominio limitato, definisco 
 	\begin{equation*}
-	\Omega _{\varepsilon } =\Omega \setminus \overline{B}_{\varepsilon }(\mathbf{x})
+	\Omega _{\varepsilon } =\Omega \setminus \overline{B}_{\varepsilon }(\x)
 	\end{equation*}
 	\begin{figure}[H]
 		\centering
@@ -4131,58 +4131,58 @@ Vediamo la dimostrazione del teorema.
 		% Text Node
 		\draw (107.2,59.8) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
 		% Text Node
-		\draw (266.83,64) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\partial B_{\varepsilon }(\mathbf{x})$};
+		\draw (266.83,64) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\partial B_{\varepsilon }(\x)$};
 		% Text Node
-		\draw (80.2,104.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\mathbf{\nu }$};
+		\draw (80.2,104.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
 		% Text Node
-		\draw (196.2,40.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\mathbf{\nu }$};
+		\draw (196.2,40.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
 		% Text Node
-		\draw (221,74) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{x}$};
+		\draw (221,74) node [anchor=north west][inner sep=0.75pt]    {$\x$};
 
 
 		\end{tikzpicture}
 	\end{figure}
 	\FloatBarrier
 
-	In $\displaystyle \Omega _{\varepsilon }$, $\displaystyle v(\mathbf{y}) \in C^{2}\left(\overline{\Omega _{\varepsilon }}\right)$ e inoltre $\displaystyle \Delta v=0$ in $\displaystyle \Omega _{\varepsilon }$.
+	In $\displaystyle \Omega _{\varepsilon }$, $\displaystyle v(\y) \in C^{2}\left(\overline{\Omega _{\varepsilon }}\right)$ e inoltre $\displaystyle \Delta v=0$ in $\displaystyle \Omega _{\varepsilon }$.
 
 	Si trova tutto a partire dall'identità di Green con questa scelta di $\displaystyle u$ e $\displaystyle v$ si elide il termine $\displaystyle u\Delta v=0$.
 	\begin{equation*}
-	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \mathbf{x} -\mathbf{y}| } f(\mathbf{y}) d\mathbf{y}}_{( 1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } \partial _{\mathbf{\nu }} u(\bm{\sigma }) d\bm{\sigma }}_{( 2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }}_{( 3)}
+	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) d\y}_{( 1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \x -\bm{\sigma }| } \partial _{\bm{\nu}} u(\bm{\sigma }) d\bm{\sigma }}_{( 2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma }}_{( 3)}
 	\end{equation*}
 	Inoltre
 	\begin{equation*}
-	\partial \Omega _{\varepsilon } =\partial \Omega \cup \partial B_{\varepsilon }(\mathbf{x})
+	\partial \Omega _{\varepsilon } =\partial \Omega \cup \partial B_{\varepsilon }(\x)
 	\end{equation*}
-	E su $\displaystyle \partial B_{\varepsilon }(\mathbf{x})$
+	E su $\displaystyle \partial B_{\varepsilon }(\x)$
 	\begin{equation*}
-	\mathbf{\nu }(\bm{\sigma }) =\frac{\mathbf{x} -\bm{\sigma }}{| \mathbf{x} -\bm{\sigma }| } =\frac{\mathbf{x} -\bm{\sigma }}{\varepsilon }
+	\bm{\nu}(\bm{\sigma }) =\frac{\x -\bm{\sigma }}{| \x -\bm{\sigma }| } =\frac{\x -\bm{\sigma }}{\varepsilon }
 	\end{equation*}
 	Studiamo come si comporta ciascun termine dell'identità al limite per $\displaystyle \varepsilon \rightarrow 0$
 	\begin{itemize}
 	\item \textbf{Termine 1}
 
 	\begin{equation*}
-	( 1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \mathbf{x} -\mathbf{y}| } f(\mathbf{y}) d\mathbf{y} =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\mathbf{y})\frac{f(\mathbf{y})}{| \mathbf{x} -\mathbf{y}| }}_{g_{\varepsilon }(\mathbf{y})} d\mathbf{y}
+	( 1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) d\y =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\y)\frac{f(\y)}{| \x -\y| }}_{g_{\varepsilon }(\y)} d\y
 	\end{equation*}
 
 	Con 
 
 	\begin{equation*}
-	| g_{\varepsilon }(\mathbf{y})| \leqslant \max\frac{| f| }{| \mathbf{x} -\mathbf{y}| }
+	| g_{\varepsilon }(\y)| \leqslant \max\frac{| f| }{| \x -\y| }
 	\end{equation*}
 
 	Posso usare il teorema di convergenza dominata e passare al limite sotto il segno di integrale, il primo termine tende a
 
 	\begin{equation*}
-	( 1)\rightarrow \int _{\Omega }\frac{1}{| \mathbf{x} -\mathbf{y}| } f(\mathbf{y}) d\mathbf{y}
+	( 1)\rightarrow \int _{\Omega }\frac{1}{| \x -\y| } f(\y) d\y
 	\end{equation*}
 
 	A meno del coefficiente, questo è diventato il potenziale Newtoniano.
 	\item \textbf{Termine 2}
 
 	\begin{equation*}
-	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }( x)}\right)\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }
+	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }( x)}\right)\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma }
 	\end{equation*}
 
 	Di questi, quello sul bordo della palla andrà a zero.
@@ -4190,18 +4190,18 @@ Vediamo la dimostrazione del teorema.
 	Ricordando che
 
 	\begin{equation*}
-	| \partial _{\mathbf{\nu }} u(\bm{\sigma })| =| \nabla u(\bm{\sigma }) \cdotp \mathbf{\nu }| \leqslant \max| \nabla u| 
+	| \partial _{\bm{\nu}} u(\bm{\sigma })| =| \nabla u(\bm{\sigma }) \cdotp \bm{\nu}| \leqslant \max| \nabla u| 
 	\end{equation*}
 
 	maggioriamo\begin{align*}
-	\left| \int _{\partial B_{\varepsilon }(\mathbf{x})}\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }\right|  & \leqslant \int _{\partial B_{\varepsilon }(\mathbf{x})}\frac{| \partial _{\mathbf{\nu }} u(\bm{\sigma })| }{\underbrace{| \mathbf{x} -\bm{\sigma }| }_{=\varepsilon }} d\bm{\sigma }\\
-	 & \leqslant \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\mathbf{x})}\max| \nabla u| d\bm{\sigma }\\
-	 & =\frac{\max| \nabla u| }{\varepsilon }\int _{\partial B_{\varepsilon }(\mathbf{x})} d\bm{\sigma }\\
+	\left| \int _{\partial B_{\varepsilon }(\x)}\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma }\right|  & \leqslant \int _{\partial B_{\varepsilon }(\x)}\frac{| \partial _{\bm{\nu}} u(\bm{\sigma })| }{\underbrace{| \x -\bm{\sigma }| }_{=\varepsilon }} d\bm{\sigma }\\
+	 & \leqslant \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\x)}\max| \nabla u| d\bm{\sigma }\\
+	 & =\frac{\max| \nabla u| }{\varepsilon }\int _{\partial B_{\varepsilon }(\x)} d\bm{\sigma }\\
 	 & =\frac{\max| \nabla u| }{\varepsilon } \cdotp 4\pi \varepsilon ^{2}\rightarrow 0
 	\end{align*}
 
 	L'altro non dipende da $\displaystyle \varepsilon $ quindi rimane così.\begin{equation*}
-	( 2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\mathbf{\nu }} u(\bm{\sigma })}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }
+	( 2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma }
 	\end{equation*}
 
 	A meno del coefficiente, questo è diventato il potenziale di strato semplice.
@@ -4210,24 +4210,24 @@ Vediamo la dimostrazione del teorema.
 	Da qui spunteranno sia il potenziale di doppio strato, che la $\displaystyle u$ stessa.
 
 	\begin{equation*}
-	( 3) =\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\mathbf{x})}\right) u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma }
+	( 3) =\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\x)}\right) u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma }
 	\end{equation*}
 
-	L'integrale su $\displaystyle \partial \Omega $ è già il potenziale di doppio strato, ci manca da far vedere che l'altro tende a $\displaystyle u$, a meno del coefficiente. Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(\mathbf{x})$ con la regola della catena\begin{equation*}
-	\nabla _{\bm{\sigma }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } =-\frac{1}{| \mathbf{x} -\bm{\sigma }| ^{2}} \cdotp \frac{\mathbf{x} -\bm{\sigma }}{| \mathbf{x} -\bm{\sigma }| }( -1) =\frac{\mathbf{x} -\bm{\sigma }}{| \mathbf{x} -\bm{\sigma }| ^{3}} =\frac{\mathbf{x} -\bm{\sigma }}{\varepsilon ^{3}}
+	L'integrale su $\displaystyle \partial \Omega $ è già il potenziale di doppio strato, ci manca da far vedere che l'altro tende a $\displaystyle u$, a meno del coefficiente. Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(\x)$ con la regola della catena\begin{equation*}
+	\nabla _{\bm{\sigma }}\frac{1}{| \x -\bm{\sigma }| } =-\frac{1}{| \x -\bm{\sigma }| ^{2}} \cdotp \frac{\x -\bm{\sigma }}{| \x -\bm{\sigma }| }( -1) =\frac{\x -\bm{\sigma }}{| \x -\bm{\sigma }| ^{3}} =\frac{\x -\bm{\sigma }}{\varepsilon ^{3}}
 	\end{equation*}
 
 	quindi\begin{equation*}
-	\partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } =\nabla \frac{1}{| \mathbf{x} -\bm{\sigma }| } \cdotp \mathbf{\nu } =\frac{\mathbf{x} -\bm{\sigma }}{\varepsilon ^{3}} \cdotp \frac{\mathbf{x} -\bm{\sigma }}{\varepsilon } =\frac{1}{\varepsilon ^{2}}
+	\partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } =\nabla \frac{1}{| \x -\bm{\sigma }| } \cdotp \bm{\nu} =\frac{\x -\bm{\sigma }}{\varepsilon ^{3}} \cdotp \frac{\x -\bm{\sigma }}{\varepsilon } =\frac{1}{\varepsilon ^{2}}
 	\end{equation*}
 
 	Da cui\begin{align*}
-	\int _{\partial B_{\varepsilon }(\mathbf{x})} u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } & =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\mathbf{x})} u(\bm{\sigma }) d\bm{\sigma }\\
-	 & =\frac{4\pi \varepsilon ^{2}}{\varepsilon ^{2}} \cdotp \underbrace{\frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\mathbf{x})} u(\bm{\sigma }) d\bm{\sigma }}_{\rightarrow u(\mathbf{x})}\rightarrow 4\pi u(\mathbf{x})
+	\int _{\partial B_{\varepsilon }(\x)} u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma } & =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\x)} u(\bm{\sigma }) d\bm{\sigma }\\
+	 & =\frac{4\pi \varepsilon ^{2}}{\varepsilon ^{2}} \cdotp \underbrace{\frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\x)} u(\bm{\sigma }) d\bm{\sigma }}_{\rightarrow u(\x)}\rightarrow 4\pi u(\x)
 	\end{align*}
 
 	quindi\begin{equation*}
-	( 3)\rightarrow \int _{\partial \Omega } u(\bm{\sigma }) \partial _{\mathbf{\nu }}\frac{1}{| \mathbf{x} -\bm{\sigma }| } d\bm{\sigma } +4\pi u(\mathbf{x})
+	( 3)\rightarrow \int _{\partial \Omega } u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma } +4\pi u(\x)
 	\end{equation*}
 
 	Riassemblando i vari pezzi si ottiene la tesi.
@@ -7348,7 +7348,7 @@ otteniamo infine:
 		      \end{equation*}
 		      
 		      la prima ci permette anche di concludere inizialmente che il gradiente è il vettore nullo\begin{equation*}
-		      \nabla v(\x ,0) =\mathbf{0} .
+		      \nabla v(\x ,0) =\zer .
 		\end{equation*}Quindi l'energia iniziale è nulla $E( 0) =0$ e pertanto, essendo costante:
 		\begin{equation*}
 			E( t) =0,\ \forall t.
@@ -7523,9 +7523,9 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	[Lemma A] In dimensione $\displaystyle n$ generica, sia $\displaystyle w_{h}$ la soluzione di
 	\begin{equation*}
 	\begin{cases}
-	w_{tt} v-c^{2} \Delta w=0 & \mathbf{x} \in \mathbb{R}^{n} ,t >0\\
-	w(\mathbf{x} ,0) =0 & \mathbf{x} \in \mathbb{R}^{n}\\
-	w_{t}(\mathbf{x} ,0) =h(\mathbf{x}) & \mathbf{x} \in \mathbb{R}^{n}
+	w_{tt} v-c^{2} \Delta w=0 & \x \in \mathbb{R}^{n} ,t >0\\
+	w(\x ,0) =0 & \x \in \mathbb{R}^{n}\\
+	w_{t}(\x ,0) =h(\x) & \x \in \mathbb{R}^{n}
 	\end{cases}
 	\end{equation*}
 	se $\displaystyle w_{g}$ è sufficientemente regolare (qui ad esempio basta $\displaystyle C^{3}$) allora
@@ -7535,9 +7535,9 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	è soluzione di:
 	\begin{equation*}
 	\begin{cases}
-	\partial _{tt} v-c^{2} \Delta v=0 & \mathbf{x} \in \mathbb{R}^{n} ,t >0\\
-	v(\mathbf{x} ,0) =g(\mathbf{x}) & \mathbf{x} \in \mathbb{R}^{n}\\
-	v_{t}(\mathbf{x} ,0) =0 & \mathbf{x} \in \mathbb{R}^{n}
+	\partial _{tt} v-c^{2} \Delta v=0 & \x \in \mathbb{R}^{n} ,t >0\\
+	v(\x ,0) =g(\x) & \x \in \mathbb{R}^{n}\\
+	v_{t}(\x ,0) =0 & \x \in \mathbb{R}^{n}
 	\end{cases}
 	\end{equation*}
 	Come corollario, essendo il problema \textbf{omogeneo} possiamo sommare le soluzioni. La soluzione di (PCG) è data da:
@@ -7554,8 +7554,8 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	\end{equation*}
 	quindi $\displaystyle v$ è soluzione dell'equazione delle onde. Verifichiamo i dati iniziali:
 	\begin{align*}
-		v(\mathbf{x} ,0) & =\partial _{t} w_{g}(\mathbf{x} ,0) =g(\mathbf{x}) ,\\
-	v_{t}(\mathbf{x} ,0) & =\partial _{tt} w_{g}(\mathbf{x} ,0) =c^{2} \Delta \underbrace{w_{g}(\mathbf{x} ,0)}_{=0} =0.
+		v(\x ,0) & =\partial _{t} w_{g}(\x ,0) =g(\x) ,\\
+	v_{t}(\x ,0) & =\partial _{tt} w_{g}(\x ,0) =c^{2} \Delta \underbrace{w_{g}(\x ,0)}_{=0} =0.
 	\end{align*}
 \end{dimostrazione}
 Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo con $\displaystyle g=0$ e $\displaystyle h$ qualunque, per poi costruire la soluzione come appena visto.
@@ -7764,37 +7764,37 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 
 	Effettuando il cambio di variabili
 	\begin{equation*}
-		\bm{\sigma } =\x +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\mathbf{0}) ,\ \ d\bm{\sigma } =c^{2} t^{2} d\mathbf{w}
+		\bm{\sigma } =\x +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\zer) ,\ \ d\bm{\sigma } =c^{2} t^{2} d\mathbf{w}
 	\end{equation*}
 	possiamo scrivere
 	\begin{equation*}
-		w_{h}(\x ,t) =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\x +ct\mathbf{w}) d\mathbf{w} .
+		w_{h}(\x ,t) =\frac{t}{4\pi }\int _{\partial B_{1}(\zer)} h(\x +ct\mathbf{w}) d\mathbf{w} .
 	\end{equation*}
 	Cominciamo coi dati iniziali
 	\begin{align*}
 		w_{h}(\x ,0)               & =0,                                                                                                                                                                                                                                              \\
-		\partial _{t} w_{h}(\x ,t) & =\frac{1}{4\pi }\int _{\partial B_{1}(\mathbf{0})} h(\x +ct\mathbf{w}) d\mathbf{w} +\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\mathbf{0})}\nabla h(\x +ct\mathbf{w})\cdotp \mathbf{w} d\mathbf{w} ,} \\
+		\partial _{t} w_{h}(\x ,t) & =\frac{1}{4\pi }\int _{\partial B_{1}(\zer)} h(\x +ct\mathbf{w}) d\mathbf{w} +\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\zer)}\nabla h(\x +ct\mathbf{w})\cdotp \mathbf{w} d\mathbf{w} ,} \\
 		\partial _{t} w_{h}(\x ,0) & =h(\x) .                                                                                                                                                                                                                                 
 	\end{align*}
 	Per quanto riguarda l'equazione torniamo alle variabili originali:
 	\begin{align*}
 		\mathbf{w} & =\text{versore normale esterno} & \\
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\mathbf{0})}}\textcolor[rgb]{0.82,0.01,0.11}{\nabla h}\textcolor[rgb]{0.82,0.01,0.11}{(}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{x}}\textcolor[rgb]{0.82,0.01,0.11}{+ct}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{)}\textcolor[rgb]{0.82,0.01,0.11}{\cdotp }\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{d}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\mathbf{0})}\underbrace{\nabla h(\mathbf{x} +ct\mathbf{w})}_{\nabla h(\mathbf{x} +ct\mathbf{w}) =\nabla h(\mathbf{\sigma })} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{d\mathbf{\sigma }} & \\
-	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\mathbf{x})} \nabla h(\mathbf{\sigma }) \cdotp \mathbf{\nu } \ d\mathbf{\sigma } & \\
-	 	& =\frac{1}{4\pi ct}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y} & \text{(Teo. divergenza)}\\
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\zer)}}\textcolor[rgb]{0.82,0.01,0.11}{\nabla h}\textcolor[rgb]{0.82,0.01,0.11}{(}\textcolor[rgb]{0.82,0.01,0.11}{\x}\textcolor[rgb]{0.82,0.01,0.11}{+ct}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{)}\textcolor[rgb]{0.82,0.01,0.11}{\cdotp }\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{d}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\zer)}\underbrace{\nabla h(\x +ct\mathbf{w})}_{\nabla h(\x +ct\mathbf{w}) =\nabla h(\mathbf{\sigma })} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{d\mathbf{\sigma }} & \\
+	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \nabla h(\mathbf{\sigma }) \cdotp \bm{\nu} \ d\mathbf{\sigma } & \\
+	 	& =\frac{1}{4\pi ct}\int _{B_{ct}(\x)} \Delta h(\y) d\y & \text{(Teo. divergenza)}\\
 	 	& =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } , & \text{(coord. polari)}
 	\end{align*}
 	quindi:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\mathbf{x} ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \nabla h(\mathbf{x} +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\mathbf{x})} \Delta h(\mathbf{y}) d\mathbf{y}} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } ,
+		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\zer)} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) d\y} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } ,
 	\end{equation*}
 	i primi due termini sono uguali (si vede svolgendo i passaggi di prima per tornare indietro), pertanto:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\mathbf{x} ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\mathbf{x})} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } .
+		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } .
 	\end{equation*}
 	Calcoliamo il laplaciano di $\displaystyle w_{h}$:
 	\begin{align*}
-		\Delta w_{h}(\x ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\mathbf{0})} \Delta h(\x +ct\mathbf{w}) d\mathbf{w} \\
+		\Delta w_{h}(\x ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\zer)} \Delta h(\x +ct\mathbf{w}) d\mathbf{w} \\
 		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } , 
 	\end{align*}
 	ma allora:
@@ -8183,19 +8183,23 @@ Il fenomeno si può osservare ponendo un turacciolo in acqua calma e lasciando c
 \chapter{Introduzione}
 \LezioneV{25/02/2021}
 
-Sia $X$ spazio vettoriale normato reale, stiamo chiedendo due cose: combinazioni lineari e la presenza di una norma. Una norma è un operatore $\Vert \cdotp \Vert :X\rightarrow \mathbb{R}$ tale che
-\begin{itemize}
-	\item $\Vert x\Vert \geqslant 0,\forall x\in X$ e $\Vert x\Vert =0\Leftrightarrow x=0$
-	\item $\Vert \lambda x\Vert =| \lambda | \Vert x\Vert,\forall x\in X,\forall \lambda \in \mathbb{R}$
-	\item $\Vert x+y\Vert \leqslant \Vert x\Vert +\Vert y\Vert $
-\end{itemize}
+Sia $X$ spazio vettoriale normato reale, stiamo chiedendo due cose: combinazioni lineari e la presenza di una norma.
+
+\begin{definition}
+	[Norma] Una norma è un operatore $\Vert \cdotp \Vert :X\rightarrow \mathbb{R}$ tale che
+	\begin{itemize}
+		\item $\Vert x\Vert \geqslant 0,\forall x\in X$ e $\Vert x\Vert =0\Leftrightarrow x=0$
+		\item $\Vert \lambda x\Vert =| \lambda | \Vert x\Vert,\forall x\in X,\forall \lambda \in \mathbb{R}$
+		\item $\Vert x+y\Vert \leqslant \Vert x\Vert +\Vert y\Vert $
+	\end{itemize}
+\end{definition}
 
 La norma permette di definire
 \begin{itemize}
 	\item la distanza $\text{dist}(x,y) =\Vert x-y\Vert $
 	\item le palle aperte $B_{r}(x) =\{y\in X:\Vert x-y\Vert < r\}$
 	      \begin{itemize}
-	      	\item la topologia (aperto, chiuso, ...)
+	      	\item di conseguenza la topologia (aperto, chiuso, ...)
 	      \end{itemize}
 \end{itemize}
 \begin{nb}
@@ -8212,7 +8216,7 @@ Sia $\{x_{n}\}_{n} \subset X$ successione.
 \begin{definition}
 	Definiamo la convergenza e la continuità
 	\begin{enumerate}
-		\item $x_{n}\rightarrow \overline{x}$ per $x\rightarrow +\infty $ se $\Vert x_{n} -\overline{x}\Vert \rightarrow 0$
+		\item $x_{n}\rightarrow \overline{x}$ per $n\rightarrow +\infty $ se $\Vert x_{n} -\overline{x}\Vert \rightarrow 0$
 		\item avendo la convergenza, possiamo definire la continuità
 		      
 		      $f:X\rightarrow Y$ è continua se $x_{n}\rightarrow \overline{x} \Rightarrow f(x_{n})\rightarrow f(\overline{x})$
@@ -8220,6 +8224,18 @@ Sia $\{x_{n}\}_{n} \subset X$ successione.
 \end{definition}
 
 \textit{Esercizio.} Dimostrare che la norma $\Vert \cdotp \Vert $ è una funzione continua
+
+Per la disuguaglianza triangolare:
+\begin{align*}
+	\Vert x\Vert  & =\Vert x-x_{0} +x_{0}\Vert \\
+ 				& \leqslant \Vert x-x_{0}\Vert +\Vert x_{0}\Vert 
+\end{align*}
+quindi
+\begin{equation*}
+	\Big| \Vert x\Vert -\Vert x_{0}\Vert \Big|\leqslant \Vert x-x_{0}\Vert 
+\end{equation*}
+Pertanto se $x\rightarrow x_{0}$ allora $\Vert x\Vert \rightarrow \Vert x_{0}\Vert $.
+
 \begin{definition}
 	$\{x_{n}\}_{n\in \mathbb{N}} \subset X$ si dice di Cauchy (o fondamentale) se
 	\begin{equation*}
@@ -8258,15 +8274,42 @@ Esempi di spazi di Banach.
 \end{nb}
 \textit{Esempio.}
 
-$X=C([ -1,1]) \subset L^{2}(-1,1)$. In $X$ uso $\Vert v\Vert _{2} =\left(\int ^{1}_{-1} v^{2}(x) dx\right)^{1/2}$
-
-Consideriamo la seguente successione
+Consideriamo lo spazio delle funzioni continue in $\displaystyle [ -1,1]$
 \begin{equation*}
-	v_{n}(x) =\begin{cases}
-	0, & -1\leqslant x\leqslant 0\\
-	nx, & 0\leqslant x\leqslant \frac{1}{n}\\
-	1, & \frac{1}{n} \leqslant x\leqslant 1
-	\end{cases}
+	X=C([ -1,1])
+\end{equation*}
+e vediamolo come sottospazio di $\displaystyle L^{2}$
+\begin{equation*}
+	X\subset L^{2}([ -1,1])
+\end{equation*}
+Possiamo scegliere due diverse norme, la norma delle funzioni continue, ovvero il massimo, oppure la norma di $\displaystyle L^{2}$.
+\begin{equation*}
+	\Vert \cdotp \Vert _{C([ -1,1])} \ \ \ \ \Vert \cdotp \Vert _{L^{2}([ -1,1])}
+\end{equation*}
+\begin{itemize}
+\item Con la norma $\displaystyle \Vert \cdotp \Vert _{C([ -1,1])}$
+
+$\displaystyle X$ è uno spazio \textbf{completo}, per dirlo ci serve far vedere che tutte le successioni di Cauchy sono convergenti. In particolare, per ogni $\displaystyle x$ fissato si hanno delle successioni di numeri in $\displaystyle \mathbb{R}$, che è completo, quindi il candidato limite della successione di Cauchy è il limite puntuale $\displaystyle f( x)$
+\begin{gather*}
+	\underbrace{\forall \varepsilon  >0,\exists M >0:\Vert f_{n} -f_{m}\Vert _{C([ -1,1])} < \varepsilon \ \text{per} \ n,m\geqslant M}_{\text{Cauchy}}\\
+	\text{allora}\\
+	\begin{aligned}
+		\forall m >M,\forall x\in [ -1,1],\quad |f( x) -f_{m}( x) | & =\lim _{n\rightarrow \infty } |f_{n}( x) -f_{m}( x) |\\
+			 & \leqslant \lim _{n\rightarrow \infty }\max_{[ -1,1]} |f_{n}( x) -f_{m}( x) |\\
+			 & =\lim _{n\rightarrow \infty }\Vert f_{n} -f_{m}\Vert _{C([ -1,1])}\\
+			 & \leqslant \lim _{n\rightarrow \infty } \varepsilon =\varepsilon 
+	\end{aligned}
+\end{gather*}
+\item Con la norma $\displaystyle \Vert \cdotp \Vert _{L^{2}([ -1,1])}$
+
+$\displaystyle X$ \textbf{non è completo}, perché possiamo trovare una successione di Cauchy che non converge (o meglio, che converge a qualcosa che non appartiene allo spazio).
+
+Consideriamo la seguente successione\begin{equation*}
+v_{n}( x) =\begin{cases}
+0, & -1\leqslant x\leqslant 0\\
+nx, & 0\leqslant x\leqslant \frac{1}{n}\\
+1, & \frac{1}{n} \leqslant x\leqslant 1
+\end{cases}
 \end{equation*}
 
 
@@ -8309,26 +8352,31 @@ Consideriamo la seguente successione
 \end{figure}
 \FloatBarrier
 
-Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leqslant n$
-\begin{align*}
-	\Vert v_{n} -v_{m}\Vert ^{2}_{2} & =\int ^{1}_{-1}(v_{n}(x) -v_{m}(x))^{2} dx                                             \\
-	                                 & =\cancel{\int ^{0}_{-1}} +\int ^{1/n}_{0} +\int ^{1/m}_{1/n} +\cancel{\int ^{1}_{1/m}} \\
-	                                 & =\int ^{1/n}_{0}(n-m)^{2} x^{2} dx+\int ^{1/m}_{1/n}(1-mx)^{2} dx\rightarrow 0         
-\end{align*}
-È convergente a Heaviside, ma non è continua, quindi è \textit{fuori} dallo spazio delle funzioni continue.
+Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leqslant n$\begin{align*}
+\Vert v_{n} -v_{m}\Vert _{2}^{2} & =\int _{-1}^{1}( v_{n}( x) -v_{m}( x))^{2} dx\\
+ & =\cancel{\int _{-1}^{0}} +\int _{0}^{1/n} +\int _{1/n}^{1/m} +\cancel{\int _{1/m}^{1}}\\
+ & =\int _{0}^{1/n}( n-m)^{2} x^{2} dx+\int _{1/n}^{1/m}( 1-mx)^{2} dx\rightarrow 0
+\end{align*}Tuttavia è convergente a Heaviside, che non è continua.
 
-Se inoltre consideriamo la norma solita delle funzioni continue notiamo che
-\begin{equation*}
-	\Vert v_{n} -v_{m}\Vert _{C([ -1,1])} =\max_{x\in [ -1,1]}(v_{n}(x) -v_{m}(x)) =1-\frac{m}{n} \nrightarrow 0
-\end{equation*}
-per $n,m\rightarrow \infty $, infatti se scegliamo $\displaystyle n=2m$ il limite tenderebbe a $\displaystyle 1/2$.
+Se inoltre consideriamo la norma solita delle funzioni continue notiamo che non è nemmeno di Cauchy\begin{equation*}
+\Vert v_{n} -v_{m}\Vert _{C([ -1,1])} =\max_{x\in [ -1,1]}( v_{n}( x) -v_{m}( x)) =1-\frac{m}{n} \nrightarrow 0
+\end{equation*}per $n,m\rightarrow \infty $, infatti se scegliamo $\displaystyle n=2m$ il limite tenderebbe a $\displaystyle 1/2$.
+\end{itemize}
 
 In questo esempio:
 \begin{itemize}
-	\item La successione è di Cauchy ma non converge
-	\item Lo spazio con $\Vert \cdotp \Vert _{2}$ non è completo
-	\item $\Vert \cdotp \Vert _{2}$ e $\Vert \cdotp \Vert _{C}$ non sono equivalenti
+	\item Con $\displaystyle \Vert \cdotp \Vert _{L^{2}}$
+	\begin{itemize}
+		\item La successione è di Cauchy ma non converge, quindi non è completo.
+	\end{itemize}
+	\item Con $\Vert \cdotp \Vert _{C}$
+	\begin{itemize}
+		\item La successione non è di Cauchy.
+		\item In generale lo spazio è completo.
+	\end{itemize}
+	\item Deduciamo anche che le due norme non sono equivalenti, dato che inducono convergenze diverse sulla stessa successione.
 \end{itemize}
+
 \begin{definition}
 	[Prodotto scalare] $(\cdotp,\cdotp) :X\times X\rightarrow \mathbb{R}$ tale che
 	\begin{itemize}
@@ -8362,7 +8410,7 @@ In uno spazio con prodotto scalare possiamo definire l'\textbf{ortogonalità}
 \begin{equation*}
 	u\perp v\Leftrightarrow (u,v) =0
 \end{equation*}
-\section{Approssimazione di vettori}
+\section{Approssimazione di vettori (Teorema delle Proiezioni)}
 
 Chiameremo $H$ un generico spazio di Hilbert. Considerando $\displaystyle H$ e $V\subset H$ sottospazio\footnote{$u,v\in V\Rightarrow \lambda u+\mu v\in V$.}, $x\in H$, vogliamo trovare il vettore di $V$ che meglio approssima $x$. Stiamo cercando $\overline{v} \in V$ tale che
 \begin{equation*}
@@ -8423,11 +8471,10 @@ Chiameremo $H$ un generico spazio di Hilbert. Considerando $\displaystyle H$ e $
 $\displaystyle \overline{v}$ è la proiezione su $V$ di $x$, che indicheremo come $P_{V} x$, è l'elemento di minima distanza (\textit{se esiste}).
 \begin{itemize}
 	\item in $\mathrm{dim} < +\infty $ esiste sempre (Gram-Schmidt).
-	\item in $\mathrm{dim} =\infty $ non è detto, servono ipotesi in più.
+	\item in $\mathrm{dim} =\infty $ non è detto, servono ipotesi in più, che sia \textbf{chiuso}.
 \end{itemize}
 
 Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdotte, ma non c'è \textit{la migliore}, questo ci dice che le funzioni continue non sono un sottospazio \textit{chiuso}.
-\subsection{Teorema delle Proiezioni}
 \begin{theorem}
 	[delle Proiezioni] Sia $H$ di Hilbert, $V$ sottospazio vettoriale di $H$ \textbf{chiuso}\footnote{in senso topologico, deve contenere tutti i suoi punti di frontiera.}, $x\in H$. Allora $\exists !P_{V} x\in V$ tale che
 	\begin{equation*}
@@ -8438,11 +8485,9 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 	\textbf{Inoltre:}
 	\begin{enumerate}
 		\item $\displaystyle x\in V\ \Leftrightarrow \ x=P_{V} x$
-		\item Definendo $\displaystyle Q_{V} x=x-P_{V} x\ \Rightarrow \ (Q_{V} x,v) =0\ \forall v\in V$
-		      
-		      ($\displaystyle \Longrightarrow \Vert x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +\Vert Q_{V} x\Vert ^{2}$ teorema di Pitagora)
-		      
-		      cioè $\displaystyle Q_{V} x\in V^{\bot }$
+		\item Definendo $\displaystyle Q_{V} x=x-P_{V} x$ si ha $(Q_{V} x,v) =0\ \forall v\in V$, cioè $\displaystyle Q_{V} x\in V^{\bot }$
+
+		Inoltre vale un teorema di Pitagora generalizzato: $\Vert x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +\Vert Q_{V} x\Vert ^{2}$.
 	\end{enumerate}
 \end{theorem}
 \begin{nb}
@@ -8450,11 +8495,14 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 	\begin{equation*}
 		\mathrm{dim} V< +\infty,\ V\subset H\ \ \Rightarrow \ V\ \text{chiuso}
 	\end{equation*}
-	e in ogni caso $\displaystyle V^{\bot }$è chiuso.
+	e in ogni caso $\displaystyle V^{\bot }$è chiuso, infatti:
+	\begin{equation*}
+		\text{se} \ y_{n}\rightarrow y,\ \{y_{n}\} \subset V^{\bot } \ \ \Rightarrow \ \ \forall x\in V,( y,x) =\lim _{n\rightarrow \infty }( y_{n} ,x) =0\ \ \Rightarrow \ \ y\in V^{\bot }
+	\end{equation*}
 \end{nb}
 
-\begin{dimostrazione}[Teorema delle Proiezioni]
-	
+\begin{dimostrazione}
+	Dimostriamo per passi, prima l'esistenza, poi l'unicità e infine i vari punti aggiuntivi.
 	\begin{itemize}
 		\item Esistenza\begin{equation*}
 		      d=\inf_{v\in V}\Vert v-x\Vert,\ d\geqslant 0
@@ -8472,7 +8520,7 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 			\label{eq:teo-proiez-suc-min}
 		\end{equation}
 		
-		voglio dimostrare che la successione converga, ma per farlo prima devo dimostrare che è una successione di Cauchy. Uso l'identità del parallelogramma riscritta nel seguente modo\begin{equation*}
+		voglio dimostrare che la successione converge. Per farlo devo prima dimostrare che è una successione di Cauchy. Uso l'identità del parallelogramma riscritta nel seguente modo\begin{equation*}
 		\Vert a-b\Vert ^{2} =2\Vert a\Vert ^{2} +2\Vert b\Vert ^{2} -\Vert a+b\Vert ^{2}
 		\end{equation*}
 		
@@ -8483,44 +8531,45 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 		\end{array}
 		\end{equation*}
 		
-		dove l'ultima disuguaglianza vale perché $\displaystyle \Vert v-x\Vert \geqslant d,\ \forall v\in V$ (definizione di $\displaystyle \inf$) e $\displaystyle \frac{v_{n} +v_{m}}{2} \in V$, essendo $\displaystyle V$ un sottospazio.
+		dove l'ultima disuguaglianza vale perché $\Vert v-x\Vert \geqslant d,\ \forall v\in V$ (definizione di $\inf$) e $\displaystyle \frac{v_{n} +v_{m}}{2} \in V$, essendo $V$ un sottospazio.
 		
-		La norma di $\displaystyle a$ e di $\displaystyle b$ tenderà a $\displaystyle d$ per il teorema dei carabinieri e per \eqref{eq:teo-proiez-suc-min}. Sostituendo nell'identità\begin{align*}
+		La norma di $a$ e di $b$ tenderà a $d$ per il teorema dei carabinieri e per \eqref{eq:teo-proiez-suc-min}. Sostituendo nell'identità\begin{align*}
 		0 & \leqslant \Vert v_{n} -v_{m}\Vert ^{2}\\
 		& =2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4\left\Vert \frac{v_{n} +v_{m}}{2} -x\right\Vert ^{2}\\
 		& \leqslant 2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4d^{2}\\
 		& \xrightarrow[n,m\rightarrow \infty ]{} 2d^{2} +2d^{2} -4d^{2} =0
 		\end{align*}
 		
-		Quindi la mia successione minimizzante è di Cauchy. Ma poiché $\displaystyle H$ è di Hilbert, ogni successione di Cauchy è convergente\begin{equation*}
+		Quindi la mia successione minimizzante è di Cauchy. Ma poiché $H$ è di Hilbert, ogni successione di Cauchy è convergente\begin{equation*}
 		v_{n}\xrightarrow{n\rightarrow \infty }\overline{v} \in H
 		\end{equation*}
 		
-		e poiché $\displaystyle V$ è chiuso, $\displaystyle \overline{v} \in V$. Allora prendendo la definizione della mia successione \begin{equation*}
+		\textbf{e poiché $V$ è chiuso,} $\overline{v} \in V$. Allora prendendo la definizione della mia successione \begin{equation*}
 		d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n}
 		\end{equation*}
 		
-		e facendone il limite per $\displaystyle n\rightarrow \infty $ ottengo\footnote{In questo passaggio è usata la continuità della norma (conseguenza banale della disuguaglianza triangolare)}\begin{equation*}
-		d\leqslant \Vert x-\overline{v}\Vert \leqslant d
+		e facendone il limite per $n\rightarrow \infty $ ottengo, per continuità della norma
+		\begin{equation*}
+			d\leqslant \Vert x-\overline{v}\Vert \leqslant d
 		\end{equation*}
 		
-		Definisco la proiezione di $\displaystyle x$ su $\displaystyle V$: $\displaystyle \boxed{P_{V} x=\overline{v}}$
+		Definisco la proiezione di $x$ su $V$: $\boxed{P_{V} x=\overline{v}}$
 		\item Unicità
 		      
 		      Per assurdo\begin{equation*}
 		      \overline{v},\overline{w} \in V,\ \ \Vert \overline{v} -x\Vert =\Vert \overline{w} -x\Vert =d
 		\end{equation*}
 		
-		Usando l'identità del parallelogramma con $\displaystyle a=\overline{v} -x$, $\displaystyle b=\overline{w} -x$:\begin{equation*}
+		Usando l'identità del parallelogramma con $a=\overline{v} -x$, $b=\overline{w} -x$:\begin{equation*}
 		\Vert \overline{v} -\overline{w}\Vert ^{2} +\Vert \overline{v} +\overline{w} -2x\Vert ^{2} =4d^{2}
 		\end{equation*}
 		
-		Sfruttando gli stessi passaggi dell'esistenza osservo che $\displaystyle \Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\displaystyle \Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$ \begin{equation*}
+		Sfruttando gli stessi passaggi dell'esistenza osservo che $\Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$ \begin{equation*}
 		\Rightarrow \ \ \Vert \overline{v} -\overline{w}\Vert ^{2} =0\ \ \Rightarrow \ \ \overline{v} =\overline{w}
 		\end{equation*}
 		\item Inoltre (punto 1)
 		      
-		      conseguenza banale, se $\displaystyle x\in V$ \begin{equation*}
+		      conseguenza banale, se $x\in V$ \begin{equation*}
 		      d=\inf_{v\in V}\Vert v-x\Vert =0
 		\end{equation*}
 		
@@ -8618,12 +8667,48 @@ $\displaystyle k$ è la miglior costante di limitatezza e prende il nome di \tex
 		\label{eq:continuo-limitato}
 	\end{equation}
 \end{theorem}
-\begin{dimostrazione}[di $\displaystyle (\Leftarrow)$]
-	$\displaystyle L$ limitato $\displaystyle \Rightarrow \Vert Lx\Vert _{2} \leqslant C\Vert x\Vert _{1},\ x=v-v_{0}$
+\begin{dimostrazione}
+Vediamo i due sensi
+\begin{itemize}
+	\item[($\Leftarrow $)] $L$ è limitato, allora $\Vert Lx\Vert _{2} \leqslant C\Vert x\Vert _{1}$, sia $x=v-v_{0}$
 	\begin{equation*}
-		0\leqslant \Vert Lv-Lv_{0}\Vert _{2} =\Vert L(v-v_{0})\Vert _{2} \leqslant c\Vert v-v_{0}\Vert _{1}
+		0\leqslant \Vert Lv-Lv_{0}\Vert _{2} =\Vert L( v-v_{0})\Vert _{2} \leqslant c\Vert v-v_{0}\Vert _{1}
 	\end{equation*}
-	(ho dimostrato così che $\displaystyle L$ è Lipschitz-continua).
+
+	quindi se $v\rightarrow v_{0}$ allora $Lv\rightarrow Lv_{0}$.
+
+	\item[($\Rightarrow )$] $L$ è continuo, cioè per definizione
+	\begin{equation*}
+		\text{se} \ \Vert x-x_{0}\Vert _{1}\rightarrow 0\ \text{allora} \ \Vert Lx-Lx_{0}\Vert _{2}\rightarrow 0
+	\end{equation*}
+
+	in particolare se $x_{0} =0$,
+	\begin{equation*}
+		\text{se} \ \Vert x\Vert _{1}\rightarrow 0\ \text{allora} \ \Vert Lx\Vert _{2}\rightarrow 0
+	\end{equation*}
+
+	quindi, scegliendo un certo arbitrario $\varepsilon =1$ segue che
+
+	\begin{equation*}
+		\exists \delta  >0\ \text{tale che se} \ \Vert x\Vert _{1} \leqslant \delta \ \text{allora} \ \Vert Lx\Vert _{2} \leqslant 1=\varepsilon 
+	\end{equation*}
+
+	allora per proprietà della norma\begin{equation*}
+		\Vert Lx\Vert _{2} =\left\Vert \frac{\Vert x\Vert _{1}}{\delta } L\left(\frac{\delta }{\Vert x\Vert _{1}} x\right)\right\Vert _{2} =\frac{\Vert x\Vert _{1}}{\delta }\left\Vert L\left(\frac{\delta }{\Vert x\Vert _{1}} x\right)\right\Vert _{2} =( *)
+	\end{equation*}
+
+	l'argomento dell'operatore ha norma minore o uguale di $\delta $ e quindi rispetta la considerazione di prima\begin{equation*}
+		\left\Vert \delta \frac{x}{\Vert x\Vert _{1}}\right\Vert \leqslant \Vert \delta \Vert \left\Vert \frac{x}{\Vert x\Vert _{1}}\right\Vert =\delta 
+	\end{equation*}
+
+	pertanto la norma dell'operatore è minore o uguale di $1$\begin{equation*}
+		( *) \leqslant \frac{\Vert x\Vert _{1}}{\delta } \cdotp 1=\frac{1}{\delta }\Vert x\Vert _{1}
+	\end{equation*}
+
+	che è la definizione di limitatezza.
+\end{itemize}
+
+
 \end{dimostrazione}
 \begin{definition}
 	$\displaystyle \mathcal{L}(H_{1},H_{2}) =\{L:H_{1}\rightarrow H_{2}$ lineari e continui$\displaystyle \}$
@@ -8638,20 +8723,23 @@ $\displaystyle k$ è la miglior costante di limitatezza e prende il nome di \tex
 
 $\displaystyle H_{1} \subset H_{2}$ sottospazio (eventualmente con norme non equivalenti)
 
-$\displaystyle L:\ \underbrace{x}_{\in H_{1}} \ \rightarrow \underbrace{x}_{\in H_{2}}$, $\displaystyle x$ è lo stesso elemento di due spazi con norme differenti. 
+Consideriamo un certo operatore che a $x$ associa se stesso, ma in due spazi con norme differenti:
+\begin{equation*}
+	L:\ \underbrace{x}_{\in H_{1}} \ \rightarrow \underbrace{x}_{\in H_{2}}
+\end{equation*}
 
-Data un'immersione $\displaystyle L(x) =x$, quando è continua? Per \eqref{eq:continuo-limitato}, è continua $\displaystyle \Leftrightarrow $ è limitata, ovvero $\displaystyle \Vert x\Vert _{H_{2}} \leqslant c\Vert x\Vert _{H_{1}} \forall x\in H_{1}$. In questo caso l'immersione prende il nome di \textbf{immersione continua.}
+Data un'immersione $\displaystyle L(x) =x$, quando è continua? Per \eqref{eq:continuo-limitato}, è continua se e solo se è limitata, ovvero se $\displaystyle \Vert x\Vert _{H_{2}} \leqslant c\Vert x\Vert _{H_{1}} \forall x\in H_{1}$. In questo caso l'immersione prende il nome di \textbf{immersione continua.}
 
-Un esempio pratico è lo spazio $\displaystyle C([ 0,1]) \subset L^{2}(0,1)$, nel primo usiamo come norma il max, nel secondo la norma $\displaystyle \left(\int | \cdot | ^{2}\right)^{1/2}$, quindi possiamo misurare gli elementi di $\displaystyle C([ 0,1])$ con entrambe le norme. La notazione per indicare l'immersione è
+Un esempio pratico è lo spazio $\displaystyle C([ 0,1]) \subset L^{2}(0,1)$, nel primo usiamo come norma il $\max$, nel secondo la norma $\left(\int | \cdot | ^{2}\right)^{1/2}$, quindi possiamo misurare gli elementi di $\displaystyle C([ 0,1])$ con entrambe le norme. La notazione per indicare l'immersione con continuità è
 \begin{equation*}
 	\ C([ 0,1]) \hookrightarrow L^{2}(0,1)
 \end{equation*}
-Dimostriamo ora la limitatezza dell'immersione (e quindi la continuità)
+Dimostriamo ora la limitatezza dell'immersione in questo esempio (e quindi che è continua)
 \begin{equation*}
-	\Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u^{2}\right) \cdot \int ^{1}_{0} 1dx} =\max_{[ 0,1]}| u| 
+	\Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u\right)^{2} \cdot \int ^{1}_{0} dx} =\max_{[ 0,1]}| u| 
 \end{equation*}
 \begin{definition}
-	[Funzionale] Sia $\displaystyle H_{1} =H$ spazio di Hilbert, $\displaystyle H_{2} =\mathbb{R}$, $\displaystyle L:H\rightarrow \mathbb{R}$ è detto funzionale.
+	[Funzionale] Sia $\displaystyle H_{1} =H$ spazio di Hilbert, $\displaystyle H_{2} =\mathbb{R}$, allora $\displaystyle L:H\rightarrow \mathbb{R}$ è detto funzionale.
 \end{definition}
 \begin{definition}
 	[Spazio duale] È detto spazio duale di $\displaystyle H$, denotato con $\displaystyle H^{*}$
@@ -8796,9 +8884,9 @@ Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle
 		      
 		      Allora possiamo applicare il teorema delle proiezioni\begin{equation*}
 		      z=\frac{z_{0} -P_{\mathrm{Ker} L} z_{0}}{\Vert z_{0} -P_{\mathrm{Ker} L} z_{0}\Vert }
-		\end{equation*}con questa scelta, si ha $z\in (\mathrm{Ker} L)^{\perp }$ e $\Vert z\Vert =1$. Abbiamo\begin{equation*}
+		\end{equation*}con questa scelta, si ha $\boxed{z\in (\mathrm{Ker} L)^{\perp }}$ e $\Vert z\Vert =1$. Abbiamo\begin{equation*}
 		v\in H\ \ \ \ z\in (\mathrm{Ker} L)^{\perp }
-		\end{equation*}costruiamo $w\in \mathrm{Ker} L$ che sia combinazione di quei due\begin{equation*}
+		\end{equation*}costruiamo $\boxed{w\in \mathrm{Ker} L}$ che sia combinazione di quei due\begin{equation*}
 		w=v-\frac{Lv}{Lz} z\ \ \Rightarrow \ \ Lw=L\left( v-\frac{Lv}{Lz} z\right) =Lv-\frac{Lv}{Lz} Lz=0
 		\end{equation*}Notiamo che dato che $w\in \mathrm{Ker} L,z\in (\mathrm{Ker} L)^{\perp }$ allora $(w,z) =0$, pertanto\begin{equation*}
 		0=(w,z) =\left( v-\frac{Lv}{Lz} z,z\right) =(v,z) -\frac{Lv}{Lz}\underbrace{(z,z)}_{\Vert z\Vert ^{2} =1}
@@ -8874,30 +8962,32 @@ Per definizione di norma indotta dal prodotto scalare
 \end{equation*}
 Il teorema di Lax-Milgram generalizza queste nozioni e ci permette di risolvere\footnote{esistenza, unicità e dipendenza continua.} il seguente problema.\footnote{da qui nascono i metodi di Galerkin.}
 \begin{definition}
-	[Problema Variazionale Astratto, PVA] Dato $L\in H^{*}$ trovare $u\in H$ tale che
-	\begin{equation*}
+	[Problema Variazionale Astratto, (PVA)] Dato $L\in H^{*}$ trovare $u\in H$ tale che
+	\begin{equation}
+		\tag{PVA}
 		a(u,v) =Lv,\ \ \forall v\in H
-	\end{equation*}
+		\label{eq:pva}
+	\end{equation}
 	dove $a$ è una forma bilineare.
 \end{definition}
-Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è ben posto per il teorema di Riesz.
+Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$ che è ben posto per il teorema di Riesz.
 \subsection{Teorema di Lax-Milgram}
 \begin{theorem}
 	[di Lax-Milgram] Siano
 	\begin{itemize}
 		\item $H$ spazio di Hilbert
-		\item $a$ forma bilineare continua e coerciva
+		\item $a$ forma bilineare \textbf{continua} e \textbf{coerciva}
 		\item $L\in H^{*}$
 	\end{itemize}
 	
-	Allora $\exists !\ \overline{u} \in H$ soluzione di (PVA). Inoltre (\textbf{stima di stabilità})
+	Allora $\exists !\ \overline{u} \in H$ soluzione di \eqref{eq:pva}. Inoltre (\textbf{stima di stabilità})
 	\begin{equation*}
 		\Vert \overline{u}\Vert \leqslant \frac{1}{\alpha }\Vert L\Vert _{*}
 	\end{equation*}
 	dove $\alpha $ è la costante di coercività, ci interessa che sia più grande possibile.
 \end{theorem}
 \begin{oss}
-	La stabilità è utile considerando due dati vicini e due soluzioni vicine. Prendiamo ad esempio due soluzioni $u_{1},u_{2}$ soluzioni del (PVA) coi dati $L_{1} v,L_{2} v$
+	La stabilità è utile considerando due dati vicini e due soluzioni vicine. Prendiamo ad esempio due soluzioni $u_{1},u_{2}$ soluzioni del \eqref{eq:pva} coi dati $L_{1} v,L_{2} v$
 	\begin{gather*}
 		a(u_{1},v) =L_{1} v,\ \ \forall v\in H\\
 		a(u_{2},v) =L_{2} v,\ \ \forall v\in H
@@ -8926,7 +9016,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 	\begin{itemize}
 		\item[(0)]
 
-		Notiamo che la $v$ è una sorta di \textit{funzione test}, infatti vogliamo ottenere una cosa che vale per infiniti $v$. Al secondo membro del (PVA), per ipotesi $L\in H^{*}$, allora per Riesz $\exists !\ z\in H$ tale che $Lv=(z,v),\forall v$ e inoltre $\Vert z\Vert =\Vert L\Vert _{*}$. Vogliamo applicarlo anche al primo membro. Per definizione di forma bilineare, $\forall u$ fissato, l'applicazione $v\mapsto a(u,v)$ è lineare e continua in $v$, infatti\footnote{usando la continuità di $a$.}
+		Notiamo che la $v$ è una sorta di \textit{funzione test}, infatti vogliamo ottenere una cosa che vale per infiniti $v$. Al secondo membro del \eqref{eq:pva}, per ipotesi $L\in H^{*}$, allora per Riesz $\exists !\ z\in H$ tale che $Lv=(z,v),\forall v$ e inoltre $\Vert z\Vert =\Vert L\Vert _{*}$. Vogliamo applicarlo anche al primo membro. Per definizione di forma bilineare, $\forall u$ fissato, l'applicazione $v\mapsto a(u,v)$ è lineare e inoltre per ipotesi continua in $v$:
 		\begin{equation*}
 			\text{continua} \ \ \Leftrightarrow \ \ | a(u,v)| \leqslant \underbrace{M\Vert u\Vert }_{C}\Vert v\Vert \leqslant C\Vert v\Vert 
 		\end{equation*}
@@ -8940,7 +9030,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 		\end{equation*}
 		noi vogliamo dimostrare su $A$, ma abbiamo proprietà su $a$, questa relazione è la \textbf{chiave!}
 
-		Avendo così usato due volte il teorema di Riesz per passare da due operatori lineari a due prodotti scalari, il (PVA) diventa
+		Avendo così usato due volte il teorema di Riesz per passare da due operatori lineari a due prodotti scalari, il \eqref{eq:pva} diventa
 		\begin{equation*}
 			(A(u),v) =(z,v) \ \ \forall v\in H
 		\end{equation*}
@@ -8948,7 +9038,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 		\begin{equation*}
 			(A(u) -z,v) =0,\ \forall v\in H\ \ \Rightarrow \ \ \boxed{A(u) =z}
 		\end{equation*}
-		risolvere (PVA) quindi \textit{è come} trovare l'operatore \textit{inverso} di $A$.
+		risolvere \eqref{eq:pva} quindi \textit{è come} trovare l'operatore \textit{inverso} di $A$.
 
 
 
@@ -8978,7 +9068,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 		\begin{equation*}
 			\Vert Au\Vert ^{2} =(Au,Au) =a(u,Au) \leqslant | a(u,Au)| \leqslant M\Vert u\Vert \Vert Au\Vert 
 		\end{equation*}
-		allora
+		l'ultima maggiorazione grazie al fatto che $a$ è limitata; allora
 		\begin{equation*}
 			\Vert Au\Vert \leqslant M\Vert u\Vert 
 		\end{equation*}
@@ -8988,7 +9078,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 
 		\item[(3)]
 
-		È l'unico in cui non possiamo mettere il pilota automatico. Qui troveremo anche la stima di stabilità. Per farlo dobbiamo partire dalla coercività
+		È l'unico in cui non possiamo mettere il pilota automatico. Qui troveremo anche la \textbf{stima di stabilità}. Per farlo dobbiamo partire dalla coercività
 		\begin{equation*}
 			\alpha \Vert u\Vert ^{2} \leqslant a(u,u) =(Au,u) \leqslant | (Au,u)| \underbrace{\leqslant }_{\text{C.S.}}\Vert Au\Vert \Vert u\Vert \ \ \alpha  >0
 		\end{equation*}
@@ -8996,7 +9086,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 		\begin{equation*}
 			\Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert 
 		\end{equation*}
-		Nel nuovo (PVA) $Au=z$ e ricordiamo che $z$ era il vettore che rappresentava $L$ (come visto al passo 0)
+		Nel nuovo \eqref{eq:pva} $Au=z$ e ricordiamo che $z$ era il vettore che rappresentava $L$ (come visto al passo 0)
 		\begin{equation*}
 			\Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert =\frac{1}{\alpha }\Vert z\Vert =\frac{1}{\alpha }\Vert L\Vert _{*}
 		\end{equation*}
@@ -9012,7 +9102,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 
 		Questi valori dell'immagine sono associati agli elementi del dominio $y_{n} =Au_{n}$, ci piacerebbe dire che $\overline{y} =A\overline{u}$, con $\overline{u} =\lim u_{n}$, \textbf{ma questo limite non è detto che esista! In un sacco di situazioni concrete salta!}
 
-		Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una successione di Cauchy, usando la stima di stabilità del passo 3
+		Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una successione di Cauchy, usando la stima di stabilità del passo (3)
 		\begin{equation*}
 			0\leqslant \Vert u_{n} -u_{m}\Vert \underbrace{\leqslant }_{(3)}\frac{1}{\alpha }\Vert A(u_{n} -u_{m})\Vert \underbrace{\leqslant }_{\text{lin.}}\frac{1}{\alpha }\Vert Au_{n} -Au_{m}\Vert =\frac{1}{\alpha }\Vert y_{n} -y_{m}\Vert 
 		\end{equation*}
@@ -9028,7 +9118,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 		\begin{equation*}
 			R(A) \varsubsetneqq H
 		\end{equation*}
-		cioè esiste $z_{0} \in H$, $z_{0} \notin R(A)$. Per il teorema delle proiezioni\footnote{che possiamo applicare avendo dimostrato che l'immagine $R(A)$ è un sottospazio chiuso al passo 3.5}
+		cioè esiste $z_{0} \in H$, $z_{0} \notin R(A)$. Per il teorema delle proiezioni\footnote{che possiamo applicare avendo dimostrato che l'immagine $R(A)$ è un sottospazio chiuso al passo (3.5)}
 		\begin{equation*}
 			z=\frac{z_{0} -P_{R(A)} z_{0}}{\Vert z_{0} -P_{R(A)} z_{0}\Vert } \ \ \Rightarrow \ \ z\in (R(A))^{\perp },\ \Vert z\Vert =1
 		\end{equation*}
@@ -9036,7 +9126,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, (PVA) diventa $(u,v) =Lv$ che è b
 		\begin{equation*}
 			z\in (R(A))^{\perp },\ \ Az\in R(A) \ \ \Rightarrow \ \ (z,Az) =0
 		\end{equation*}
-		Andando alla definizione di $A$
+		Andando alla definizione di $A$ e usando la coercività
 		\begin{equation*}
 			(z,Az) =a(z,z) \geqslant \alpha \Vert z\Vert ^{2} =\alpha  >0
 		\end{equation*}
@@ -9055,11 +9145,13 @@ Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$, $\displaystyle n\geqslant 1$.
 		\mathcal{D}( \Omega ) =\left\{\varphi :\Omega \rightarrow \mathbb{R} ,\ C^{\infty }( \Omega ) \ \text{a supporto compatto}\right\}
 	\end{equation*}
 \end{definition}
-Ricordiamo che il supporto di una funzione è la chiusura dell'insieme dove essa non si annulla. L'insieme $\displaystyle \mathcal{D}( \Omega )$ è incluso in $\displaystyle L^{p}( \Omega ) \ \forall p$, in particolare
+Ricordiamo che il supporto di una funzione è la chiusura dell'insieme dove essa non si annulla.
+
+L'insieme $\displaystyle \mathcal{D}( \Omega )$ è incluso in $\displaystyle L^{p}( \Omega ) \ \forall p$, in particolare per $p=2$
 \begin{equation*}
 	\mathcal{D}( \Omega ) \subset L^{2}( \Omega )
 \end{equation*}
-e l'inclusione è densa, ovvero
+e l'inclusione è \textbf{densa}, ovvero per ogni elemento di $L^2 $ posso trovare una successione approssimante di funzioni in $\mathcal{D}$, più \emph{belle}:
 \begin{equation*}
 	\forall v\in L^{2}( \Omega ) \ \exists \ ( \varphi _{k})_{k} \subset \mathcal{D}( \Omega ) \ \text{t.c.} \ \varphi _{n}\xrightarrow{L^{2}} v
 \end{equation*}
@@ -9074,12 +9166,12 @@ o, alternativamente
 	\end{equation*}
 	Se:
 	\begin{enumerate}
-		\item $\displaystyle \exists K\subset \Omega \ \text{compatto tc} \ \text{supp} \varphi _{n} \subset K$
-		\item $\displaystyle \forall k\in \mathbb{N} ,\ \varphi ^{( k)}_{n}\rightarrow \varphi ^{( k)}$ uniformemente
+		\item $\displaystyle \exists K\subset \Omega$ compatto tale che $\text{supp} \varphi _{n} \subset K$ per ogni $n$.
+		\item $\displaystyle \forall k\in \mathbb{N} ,\ \varphi ^{( k)}_{n}\rightarrow \varphi ^{( k)}$ uniformemente per $n\to \infty $.
 	\end{enumerate}
 \end{definition}
 \begin{definition}
-	[Distribuzioni/Funzioni generalizzate di L. Schwarz] è il duale
+	[Distribuzioni] Sono gli elementi del \textbf{duale} delle funzioni test il duale, cioè in funzionali (ovvero che vanno in $\mathbb{R}$) lineari e continui partenti da $\mathcal{D}$:
 	\begin{equation*}
 		\mathcal{D} '( \Omega ) =\left\{F:\mathcal{D}( \Omega )\rightarrow \mathbb{R} \ \text{lineari, continui}\right\}
 	\end{equation*}
@@ -9112,7 +9204,15 @@ che è anche un'immersione continua.
 	\begin{equation*}
 		\langle \partial _{x_{i}} F,\varphi \rangle =-\langle F,\partial _{x_{i}} \varphi \rangle 
 	\end{equation*}
-	Se $\displaystyle F\in C^{1}(\overline{\Omega }) \subset \mathcal{D} '( \Omega ) ,\ \langle F,\varphi \rangle =\int _{\Omega } F\varphi d\x$, derivata debole e \textit{classica} coincidono (il $\displaystyle -$ salta fuori dall'integrazione per parti)
+	Se $\displaystyle F\in C^{1}(\overline{\Omega })$, quindi anche
+	\begin{equation*}
+		F\in C^{1}(\overline{\Omega }) \subset L^{2}(\mathcal{\Omega ) \subset D} '( \Omega )
+	\end{equation*}
+	allora possiamo scrivere
+	\begin{equation*}
+		\langle F,\varphi \rangle =\int _{\Omega } F\varphi d\x ,
+	\end{equation*}
+	e derivata debole e \textit{classica} \textbf{coincidono} (il $-$ salta fuori dall'integrazione per parti)
 	\begin{align*}
 		\langle \underbrace{\partial _{x_{i}} F}_{\text{classica}} ,\varphi \rangle & =\int _{\Omega } \partial _{x_{i}} F(\x) \varphi (\x) d\x                                                                              \\
 		                                                                            & =\underbrace{\cancel{\int _{\partial \Omega } ...\varphi }}_{\varphi \text{ supp. comp.}} -\int _{\Omega } F(\x) \partial _{x_{i}} \varphi (\x)d\x \\
@@ -9160,43 +9260,41 @@ Svolgiamo ora un esercizio (in buona parte di Analisi 2) per dimostrare come der
 \end{equation*}
 Sia 
 \begin{equation*}
-	u(\x) =\frac{1}{| \x| } ,\ \x \neq \mathbf{0}
+	u(\x) =\frac{1}{| \x| } ,\ \x \neq \zer
 \end{equation*}
 Vogliamo trovare $\displaystyle \Delta u$.
 
-
-
-\textbf{Derivata `classica'.}
+\subsection{Derivata classica}
 
 Osserviamo inanzitutto 
 \begin{equation*}
-	\partial _{x_{i}}| \x| =\frac{2x_{i}}{2\sqrt{x^{2}_{1} +x^{2}_{2} +x^{2}_{3}}} =\frac{x_{i}}{| \x| } \ \ \Rightarrow \ \ \nabla | \x| =\frac{\x}{| \x| }
+	\partial _{x_{i}}| \x| =\frac{2x_{i}}{2\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}}} =\frac{x_{i}}{| x| } \ \ \Rightarrow \ \ \nabla | \x| =\frac{\x}{| \x| }
 \end{equation*}
 E per la regola della funzione composta
 \begin{equation}
-	\nabla f(| \x| ) =f'(\x) \nabla | \x| =f'(\x)\frac{\x}{| \x| }
+	\nabla f(| \x| ) =f'(| \x| ) \nabla | \x| =f'(| \x| )\frac{\x}{| \x| }
 	\label{eq:chain-rule-composta}
 \end{equation}
 Allora possiamo calcolare $\displaystyle \Delta u$ usando \eqref{eq:chain-rule-composta}:
 \begin{equation*}
-	\Delta u(\x) =\Delta \left(\frac{1}{| \x| }\right) =\mathrm{div}\left( \nabla \left(\frac{1}{| \x| }\right)\right) =\mathrm{div}\left( -\frac{\x}{| \x| ^{3}}\right)
+	\Delta u(\x) =\Delta \left(\frac{1}{| \x| }\right) =\mathrm{div}\left( \nabla \left(\frac{1}{| \x| }\right)\right) =\mathrm{div}\left( -\frac{1}{| \x| ^{2}}\frac{\x}{| \x| }\right) =-\mathrm{div}\left(\frac{\x}{| \x| ^{3}}\right)
 \end{equation*}
-Usiamo ora l'identità di Green 
+Usiamo ora l'identità di Leibniz 
 \begin{equation*}
 	\mathrm{div}( g\mathbf{F}) =\nabla g\cdotp \mathbf{F} +g\mathrm{div}\mathbf{F} \ \ \text{con} \ g=\frac{1}{| \x| ^{3}} \ \text{e} \ \mathbf{F} =\x
 \end{equation*}
 \begin{equation*}
-	\mathrm{div}\left( -\frac{\x}{| \x| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \x| ^{3}}\right) \cdotp \x +\frac{1}{| \x| ^{3}}\mathrm{div}\x\right) =-\left( -\frac{3}{| \x| ^{4}}\frac{\x}{| \x| } \cdotp \x +\frac{1}{| \x| ^{3}} 3\right)
+	-\mathrm{div}\left(\frac{\x}{| \x| ^{3}}\right) =-\left( \nabla \left(\frac{1}{| \x| ^{3}}\right) \cdotp \x +\frac{1}{| \x| ^{3}}\underbrace{\mathrm{div}\x}_{=3}\right) =-\left( -\frac{3}{| \x| ^{4}}\frac{\x}{| \x| } \cdotp \x +\frac{1}{| \x| ^{3}} 3\right)
 \end{equation*}
 e troviamo
 \begin{equation*}
 	\Delta u(\x) =-\left( -\frac{3}{| \x| ^{3}} +\frac{3}{| \x| ^{3}}\right) =0
 \end{equation*}
-Quindi $\displaystyle u$ è armonica in $\displaystyle \mathbb{R}^{3} \backslash \{\mathbf{0}\}$.
+Quindi $\displaystyle u$ è armonica in $\displaystyle \mathbb{R}^{3} \backslash \{\zer\}$.
 
 
 
-\textbf{Derivata distribuzionale.}
+\subsection{Derivata distribuzionale}
 
 Per poter fare la derivata distribuzionale dobbiamo prima chiederci
 \begin{equation*}
@@ -9204,13 +9302,13 @@ Per poter fare la derivata distribuzionale dobbiamo prima chiederci
 \end{equation*}
 L'unico problema della funzione è, ovviamente, nell'origine. Se l'integrale su una palla unitaria centrata nell'origine convergerà la condizione sarà soddisfatta.
 \begin{equation*}
-	\int _{B_{1}(\mathbf{0})}\frac{1}{| \x| } d\x =\int ^{1}_{0}\left(\int _{\partial B_{r}}\frac{1}{| \x| } d\sigma \right) dr=\int ^{1}_{0}\frac{1}{r} 4\pi r^{2} dr< +\infty 
+	\int _{B_{1}(\zer)}\frac{1}{| \x| } d\x =\int ^{1}_{0}\left(\int _{\partial B_{r}}\frac{1}{| \x| } d\sigma \right) dr=\int ^{1}_{0}\frac{1}{r} 4\pi r^{2} dr< +\infty 
 \end{equation*}
 Abbiamo utilizzato una formula di coarea (o integrazione per bucce) 
 \begin{equation*}
 	\int _{B_{R}} fd\x =\int ^{R}_{0}\left(\int _{\partial B_{r}} fd\sigma \right) dr
 \end{equation*}
-Quindi $\displaystyle u\in L^{1}_{\text{loc}} \Rightarrow u\in \mathcal{D} '\left(\mathbb{R}^{3}\right)$.
+Quindi $\displaystyle u\in L_{\text{loc}}^{1}$ ed è pertanto associata a una distribuzione $\displaystyle u\in \mathcal{D} '\left(\mathbb{R}^{3}\right)$.
 
 Per calcolare $\displaystyle \Delta u$ in $\displaystyle \mathcal{D} '\left(\mathbb{R}^{3}\right)$ prendiamo una funzione test $\displaystyle \varphi \in \mathcal{D}\left(\mathbb{R}^{3}\right)$
 \begin{equation*}
@@ -9220,11 +9318,11 @@ Quest'integrale presenta due problemi
 \begin{enumerate}
 	\item Il dominio è \textbf{illimitato}: in realtà dato che
 	      \begin{equation*}
-	      	\text{supp} \varphi \subset B_{R}(\mathbf{0})
+	      	\text{supp} \varphi \subset B_{R}(\zer)
 	      \end{equation*}
 	      	      
 	      poiché $\displaystyle \varphi $ è a supporto compatto mi basterà limitare il dominio di integrazione a tale palla
-	\item Ho una \textbf{singolarità} nell'origine: aggiriamo il problema integrando su un dominio $\displaystyle B_{R}(\mathbf{0}) \backslash B_{\varepsilon }(\mathbf{0})$ e facendo il limite per $\displaystyle \varepsilon \rightarrow 0$
+	\item Ho una \textbf{singolarità} nell'origine: aggiriamo il problema integrando su un dominio $\displaystyle B_{R}(\zer) \backslash B_{\varepsilon }(\zer)$ e facendo il limite per $\displaystyle \varepsilon \rightarrow 0$
 	      
 	      \begin{figure}[htpb]
 	      	\centering
@@ -9283,67 +9381,65 @@ Osserviamo inoltre che essendo $\displaystyle \varphi \in \mathcal{D}\left(\math
 \begin{equation*}
 	\partial _{\bm{\nu }} \varphi \equiv \varphi \equiv 0\ \text{su} \ \partial B_{R}
 \end{equation*}
+Pertanto gli integrali sul bordo esterno si semplificano subito
+\begin{equation*}
+	\cancel{\textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{R}}}} \ \ \cancel{\textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{R}}}}
+\end{equation*}
 Applicando il tutto a \eqref{eq:esempio-derivata-limite} otteniamo
 
 \begin{equation}
-	\lim _{\varepsilon \rightarrow 0}\left[\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu }} \varphi (\x) d\sigma -\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\bm{\nu }}\left(\frac{1}{| \x| }\right) d\sigma +\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x\right]
+	\lim _{\varepsilon \rightarrow 0}\left[\textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu}} \varphi (\x) d\sigma } -\textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) d\sigma } +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x}\right]
 	\label{eq:esempio-derivata-limite-2}
 \end{equation}
 Di questi termini
 \begin{itemize}
-	\item essendo $\displaystyle \Delta u=0$ la derivata classica in $\displaystyle B_{R} \backslash B_{\varepsilon }$:\begin{equation*}
-	      \int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x =0
+	\item essendo $\displaystyle \Delta u=0$ il laplaciano classico in $\displaystyle B_{R} \backslash B_{\varepsilon }$:\begin{equation*}
+	      \textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x} =0
 	\end{equation*}
-	\item  $\displaystyle \partial _{\bm{\nu }} \varphi =\nabla \varphi \cdotp \bm{\nu }$, dove $\displaystyle \bm{\nu } =-\frac{\x}{| \x| }$ essendo orientata in dentro\begin{equation*}
-	      \int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu }} \varphi (\x) d\sigma =-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } d\sigma 
+	\item  $\displaystyle \partial _{\bm{\nu}} \varphi =\nabla \varphi \cdotp \bm{\nu}$, dove $\displaystyle \bm{\nu} =-\frac{\x}{| \x| }$ essendo orientata in dentro\begin{equation*}
+	      \textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu}} \varphi (\x) d\sigma } =\textcolor[rgb]{0.25,0.46,0.02}{-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } d\sigma }
 	\end{equation*}
-	\item $\displaystyle \partial _{\bm{\nu }}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \bm{\nu }$, con $\displaystyle \bm{\nu }$ identica a prima\begin{equation*}
-	      -\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{| \x| ^{2}}{| \x| ^{4}} d\sigma 
+	\item $\displaystyle \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \bm{\nu}$, con $\displaystyle \bm{\nu}$ identica a prima\begin{equation*}
+	      \textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\nu }\left(\frac{1}{| \x| }\right) d\sigma } =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =\textcolor[rgb]{0.29,0.56,0.89}{-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{1}{| \x| ^{2}} d\sigma }
 	\end{equation*}
 \end{itemize}
 
 Inoltre su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $. Possiamo riscrivere \eqref{eq:esempio-derivata-limite-2}:
 \begin{equation*}
-	\lim _{\varepsilon \rightarrow 0}\left[ -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma \right]
+	\lim _{\varepsilon \rightarrow 0}\left[\textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma }\textcolor[rgb]{0.29,0.56,0.89}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma }\right]
 \end{equation*}
 Se entrambi i termini tendono a $0$ allora la mia derivata distribuzionale coinciderà con quella classica. Esaminiamoli separatamente:
 \begin{itemize}
 	\item primo termine
 	      
 	      \begin{equation*}
-	      	\left| -\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma \right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| d\sigma 
+	      	\left| \textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma }\right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| d\sigma 
 	      \end{equation*}
 	      
-	      $\displaystyle | \nabla \varphi (\x)| \leqslant c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $
-	      \begin{equation*}
-	      	\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi | \cdotp | \x| d\sigma \leqslant \frac{c}{\varepsilon }\int _{\partial B_{\varepsilon }} d\sigma =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\rightarrow 0
-	      \end{equation*}
+	      $\displaystyle | \nabla \varphi | \leqslant c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $\begin{equation*}
+	      \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}\underbrace{| \nabla \varphi (\x)| }_{\leqslant c} \cdotp \underbrace{| \x| }_{=\varepsilon } d\sigma \leqslant \frac{c}{\varepsilon }\underbrace{\int _{\partial B_{\varepsilon }} d\sigma }_{4\pi \varepsilon ^{2}} =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\textcolor[rgb]{0.25,0.46,0.02}{\rightarrow 0}
+	\end{equation*}
 	\item secondo termine
 	      
+	      Posso usare il teorema della media integrale essendo $\displaystyle \varphi $ continua
+	      
 	      \begin{equation*}
-	      	-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =-4\pi \frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =-4\pi \frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma 
+	      	\textcolor[rgb]{0.29,0.56,0.89}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma } =-4\pi \frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =-4\pi \underbrace{\frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma }_{=\varphi (\x_{\varepsilon })\xrightarrow{\varepsilon \rightarrow 0} \varphi (\zer)}\rightarrow -4\pi \varphi (\zer)
 	      \end{equation*}
 	      
-	      Ma essendo $\displaystyle \varphi $ continua ora posso usare il teorema della media integrale\begin{equation*}
-	      \exists \x_{\varepsilon } \in \partial B_{\varepsilon } :\frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =\varphi (\x_{\varepsilon })\xrightarrow{\varepsilon \rightarrow 0} \varphi (\mathbf{0})
-	\end{equation*}
-	
-	e ottengo\begin{equation*}
-	-4\pi \frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma \rightarrow -4\pi \varphi (\mathbf{0})
-	\end{equation*}
+	      per un certo $\displaystyle \x_{\varepsilon } \in \partial B_{\varepsilon }$.
 \end{itemize}
 
 Riassumendo\footnote{il simbolo $\displaystyle \delta _{3}$ non indica la Delta centrata in $\displaystyle 3$, ma la delta tridimensionale centrata in $\displaystyle 0$.}
-\begin{gather*}
-	\langle \Delta u,\varphi \rangle =-4\pi \varphi (\mathbf{0}) =-4\pi \langle \delta _{3} ,\varphi \rangle \\
-	\Rightarrow \ -\Delta \left(\frac{1}{4\pi }\frac{1}{| \x| }\right) =\delta_{3}  \ \text{in} \ \mathcal{D} '\left(\mathbb{R}^{3}\right)
-\end{gather*}
+\begin{equation*}
+	\langle \Delta u,\varphi \rangle =-4\pi \varphi (\zer) =-4\pi \langle \delta _{3} ,\varphi \rangle \ \ \Rightarrow \ \ -\Delta \left(\frac{1}{4\pi }\frac{1}{| \x| }\right) =\delta _{3} \ \text{in} \ \mathcal{D} '\left(\mathbb{R}^{3}\right)
+\end{equation*}
 La derivata classica e debole non coincidono.
 
 \section{Spazi di Sobolev}
 \LezioneV{01/04/2021}
 
-Lavoreremo con uno specifico spazio di Sobolev sono ``spazi di funzioni $L^{p}$ aventi derivate $L^{p}$''. Lavoreremo con due spazi di Sobolev, il primo sarà $H^{1}$ e il secondo $H^{1}_{0} \subseteq H^{1}$.
+Gli spazi di Sobolev sono ``spazi di funzioni $L^{p}$ aventi derivate $L^{p}$''. Lavoreremo con due spazi di Sobolev, il primo sarà $H^{1}$ e il secondo $H^{1}_{0} \subseteq H^{1}$.
 
 Consideriamo $\Omega \subset \mathbb{R}^{n}$ dominio (cioè aperto connesso)\footnote{di solito saranno limitati, ma possiamo tranquillamente immaginare che siano tutto $\mathbb{R}^{n}$.}.
 \begin{definition}
@@ -9366,6 +9462,7 @@ In particolare vale il seguente risultato delle norme
 misurando le norme in $H^{1}$ stiamo contemporaneamente controllando sia la norma della funzione, che delle sue derivate parziali.
 \begin{theorem}
 	[Microteorema]
+	Valgono i seguenti enunciati:
 	\begin{enumerate}
 		\item $H^{1}( \Omega )$ è uno spazio di Hilbert\footnote{si può dimostrare verificando tutte le proprietà di uno spazio di Hilbert, sfruttando il fatto che $L^{2}$ è di Hilbert.},
 		\item $H^{1}( \Omega ) \hookrightarrow L^{2}( \Omega )$, $H^{1}$ si immerge in $L^{2}$ con continuità, cioè come abbiamo appena scritto che la norma di $H^{1}$ è più \textit{forte} della norma di $L^{2}$,
@@ -9398,9 +9495,9 @@ $H^{1}( \Omega )$ può contenere anche delle funzioni discontinue.
 
 \textit{Esempio.}
 \begin{equation*}
-	B_{1}(\mathbf{0}) \subset \mathbb{R}^{3} ,\ \ u(\x) =| \x| ^{-a} \ \ ( a >0)
+	B_{1}(\zer) \subset \mathbb{R}^{3} ,\ \ u(\x) =| \x| ^{-a} \ \ ( a >0)
 \end{equation*}
-È una funzione non definita in $\mathbf{0}$, per quali valori di $a$ si ha che $u\in H^{1}( B_{1})$?
+È una funzione non definita in $\zer$, per quali valori di $a$ si ha che $u\in H^{1}( B_{1})$?
 \begin{enumerate}
 	\item $u\overset{?}{\in } L^{2}( B_{1}) :$\begin{align*}
 	      \int _{B_{1}} u^{2}(\x) d\x & =\int _{B_{1}}| \x| ^{-2a} d\x =\int ^{1}_{0}\left[\int _{\partial B_{r}}| \x| ^{-2a} d\sigma \right] dr\\
@@ -9424,7 +9521,7 @@ mettendo assieme
 \end{equation*}
 \textbf{Verzini ci ha burlati}, ha calcolato il \textbf{gradiente classico}, invece andava calcolato come
 \begin{equation*}
-	\langle \nabla u,\mathbf{\varphi } \rangle =-\langle u,\mathrm{div}\mathbf{\varphi } \rangle 
+	\langle \nabla u,\bm{\varphi} \rangle =-\langle u,\mathrm{div}\bm{\varphi} \rangle 
 \end{equation*}
 a questo punto $u\in L^{1}_{\mathrm{loc}}$, scrivo l'integrale, tolgo la palla nell'origine, ecc. come l'altra volta. Facendo i conti si trova che era sufficiente che $a$ fosse minore di $\frac{3}{2}$.
 
@@ -9446,10 +9543,8 @@ L'obiettivo finale sarà risolvere
 \end{oss}
 Noi tratteremo $2$ situazioni facili:
 \begin{itemize}
-	\item $n=1$, $\Omega =( a,b)$
-	      Daremo un senso alla traccia, cioè quanto vale $u( a) ,u( b)$.
-	\item $n=n,\Omega =\Omega $, ma $u_{|\partial \Omega } =0$
-	      Non discuteremo se $u=g$.
+	\item $n=1$, $\Omega =( a,b)$. Daremo un senso alla traccia, cioè quanto vale $u( a) ,u( b)$.
+	\item $n=n,\Omega =\Omega $, ma $u_{|\partial \Omega } =0$. Non discuteremo se $u=g$.
 \end{itemize}
 
 $H^{1}$ è più piccolo e gode di più proprietà: in dimensione $n=1$ le funzioni di $H^{1}$ sono continue fino al bordo\footnote{o meglio, ammettono un \textit{rappresentante} continuo fino al bordo.}. Questo fatto non è vero in dimensione più alta, abbiamo visto un esempio.
@@ -9487,8 +9582,8 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	
 	$v$ è continua fino al bordo:
 	\begin{align*}
-		x_{n}\rightarrow x\ \ \Rightarrow \ \ | v( x_{n}) -v( x)| & =\left| \int ^{x_{n}}_{x} u'( s) ds\right|                                                                                                 &                                  \\
-		                                                          & \leqslant | x_{n} -x| ^{1/2}\left(\int ^{x_{n}}_{x}( u')^{2}\right)^{1/2}                                                                  & \text{(Holder o Cauchy-Schwarz)} \\
+		x_{n}\rightarrow x\ \ \Rightarrow \ \ | v( x_{n}) -v( x)| & =\left| \int ^{x_{n}}_{x} 1\cdot u'( s) ds\right|                                                                                                 &                                  \\
+		                                                          & \leqslant | x_{n} -x| ^{1/2}\left(\int ^{x_{n}}_{x}( u')^{2}\right)^{1/2}                                                                  & \text{(Cauchy-Schwarz)} \\
 		                                                          & \leqslant \underbrace{| x_{n} -x| ^{1/2}}_{\rightarrow 0}\underbrace{\left(\int ^{b}_{a}( u')^{2}\right)^{1/2}}_{\leqslant C,\ u'\in L^{2}} & \text{(l'integrale è positivo)} \\
 		                                                          & \rightarrow 0                                                                                                                              &                                  
 	\end{align*}
@@ -9496,7 +9591,9 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	
 	Calcolo $v'$ (in $\mathcal{D} '( a,b)$). $\forall \varphi \in \mathcal{D}( a,b)$
 	\begin{align*}
-		\langle v',\varphi \rangle & =-\langle v,\varphi '\rangle =-\int ^{b}_{a} v( x) \varphi '( x) dx=-\int ^{b}_{a}\left[\int ^{x}_{a} u'( s) ds\right] \varphi '( x) dx \\
+		\langle v',\varphi \rangle & =-\langle v,\varphi '\rangle \\
+								   & =-\int ^{b}_{a} v( x) \varphi '( x) dx\\
+								   & =-\int ^{b}_{a}\underbrace{\left[\int ^{x}_{a} u'( s) ds\right]}_{v(x)} \varphi '( x) dx \\
 		                           & =-\iint _{T}[ u'( s) \varphi '( x)] dsdx=( *)                                                                                           
 	\end{align*}
 
@@ -9556,14 +9653,14 @@ ho dimostrato che $v'=u'$ in $\mathcal{D} '( a,b)$.
 
 Qui interviene un teorema importante
 \begin{equation*}
-	\boxed{\text{Se abbiamo una distribuzione e la sua derivata è nulla} \ \forall \varphi \ \text{allora è una funzione costante.}}
+	\boxed{\text{Se abbiamo una distribuzione e la sua derivata è nulla} \ \forall \varphi \ \text{allora è una \textbf{funzione costante}.}}
 \end{equation*}
 ovvero, formalizzato\footnote{la parte notevole è che è una \textbf{funzione}. Questo ci dice che non esistono distribuzioni-non-funzioni (tipo la Delta) la cui derivata faccia zero.}
 \begin{equation*}
 	\boxed{\begin{cases}
 		F\in \mathcal{D} '( a,b) ,\\
 		\langle F',\varphi \rangle =0,\ \forall \varphi \in D( a,b)
-		\end{cases} \ \ \Rightarrow \ \ F\ \text{è una funzione costante.}}
+		\end{cases} \ \ \Rightarrow \ \ F\ \text{è una \textbf{funzione costante}.}}
 \end{equation*}
 Nel nostro caso
 \begin{equation*}
@@ -9635,7 +9732,7 @@ Il vero problema è il supporto compatto. La funzione di $L^{2}$ è tipicamente 
 
 Come si ottiene il supporto compatto? Si segano via preventivamente le parti finali, moltiplicando per una funzione indicatrice. La parte di norma che perdiamo è trascurabile in $L^{2}$.
 
-Se lo facciamo in $H^{1}$ non ci basta misurare quello che perdiamo nella funzione, ma anche quello che perdiamo nella derivata. E questo ci impedisce di fare il gioco.
+Se lo facciamo in $H^{1}$ \textbf{non ci basta misurare quello che perdiamo nella funzione}, ma \textbf{anche quello che perdiamo nella derivata}. E questo ci impedisce di fare il gioco.
 
 Se prendiamo la Heaviside \textit{rattoppata} la norma delle funzioni che perdiamo è poca, ma la norma delle derivate delle funzioni esplode.
 
@@ -9648,43 +9745,47 @@ Si può dimostrare che
 In poche parole non possiamo dire davvero che una funzione fa $0$ al bordo, ma possiamo dire se è o non è approssimabile da funzioni a supporto compatto; e se lo è, moralmente è come se facesse $0$ al bordo.
 
 Quindi $H^{1}_{0}( \Omega )$ è un sottospazio chiuso di $H^{1}( \Omega )$.
+
+\subsection{Disuguaglianza di Poincaré}
 \begin{theorem}
 	[Disuguaglianza di Poincaré] Sia $\Omega \subset \mathbb{R}^{n}$ un dominio \textbf{limitato}. Allora $\exists C_{P}  >0$ (costante di Poincaré) tale che
-	\begin{equation*}
+	\begin{equation}
 		\Vert u\Vert _{L^{2}( \Omega )} \leqslant C_{P}\Vert \nabla u\Vert _{L^{2}( \Omega )} ,\ \ \forall u\in H^{1}_{0}( \Omega )
-	\end{equation*}
+	\end{equation}
 \end{theorem}
 A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le loro derivate\footnote{Funzione che oscilla moltissimo, ma di valori bassi, e funzione costante a valore altissimo, sono due esempi estremi in cui vediamo che è necessario controllarle entrambe.}. In $H^{1}_{0}$ \textbf{la funzione è sempre controllata dalla derivata.}
 \begin{oss}
 	Un'immediata conseguenza è che l'unica costante che può appartenere ad $H^{1}_{0}$ è la costante nulla, ulteriore indice che \textit{ci stanno le cose che si annullano al bordo.}
-\end{oss}
 
-\LezioneV{08/04/2021}
-\begin{oss}
-	$\displaystyle u( x) \equiv c$ costante allora $\displaystyle u\in H^{1}( \Omega )$, $\displaystyle ( |\Omega |< +\infty )$ ma
+	Ovvero, se consideriamo un dominio limitato $( |\Omega |< +\infty )$, le costanti stanno in $H^{1} $: $u( x) \equiv c,u\in H^{1}( \Omega )$,  ma
 	\begin{equation*}
 		u\in H_{0}^{1}( \Omega ) \ \ \Leftrightarrow \ \ c=0
 	\end{equation*}
 \end{oss}
+
+\LezioneV{08/04/2021}
+\begin{oss}
+	La disuguaglianza di Poincaré non vale in $H^{1} $ proprio perché ci basta prendere una costante dove otterremmo la sua norma $L^2$, generalmente maggiore di zero, maggiorata da $0$.
+\end{oss}
 \begin{dimostrazione}
-	Si svolge in due passi. Sfruttiamo il fatto che $\displaystyle \mathcal{D}( \Omega )$ è denso in $\displaystyle H_{0}^{1}( \Omega )$:
+	Si svolge in due passi. Sfruttiamo il fatto che $\mathcal{D}( \Omega )$ è denso in $H_{0}^{1}( \Omega )$:
 	\begin{enumerate}
-		\item dimostro la Disuguaglianza di Poincaré (DP) in $\displaystyle \mathcal{D}( \Omega )$,
-		\item per approssimazione estendo ad $\displaystyle H_{0}^{1}( \Omega )$.
+		\item dimostro la Disuguaglianza di Poincaré (DP) in $\mathcal{D}( \Omega )$,
+		\item per approssimazione estendo ad $H_{0}^{1}( \Omega )$.
 	\end{enumerate}
 	
 	\textbf{Passo 1.}
 	
-	Fisso una funzione test $\displaystyle \varphi \in \mathcal{D}( \Omega )$ e costruisco un apposito campo vettoriale $\displaystyle \mathbf{F}(\x) =\varphi ^{2}(\x)\x$ su cui applicare il teorema della divergenza
+	Fisso una funzione test $\varphi \in \mathcal{D}( \Omega )$ e costruisco un apposito campo vettoriale $\boxed{\mathbf{F}(\x) =\varphi ^{2}(\x)\x}$ su cui applicare il teorema della divergenza
 	\begin{equation*}
 		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu } \ d\sigma 
 	\end{equation*}
 	Per applicare il teorema della divergenza devo controllare due cose:
 	\begin{enumerate}
-		\item Il campo deve essere di classe $\displaystyle C^{1}$ fino al bordo: in questo caso $\displaystyle \varphi $ è $\displaystyle C^{\infty }$ fino al bordo quindi non ho problemi.
-		\item Il bordo del dominio deve essere sufficientemente regolare, ad esempio Lipschitziano (in modo tale che la normale sia definita quasi ovunque). Non ho alcuna ipotesi però sul dominio $\displaystyle \Omega $ nel teorema: so solo che $\displaystyle \varphi $ è a supporto compatto, eventualmente molto brutto, contenuto in $\displaystyle \Omega $ \textit{limitato}, allora esiste una palla (centrata nell'origine, ma non importa) che contiene $\displaystyle \Omega $
+		\item Il campo deve essere di classe $C^{1}$ fino al bordo: in questo caso $\varphi $ è $C^{\infty }$ fino al bordo quindi non ho problemi.
+		\item Il bordo del dominio deve essere sufficientemente regolare, ad esempio Lipschitziano (in modo tale che la normale sia definita quasi ovunque). Non ho alcuna ipotesi però sul dominio $\Omega $ nel teorema: so solo che $\varphi $ è a supporto compatto, eventualmente molto brutto, contenuto in $\Omega $ \textit{limitato}, allora esiste una palla (centrata nell'origine, ma non importa) che contiene $\Omega $
 		      \begin{equation*}
-		      	B_{M}(\mathbf{0}) \supset \Omega 
+		      	B_{M}(\zer) \supset \Omega 
 		      \end{equation*}
 		      
 		      \begin{figure}[H]
@@ -9702,7 +9803,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 		      		\draw  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ][dash pattern={on 5.63pt off 4.5pt}][line width=1.5]  (151.33,76.44) .. controls (133.97,45.72) and (227.01,79.22) .. (215.66,105.26) .. controls (204.3,131.31) and (168.69,107.15) .. (151.33,76.44) -- cycle ;
 		      		
 		      		% Text Node
-		      		\draw (292.28,49.94) node [anchor=north west][inner sep=0.75pt]    {$B_{M}(\mathbf{0})$};
+		      		\draw (292.28,49.94) node [anchor=north west][inner sep=0.75pt]    {$B_{M}(\zer)$};
 		      		% Text Node
 		      		\draw (234.31,49.81) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
 		      		% Text Node
@@ -9714,10 +9815,10 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 		      \FloatBarrier
 		      
 		      
-		      allora $\displaystyle \varphi \in \mathcal{D}( B_{M}(\mathbf{0}))$ (basta estenderla a $\displaystyle 0$ fuori) e posso applicare il teorema della divergenza direttamente su $\displaystyle B_{M}(\mathbf{0})$.
+		      allora $\varphi \in \mathcal{D}( B_{M}(\zer))$ (basta estenderla a $0$ fuori) e posso applicare il teorema della divergenza direttamente su $B_{M}(\zer)$.
 	\end{enumerate}
 	
-	Ma allora essendo $\displaystyle \varphi $ a supporto compatto anche il campo è supporto compatto e si annulla sul bordo:
+	Ma allora essendo $\varphi $ a supporto compatto anche il campo è supporto compatto e si annulla sul bordo:
 	\begin{equation}
 		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\underbrace{\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu }\ d\sigma }_{=0} =0
 		\label{eq:af-dim-poincare}
@@ -9736,20 +9837,20 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 		n\int _{\Omega } \varphi ^{2} d\x =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \x \ d\x & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \x d\x\right| \\
 		                                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \x| d\x ,          
 	\end{align*}
-	per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\mathbf{0})$, per cui se $\displaystyle \x \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \x| \leqslant M$. Infine per Holder:
+	per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\zer)$, per cui se $\displaystyle \x \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \x| \leqslant M$. Infine per Cauchy-Schwarz:
 	\begin{align*}
 		n\int _{\Omega } \varphi ^{2} d\x & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | d\x                                                  \\
 		                                          & \leqslant 2M\left(\int _{\Omega } \varphi ^{2}\right)^{1/2}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} , 
 	\end{align*}
 	quindi semplificando una norma $\displaystyle L^{2}$ di $\displaystyle \varphi $ ottengo:
 	\begin{equation*}
-		\left(\int _{\Omega } \varphi ^{2} d\x\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{c_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
+		\left(\int _{\Omega } \varphi ^{2} d\x\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{C_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
 	\end{equation*}
 	\textbf{Passo 2.}
 	
 	Per il passo 1 so che 
 	\begin{equation*}
-		\exists \ c_{P} :\ \Vert \varphi \Vert _{L^{2}} \leqslant c_{P}\Vert \nabla \varphi \Vert _{L^{2}} ,\ \ \forall \varphi \in \mathcal{D}( \Omega ) .
+		\exists \ C_{P} :\ \Vert \varphi \Vert _{L^{2}} \leqslant C_{P}\Vert \nabla \varphi \Vert _{L^{2}} ,\ \ \forall \varphi \in \mathcal{D}( \Omega ) .
 	\end{equation*}
 	Ma per inclusione densa:
 	\begin{equation*}
@@ -9757,27 +9858,28 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	\end{equation*}
 	allora per continuità della norma, facendo il limite ottengo
 	\begin{gather*}
-		\Vert \varphi _{n}\Vert _{L^{2}} \leqslant c_{P}\Vert \nabla \varphi _{n}\Vert _{L^{2}}\\
+		\Vert \varphi _{n}\Vert _{L^{2}} \leqslant C_{P}\Vert \nabla \varphi _{n}\Vert _{L^{2}}\\
 		\downarrow \\
-		\Vert u\Vert _{L^{2}} \leqslant c_{P}\Vert \nabla u\Vert _{L^{2}}
+		\Vert u\Vert _{L^{2}} \leqslant C_{P}\Vert \nabla u\Vert _{L^{2}}
 	\end{gather*}
 \end{dimostrazione}
+Si noti che in realtà\footnote{e questa è una chicca per l'orale.} per ipotesi serve che $\Omega$ sia limitato almeno in una direzione, ma non per forza tutte. Quando costruiamo il campo ausiliario, è sufficiente scegliere un $\x$ tale che abbia componenti nulle direzioni illimitate e $x_{i}$ nella $i$-esima direzione in cui è limitato. I calcoli si svolgono analogamente. Attenzione che in quel caso la divergenza di $\x$ non è più $n$, ma $1,2, \cdots $ a seconda del caso. Si noti che la stima peggiore dato che non dividiamo per $n$, ma per qualcosa di più piccolo.
 \begin{oss}
-	Con la dimostrazione ho trovato anche una stima della costante $\displaystyle c_{P}$:
+	Con la dimostrazione ho trovato anche una stima della costante $\displaystyle C_{P}$:
 	\begin{equation*}
-		c_{P} =\frac{2M}{n} .
+		C_{P} =\frac{2M}{n} .
 	\end{equation*}
 	Tuttavia non è la migliore costante possibile. Quest'ultima si trova pensando a:
 	\begin{equation*}
-		\Vert u\Vert _{L^{2}}^{2} \leqslant c_{P}^{2}\Vert \nabla u\Vert _{L^{2}}^{2}
+		\Vert u\Vert _{L^{2}}^{2} \leqslant C_{P}^{2}\Vert \nabla u\Vert _{L^{2}}^{2}
 	\end{equation*}
 	che è equivalente a dire che
 	\begin{equation*}
-		\frac{1}{c_{P}^{2}} \leqslant \frac{\Vert \nabla u\Vert _{L^{2}}^{2}}{\Vert u\Vert _{L^{2}}^{2}} ,
+		\frac{1}{C_{P}^{2}} \leqslant \frac{\Vert \nabla u\Vert _{L^{2}}^{2}}{\Vert u\Vert _{L^{2}}^{2}} ,
 	\end{equation*}
-	la migliore costante si trova per il valore che minimizza $\displaystyle c_{P}$, cioè che massimizza $\displaystyle 1/c_{P}^{2}$, cioè che minimizza il secondo termine:
+	la migliore costante si trova per il valore che minimizza $\displaystyle C_{P}$, cioè che massimizza $\displaystyle 1/C_{P}^{2}$, cioè che minimizza il secondo termine:
 	\begin{equation}
-		\frac{1}{c_{P}^{2}} =\lambda _{1}( \Omega ) =\min_{u\in H_{0}^{1}( \Omega ) ,\ u\neq 0}\frac{\int _{\Omega }| \nabla u| ^{2}}{\int _{\Omega } u^{2}}
+		\frac{1}{C_{P}^{2}} =\lambda _{1}( \Omega ) =\min_{u\in H_{0}^{1}( \Omega ) ,\ u\neq 0}\frac{\int _{\Omega }| \nabla u| ^{2}}{\int _{\Omega } u^{2}}
 	\end{equation}
 	$\displaystyle \lambda _{1}$ è il primo autovalore di $\displaystyle -\Delta $ con condizione di Dirichlet e assume significati fisici importanti:
 	\begin{itemize}
@@ -9788,14 +9890,14 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 \begin{oss}
 	In generale:
 	\begin{equation*}
-		\Vert u\Vert _{H_{1}( \Omega )}^{2} =\Vert u\Vert _{L^{2}( \Omega )}^{2} +\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}
+		\textcolor[rgb]{0.25,0.46,0.02}{\Vert u\Vert _{H^{1}( \Omega )}^{2}} =\Vert u\Vert _{L^{2}( \Omega )}^{2} +\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}}
 	\end{equation*}
-	Se $\displaystyle u\in H_{0}^{1}( \Omega )$:
+	Se $\displaystyle u\in H_{0}^{1}( \Omega )$, grazie a Poincaré
 	\begin{equation}
-		\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2} \leqslant \Vert u\Vert _{L^{2}( \Omega )}^{2} +\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2} \leqslant \left( c_{P}^{2} +1\right)\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}
+		\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}} \leqslant \underbrace{\Vert u\Vert _{L^{2}( \Omega )}^{2} +\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}}}_{\textcolor[rgb]{0.25,0.46,0.02}{\Vert u\Vert _{H^{1}( \Omega )}^{2}}} \leqslant \left( C_{P}^{2} +1\right)\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}( \Omega )}^{2}}
 		\label{eq:af-stima-poincare}
 	\end{equation}
-	Quindi in $\displaystyle H_{0}^{1}$ (che ricordiamo è spazio di Hilbert essenso sottospazio chiuso di uno spazio di Hilbert) ci sono due norme equivalenti:
+	Quindi in $\displaystyle H_{0}^{1}$ (che ricordiamo è spazio di Hilbert essenso sottospazio chiuso di uno spazio di Hilbert) ci sono due norme equivalenti\footnote{Ce ne sono tante, ma ne abbiamo messe in evidenza due.}:
 	\begin{equation*}
 		\Vert u\Vert _{H^{1}( \Omega )} \ \ \ \ \ \ \Vert \nabla u\Vert _{L^{2}( \Omega )}
 	\end{equation*}
@@ -9929,7 +10031,7 @@ Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme
 	      	      
 	      	      per Poincaré usato come in \eqref{eq:af-stima-poincare}
 	      	      \begin{equation*}
-	      	      	\int _{\Omega }| \nabla u| ^{2} dx\geqslant \frac{1}{1+c_{P}^{2}}\Vert u\Vert _{H^{1}( \Omega )}^{2} .
+	      	      	\int _{\Omega }| \nabla u| ^{2} dx\geqslant \underbrace{\frac{1}{1+C_{P}^{2}}}_{\alpha}\Vert u\Vert _{H^{1}( \Omega )}^{2} .
 	      	      \end{equation*}
 	      \end{itemize}
 \end{enumerate}
@@ -9946,12 +10048,12 @@ In entrambi i casi possiamo concludere:
 \begin{theorem}
 	Data $\displaystyle f\in L^{2}( \Omega ) \ \exists !\ u\in H_{0}^{1}( \Omega )$ soluzione variazionale del problema di Dirichlet e ho anche una \textit{stima di stabilità}:
 	\begin{equation*}
-		\Vert u\Vert _{H^{1}( \Omega )} \leqslant \left( 1+c_{P}^{2}\right)\Vert f\Vert _{L^{2}( \Omega )}
+		\Vert u\Vert _{H^{1}( \Omega )} \leqslant \left( 1+C_{P}^{2}\right)\Vert f\Vert _{L^{2}( \Omega )}
 	\end{equation*}
 \end{theorem}
 Dove la stima di stabilità è ricavata da
 \begin{equation*}
-	\Vert u\Vert _{V} \leqslant \frac{1}{\alpha }\Vert F\Vert _{*} ,\ \text{con} \ \alpha =\frac{1}{1+c_{P}^{2}} ,\ \Vert F\Vert _{*} \leqslant \Vert f\Vert _{L^{2}} .
+	\Vert u\Vert _{V} \leqslant \frac{1}{\alpha }\Vert F\Vert _{*} ,\ \text{con} \ \alpha =\frac{1}{1+C_{P}^{2}} ,\ \Vert F\Vert _{*} \leqslant \Vert f\Vert _{L^{2}} .
 \end{equation*}
 Notiamo anche che $\displaystyle f\in L^{2}$ è una richiesta molto ragionevole e consente, oltre che funzioni discontinue, anche funzioni che esplodono! È già molto meno bella rispetto a quanto chiedevamo che fosse continua.
 
