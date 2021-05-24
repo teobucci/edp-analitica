@@ -980,7 +980,7 @@ Integrando e applicando il teorema della divergenza otteniamo una \textbf{formul
 \begin{equation}
 \boxed{\int _{\Omega } v\ \mathrm{div}(\mathbf{F}) = -\int _{\Omega } \nabla v\cdotp \mathbf{F} + \int _{\partial \Omega } v\mathbf{F} \cdotp \bm{\nu} \ d\sigma}
 \end{equation}
-Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\bm{\nu} = \partial\bm{\nu}u$. Tale formula diventa l'\textbf{identità di Green}:
+Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\bm{\nu} = \partial_{\bm{\nu}}u$. Tale formula diventa l'\textbf{identità di Green}:
 \begin{equation}
 \boxed{\int _{\Omega } v\Delta u\ dx=-\int _{\Omega } \nabla v\cdotp \nabla u+\int _{\partial \Omega } v\partial _{\bm{\nu}} u\ d\sigma }
 \label{eq:id-green}
@@ -1995,7 +1995,7 @@ In $x=0$ sia concentrata una sorgente di calore \textbf{istantanea.} Indichiamo 
 
 Non ci sono sorgenti esogene $(f=0)$ quindi sicuramente soddisfa l'equazione del calore omogenea
 \begin{equation*}
-u^{\star }_{t} -D\Delta u^{\star }_{xx} =0,\ \ x\in \mathbb{R},t >0
+u^{\star }_{t} -D u^{\star }_{xx} =0,\ \ x\in \mathbb{R},t >0
 \end{equation*}
 Vi è assenza di produzione o assorbimento di calore, allora l'energia si conserva
 \begin{equation*}
@@ -3000,16 +3000,16 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 
 		Ma dato che $\displaystyle w=0$ su $\displaystyle \partial \Omega $ ed essendo $\displaystyle C^{1}$ fino al bordo, la costante deve essere $\displaystyle 0$, da cui $\displaystyle w\equiv 0$.
 		\item \textbf{Robin}\begin{equation*}
-		\partial _{\nu } w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} d\sigma \leqslant 0
+		\partial_{\bm{\nu}} w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} d\sigma \leqslant 0
 		\end{equation*}
 
 		ma essendo il primo integrale $\displaystyle \geqslant 0$, allora deve essere nullo come prima:\begin{equation*}
 		\int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
 		\end{equation*}
 
-		Ma dato che è costante, la derivata normale sul bordo è nulla $\displaystyle \partial _{\nu } w=0=-\alpha w$, quindi $\displaystyle w=0$ sul bordo e, come prima, essendo $\displaystyle C^{1}$ fino al bordo, la costante è nulla, da cui $\displaystyle w\equiv 0$.
+		Ma dato che è costante, la derivata normale sul bordo è nulla $\displaystyle \partial_{\bm{\nu}} w=0=-\alpha w$, quindi $\displaystyle w=0$ sul bordo e, come prima, essendo $\displaystyle C^{1}$ fino al bordo, la costante è nulla, da cui $\displaystyle w\equiv 0$.
 		\item \textbf{Neumann}\begin{equation*}
-		\partial _{\nu } w=0\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
+		\partial_{\bm{\nu}} w=0\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
 		\end{equation*}
 
 		Non posso fare alcuna affermazione aggiuntiva.
@@ -3025,7 +3025,7 @@ integrando su $\displaystyle \Omega $ si trova
 \end{equation*}
 e applicando il teorema di Gauss \eqref{eq:id-green-v1}
 \begin{equation*}
--\int _{\partial \Omega } \partial _{\nu } ud\sigma =\int _{\Omega } f
+-\int _{\partial \Omega } \partial_{\bm{\nu}} ud\sigma =\int _{\Omega } f
 \end{equation*}
 Abbiamo trovato una \textbf{condizione necessaria per la risolubilità del problema di Neumann}:
 \begin{equation}
@@ -3325,7 +3325,7 @@ La probabilità di raggiungere la frontiera di $A$ partendo da un \textbf{qualun
 \begin{equation*}
 	\Gamma \longmapsto P(x,\Gamma),\ x\ \text{fissato}
 \end{equation*}
-con $\displaystyle P(x,\partial A) =1$, prendendo $\displaystyle \Gamma _{1},\Gamma _{2} \subset A$, $\displaystyle \Gamma _{1} \cap \Gamma _{2} =\emptyset $
+con $\displaystyle P(x,\partial A) =1$, prendendo $\displaystyle \Gamma _{1},\Gamma _{2} \subset \partial A$, $\displaystyle \Gamma _{1} \cap \Gamma _{2} =\emptyset $
 \begin{equation*}
 	P( x,\Gamma _{1} \cup \Gamma _{2}) =P(x,\Gamma _{1}) +P(x,\Gamma _{2})
 \end{equation*}
@@ -4286,12 +4286,12 @@ sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-
 \end{align*}
 facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa scompare il termine con la derivata normale sul bordo
 \begin{equation*}
-	u( x) =\int _{\Omega }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} f( y) dy+0-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}}\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} d\sigma 
+	u( x) =\int _{\Omega }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} f( y) dy+0-\int _{\partial \Omega } \varphi ( \sigma ) \partial_{\bm{\nu}}\underbrace{[ \Phi ( x-\sigma) -g( x,\sigma)]}_{G( x,\sigma)} d\sigma 
 \end{equation*}
 cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote{Si noti che anche se $G$ è nulla sul bordo, non è detto che la sua derivata normale sia nulla, è facile rendersene conto pensando al caso unidimensionale.}
-\begin{equation}
-	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} G( x,y) \ d\sigma }
-\end{equation}
+\begin{equation*}
+	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial_{\bm{\nu}} G( x,\sigma) \ d\sigma }
+\end{equation*}
 questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
 
@@ -9400,7 +9400,7 @@ Di questi termini
 	      \textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu}} \varphi (\x) d\sigma } =\textcolor[rgb]{0.25,0.46,0.02}{-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } d\sigma }
 	\end{equation*}
 	\item $\displaystyle \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \bm{\nu}$, con $\displaystyle \bm{\nu}$ identica a prima\begin{equation*}
-	      \textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\nu }\left(\frac{1}{| \x| }\right) d\sigma } =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =\textcolor[rgb]{0.29,0.56,0.89}{-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{1}{| \x| ^{2}} d\sigma }
+	      \textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial_{\bm{\nu}}\left(\frac{1}{| \x| }\right) d\sigma } =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =\textcolor[rgb]{0.29,0.56,0.89}{-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{1}{| \x| ^{2}} d\sigma }
 	\end{equation*}
 \end{itemize}
 
