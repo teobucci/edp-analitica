@@ -2283,7 +2283,7 @@ Usiamo l'analisi dimensionale
 \begin{equation*}
 \frac{A}{a^{2}} =\mathcal{F}^{\star }(\varphi) \ \text{adimensionale},\ \ \ \ A_{1} =b^{2}\mathcal{F}^{\star }(\varphi),\ \ \ \ A_{2} =c^{2}\mathcal{F}^{\star }(\varphi)
 \end{equation*}
-Quindi
+La funzione è la stessa perché i triangoli sono \emph{simili}. Quindi
 \begin{gather*}
 a^{2}\mathcal{F}^{\star }(\varphi) =b^{2}\mathcal{F}^{\star }(\varphi) +c^{2}\mathcal{F}^{\star }(\varphi) \ \ \Rightarrow \ \ a^{2} =b^{2} +c^{2}\\
 \qed 
@@ -2569,7 +2569,7 @@ p(x,t+\tau) =p_{0} p(x-h,t) +q_{0} p(x+h,t)
 \end{equation*}
 sviluppando in serie di Taylor in modo analogo
 \begin{align*}
-\tau p_{t} +o(\tau) & =p_{0}\left( p-hp_{x} +\frac{h^{2}}{2} p_{xx}\right) +q_{0}\left( p+hp_{x} +\frac{h^{2}}{2} p_{xx}\right) +o\left(h^{2}\right)\\
+p+\tau p_{t} +o(\tau) & =p_{0}\left( p-hp_{x} +\frac{h^{2}}{2} p_{xx}\right) +q_{0}\left( p+hp_{x} +\frac{h^{2}}{2} p_{xx}\right) +o\left(h^{2}\right)\\
  & =\underbrace{(p_{0} +q_{0})}_{=1} p+\frac{h^{2}}{2} p_{xx} +(q_{0} -p_{0}) hp_{x} +o\left(h^{2}\right)
 \end{align*}
 Da cui
@@ -3054,7 +3054,7 @@ Per esaminare le proprietà delle funzioni armoniche torniamo ad esplorare il le
 \end{equation*}
 La particella si muove in ciascuna delle quattro direzioni con probabilità identica $\displaystyle 1/4$, e i versori degli assi $\displaystyle x_{1},x_{2}$ sono rispettivamente $\displaystyle \mathbf{e}_{1},\mathbf{e}_{2}$.
 
-Sia $\displaystyle p(x,t) =p(x_{1},x_{2},t)$ la probabilità di trovare la particella nel punto $\x$ al tempo $t$. Come nella precedente passeggiata cerchiamo di ricavare un'equazione alle differenze finite per $p$ col teorema delle probabilità totali.
+Sia $\displaystyle p(\x,t) =p(x_{1},x_{2},t)$ la probabilità di trovare la particella nel punto $\x$ al tempo $t$. Come nella precedente passeggiata cerchiamo di ricavare un'equazione alle differenze finite per $p$ col teorema delle probabilità totali.
 \begin{equation*}
 	p( x_{1},x_{2},t+\tau) =\frac{1}{4}\{p( \x-h\mathbf{e}_{1},t) +p( \x+h\mathbf{e}_{1},t) +p( \x-h\mathbf{e}_{2},t) +p( \x+h\mathbf{e}_{2},t)\}
 \end{equation*}
@@ -3282,7 +3282,7 @@ Proprietà di una soluzione di \eqref{eq:pb-dirichlet-discreto}:
 		\end{figure}
 		\FloatBarrier
 		Se $u=M$ al centro e $u$ è la media dei punti del suo intorno discreto, anch'essi devono essere punti di massimo. Reiterando il ragionamento per ogni altro punto dell'intorno posso propagarlo fino alla frontiera.
-	\item $u$ assume massimo e minimo su $\partial A$ (immediata conseguenza del punto 1).
+	\item $u$ assume massimo e minimo su $\partial A$ (immediata conseguenza del punto 1)\footnote{Se lo assume dentro, è costante e quindi lo assume anche sul bordo. Se lo assume sul bordo... lo assume sul bordo. Ma và?}.
 	\item La soluzione di \eqref{eq:pb-dirichlet-discreto} è unica. Infatti se fossero $2$, la differenza $w=v-u$ sarebbe armonica e nulla al bordo, ma essendo il massimo e minimo assunti sul bordo, segue che $w=0$ in tutto il dominio.
 \end{enumerate}
 Posso risolvere il problema di Dirichlet discreto con metodi probabilistici, tornando alla passeggiata aleatoria. 
@@ -3395,7 +3395,7 @@ Dove la funzione Gamma di Eulero è definita come
 	\begin{equation*}
 	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \bm{\sigma} ) d\bm{\sigma} 
 	\end{equation*}
-	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \bm{\sigma } '=\frac{\bm{\sigma } -\x}{r}$, ovvero $\displaystyle \bm{\sigma } =\x +r\bm{\sigma } '$, in modo dale che $\displaystyle \bm{\sigma } '\in \partial B_{1}(\zer)$ e
+	Voglio dimostrare che $\displaystyle g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \bm{\sigma } '=\frac{\bm{\sigma } -\x}{r}$, ovvero $\displaystyle \bm{\sigma } =\x +r\bm{\sigma } '$, in modo tale che $\displaystyle \bm{\sigma } '\in \partial B_{1}(\zer)$ e
 	\begin{equation*}
 	d\bm{\sigma } =r^{n-1} d\bm{\sigma } '
 	\end{equation*}
@@ -3459,9 +3459,14 @@ Dove la funzione Gamma di Eulero è definita come
 	\begin{equation*}
 	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)}\frac{d}{dr} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} \nabla u(\x +r\bm{\sigma } ') \cdotp \bm{\sigma } 'd\bm{\sigma } '
 	\end{equation*}
-	Sulla sfera $\displaystyle \partial B_{1}(\zer)$, il vettore coincide col vettore normale $\displaystyle \bm{\sigma } '=\bm{\nu}$. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
+	Sulla sfera $\displaystyle \partial B_{1}(\zer)$, il vettore coincide col vettore normale $\displaystyle \bm{\sigma } '=\bm{\nu}$.
+	Poniamo:
 	\begin{equation*}
-	g'( r) =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
+		v(\y)=u(\x+r\y) \quad \implies \quad \nabla v(\y)=r\nabla u(\x+r\y)\qquad \Delta v(\y)=r^2 \Delta u(\x+r\y)
+	\end{equation*}
+	Dobbiamo pensare $\x$ come fissato. Usando il teorema della divergenza e ricordando che $\displaystyle u$ è armonica:
+	\begin{equation*}
+	g'( r) =\frac{1}{w_{n}r}\int _{\partial B_{1}(\zer)} \nabla  v(\bm{\sigma }') \cdot \bm{\sigma }' d\bm{\sigma }' =\frac{1}{w_{n}r}\int _{B_{1}(\zer)} \Delta   v(\y) \cdot \y d\y   =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
 	\end{equation*}
 	Dunque $\displaystyle g$ è costante. Quindi per continuità di $\displaystyle u$:
 	\begin{align*}
@@ -4080,7 +4085,7 @@ Abbiamo considerato tutto $\mathbb{R} ^{n} $, ma se invece consideriamo una regi
 \begin{theorem}
 	Sia $\displaystyle \Omega \subset \mathbb{R}^{3}$ un \textbf{dominio limitato e regolare}, sia $\displaystyle u\in C^{2}(\overline{\Omega }$). Allora la soluzione del problema di Dirichlet $\Delta u=f$ con $u=g$ al bordo è:
 	\begin{equation*}
-		u(x) =\underbrace{-\int _{\Omega } \Phi (x-y) \Delta f(y) dy}_{ \begin{array}{l}
+		u(x) =\underbrace{-\int _{\Omega } \Phi (x-y) f(y) dy}_{ \begin{array}{l}
 			\text{potenziale Newtoniano di}\\
 			f=\Delta u
 			\end{array}} +\underbrace{\int _{\partial \Omega } \Phi (x-\sigma) \partial _{\bm{\nu}} u(\sigma) d\sigma }_{ \begin{array}{l}
@@ -5851,7 +5856,7 @@ Questo è proprio il caso della coda al semaforo e del traffico a valle, non c'�
 		      	\end{cases}
 		      \end{equation*}
 		      
-		      Dove $\displaystyle r=( q')^{-1}$ è la funzione inversa di $\displaystyle q'$
+		      Dove $r(s)=( q')^{-1}(r(s))$ è la funzione inversa di $\displaystyle q'$
 	\end{itemize}
 \end{theorem}
 
@@ -6479,7 +6484,7 @@ da cui si ricava
 \end{equation*}
 dividendo per $\displaystyle \Delta x$ e passando al limite per $\displaystyle \Delta x\rightarrow 0$ ottengo
 \begin{equation*}
-\rho _{0}( x) u_{tt} =\tau _{0}( t) u_{xx} +\rho _{0} f( x,t)
+\rho _{0}( x) u_{tt} =\tau _{0}( t) u_{xx} +\rho _{0} (x)f( x,t)
 \end{equation*}
 Da cui, definita
 \begin{equation*}
@@ -6921,7 +6926,7 @@ Esaminiamo alcune conseguenze di questa formula:
 		\end{equation*}
 		per esempio
 		\begin{align*}
-			F( x+ct) & =\frac{1}{2} g( x+ct) -\frac{1}{2c}\int _{0}^{x+ct} h( y) dy \\
+			F( x+ct) & =\frac{1}{2} g( x+ct) +\frac{1}{2c}\int _{0}^{x+ct} h( y) dy \\
 			G( x-ct) & =\frac{1}{2} g( x-ct) +\frac{1}{2c}\int _{x-ct}^{0} h( y) dy 
 		\end{align*}
 		quindi $\displaystyle u$ è sovrapposizione di due onde progressive.
@@ -7339,7 +7344,7 @@ otteniamo infine:
 		      \end{equation*}quindi è costante, in particolare è sempre uguale al suo valore iniziale:
 		      \begin{equation*}
 		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} d\x .
-		      \end{equation*}Siccome siamo con \textbf{condizioni inizial nulle}:
+		      \end{equation*}Siccome siamo con \textbf{condizioni iniziali nulle}:
 		      \begin{equation*}
 		      	\begin{cases}
 		      		v(\x ,0) =0,     & \text{in} \ \overline{\Omega } \\
@@ -7563,11 +7568,13 @@ Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo
 
 D'ora in poi omettiamo il pedice in $\displaystyle w_{h}$ per comodità.
 \begin{equation*}
+	\tag{PCG$_{3}$}
 	\begin{cases}
 		w_{tt} -c^{2} \Delta w=0            & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
 		w(\x ,0) =0                 & \text{in} \ \mathbb{R}^{3}                      \\
 		w_{t}(\x ,0) =h(\x) & \text{in} \ \mathbb{R}^{3}                      
 	\end{cases}
+	\label{eq:pcg-3-onde}
 \end{equation*}
 La strategia risolutiva si compone di due passi:
 \begin{enumerate}
@@ -7591,14 +7598,14 @@ Caso $\displaystyle h(\x) =\delta _{3}(\x)$. La soluzione corrispondente che cos
 \end{equation*}
 Sia $\displaystyle w_{\varepsilon }(\x ,t)$ la soluzione di
 \begin{equation*}
-	( P_{\varepsilon }) \ 
+	\tag{PCG$_{3\varepsilon}$}
 	\begin{cases}
 		\partial _{tt} w_{\varepsilon } -c^{2} \Delta w_{\varepsilon } =0                & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
 		w_{\varepsilon }(\x ,0) =0                                               & \text{in} \ \mathbb{R}^{3}                      \\
 		\partial _{t} w_{\varepsilon }(\x ,0) =\Gamma (\x ,\varepsilon ) & \text{in} \ \mathbb{R}^{3}                      
 	\end{cases}
 \end{equation*}
-Notiamo che $\displaystyle P_{\varepsilon }$ ha soluzione unica e che $\displaystyle \Gamma $ è a \textbf{simmetria radiale} (invariante per rotazioni in $\displaystyle \mathbb{R}^{3}$). Per l'unicità della soluzione possiamo scrivere:
+Notiamo che $(PCG_{3\varepsilon})$ ha soluzione unica e che $\displaystyle \Gamma $ è a \textbf{simmetria radiale} (invariante per rotazioni in $\displaystyle \mathbb{R}^{3}$). Per l'unicità della soluzione possiamo scrivere:
 \begin{equation*}
 	w_{\varepsilon }(\x ,t) =w_{\varepsilon }( r,t) ,\ \ r=| \x| 
 \end{equation*}
@@ -7630,12 +7637,12 @@ quest'equazione ci darà $\displaystyle F$ a meno di una costante additiva. Tutt
 \end{align*}
 Concludendo:
 \begin{equation*}
-	w_{\varepsilon }( r,t) =\frac{1}{4\pi cr}\left\{\textcolor[rgb]{0.25,0.46,0.02}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r-ct)^{2}}{4t}}} -\textcolor[rgb]{0.96,0.65,0.14}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r+ct)^{2}}{4t}}}\right\} ,
+	w_{\varepsilon }( r,t) =\frac{1}{4\pi cr}\left\{\textcolor[rgb]{0.25,0.46,0.02}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r-ct)^{2}}{4\varepsilon}}} -\textcolor[rgb]{0.96,0.65,0.14}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r+ct)^{2}}{4\varepsilon}}}\right\} ,
 \end{equation*}
 ora facendo limite per $\displaystyle \varepsilon \rightarrow 0^{+}$:
 \begin{align*}
-	\textcolor[rgb]{0.96,0.65,0.14}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r+ct)^{2}}{4t}}} & \rightarrow 0                                            \\
-	\textcolor[rgb]{0.25,0.46,0.02}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r-ct)^{2}}{4t}}} & \ \text{è la soluzione fondamentale del calore in}\ n=1 
+	\textcolor[rgb]{0.96,0.65,0.14}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r+ct)^{2}}{4\varepsilon}}} & \rightarrow \delta (r+ct)=0 \quad \text{essendo} \ r+ct>0                                            \\
+	\textcolor[rgb]{0.25,0.46,0.02}{\frac{1}{\sqrt{4\pi \varepsilon }}e^{-\frac{( r-ct)^{2}}{4\varepsilon}}} & \rightarrow \delta (r-ct)\ \text{è la soluzione fondamentale del calore in}\ n=1 
 \end{align*}
 quindi\footnote{Prestare attenzione al fatto che la delta ora è unidimensionale.}
 \begin{equation*}
@@ -7646,9 +7653,9 @@ Se $\displaystyle h(\x) =\delta _{3}(\x -\y)$ allora $\displaystyle r=| \x -\y| 
 	\boxed{K(\x ,\y ,t) =\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| }}
 \end{equation}
 \begin{oss}
-	Il supporto di K per ogni $\displaystyle t$ è:
+	Il supporto di $K$ per ogni $\displaystyle t$ è:
 	\begin{equation}
-		\partial B_{ct}( x) =\{\y :| \x -\y| =ct\} ,
+		\partial B_{ct}(\x) =\{\y :| \x -\y| =ct\} ,
 	\end{equation}
 
 
@@ -7744,7 +7751,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	\begin{equation}
 		u(\x ,t) =\frac{\partial }{\partial t}\left[\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\bm{\sigma }) d\bm{\sigma }\right] +\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma }
 	\end{equation}
-	è l'unica soluzione $\displaystyle u\in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ del (PCG).
+	è l'unica soluzione $\displaystyle u\in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ del \eqref{eq:pcg-3-onde}.
 \end{theorem}
 \begin{dimostrazione}
 	Poiché $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$ la funzione
@@ -7849,7 +7856,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 
 Risolviamo il problema di Cauchy globale in dimensione $\displaystyle n=2$:
 \begin{equation*}
-	( PCG_{2}) \ 
+	\tag{PCG$_{2}$}
 	\begin{cases}
 		u_{tt} -c^{2} \Delta u=0            & \x \in \mathbb{R}^{2} ,\ t >0,\ \x = 
 		\begin{pmatrix}
@@ -7859,8 +7866,9 @@ Risolviamo il problema di Cauchy globale in dimensione $\displaystyle n=2$:
 		u(\x ,0) =0                 & \x\mathbb{\in R}^{2}                         \\
 		u_{t}(\x ,0) =h(\x) & \x\mathbb{\in R}^{2}                         
 	\end{cases}
+	\label{eq:pcg-2-onde}
 \end{equation*}
-utilizzando il metodo della \textbf{discesa di Hadamard}: considero $\displaystyle ( PCG_{2})$ come un problema in dimensione $\displaystyle 3$:
+utilizzando il metodo della \textbf{discesa di Hadamard}: considero \eqref{eq:pcg-2-onde} come un problema in dimensione $\displaystyle 3$:
 \begin{equation}
 	(\x ,x_{3}) \in \mathbb{R}^{3} ,\ h(\x ,x_{3}) =h(\x)
 \end{equation}
@@ -7886,10 +7894,60 @@ dove
 \begin{equation*}
 	r^{2} =| \x -\y| ^{2} =( x_{1} -y_{1})^{2} +( x_{2} -y_{2})^{2} .
 \end{equation*}
-Su entrambi gli emisferi $\displaystyle ( d\y =dy_{1} dy_{2})$
+Su entrambi gli emisferi $\displaystyle h$ non dipende da $\displaystyle x_{3}$, quindi abbiamo due integrali uguali. Inoltre possiamo riportare l'integrale sulla semi-superficie della sfera a un integrale doppio sul piano, a tutti gli effetti facendo una \textit{discesa}. Dal punto di vista dell'elemento infinitesimo la trasformazione è:
 \begin{equation*}
-	d\bm{\sigma } =\sqrt{1+| \nabla F_{\pm }(\y)| ^{2}} d\y =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} d\y =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} d\y
+	d\bm{\sigma } =\sqrt{1+| \nabla F_{\pm }(\y)| ^{2}} d\y =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} d\y =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} d\y,\qquad  ( d\y =dy_{1} dy_{2})
 \end{equation*}
+\begin{figure}[htpb]
+	\centering
+	
+
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,321); %set diagram left start at 0, and has height of 321
+
+	%Shape: Parallelogram [id:dp20764399192874583] 
+	\draw   (124,110.7) -- (483,110.7) -- (374,202.7) -- (15,202.7) -- cycle ;
+	%Shape: Arc [id:dp670951507496512] 
+	\draw  [draw opacity=0] (130.71,149.68) .. controls (131.14,83.9) and (184.61,30.7) .. (250.5,30.7) .. controls (316.66,30.7) and (370.3,84.34) .. (370.3,150.5) .. controls (370.3,150.54) and (370.3,150.58) .. (370.3,150.63) -- (250.5,150.5) -- cycle ; \draw   (130.71,149.68) .. controls (131.14,83.9) and (184.61,30.7) .. (250.5,30.7) .. controls (316.66,30.7) and (370.3,84.34) .. (370.3,150.5) .. controls (370.3,150.54) and (370.3,150.58) .. (370.3,150.63) ;
+	%Shape: Arc [id:dp13700719688241492] 
+	\draw  [draw opacity=0][dash pattern={on 0.84pt off 2.51pt}] (370.29,151.02) .. controls (369.86,216.81) and (316.39,270) .. (250.5,270) .. controls (184.34,270) and (130.7,216.37) .. (130.7,150.2) .. controls (130.7,150.16) and (130.7,150.12) .. (130.7,150.08) -- (250.5,150.2) -- cycle ; \draw  [dash pattern={on 0.84pt off 2.51pt}] (370.29,151.02) .. controls (369.86,216.81) and (316.39,270) .. (250.5,270) .. controls (184.34,270) and (130.7,216.37) .. (130.7,150.2) .. controls (130.7,150.16) and (130.7,150.12) .. (130.7,150.08) ;
+	%Shape: Arc [id:dp713490243728391] 
+	\draw  [draw opacity=0][dash pattern={on 0.84pt off 2.51pt}] (251.32,30.42) .. controls (283.8,31.3) and (310,84.59) .. (310,150.2) .. controls (310,216.37) and (283.36,270) .. (250.5,270) .. controls (250.46,270) and (250.42,270) .. (250.37,270) -- (250.5,150.2) -- cycle ; \draw  [dash pattern={on 0.84pt off 2.51pt}] (251.32,30.42) .. controls (283.8,31.3) and (310,84.59) .. (310,150.2) .. controls (310,216.37) and (283.36,270) .. (250.5,270) .. controls (250.46,270) and (250.42,270) .. (250.37,270) ;
+	%Shape: Arc [id:dp5260933387102087] 
+	\draw  [draw opacity=0] (191.71,168.78) .. controls (191.24,162.73) and (191,156.52) .. (191,150.2) .. controls (191,84.04) and (217.64,30.41) .. (250.5,30.41) .. controls (250.54,30.41) and (250.58,30.41) .. (250.63,30.41) -- (250.5,150.2) -- cycle ; \draw   (191.71,168.78) .. controls (191.24,162.73) and (191,156.52) .. (191,150.2) .. controls (191,84.04) and (217.64,30.41) .. (250.5,30.41) .. controls (250.54,30.41) and (250.58,30.41) .. (250.63,30.41) ;
+	%Shape: Arc [id:dp21634156745075273] 
+	\draw  [draw opacity=0][dash pattern={on 0.84pt off 2.51pt}] (249.85,269.99) .. controls (220.05,269.35) and (195.5,224.59) .. (191.55,166.61) -- (250.5,150.2) -- cycle ; \draw  [dash pattern={on 0.84pt off 2.51pt}] (249.85,269.99) .. controls (220.05,269.35) and (195.5,224.59) .. (191.55,166.61) ;
+	%Shape: Ellipse [id:dp3396018229275308] 
+	\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=0.1 ] (130.7,150.08) .. controls (130.7,139.03) and (184.34,130.08) .. (250.5,130.08) .. controls (316.66,130.08) and (370.3,139.03) .. (370.3,150.08) .. controls (370.3,161.12) and (316.66,170.08) .. (250.5,170.08) .. controls (184.34,170.08) and (130.7,161.12) .. (130.7,150.08) -- cycle ;
+	%Straight Lines [id:da02584086910866268] 
+	\draw  [dash pattern={on 4.5pt off 4.5pt}]  (250.5,150.08) -- (250.63,30.41) ;
+	\draw [shift={(250.5,150.08)}, rotate = 270.06] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+	%Straight Lines [id:da4742116163717902] 
+	\draw    (490,230.7) -- (490,45.7) ;
+	\draw [shift={(490,43.7)}, rotate = 450] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (12,-3) -- (0,0) -- (12,3) -- cycle    ;
+	%Straight Lines [id:da017887571875842445] 
+	\draw    (494.3,150.63) -- (486.3,150.63) ;
+	%Shape: Arc [id:dp20147168083416767] 
+	\draw  [draw opacity=0] (358.62,201.85) .. controls (339.34,242.16) and (298.17,270) .. (250.5,270) .. controls (203.28,270) and (162.45,242.68) .. (142.93,202.99) -- (250.5,150.2) -- cycle ; \draw   (358.62,201.85) .. controls (339.34,242.16) and (298.17,270) .. (250.5,270) .. controls (203.28,270) and (162.45,242.68) .. (142.93,202.99) ;
+	%Shape: Arc [id:dp5315503198873763] 
+	\draw  [draw opacity=0] (249.85,269.99) .. controls (226.69,269.5) and (206.7,242.35) .. (197.09,203.07) -- (250.5,150.2) -- cycle ; \draw   (249.85,269.99) .. controls (226.69,269.5) and (206.7,242.35) .. (197.09,203.07) ;
+
+	% Text Node
+	\draw (376,131.4) node [anchor=north west][inner sep=0.75pt]    {$B_{ct}(\mathbf{x})$};
+	% Text Node
+	\draw (259,140.4) node [anchor=north west][inner sep=0.75pt]    {$\mathbf{x}$};
+	% Text Node
+	\draw (319,27.4) node [anchor=north west][inner sep=0.75pt]    {$\partial B_{ct}(\mathbf{x} ,x_{3})$};
+	% Text Node
+	\draw (465,139.4) node [anchor=north west][inner sep=0.75pt]    {$x_{3}$};
+
+
+	\end{tikzpicture}
+	\caption{Discesa di Hadamard.}
+\end{figure}
+\FloatBarrier
 quindi
 \begin{equation*}
 	w\left(\x ,\cancel{x_{3}} ,t\right) =\frac{1}{2\pi c}\int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y
@@ -7900,7 +7958,7 @@ non dipende da $\displaystyle x_{3}$! Allora usando ancora una volta il Lemma A 
 	\begin{equation}
 		u(\x ,t) =\frac{1}{2\pi c}\left\{\frac{\partial }{\partial t}\int _{B_{ct}(\x)}\frac{g(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y +\ \int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y\right\}
 	\end{equation}
-	è l'unica soluzione $\displaystyle \in C^{2}\left(\mathbb{R}^{2} \times [ 0,+\infty )\right)$ del $\displaystyle PGC_{2}$.
+	è l'unica soluzione $\displaystyle \in C^{2}\left(\mathbb{R}^{2} \times [ 0,+\infty )\right)$ del \eqref{eq:pcg-2-onde}.
 \end{theorem}
 Una differenza fondamentale è che gli integrali sono su tutta la sfera piena, non solo sulla superficie come in tre dimensioni: dopo $\displaystyle t_{\max}$ continuo a percepire la perturbazione. Di conseguenza \textit{il principio di Huygens forte non vale in dimensione }$\displaystyle 2$ e non esistono segnali \textit{istantanei}.
 
@@ -8952,6 +9010,8 @@ Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle
 		      \end{equation*}
 	\end{itemize}
 \end{definition}
+Segnaliamo una domanda che ogni tanto viene fatta agli orali di Salsa: nella continuità e nella coercività serve il modulo nella forma bilineare?
+
 Il prodotto scalare è un caso particolare di forma bilineare simmetrica $a(u,v) =(u,v)$, vediamo quanto valgono le costanti $M$ e $\alpha $. Per Cauchy-Schwarz
 \begin{equation*}
 	| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert \ \ \Rightarrow \ \ M=1
@@ -9206,7 +9266,7 @@ che è anche un'immersione continua.
 	\end{equation*}
 	Se $\displaystyle F\in C^{1}(\overline{\Omega })$, quindi anche
 	\begin{equation*}
-		F\in C^{1}(\overline{\Omega }) \subset L^{2}(\mathcal{\Omega ) \subset D} '( \Omega )
+		F\in C^{1}(\overline{\Omega }) \subset L^{2}(\Omega )\mathcal{\subset D} '( \Omega )
 	\end{equation*}
 	allora possiamo scrivere
 	\begin{equation*}
@@ -9470,7 +9530,7 @@ misurando le norme in $H^{1}$ stiamo contemporaneamente controllando sia la norm
 	\end{enumerate}
 \end{theorem}
 
-Notiamoche $H^{1}$ è, oltre che un sottoinsieme, anche un \textbf{sottospazio chiuso} di $L^{2}$.
+Notiamo che $H^{1}$ è, oltre che un sottoinsieme, anche un \textbf{sottospazio chiuso} di $L^{2}$.
 
 In generale, anche se non li useremo, si definiscono gli spazi
 \begin{equation*}
