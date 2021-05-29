@@ -2721,16 +2721,18 @@ dove i termini dipendono in questo modo
 
 Consideriamo il problema di Cauchy globale in $n=1$ dimensioni. La generalizzazione a dimensione $n >1$ è standard, quindi lavoriamo in $n=1$ per semplicità.
 \begin{equation*}
-\text{(PCG)} \ \begin{cases}
-u_{t} -Du_{xx} =0 & \text{in} \ \mathbb{R} \times (0,T) \ \ \ \ T\leqslant +\infty \\
-u(x,0) =g(x) & \text{in} \ \mathbb{R}
-\end{cases}
+	\tag{PCG$_{\text{diffusione,1D}}$}
+	\begin{cases}
+		u_{t} -Du_{xx} =0 & \text{in} \ \mathbb{R} \times (0,T) \ \ \ \ T\leqslant +\infty \\
+		u(x,0) =g(x) & \text{in} \ \mathbb{R}
+	\end{cases}
+	\label{eq:pcg-calore-1d}
 \end{equation*}
 dove $g$ è il \textit{dato iniziale} assegnato.
 
 Interpretiamo $u$ come una \textbf{concentrazione di massa, o densità lineare di massa}, nel senso che $u(x,t) dx$ è la massa che si trova nell'intervallo $(x,x+dx)$ al tempo $t$.
 
-Sappiamo risolvere (PCG) nel caso di impulso nell'origine $g(x) =\delta (x)$ e di conseguenza anche nel caso di $g(x) =\delta (x-y)$.\footnote{Non è corretto usare l'uguaglianza, intendiamo che le distribuzioni hanno lo stesso effetto tramite il prodotto di dualità.} In questa situazione, la soluzione è data da
+Sappiamo risolvere \eqref{eq:pcg-calore-1d} nel caso di impulso nell'origine $g(x) =\delta (x)$ e di conseguenza anche nel caso di $g(x) =\delta (x-y)$.\footnote{Non è corretto usare l'uguaglianza, intendiamo che le distribuzioni hanno lo stesso effetto tramite il prodotto di dualità.} In questa situazione, la soluzione è data da
 \begin{equation*}
 u(x,t) =\Gamma _{D}(x-y,t)
 \end{equation*}
@@ -2789,7 +2791,7 @@ che è una \textbf{convoluzione} del dato iniziale con la gaussiana
 \begin{equation*}
 u(x,t) =( \Gamma _{D}(\cdotp,t) *g)(x)
 \end{equation*}
-è la \textit{candidata} soluzione di (PCG).
+è la \textit{candidata} soluzione di \eqref{eq:pcg-calore-1d}.
 \subsection{Esistenza}
 
 \textbf{Problemi.}
@@ -6891,7 +6893,7 @@ Questo evidenzia la caratteristica intermedia del caso in dimensione $n=1$, ment
 
 Riprendiamo il \textbf{problema di Cauchy globale} omogeneo.
 \begin{equation}
-	\text{(PCG)} \ 
+	\tag{PCG$_{\text{onde,1D}}$} \ 
 	\begin{cases}
 		u_{tt} -c^{2} u_{xx} =0 & x\in \mathbb{R} ,t >0 \\
 		u( x,0) =g( x)          & x\in \mathbb{R}       \\
@@ -6906,7 +6908,7 @@ la soluzione è data dalla \textbf{formula di d'Alembert}
 \end{equation}
 Esaminiamo alcune conseguenze di questa formula:
 \begin{enumerate}
-	\item Il (PCG) \eqref{eq:onde-pcg-1d} ha un'\textbf{unica} soluzione \textit{regolare} data da \eqref{eq:onde-formula-di-dAlembert}. Notiamo che deve essere:
+	\item Il \eqref{eq:onde-pcg-1d} ha un'\textbf{unica} soluzione \textit{regolare} data da \eqref{eq:onde-formula-di-dAlembert}. Notiamo che deve essere:
 		\begin{equation*}
 			g\in C^{2}(\mathbb{R}) ,\ h\in C^{1}(\mathbb{R}) ,
 		\end{equation*}
@@ -7494,21 +7496,21 @@ Se $u\in C^{2}\left(\mathbb{R}^{n} \times [ 0,+\infty )\right)$ è soluzione di 
 
 Riprendiamo e risolviamo il Problema di Cauchy globale
 \begin{equation*}
-	\text{(PCG)} \ 
+	\tag{PCG$_{\text{onde,3D}}$} \ 
 	\begin{cases}
 		u_{tt} -c^{2} \Delta u=0            & \x \in \mathbb{R}^{3} ,t >0 \\
 		u(\x ,0) =g(\x)     & \x\in\mathbb{R}^{3}        \\
 		u_{t}(\x ,0) =h(\x) & \x\in\mathbb{R}^{3}        
 	\end{cases}
 \end{equation*}
-sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ è unica, dobbiamo dimostrarne l'esistenza.
+sappiamo già che la soluzione nella classe $C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ è unica, dobbiamo dimostrarne l'esistenza.
 \begin{oss}
 	In $\displaystyle n=1$ la formula di d'Alembert per lo stesso problema forniva la soluzione:
 	\begin{equation}
 		u( x,t) =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[g(x+ct)+g(x-ct)]} +\underbrace{\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) dy}_{w_{h}}
 		\label{eq:onde-pcg-oss-1d-dAlembert}
 	\end{equation}
-	ma $\displaystyle w_{h}$ soddisfa il (PCG) con profilo iniziale nullo e impulso iniziale $\displaystyle h$
+	ma $\displaystyle w_{h}$ soddisfa il \eqref{eq:onde-pcg-1d} con profilo iniziale nullo e impulso iniziale $\displaystyle h$
 	\begin{gather*}
 		w_{h}( x,0) =0,\\
 		\partial _{t} w_{h}( x,0) =h( x) ,
@@ -7525,7 +7527,7 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	\end{equation*}
 \end{oss}
 \begin{theorem}
-	[Lemma A] In dimensione $\displaystyle n$ generica, sia $\displaystyle w_{h}$ la soluzione di
+	[Lemma A] In dimensione $n$ generica, sia $w_{h}$ la soluzione di
 	\begin{equation*}
 	\begin{cases}
 	w_{tt} v-c^{2} \Delta w=0 & \x \in \mathbb{R}^{n} ,t >0\\
@@ -7533,7 +7535,7 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	w_{t}(\x ,0) =h(\x) & \x \in \mathbb{R}^{n}
 	\end{cases}
 	\end{equation*}
-	se $\displaystyle w_{g}$ è sufficientemente regolare (qui ad esempio basta $\displaystyle C^{3}$) allora
+	se $w_{g}$ è sufficientemente regolare (qui ad esempio basta $C^{3}$) allora
 	\begin{equation*}
 	v=\partial _{t} w_{g}
 	\end{equation*}
@@ -7545,10 +7547,10 @@ sappiamo già che la soluzione nella classe $\displaystyle C^{2}\left(\mathbb{R}
 	v_{t}(\x ,0) =0 & \x \in \mathbb{R}^{n}
 	\end{cases}
 	\end{equation*}
-	Come corollario, essendo il problema \textbf{omogeneo} possiamo sommare le soluzioni. La soluzione di (PCG) è data da:
+	Come corollario, essendo il problema \textbf{omogeneo} possiamo sommare le soluzioni. La soluzione del problema di Cauchy globale in $n$ dimensioni è data da:
 	\begin{align*}
 	u & =v+w_{h}\\
-	 & =\partial _{t} w_{g} +w_{h} .
+	 & =\partial _{t} w_{g} +w_{h}.
 	\end{align*}
 	\label{thm:lemma-A}
 \end{theorem}
@@ -7568,7 +7570,7 @@ Di conseguenza, per risolvere il problema di Cauchy globale, mi basta risolverlo
 
 D'ora in poi omettiamo il pedice in $\displaystyle w_{h}$ per comodità.
 \begin{equation*}
-	\tag{PCG$_{3}$}
+	\tag{PCG$_{\text{onde,3D}}$}
 	\begin{cases}
 		w_{tt} -c^{2} \Delta w=0            & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
 		w(\x ,0) =0                 & \text{in} \ \mathbb{R}^{3}                      \\
@@ -7598,14 +7600,15 @@ Caso $\displaystyle h(\x) =\delta _{3}(\x)$. La soluzione corrispondente che cos
 \end{equation*}
 Sia $\displaystyle w_{\varepsilon }(\x ,t)$ la soluzione di
 \begin{equation*}
-	\tag{PCG$_{3\varepsilon}$}
+	\tag{PCG$_{\text{onde,3D},\varepsilon}$}
 	\begin{cases}
 		\partial _{tt} w_{\varepsilon } -c^{2} \Delta w_{\varepsilon } =0                & \text{in} \ \mathbb{R}^{3} \times ( 0,+\infty ) \\
 		w_{\varepsilon }(\x ,0) =0                                               & \text{in} \ \mathbb{R}^{3}                      \\
 		\partial _{t} w_{\varepsilon }(\x ,0) =\Gamma (\x ,\varepsilon ) & \text{in} \ \mathbb{R}^{3}                      
 	\end{cases}
+	\label{eq:pcg-onde-3d-epsilon}
 \end{equation*}
-Notiamo che $(PCG_{3\varepsilon})$ ha soluzione unica e che $\displaystyle \Gamma $ è a \textbf{simmetria radiale} (invariante per rotazioni in $\displaystyle \mathbb{R}^{3}$). Per l'unicità della soluzione possiamo scrivere:
+Notiamo che \eqref{eq:pcg-onde-3d-epsilon} ha soluzione unica e che $\displaystyle \Gamma $ è a \textbf{simmetria radiale} (invariante per rotazioni in $\displaystyle \mathbb{R}^{3}$). Per l'unicità della soluzione possiamo scrivere:
 \begin{equation*}
 	w_{\varepsilon }(\x ,t) =w_{\varepsilon }( r,t) ,\ \ r=| \x| 
 \end{equation*}
@@ -7786,18 +7789,18 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	Per quanto riguarda l'equazione torniamo alle variabili originali:
 	\begin{align*}
 		\mathbf{w} & =\text{versore normale esterno} & \\
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\zer)}}\textcolor[rgb]{0.82,0.01,0.11}{\nabla h}\textcolor[rgb]{0.82,0.01,0.11}{(}\textcolor[rgb]{0.82,0.01,0.11}{\x}\textcolor[rgb]{0.82,0.01,0.11}{+ct}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{)}\textcolor[rgb]{0.82,0.01,0.11}{\cdotp }\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{d}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\zer)}\underbrace{\nabla h(\x +ct\mathbf{w})}_{\nabla h(\x +ct\mathbf{w}) =\nabla h(\mathbf{\sigma })} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{d\mathbf{\sigma }} & \\
-	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \nabla h(\mathbf{\sigma }) \cdotp \bm{\nu} \ d\mathbf{\sigma } & \\
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\zer)}}\textcolor[rgb]{0.82,0.01,0.11}{\nabla h}\textcolor[rgb]{0.82,0.01,0.11}{(}\textcolor[rgb]{0.82,0.01,0.11}{\x}\textcolor[rgb]{0.82,0.01,0.11}{+ct}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{)}\textcolor[rgb]{0.82,0.01,0.11}{\cdotp }\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{d}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\zer)}\underbrace{\nabla h(\x +ct\mathbf{w})}_{\nabla h(\x +ct\mathbf{w}) =\nabla h(\bm{\sigma})} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{d\bm{\sigma}} & \\
+	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \nabla h(\bm{\sigma}) \cdotp \bm{\nu} \ d\bm{\sigma} & \\
 	 	& =\frac{1}{4\pi ct}\int _{B_{ct}(\x)} \Delta h(\y) d\y & \text{(Teo. divergenza)}\\
-	 	& =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } , & \text{(coord. polari)}
+	 	& =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\bm{\sigma}) d\bm{\sigma} , & \text{(coord. polari)}
 	\end{align*}
 	quindi:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\zer)} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) d\y} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } ,
+		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\zer)} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) d\y} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma}) d\bm{\sigma} ,
 	\end{equation*}
 	i primi due termini sono uguali (si vede svolgendo i passaggi di prima per tornare indietro), pertanto:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\mathbf{\sigma }) d\mathbf{\sigma } .
+		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma}) d\bm{\sigma} .
 	\end{equation*}
 	Calcoliamo il laplaciano di $\displaystyle w_{h}$:
 	\begin{align*}
@@ -7856,7 +7859,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 
 Risolviamo il problema di Cauchy globale in dimensione $\displaystyle n=2$:
 \begin{equation*}
-	\tag{PCG$_{2}$}
+	\tag{PCG$_{\text{onde,2D}}$}
 	\begin{cases}
 		u_{tt} -c^{2} \Delta u=0            & \x \in \mathbb{R}^{2} ,\ t >0,\ \x = 
 		\begin{pmatrix}
@@ -8769,7 +8772,7 @@ Vediamo i due sensi
 
 \end{dimostrazione}
 \begin{definition}
-	$\displaystyle \mathcal{L}(H_{1},H_{2}) =\{L:H_{1}\rightarrow H_{2}$ lineari e continui$\displaystyle \}$
+	$\mathcal{L}(H_{1},H_{2}) =\{L:H_{1}\rightarrow H_{2}$ lineari e continui$\}$
 	\begin{equation*}
 		\Vert L\Vert _{\mathcal{L}(H_{1},H_{2})} =\text{(miglior costante di limitatezza)} =\sup _{\Vert x\Vert _{1} =1}\Vert Lx\Vert _{2}
 	\end{equation*}
@@ -9012,6 +9015,15 @@ Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle
 \end{definition}
 Segnaliamo una domanda che ogni tanto viene fatta agli orali di Salsa: nella continuità e nella coercività serve il modulo nella forma bilineare?
 
+Se siamo nei numeri complessi, sempre in entrambe, altrimenti la quantità non sarebbe correttamente definita per una disuguaglianza.
+Se siamo nei numeri reali, come da definizione non serve per la coercività, ma in realtà non serve nemmeno nella continuità, infatti certamente quella col modulo implica quella senza modulo, ma quella senza modulo implica quella col modulo:
+\begin{align*}
+	a(u,v)\le M \Vert u \Vert \Vert v \Vert,\ \forall u,v \quad \Rightarrow \quad a(-u,v)& \le  M \underbrace{\Vert -u \Vert}_{\Vert u \Vert} \Vert v \Vert\\
+																				 -a(u,v) & \le  M \Vert u \Vert \Vert v \Vert\\
+																				  a(u,v) & \ge -M \Vert u \Vert \Vert v \Vert,
+\end{align*}
+che messe assieme implicano quella col modulo.\footnote{Uno degli autori del documento si è giocato la lode (non la laurea) su questa domanda, quindi studiatela.}
+
 Il prodotto scalare è un caso particolare di forma bilineare simmetrica $a(u,v) =(u,v)$, vediamo quanto valgono le costanti $M$ e $\alpha $. Per Cauchy-Schwarz
 \begin{equation*}
 	| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert \ \ \Rightarrow \ \ M=1
@@ -9020,9 +9032,9 @@ Per definizione di norma indotta dal prodotto scalare
 \begin{equation*}
 	(u,u) =\Vert u\Vert ^{2} \ \ \Rightarrow \ \ \alpha =1
 \end{equation*}
-Il teorema di Lax-Milgram generalizza queste nozioni e ci permette di risolvere\footnote{esistenza, unicità e dipendenza continua.} il seguente problema.\footnote{da qui nascono i metodi di Galerkin.}
+Il teorema di Lax-Milgram generalizza queste nozioni e ci permette di risolvere\footnote{esistenza, unicità e dipendenza continua.} il seguente problema.
 \begin{definition}
-	[Problema Variazionale Astratto, (PVA)] Dato $L\in H^{*}$ trovare $u\in H$ tale che
+	[Problema Variazionale Astratto, \eqref{eq:pva}] Dato $L\in H^{*}$ trovare $u\in H$ tale che
 	\begin{equation}
 		\tag{PVA}
 		a(u,v) =Lv,\ \ \forall v\in H
@@ -9534,17 +9546,17 @@ Notiamo che $H^{1}$ è, oltre che un sottoinsieme, anche un \textbf{sottospazio 
 
 In generale, anche se non li useremo, si definiscono gli spazi
 \begin{equation*}
-	H^{k}( \Omega ) =\left\{v\in L^{2} :D^{\mathbf{\alpha }} v\in L^{2} ,\ \forall | \mathbf{\alpha }| \leqslant k\right\}
+	H^{k}( \Omega ) =\left\{v\in L^{2} :D^{\bm{\alpha}} v\in L^{2} ,\ \forall | \bm{\alpha}| \leqslant k\right\}
 \end{equation*}
-La notazione $D^{\mathbf{\alpha }}$ significa che intendiamo le derivate prime, seconde, terze, ecc, fino alla $n$-esima derivazione
+La notazione $D^{\bm{\alpha}}$ significa che intendiamo le derivate prime, seconde, terze, ecc, fino alla $n$-esima derivazione
 \begin{equation*}
-	\mathbf{\alpha } =( \alpha _{1} ,\dotsc ,\alpha _{n}) \ \ \Rightarrow \ \ D^{\mathbf{\alpha }} v=\partial ^{\alpha _{1}}_{x_{1}} \partial ^{\alpha _{2}}_{x_{2}} \dotsc \partial ^{\alpha _{n}}_{x_{n}} v
+	\bm{\alpha} =( \alpha _{1} ,\dotsc ,\alpha _{n}) \ \ \Rightarrow \ \ D^{\bm{\alpha}} v=\partial ^{\alpha _{1}}_{x_{1}} \partial ^{\alpha _{2}}_{x_{2}} \dotsc \partial ^{\alpha _{n}}_{x_{n}} v
 \end{equation*}
 Useremo solitamente solo $H^{1} ,H^{2}$.
 
 Ancora più in generale gli \textbf{spazi di Sobolev} sono
 \begin{equation*}
-	W^{k,p}( \Omega ) =\left\{v\in L^{p}( \Omega ) :D^{\mathbf{\alpha }} v\in L^{p} ,\ \forall | \mathbf{\alpha }| \leqslant k\right\}
+	W^{k,p}( \Omega ) =\left\{v\in L^{p}( \Omega ) :D^{\bm{\alpha}} v\in L^{p} ,\ \forall | \bm{\alpha}| \leqslant k\right\}
 \end{equation*}
 Facciamo un po' la conoscenza di questi spazi:
 \begin{gather*}
@@ -9830,7 +9842,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 \begin{dimostrazione}
 	Si svolge in due passi. Sfruttiamo il fatto che $\mathcal{D}( \Omega )$ è denso in $H_{0}^{1}( \Omega )$:
 	\begin{enumerate}
-		\item dimostro la Disuguaglianza di Poincaré (DP) in $\mathcal{D}( \Omega )$,
+		\item dimostro la Disuguaglianza di Poincaré in $\mathcal{D}( \Omega )$,
 		\item per approssimazione estendo ad $H_{0}^{1}( \Omega )$.
 	\end{enumerate}
 	
