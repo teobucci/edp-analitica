@@ -706,11 +706,8 @@ Chiameremo \textbf{dominio} un aperto connesso.
 	\caption{Controesempio insieme connesso che non implica convesso.}
 \end{figure}
 \FloatBarrier
-\item si dice \textbf{compatto} se da \textit{qualunque} copertura aperta di $E$ si può estrarre una sottocopertura finita.\footnote{In $\displaystyle \mathbb{R}^{n}$ vale l'implicazione
-\begin{equation*}
-\text{compatto} \Leftrightarrow \text{chiuso e limitato}
-\end{equation*}}
-\item si dice \textbf{limitato} se esiste una sfera $B_{r}(0)$ che contiene $E$, cioè se $\displaystyle \exists B_{r}(0) :E\subset B_{r}(0)$
+\item si dice \textbf{compatto} se da \textit{qualunque} copertura aperta di $E$ si può estrarre una sottocopertura finita.\footnote{In $\mathbb{R}^{n}$ vale l'implicazione: compatto $\Leftrightarrow$ chiuso e limitato.}
+\item si dice \textbf{limitato} se esiste una sfera $B_{r}(0)$ che contiene $E$, cioè se $\exists B_{r}(0) :E\subset B_{r}(0)$
 \end{itemize}
 \begin{nb}
 $\mathbb{R}^{n}$ è sia aperto che chiuso, ma allora anche il suo complementare, l'insieme vuoto, lo è. Sono gli unici due insiemi in $\mathbb{R}^{n}$ che lo sono.
@@ -723,19 +720,31 @@ $\mathbb{R}^{n}$ è sia aperto che chiuso, ma allora anche il suo complementare,
 \end{definition}
 
 \begin{figure}[htpb]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{copertura-2d}
-         \caption{2D.}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{copertura-3d}
-         \caption{3D.}
-     \end{subfigure}
-        \caption{Copertura di un insieme.}
+	\centering
+	
+
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+	%Shape: Polygon Curved [id:ds4561603116600126] 
+	\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=0.1 ] (233.71,42.76) .. controls (290.91,69.78) and (391.44,111.01) .. (317.12,141.35) .. controls (242.81,171.68) and (235.22,86.75) .. (171.52,120.12) .. controls (107.82,153.48) and (176.5,15.75) .. (233.71,42.76) -- cycle ;
+	%Shape: Circle [id:dp28763635934544385] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}] (119,104.5) .. controls (119,80.75) and (138.25,61.5) .. (162,61.5) .. controls (185.75,61.5) and (205,80.75) .. (205,104.5) .. controls (205,128.25) and (185.75,147.5) .. (162,147.5) .. controls (138.25,147.5) and (119,128.25) .. (119,104.5) -- cycle ;
+	%Shape: Circle [id:dp6205183942199646] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}] (153.5,61.5) .. controls (153.5,38.3) and (172.3,19.5) .. (195.5,19.5) .. controls (218.7,19.5) and (237.5,38.3) .. (237.5,61.5) .. controls (237.5,84.7) and (218.7,103.5) .. (195.5,103.5) .. controls (172.3,103.5) and (153.5,84.7) .. (153.5,61.5) -- cycle ;
+	%Shape: Circle [id:dp17944962123684904] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}] (236,110.5) .. controls (236,78.47) and (261.97,52.5) .. (294,52.5) .. controls (326.03,52.5) and (352,78.47) .. (352,110.5) .. controls (352,142.53) and (326.03,168.5) .. (294,168.5) .. controls (261.97,168.5) and (236,142.53) .. (236,110.5) -- cycle ;
+	%Shape: Circle [id:dp707943242370255] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}] (211.5,65) .. controls (211.5,45.67) and (227.17,30) .. (246.5,30) .. controls (265.83,30) and (281.5,45.67) .. (281.5,65) .. controls (281.5,84.33) and (265.83,100) .. (246.5,100) .. controls (227.17,100) and (211.5,84.33) .. (211.5,65) -- cycle ;
+	%Shape: Circle [id:dp9199082293705505] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}] (188,110.5) .. controls (188,91.17) and (203.67,75.5) .. (223,75.5) .. controls (242.33,75.5) and (258,91.17) .. (258,110.5) .. controls (258,129.83) and (242.33,145.5) .. (223,145.5) .. controls (203.67,145.5) and (188,129.83) .. (188,110.5) -- cycle ;
+
+	% Text Node
+	\draw (317.5,106.9) node [anchor=north west][inner sep=0.75pt]    {$E$};
+	\end{tikzpicture}
+    \caption{Copertura di un insieme in due dimensioni.}
 \end{figure}
 
 \textit{Esempio.}
@@ -746,7 +755,7 @@ E=[ a,b] \subset \mathbb{R}
 \end{equation*}
 \textit{Controesempio.}
 
-Se consideriamo $\displaystyle E=( 0,1]$ non è chiuso. Consideriamo la famiglia di aperti
+Se consideriamo $E=(0,1]$ non è chiuso. Consideriamo la famiglia di aperti
 \begin{equation*}
 A_{k} =\left(\frac{1}{k},1+\frac{1}{k}\right),k=1,2,\dotsc \ \ \Rightarrow \ \ \bigcup ^{\infty }_{k=1} A_{k} \supset E
 \end{equation*}
@@ -1304,7 +1313,11 @@ y=\frac{x}{L},\ 0< y< 1
 \begin{equation*}
 [D] =\text{lunghezza}^{2} \times \text{tempo}^{-1}
 \end{equation*}
-Definisco $\displaystyle \tau =\frac{L^{2}}{D}$, che ha le dimensioni di un tempo e dipende dalle caratteristiche fisiche del problema. Riscalo il tempo usando la costante $\tau$
+Definisco
+\begin{equation*}
+	\tau =\frac{L^{2}}{D},
+\end{equation*}
+che ha le dimensioni di un tempo e dipende dalle caratteristiche fisiche del problema. Riscalo il tempo usando la costante $\tau$
 \begin{equation*}
 	s=\frac{t}{\tau}
 \end{equation*}
