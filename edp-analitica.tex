@@ -9,11 +9,6 @@
 		margin=1in, % Imposta i margini a 1 inch
 	}
 
-\usepackage{bm} % per avere le lettere greche in bold con \bm{\sigma}
-\newcommand{\x}{\mathbf{x}}
-\newcommand{\y}{\mathbf{y}}
-\newcommand{\zer}{\mathbf{0}}
-
 \newcounter{conteggioS}
 \newcommand{\LezioneS}[1]{
 	\stepcounter{conteggioS}
@@ -26,9 +21,38 @@
 	\textit{Lezione Verzini \arabic{conteggioV} (#1)}
 	}
 
+\usepackage{bm} % per avere le lettere greche in bold con \bm{\sigma}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\zer}{\mathbf{0}}
+
+% vettori lettere greche
+\newcommand{\sigg}{\bm{\sigma}}
+\newcommand{\nuu}{\bm{\nu}}
+\newcommand{\alphaa}{\bm{\alpha}}
+
+%% comandi pratici
+% d nell'integrale
+\newcommand{\de}{\mathrm d}
+\newcommand{\dx}{\de x}
+\newcommand{\dy}{\de y}
+\newcommand{\dl}{\de l}
+\newcommand{\dr}{\de r}
+\newcommand{\ds}{\de s}
+\newcommand{\dt}{\de t}
+\newcommand{\dv}{\de v}
+\newcommand{\dxi}{\de \xi}
+\newcommand{\drho}{\de \rho}
+
+% d nell'integrale con vettoriale
+\newcommand{\dxx}{\de \x}
+\newcommand{\dyy}{\de \y}
+\newcommand{\dsig}{\de \sigg}
 
 
 
+%mancano, fatti
+%\\frac\{d\}\{d\\
 
 
 %\usepackage{chngcntr}
@@ -586,7 +610,7 @@ Non abbiamo ancora definito quale distanza utilizzare, ricordiamone alcune per i
 \end{equation*}
 \item media quadratica
 \begin{equation*}
-\left(\frac{1}{| R| }\int _{R}| g_{1}(x) -g_{2}(x)| ^{2} dx\right)^{1/2}
+\left(\frac{1}{| R| }\int _{R}| g_{1}(x) -g_{2}(x)| ^{2} \dx\right)^{1/2}
 \end{equation*}
 \end{itemize}
 
@@ -976,7 +1000,7 @@ Se $\varphi _{p}$ è Lipschitziana il dominio si dice \textbf{dominio Lipschitzi
 \begin{definition}
 [Funzione Lipschitziana] Una funzione $u:\Omega \rightarrow \mathbb{R}^{n}$ è Lipschitziana se
 \begin{equation*}
-| u(x) -u(y)| \leqslant L| x-y|,\ \ \forall x,y\in \Omega 
+| u(\x) -u(\y)| \leqslant L|\x-\y|,\ \ \forall \x,\y\in \Omega 
 \end{equation*}
 \end{definition}
 Poiché il grafico di una funzione Lipschiziana può presentare angoli e/o spigoli, non ci si può aspettare l’esistenza di un iperpiano tangente in ogni suo punto. Tuttavia, l’insieme dei punti ``irregolari'' costituisce un insieme di misura nulla (secondo Lebesgue). Precisamente, vale il seguente teorema.
@@ -987,7 +1011,7 @@ Poiché il grafico di una funzione Lipschiziana può presentare angoli e/o spigo
 
 Sia $\Omega $ di classe $C^{1}$. Consideriamo una funzione vettoriale $\mathbf{F}:\mathbb{R}^{n}\to\mathbb{R}^{m}$. Vale il teorema della divergenza
 \begin{equation*}
-\int _{\Omega }\mathrm{div}\mathbf{G}\ dx=\int _{\partial \Omega }\mathbf{G} \cdotp \bm{\nu}\ d\sigma \qquad \text{dove}\ \bm{\nu}\ \text{è il versore normale.}
+\int _{\Omega }\mathrm{div}\mathbf{G}\ \dx=\int _{\partial \Omega }\mathbf{G} \cdotp \nuu\ \dsig \qquad \text{dove}\ \nuu\ \text{è il versore normale.}
 \end{equation*}
 Sia $v$ una funzione scalare scalare $v:\mathbb{R}^{n}\to \mathbb{R}$, vale la regola di derivazione di Leibniz estesa a più dimensioni:
 \begin{equation*}
@@ -999,16 +1023,16 @@ da cui ricaviamo
 \end{equation*}
 Integrando e applicando il teorema della divergenza otteniamo una \textbf{formula di integrazione per parti} in $\mathbb{R}^{n}$
 \begin{equation}
-	\boxed{\int _{\Omega } v\ \mathrm{div}(\mathbf{F}) = \int _{\partial \Omega } v\mathbf{F} \cdotp \bm{\nu} \ d\sigma -\int _{\Omega } \nabla v\cdotp \mathbf{F}}
+	\boxed{\int _{\Omega } v\ \mathrm{div}(\mathbf{F}) = \int _{\partial \Omega } v\mathbf{F} \cdotp \nuu \ \dsig -\int _{\Omega } \nabla v\cdotp \mathbf{F}}
 \end{equation}
-Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\bm{\nu} = \partial_{\bm{\nu}}u$. Tale formula diventa l'\textbf{identità di Green}\footnote{È facile ricordarla notando la similarità con la formula per parti in una dimensione.}:
+Se $\mathbf{F}$ è un gradiente, ovvero $\mathbf{F} =\nabla u$, e $u\in C^{2}$ in modo poter parlare di derivate seconde, si ha che $\mathrm{div} \nabla u=\Delta u$. Ricordiamo anche che $\nabla u\cdot\nuu = \partial_{\nuu}u$. Tale formula diventa l'\textbf{identità di Green}\footnote{È facile ricordarla notando la similarità con la formula per parti in una dimensione.}:
 \begin{equation}
-	\boxed{\int _{\Omega } v\Delta u\ dx= \int _{\partial \Omega } v\partial _{\bm{\nu}} u\ d\sigma - \int _{\Omega } \nabla v\cdotp \nabla u}
+	\boxed{\int _{\Omega } v\Delta u\ \dx= \int _{\partial \Omega } v\partial _{\nuu} u\ \dsig - \int _{\Omega } \nabla v\cdotp \nabla u}
 	\label{eq:id-green}
 \end{equation}
 In particolare se $v=1$
 \begin{equation}
-\int _{\Omega } \Delta u\ dx=\int _{\partial \Omega } \partial _{\bm{\nu}} u\ d\sigma 
+\int _{\Omega } \Delta u\ \dx=\int _{\partial \Omega } \partial _{\nuu} u\ \dsig 
 \label{eq:id-green-v1}
 \end{equation}
 \LezioneS{25/2/2021}
@@ -1016,11 +1040,11 @@ In particolare se $v=1$
 
 Consideriamo un dominio $\Omega \subseteq \mathbb{R}^{n}$, $(a,b) \subseteq \mathbb{R}$, $f:\Omega \times (a,b)\rightarrow \mathbb{R}$ e consideriamo
 \begin{equation*}
-\varphi (t) =\int _{\Omega } f(x,t) dx
+\varphi (t) =\int _{\Omega } f(x,t) \dx
 \end{equation*}
 Quand'è che possiamo passare la derivata sotto il segno di integrale?
 \begin{equation*}
-\varphi '(t) =\frac{d}{dt}\int _{\Omega } f(x,t) dx\overset{?}{=}\int _{\Omega }\frac{\partial }{\partial t} f(x,t) dx
+\varphi '(t) =\frac{\de}{\dt}\int _{\Omega } f(x,t) \dx\overset{?}{=}\int _{\Omega }\frac{\partial }{\partial t} f(x,t) \dx
 \end{equation*}
 Supponiamo che
 \begin{itemize}
@@ -1034,12 +1058,12 @@ Assumiamo che esistano $g\in L^{1}(\Omega)$ e $h\in L^{1}(\Omega)$\footnote{funz
 \end{equation*}
 quasi ovunque in $\displaystyle \Omega $, $\displaystyle \forall t\in (a,b)$. Allora
 \begin{equation*}
-\frac{d}{dt}\int _{\Omega } f(x,t) dx=\int _{\Omega }\frac{\partial }{\partial t} f(x,t) dx
+\frac{\de}{\dt}\int _{\Omega } f(x,t) \dx=\int _{\Omega }\frac{\partial }{\partial t} f(x,t) \dx
 \end{equation*}
 \end{theorem}
 Per integrali di Riemann, assumiamo $\Omega $ limitato, $f\in C^{1}(\overline{\Omega })$, $f,f_{t}$ R-integrabile e $| f|,| f_{t}| \leqslant M$ in $\Omega $. Allora
 \begin{equation*}
-\frac{d}{dt}\int _{\Omega } f(x,t) dx=\int _{\Omega }\frac{\partial }{\partial t} f(x,t) dx
+\frac{\de}{\dt}\int _{\Omega } f(x,t) \dx=\int _{\Omega }\frac{\partial }{\partial t} f(x,t) \dx
 \end{equation*}
 \chapter{Diffusione}
 
@@ -1123,7 +1147,7 @@ Consideriamo un volumetto (di controllo) all'interno di un corpo rigido. Il tass
 	% Text Node
 	\draw (319,146.4) node [anchor=north west][inner sep=0.75pt]    {$\partial V$};
 	% Text Node
-	\draw (361,50.4) node [anchor=north west][inner sep=0.75pt]    {$\bm{\nu}$};
+	\draw (361,50.4) node [anchor=north west][inner sep=0.75pt]    {$\nuu$};
 
 
 	\end{tikzpicture}
@@ -1133,25 +1157,25 @@ Consideriamo un volumetto (di controllo) all'interno di un corpo rigido. Il tass
 \begin{enumerate}
 \item $e=e(x,t)$ è l'energia interna per unità di massa, di conseguenza il tasso di variazione è descritto da
 \begin{equation*}
-\frac{d}{dt}\int _{V} e\rho dx
+\frac{\de}{\dt}\int _{V} e\rho \dx
 \end{equation*}
 \item La sorgente esterna è descritta da
 \begin{equation*}
-\int _{V} r\rho dx
+\int _{V} r\rho \dx
 \end{equation*}
-\item Il flusso attraverso $\partial V$ lo descriviamo tramite un vettore flusso di calore $\mathbf{q}$, che misura il calore per unità di area. Consideriamo anche $\displaystyle \bm{\nu}$ versore normale \emph{uscente}, allora dal momento che la componente tangente non comporta una variazione di calore nel corpo, il flusso entrante è dato da
+\item Il flusso attraverso $\partial V$ lo descriviamo tramite un vettore flusso di calore $\mathbf{q}$, che misura il calore per unità di area. Consideriamo anche $\displaystyle \nuu$ versore normale \emph{uscente}, allora dal momento che la componente tangente non comporta una variazione di calore nel corpo, il flusso entrante è dato da
 \begin{equation*}
--\int _{\partial V}\mathbf{q} \cdotp \bm{\nu} \ d\sigma 
+-\int _{\partial V}\mathbf{q} \cdotp \nuu \ \dsig 
 \end{equation*}
 \end{enumerate}
 
 Mettendo insieme
 \begin{equation*}
-\frac{d}{dt}\int _{V} e\rho dx=\int _{V} r\rho dx-\int _{\partial V}\mathbf{q} \cdotp \bm{\nu} \ d\sigma 
+\frac{\de}{\dt}\int _{V} e\rho \dx=\int _{V} r\rho \dx-\int _{\partial V}\mathbf{q} \cdotp \nuu \ \dsig 
 \end{equation*}
 Supponendo di poter portare la derivata dentro l'integrale e applicando il teorema della divergenza
 \begin{equation*}
-\int _{V} e_{t} \rho dx=\int _{V} r\rho dx-\int _{V}\mathrm{div}\mathbf{q} \ dx
+\int _{V} e_{t} \rho \dx=\int _{V} r\rho \dx-\int _{V}\mathrm{div}\mathbf{q} \ \dx
 \end{equation*}
 Per l'arbitrarietà di $V$ deduciamo la \textbf{legge fondamentale della conduzione del calore}
 \begin{equation*}
@@ -1198,7 +1222,7 @@ q=-ku_{x}\mathbf{L} \
 \end{equation*}
 Sostituendo nella \textbf{legge fondamentale della conduzione del calore} su un volume di controllo del tipo $\displaystyle V=A\times (x,x+\Delta x)$ e assumendo $\displaystyle u=u(x,t),\ e=e(x,t),\ r=r(x,t)$ (ben approssimabili a funzioni dipendenti da una sola variabile spaziale), l'area $A$ si semplifica e ottengo
 \begin{equation*}
-\int ^{x+\Delta x}_{x} c_{v} \rho u_{t} dx=\int ^{x+\Delta x}_{x} ku_{xx} dx+\int ^{x+\Delta x}_{x} r\rho dx
+\int ^{x+\Delta x}_{x} c_{v} \rho u_{t} \dx=\int ^{x+\Delta x}_{x} ku_{xx} \dx+\int ^{x+\Delta x}_{x} r\rho \dx
 \end{equation*}
 Da cui l'\textbf{equazione del calore monodimensionale:}
 \begin{equation*}
@@ -1566,18 +1590,18 @@ quell'uguaglianza ad $y$ è da intendersi nel senso $L^{2}$, nello specifico dob
 
 Considerando una generica funzione $T$-periodica, si scrive in \textbf{serie di Fourier}\footnote{Il simbolo $\sim $ indica che l'uguaglianza vale nel senso $L^{2}\left( -\frac{T}{2},\frac{T}{2}\right)$. Indicando con $S_{N}(y)$ le somme parziali della serie, vale
 \begin{equation*}
-\lim _{N\rightarrow \infty }\int ^{T/2}_{-T/2}[ f(y) -S_{N}(y)]^{2} dy=0
+\lim _{N\rightarrow \infty }\int ^{T/2}_{-T/2}[ f(y) -S_{N}(y)]^{2} \dy=0
 \end{equation*}}
 \begin{equation*}
 f(y) \sim \frac{a_{0}}{2} +\sum\limits ^{\infty }_{m=1}\left[ a_{m}\cos\left(\frac{2\pi m}{T} y\right) +b_{m}\sin\left(\frac{2\pi m}{T} y\right)\right]
 \end{equation*}
 i cui coefficienti sono, per $m\geqslant 0$
 \begin{equation*}
-a_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\cos\left(\frac{2\pi m}{T} y\right) dy\ \ \ \ b_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\sin\left(\frac{2\pi m}{T} y\right) dy
+a_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\cos\left(\frac{2\pi m}{T} y\right) \dy\ \ \ \ b_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\sin\left(\frac{2\pi m}{T} y\right) \dy
 \end{equation*}
 Ricordiamo l'\textbf{identità di Parseval}
 \begin{equation*}
-\frac{1}{T}\int ^{T/2}_{-T/2}[ f(y)]^{2} dy=\frac{a^{2}_{0}}{2} +\sum\limits ^{\infty }_{m=1}\left( a^{2}_{m} +b^{2}_{m}\right)
+\frac{1}{T}\int ^{T/2}_{-T/2}[ f(y)]^{2} \dy=\frac{a^{2}_{0}}{2} +\sum\limits ^{\infty }_{m=1}\left( a^{2}_{m} +b^{2}_{m}\right)
 \end{equation*}
 Nel nostro caso vogliamo sviluppare la funzione $2$-periodica
 \begin{equation*}
@@ -1585,8 +1609,8 @@ f:[ -1,1]\rightarrow \mathbb{R} \ \ f(y) =y
 \end{equation*}
 È dispari, quindi è composta da soli seni, ovvero $a_{m}=0$ per ogni $m$.
 \begin{align*}
-b_{m} & = \frac{2}{1-(-1)}\int ^{1}_{-1} y\sin(m\pi y) dy \overset{\text{pari}}{=}2\int ^{1}_{0} y\sin(m\pi y) dy\\
- & \overset{\text{ipp}}{=}\left[ -\frac{2}{m\pi } y\cos(m\pi y)\right]^{1}_{0} +\frac{2}{m\pi }\int ^{1}_{0}\cos(m\pi y) dy\\
+b_{m} & = \frac{2}{1-(-1)}\int ^{1}_{-1} y\sin(m\pi y) \dy \overset{\text{pari}}{=}2\int ^{1}_{0} y\sin(m\pi y) \dy\\
+ & \overset{\text{ipp}}{=}\left[ -\frac{2}{m\pi } y\cos(m\pi y)\right]^{1}_{0} +\frac{2}{m\pi }\int ^{1}_{0}\cos(m\pi y) \dy\\
  & =-2\frac{\cos(m\pi)}{m\pi } +\cancel{\frac{2}{m^{2} \pi ^{2}}[\sin(m\pi y)]^{1}_{0}} =\frac{2}{\pi }\frac{(-1)^{m+1}}{m}
 \end{align*}
 allora
@@ -1624,7 +1648,7 @@ U(y,s)\rightarrow y\ \text{per} \ s\rightarrow 0^{+}
 \begin{itemize} % TODO aggiusta, guarda note scritte
 \item \textbf{Q1} Consideriamo \eqref{eq:diff-candidata} e \eqref{eq:diff-y-fourier}. Per Parseval
 \begin{gather*}
-\int ^{1}_{0}[ U(y,s) -y]^{2} dy=\frac{2}{\pi ^{2}}\sum\limits ^{\infty }_{m=1}\frac{\left( e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}}\\
+\int ^{1}_{0}[ U(y,s) -y]^{2} \dy=\frac{2}{\pi ^{2}}\sum\limits ^{\infty }_{m=1}\frac{\left( e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}}\\
 \Rightarrow \ \ \frac{\left( e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}} \leqslant \frac{1}{m^{2}} \ \text{per} \ s\geqslant 0
 \end{gather*}
 
@@ -1677,16 +1701,16 @@ w(y,0) =0, & \text{in senso} \ L^{2}(0,1)
 
  Moltiplichiamo per $w$ da entrambi i lati e integriamo
  \begin{gather*}
-\textcolor[rgb]{0.82,0.01,0.11}{\int ^{1}_{0}}\textcolor[rgb]{0.82,0.01,0.11}{ww}\textcolor[rgb]{0.82,0.01,0.11}{_{s}}\textcolor[rgb]{0.82,0.01,0.11}{dy} =\textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{dy}\\
+\textcolor[rgb]{0.82,0.01,0.11}{\int ^{1}_{0}}\textcolor[rgb]{0.82,0.01,0.11}{ww}\textcolor[rgb]{0.82,0.01,0.11}{_{s}}\textcolor[rgb]{0.82,0.01,0.11}{\dy} =\textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{\dy}\\
 \begin{aligned}
-\textcolor[rgb]{0.82,0.01,0.11}{\int ^{1}_{0}}\textcolor[rgb]{0.82,0.01,0.11}{ww}\textcolor[rgb]{0.82,0.01,0.11}{_{s}}\textcolor[rgb]{0.82,0.01,0.11}{dy} & =\frac{1}{2}\int ^{1}_{0}\frac{\partial }{\partial s} w^{2}(y,s) dy=\frac{1}{2}\frac{d}{ds}\underbrace{\int ^{1}_{0} w^{2}(y,s) dy}_{E(s)} =\frac{1}{2} E'(s)\\
-\textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{dy} & \overset{\text{ipp}}{=}\cancel{ww_{y} |^{1}_{0}} -\int ^{1}_{0}(w_{y})^{2} dy\leqslant 0
+\textcolor[rgb]{0.82,0.01,0.11}{\int ^{1}_{0}}\textcolor[rgb]{0.82,0.01,0.11}{ww}\textcolor[rgb]{0.82,0.01,0.11}{_{s}}\textcolor[rgb]{0.82,0.01,0.11}{\dy} & =\frac{1}{2}\int ^{1}_{0}\frac{\partial }{\partial s} w^{2}(y,s) \dy=\frac{1}{2}\frac{\de}{\ds}\underbrace{\int ^{1}_{0} w^{2}(y,s) \dy}_{E(s)} =\frac{1}{2} E'(s)\\
+\textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{\dy} & \overset{\text{ipp}}{=}\cancel{ww_{y} |^{1}_{0}} -\int ^{1}_{0}(w_{y})^{2} \dy\leqslant 0
 \end{aligned}
 \end{gather*}
 
 quindi $E(s)$ è non negativa, descrescente (non strettamente), inoltre $E(s)\rightarrow 0$ se $s\rightarrow 0$, allora
 \begin{equation*}
-E(s) =0\ \ \forall s >0\ \ \Rightarrow \ \ \int ^{1}_{0} w^{2}(y,s) dy=0\ \ \forall s >0
+E(s) =0\ \ \forall s >0\ \ \Rightarrow \ \ \int ^{1}_{0} w^{2}(y,s) \dy=0\ \ \forall s >0
 \end{equation*}
 
 ma $w^{2}$ è continua per $s >0$ e non negativa. Non può essere che $w=0$ per $s >0$, ovvero $U=V$.
@@ -1745,15 +1769,15 @@ u(\x,0) =g(\x) \ \ \x \in \overline{\Omega }
 \begin{itemize}
 \item \textbf{Dirichlet}, si assegna la temperatura
 \begin{equation*}
-u(\bm{\sigma },t) =h(\bm{\sigma },t) \ \ \ \ \bm{\sigma } \in \partial \Omega,t\in ( 0,T]
+u(\sigg,t) =h(\sigg,t) \ \ \ \ \sigg \in \partial \Omega,t\in ( 0,T]
 \end{equation*}
-\item \textbf{Neumann}, si assegna il flusso attraverso $\partial \Omega $. Indichiamo con $\bm{\nu}$ il versore normale al bordo in funzione del punto. Ricordiamo che $\partial _{\bm{\nu}} u=\nabla u\cdotp \bm{\nu}$. Si assegna
+\item \textbf{Neumann}, si assegna il flusso attraverso $\partial \Omega $. Indichiamo con $\nuu$ il versore normale al bordo in funzione del punto. Ricordiamo che $\partial _{\nuu} u=\nabla u\cdotp \nuu$. Si assegna
 \begin{equation}
-\partial _{\bm{\nu}}u(\bm{\sigma },t) =h(\bm{\sigma },t) \ \ \ \ \bm{\sigma } \in \partial \Omega,t\in ( 0,T]
+\partial _{\nuu}u(\sigg,t) =h(\sigg,t) \ \ \ \ \sigg \in \partial \Omega,t\in ( 0,T]
 \end{equation}
 \item \textbf{Robin}, si assegna $(\alpha  >0)$
 \begin{equation*}
-\partial _{\bm{\nu}} u(\bm{\sigma },t) +\alpha u(\bm{\sigma },t) =\beta \ \ \ \ \bm{\sigma } \in \partial \Omega,t\in ( 0,T]
+\partial _{\nuu} u(\sigg,t) +\alpha u(\sigg,t) =\beta \ \ \ \ \sigg \in \partial \Omega,t\in ( 0,T]
 \end{equation*}
 \end{itemize}
 \end{itemize}
@@ -2055,11 +2079,11 @@ u^{\star }_{t} -D u^{\star }_{xx} =0,\ \ x\in \mathbb{R},t >0
 \end{equation*}
 Vi è assenza di produzione o assorbimento di calore, allora l'energia si conserva
 \begin{equation*}
-\int _{\mathbb{R}} \rho c_{v} u^{\star }(x,t) dx=E\ \text{costante},\ \ t >0
+\int _{\mathbb{R}} \rho c_{v} u^{\star }(x,t) \dx=E\ \text{costante},\ \ t >0
 \end{equation*}
 Se scriviamo $Q=\frac{E}{\rho c_{v}}$ diventa
 \begin{equation*}
-\int _{\mathbb{R}} u^{\star }(x,t) dx=Q,\ \ t >0
+\int _{\mathbb{R}} u^{\star }(x,t) \dx=Q,\ \ t >0
 \end{equation*}
 La grandezza $Q$ ha le dimensioni di una temperatura per una lunghezza.
 
@@ -2250,7 +2274,7 @@ u^{\star }_{t} -Du^{\star }_{xx} =\frac{Q}{\sqrt{D}} t^{-3/2}\left[ -\frac{1}{2}
 \end{gather*}
 Tale termine può essere visto come una derivata
 \begin{equation*}
-\frac{d}{d\xi }\left[ U'(\xi) +\frac{1}{2} \xi U(\xi)\right] =0\ \ \Rightarrow \ \ U'(\xi) +\frac{1}{2} \xi U(\xi) =\text{costante}
+\frac{\de}{\dxi }\left[ U'(\xi) +\frac{1}{2} \xi U(\xi)\right] =0\ \ \Rightarrow \ \ U'(\xi) +\frac{1}{2} \xi U(\xi) =\text{costante}
 \end{equation*}
 Ma sappiamo che $U$ è pari e regolare in un certo senso, allora $U'(0) =0$. Imponendo quindi $\xi =0$ scopriamo che anche la costante è nulla. Abbiamo dunque
 \begin{equation*}
@@ -2262,11 +2286,11 @@ U'(\xi) +\frac{1}{2} \xi U(\xi) =0
 \end{equation*}
 Cos'è $c$? Non abbiamo ancora usato la conservazione dell'energia
 \begin{equation*}
-\int _{\mathbb{R}} u^{\star }(x,t) dx=Q
+\int _{\mathbb{R}} u^{\star }(x,t) \dx=Q
 \end{equation*}
 che si riduce a
 \begin{equation*}
-Q = \int _{\mathbb{R}}\frac{Q}{\sqrt{Dt}} U\left(\frac{x}{\sqrt{Dt}}\right) dx=\left\{\xi=\frac{x}{\sqrt{Dt}}\right\} = Q\int _{\mathbb{R}} U(\xi) d\xi
+Q = \int _{\mathbb{R}}\frac{Q}{\sqrt{Dt}} U\left(\frac{x}{\sqrt{Dt}}\right) \dx=\left\{\xi=\frac{x}{\sqrt{Dt}}\right\} = Q\int _{\mathbb{R}} U(\xi) d\xi
 \end{equation*}
 Allora possiamo procedere a determinare $c$
 \begin{equation*}
@@ -2370,7 +2394,7 @@ diventa la condizione iniziale.
 \begin{definition}
 [delta di Dirac] Si chiama distribuzione di Dirac nell'origine la funzione generalizzata che si indica con $\displaystyle \delta _{0}$ e che agisce su una funzione test $\displaystyle \varphi $ nel seguente modo
 \begin{equation*}
-\int \delta (x) \varphi (x) dx=\langle \delta,\varphi \rangle =\varphi (0)
+\int \delta (x) \varphi (x) \dx=\langle \delta,\varphi \rangle =\varphi (0)
 \end{equation*}
 \end{definition}
 Il limite che abbiamo fatto sopra è un limite nel senso delle distribuzioni, in $\displaystyle D'(\mathbb{R})$
@@ -2386,8 +2410,8 @@ Se anziché nell'origine, la sorgente unitaria fosse concentrata in un punto $y$
 \item \textit{Unit source solution}: $\displaystyle \Gamma _{D}$ descrive la \textbf{concentrazione} di una sostanza nel punto $x$ al tempo $t$ generata dalla diffusione di una massa unitaria inizalmente concentrata nell'origine
 \item Altro punto di vista: sia una massa unitaria composta da un \textbf{numero }$N$\textbf{ di particelle}
 \begin{itemize}
-\item $\displaystyle \Gamma _{D}(x,t) dx$ fornisce probabilità di trovare una particella in un intervallo del tipo $\displaystyle (x,x+dx)$ al tempo $t$.
-\item $\displaystyle \Gamma _{D}(x,t) dx$ fornisce la percentuale di particelle fra le $N$ che si trova in $\displaystyle (x,x+dx)$ al tempo $t$.
+\item $\displaystyle \Gamma _{D}(x,t) \dx$ fornisce probabilità di trovare una particella in un intervallo del tipo $\displaystyle (x,x+\dx)$ al tempo $t$.
+\item $\displaystyle \Gamma _{D}(x,t) \dx$ fornisce la percentuale di particelle fra le $N$ che si trova in $\displaystyle (x,x+\dx)$ al tempo $t$.
 \end{itemize}
 \end{itemize}
 \begin{nb}
@@ -2402,11 +2426,11 @@ Con ragionamenti analoghi otteniamo
 e come condizione iniziale
 \begin{gather*}
 ``\ \Gamma _{D}(\x,0) =\delta _{n}(\zer) \ "\\
-\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,0) \varphi (\x) d\x =\langle \delta _{n},\varphi \rangle =\varphi (\zer)
+\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,0) \varphi (\x) \dxx =\langle \delta _{n},\varphi \rangle =\varphi (\zer)
 \end{gather*}
 l'interpretazione della soluzione fondamentale è analoga e la conservazione dell'energia si esprime come
 \begin{equation*}
-\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,t) d\x =1,\ \forall t >0
+\int _{\mathbb{R}^{n}} \Gamma _{D}(\x,t) \dxx =1,\ \forall t >0
 \end{equation*}
 \section{Passeggiata aleatoria simmetrica (unidimensionale)}
 
@@ -2717,7 +2741,7 @@ Esaminiamo un semplice modello di trasporto e diffusione: in un canale con corre
 % Text Node
 \draw (185.37,213.74) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 255; green, 0; blue, 0 } ,opacity=1 ]  {$x$};
 % Text Node
-\draw (237.89,213.74) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 255; green, 0; blue, 0 } ,opacity=1 ]  {$x+dx$};
+\draw (237.89,213.74) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 255; green, 0; blue, 0 } ,opacity=1 ]  {$x+\dx$};
 
 
 \end{tikzpicture}
@@ -2727,11 +2751,11 @@ Esaminiamo un semplice modello di trasporto e diffusione: in un canale con corre
 
 Vogliamo derivare un modello matematico per descrivere l'evoluzione della concentrazione $\displaystyle c=c(x,t)$ della sostanza. Il tasso di variazione della massa che si trova nell'intervallo $\displaystyle [ x,x+\Delta x]$ è dato da
 \begin{equation*}
-\frac{d}{dt}\int ^{x+\Delta x}_{x} c(y,t) dy=\int ^{x+\Delta x}_{x} c_{t}(y,t) dy
+\frac{\de}{\dt}\int ^{x+\Delta x}_{x} c(y,t) \dy=\int ^{x+\Delta x}_{x} c_{t}(y,t) \dy
 \end{equation*}
-è pari alla differenza tra il flusso in entrata attraverso $x$ e il flusso in uscita attraverso $x+dx$. Indicando con $\displaystyle q=q(x,t)$ il flusso di massa che entra nell'intervallo attraverso il punto $x$ al tempo $t$ posso scrivere la conservazione della massa
+è pari alla differenza tra il flusso in entrata attraverso $x$ e il flusso in uscita attraverso $x+\dx$. Indicando con $\displaystyle q=q(x,t)$ il flusso di massa che entra nell'intervallo attraverso il punto $x$ al tempo $t$ posso scrivere la conservazione della massa
 \begin{equation*}
-\int ^{x+\Delta x}_{x} c_{t}(y,t) dy=q(x,t) -q(x+\Delta x,t)
+\int ^{x+\Delta x}_{x} c_{t}(y,t) \dy=q(x,t) -q(x+\Delta x,t)
 \end{equation*}
 Dividendo per $\displaystyle \Delta x$ e passando al limite per $\displaystyle \Delta x\rightarrow 0$ si ottiene
 \begin{equation}
@@ -2799,7 +2823,7 @@ Consideriamo il problema di Cauchy globale in $n=1$ dimensioni. La generalizzazi
 \end{equation*}
 dove $g$ è il \textit{dato iniziale} assegnato.
 
-Interpretiamo $u$ come una \textbf{concentrazione di massa, o densità lineare di massa}, nel senso che $u(x,t) dx$ è la massa che si trova nell'intervallo $(x,x+dx)$ al tempo $t$.
+Interpretiamo $u$ come una \textbf{concentrazione di massa, o densità lineare di massa}, nel senso che $u(x,t) \dx$ è la massa che si trova nell'intervallo $(x,x+\dx)$ al tempo $t$.
 
 Sappiamo risolvere \eqref{eq:pcg-diffusione-1d} nel caso di impulso nell'origine $g(x) =\delta (x)$ e di conseguenza anche nel caso di $g(x) =\delta (x-y)$.\footnote{Non è corretto usare l'uguaglianza, intendiamo che le distribuzioni hanno lo stesso effetto tramite il prodotto di dualità.} In questa situazione, la soluzione è data da
 \begin{equation*}
@@ -2840,7 +2864,7 @@ u(x,t) =Q\cdotp \Gamma _{D}(x-y,t)
 % Text Node
 \draw (197.5,112.52) node [anchor=north west][inner sep=0.75pt]    {$y$};
 % Text Node
-\draw (253,112.8) node [anchor=north west][inner sep=0.75pt]    {$y+dx$};
+\draw (253,112.8) node [anchor=north west][inner sep=0.75pt]    {$y+\dx$};
 
 
 \end{tikzpicture}
@@ -2848,13 +2872,13 @@ u(x,t) =Q\cdotp \Gamma _{D}(x-y,t)
 \end{figure}
 \FloatBarrier
 
-La massa presente in $(y,y+dy)$ è $g(y) dy$. L'evoluzione della singola massa $Q=g(y) dy$ è
+La massa presente in $(y,y+\dy)$ è $g(y) \dy$. L'evoluzione della singola massa $Q=g(y) \dy$ è
 \begin{equation*}
-u(x,t) =\Gamma _{D}(x-y,t) g(y) dy
+u(x,t) =\Gamma _{D}(x-y,t) g(y) \dy
 \end{equation*}
 Per il principio di sovrapposizione possiamo sommare tutti i contributi
 \begin{equation*}
-u(x,t) =\int _{\mathbb{R}} \Gamma _{D}(x-y,t) g(y) dy
+u(x,t) =\int _{\mathbb{R}} \Gamma _{D}(x-y,t) g(y) \dy
 \end{equation*}
 che è una \textbf{convoluzione} del dato iniziale con la gaussiana
 \begin{equation*}
@@ -2865,7 +2889,7 @@ u(x,t) =( \Gamma _{D}(\cdotp,t) *g)(x)
 
 \textbf{Problemi.}
 \begin{enumerate}
-\item L'integrale è ben definito? Se $g(x) \sim e^{|x|^m},m >2$ per $| x| \rightarrow +\infty $, la gaussiana compensa potenze fino al $2$, quindi ci si aspetta che l'integrale non converga! Non posso scegliere $g$ come voglio, ma dovrò dare delle opportune condizioni all'infinito.
+\item L'integrale è ben definito? Se $g(x) \sim e^{|x|^m},m >2$ per $|\x| \rightarrow +\infty $, la gaussiana compensa potenze fino al $2$, quindi ci si aspetta che l'integrale non converga! Non posso scegliere $g$ come voglio, ma dovrò dare delle opportune condizioni all'infinito.
 \item Supponiamo che converga, è vero che $u$ è soluzione dell'equazione differenziale? In altre parole posso passare sotto il segno di integrale?
 \item Supponiamo che sia soluzione, in che senso $u(x,0) =g(x)$?
 \item Se tutto sopra va bene, $u$ è anche l'unica?
@@ -2881,7 +2905,7 @@ Si trova risposta all'esistenza nel seguente fondamentale teorema, dalla dimostr
 \end{equation}
 Sia
 \begin{equation*}
-u(x,t) =\int _{\mathbb{R}} \Gamma _{D}(x-y,t) g(y) dy
+u(x,t) =\int _{\mathbb{R}} \Gamma _{D}(x-y,t) g(y) \dy
 \end{equation*}
 Allora
 \begin{enumerate}
@@ -3000,7 +3024,7 @@ u(x,0) =0\ \ \text{implica} \ \ u(x,t) =0\ \ \text{in} \ \mathbb{R} \times [ 0,T
 
 La
 \begin{equation*}
-u(x,t) =\int _{\mathbb{R}} \Gamma _{D}(x-y,t) g(y) dy
+u(x,t) =\int _{\mathbb{R}} \Gamma _{D}(x-y,t) g(y) \dy
 \end{equation*}
 definita nel teorema di Esistenza è unica all'interno della Classe di Tychonov, che era comunque richiesta in tale teorema al punto $3$, pertanto fornisce non solo esistenza, ma anche unicità!
 \chapter{Equazione di Laplace-Poisson}
@@ -3054,8 +3078,8 @@ v=xy
 Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 \begin{itemize}
 \item \textbf{Dirichlet} $u=g$ su $\partial \Omega $
-\item \textbf{Neumann} $\partial _{\bm{\nu} } u=h$ su $\partial \Omega $
-\item \textbf{Robin} $\partial _{\bm{\nu} } u+\alpha u=h$, con $\alpha  >0$
+\item \textbf{Neumann} $\partial _{\nuu } u=h$ su $\partial \Omega $
+\item \textbf{Robin} $\partial _{\nuu } u+\alpha u=h$, con $\alpha  >0$
 \item miste
 \end{itemize}
 \LezioneS{16/03/2021}
@@ -3074,7 +3098,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 	\end{equation*}
 	Da cui, utilizzando l'identità di Green \eqref{eq:id-green}
 	\begin{equation*}
-		-\int _{\Omega }| \nabla w| ^{2} +\int _{\partial \Omega } w\partial _{\bm{\nu}} w\ d\sigma =0\ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =\int _{\partial \Omega } w\partial _{\bm{\nu}} w\ d\sigma 
+		-\int _{\Omega }| \nabla w| ^{2} +\int _{\partial \Omega } w\partial _{\nuu} w\ \dsig =0\ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =\int _{\partial \Omega } w\partial _{\nuu} w\ \dsig 
 	\end{equation*}
 	Ora analizziamo nello specifico i tre possibili casi:
 	\begin{itemize}
@@ -3086,7 +3110,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 		Ma dato che $w=0$ su $\displaystyle \partial \Omega $ ed essendo $\displaystyle C^{1}$ fino al bordo, la costante deve essere $0$, da cui $\displaystyle w\equiv 0$.
 		\item \textbf{Robin}
 		\begin{equation*}
-		\partial_{\bm{\nu}} w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} d\sigma \leqslant 0
+		\partial_{\nuu} w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} \dsig \leqslant 0
 		\end{equation*}
 
 		ma essendo il primo integrale $\displaystyle \geqslant 0$, allora deve essere nullo come prima:
@@ -3094,10 +3118,10 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 		\int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
 		\end{equation*}
 
-		Ma dato che è costante, la derivata normale sul bordo è nulla $\displaystyle \partial_{\bm{\nu}} w=0=-\alpha w$, quindi $w=0$ sul bordo e, come prima, essendo $\displaystyle C^{1}$ fino al bordo, la costante è nulla, da cui $\displaystyle w\equiv 0$.
+		Ma dato che è costante, la derivata normale sul bordo è nulla $\displaystyle \partial_{\nuu} w=0=-\alpha w$, quindi $w=0$ sul bordo e, come prima, essendo $\displaystyle C^{1}$ fino al bordo, la costante è nulla, da cui $\displaystyle w\equiv 0$.
 		\item \textbf{Neumann}
 		\begin{equation*}
-		\partial_{\bm{\nu}} w=0\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
+		\partial_{\nuu} w=0\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega 
 		\end{equation*}
 
 		Non posso fare alcuna affermazione aggiuntiva.
@@ -3105,7 +3129,7 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
 \end{dimostrazione}
 Nel caso Neumann non vale l'unicità, ma in generale non vale neanche l'esistenza, infatti da 
 \begin{equation*}
-	-\Delta u=f,\ \partial _{\bm{\nu}} u=g\ \text{su} \ \partial \Omega 
+	-\Delta u=f,\ \partial _{\nuu} u=g\ \text{su} \ \partial \Omega 
 \end{equation*}
 integrando su $\displaystyle \Omega $ si trova
 \begin{equation*}
@@ -3113,17 +3137,17 @@ integrando su $\displaystyle \Omega $ si trova
 \end{equation*}
 e applicando il teorema di Gauss \eqref{eq:id-green-v1}
 \begin{equation*}
--\int _{\partial \Omega } \partial_{\bm{\nu}} ud\sigma =\int _{\Omega } f
+-\int _{\partial \Omega } \partial_{\nuu} u\dsig =\int _{\Omega } f
 \end{equation*}
 Abbiamo trovato una \textbf{condizione necessaria per la risolubilità del problema di Neumann}:
 \begin{equation}
-\boxed{\int _{\Omega } f+\int _{\partial \Omega } gd\sigma =0}
+\boxed{\int _{\Omega } f+\int _{\partial \Omega } g\dsig =0}
 \end{equation}
 Per esempio:
 \begin{equation*}
 	\begin{cases}
 		-\Delta u=1          & \text{in} \ \Omega \\
-		\partial _{\bm{\nu}} u=0 &                    
+		\partial _{\nuu} u=0 &                    
 	\end{cases}
 \end{equation*}
 non ha soluzione! La condizione necessaria che abbiamo trovato infatti darebbe
@@ -3472,23 +3496,23 @@ Dove la funzione Gamma di Eulero è definita come
 	Sia $u$ armonica ($u\in C^{2}(\Omega)$ e $\Delta u=0$) con $\Omega \subset \mathbb{R}^{n}$. Allora per ogni sfera $B_{R}(\x) \subset \subset \Omega $ valgono le seguenti formule:\footnote{Nota che $w_{n} R^{n-1}$ è la misura $| \partial B_{R}(\x)| $, mentre $\frac{w_{n} R^{n}}{n}$ è semplicemente la misura $| B_{R}(\x)| $. I due coefficienti moltiplicativi nelle formule non fanno altro che riscalare rispettivamente per la misura della superficie della sfera e per la misura della sfera stessa: da questo deriva l'interpretazione di ``proprietà di media''.}
 	\begin{equation}
 		\tag{PDM$_{\text{sup}}$}
-		u(\x) =\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\bm{\sigma}) d\bm{\sigma} 
+		u(\x) =\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\sigg) \dsig 
 		\label{eq:lap-prop-media-sup}
 	\end{equation}
 	\begin{equation}
 		\tag{PDM$_{\text{vol}}$}
-		u(\x) =\frac{n}{w_{n} R^{n}}\int _{B_{R}(\x)} u(\y) d\y
+		u(\x) =\frac{n}{w_{n} R^{n}}\int _{B_{R}(\x)} u(\y) \dyy
 		\label{eq:lap-prop-media-vol}
 	\end{equation}
 \end{theorem}
 \begin{dimostrazione}
 	Dimostriamo prima la \eqref{eq:lap-prop-media-sup}. Per $0< r< R$ definiamo
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \bm{\sigma} ) d\bm{\sigma} 
+	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \sigg ) \dsig 
 	\end{equation*}
-	Voglio dimostrare che $g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \bm{\sigma } '=\frac{\bm{\sigma } -\x}{r}$, ovvero $\displaystyle \bm{\sigma } =\x +r\bm{\sigma } '$, in modo tale che $\displaystyle \bm{\sigma } '\in \partial B_{1}(\zer)$ e
+	Voglio dimostrare che $g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \sigg '=\frac{\sigg -\x}{r}$, ovvero $\displaystyle \sigg =\x +r\sigg '$, in modo tale che $\displaystyle \sigg '\in \partial B_{1}(\zer)$ e
 	\begin{equation*}
-	d\bm{\sigma } =r^{n-1} d\bm{\sigma } '
+	\dsig =r^{n-1} \dsig '
 	\end{equation*}
 	quest'ultima considerazione si può intuire considerando la seguente figura
 	\begin{figure}[H]
@@ -3520,13 +3544,13 @@ Dove la funzione Gamma di Eulero è definita come
 		% Text Node
 		\draw (167.67,211.07) node [anchor=north west][inner sep=0.75pt]    {$r$};
 		% Text Node
-		\draw (201.33,152.57) node [anchor=north west][inner sep=0.75pt]    {$\bm{\sigma }$};
+		\draw (201.33,152.57) node [anchor=north west][inner sep=0.75pt]    {$\sigg$};
 		% Text Node
-		\draw (279,151.07) node [anchor=north west][inner sep=0.75pt]    {$\bm{\sigma } '$};
+		\draw (279,151.07) node [anchor=north west][inner sep=0.75pt]    {$\sigg '$};
 		% Text Node
-		\draw (175.33,84.57) node [anchor=north west][inner sep=0.75pt]    {$d\bm{\sigma }$};
+		\draw (175.33,84.57) node [anchor=north west][inner sep=0.75pt]    {$\dsig$};
 		% Text Node
-		\draw (212,41.23) node [anchor=north west][inner sep=0.75pt]    {$d\bm{\sigma } '$};
+		\draw (212,41.23) node [anchor=north west][inner sep=0.75pt]    {$\dsig '$};
 		% Text Node
 		\draw (97,68.4) node [anchor=north west][inner sep=0.75pt]    {$B_{r}(\zer)$};
 		% Text Node
@@ -3535,8 +3559,8 @@ Dove la funzione Gamma di Eulero è definita come
 		\draw (7.67,34.4) node [anchor=north west][inner sep=0.75pt]    {$\text{se} \ r< 1$};
 		% Text Node
 		\draw (318.67,49.23) node [anchor=north west][inner sep=0.75pt]    {$ \begin{array}{l}
-		\bm{\sigma } =r\bm{\sigma } '\\
-		d\bm{\sigma } =rd\bm{\sigma } '
+		\sigg =r\sigg '\\
+		\dsig =r\dsig '
 		\end{array}$};
 		\end{tikzpicture}
 	\end{figure}
@@ -3544,25 +3568,25 @@ Dove la funzione Gamma di Eulero è definita come
 
 	Il concetto si estende opportunamente a $n$ dimensioni: le lunghezze diventano superfici, poi volumi, ecc.
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\zer)}\cancel{r^{n-1}} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} u(\x +r\bm{\sigma } ') d\bm{\sigma } '
+	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\zer)}\cancel{r^{n-1}} u(\x +r\sigg ') \dsig '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} u(\x +r\sigg ') \dsig '
 	\end{equation*}
 	La regione di integrazione ora non dipende da $r$. Calcoliamo la derivata:
 	\begin{equation*}
-	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)}\frac{d}{dr} u(\x +r\bm{\sigma } ') d\bm{\sigma } '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} \nabla u(\x +r\bm{\sigma } ') \cdotp \bm{\sigma } 'd\bm{\sigma } '
+	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)}\frac{\de}{\dr} u(\x +r\sigg ') \dsig '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} \nabla u(\x +r\sigg ') \cdotp \sigg '\dsig '
 	\end{equation*}
-	Sulla sfera $\displaystyle \partial B_{1}(\zer)$, il vettore coincide col vettore normale $\displaystyle \bm{\sigma } '=\bm{\nu}$.
+	Sulla sfera $\displaystyle \partial B_{1}(\zer)$, il vettore coincide col vettore normale $\displaystyle \sigg '=\nuu$.
 	Poniamo:
 	\begin{equation*}
 		v(\y)=u(\x+r\y) \quad \Rightarrow \quad \nabla v(\y)=r\nabla u(\x+r\y)\qquad \Delta v(\y)=r^2 \Delta u(\x+r\y)
 	\end{equation*}
 	Dobbiamo pensare $\x$ come fissato. Usando il teorema della divergenza e ricordando che $u$ è armonica:
 	\begin{equation*}
-	g'( r) =\frac{1}{w_{n}r}\int _{\partial B_{1}(\zer)} \nabla  v(\bm{\sigma }') \cdot \bm{\sigma }' d\bm{\sigma }' =\frac{1}{w_{n}r}\int _{B_{1}(\zer)} \Delta   v(\y) \cdot \y d\y   =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) d\y\overset{\Delta u=0}{=} 0.
+	g'( r) =\frac{1}{w_{n}r}\int _{\partial B_{1}(\zer)} \nabla  v(\sigg') \cdot \sigg' \dsig' =\frac{1}{w_{n}r}\int _{B_{1}(\zer)} \Delta   v(\y) \cdot \y \dyy   =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) \dyy\overset{\Delta u=0}{=} 0.
 	\end{equation*}
 	Dunque $g$ è costante. Quindi per continuità di $u$:
 	\begin{align*}
 		g( r) & \xrightarrow{r\rightarrow 0^{+}} u(\x)\\
-		g( r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\bm{\sigma }) d\bm{\sigma }
+		g( r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\sigg) \dsig
 	\end{align*}
 	Eguagliando i due termini otteniamo la \eqref{eq:lap-prop-media-sup}.
 	
@@ -3578,21 +3602,21 @@ Dove la funzione Gamma di Eulero è definita come
 \begin{dimostrazione}
 	Partiamo da
 	\begin{equation*}
-		u(\x) =\frac{1}{w_{n} r^{n-1}}\int _{\partial Br(\x)} u(\bm{\sigma }) d\bm{\sigma }
+		u(\x) =\frac{1}{w_{n} r^{n-1}}\int _{\partial Br(\x)} u(\sigg) \dsig
 	\end{equation*}
 	moltiplichiamo per $r^{n-1}$ e integriamo tra $0$ ed $R$:\footnote{Riordinando gli integrali con fubini sul membro di destra otteniamo una formula di "riduzione per bucce" 
 	\begin{equation*}
-		\int _{B_{R}( x)} f( y) dy=\int _{0}^{R}\left(\int _{\partial B_{r}( x)} fd\sigma \right) dr
+		\int _{B_{R}( x)} f( y) \dy=\int _{0}^{R}\left(\int _{\partial B_{r}( x)} f\dsig \right) \dr
 	\end{equation*}
 	}
 	\begin{align*}
-		\int _{0}^{R} r^{n-1} u(\x) dr & =\frac{1}{w_{n}}\int _{0}^{R} dr\int _{\partial B_{r}(\x)} u(\bm{\sigma }) d\bm{\sigma } & \\
-		u(\x)\left[\frac{r^{n}}{n}\right]_{0}^{R} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) d\y & \text{(Fubini)}\\
-		u(\x)\frac{R^{n}}{n} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) d\y & 
+		\int _{0}^{R} r^{n-1} u(\x) \dr & =\frac{1}{w_{n}}\int _{0}^{R} dr\int _{\partial B_{r}(\x)} u(\sigg) \dsig & \\
+		u(\x)\left[\frac{r^{n}}{n}\right]_{0}^{R} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) \dyy & \text{(Fubini)}\\
+		u(\x)\frac{R^{n}}{n} & =\frac{1}{w_{n}}\int _{B_{R}(\x)} u(\y) \dyy & 
 	\end{align*}
 	Da cui 
 	\begin{equation*}
-		u(\x) =\frac{n}{w^{n} R^{n}}\int _{B_{R}(\x)} u(\y) d\y
+		u(\x) =\frac{n}{w^{n} R^{n}}\int _{B_{R}(\x)} u(\y) \dyy
 	\end{equation*}
 	Il risultato inverso si ottiene ripercorrendo i passaggi all'indietro.
 \end{dimostrazione}
@@ -3675,13 +3699,13 @@ Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprie
 	
 	Dalla proprietà della media so che 
 	\begin{equation*}
-	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u(\y) d\y=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}( z)} u(\y) d\y} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u(\y) d\y}\right]
+	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u(\y) \dyy=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}( z)} u(\y) \dyy} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u(\y) \dyy}\right]
 	\end{equation*}
 	Sul primo integrale $u( y) \geqslant m$.
 
 	Sul secondo integrale posso sfruttare ancora la proprietà della media:
 	\begin{equation*}
-		\int _{B_{r}(\mathbf{z})} u(\y) d\y=u(\mathbf{z})| B_{r(\mathbf{z})}|  >m| B_{r}(\mathbf{z})| 
+		\int _{B_{r}(\mathbf{z})} u(\y) \dyy=u(\mathbf{z})| B_{r(\mathbf{z})}|  >m| B_{r}(\mathbf{z})| 
 	\end{equation*}
 	Ma allora ottengo una contraddizione
 	\begin{equation*}
@@ -3797,7 +3821,7 @@ u=g, & \text{su} \ \partial B_{R}(\mathbf{p})
 dove $g$ è continua sul bordo $g\in C( \partial B_{R}(\mathbf{p}))$, è data dalla \textbf{Formula di Poisson}
 \begin{equation}
 \label{eq:poisson-cerchio}
-u(\x) =\frac{R^{2} -| \x-\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\bm{\sigma})}{| \x-\bm{\sigma} | ^{2}} d\bm{\sigma }
+u(\x) =\frac{R^{2} -| \x-\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\sigg)}{| \x-\sigg | ^{2}} \dsig
 \end{equation}
 \end{theorem}
 \begin{dimostrazione}
@@ -3975,7 +3999,7 @@ Tornando alle variabili originali\footnote{Denotiamo con $\mathbf{p} =
 \begin{pmatrix}
 p_{1}\\
 p_{2}
-\end{pmatrix}$ il centro del cerchio, con $\bm{\sigma } =
+\end{pmatrix}$ il centro del cerchio, con $\sigg =
 \begin{pmatrix}
 p_{1} +R\cos \varphi \\
 p_{2} +R\sin \varphi 
@@ -3983,15 +4007,15 @@ p_{2} +R\sin \varphi
 \begin{pmatrix}
 p_{1} +r\cos \vartheta \\
 p_{2} +r\sin \vartheta 
-\end{pmatrix}$ un punto del cerchio. Il differenziale si trova come determinante dello Jacobiano $d\bm{\sigma } =Rd\varphi $. Questo ci permette anche di riscrivere il denominatore
+\end{pmatrix}$ un punto del cerchio. Il differenziale si trova come determinante dello Jacobiano $\dsig =Rd\varphi $. Questo ci permette anche di riscrivere il denominatore
 \begin{align*}
-| \x -\bm{\sigma }| ^{2} & =( R\cos \varphi -r\cos \vartheta)^{2} +( R\sin \varphi -r\sin \vartheta)^{2}\\
+| \x -\sigg| ^{2} & =( R\cos \varphi -r\cos \vartheta)^{2} +( R\sin \varphi -r\sin \vartheta)^{2}\\
  & =R^{2}\cos^{2} \varphi +r^{2}\cos^{2} \vartheta -2rR\cos \varphi \cos \vartheta +R^{2}\sin^{2} \varphi +r^{2}\sin^{2} \vartheta -2rR\sin \varphi \sin \vartheta \\
  & =R^{2} +r^{2} -2rR(\cos \varphi \cos \vartheta -\sin \varphi \sin \vartheta)\\
  & =R^{2} +r^{2} -2rR\cos( \varphi -\vartheta)
 \end{align*}}
 \begin{equation}
-u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\bm{\sigma })}{| \x -\bm{\sigma }| ^{2}} d\sigma 
+u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{2\pi R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\sigg)}{| \x -\sigg| ^{2}} \dsig 
 \label{eq:poisson-cerchio-dim}
 \end{equation}
 Se $\x \in B_{R}(\mathbf{p})$, cioè dentro e non sul bordo
@@ -4034,7 +4058,7 @@ possiamo passare al limite sotto il segno di integrale perché il denominatore n
 
 Possiamo generalizzare la \eqref{eq:poisson-cerchio} per un numero generico $n$ di dimensioni
 \begin{equation*}
-	u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{w_{n} R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\bm{\sigma })}{| \x -\bm{\sigma }| ^{n}} d\bm{\sigma }
+	u(\x) =\frac{R^{2} -| \x -\mathbf{p}| ^{2}}{w_{n} R}\int _{\partial B_{R}(\mathbf{p})}\frac{g(\sigg)}{| \x -\sigg| ^{n}} \dsig
 \end{equation*}
 con $\displaystyle u\in C^{\infty }( B_{R}(\mathbf{p})) \cap C\left(\overline{B_{R}}(\mathbf{p})\right)$.
 \section{Soluzione fondamentale per l'operatore di Laplace}
@@ -4063,11 +4087,11 @@ $v$ è ancora armonica: \textbf{il Laplaciano commuta con le rotazioni} e dunque
 
 Per l'operatore del calore la soluzione fondamentale (in $n=3$) era
 \begin{equation*}
-	\Gamma _{D}(x,t) =\frac{1}{(4\pi Dt)^{3/2}}\exp\left\{-\frac{\textcolor[rgb]{0.82,0.01,0.11}{| }\textcolor[rgb]{0.82,0.01,0.11}{x}\textcolor[rgb]{0.82,0.01,0.11}{| }\textcolor[rgb]{0.82,0.01,0.11}{^{2}}}{4D\textcolor[rgb]{0.82,0.01,0.11}{t}}\right\}
+	\Gamma _{D}(\x,t) =\frac{1}{(4\pi Dt)^{3/2}}\exp\left\{-\frac{\textcolor[rgb]{0.82,0.01,0.11}{|\x|^{2}}}{4D\textcolor[rgb]{0.82,0.01,0.11}{t}}\right\}
 \end{equation*}
-Il blocco $\displaystyle \textcolor[rgb]{1,0,0}{\frac{| x| ^{2}}{t}}$ è invariante per dilatazioni paraboliche della forma
+Il blocco $\displaystyle \textcolor[rgb]{1,0,0}{\frac{|\x|^{2}}{t}}$ è invariante per dilatazioni paraboliche della forma
 \begin{align*}
-	x & \longmapsto ax      \\
+	\x & \longmapsto a\x      \\
 	t & \longmapsto a^{2} t 
 \end{align*}
 Dove il tempo \textit{conta} come il quadrato dello spazio: questo non è altro che il riflesso dell'operatore del calore stesso, dove una derivata temporale \textit{compensava} una derivata seconda spaziale	
@@ -4076,9 +4100,9 @@ Dove il tempo \textit{conta} come il quadrato dello spazio: questo non è altro 
 \end{equation*}
 Per analogia ci aspettiamo che, essendo l'operatore di Laplace invariante per rotazioni, anche la soluzione fondamentale per l'operatore Laplaciano sia invariante per rotazioni. Cerchiamo quindi una soluzione della forma
 \begin{equation*}
-	u=u(| x|)
+	u=u(|\x|)
 \end{equation*}
-Poniamo $\displaystyle r=| x| $ e cerchiamo $\displaystyle u=u(r)$ tale che
+Poniamo $\displaystyle r=|\x| $ e cerchiamo $\displaystyle u=u(r)$ tale che
 \begin{equation*}
 	\Delta u=0\ \text{in} \ \mathbb{R}^{n} \setminus \{0\},\ n=2,3
 \end{equation*}
@@ -4128,10 +4152,10 @@ Per ottenere la soluzione fondamentale devo scegliere le costanti in modo tale c
 \end{equation*}
 Da cui ricaviamo la \textbf{soluzione fondamentale}
 \begin{equation}
-	\boxed{\Phi (x) =
+	\boxed{\Phi (\x) =
 	\begin{cases}
-	-\frac{1}{2\pi }\log| x|  & n=2\\
-	\frac{1}{4\pi | x| } & n=3
+	-\frac{1}{2\pi }\log|\x|  & n=2\\
+	\frac{1}{4\pi |\x| } & n=3
 	\end{cases}}
 \end{equation}
 $\displaystyle \Phi $ è definita per $\displaystyle x\neq 0$ e ha significato fisico. Se $n=3$, $\displaystyle 4\pi \Phi $ rappresenta il potenziale elettrostatico generato da una carica posta nell'origine che si annulla all'infinito. Se $n=2$, $\displaystyle 2\pi \Phi $ rappresenta il potenziale generato da una carica di densità totale $1$, distribuita lungo l'asse $\displaystyle x_{3}$.
@@ -4146,21 +4170,21 @@ E per simmetria, con $x$ fissato
 \end{equation*}
 Generalizzando per dimensione $n >3$ la soluzione fondamentale è
 \begin{equation*}
-	\Phi (x) =\frac{1}{(n-2) w_{n}}\frac{1}{| x| ^{n-2}}
+	\Phi (\x) =\frac{1}{(n-2) w_{n}}\frac{1}{|\x| ^{n-2}}
 \end{equation*}
 \section{Il potenziale Newtoniano}
 
-Torniamo in dimensione $n=3$. Supponiamo che $\displaystyle \frac{1}{4\pi } f(y)$ rappresenti la densità di una carica localizzata all'interno di un compatto di $\displaystyle \mathbb{R}^{3}$. Il potenziale in $x$ generato dalla carica presente in un piccolo volumetto $dy$, centrata in $y$, è dato da
+Torniamo in dimensione $n=3$. Supponiamo che $\displaystyle \frac{1}{4\pi } f(\y)$ rappresenti la densità di una carica localizzata all'interno di un compatto di $\displaystyle \mathbb{R}^{3}$. Il potenziale in $x$ generato dalla carica presente in un piccolo volumetto $\dy$, centrata in $y$, è dato da
 \begin{equation*}
-	\Phi (x-y) f(y) dy
+	\Phi (\x-\y) f(\y) \dy
 \end{equation*}
 Il potenziale totale si ottiene sommando tutti i contributi
 \begin{equation}
-	\mathcal{N}_{f}(x) =\int _{\mathbb{R}^{3}} \Phi (x-y) f(y) dy=\frac{1}{4\pi }\int _{\mathbb{R}^{3}}\frac{f(y)}{| x-y| } dy=(\Phi \ast f)(x)
+	\mathcal{N}_{f}(\x) =\int _{\mathbb{R}^{3}} \Phi (\x-\y) f(\y) \dy=\frac{1}{4\pi }\int _{\mathbb{R}^{3}}\frac{f(\y)}{|\x-\y| } \dy=(\Phi \ast f)(\x)
 \end{equation}
-Questo potenziale è detto \textbf{potenziale Newtoniano} di $f$. Formalmente, nel senso delle distribuzioni e sotto opportune ipotesi per $f$\footnote{Per $x$ fissato $\displaystyle \frac{1}{| x-y| } \in L^{1}(B(0))$, quindi dovrò controllare solo il comportamento di $f(y)$.}:
+Questo potenziale è detto \textbf{potenziale Newtoniano} di $f$. Formalmente, nel senso delle distribuzioni e sotto opportune ipotesi per $f$\footnote{Per $x$ fissato $\frac{1}{|\x-\y| } \in L^{1}(B(\zer))$, quindi dovrò controllare solo il comportamento di $f(\y)$.}:
 \begin{equation*}
-	-\Delta \mathcal{N}_{f}(x) =( -\Delta \Phi \ast f)(x) =( \delta _{3} \ast f)(x) =\int _{\mathbb{R}^{3}} \delta _{3}(x-y) f(y) dy=f(x)
+	-\Delta \mathcal{N}_{f}(\x) =( -\Delta \Phi \ast f)(\x) =( \delta _{3} \ast f)(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x-\y) f(\y) \dy=f(\x)
 \end{equation*}
 Formalizziamo in un teorema
 \begin{theorem}
@@ -4174,7 +4198,7 @@ In generale anche $\mathcal{N}_{f}+c$ è soluzione, ma questa è quella che si a
 \begin{nb}
 	Per $n=2$ il potenziale Newtoniano si chiama potenziale logaritmico
 	\begin{equation}
-		\mathcal{L}_{f}(x) =-\frac{1}{2\pi }\int _{\mathbb{R}^{2}}\log| x-y| f(y) dy
+		\mathcal{L}_{f}(\x) =-\frac{1}{2\pi }\int _{\mathbb{R}^{2}}\log|\x-\y| f(\y) \dy
 	\end{equation}
 	e vale un risultato simile: se $\displaystyle f\in C^{2}(\mathbb{R}^{2})$, allora $\displaystyle \mathcal{L}_{f} \in C^{2}(\mathbb{R}^{2})$ ed è l'unica soluzione di 
 	\begin{equation*}
@@ -4182,11 +4206,11 @@ In generale anche $\mathcal{N}_{f}+c$ è soluzione, ma questa è quella che si a
 	\end{equation*}
 	con andamento asintotico
 	\begin{equation*}
-		u(x) =-\frac{M}{2\pi }\log| x| +o\left(\frac{1}{| x| }\right),\quad | x| \rightarrow +\infty 
+		u(\x) =-\frac{M}{2\pi }\log|\x| +o\left(\frac{1}{|\x| }\right),\quad |\x| \rightarrow +\infty 
 	\end{equation*}
 	Dove $M$ è la carica totale
 	\begin{equation*}
-		M=\int _{\mathbb{R}^{2}} f(y) dy
+		M=\int _{\mathbb{R}^{2}} f(\y) \dyy
 	\end{equation*}
 \end{nb}
 \section{La funzione di Green}
@@ -4194,25 +4218,18 @@ Abbiamo considerato tutto $\mathbb{R} ^{n} $, ma se invece consideriamo una regi
 \begin{theorem}
 	Sia $\displaystyle \Omega \subset \mathbb{R}^{3}$ un \textbf{dominio limitato e regolare}, sia $\displaystyle u\in C^{2}(\overline{\Omega }$). Allora la soluzione del problema di Dirichlet $\Delta u=f$ con $u=g$ al bordo è:
 	\begin{equation*}
-		u(x) =\underbrace{-\int _{\Omega } \Phi (x-y) f(y) dy}_{ \begin{array}{l}
-			\text{potenziale Newtoniano di}\\
-			f=\Delta u
-			\end{array}} +\underbrace{\int _{\partial \Omega } \Phi (x-\sigma) \partial _{\bm{\nu}} u(\sigma) d\sigma }_{ \begin{array}{l}
-			\text{potenziale di strato semplice}\\
-			\text{con densità} \ \partial _{\bm{\nu}} u
-			\end{array}}\underbrace{-\int _{\partial \Omega } u(\sigma) \partial _{\bm{\nu}} \Phi (x-\sigma) d\sigma }_{ \begin{array}{l}
-			\text{potenziale di doppio strato}\\
-			\text{con momento} \ \mu 
-			\end{array}}
+		u(\x)=-\underbrace{\int _{\Omega } \Phi (\x-\y) f(\y) \dyy}_{\substack{\text{potenziale Newtoniano}\\\text{di } f=\Delta u}}
+  			  +\underbrace{\int _{\partial \Omega } \Phi (\x-\sigg) \partial _{\nuu} u(\sigg) \dsig }_{\substack{\text{potenziale di strato semplice}\\\text{con densità }\partial _{\nuu} u}}
+  			  -\underbrace{\int _{\partial \Omega } u(\sigg) \partial _{\nuu} \Phi (\x-\sigg) \dsig }_{ \substack{\text{potenziale di doppio strato}\\\text{con momento }\mu}}
 	\end{equation*}
 \end{theorem}
-In pratica, ogni funzione regolare $u$ può essere scritta come somma di un potenziale di volume (Newtoniano) con densità $\displaystyle -\Delta u$, di un potenziale di strato semplice causato da una densità di cariche $\displaystyle \partial _{\bm{\nu}} u$ superficiali sul bordo $\displaystyle \partial \Omega $ e da un potenziale di doppio strato generato da dei dipoli elettrici con momento $\mu $.
+In pratica, ogni funzione regolare $u$ può essere scritta come somma di un potenziale di volume (Newtoniano) con densità $\displaystyle -\Delta u$, di un potenziale di strato semplice causato da una densità di cariche $\displaystyle \partial _{\nuu} u$ superficiali sul bordo $\displaystyle \partial \Omega $ e da un potenziale di doppio strato generato da dei dipoli elettrici con momento $\mu $.
 
 Vediamo la dimostrazione del teorema.
 \begin{dimostrazione}
 	Ricordiamo innanzitutto l'identità di Green con $\displaystyle u,v\in C^{2}(\overline{\Omega })$
 	\begin{equation*}
-	\int _{\Omega }( v\Delta u-u\Delta v) d\x =\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\bm{\sigma }
+	\int _{\Omega }( v\Delta u-u\Delta v) \dxx =\int _{\partial \Omega }( v\partial _{\nuu} u-u\partial _{\nuu} v) \dsig
 	\end{equation*}
 	Applichiamo l'identità di Green utilizzando come funzione $u$ la stessa dell'enunciato del teorema. Per la funzione $v$ dobbiamo trovare un'alternativa, infatti, con $\x$ fissato
 	\begin{equation*}
@@ -4247,9 +4264,9 @@ Vediamo la dimostrazione del teorema.
 		% Text Node
 		\draw (266.83,64) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\partial B_{\varepsilon }(\x)$};
 		% Text Node
-		\draw (80.2,104.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
+		\draw (80.2,104.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\nuu$};
 		% Text Node
-		\draw (196.2,40.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
+		\draw (196.2,40.8) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\nuu$};
 		% Text Node
 		\draw (221,74) node [anchor=north west][inner sep=0.75pt]    {$\x$};
 
@@ -4262,7 +4279,7 @@ Vediamo la dimostrazione del teorema.
 
 	Si trova tutto a partire dall'identità di Green con questa scelta di $u$ e $v$ si elide il termine $\displaystyle u\Delta v=0$.
 	\begin{equation*}
-	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) d\y}_{( 1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \x -\bm{\sigma }| } \partial _{\bm{\nu}} u(\bm{\sigma }) d\bm{\sigma }}_{( 2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma }}_{( 3)}
+	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) \dyy}_{( 1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \x -\sigg| } \partial _{\nuu} u(\sigg) \dsig}_{( 2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig}_{( 3)}
 	\end{equation*}
 	Inoltre
 	\begin{equation*}
@@ -4270,14 +4287,14 @@ Vediamo la dimostrazione del teorema.
 	\end{equation*}
 	E su $\displaystyle \partial B_{\varepsilon }(\x)$
 	\begin{equation*}
-	\bm{\nu}(\bm{\sigma }) =\frac{\x -\bm{\sigma }}{| \x -\bm{\sigma }| } =\frac{\x -\bm{\sigma }}{\varepsilon }
+	\nuu(\sigg) =\frac{\x -\sigg}{| \x -\sigg| } =\frac{\x -\sigg}{\varepsilon }
 	\end{equation*}
 	Studiamo come si comporta ciascun termine dell'identità al limite per $\displaystyle \varepsilon \rightarrow 0$
 	\begin{itemize}
 	\item \textbf{Termine 1}
 
 	\begin{equation*}
-	( 1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) d\y =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\y)\frac{f(\y)}{| \x -\y| }}_{g_{\varepsilon }(\y)} d\y
+	( 1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) \dyy =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\y)\frac{f(\y)}{| \x -\y| }}_{g_{\varepsilon }(\y)} \dyy
 	\end{equation*}
 
 	Con 
@@ -4289,14 +4306,14 @@ Vediamo la dimostrazione del teorema.
 	Posso usare il teorema di convergenza dominata e passare al limite sotto il segno di integrale, il primo termine tende a
 
 	\begin{equation*}
-	( 1)\rightarrow \int _{\Omega }\frac{1}{| \x -\y| } f(\y) d\y
+	( 1)\rightarrow \int _{\Omega }\frac{1}{| \x -\y| } f(\y) \dyy
 	\end{equation*}
 
 	A meno del coefficiente, questo è diventato il potenziale Newtoniano.
 	\item \textbf{Termine 2}
 
 	\begin{equation*}
-	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }( x)}\right)\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma }
+	\int _{\partial \Omega _{\varepsilon }}\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\x)}\right)\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig
 	\end{equation*}
 
 	Di questi, quello sul bordo della palla andrà a zero.
@@ -4304,20 +4321,20 @@ Vediamo la dimostrazione del teorema.
 	Ricordando che
 
 	\begin{equation*}
-	| \partial _{\bm{\nu}} u(\bm{\sigma })| =| \nabla u(\bm{\sigma }) \cdotp \bm{\nu}| \leqslant \max| \nabla u| 
+	| \partial _{\nuu} u(\sigg)| =| \nabla u(\sigg) \cdotp \nuu| \leqslant \max| \nabla u| 
 	\end{equation*}
 
 	maggioriamo
 	\begin{align*}
-	\left| \int _{\partial B_{\varepsilon }(\x)}\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma }\right|  & \leqslant \int _{\partial B_{\varepsilon }(\x)}\frac{| \partial _{\bm{\nu}} u(\bm{\sigma })| }{\underbrace{| \x -\bm{\sigma }| }_{=\varepsilon }} d\bm{\sigma }\\
-	 & \leqslant \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\x)}\max| \nabla u| d\bm{\sigma }\\
-	 & =\frac{\max| \nabla u| }{\varepsilon }\int _{\partial B_{\varepsilon }(\x)} d\bm{\sigma }\\
+	\left| \int _{\partial B_{\varepsilon }(\x)}\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig\right|  & \leqslant \int _{\partial B_{\varepsilon }(\x)}\frac{| \partial _{\nuu} u(\sigg)| }{\underbrace{| \x -\sigg| }_{=\varepsilon }} \dsig\\
+	 & \leqslant \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\x)}\max| \nabla u| \dsig\\
+	 & =\frac{\max| \nabla u| }{\varepsilon }\int _{\partial B_{\varepsilon }(\x)} \dsig\\
 	 & =\frac{\max| \nabla u| }{\varepsilon } \cdotp 4\pi \varepsilon ^{2}\rightarrow 0
 	\end{align*}
 
 	L'altro non dipende da $\displaystyle \varepsilon $ quindi rimane così.
 	\begin{equation*}
-	( 2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\bm{\nu}} u(\bm{\sigma })}{| \x -\bm{\sigma }| } d\bm{\sigma }
+	( 2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig
 	\end{equation*}
 
 	A meno del coefficiente, questo è diventato il potenziale di strato semplice.
@@ -4326,28 +4343,28 @@ Vediamo la dimostrazione del teorema.
 	Da qui spunteranno sia il potenziale di doppio strato, che la $u$ stessa.
 
 	\begin{equation*}
-	( 3) =\int _{\partial \Omega _{\varepsilon }} u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma } =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\x)}\right) u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma }
+	( 3) =\int _{\partial \Omega _{\varepsilon }} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\x)}\right) u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig
 	\end{equation*}
 
 	L'integrale su $\displaystyle \partial \Omega $ è già il potenziale di doppio strato, ci manca da far vedere che l'altro tende a $u$, a meno del coefficiente. Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(\x)$ con la regola della catena
 	\begin{equation*}
-	\nabla _{\bm{\sigma }}\frac{1}{| \x -\bm{\sigma }| } =-\frac{1}{| \x -\bm{\sigma }| ^{2}} \cdotp \frac{\x -\bm{\sigma }}{| \x -\bm{\sigma }| }( -1) =\frac{\x -\bm{\sigma }}{| \x -\bm{\sigma }| ^{3}} =\frac{\x -\bm{\sigma }}{\varepsilon ^{3}}
+	\nabla _{\sigg}\frac{1}{| \x -\sigg| } =-\frac{1}{| \x -\sigg| ^{2}} \cdotp \frac{\x -\sigg}{| \x -\sigg| }( -1) =\frac{\x -\sigg}{| \x -\sigg| ^{3}} =\frac{\x -\sigg}{\varepsilon ^{3}}
 	\end{equation*}
 
 	quindi
 	\begin{equation*}
-	\partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } =\nabla \frac{1}{| \x -\bm{\sigma }| } \cdotp \bm{\nu} =\frac{\x -\bm{\sigma }}{\varepsilon ^{3}} \cdotp \frac{\x -\bm{\sigma }}{\varepsilon } =\frac{1}{\varepsilon ^{2}}
+	\partial _{\nuu}\frac{1}{| \x -\sigg| } =\nabla \frac{1}{| \x -\sigg| } \cdotp \nuu =\frac{\x -\sigg}{\varepsilon ^{3}} \cdotp \frac{\x -\sigg}{\varepsilon } =\frac{1}{\varepsilon ^{2}}
 	\end{equation*}
 
 	Da cui
 	\begin{align*}
-	\int _{\partial B_{\varepsilon }(\x)} u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma } & =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\x)} u(\bm{\sigma }) d\bm{\sigma }\\
-	 & =\frac{4\pi \varepsilon ^{2}}{\varepsilon ^{2}} \cdotp \underbrace{\frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\x)} u(\bm{\sigma }) d\bm{\sigma }}_{\rightarrow u(\x)}\rightarrow 4\pi u(\x)
+	\int _{\partial B_{\varepsilon }(\x)} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig & =\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\x)} u(\sigg) \dsig\\
+	 & =\frac{4\pi \varepsilon ^{2}}{\varepsilon ^{2}} \cdotp \underbrace{\frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }(\x)} u(\sigg) \dsig}_{\rightarrow u(\x)}\rightarrow 4\pi u(\x)
 	\end{align*}
 
 	quindi
 	\begin{equation*}
-	( 3)\rightarrow \int _{\partial \Omega } u(\bm{\sigma }) \partial _{\bm{\nu}}\frac{1}{| \x -\bm{\sigma }| } d\bm{\sigma } +4\pi u(\x)
+	( 3)\rightarrow \int _{\partial \Omega } u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig +4\pi u(\x)
 	\end{equation*}
 
 	Riassemblando i vari pezzi si ottiene la tesi.
@@ -4357,12 +4374,7 @@ Vediamo la dimostrazione del teorema.
 \LezioneS{23/03/2021}
 \section{Funzione di Green e formula di rappresentazione}
 
-Richiamiamo la formula della lezione scorsa
-\begin{equation}
-	u( x) =-\int _{\Omega } \Phi ( x-y) \Delta u( y) \ dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \underbrace{\partial _{\bm{\nu}} u( \sigma )}_{?} \ d\sigma -\int _{\partial \Omega } \partial _{\bm{\nu}} \Phi ( x-\sigma ) u( \sigma ) \ d\sigma 
-	\label{eq:richiamo-formula-green}
-\end{equation}
-che ci proponiamo di usare per ottenere una formula di rappresentazione \textbf{in funzione dei dati} del seguente problema di Dirichlet
+Ci proponiamo di ottenere una formula di rappresentazione \textbf{in funzione dei dati} del seguente problema di Dirichlet
 \begin{equation}
 	\begin{cases}
 		-\Delta u=f & \text{in} \ \Omega          \\
@@ -4370,47 +4382,52 @@ che ci proponiamo di usare per ottenere una formula di rappresentazione \textbf{
 	\end{cases}
 	\label{eq:sol-green-pb-dirichlet}
 \end{equation}
-Non so nulla del termine $\partial _{\bm{\nu}} u( \sigma )$, l'idea è di andare a cercare una funzione $G$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli. Sia $g(x,y)$ la soluzione di un certo problema
+Richiamiamo la formula della lezione scorsa
+\begin{equation}
+	u( x) =-\int _{\Omega } \Phi ( \x-\y) \Delta u( y) \ \dyy+\int _{\partial \Omega } \Phi ( \x-\sigg ) \underbrace{\partial _{\nuu} u( \sigg )}_{?} \ \dsig -\int _{\partial \Omega } \partial _{\nuu} \Phi ( \x-\sigg ) u( \sigg ) \ \dsig 
+	\label{eq:richiamo-formula-green}
+\end{equation}
+Conosciamo $\Delta u$, essendo uguale a $f$ come dato del problema, e conosciamo anche $u(\sigg )$ sul bordo, essendo uguale al dato $g$, ma non sappiamo nulla del termine $\partial _{\nuu} u( \sigg )$. L'idea è di andare a cercare una funzione $G$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli. Sia $g(x,y)$ la soluzione di un certo problema
 \begin{equation}
 	\begin{cases}
-		-\Delta _{y} g=0,                & \text{in} \ \Omega          \\
-		g( x,\sigma ) =\Phi ( x-\sigma ) & \text{su} \ \partial \Omega 
+		-\Delta _{\y} g=0,                & \text{in} \ \Omega          \\
+		g(\x,\sigg ) =\Phi ( \x-\sigg ) & \text{su} \ \partial \Omega 
 	\end{cases}
 	\label{eq:sol-green-pb-unico}
 \end{equation}
 Basta definire la seguente \textbf{funzione di Green per l'operatore di Laplace in} $\Omega $
 \begin{equation*}
-	\boxed{G( x,y) =\Phi ( x-y) -g( x,y)}
+	\boxed{G(\x,\y) =\Phi ( \x-\y) -g(\x,\y)}
 \end{equation*}
 ottenendo, siccome il laplaciano di $g$ è nullo,
 \begin{equation*}
 	\begin{cases}
-		-\Delta _{y} G( x,y) =\delta ( x) & \text{in} \ \Omega          \\
-		G( x,\sigma ) =0                  & \text{su} \ \partial \Omega 
+		-\Delta _{\y} G(\x,\y) =\delta (\x) & \text{in} \ \Omega          \\
+		G(\x,\sigg ) =0                  & \text{su} \ \partial \Omega 
 	\end{cases}
 \end{equation*}
 Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \begin{equation}
-	v( y) =g( x,y) \ \text{con} \ x\ \text{fissato}
+	v( y) =g(\x,\y) \ \text{con} \ x\ \text{fissato}
 	\label{eq:sol-green-v-g}
 \end{equation}
 da cui
 \begin{align*}
-	\int _{\Omega }( v\Delta u-u\Delta v) dx & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\bm{\nu}} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\bm{\nu}} v\right) \\
-	 & =\int _{\partial \Omega }( v\partial _{\bm{\nu}} u-u\partial _{\bm{\nu}} v) d\sigma                                                                                                                                 
+	\int _{\Omega }( v\Delta u-u\Delta v) \dx & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nuu} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nuu} v\right) \\
+	 & =\int _{\partial \Omega }( v\partial _{\nuu} u-u\partial _{\nuu} v) \dsig                                                                                                                                 
 \end{align*}
 sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordiamo che $\Delta v=\Delta _{y} g=0$
 \begin{align*}
-	-\int _{\Omega } \underbrace{g( x,y)}_{v} \underbrace{f( y)}_{\Delta u} dy & =\int _{\partial \Omega } \underbrace{\Phi ( x-\sigma )}_{v} \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \underbrace{\varphi ( \sigma )}_{u} \partial _{\bm{\nu}} \underbrace{g( x,\sigma )}_{v} \ d\sigma                                  \\
-	0                                 & =\int _{\Omega } g( x,y) f( y) dy+\int _{\partial \Omega } \Phi ( x-\sigma ) \partial _{\bm{\nu}} u\ d\sigma -\int _{\partial \Omega } \varphi ( \sigma ) \partial _{\bm{\nu}} g( x,\sigma ) \ d\sigma 
+	-\int _{\Omega } \underbrace{g(\x,\y)}_{v} \underbrace{f(\y)}_{\Delta u} \dyy & =\int _{\partial \Omega } \underbrace{\Phi ( \x-\sigg )}_{v} \partial _{\nuu} u\ \dsig -\int _{\partial \Omega } \underbrace{\varphi ( \sigg )}_{u} \partial _{\nuu} \underbrace{g(\x,\sigg )}_{v} \ \dsig                                  \\
+	0                                 & =\int _{\Omega } g(\x,\y) f(\y) \dyy+\int _{\partial \Omega } \Phi ( \x-\sigg ) \partial _{\nuu} u\ \dsig -\int _{\partial \Omega } \varphi ( \sigg ) \partial _{\nuu} g(\x,\sigg ) \ \dsig 
 \end{align*}
 facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa scompare il termine con la derivata normale sul bordo
 \begin{equation*}
-	u( x) =\int _{\Omega }\underbrace{[ \Phi ( x-y) -g( x,y)]}_{G( x,y)} f( y) dy+0-\int _{\partial \Omega } \varphi ( \sigma ) \partial_{\bm{\nu}}\underbrace{[ \Phi ( x-\sigma) -g( x,\sigma)]}_{G( x,\sigma)} d\sigma 
+	u( x) =\int _{\Omega }\underbrace{[ \Phi ( \x-\y) -g(\x,\y)]}_{G(\x,\y)} f(\y) \dyy+0-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu}\underbrace{[ \Phi ( \x-\sigg) -g(\x,\sigg)]}_{G(\x,\sigg)} \dsig 
 \end{equation*}
 cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote{Si noti che anche se $G$ è nulla sul bordo, non è detto che la sua derivata normale sia nulla, è facile rendersene conto pensando al caso unidimensionale.}
 \begin{equation*}
-	\boxed{u( x) =\int _{\Omega } G( x,y) f( y) \ dy-\int _{\partial \Omega } \varphi ( \sigma ) \partial_{\bm{\nu}} G( x,\sigma) \ d\sigma }
+	\boxed{u(\x) =\int _{\Omega } G(\x,\y) f( y) \ \dyy-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu} G(\x,\sigg) \ \dsig }
 \end{equation*}
 questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
@@ -4430,20 +4447,20 @@ Sono equazioni differenziali del tipo
 
 Se consideriamo un tratto dell'ipotetico canale dove stiamo studiando la concentrazione, la variazione nel tempo della massa è data dalla differenza tra il flusso agli estremi, ed una eventuale sorgente
 \begin{equation*}
-	\frac{d}{dt}\int ^{x_{2}}_{x_{1}} u( y,t) dy=q( u( x_{1} ,t)) -q( u( x_{2} ,t)) +\underbrace{\left(\int ^{x_{2}}_{x_{1}} f( y,t) dy\right)}_{\text{sorgente non omogenea}}
+	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} u( y,t) \dy=q( u( x_{1} ,t)) -q( u( x_{2} ,t)) +\underbrace{\left(\int ^{x_{2}}_{x_{1}} f( y,t) \dy\right)}_{\text{sorgente non omogenea}}
 \end{equation*}
 \emph{Nel caso in cui fosse possibile passare sotto il segno di integrale}, l'integrale diventa % TODO arrivato qui
 \begin{equation}
-	\frac{d}{dt}\int ^{x_{2}}_{x_{1}} u( y,t) dy=\int ^{x_{2}}_{x_{1}} u_{t}( y,t) dy
+	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} u( y,t) \dy=\int ^{x_{2}}_{x_{1}} u_{t}( y,t) \dy
 	\label{eq:lc-passaggio-derivata-integrale}
 \end{equation}
 mentre l'altro termine si può scrivere naturalmente come\footnote{Teorema fondamentale del calcolo integrale.}
 \begin{equation*}
-	-q( u( x_{1} ,t)) +q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} dx
+	-q( u( x_{1} ,t)) +q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} \dx
 \end{equation*}
 che per arbitrarietà dell'intervallo implica proprio la legge di conservazione:
 \begin{equation*}
-	\int ^{x_{2}}_{x_{1}}[ u_{t} +q( u)_{x}] dx=0,\ \forall x_{1} ,x_{2} \ \ \Rightarrow \ \ u_{t} +q( u)_{x} =0
+	\int ^{x_{2}}_{x_{1}}[ u_{t} +q( u)_{x}] \dx=0,\ \forall x_{1} ,x_{2} \ \ \Rightarrow \ \ u_{t} +q( u)_{x} =0
 \end{equation*}
 Capito il contesto, dobbiamo scegliere con quale $q$ decidiamo di lavorare, in altre parole dobbiamo scegliere una legge costitutiva per $q$.
 
@@ -4532,11 +4549,11 @@ abbiamo l'equazione differenziale per $w$
 \end{equation*}
 qui si può mettere tranquillamente il pilota automatico e dire che
 \begin{equation*}
-	w( t) =g( x_{0}) +\int ^{t}_{0} f( vs+x_{0} ,s) ds
+	w( t) =g( x_{0}) +\int ^{t}_{0} f( vs+x_{0} ,s) \ds
 \end{equation*}
 tornando ad $u$, notiamo che $vs+x_{0}=vs+x-vt=x-v(t-s)$
 \begin{equation}
-	u( x,t) =g( x-vt) +\int ^{t}_{0} f( x-v( t-s) ,s) ds
+	u( x,t) =g( x-vt) +\int ^{t}_{0} f( x-v( t-s) ,s) \ds
 \end{equation}
 è la soluzione se $g\in C^{1}(\mathbb{R})$ e $f,f_{x} \in C(\mathbb{R} \times [ 0,+\infty ))$. Si può confrontare facilmente col caso omogeneo e notare che il risultato è il medesimo se $f=0$.
 
@@ -4554,7 +4571,7 @@ Ipotesi di base
 \begin{itemize}
 	\item una sola corsia, senza sorpassi
 	\item assenza di caselli (assenza di \textit{sorgenti} o \textit{pozzi} di auto), quindi problema \emph{omogeneo}
-	\item la velocità è funzione di $\rho $, cioè $v=v( \rho )$, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori. Se aumenta la densità diminuisce la velocità $\frac{dv}{d\rho } \leqslant 0$.
+	\item la velocità è funzione di $\rho $, cioè $v=v( \rho )$, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori. Se aumenta la densità diminuisce la velocità $\frac{\dv}{\drho} \leqslant 0$.
 \end{itemize}
 
 Abbiamo
@@ -4678,7 +4695,7 @@ Il punto è quindi determinare $x_{0}$ in funzione dei generici $x,t$, per poi t
 
 Si noti infatti che:
 \begin{equation*}
-	\underbrace{q'(\rho)}_{\text{vel.segnale}} = \frac{d}{d\rho }q(\rho ) = \frac{d}{d\rho }(\rho v) = \underbrace{\frac{d\rho }{d\rho }}_{=1}v + \rho \underbrace{\frac{dv}{d\rho}}_{\le 0} \le \underbrace{v}_{\text{vel.traffico}}
+	\underbrace{q'(\rho)}_{\text{vel.segnale}} = \frac{\de}{\drho}q(\rho ) = \frac{\de}{\drho}(\rho v) = \underbrace{\frac{\drho }{\drho }}_{=1}v + \rho \underbrace{\frac{\de v}{\drho}}_{\le 0} \le \underbrace{v}_{\text{vel.traffico}}
 \end{equation*}
 
 Notiamo anche che in questo modello di traffico la velocità delle macchine sarà sempre maggiore o uguale a zero, mentre disegnando il grafico di $q'(\rho $ ci si rende facilmente conto che la velocità locale dell'onda può facilmente essere negativa (un segnale che si propaga all'indietro, come vedremo nell'esempio della coda al semaforo).
@@ -4916,7 +4933,7 @@ Siamo proprio nel caso in cui si intersecano! Vediamo come sbrogliare il mistero
 
 Dobbiamo ammettere soluzioni discontinue, la \textit{linea di discontinuità} sarà una funzione $x=s( t)$. Non possiamo più fare come all'inizio in \eqref{eq:lc-passaggio-derivata-integrale} e portare la derivata dentro, perché $\rho $ è \textbf{discontinua}. Tuttavia vale sempre la relazione generale:
 \begin{equation*}
-	\frac{d}{dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) dy=q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
+	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) \dy=q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
 \end{equation*}
 Se l'intervallo $( x_{1} ,x_{2})$ è a cavallo della linea di continuità possiamo spezzarlo
 
@@ -4957,17 +4974,17 @@ Se l'intervallo $( x_{1} ,x_{2})$ è a cavallo della linea di continuità possia
 \FloatBarrier
 
 \begin{align*}
-	\frac{d}{dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) dy & =\frac{d}{dt}\left(\int ^{s( t)}_{x_{1}} +\int ^{x_{2}}_{s( t)}\right)                                                                                                  \\
-	                                                 & =\int ^{s( t)}_{x_{1}} \rho _{t}( y,t) dy\textcolor[rgb]{0.82,0.01,0.11}{+} \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) \cdotp \dot{s}( t)         \\
-	                                                 & \ \ \ \ +\int ^{x_{2}}_{s( t)} \rho _{t}( y,t) dy\textcolor[rgb]{0.82,0.01,0.11}{-} \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right) \cdotp \dot{s}( t) 
+	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) \dy & =\frac{\de}{\dt}\left(\int ^{s( t)}_{x_{1}} +\int ^{x_{2}}_{s( t)}\right)                                                                                                  \\
+	                                                 & =\int ^{s( t)}_{x_{1}} \rho _{t}( y,t) \dy\textcolor[rgb]{0.82,0.01,0.11}{+} \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) \cdotp \dot{s}( t)         \\
+	                                                 & \ \ \ \ +\int ^{x_{2}}_{s( t)} \rho _{t}( y,t) \dy\textcolor[rgb]{0.82,0.01,0.11}{-} \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right) \cdotp \dot{s}( t) 
 \end{align*}
 Riaccorpando l'integrale e sostituendo
 \begin{equation*}
-	\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) dy+\left[ \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}( t) =q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
+	\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) \dy+\left[ \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}( t) =q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
 \end{equation*}
 facendo il limite per $x_{2}\rightarrow s( t)^{+} ,x_{1}\rightarrow s( t)^{-}$
 \begin{equation*}
-	\underbrace{\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) dy}_{\rightarrow 0} +\left[ \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}( t) =q\left( \rho \left( s( t)^{-} ,t\right)\right) -q\left( \rho \left( s( t)^{+} ,t\right)\right)
+	\underbrace{\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) \dy}_{\rightarrow 0} +\left[ \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}( t) =q\left( \rho \left( s( t)^{-} ,t\right)\right) -q\left( \rho \left( s( t)^{+} ,t\right)\right)
 \end{equation*}
 allora
 \begin{equation}
@@ -5165,7 +5182,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la ca
 \begin{nb}
 	La pendenza della caratteristica è $\displaystyle q'( g( \xi )) .$ La condizione \eqref{eq:condizione-tutto-bene} equivale a:
 	\begin{equation*}
-		\frac{d}{d\xi } q'( g( \xi )) =g'( \xi ) q''( g( \xi )) \geqslant 0
+		\frac{\de}{\dxi } q'( g( \xi )) =g'( \xi ) q''( g( \xi )) \geqslant 0
 	\end{equation*}
 	ovvero richiediamo che le pendenze delle caratteristiche siano crescenti con $\xi $: le caratteristiche non si incontrano mai (se la derivata della pendenza è $0$, rimangono parallele, se è $< 0$ si intersecheranno dando origine ad una linea di shock).
 
@@ -5317,22 +5334,22 @@ Allarghiamo il concetto di soluzione introducendo la \textbf{soluzione debole} (
 \end{definition}
 Sia $u$ soluzione classica, $v$ funzione test, moltiplichiamo \eqref{eq:conservazione-formulazione-forte} con la funzione test e integriamo
 \begin{equation*}
-	\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vu_{t} \ dxdt}_{A} +\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vq( u)_{x} \ dxdt}_{B} =0
+	\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vu_{t} \ \dx\dt}_{A} +\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vq( u)_{x} \ \dx\dt}_{B} =0
 \end{equation*}
 Integriamo $A$ per parti rispetto a $t$ e usiamo il supporto compatto
 \begin{align*}
-	A & =\int _{\mathbb{R}}[ vu]^{+\infty }_{0} dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ dxdt                  \\
-	  & = \cancel{\int _{\mathbb{R}} v( x,\infty ) u(x,\infty ) dx} -\int _{\mathbb{R}} v( x,0)\underbrace{u( x,0)}_{g( x)} dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ dxdt \\
-	  & =-\int _{\mathbb{R}} v( x,0) g( x) dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ dxdt                       
+	A & =\int _{\mathbb{R}}[ vu]^{+\infty }_{0} \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt                  \\
+	  & = \cancel{\int _{\mathbb{R}} v( x,\infty ) u(x,\infty ) \dx} -\int _{\mathbb{R}} v( x,0)\underbrace{u( x,0)}_{g( x)} \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt \\
+	  & =-\int _{\mathbb{R}} v( x,0) g( x) \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt                       
 \end{align*}
 Integriamo $B$ per parti rispetto a $x$
 \begin{align*}
-	B & =\cancel{\int ^{+\infty }_{0}[ vq( u)]^{+\infty }_{-\infty } dt} -\int ^{+\infty }_{0}\int _{\mathbb{R}} v_{x} q( u) \ dxdt 
+	B & =\cancel{\int ^{+\infty }_{0}[ vq( u)]^{+\infty }_{-\infty } dt} -\int ^{+\infty }_{0}\int _{\mathbb{R}} v_{x} q( u) \ \dx\dt 
 \end{align*}
 Segue che
 \begin{equation}
 	\tag{P$_{\text{cons,debole}}$}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] dxdt+\int _{\mathbb{R}} v( x,0) g( x) dx=0\ \ \forall \ v
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] \dx\dt+\int _{\mathbb{R}} v( x,0) g( x) \dx=0\ \ \forall \ v
 	\label{eq:conservazione-formulazione-debole}
 \end{equation}
 che chiameremo \textbf{formulazione debole}. Notiamo che \textit{non compaiono le derivate di} $u$. Quindi
@@ -5343,12 +5360,12 @@ Possiamo tornare indietro? Sì.
 				
 Partendo dalla formulazione debole \eqref{eq:conservazione-formulazione-debole} e integrando per parti in senso inverso il primo termine, stavolta coi ruoli delle funzioni invertiti rispetto al primo passaggio
 \begin{equation}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t}+q( u)_{x}] v\ dxdt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) dx-\int _{\mathbb{R}} v( x,0) g( x) dx}_{\int _{\mathbb{R}}[ u( x,0)-g( x)] v( x,0) dx} =0
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t}+q( u)_{x}] v\ \dx\dt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) \dx-\int _{\mathbb{R}} v( x,0) g( x) \dx}_{\int _{\mathbb{R}}[ u( x,0)-g( x)] v( x,0) \dx} =0
 	\label{eq:formulazione-debole-passaggio-1}
 \end{equation}
 Che è valida per ogni funzione test, scelgo quindi $v$ test con supporto in $\mathbb{R} \times \textcolor[rgb]{0.82,0.01,0.11}{(} 0,+\infty )$, annullando tutto il secondo termine
 \begin{equation*}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t} +q( u)_{x}] v\ dxdt=0\ \ \forall \ \text{funzione test}
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t} +q( u)_{x}] v\ \dx\dt=0\ \ \forall \ \text{funzione test}
 \end{equation*}
 Per il lemma di annullamento ritroviamo la prima parte di \eqref{eq:conservazione-formulazione-forte}
 \begin{equation*}
@@ -5369,12 +5386,12 @@ In conclusione
 \begin{theorem}
 	[Lemma di annullamento] Sia $\Omega \subseteq \mathbb{R}^{n}$ aperto, sia $f\in C(\Omega)$ tale che
 	\begin{equation}
-		\int _{\Omega } fv\ dx=0, \quad \forall  v\in C^{1}(\Omega) \ \text{a supporto compatto}
+		\int _{\Omega } fv\ \dxx=0, \quad \forall  v\in C^{1}(\Omega) \ \text{a supporto compatto}
 	\end{equation}
 	allora $f=0$ in $\Omega $.
 \end{theorem}
 \begin{dimostrazione}
-	Se per assurdo $f( x_{0}) \neq 0$, per esempio $f( x_{0})  >0$, allora possiamo considerare $B_{r}( x_{0}) \subset \Omega $ tale che $f( x)  >0$ in $B_{r}( x_{0})$.
+	Se per assurdo $f(\x_{0}) \neq 0$, per esempio $f(\x_{0})  >0$, allora possiamo considerare $B_{r}(\x_{0}) \subset \Omega $ tale che $f(\x)>0$ in $B_{r}(\x_{0})$.
 
 \begin{figure}[H]
 \centering
@@ -5396,18 +5413,18 @@ In conclusione
 	% Text Node
 	\draw (141,62.4) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
 	% Text Node
-	\draw (329,79.4) node [anchor=north west][inner sep=0.75pt]    {$x_{0}$};
+	\draw (329,79.4) node [anchor=north west][inner sep=0.75pt]    {$\x_{0}$};
 	% Text Node
-	\draw (203,15.4) node [anchor=north west][inner sep=0.75pt]    {$f >0$};
+	\draw (203,15.4) node [anchor=north west][inner sep=0.75pt]    {$f>0$};
 
 
 	\end{tikzpicture}
 \end{figure}
 \FloatBarrier
 
-Possiamo allora sempre trovare una $v\in C^{1}(\Omega)$ tale che $v >0$ in $B_{r}( x_{0})$ e $v=0$ in $\Omega \setminus \overline{B_{r}( x_{0})}$ ma allora
+Possiamo allora sempre trovare una $v\in C^{1}(\Omega)$ tale che $v>0$ in $B_{r}(\x_{0})$ e $v=0$ in $\Omega \setminus \overline{B_{r}(\x_{0})}$ ma allora
 \begin{equation*}
-	0 \overset{\text{hp}}{=} \int _{\Omega } fv\ dx=\int _{B_{r}( x_{0})} fv\ dx >0
+	0 \overset{\text{hp}}{=} \int _{\Omega } fv\ \dx=\int _{B_{r}(\x_{0})} fv\ \dx >0
 \end{equation*}
 assurdo.
 \end{dimostrazione}
@@ -5421,7 +5438,7 @@ assurdo.
 	\end{equation*}
 	se vale la \eqref{eq:conservazione-formulazione-debole}, cioè se
 	\begin{equation*}
-		\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] dxdt+\int _{\mathbb{R}} v( x,0) g( x) dx=0\ \ \forall \ \text{funzione test}
+		\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] \dx\dt+\int _{\mathbb{R}} v( x,0) g( x) \dx=0\ \ \forall \ \text{funzione test}
 	\end{equation*}
 \end{definition}
 \subsection{Condizione di Rankine-Hugoniot}
@@ -5486,7 +5503,7 @@ assurdo.
 
 	Essendo $V$ nel semipiano con $t >0$, e $K\subset V$, allora $v( x,t=0) =0$, allora la FD\footnote{Formulazione Debole.} diventa
 	\begin{equation*}
-		0=\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] dxdt+\cancel{\int _{\mathbb{R}} v( x,0) g( x) dx} =\int _{V} =\int _{V^{+}} +\int _{V^{-}}
+		0=\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] \dx\dt+\cancel{\int _{\mathbb{R}} v( x,0) g( x) \dx} =\int _{V} =\int _{V^{+}} +\int _{V^{-}}
 	\end{equation*}
 	Lavoriamo separatamente. Notiamo subito che possiamo scrivere la formula di derivata per parti
 	\begin{align*}
@@ -5495,16 +5512,16 @@ assurdo.
 	\end{align*}
 	che possiamo sostituire
 	\begin{align*}
-		0 & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[ uv_{t} +q( u) v_{x}] \ dxdt                           \\
-		  & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x} -u_{t} v-q( u)_{x} v] \ dxdt 
+		0 & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[ uv_{t} +q( u) v_{x}] \ \dx\dt                           \\
+		  & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x} -u_{t} v-q( u)_{x} v] \ \dx\dt 
 	\end{align*}
 	sistemiamo i termini e raccogliamo $v$
 	\begin{equation*}
-		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ dxdt-\left(\int _{V^{+}} +\int _{V^{-}}\right)[ u_{t} +q( u)_{x}] v\ dxdt
+		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ \dx\dt-\left(\int _{V^{+}} +\int _{V^{-}}\right)[ u_{t} +q( u)_{x}] v\ \dx\dt
 	\end{equation*}
 	notiamo ora che $u$ al di fuori di $\Gamma $ è regolare e quindi soluzione classica\footnote{questo passaggio lo abbiamo potuto fare solo grazie al fatto che i due integrali sono separati su $V^{+} ,V^{-}$.} $u_{t} +q( u)_{x} =0$. Questo ci permette di cancellare il secondo termine
 	\begin{equation*}
-		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ dxdt
+		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ \dx\dt
 	\end{equation*}
 	Ciò che è in parentesi quadra altro non è che la divergenza di una funzione!
 	\begin{gather*}
@@ -5513,7 +5530,7 @@ assurdo.
 			q( u) v \\
 			uv      
 		\end{pmatrix} \ \ \Rightarrow \ \ \mathrm{div} \ \mathbf{v} =( q( u) v)_{x} +( uv)_{t}\\
-		\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ dxdt=\left(\int _{V^{+}} +\int _{V^{-}}\right)[\mathrm{div} \ \mathbf{v}] \ dxdt
+		\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ \dx\dt=\left(\int _{V^{+}} +\int _{V^{-}}\right)[\mathrm{div} \ \mathbf{v}] \ \dx\dt
 	\end{gather*}
 	pertanto possiamo applicare il Teorema della Divergenza. Consideriamo $\mathbf{n} =( n_{x} ,n_{t})$ normale, $n_{x}$ in $x$, $n_{t}$ in $t$, e ricordiamoci che
 	\begin{itemize}
@@ -5522,7 +5539,7 @@ assurdo.
 		\item quando scriviamo $u$ integrata su $\Gamma $ dobbiamo specificare se stiamo facendo il limite da destra o sinistra
 	\end{itemize}
 	\begin{align*}
-		\int _{V^{+}}[\mathrm{div} \ \mathbf{v}] \ dxdt & =\int _{\partial V^{+}}\mathbf{v} \cdotp \mathbf{n} \ dl=\left[\cancel{\int _{\partial V^{+} \setminus K}} +\int _{K\cap \Gamma }\right]     
+		\int _{V^{+}}[\mathrm{div} \ \mathbf{v}] \ \dx\dt & =\int _{\partial V^{+}}\mathbf{v} \cdotp \mathbf{n} \ \dl=\left[\cancel{\int _{\partial V^{+} \setminus K}} +\int _{K\cap \Gamma }\right]     
 		\begin{pmatrix}
 		q( u) v\\
 		uv
@@ -5530,10 +5547,10 @@ assurdo.
 		\begin{pmatrix}
 		n_{x}\\
 		n_{t}
-		\end{pmatrix} \ dl\\
-		                                                & =\int _{K\cap \Gamma }\left[ q\left( u^{+}\right) n_{x} +u^{+} n_{t}\right] v\ dl                                                            \\
+		\end{pmatrix} \ \dl\\
+		                                                & =\int _{K\cap \Gamma }\left[ q\left( u^{+}\right) n_{x} +u^{+} n_{t}\right] v\ \dl                                                            \\
 		                                                &                                                                                                                                              \\
-		\int _{V^{-}}[\mathrm{div} \ \mathbf{v}] \ dxdt & =\int _{\partial V^{-}}\mathbf{v} \cdotp ( -\mathbf{n}) \ dl=\left[\cancel{\int _{\partial V^{-} \setminus K}} +\int _{K\cap \Gamma }\right] 
+		\int _{V^{-}}[\mathrm{div} \ \mathbf{v}] \ \dx\dt & =\int _{\partial V^{-}}\mathbf{v} \cdotp ( -\mathbf{n}) \ \dl=\left[\cancel{\int _{\partial V^{-} \setminus K}} +\int _{K\cap \Gamma }\right] 
 		\begin{pmatrix}
 		q( u) v\\
 		uv
@@ -5541,12 +5558,12 @@ assurdo.
 		\begin{pmatrix}
 		-n_{x}\\
 		-n_{t}
-		\end{pmatrix} \ dl\\
-		                                                & =\int _{K\cap \Gamma }\left[ -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ dl                                                           
+		\end{pmatrix} \ \dl\\
+		                                                & =\int _{K\cap \Gamma }\left[ -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ \dl                                                           
 	\end{align*}
 	A questo punto mettiamo insieme, possiamo tranquillamente portare tutto sotto lo stesso integrale
 	\begin{equation*}
-		0=\int _{K\cap \Gamma }\left[ q\left( u^{+}\right) n_{x} +u^{+} n_{t} -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ dl\ \ \forall v
+		0=\int _{K\cap \Gamma }\left[ q\left( u^{+}\right) n_{x} +u^{+} n_{t} -q\left( u^{-}\right) n_{x} -u^{-} n_{t}\right] v\ \dl\ \ \forall v
 	\end{equation*}
 	l'arbitrarietà di $v$ e il fatto che \emph{il salto varia con continuità}, fondamentale per usare il lemma di annullamento, ci fa concludere che
 	\begin{equation*}
@@ -6646,9 +6663,9 @@ arrivo all'equazione della corda vibrante
 
 Consideriamo una corda a riposo (al tempo $t=0$) in posizione orizzontale sull'asse $x$, occupante un segmento $\displaystyle [ 0,L]$. Essendo $\displaystyle u_{t}( x,t)$ la velocità di vibrazione verticale della particella di corda in $x$, l'\textbf{energia cinetica totale }durante la vibrazione è
 \begin{equation}
-	E_{\text{cin}}( t) =\frac{1}{2}\int ^{L}_{0} \rho _{0} u^{2}_{t} dx
+	E_{\text{cin}}( t) =\frac{1}{2}\int ^{L}_{0} \rho _{0} u^{2}_{t} \dx
 \end{equation}
-La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle forze elastiche. In un elemento di corda con lunghezza a riposo $dx$, l'allungamento dovuto alle forze elastiche è pari a
+La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle forze elastiche. In un elemento di corda con lunghezza a riposo $\dx$, l'allungamento dovuto alle forze elastiche è pari a
 
 
 \begin{figure}[htpb]
@@ -6673,11 +6690,11 @@ La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle fo
 	% Text Node
 	\draw (183.83,65.9) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x$};
 	% Text Node
-	\draw (241.33,64.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x+dx$};
+	\draw (241.33,64.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x+\dx$};
 	% Text Node
 	\draw (329.33,65.9) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$L$};
 	% Text Node
-	\draw (192.83,14.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$ds$};
+	\draw (192.83,14.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\ds$};
 
 
 	\end{tikzpicture}
@@ -6685,19 +6702,19 @@ La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle fo
 \FloatBarrier
 
 \begin{equation*}
-	\text{allungamento} = ds-dx=\sqrt{1+u^{2}_{x}} dx-dx=\underbrace{\left(\sqrt{1+u^{2}_{x}} -1\right)}_{|u_{x} |\ll 1} dx\cong\footnote{Per $\varepsilon \ll 1$, $\sqrt{1+\varepsilon}\approx 1+\varepsilon/2 $} \frac{1}{2} u^{2}_{x} dx
+	\text{allungamento} = \ds-\dx=\sqrt{1+u^{2}_{x}} \dx-\dx=\underbrace{\left(\sqrt{1+u^{2}_{x}} -1\right)}_{|u_{x} |\ll 1} \dx\cong\footnote{Per $\varepsilon \ll 1$, $\sqrt{1+\varepsilon}\approx 1+\varepsilon/2 $} \frac{1}{2} u^{2}_{x} \dx
 \end{equation*}
 Quindi il lavoro compiuto da tali forze elastiche\footnote{Stiamo trattando piccole vibrazioni, $\displaystyle \tau $ non dipende da $x$.} è
 \begin{equation*}
-	dW= \text{forza}\cdot\text{allungamento}= \frac{1}{2} \tau _{0} u^{2}_{x} dx
+	dW= \text{forza}\cdot\text{allungamento}= \frac{1}{2} \tau _{0} u^{2}_{x} \dx
 \end{equation*}
 Sommando i contributi di tutti gli elementi ottengo l'energia potenziale totale
 \begin{equation}
-	E_{\text{pot}}( t) =\frac{1}{2}\int ^{L}_{0} \tau _{0} u^{2}_{x} dx
+	E_{\text{pot}}( t) =\frac{1}{2}\int ^{L}_{0} \tau _{0} u^{2}_{x} \dx
 \end{equation}
 L'\textbf{energia meccanica totale }della corda risulta essere
 \begin{equation}
-	E( t) =E_{\text{cin}}( t) +E_{\text{pot}}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] dx
+	E( t) =E_{\text{cin}}( t) +E_{\text{pot}}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] \dx
 \end{equation}
 
 
@@ -6705,21 +6722,21 @@ L'\textbf{energia meccanica totale }della corda risulta essere
 
 Abbiamo calcolato l'energia totale al tempo $t$ immagazzinata nella corda
 \begin{equation*}
-	E_{tot}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] dx
+	E_{tot}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] \dx
 \end{equation*}
 La variazione dell'energia totale risulta
 \begin{equation}
-	\dot{E}_{tot}( t) =\int ^{L}_{0}[ \rho _{0} u_{t} u_{tt} +\tau _{0} u_{x} u_{xt}] dx=\int ^{L}_{0} \rho _{0} u_{t} u_{tt} \ dx+\int ^{L}_{0} \tau _{0} u_{x} u_{xt} \ dx
+	\dot{E}_{tot}( t) =\int ^{L}_{0}[ \rho _{0} u_{t} u_{tt} +\tau _{0} u_{x} u_{xt}] \dx=\int ^{L}_{0} \rho _{0} u_{t} u_{tt} \ \dx+\int ^{L}_{0} \tau _{0} u_{x} u_{xt} \ \dx
 	\label{eq:variazione-energia-totale}
 \end{equation}
 integriamo per parti il secondo integrale
 \begin{equation*}
-	\int ^{L}_{0} u_{x} u_{xt} \ dx=[ u_{x} u_{t}]^{L}_{0} -\int ^{L}_{0} u_{xx} u_{t} \ dx
+	\int ^{L}_{0} u_{x} u_{xt} \ \dx=[ u_{x} u_{t}]^{L}_{0} -\int ^{L}_{0} u_{xx} u_{t} \ \dx
 \end{equation*}
 da cui \eqref{eq:variazione-energia-totale} diventa
 \begin{align*}
-	\dot{E}_{tot}( t) & =\int ^{L}_{0} u_{t}\underbrace{[ \rho _{0} u_{tt} -\tau _{0} u_{xx}]}_{\rho _{0}\left[ u_{tt} -c^{2} u_{xx}\right] =\rho _{0} f} dx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)] \\
-	                  & =\int ^{L}_{0} u_{t} \rho _{0} fdx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)]                                                                                                   
+	\dot{E}_{tot}( t) & =\int ^{L}_{0} u_{t}\underbrace{[ \rho _{0} u_{tt} -\tau _{0} u_{xx}]}_{\rho _{0}\left[ u_{tt} -c^{2} u_{xx}\right] =\rho _{0} f} \dx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)] \\
+	                  & =\int ^{L}_{0} u_{t} \rho _{0} f\dx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)]                                                                                                   
 \end{align*}
 Se per esempio $f=0$ e la corda è fissata agli estremi, cioè se
 \begin{equation*}
@@ -6837,7 +6854,7 @@ Risolviamo il Problema di Cauchy \textit{omogeneo} ($f=0$) per arrivare alla \te
 	\end{equation*}
 	è data da
 	\begin{equation}
-		u( x,t) =\varphi ( x\mp ct) +\int ^{t}_{0} f(x \mp c( t-s) ,s) ds
+		u( x,t) =\varphi ( x\mp ct) +\int ^{t}_{0} f(x \mp c( t-s) ,s) \ds
 		\label{eq:premessa-d-alembert}
 	\end{equation}
 \end{nb}
@@ -6859,20 +6876,20 @@ a questo punto dobbiamo semplicemente risolvere
 \end{equation*}
 sempre grazie a \eqref{eq:premessa-d-alembert}
 \begin{align*}
-	u( x,t) & =\psi ( x-ct) +\int ^{t}_{0} \varphi ( x-c( t-s) +cs) ds \\
-	        & =\psi ( x-ct) +\int ^{t}_{0} \varphi ( x-ct+2cs) ds      
+	u( x,t) & =\psi ( x-ct) +\int ^{t}_{0} \varphi ( x-c( t-s) +cs) \ds \\
+	        & =\psi ( x-ct) +\int ^{t}_{0} \varphi ( x-ct+2cs) \ds      
 \end{align*}
 per sostituzione
 \begin{equation*}
 	x-ct+2cs=y\ \ \Rightarrow \ \ \begin{cases}
-	ds=\frac{1}{2c} dy & \\
+	\ds=\frac{1}{2c} \dy & \\
 	s=0: & y=x-ct\\
 	s=t: & y=x+ct
 	\end{cases}
 \end{equation*}
 allora
 \begin{equation}
-	u( x,t) =\psi ( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} \varphi ( y) dy
+	u( x,t) =\psi ( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} \varphi ( y) \dy
 	\label{eq:d-alembert-intermedio}
 \end{equation}
 Il problema è ora determinare $\varphi ,\psi $ in modo che siano verificate le condizioni iniziali
@@ -6889,16 +6906,16 @@ da cui
 \end{align*}
 Sostituiamo nella \eqref{eq:d-alembert-intermedio}
 \begin{equation*}
-	u( x,t) =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct}[ h( y) +cg'( y)] dy
+	u( x,t) =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct}[ h( y) +cg'( y)] \dy
 \end{equation*}
 Ma separando i due termini dell'integrale, per il Teorema Fondamentale del Calcolo
 \begin{align*}
-	u( x,t) & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) dy+\frac{1}{2}\int ^{x+ct}_{x-ct} g'( y) dy \\
-	        & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) dy+\frac{1}{2}[ g( x+ct) -g( x-ct)]         
+	u( x,t) & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) \dy+\frac{1}{2}\int ^{x+ct}_{x-ct} g'( y) \dy \\
+	        & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) \dy+\frac{1}{2}[ g( x+ct) -g( x-ct)]         
 \end{align*}
 Ottengo la \textbf{formula di d'Alembert}
 \begin{equation}
-	\boxed{u( x,t) =\frac{1}{2}[ g( x-ct) +g( x+ct)] +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) dy}
+	\boxed{u( x,t) =\frac{1}{2}[ g( x-ct) +g( x+ct)] +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) \dy}
 \end{equation}
 $u,g$ sono lunghezze, $h$ è una velocità, l'integrale è spazio$^{2}$/tempo, ma è diviso per $c$ che è spazio/tempo, quindi torna uno spazio.
 
@@ -7027,7 +7044,7 @@ Riprendiamo il \textbf{problema di Cauchy globale} omogeneo.
 \end{equation}
 la soluzione è data dalla \textbf{formula di d'Alembert}
 \begin{equation}
-	u( x,t) =\frac{1}{2}[ g( x+ct) +g( x-ct)] +\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) dy
+	u( x,t) =\frac{1}{2}[ g( x+ct) +g( x-ct)] +\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) \dy
 	\label{eq:onde-formula-di-dAlembert}
 \end{equation}
 Esaminiamo alcune conseguenze di questa formula:
@@ -7052,8 +7069,8 @@ Esaminiamo alcune conseguenze di questa formula:
 		\end{equation*}
 		per esempio
 		\begin{align*}
-			F( x+ct) & =\frac{1}{2} g( x+ct) +\frac{1}{2c}\int _{0}^{x+ct} h( y) dy \\
-			G( x-ct) & =\frac{1}{2} g( x-ct) +\frac{1}{2c}\int _{x-ct}^{0} h( y) dy 
+			F( x+ct) & =\frac{1}{2} g( x+ct) +\frac{1}{2c}\int _{0}^{x+ct} h( y) \dy \\
+			G( x-ct) & =\frac{1}{2} g( x-ct) +\frac{1}{2c}\int _{x-ct}^{0} h( y) \dy 
 		\end{align*}
 		quindi $u$ è sovrapposizione di due onde progressive.
 	\item Nonostante abbiamo assunto $\displaystyle g\in C^{2} ,\ h\in C^{1}$ la Formula di d'Alembert \eqref{eq:onde-formula-di-dAlembert} ha senso anche per $g$ continua e $h$ limitata e soddisfa l'equazione in un senso \textit{debole}
@@ -7267,7 +7284,7 @@ Esaminiamo alcune conseguenze di questa formula:
 	\end{equation*}
 	La formula risolutiva è data da:
 	\begin{equation*}
-		y( t) =\int _{0}^{t}\underbrace{e^{-a( t-s)} f( s)}_{w( t;s)} ds,
+		y( t) =\int _{0}^{t}\underbrace{e^{-a( t-s)} f( s)}_{w( t;s)} \ds,
 	\end{equation*}
 	esaminiamo l'integranda, trattando $s$ come parametro $\displaystyle ( 0\leqslant s\leqslant t)$:
 	\begin{equation}
@@ -7283,7 +7300,7 @@ Esaminiamo alcune conseguenze di questa formula:
 	\end{equation*}
 	allora possiamo risolvere prima il problema in $w$ e poi calcolare la soluzione
 	\begin{equation*}
-		y( t) =\int _{0}^{t} w( t;s) ds.
+		y( t) =\int _{0}^{t} w( t;s) \ds.
 	\end{equation*}
 \end{oss}
 
@@ -7298,7 +7315,7 @@ w_{t}( x,s;s) =f( x,s) & x\in \mathbb{R} ,t=s
 \end{equation*}
 allora
 \begin{equation*}
-u( x,t) =\int _{0}^{t} w( x,t;s) ds\ \ \ \ x\in \mathbb{R} ,t >0
+u( x,t) =\int _{0}^{t} w( x,t;s) \ds\ \ \ \ x\in \mathbb{R} ,t >0
 \end{equation*}
 è soluzione di
 \begin{equation*}
@@ -7312,31 +7329,31 @@ u_{t}( x,0) =0 & x\in \mathbb{R}
 \begin{dimostrazione}
 Calcoliamo i vari termini
 \begin{align*}
-u_{t}( x,t) & =\underbrace{w( x,t;t)}_{=0} +\int _{0}^{t} w_{t}( x,t;s) ds\\
+u_{t}( x,t) & =\underbrace{w( x,t;t)}_{=0} +\int _{0}^{t} w_{t}( x,t;s) \ds\\
  & \\
-u_{tt}( x,t) & =\underbrace{w_{t}( x,t;t)}_{=f( x,t)} +\int _{0}^{t} w_{tt}( x,t;s) ds\\
+u_{tt}( x,t) & =\underbrace{w_{t}( x,t;t)}_{=f( x,t)} +\int _{0}^{t} w_{tt}( x,t;s) \ds\\
  & \\
-c^{2} u_{xx}( x,t) & =\int _{0}^{t}\underbrace{c^{2} w_{xx}( x,t;s)}_{w_{tt}( x,t;s)} ds
+c^{2} u_{xx}( x,t) & =\int _{0}^{t}\underbrace{c^{2} w_{xx}( x,t;s)}_{w_{tt}( x,t;s)} \ds
 \end{align*}
 Quindi l'equazione non omogenea è rispettata
 \begin{equation*}
-u_{tt}( x,t) -c^{2} u_{xx}( x,t) =f( x,t) +\int _{0}^{t} w_{tt}( x,t;s) ds-\int _{0}^{t} w_{tt}( x,t;s) ds=f( x,t)
+u_{tt}( x,t) -c^{2} u_{xx}( x,t) =f( x,t) +\int _{0}^{t} w_{tt}( x,t;s) \ds-\int _{0}^{t} w_{tt}( x,t;s) \ds=f( x,t)
 \end{equation*}
 e anche le condizioni al bordo
 \begin{align*}
-u( x,0) & =\int _{0}^{0} w( x,t;s) ds=0\\
-u_{t}( x,0) & =\int _{0}^{0} w_{t}( x,t;s) ds=0
+u( x,0) & =\int _{0}^{0} w( x,t;s) \ds=0\\
+u_{t}( x,0) & =\int _{0}^{0} w_{t}( x,t;s) \ds=0
 \end{align*}
 \end{dimostrazione}
 Ottimo, ma noi tale problema lo sappiamo risolvere lo sappiamo risolvere quando $s=0$. Tuttavia l'equazione delle onde \textbf{è invariante per traslazioni temporali}, quindi usiamo la formula di d'Alembert (partendo da $s$ e non da $0$):
 \begin{equation*}
-w( x,t;s) =\frac{1}{2c}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dy
+w( x,t;s) =\frac{1}{2c}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) \dy
 \end{equation*}
 allora grazie a Duhamel
 \begin{align*}
-u( x,t) & =\int _{0}^{t} w( x,t;s) ds\\
- & =\frac{1}{2c}\int _{0}^{t}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) dyds\\
- & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) dyds
+u( x,t) & =\int _{0}^{t} w( x,t;s) \ds\\
+ & =\frac{1}{2c}\int _{0}^{t}\int _{x-c( t-s)}^{x+c( t-s)} f( y,s) \dy\ds\\
+ & =\frac{1}{2c}\int _{S_{x,t}} f( y,s) \dy\ds
 \end{align*}
 dove ricordiamo che $\displaystyle S_{x,t}$ è il settore.
 
@@ -7436,24 +7453,24 @@ Le condizioni al bordo possono essere Dirichlet, Neumann, Robin o miste, come gi
 
 Mostriamo ora un semplice risultato, che useremo subito dopo nel teorema per l'unicità. Usiamo il `metodo dell'energia', definendo appunto l'energia tramite la formula:
 \begin{equation}
-	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} d\x ,
+	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} \dxx ,
 \end{equation}
 Deriviamo rispetto al tempo e supponiamo di poter fare tutto in modo lecito, formalizzeremo dopo nell'enunciato del teorema:
 \begin{align*}
-	\dot{E}( t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} d\x                          \\
-	            & =\int _{\Omega } u_{t} u_{tt} \ d\x +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\x =( *) , 
+	\dot{E}( t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} \dxx                          \\
+	            & =\int _{\Omega } u_{t} u_{tt} \ \dxx +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ \dxx =( *) , 
 \end{align*}
 il secondo termine si può integrare per parti:
 \begin{equation*}
-	\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ d\x =\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma -\int _{\Omega } u_{t}\underbrace{\mathrm{div}(\mathrm{grad} u)}_{\Delta u} \ d\x ,
+	\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ \dxx =\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig -\int _{\Omega } u_{t}\underbrace{\mathrm{div}(\mathrm{grad} u)}_{\Delta u} \ \dxx ,
 \end{equation*}
 sostituendo:
 \begin{equation*}
-	( *) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] d\x ,
+	( *) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] \dxx ,
 \end{equation*}
 otteniamo infine:
 \begin{equation}
-	\dot{E}( t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ d\sigma +\int _{\Omega } u_{t} f\ d\x .
+	\dot{E}( t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig +\int _{\Omega } u_{t} f\ \dxx .
 	\label{eq:onde-derivata-energia}
 \end{equation}
 \begin{theorem}
@@ -7469,7 +7486,7 @@ otteniamo infine:
 		      	\dot{E}( t) =0,
 		      \end{equation*}quindi è costante, in particolare è sempre uguale al suo valore iniziale:
 		      \begin{equation*}
-		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} d\x .
+		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} \dxx .
 		      \end{equation*}Siccome siamo con \textbf{condizioni iniziali nulle}:
 		      \begin{equation*}
 		      	\begin{cases}
@@ -7505,16 +7522,16 @@ otteniamo infine:
 		      	\end{cases}
 		      \end{equation*}Sappiamo già che $E( 0) =0$ e che $E( t) \geqslant 0$, vediamo cosa succede questa volta alla derivata temporale di $E( t)$:
 		      \begin{align*}
-		      	\dot{E}( t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ d\sigma +\cancel{\int _{\Omega } v_{t} f\ d\x} &                                          \\
-		      	            & =c^{2}\int _{\partial \Omega } v_{t}( -\alpha v) \ d\sigma                                                           & \text{(sostituendo la condizione)}       \\
-		      	            & =-c^{2} \alpha \int _{\partial \Omega } vv_{t} \ d\sigma                                                             &                                          \\
-		      	            & =-\frac{c^{2} \alpha }{2}\int _{\partial \Omega } \partial _{t}\left( v^{2}\right) \ d\sigma                         & \text{(riconoscendo una derivata)}       \\
-		      	            & =-\frac{d}{dt}\int _{\partial \Omega }\frac{c^{2} \alpha }{2} v^{2} \ d\sigma ,                                      & \text{(scambiando derivata e integrale)} 
+		      	\dot{E}( t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ \dsig +\cancel{\int _{\Omega } v_{t} f\ \dxx} &                                          \\
+		      	            & =c^{2}\int _{\partial \Omega } v_{t}( -\alpha v) \ \dsig                                                           & \text{(sostituendo la condizione)}       \\
+		      	            & =-c^{2} \alpha \int _{\partial \Omega } vv_{t} \ \dsig                                                             &                                          \\
+		      	            & =-\frac{c^{2} \alpha }{2}\int _{\partial \Omega } \partial _{t}\left( v^{2}\right) \ \dsig                         & \text{(riconoscendo una derivata)}       \\
+		      	            & =-\frac{\de}{\dt}\int _{\partial \Omega }\frac{c^{2} \alpha }{2} v^{2} \ \dsig ,                                      & \text{(scambiando derivata e integrale)} 
 		      \end{align*}
 		      
 		      allora:
 		      \begin{equation*}
-		      	E( t) +\frac{c^{2} \alpha }{2}\int _{\partial \Omega } v^{2} \ d\sigma =\text{costante} =0.
+		      	E( t) +\frac{c^{2} \alpha }{2}\int _{\partial \Omega } v^{2} \ \dsig =\text{costante} =0.
 		      \end{equation*}
 		      
 		      Ragionando come prima si conclude analogamente, ricordando $\alpha \geqslant 0$.
@@ -7545,7 +7562,7 @@ Il \textbf{dominio di influenza} all'istante $t$ è $B_{c( t_{0} -t)}(\x_{0})$, 
 \end{equation}
 Non possiamo aspettarci di definire un'energia esattamente come prima, perché essendo in $\Omega =\mathbb{R}^{n}$ gli integrali sarebbero illimitati. Vogliamo qualcosa di più limitato: integriamo su questi cerchi e otteniamo una specie di energia. Si definisce
 \begin{equation}
-	e( t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] d\x
+	e( t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \dxx
 	\label{eq:onde-energia-pcg}
 \end{equation}
 \begin{theorem}
@@ -7559,49 +7576,49 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 \begin{nb}
 	Dimostreremo che:
 	\begin{equation*}
-		\frac{d}{dt}\int _{h( t)}^{f( t)} g( r,t) dr=g( f( t) ,t) \cdotp f'( t) -g( h( t) ,t) \cdotp h'( t) +\int _{h( t)}^{f( t)} g_{t}( r,t) dr.
+		\frac{\de}{\dt}\int _{h( t)}^{f( t)} g( r,t) \dr=g( f( t) ,t) \cdotp f'( t) -g( h( t) ,t) \cdotp h'( t) +\int _{h( t)}^{f( t)} g_{t}( r,t) \dr.
 	\end{equation*}
 	Cominciamo applicando il teorema fondamentale del calcolo integrale, sottintendendo $f=f( t)$ e $h=h( t)$:
 	\begin{align*}
-	\frac{d}{dt}\int _{h( t)}^{f( t)} g( r,t) dr & =\frac{d}{dt}[ G( f,t) -G( h,t)]\\
-	 											 & =\frac{d}{dt} G( f,t) -\frac{d}{dt} G( h,t) ,
+	\frac{\de}{\dt}\int _{h( t)}^{f( t)} g( r,t) \dr & =\frac{\de}{\dt}[ G( f,t) -G( h,t)]\\
+	 											 & =\frac{\de}{\dt} G( f,t) -\frac{\de}{\dt} G( h,t) ,
 	\end{align*}
 	applichiamo la regola della catena e ricordiamo che è una derivata totale, infatti stiamo derivando totalmente $G$ rispetto al tempo, ma il tempo compare sia dentro $f$ che nella $t$ al secondo argomento banalmente. Quindi ci sarà la somma di due termini per ogni derivata:
 	\begin{align*}
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{d}{dt} G( f,t)}\textcolor[rgb]{0.29,0.56,0.89}{-\frac{d}{dt} G( h,t)} & =\textcolor[rgb]{0.82,0.01,0.11}{g( f,t) \cdotp f'+\frac{\partial }{\partial t} G( f,t)}\textcolor[rgb]{0.29,0.56,0.89}{-g( h,t) \cdotp h'-\frac{\partial }{\partial t} G( h,t)}\\
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{\de}{\dt} G( f,t)}\textcolor[rgb]{0.29,0.56,0.89}{-\frac{\de}{\dt} G( h,t)} & =\textcolor[rgb]{0.82,0.01,0.11}{g( f,t) \cdotp f'+\frac{\partial }{\partial t} G( f,t)}\textcolor[rgb]{0.29,0.56,0.89}{-g( h,t) \cdotp h'-\frac{\partial }{\partial t} G( h,t)}\\
 	 																												& =g( f,t) \cdotp f'-g( h,t) \cdotp h'-\frac{\partial }{\partial t}[ G( f,t) -G( h,t)] .
 	\end{align*}
 	L'ultimo termine si può scrivere come:
 	\begin{equation*}
-		\frac{\partial }{\partial t}[ G( f,t) -G( h,t)] =\frac{\partial }{\partial t}\int _{h}^{f} g( r,t) dr=\int _{h}^{f} g_{t}( r,t) dr,
+		\frac{\partial }{\partial t}[ G( f,t) -G( h,t)] =\frac{\partial }{\partial t}\int _{h}^{f} g( r,t) \dr=\int _{h}^{f} g_{t}( r,t) \dr,
 	\end{equation*}
 	in quanto il passaggio di integrazione con il TFCI si riferisce al primo argomento di $g$, mentre possiamo portare la derivata dentro all'integrale perché essa si riferisce al secondo argomento di $g$.
 \end{nb}
 \begin{dimostrazione}
 	Bisogna stare attenti perchè in \eqref{eq:onde-energia-pcg} la $t$ sta sia nel dominio di integrazione che nell'ingranda. Sfogliamo la cipolla\footnote{Cit. Gianmaria Verzini.}:
 	\begin{equation*}
-		e( t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ d\sigma .
+		e( t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ \dsig .
 	\end{equation*}
 	Ricordando che:
 	\begin{equation*}
-		\frac{d}{dt}\int _{a}^{f( t)} g( r,t) dr=g( f( t),t) \cdotp f'( t) +\int _{a}^{f( t)} g_{t}( r,t) dr,
+		\frac{\de}{\dt}\int _{a}^{f( t)} g( r,t) \dr=g( f( t),t) \cdotp f'( t) +\int _{a}^{f( t)} g_{t}( r,t) \dr,
 	\end{equation*}
 	possiamo derivare $e( t)$, ricordando che nel secondo termine l'integrale si può ricomporre:
 	\begin{align*}
-		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] d\sigma \cdotp \underbrace{\frac{d}{dt} c( t_{0} -t)}_{-c} \\
-		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}}\right] d\x.                                                                                                                                                                                                 
+		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \dsig \cdotp \underbrace{\frac{\de}{\dt} c( t_{0} -t)}_{-c} \\
+		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}}\right] \dxx.                                                                                                                                                                                                 
 	\end{align*}
 	Integriamo per parti il termine rosso:
 	\begin{equation*}
-		\int _{B_{c( t_{0} -t)}(\x_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}} \ d\x =\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ d\sigma -\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ d\x
+		\int _{B_{c( t_{0} -t)}(\x_{0})}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}} \ \dxx =\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t}\underbrace{u_{\bm{\nu }}}_{\nabla u\cdotp \bm{\nu }} \ \dsig -\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}\underbrace{\Delta u}_{\mathrm{div}( \nabla u)} \ \dxx
 	\end{equation*}
 	e usiamo l'equazione delle onde omogenea:
 	\begin{align*}
-		\dot{e}( t) & =\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) d\x                                                                                                                                                                                                                                                                                                                                                                                       \\
-		            & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \ d\sigma +c^{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t} \partial _{\bm{\nu }} u\ d\x \\
-		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] d\sigma                                                                          \\
-		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] d\sigma                                                                           \\
-		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}[| u_{t}| -c| \nabla u| ]^{2} d\sigma \leqslant 0.                                                                                                                                                                                                                                                                                                                                                                                       
+		\dot{e}( t) & =\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) \dxx                                                                                                                                                                                                                                                                                                                                                                                       \\
+		            & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \ \dsig +c^{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t} \partial _{\bm{\nu }} u\ \dxx \\
+		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] \dsig                                                                          \\
+		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] \dsig                                                                           \\
+		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}[| u_{t}| -c| \nabla u| ]^{2} \dsig \leqslant 0.                                                                                                                                                                                                                                                                                                                                                                                       
 	\end{align*}
 	Nell'effettuare la maggiorazione abbiamo usato che:
 	\begin{equation*}
@@ -7632,7 +7649,7 @@ sappiamo già che la soluzione nella classe $C^{2}\left(\mathbb{R}^{3} \times [ 
 \begin{oss}
 	In $n=1$ la formula di d'Alembert per lo stesso problema forniva la soluzione:
 	\begin{equation}
-		u( x,t) =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[g(x+ct)+g(x-ct)]} +\underbrace{\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) dy}_{w_{h}}
+		u( x,t) =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[g(x+ct)+g(x-ct)]} +\underbrace{\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) \dy}_{w_{h}}
 		\label{eq:onde-pcg-oss-1d-dAlembert}
 	\end{equation}
 	ma $\displaystyle w_{h}$ soddisfa il \eqref{eq:pcg-onde-1d} con profilo iniziale nullo e impulso iniziale $h$
@@ -7711,7 +7728,7 @@ La strategia risolutiva si compone di due passi:
 		\end{equation*}
 	\item Risolvo nel caso generale con:
 		\begin{equation*}
-			h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) d\y
+			h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) \dyy
 		\end{equation*}
 \end{enumerate}
 
@@ -7759,7 +7776,7 @@ allora:
 \end{equation*}
 quest'equazione ci darà $F$ a meno di una costante additiva. Tuttavia, essendo $G=-F$, la costante si eliderà in ogni caso alla fine.
 \begin{align*}
-	F( r) & =\int _{0}^{r} -\frac{s}{2c( 4\pi \varepsilon )^{3/2}} e^{-\frac{s^{2}}{4\varepsilon }} ds      \\
+	F( r) & =\int _{0}^{r} -\frac{s}{2c( 4\pi \varepsilon )^{3/2}} e^{-\frac{s^{2}}{4\varepsilon }} \ds      \\
 	      & =\frac{1}{4\pi c\sqrt{4\pi \varepsilon }}\left[ e^{-\frac{s^{2}}{4\varepsilon }}\right]_{0}^{r} \\
 	      & =\frac{1}{4\pi c\sqrt{4\pi \varepsilon }}\left[ e^{-\frac{r^{2}}{4\varepsilon }} -1\right] .    
 \end{align*}
@@ -7847,7 +7864,7 @@ Se $\displaystyle h(\x) =\delta _{3}(\x -\y)$ allora $\displaystyle r=| \x -\y| 
 
 Sia $\displaystyle h=h(\x)$ qualunque. Scriviamo $h$ come sovrapposizione di impulsi:
 \begin{equation*}
-	``\ h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) d\y \ "
+	``\ h(\x) =\int _{\mathbb{R}^{3}} \delta _{3}(\x -\y) h(\y) \dyy \ "
 \end{equation*}
 o più formalmente:
 \begin{equation*}
@@ -7863,42 +7880,42 @@ Se non uso un impulso unitario ma un impulso di intensità $\displaystyle h(\y)$
 \end{equation*}
 Se uso $h$ espressa come somma di tutti gli impulsi mi basta fare l'integrale:
 \begin{equation*}
-	w_{h}(\x ,t) =\int _{\mathbb{R}^{3}} K(\x ,\y ,t) h(\y) d\y =\int _{\mathbb{R}^{3}}\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| } h(\y) d\y =( *)
+	w_{h}(\x ,t) =\int _{\mathbb{R}^{3}} K(\x ,\y ,t) h(\y) \dyy =\int _{\mathbb{R}^{3}}\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| } h(\y) \dyy =( *)
 \end{equation*}
 passando in \textbf{coordinate polari} $\displaystyle (| \x -\y| =r)$ e usando una sorta di teorema di Fubini in coordinate polari:
 \begin{equation*}
-	( *) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\x)} h(\bm{\sigma }) d\bm{\sigma } =( **)
+	( *) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\x)} h(\sigg) \dsig =( **)
 \end{equation*}
 \begin{oss}
 	Ricordiamo che, per definizione della delta:
 	\begin{equation}
-		\int _{0}^{+\infty } \delta ( r-ct) f( r) dr=f( ct) .
+		\int _{0}^{+\infty } \delta ( r-ct) f( r) \dr=f( ct) .
 		\label{eq:onde-osservazione-delta}
 	\end{equation}
 \end{oss}
 Nel nostro caso possiamo scrivere:
 \begin{equation*}
-	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\x)} h(\bm{\sigma }) d\bm{\sigma }\right]}_{f( r)} dr,
+	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\x)} h(\sigg) \dsig\right]}_{f( r)} \dr,
 \end{equation*}
 applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\displaystyle \mint{-} $ indica il valor medio sulla superficie della sfera.}:
 \begin{equation*}
-	w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma } =t\underset{\partial B_{ct}(\x)}{\mint{-} } h(\bm{\sigma }) d\bm{\sigma } .
+	w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\sigg) \dsig =t\underset{\partial B_{ct}(\x)}{\mint{-} } h(\sigg) \dsig .
 \end{equation*}
 \begin{theorem}
 	[Formula di Kirchoff] Siano $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$, $\displaystyle h\in C^{2}\left(\mathbb{R}^{3}\right)$. Allora:
 	\begin{equation}
-		u(\x ,t) =\frac{\partial }{\partial t}\left[\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\bm{\sigma }) d\bm{\sigma }\right] +\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma }
+		u(\x ,t) =\frac{\partial }{\partial t}\left[\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\sigg) \dsig\right] +\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\sigg) \dsig
 	\end{equation}
 	è l'unica soluzione $\displaystyle u\in C^{2}\left(\mathbb{R}^{3} \times [ 0,+\infty )\right)$ del \eqref{eq:pcg-onde-3d}.
 \end{theorem}
 \begin{dimostrazione}
 	Poiché $\displaystyle g\in C^{3}\left(\mathbb{R}^{3}\right)$ la funzione
 	\begin{equation*}
-		w_{g}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\bm{\sigma }) d\bm{\sigma }
+		w_{g}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} g(\sigg) \dsig
 	\end{equation*}
 	soddisfa le ipotesi del Lemma A \ref{thm:lemma-A} e quindi è sufficiente controllare che
 	\begin{equation*}
-		w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\bm{\sigma }) d\bm{\sigma }
+		w_{h}(\x ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} h(\sigg) \dsig
 	\end{equation*}
 	soddisfa l'equazione delle onde e le condizioni iniziali
 	\begin{gather*}
@@ -7909,7 +7926,7 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 
 	Effettuando il cambio di variabili
 	\begin{equation*}
-		\bm{\sigma } =\x +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\zer) ,\ \ d\bm{\sigma } =c^{2} t^{2} d\mathbf{w}
+		\sigg =\x +ct\mathbf{w} ,\ \ \mathbf{w} \in \partial B_{1}(\zer) ,\ \ \dsig =c^{2} t^{2} d\mathbf{w}
 	\end{equation*}
 	possiamo scrivere
 	\begin{equation*}
@@ -7924,23 +7941,23 @@ applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\d
 	Per quanto riguarda l'equazione torniamo alle variabili originali:
 	\begin{align*}
 		\mathbf{w} & =\text{versore normale esterno} & \\
-		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }}\textcolor[rgb]{0.82,0.01,0.11}{\int _{\partial B_{1}(\zer)}}\textcolor[rgb]{0.82,0.01,0.11}{\nabla h}\textcolor[rgb]{0.82,0.01,0.11}{(}\textcolor[rgb]{0.82,0.01,0.11}{\x}\textcolor[rgb]{0.82,0.01,0.11}{+ct}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{)}\textcolor[rgb]{0.82,0.01,0.11}{\cdotp }\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}}\textcolor[rgb]{0.82,0.01,0.11}{d}\textcolor[rgb]{0.82,0.01,0.11}{\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\zer)}\underbrace{\nabla h(\x +ct\mathbf{w})}_{\nabla h(\x +ct\mathbf{w}) =\nabla h(\bm{\sigma})} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{d\bm{\sigma}} & \\
-	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \nabla h(\bm{\sigma}) \cdotp \bm{\nu} \ d\bm{\sigma} & \\
-	 	& =\frac{1}{4\pi ct}\int _{B_{ct}(\x)} \Delta h(\y) d\y & \text{(Teo. divergenza)}\\
-	 	& =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\bm{\sigma}) d\bm{\sigma} , & \text{(coord. polari)}
+		\textcolor[rgb]{0.82,0.01,0.11}{\frac{ct}{4\pi }\int _{\partial B_{1}(\zer)}\nabla h(\x+ct\mathbf{w})\cdotp \mathbf{w}d\mathbf{w}} & =\frac{1}{4\pi ct}\int _{\partial B_{1}(\zer)}\underbrace{\nabla h(\x +ct\mathbf{w})}_{\nabla h(\x +ct\mathbf{w}) =\nabla h(\sigg)} \cdotp \mathbf{w}\underbrace{c^{2} t^{2} d\mathbf{w}}_{\dsig} & \\
+	 	& =\frac{1}{4\pi ct}\int _{\partial B_{ct}(\x)} \nabla h(\sigg) \cdotp \nuu \ \dsig & \\
+	 	& =\frac{1}{4\pi ct}\int _{B_{ct}(\x)} \Delta h(\y) \dyy & \text{(Teo. divergenza)}\\
+	 	& =\frac{1}{4\pi ct}\int _{0}^{ct} dr\int _{\partial B_{r}} \Delta h(\sigg) \dsig , & \text{(coord. polari)}
 	\end{align*}
 	quindi:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\zer)} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) d\y} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma}) d\bm{\sigma} ,
+		\partial _{tt} w_{h}(\x ,t) =\cancel{\frac{c}{4\pi }\int _{\partial B_{1}(\zer)} \nabla h(\x +ct\mathbf{w}) \cdotp \mathbf{w} d\mathbf{w}} -\cancel{\frac{1}{4\pi ct^{2}}\int _{B_{ct}(\x)} \Delta h(\y) \dyy} +\frac{\cancel{c}}{4\pi \cancel{c} t}\int _{\partial B_{ct}(\x)} \Delta h(\sigg) \dsig ,
 	\end{equation*}
 	i primi due termini sono uguali (si vede svolgendo i passaggi di prima per tornare indietro), pertanto:
 	\begin{equation*}
-		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma}) d\bm{\sigma} .
+		\partial _{tt} w_{h}(\x ,t) =\frac{1}{4\pi t}\int _{\partial B_{ct}(\x)} \Delta h(\sigg) \dsig .
 	\end{equation*}
 	Calcoliamo il laplaciano di $\displaystyle w_{h}$:
 	\begin{align*}
 		\Delta w_{h}(\x ,t) & =\frac{t}{4\pi }\int _{\partial B_{1}(\zer)} \Delta h(\x +ct\mathbf{w}) d\mathbf{w} \\
-		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} \Delta h(\bm{\sigma }) d\bm{\sigma } , 
+		                            & =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x)} \Delta h(\sigg) \dsig , 
 	\end{align*}
 	ma allora:
 	\begin{equation*}
@@ -8022,7 +8039,7 @@ Cerco $\displaystyle w=w(\x ,x_{3})$ soluzione di
 \end{equation*}
 questo problema lo so risolvere grazie alla formula di Kirchoff
 \begin{equation*}
-	w(\x ,x_{3} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x ,x_{3})} h(\bm{\sigma }) d\bm{\sigma } d\sigma _{3} ,\ \ \bm{\sigma } =( \sigma _{1} ,\sigma _{2})
+	w(\x ,x_{3} ,t) =\frac{1}{4\pi c^{2} t}\int _{\partial B_{ct}(\x ,x_{3})} h(\sigg) \dsig \dsig _{3} ,\ \ \sigg =( \sigma _{1} ,\sigma _{2})
 \end{equation*}
 devo far vedere che in realtà $\displaystyle w(\x ,x_{3}) =w(\x)$, cioè che non c'è reale dipendenza da $\displaystyle x_{3}$.
 
@@ -8036,7 +8053,7 @@ dove
 \end{equation*}
 Su entrambi gli emisferi $h$ non dipende da $\displaystyle x_{3}$, quindi abbiamo due integrali uguali. Inoltre possiamo riportare l'integrale sulla semi-superficie della sfera a un integrale doppio sul piano, a tutti gli effetti facendo una \textit{discesa}. Dal punto di vista dell'elemento infinitesimo la trasformazione è:
 \begin{equation*}
-	d\bm{\sigma } =\sqrt{1+| \nabla F_{\pm }(\y)| ^{2}} d\y =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} d\y =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} d\y,\qquad  ( d\y =dy_{1} dy_{2})
+	\dsig =\sqrt{1+| \nabla F_{\pm }(\y)| ^{2}} \dyy =\sqrt{1+\frac{r^{2}}{c^{2} t^{2} -r^{2}}} \dyy =\frac{ct}{\sqrt{c^{2} t^{2} -r^{2}}} \dyy,\qquad  ( \dyy =\dy_{1} \dy_{2})
 \end{equation*}
 \begin{figure}[htpb]
 	\centering
@@ -8090,13 +8107,13 @@ Su entrambi gli emisferi $h$ non dipende da $\displaystyle x_{3}$, quindi abbiam
 \FloatBarrier
 quindi
 \begin{equation*}
-	w\left(\x ,\cancel{x_{3}} ,t\right) =\frac{1}{2\pi c}\int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y
+	w\left(\x ,\cancel{x_{3}} ,t\right) =\frac{1}{2\pi c}\int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} \dyy
 \end{equation*}
 non dipende da $\displaystyle x_{3}$! Allora usando ancora una volta il Lemma A \ref{thm:lemma-A} otteniamo il seguente teorema.
 \begin{theorem}
 	[Formula di Poisson] Siano $\displaystyle g\in C^{3}\left(\mathbb{R}^{2}\right)$ e $\displaystyle h\in C^{2}\left(\mathbb{R}^{2}\right)$. Allora:
 	\begin{equation}
-		u(\x ,t) =\frac{1}{2\pi c}\left\{\frac{\partial }{\partial t}\int _{B_{ct}(\x)}\frac{g(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y +\ \int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} d\y\right\}
+		u(\x ,t) =\frac{1}{2\pi c}\left\{\frac{\partial }{\partial t}\int _{B_{ct}(\x)}\frac{g(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} \dyy +\ \int _{B_{ct}(\x)}\frac{h(\y)}{\sqrt{c^{2} t^{2} -| \x -\y| ^{2}}} \dyy\right\}
 	\end{equation}
 	è l'unica soluzione $\displaystyle \in C^{2}\left(\mathbb{R}^{2} \times [ 0,+\infty )\right)$ del \eqref{eq:pcg-onde-2d}.
 \end{theorem}
@@ -8456,7 +8473,7 @@ Esempi di spazi di Banach.
 	\item $\mathbb{R}^{n}$ con la norma euclidea è completo
 	\item $L^{p}(\Omega),\Omega \subset \mathbb{R}^{n}$ dominio\footnote{cioè aperto e connesso.} con la norma
 	\begin{equation*}
-	      \Vert u\Vert _{L^{p}(\Omega)} =\left(\int _{\Omega }| u| ^{p} dx\right)^{1/p} \ \ 1\leqslant p< \infty 
+	      \Vert u\Vert _{L^{p}(\Omega)} =\left(\int _{\Omega }| u| ^{p} \dx\right)^{1/p} \ \ 1\leqslant p< \infty 
 	\end{equation*}
 	\item $C(\overline{\Omega })$, con $\Omega $ limitato con la norma
 	\begin{equation*}
@@ -8556,9 +8573,9 @@ nx, & 0\leqslant x\leqslant \frac{1}{n}\\
 
 Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leqslant n$
 \begin{align*}
-\Vert v_{n} -v_{m}\Vert _{2}^{2} & =\int _{-1}^{1}( v_{n}( x) -v_{m}( x))^{2} dx\\
+\Vert v_{n} -v_{m}\Vert _{2}^{2} & =\int _{-1}^{1}( v_{n}( x) -v_{m}( x))^{2} \dx\\
  & =\cancel{\int _{-1}^{0}} +\int _{0}^{1/n} +\int _{1/n}^{1/m} +\cancel{\int _{1/m}^{1}}\\
- & =\int _{0}^{1/n}( n-m)^{2} x^{2} dx+\int _{1/n}^{1/m}( 1-mx)^{2} dx\rightarrow 0
+ & =\int _{0}^{1/n}( n-m)^{2} x^{2} \dx+\int _{1/n}^{1/m}( 1-mx)^{2} \dx\rightarrow 0
 \end{align*}Tuttavia è convergente a Heaviside, che non è continua.
 
 Se inoltre consideriamo la norma solita delle funzioni continue notiamo che non è nemmeno di Cauchy
@@ -8608,7 +8625,7 @@ Esercizio. Verificare che il prodotto scalare è continuo rispetto alla norma in
 \end{definition}
 \textit{Esempi.}
 
-$\mathbb{R}^{n},L^{2}(\Omega)$ con la norma indotta dal prodotto scalare $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uvdx$
+$\mathbb{R}^{n},L^{2}(\Omega)$ con la norma indotta dal prodotto scalare $(u,v)_{L^{2}(\Omega)} =\int _{\Omega } uv\dx$
 
 In uno spazio con prodotto scalare possiamo definire l'\textbf{ortogonalità}
 \begin{equation*}
@@ -8952,7 +8969,7 @@ Un esempio pratico è lo spazio $\displaystyle C([ 0,1]) \subset L^{2}(0,1)$, ne
 \end{equation*}
 Dimostriamo ora la limitatezza dell'immersione in questo esempio (e quindi che è continua)
 \begin{equation*}
-	\Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u\right)^{2} \cdot \int ^{1}_{0} dx} =\max_{[ 0,1]}| u| 
+	\Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) \dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u\right)^{2} \cdot \int ^{1}_{0} \dx} =\max_{[ 0,1]}| u| 
 \end{equation*}
 \begin{definition}
 	[Funzionale] Sia $\displaystyle H_{1} =H$ spazio di Hilbert, $\displaystyle H_{2} =\mathbb{R}$, allora $\displaystyle L:H\rightarrow \mathbb{R}$ è detto funzionale.
@@ -8969,9 +8986,9 @@ Dimostriamo ora la limitatezza dell'immersione in questo esempio (e quindi che �
 \end{definition}
 \textbf{Esempio 1.}
 
-Sia $\displaystyle H=L^{2}(0,1),\ L:L^{2}(0,1)\rightarrow \mathbb{R},\ Lv=\int ^{1/2}_{0} v(x) dx$. Verifico che $\displaystyle L\in H^{*}$, ovvero che sia lineare, ben definito e continuo (limitato). L'operatore è chiaramente lineare perchè definito con integrale, è ben definito e continuo perché
+Sia $\displaystyle H=L^{2}(0,1),\ L:L^{2}(0,1)\rightarrow \mathbb{R},\ Lv=\int ^{1/2}_{0} v(x) \dx$. Verifico che $\displaystyle L\in H^{*}$, ovvero che sia lineare, ben definito e continuo (limitato). L'operatore è chiaramente lineare perchè definito con integrale, è ben definito e continuo perché
 \begin{equation*}
-	| Lv| =\left| \int ^{1/2}_{0} v(x) dx\right| \leqslant \int ^{1/2}_{0}| v(x)| dx\leqslant \int ^{1}_{0}| v(x)| dx
+	| Lv| =\left| \int ^{1/2}_{0} v(x) \dx\right| \leqslant \int ^{1/2}_{0}| v(x)| \dx\leqslant \int ^{1}_{0}| v(x)| \dx
 \end{equation*}
 Utilizzando la disuguaglianza di Holder posso maggiorare l'ultimo termine
 \begin{equation*}
@@ -9427,11 +9444,11 @@ Indichiamo \textit{l'azione di }$F$\textit{ su }$\displaystyle \varphi $:
 	\end{equation*}
 	è formalmente errata, poiché col simbolo di integrale non si intende l'integrale che siamo soliti fare. Svolgiamo effettivamente un integrale se $\displaystyle u\in L^{2}(\Omega)$, in questo caso allora $\displaystyle Lu\in \mathcal{D} '(\Omega)$ e quando scriviamo 
 	\begin{equation*}
-		\langle u,\varphi \rangle =\int _{\Omega } u(\x) \varphi (\x) d\x
+		\langle u,\varphi \rangle =\int _{\Omega } u(\x) \varphi (\x) \dxx
 	\end{equation*}
 	sottointendiamo in realtà
 	\begin{equation*}
-		\langle Lu,\varphi \rangle =\int _{\Omega } u(\x) \varphi (\x) d\x
+		\langle Lu,\varphi \rangle =\int _{\Omega } u(\x) \varphi (\x) \dxx
 	\end{equation*}
 \end{nb}
 Esistono distribuzioni che non sono funzioni, come la $\displaystyle \delta _{n}$, ma nel caso in cui coincidano con delle funzioni il minimo sindacale è \ 
@@ -9450,12 +9467,12 @@ che è anche un'immersione continua.
 	\end{equation*}
 	allora possiamo scrivere
 	\begin{equation*}
-		\langle F,\varphi \rangle =\int _{\Omega } F\varphi d\x ,
+		\langle F,\varphi \rangle =\int _{\Omega } F\varphi \dxx ,
 	\end{equation*}
 	e derivata debole e \textit{classica} \textbf{coincidono} (il $-$ salta fuori dall'integrazione per parti)
 	\begin{align*}
-		\langle \underbrace{\partial _{x_{i}} F}_{\text{classica}} ,\varphi \rangle & =\int _{\Omega } \partial _{x_{i}} F(\x) \varphi (\x) d\x                                                                              \\
-		                                                                            & =\underbrace{\cancel{\int _{\partial \Omega } ...\varphi }}_{\varphi \text{ supp. comp.}} -\int _{\Omega } F(\x) \partial _{x_{i}} \varphi (\x)d\x \\
+		\langle \underbrace{\partial _{x_{i}} F}_{\text{classica}} ,\varphi \rangle & =\int _{\Omega } \partial _{x_{i}} F(\x) \varphi (\x) \dxx                                                                              \\
+		                                                                            & =\underbrace{\cancel{\int _{\partial \Omega } ...\varphi }}_{\varphi \text{ supp. comp.}} -\int _{\Omega } F(\x) \partial _{x_{i}} \varphi (\x)\dxx \\
 		                                                                            & =-\langle F,\partial _{x_{i}} \varphi\rangle =\langle \underbrace{\partial _{x_{i}} F}_{\text{debole}} ,\varphi \rangle                                              
 	\end{align*}
 \end{definition}
@@ -9511,7 +9528,7 @@ Vogliamo trovare $\displaystyle \Delta u$.
 
 Osserviamo inanzitutto 
 \begin{equation*}
-	\partial _{x_{i}}| \x| =\frac{2x_{i}}{2\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}}} =\frac{x_{i}}{| x| } \ \ \Rightarrow \ \ \nabla | \x| =\frac{\x}{| \x| }
+	\partial _{x_{i}}| \x| =\frac{2x_{i}}{2\sqrt{x_{1}^{2} +x_{2}^{2} +x_{3}^{2}}} =\frac{x_{i}}{|\x| } \ \ \Rightarrow \ \ \nabla | \x| =\frac{\x}{| \x| }
 \end{equation*}
 E per la regola della funzione composta
 \begin{equation}
@@ -9545,17 +9562,17 @@ Per poter fare la derivata distribuzionale dobbiamo prima chiederci
 \end{equation*}
 L'unico problema della funzione è, ovviamente, nell'origine. Se l'integrale su una palla unitaria centrata nell'origine convergerà la condizione sarà soddisfatta.
 \begin{equation*}
-	\int _{B_{1}(\zer)}\frac{1}{| \x| } d\x =\int ^{1}_{0}\left(\int _{\partial B_{r}}\frac{1}{| \x| } d\sigma \right) dr=\int ^{1}_{0}\frac{1}{r} 4\pi r^{2} dr< +\infty 
+	\int _{B_{1}(\zer)}\frac{1}{| \x| } \dxx =\int ^{1}_{0}\left(\int _{\partial B_{r}}\frac{1}{| \x| } \dsig \right) \dr=\int ^{1}_{0}\frac{1}{r} 4\pi r^{2} \dr< +\infty 
 \end{equation*}
 Abbiamo utilizzato una formula di coarea (o integrazione per bucce) 
 \begin{equation*}
-	\int _{B_{R}} fd\x =\int ^{R}_{0}\left(\int _{\partial B_{r}} fd\sigma \right) dr
+	\int _{B_{R}} f\dxx =\int ^{R}_{0}\left(\int _{\partial B_{r}} f\dsig \right) \dr
 \end{equation*}
 Quindi $\displaystyle u\in L_{\text{loc}}^{1}$ ed è pertanto associata a una distribuzione $\displaystyle u\in \mathcal{D} '\left(\mathbb{R}^{3}\right)$.
 
 Per calcolare $\displaystyle \Delta u$ in $\displaystyle \mathcal{D} '\left(\mathbb{R}^{3}\right)$ prendiamo una funzione test $\displaystyle \varphi \in \mathcal{D}\left(\mathbb{R}^{3}\right)$
 \begin{equation*}
-	\langle \Delta u,\varphi \rangle =\langle u,\Delta \varphi \rangle \underbrace{=}_{u\in L^{1}_{\text{loc}}}\int _{\mathbb{R}^{3}}\frac{1}{| \x| } \Delta \varphi (\x) d\x \ 
+	\langle \Delta u,\varphi \rangle =\langle u,\Delta \varphi \rangle \underbrace{=}_{u\in L^{1}_{\text{loc}}}\int _{\mathbb{R}^{3}}\frac{1}{| \x| } \Delta \varphi (\x) \dxx \ 
 \end{equation*}
 Quest'integrale presenta due problemi
 \begin{enumerate}
@@ -9596,23 +9613,23 @@ Quest'integrale presenta due problemi
 	      		% Text Node
 	      		\draw (275.68,126.06) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$B_{\varepsilon }$};
 	      		% Text Node
-	      		\draw (328.93,39.81) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
+	      		\draw (328.93,39.81) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\nuu$};
 	      		% Text Node
-	      		\draw (191.73,99.01) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\bm{\nu}$};
+	      		\draw (191.73,99.01) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ]  {$\nuu$};
 	      		
 	      		
 	      	\end{tikzpicture}
 	      \end{figure}
 	      \FloatBarrier
 	      \begin{equation}
-	      	\int _{\mathbb{R}^{3}}\frac{1}{| \x| } \Delta \varphi (\x) d\x \ =\lim _{\varepsilon \rightarrow 0}\int _{B_{R} \backslash B_{\varepsilon }}\frac{1}{| \x| } \Delta \varphi (\x) d\x
+	      	\int _{\mathbb{R}^{3}}\frac{1}{| \x| } \Delta \varphi (\x) \dxx \ =\lim _{\varepsilon \rightarrow 0}\int _{B_{R} \backslash B_{\varepsilon }}\frac{1}{| \x| } \Delta \varphi (\x) \dxx
 	      	\label{eq:esempio-derivata-limite}
 	      \end{equation}
 \end{enumerate}
 
 Ora $\displaystyle \frac{1}{| \x| }$ è $\displaystyle C^{\infty }$ nel dominio di integrazione e posso applicare la formula di integrazione per parti che ricordiamo qua sotto
 \begin{equation*}
-	\int _{\Omega } u\Delta v=\int _{\partial \Omega } u\partial _{\bm{\nu}} v-\int _{\Omega } \nabla u\cdotp \nabla v=\int _{\partial \Omega } u\partial _{\bm{\nu }} v-\int _{\partial \Omega } v\partial _{\bm{\nu }} u+\int _{\Omega } v\Delta u
+	\int _{\Omega } u\Delta v=\int _{\partial \Omega } u\partial _{\nuu} v-\int _{\Omega } \nabla u\cdotp \nabla v=\int _{\partial \Omega } u\partial _{\bm{\nu }} v-\int _{\partial \Omega } v\partial _{\bm{\nu }} u+\int _{\Omega } v\Delta u
 \end{equation*}
 con 
 \begin{equation*}
@@ -9631,47 +9648,47 @@ Pertanto gli integrali sul bordo esterno si semplificano subito
 Applicando il tutto a \eqref{eq:esempio-derivata-limite} otteniamo
 
 \begin{equation}
-	\lim _{\varepsilon \rightarrow 0}\left[\textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu}} \varphi (\x) d\sigma } -\textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) d\sigma } +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x}\right]
+	\lim _{\varepsilon \rightarrow 0}\left[\textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\nuu} \varphi (\x) \dsig } -\textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial _{\nuu}\left(\frac{1}{| \x| }\right) \dsig } +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) \dxx}\right]
 	\label{eq:esempio-derivata-limite-2}
 \end{equation}
 Di questi termini
 \begin{itemize}
 	\item essendo $\displaystyle \Delta u=0$ il laplaciano classico in $\displaystyle B_{R} \backslash B_{\varepsilon }$:
 	\begin{equation*}
-	      \textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) d\x} =0
+	      \textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{R} \backslash B_{\varepsilon }} \varphi (\x) \Delta \left(\frac{1}{| \x| }\right) \dxx} =0
 	\end{equation*}
-	\item  $\displaystyle \partial _{\bm{\nu}} \varphi =\nabla \varphi \cdotp \bm{\nu}$, dove $\displaystyle \bm{\nu} =-\frac{\x}{| \x| }$ essendo orientata in dentro
+	\item  $\displaystyle \partial _{\nuu} \varphi =\nabla \varphi \cdotp \nuu$, dove $\displaystyle \nuu =-\frac{\x}{| \x| }$ essendo orientata in dentro
 	\begin{equation*}
-	      \textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\bm{\nu}} \varphi (\x) d\sigma } =\textcolor[rgb]{0.25,0.46,0.02}{-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } d\sigma }
+	      \textcolor[rgb]{0.25,0.46,0.02}{\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \partial _{\nuu} \varphi (\x) \dsig } =\textcolor[rgb]{0.25,0.46,0.02}{-\int _{\partial B_{\varepsilon }}\frac{1}{| \x| } \nabla \varphi (\x) \cdotp \frac{\x}{| \x| } \dsig }
 	\end{equation*}
-	\item $\displaystyle \partial _{\bm{\nu}}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \bm{\nu}$, con $\displaystyle \bm{\nu}$ identica a prima
+	\item $\displaystyle \partial _{\nuu}\left(\frac{1}{| \x| }\right) =\nabla \left(\frac{1}{| \x| }\right) \cdotp \nuu$, con $\displaystyle \nuu$ identica a prima
 	\begin{equation*}
-	      \textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial_{\bm{\nu}}\left(\frac{1}{| \x| }\right) d\sigma } =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) d\sigma =\textcolor[rgb]{0.29,0.56,0.89}{-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{1}{| \x| ^{2}} d\sigma }
+	      \textcolor[rgb]{0.29,0.56,0.89}{\int _{\partial B_{\varepsilon }} \varphi (\x) \partial_{\nuu}\left(\frac{1}{| \x| }\right) \dsig } =-\int _{\partial B_{\varepsilon }} \varphi (\x)\left( -\frac{\x}{| \x| ^{3}}\right) \cdotp \left( -\frac{\x}{| \x| }\right) \dsig =\textcolor[rgb]{0.29,0.56,0.89}{-\int _{\partial B_{\varepsilon }} \varphi (\x)\frac{1}{| \x| ^{2}} \dsig }
 	\end{equation*}
 \end{itemize}
 
 Inoltre su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $. Possiamo riscrivere \eqref{eq:esempio-derivata-limite-2}:
 \begin{equation*}
-	\lim _{\varepsilon \rightarrow 0}\left[\textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma }\textcolor[rgb]{0.29,0.56,0.89}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma }\right]
+	\lim _{\varepsilon \rightarrow 0}\left[\textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x \dsig }\textcolor[rgb]{0.29,0.56,0.89}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) \dsig }\right]
 \end{equation*}
 Se entrambi i termini tendono a $0$ allora la mia derivata distribuzionale coinciderà con quella classica. Esaminiamoli separatamente:
 \begin{itemize}
 	\item primo termine
 	      
 	      \begin{equation*}
-	      	\left| \textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x d\sigma }\right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| d\sigma 
+	      	\left| \textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x \dsig }\right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| \dsig 
 	      \end{equation*}
 	      
 	      $\displaystyle | \nabla \varphi | \leqslant c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $
 	      \begin{equation*}
-	      \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}\underbrace{| \nabla \varphi (\x)| }_{\leqslant c} \cdotp \underbrace{| \x| }_{=\varepsilon } d\sigma \leqslant \frac{c}{\varepsilon }\underbrace{\int _{\partial B_{\varepsilon }} d\sigma }_{4\pi \varepsilon ^{2}} =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\textcolor[rgb]{0.25,0.46,0.02}{\rightarrow 0}
+	      \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}\underbrace{| \nabla \varphi (\x)| }_{\leqslant c} \cdotp \underbrace{| \x| }_{=\varepsilon } \dsig \leqslant \frac{c}{\varepsilon }\underbrace{\int _{\partial B_{\varepsilon }} \dsig }_{4\pi \varepsilon ^{2}} =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\textcolor[rgb]{0.25,0.46,0.02}{\rightarrow 0}
 	\end{equation*}
 	\item secondo termine
 	      
 	      Posso usare il teorema della media integrale essendo $\displaystyle \varphi $ continua
 	      
 	      \begin{equation*}
-	      	\textcolor[rgb]{0.29,0.56,0.89}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma } =-4\pi \frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma =-4\pi \underbrace{\frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) d\sigma }_{=\varphi (\x_{\varepsilon })\xrightarrow{\varepsilon \rightarrow 0} \varphi (\zer)}\rightarrow -4\pi \varphi (\zer)
+	      	\textcolor[rgb]{0.29,0.56,0.89}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) \dsig } =-4\pi \frac{1}{4\pi \varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \varphi (\x) \dsig =-4\pi \underbrace{\frac{1}{| \partial B_{\varepsilon }| }\int _{\partial B_{\varepsilon }} \varphi (\x) \dsig }_{=\varphi (\x_{\varepsilon })\xrightarrow{\varepsilon \rightarrow 0} \varphi (\zer)}\rightarrow -4\pi \varphi (\zer)
 	      \end{equation*}
 	      
 	      per un certo $\displaystyle \x_{\varepsilon } \in \partial B_{\varepsilon }$.
@@ -9697,7 +9714,7 @@ Consideriamo $\Omega \subset \mathbb{R}^{n}$ dominio (cioè aperto connesso)\foo
 \end{definition}
 Questo spazio è dotato di prodotto scalare
 \begin{equation*}
-	( u,v)_{H^{1}(\Omega)} =( \nabla u,\nabla v)_{L^{2}(\Omega)} +( u,v)_{L^{2}(\Omega)} =\int _{\Omega }[ \nabla u(\x) \cdotp \nabla v(\x) +u(\x) v(\x)] d\x
+	( u,v)_{H^{1}(\Omega)} =( \nabla u,\nabla v)_{L^{2}(\Omega)} +( u,v)_{L^{2}(\Omega)} =\int _{\Omega }[ \nabla u(\x) \cdotp \nabla v(\x) +u(\x) v(\x)] \dxx
 \end{equation*}
 In particolare vale il seguente risultato delle norme
 \begin{equation*}
@@ -9748,8 +9765,8 @@ $H^{1}(\Omega)$ può contenere anche delle funzioni discontinue.
 \begin{enumerate}
 	\item $u\overset{?}{\in } L^{2}( B_{1}) :$
 	\begin{align*}
-	      \int _{B_{1}} u^{2}(\x) d\x & =\int _{B_{1}}| \x| ^{-2a} d\x =\int ^{1}_{0}\left[\int _{\partial B_{r}}| \x| ^{-2a} d\sigma \right] dr\\
-	      & =\int ^{1}_{0}| r| ^{-2a} \cdotp 4\pi r^{2} dr=4\pi \int ^{1}_{0} r^{2-2a} dr\\
+	      \int _{B_{1}} u^{2}(\x) \dxx & =\int _{B_{1}}| \x| ^{-2a} \dxx =\int ^{1}_{0}\left[\int _{\partial B_{r}}| \x| ^{-2a} \dsig \right] \dr\\
+	      & =\int ^{1}_{0}| r| ^{-2a} \cdotp 4\pi r^{2} \dr=4\pi \int ^{1}_{0} r^{2-2a} \dr\\
 	      & < +\infty \ \ \Leftrightarrow \ \ 2-2a >-1\ \ \Leftrightarrow \ \ a< \frac{3}{2}
 	\end{align*}
 	\item Calcoliamo il gradiente
@@ -9759,8 +9776,8 @@ $H^{1}(\Omega)$ può contenere anche delle funzioni discontinue.
 	
 	per quali valori sta in $L^{2}$? $\nabla u\overset{?}{\in } L^{2}( B_{1}) :$
 	\begin{align*}
-	\int _{B_{1}} a^{2}| \x| ^{-2a-4+2} d\x & =\int ^{1}_{0}\left[ a^{2} r^{-2a-2} \cdotp 4\pi r^{2}\right] dr\\
-	& =a^{2} 4\pi \int ^{1}_{0} r^{-2a} dr\\
+	\int _{B_{1}} a^{2}| \x| ^{-2a-4+2} \dxx & =\int ^{1}_{0}\left[ a^{2} r^{-2a-2} \cdotp 4\pi r^{2}\right] \dr\\
+	& =a^{2} 4\pi \int ^{1}_{0} r^{-2a} \dr\\
 	& < +\infty \ \ \Leftrightarrow \ \ -2a >-1\ \ \Leftrightarrow \ \ a< \frac{1}{2}
 	\end{align*}
 \end{enumerate}
@@ -9805,7 +9822,7 @@ $H^{1}$ è più piccolo e gode di più proprietà: in dimensione $n=1$ le funzio
 		u\in C([ a,b]) , & \text{(cioè esiste un rappresentate continuo)}\\
 		\begin{array}{l}
 			\exists \ w\in L^{2}( a,b) \ \text{t.c.} \\
-			u( x) -u( y) =\int ^{x}_{y} w( s) ds     
+			u( x) -u( y) =\int ^{x}_{y} w( s) \ds     
 		\end{array} &  \begin{array}{l}
 		\forall x,y\in [ a,b]\\
 		\text{(essenzialmente il TFCI)}
@@ -9826,13 +9843,13 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	
 	Definisco
 	\begin{equation*}
-		v( x) =\int ^{x}_{a} u'( s) ds
+		v( x) =\int ^{x}_{a} u'( s) \ds
 	\end{equation*}
 	Attenzione: posso dire che $v( x) =u( x) -u( a)$? Non per forza, per applicare il TFCI l'integranda $u'$ deve essere continua, ma sta solo in $L^{2}$. Dimostreremo che sarà vero.
 	
 	$v$ è continua fino al bordo:
 	\begin{align*}
-		x_{n}\rightarrow x\ \ \Rightarrow \ \ | v( x_{n}) -v( x)| & =\left| \int ^{x_{n}}_{x} 1\cdot u'( s) ds\right|                                                                                                 &                                  \\
+		x_{n}\rightarrow x\ \ \Rightarrow \ \ | v( x_{n}) -v( x)| & =\left| \int ^{x_{n}}_{x} 1\cdot u'( s) \ds\right|                                                                                                 &                                  \\
 		                                                          & \leqslant | x_{n} -x| ^{1/2}\left(\int ^{x_{n}}_{x}( u')^{2}\right)^{1/2}                                                                  & \text{(Cauchy-Schwarz)} \\
 		                                                          & \leqslant \underbrace{| x_{n} -x| ^{1/2}}_{\rightarrow 0}\underbrace{\left(\int ^{b}_{a}( u')^{2}\right)^{1/2}}_{\leqslant C,\ u'\in L^{2}} & \text{(l'integrale è positivo)} \\
 		                                                          & \rightarrow 0                                                                                                                              &                                  
@@ -9842,9 +9859,9 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	Calcolo $v'$ (in $\mathcal{D} '( a,b)$). $\forall \varphi \in \mathcal{D}( a,b)$
 	\begin{align*}
 		\langle v',\varphi \rangle & =-\langle v,\varphi '\rangle \\
-								   & =-\int ^{b}_{a} v( x) \varphi '( x) dx\\
-								   & =-\int ^{b}_{a}\underbrace{\left[\int ^{x}_{a} u'( s) ds\right]}_{v(x)} \varphi '( x) dx \\
-		                           & =-\iint _{T}[ u'( s) \varphi '( x)] dsdx=( *)                                                                                           
+								   & =-\int ^{b}_{a} v( x) \varphi '( x) \dx\\
+								   & =-\int ^{b}_{a}\underbrace{\left[\int ^{x}_{a} u'( s) \ds\right]}_{v(x)} \varphi '( x) \dx \\
+		                           & =-\iint _{T}[ u'( s) \varphi '( x)] \ds\dx=( *)                                                                                           
 	\end{align*}
 
 
@@ -9893,10 +9910,10 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 \FloatBarrier
 
 \begin{align*}
-	( *) & =-\int ^{b}_{a}\left[\int ^{b}_{s} u'( s) \varphi '( x) dx\right] ds      &                            \\
-	     & =-\int ^{b}_{a} u'( s)\left[\int ^{b}_{s} \varphi '( x) dx\right] ds      &                            \\
-	     & =-\int ^{b}_{a} u'( s)\left[\cancel{\varphi ( b)} -\varphi ( s)\right] ds &                            \\
-	     & =\int ^{b}_{a} u'( s) \varphi ( s) ds                                    &                            \\
+	( *) & =-\int ^{b}_{a}\left[\int ^{b}_{s} u'( s) \varphi '( x) \dx\right] \ds      &                            \\
+	     & =-\int ^{b}_{a} u'( s)\left[\int ^{b}_{s} \varphi '( x) \dx\right] \ds      &                            \\
+	     & =-\int ^{b}_{a} u'( s)\left[\cancel{\varphi ( b)} -\varphi ( s)\right] \ds &                            \\
+	     & =\int ^{b}_{a} u'( s) \varphi ( s) \ds                                    &                            \\
 	     & =\langle u',\varphi \rangle                                               & \text{anche} \ u'\in L^{2} 
 \end{align*}
 ho dimostrato che $v'=u'$ in $\mathcal{D} '( a,b)$.
@@ -9928,8 +9945,8 @@ Siccome $v$ è continua, anche $u( x) =v( x) -C$ è continua essendo differenza 
 In realtà abbiamo dimostrato anche la seconda parte
 \begin{align*}
 	u( x) -u( y) & =[ v( x) -C] -[ v( y) -C] =v( x) -v( y)          \\
-	             & =\int ^{x}_{a} u'( s) ds-\int ^{y}_{a} u'( s) ds \\
-	             & =\int ^{x}_{y} u'( s) ds                         
+	             & =\int ^{x}_{a} u'( s) \ds-\int ^{y}_{a} u'( s) \ds \\
+	             & =\int ^{x}_{y} u'( s) \ds                         
 \end{align*}
 \end{dimostrazione}
 Definiamo il secondo spazio di Sobolev: un sottospazio di funzioni \textit{nulle al bordo.}
@@ -10029,7 +10046,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	
 	Fisso una funzione test $\varphi \in \mathcal{D}(\Omega)$ e costruisco un apposito campo vettoriale $\boxed{\mathbf{F}(\x) =\varphi ^{2}(\x)\x}$ su cui applicare il teorema della divergenza
 	\begin{equation*}
-		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu } \ d\sigma 
+		\int _{\Omega }\mathrm{div}\mathbf{F} \ \dxx =\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu } \ \dsig 
 	\end{equation*}
 	Per applicare il teorema della divergenza devo controllare due cose:
 	\begin{enumerate}
@@ -10071,7 +10088,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	
 	Ma allora essendo $\varphi $ a supporto compatto anche il campo è supporto compatto e si annulla sul bordo:
 	\begin{equation}
-		\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\underbrace{\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu }\ d\sigma }_{=0} =0
+		\int _{\Omega }\mathrm{div}\mathbf{F} \ \dxx =\underbrace{\int _{\partial \Omega }\mathbf{F} \cdotp \bm{\nu }\ \dsig }_{=0} =0
 		\label{eq:af-dim-poincare}
 	\end{equation}
 	Ricordiamo la formula di derivazione di Leibniz:
@@ -10080,22 +10097,22 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 	\end{equation*}
 	Posso modificare la \eqref{eq:af-dim-poincare}:
 	\begin{align*}
-		0 & =\int _{\Omega }\mathrm{div}\mathbf{F} \ d\x =\int _{\Omega }\mathrm{div}\left( \varphi ^{2}(\x)\x\right) \ d\x                                              \\
-		  & =\int _{\Omega }\left[\underbrace{2\varphi \nabla \varphi }_{\nabla \left( \varphi ^{2}\right)} \cdotp \x +\varphi ^{2}\underbrace{\mathrm{div}\x}_{=n}\right] d\x , 
+		0 & =\int _{\Omega }\mathrm{div}\mathbf{F} \ \dxx =\int _{\Omega }\mathrm{div}\left( \varphi ^{2}(\x)\x\right) \ \dxx                                              \\
+		  & =\int _{\Omega }\left[\underbrace{2\varphi \nabla \varphi }_{\nabla \left( \varphi ^{2}\right)} \cdotp \x +\varphi ^{2}\underbrace{\mathrm{div}\x}_{=n}\right] \dxx , 
 	\end{align*}
 	cioè, usando Cauchy-Schwarz:
 	\begin{align*}
-		n\int _{\Omega } \varphi ^{2} d\x =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \x \ d\x & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \x d\x\right| \\
-		                                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \x| d\x ,          
+		n\int _{\Omega } \varphi ^{2} \dxx =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \x \ \dxx & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \x \dxx\right| \\
+		                                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \x| \dxx ,          
 	\end{align*}
 	per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\zer)$, per cui se $\displaystyle \x \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \x| \leqslant M$. Infine per Cauchy-Schwarz:
 	\begin{align*}
-		n\int _{\Omega } \varphi ^{2} d\x & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | d\x                                                  \\
+		n\int _{\Omega } \varphi ^{2} \dxx & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | \dxx                                                  \\
 		                                          & \leqslant 2M\left(\int _{\Omega } \varphi ^{2}\right)^{1/2}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} , 
 	\end{align*}
 	quindi semplificando una norma $\displaystyle L^{2}$ di $\displaystyle \varphi $ ottengo:
 	\begin{equation*}
-		\left(\int _{\Omega } \varphi ^{2} d\x\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{C_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
+		\left(\int _{\Omega } \varphi ^{2} \dxx\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{C_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
 	\end{equation*}
 	\textbf{Passo 2.}
 	
@@ -10192,12 +10209,12 @@ Come si costruisce la \textbf{formulazione variazionale}?
 	\item Scelgo uno spazio di funzioni test adatto al problema. Con Dirichlet si usa $\displaystyle \mathcal{D}(\Omega)$.
 	\item Suppongo $u$ soluzione classica di \eqref{eq:af-problema-poisson}, allora $\displaystyle \forall \varphi \in \mathcal{D}(\Omega)$ moltiplico e integro:
 	      \begin{equation*}
-	      	-\Delta u=f\ \ \Rightarrow \ \ \int _{\Omega } -\Delta u\ \varphi \ d\x =\int _{\Omega } f\ \varphi \ d\x
+	      	-\Delta u=f\ \ \Rightarrow \ \ \int _{\Omega } -\Delta u\ \varphi \ \dxx =\int _{\Omega } f\ \varphi \ \dxx
 	      \end{equation*}
 	      
 	      integro per parti
 	      \begin{equation*}
-	      	-\underbrace{\int _{\partial \Omega } \varphi \partial _{\bm{\nu }} u\ d\sigma }_{=0\ \text{(supp. comp.)}} +\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\x =\int _{\Omega } f\varphi \ d\x
+	      	-\underbrace{\int _{\partial \Omega } \varphi \partial _{\bm{\nu }} u\ \dsig }_{=0\ \text{(supp. comp.)}} +\int _{\Omega } \nabla u\cdotp \nabla \varphi \ \dxx =\int _{\Omega } f\varphi \ \dxx
 	      \end{equation*}
 	      \newpage
 	      e ottengo\footnote{Vale anche il \textbf{principio di coerenza}: partendo dalla formulazione variazionale posso tornare indietro. Sia $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega })$ e tale che:
@@ -10206,7 +10223,7 @@ Come si costruisce la \textbf{formulazione variazionale}?
 	      	\end{equation*}
 	      	Posso integrare per parti
 	      	\begin{equation*}
-	      		\cancel{\int _{\partial \Omega } \partial _{\bm{\nu}} u\varphi d\sigma } -\int _{\Omega } \Delta u\varphi =\int _{\Omega } f\varphi \ \ \Rightarrow \ \ \int _{\Omega }( -\Delta u-f) \varphi =0,\ \ \forall \varphi 
+	      		\cancel{\int _{\partial \Omega } \partial _{\nuu} u\varphi \dsig } -\int _{\Omega } \Delta u\varphi =\int _{\Omega } f\varphi \ \ \Rightarrow \ \ \int _{\Omega }( -\Delta u-f) \varphi =0,\ \ \forall \varphi 
 	      	\end{equation*}
 	      	Ho una proprietà vera per tutte le funzioni test, che sono dense in $\displaystyle L^{2}(\Omega)$, posso \textit{portare} questa proprietà in $\displaystyle L^{2}$:
 	      	\begin{equation*}
@@ -10221,19 +10238,19 @@ Come si costruisce la \textbf{formulazione variazionale}?
 	      		-\Delta u=f\ \text{ovunque in} \ \Omega .
 	      	\end{equation*}}
 	      \begin{equation}
-	      	\boxed{\int _{\Omega } \nabla u\cdotp \nabla \varphi \ d\x =\int _{\Omega } f\varphi \ d\x ,\ \ \forall \varphi \in \mathcal{D}(\Omega)}
+	      	\boxed{\int _{\Omega } \nabla u\cdotp \nabla \varphi \ \dxx =\int _{\Omega } f\varphi \ \dxx ,\ \ \forall \varphi \in \mathcal{D}(\Omega)}
 	      \end{equation}
 \end{itemize}
 
 Ora vorrei passare dallo spazio delle funzioni test a uno spazio di Hilbert: ambientiamo in \textbf{spazi di Sobolev. }So che l'insieme delle funzioni test è denso in $\displaystyle H_{0}^{1}(\Omega)$. Adesso bastano le derivate prime di $u$, e non serve che siano continue, basta che siano integrabili.
 \begin{gather*}
-	\int _{\Omega } \nabla u\cdotp \nabla \varphi _{n} \ d\x =\int _{\Omega } f\varphi _{n} \ d\x ,\ \ \forall \varphi _{n} \in \mathcal{D}(\Omega)\\
+	\int _{\Omega } \nabla u\cdotp \nabla \varphi _{n} \ \dxx =\int _{\Omega } f\varphi _{n} \ \dxx ,\ \ \forall \varphi _{n} \in \mathcal{D}(\Omega)\\
 	\downarrow \varphi _{n}\xrightarrow{H^{1}} v\\
-	\int _{\Omega } \nabla u\cdotp \nabla v\ d\x =\int _{\Omega } fv\ d\x ,\ \ \forall v\in H_{0}^{1}(\Omega)
+	\int _{\Omega } \nabla u\cdotp \nabla v\ \dxx =\int _{\Omega } fv\ \dxx ,\ \ \forall v\in H_{0}^{1}(\Omega)
 \end{gather*}
 Allora ho finalmente trovato la mia \textbf{formulazione debole (o variazionale)} del problema \eqref{eq:af-problema-poisson}: 
 \begin{equation}
-	\boxed{\text{Trovare} \ u\in H_{0}^{1}(\Omega) :\int _{\Omega } \nabla u\cdotp \nabla v\ d\x =\int _{\Omega } fv\ d\x ,\ \ \forall v\in H_{0}^{1}(\Omega)}
+	\boxed{\text{Trovare} \ u\in H_{0}^{1}(\Omega) :\int _{\Omega } \nabla u\cdotp \nabla v\ \dxx =\int _{\Omega } fv\ \dxx ,\ \ \forall v\in H_{0}^{1}(\Omega)}
 \end{equation}
 questa formulazione ha senso per funzioni molto \textit{meno regolari} di quelle richieste dal problema classico (basta $\displaystyle u\in H_{0}^{1}(\Omega)$).
 
@@ -10244,8 +10261,8 @@ Posso risolvere il problema (ovvero dimostrarne unicità ed esistenza) con Lax-M
 con:
 \begin{itemize}
 	\item $\displaystyle V=H_{0}^{1}(\Omega)$ (Hilbert)
-	\item $\displaystyle a( u,v) =\int _{\Omega } \nabla u\cdotp \nabla v\ d\x$ (forma bilineare)
-	\item $\displaystyle Fv=\int _{\Omega } fv\ d\x$ (lineare)
+	\item $\displaystyle a( u,v) =\int _{\Omega } \nabla u\cdotp \nabla v\ \dxx$ (forma bilineare)
+	\item $\displaystyle Fv=\int _{\Omega } fv\ \dxx$ (lineare)
 \end{itemize}
 
 Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme:
@@ -10277,12 +10294,12 @@ Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme
 	      	      \end{equation*}
 	      	\item $a$ coerciva
 	      	      \begin{equation*}
-	      	      	a( u,u) =\int _{\Omega }| \nabla u| ^{2} dx\overset{?}{\geqslant } \alpha \Vert u\Vert _{H^{1}(\Omega)}^{2}
+	      	      	a( u,u) =\int _{\Omega }| \nabla u| ^{2} \dx\overset{?}{\geqslant } \alpha \Vert u\Vert _{H^{1}(\Omega)}^{2}
 	      	      \end{equation*}
 	      	      
 	      	      per Poincaré usato come in \eqref{eq:af-stima-poincare}
 	      	      \begin{equation*}
-	      	      	\int _{\Omega }| \nabla u| ^{2} dx\geqslant \underbrace{\frac{1}{1+C_{P}^{2}}}_{\alpha}\Vert u\Vert _{H^{1}(\Omega)}^{2} .
+	      	      	\int _{\Omega }| \nabla u| ^{2} \dx\geqslant \underbrace{\frac{1}{1+C_{P}^{2}}}_{\alpha}\Vert u\Vert _{H^{1}(\Omega)}^{2} .
 	      	      \end{equation*}
 	      \end{itemize}
 \end{enumerate}
@@ -10291,7 +10308,7 @@ In entrambi i casi mi manca in realtà un ultimo tassello: $F$ deve essere \text
 
 È chiaramente lineare, quindi dimostro la continuità con la limitatezza. Facendo la nostra ultima ipotesi, ovvero $\displaystyle f\in L^{2}(\Omega)$, e applicando \textbf{Cauchy-Schwartz}
 \begin{align*}
-	| Fv| =\left| \int _{\Omega } fv\ d\x\right| & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =( *)  &                                  \\
+	| Fv| =\left| \int _{\Omega } fv\ \dxx\right| & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =( *)  &                                  \\
 	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{H^{1}(\Omega)}        & \text{(per approccio numerico)}  \\
 	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert \nabla v\Vert _{L^{2}(\Omega)} & \text{(per approccio analitico)} 
 \end{align*}
