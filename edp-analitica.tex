@@ -2677,7 +2677,7 @@ Assumiamo dunque
 \end{equation}
 Questo equivale a chiedere che
 \begin{equation*}
-p_{0} =\frac{1}{2} -\frac{\beta }{2} h+o( h) ,\ \ \ \ q_{0} =\frac{1}{2} +\frac{\beta }{2} h+o( h)
+p_{0} =\frac{1}{2} -\frac{\beta }{2} h+o(h) ,\ \ \ \ q_{0} =\frac{1}{2} +\frac{\beta }{2} h+o(h)
 \end{equation*}
 Passando al limite per $\displaystyle h,\tau \rightarrow 0$ sotto queste ipotesi otteniamo
 \begin{equation*}
@@ -2961,14 +2961,14 @@ La funzione costruita come
 	\begin{enumerate}
 	\item[(DE)] Si verifica che
 	\begin{equation*}
-	\Tau _{t}( x,t) =\sum\limits _{k=0}^{\infty }\frac{h^{( k+1)}( t)}{( 2k) !} x^{2k} =\sum\limits _{k=1}^{\infty }\frac{h^{( k)}( t)}{( 2k-2) !} x^{2k-2} =\Tau _{xx}( x,t)
+	\Tau _{t}( x,t) =\sum\limits _{k=0}^{\infty }\frac{h^{( k+1)}(t)}{( 2k) !} x^{2k} =\sum\limits _{k=1}^{\infty }\frac{h^{(k)}(t)}{( 2k-2) !} x^{2k-2} =\Tau _{xx}( x,t)
 	\end{equation*}
 	\item[(IC)] Si dimostra per induzione che $\exists \vartheta  >0$ tale che $\forall t >0$
 	\begin{equation*}
-	\left| h^{( k)}( t)\right| \leqslant \frac{k!}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right)
+	\left| h^{(k)}(t)\right| \leqslant \frac{k!}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right)
 	\end{equation*}possiamo eseguire una maggiorazione
 	\begin{align*}
-	| \Tau ( x,t)|  & =\sum\limits _{k=0}^{\infty }\frac{1}{( 2k) !} x^{2k}\left| h^{( k)}( t)\right|  & \\
+	| \Tau ( x,t)|  & =\sum\limits _{k=0}^{\infty }\frac{1}{( 2k) !} x^{2k}\left| h^{(k)}(t)\right|  & \\
 	 & \leqslant \sum\limits _{k=0}^{\infty }\frac{1}{( 2k) !} x^{2k}\frac{k!}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right) & \text{(usando la maggiorazione)}\\
 	 & < \sum\limits _{k=0}^{\infty }\frac{1}{k!} x^{2k}\frac{1}{( \vartheta t)^{k}}\exp\left( -\frac{1}{2} t^{-2}\right) & \frac{k!}{( 2k) !} < \frac{1}{k!}\\
 	 & =\underbrace{\sum\limits _{k=0}^{\infty }\frac{\left(\frac{x^{2}}{\vartheta t}\right)^{k}}{k!}}_{\exp\left(\frac{x^{2}}{\vartheta t}\right)}\exp\left( -\frac{1}{2} t^{-2}\right) & \\
@@ -3508,9 +3508,9 @@ Dove la funzione Gamma di Eulero è definita come
 \begin{dimostrazione}
 	Dimostriamo prima la \eqref{eq:lap-prop-media-sup}. Per $0< r< R$ definiamo
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \sigg ) \dsig 
+	g(r) =\frac{1}{w_{n} r^{n-1}}\int _{\partial B_{r}(\x)} u( \sigg ) \dsig 
 	\end{equation*}
-	Voglio dimostrare che $g( r)$ è costante e quindi che $\displaystyle g'( r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \sigg '=\frac{\sigg -\x}{r}$, ovvero $\displaystyle \sigg =\x +r\sigg '$, in modo tale che $\displaystyle \sigg '\in \partial B_{1}(\zer)$ e
+	Voglio dimostrare che $g(r)$ è costante e quindi che $\displaystyle g'(r) =0$ per $\displaystyle 0< r< R$. Effettuo un cambio di variabili $\displaystyle \sigg '=\frac{\sigg -\x}{r}$, ovvero $\displaystyle \sigg =\x +r\sigg '$, in modo tale che $\displaystyle \sigg '\in \partial B_{1}(\zer)$ e
 	\begin{equation*}
 	\dsig =r^{n-1} \dsig '
 	\end{equation*}
@@ -3568,11 +3568,11 @@ Dove la funzione Gamma di Eulero è definita come
 
 	Il concetto si estende opportunamente a $n$ dimensioni: le lunghezze diventano superfici, poi volumi, ecc.
 	\begin{equation*}
-	g( r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\zer)}\cancel{r^{n-1}} u(\x +r\sigg ') \dsig '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} u(\x +r\sigg ') \dsig '
+	g(r) =\frac{1}{w_{n}\cancel{r^{n-1}}}\int _{\partial B_{1}(\zer)}\cancel{r^{n-1}} u(\x +r\sigg ') \dsig '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} u(\x +r\sigg ') \dsig '
 	\end{equation*}
 	La regione di integrazione ora non dipende da $r$. Calcoliamo la derivata:
 	\begin{equation*}
-	g'( r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)}\frac{\de}{\dr} u(\x +r\sigg ') \dsig '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} \nabla u(\x +r\sigg ') \cdotp \sigg '\dsig '
+	g'(r) =\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)}\frac{\de}{\dr} u(\x +r\sigg ') \dsig '=\frac{1}{w_{n}}\int _{\partial B_{1}(\zer)} \nabla u(\x +r\sigg ') \cdotp \sigg '\dsig '
 	\end{equation*}
 	Sulla sfera $\displaystyle \partial B_{1}(\zer)$, il vettore coincide col vettore normale $\displaystyle \sigg '=\nuu$.
 	Poniamo:
@@ -3581,12 +3581,12 @@ Dove la funzione Gamma di Eulero è definita come
 	\end{equation*}
 	Dobbiamo pensare $\x$ come fissato. Usando il teorema della divergenza e ricordando che $u$ è armonica:
 	\begin{equation*}
-	g'( r) =\frac{1}{w_{n}r}\int _{\partial B_{1}(\zer)} \nabla  v(\sigg') \cdot \sigg' \dsig' =\frac{1}{w_{n}r}\int _{B_{1}(\zer)} \Delta   v(\y) \cdot \y \dyy   =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) \dyy\overset{\Delta u=0}{=} 0.
+	g'(r) =\frac{1}{w_{n}r}\int _{\partial B_{1}(\zer)} \nabla  v(\sigg') \cdot \sigg' \dsig' =\frac{1}{w_{n}r}\int _{B_{1}(\zer)} \Delta   v(\y) \cdot \y \dyy   =\frac{r}{w_{n}}\int _{B_{1}(\zer)} \Delta u(\x +r\y) \dyy\overset{\Delta u=0}{=} 0.
 	\end{equation*}
 	Dunque $g$ è costante. Quindi per continuità di $u$:
 	\begin{align*}
-		g( r) & \xrightarrow{r\rightarrow 0^{+}} u(\x)\\
-		g( r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\sigg) \dsig
+		g(r) & \xrightarrow{r\rightarrow 0^{+}} u(\x)\\
+		g(r) & \xrightarrow{r\rightarrow R}\frac{1}{w_{n} R^{n-1}}\int _{\partial B_{R}(\x)} u(\sigg) \dsig
 	\end{align*}
 	Eguagliando i due termini otteniamo la \eqref{eq:lap-prop-media-sup}.
 	
@@ -3606,7 +3606,7 @@ Dove la funzione Gamma di Eulero è definita come
 	\end{equation*}
 	moltiplichiamo per $r^{n-1}$ e integriamo tra $0$ ed $R$:\footnote{Riordinando gli integrali con fubini sul membro di destra otteniamo una formula di "riduzione per bucce" 
 	\begin{equation*}
-		\int _{B_{R}( x)} f( y) \dy=\int _{0}^{R}\left(\int _{\partial B_{r}( x)} f\dsig \right) \dr
+		\int _{B_{R}(x)} f(y) \dy=\int _{0}^{R}\left(\int _{\partial B_{r}(x)} f\dsig \right) \dr
 	\end{equation*}
 	}
 	\begin{align*}
@@ -3699,9 +3699,9 @@ Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprie
 	
 	Dalla proprietà della media so che 
 	\begin{equation*}
-	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u(\y) \dyy=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}( z)} u(\y) \dyy} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u(\y) \dyy}\right]
+	m=u( \mathbf{p}) =\frac{1}{| B( \mathbf{p})| }\int _{B( \mathbf{p})} u(\y) \dyy=\frac{1}{| B( \mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B( \mathbf{p}) \backslash B_{r}(z)} u(\y) \dyy} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}( \mathbf{z})} u(\y) \dyy}\right]
 	\end{equation*}
-	Sul primo integrale $u( y) \geqslant m$.
+	Sul primo integrale $u(y) \geqslant m$.
 
 	Sul secondo integrale posso sfruttare ancora la proprietà della media:
 	\begin{equation*}
@@ -4279,7 +4279,7 @@ Vediamo la dimostrazione del teorema.
 
 	Si trova tutto a partire dall'identità di Green con questa scelta di $u$ e $v$ si elide il termine $\displaystyle u\Delta v=0$.
 	\begin{equation*}
-	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) \dyy}_{( 1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \x -\sigg| } \partial _{\nuu} u(\sigg) \dsig}_{( 2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig}_{( 3)}
+	\frac{1}{4\pi }\underbrace{\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) \dyy}_{(1)} =\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }}\frac{1}{| \x -\sigg| } \partial _{\nuu} u(\sigg) \dsig}_{(2)} -\frac{1}{4\pi }\underbrace{\int _{\partial \Omega _{\varepsilon }} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig}_{(3)}
 	\end{equation*}
 	Inoltre
 	\begin{equation*}
@@ -4294,7 +4294,7 @@ Vediamo la dimostrazione del teorema.
 	\item \textbf{Termine 1}
 
 	\begin{equation*}
-	( 1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) \dyy =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\y)\frac{f(\y)}{| \x -\y| }}_{g_{\varepsilon }(\y)} \dyy
+	(1) =\int _{\Omega _{\varepsilon }}\frac{1}{| \x -\y| } f(\y) \dyy =\int _{\Omega }\underbrace{\chi _{\Omega _{\varepsilon }}(\y)\frac{f(\y)}{| \x -\y| }}_{g_{\varepsilon }(\y)} \dyy
 	\end{equation*}
 
 	Con 
@@ -4306,7 +4306,7 @@ Vediamo la dimostrazione del teorema.
 	Posso usare il teorema di convergenza dominata e passare al limite sotto il segno di integrale, il primo termine tende a
 
 	\begin{equation*}
-	( 1)\rightarrow \int _{\Omega }\frac{1}{| \x -\y| } f(\y) \dyy
+	(1)\rightarrow \int _{\Omega }\frac{1}{| \x -\y| } f(\y) \dyy
 	\end{equation*}
 
 	A meno del coefficiente, questo è diventato il potenziale Newtoniano.
@@ -4334,7 +4334,7 @@ Vediamo la dimostrazione del teorema.
 
 	L'altro non dipende da $\displaystyle \varepsilon $ quindi rimane così.
 	\begin{equation*}
-	( 2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig
+	(2)\rightarrow \int _{\partial \Omega }\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig
 	\end{equation*}
 
 	A meno del coefficiente, questo è diventato il potenziale di strato semplice.
@@ -4343,7 +4343,7 @@ Vediamo la dimostrazione del teorema.
 	Da qui spunteranno sia il potenziale di doppio strato, che la $u$ stessa.
 
 	\begin{equation*}
-	( 3) =\int _{\partial \Omega _{\varepsilon }} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\x)}\right) u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig
+	(3) =\int _{\partial \Omega _{\varepsilon }} u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig =\left(\int _{\partial \Omega } +\int _{\partial B_{\varepsilon }(\x)}\right) u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig
 	\end{equation*}
 
 	L'integrale su $\displaystyle \partial \Omega $ è già il potenziale di doppio strato, ci manca da far vedere che l'altro tende a $u$, a meno del coefficiente. Calcolo la derivata normale su $\displaystyle \partial B_{\varepsilon }(\x)$ con la regola della catena
@@ -4364,7 +4364,7 @@ Vediamo la dimostrazione del teorema.
 
 	quindi
 	\begin{equation*}
-	( 3)\rightarrow \int _{\partial \Omega } u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig +4\pi u(\x)
+	(3)\rightarrow \int _{\partial \Omega } u(\sigg) \partial _{\nuu}\frac{1}{| \x -\sigg| } \dsig +4\pi u(\x)
 	\end{equation*}
 
 	Riassemblando i vari pezzi si ottiene la tesi.
@@ -4384,7 +4384,7 @@ Ci proponiamo di ottenere una formula di rappresentazione \textbf{in funzione de
 \end{equation}
 Richiamiamo la formula della lezione scorsa
 \begin{equation}
-	u( x) =-\int _{\Omega } \Phi ( \x-\y) \Delta u( y) \ \dyy+\int _{\partial \Omega } \Phi ( \x-\sigg ) \underbrace{\partial _{\nuu} u( \sigg )}_{?} \ \dsig -\int _{\partial \Omega } \partial _{\nuu} \Phi ( \x-\sigg ) u( \sigg ) \ \dsig 
+	u(x) =-\int _{\Omega } \Phi ( \x-\y) \Delta u(y) \ \dyy+\int _{\partial \Omega } \Phi ( \x-\sigg ) \underbrace{\partial _{\nuu} u( \sigg )}_{?} \ \dsig -\int _{\partial \Omega } \partial _{\nuu} \Phi ( \x-\sigg ) u( \sigg ) \ \dsig 
 	\label{eq:richiamo-formula-green}
 \end{equation}
 Conosciamo $\Delta u$, essendo uguale a $f$ come dato del problema, e conosciamo anche $u(\sigg )$ sul bordo, essendo uguale al dato $g$, ma non sappiamo nulla del termine $\partial _{\nuu} u( \sigg )$. L'idea è di andare a cercare una funzione $G$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli. Sia $g(x,y)$ la soluzione di un certo problema
@@ -4408,7 +4408,7 @@ ottenendo, siccome il laplaciano di $g$ è nullo,
 \end{equation*}
 Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \begin{equation}
-	v( y) =g(\x,\y) \ \text{con} \ x\ \text{fissato}
+	v(y) =g(\x,\y) \ \text{con} \ x\ \text{fissato}
 	\label{eq:sol-green-v-g}
 \end{equation}
 da cui
@@ -4423,25 +4423,25 @@ sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-
 \end{align*}
 facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa scompare il termine con la derivata normale sul bordo
 \begin{equation*}
-	u( x) =\int _{\Omega }\underbrace{[ \Phi ( \x-\y) -g(\x,\y)]}_{G(\x,\y)} f(\y) \dyy+0-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu}\underbrace{[ \Phi ( \x-\sigg) -g(\x,\sigg)]}_{G(\x,\sigg)} \dsig 
+	u(x) =\int _{\Omega }\underbrace{[ \Phi ( \x-\y) -g(\x,\y)]}_{G(\x,\y)} f(\y) \dyy+0-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu}\underbrace{[ \Phi ( \x-\sigg) -g(\x,\sigg)]}_{G(\x,\sigg)} \dsig 
 \end{equation*}
 cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote{Si noti che anche se $G$ è nulla sul bordo, non è detto che la sua derivata normale sia nulla, è facile rendersene conto pensando al caso unidimensionale.}
 \begin{equation*}
-	\boxed{u(\x) =\int _{\Omega } G(\x,\y) f( y) \ \dyy-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu} G(\x,\sigg) \ \dsig }
+	\boxed{u(\x) =\int _{\Omega } G(\x,\y) f(y) \ \dyy-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu} G(\x,\sigg) \ \dsig }
 \end{equation*}
 questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
 
 Sono equazioni differenziali del tipo
 \begin{equation}
-	u=u( x,t) \ \ \ \ \boxed{u_{t} +q( u)_{x} =0}\ \ x\in \mathbb{R} ,\ t >0
+	u=u( x,t) \ \ \ \ \boxed{u_{t} +q(u)_{x} =0}\ \ x\in \mathbb{R} ,\ t >0
 \end{equation}
-\textbf{se }$q$\textbf{ e }$u$\textbf{ sono regolari}, per la regola della catena $q( u)_{x} =q'( u) \cdotp u_{x}$.
+\textbf{se }$q$\textbf{ e }$u$\textbf{ sono regolari}, per la regola della catena $q(u)_{x} =q'(u) \cdotp u_{x}$.
 \begin{itemize}
 	\item $u$ è da pensare come concentrazione di una sostanza (massa su lunghezza per esempio)
-	\item $\mathbf{q}$ è il vettore di flusso, mentre $q( u)$ funzione di flusso.
+	\item $\mathbf{q}$ è il vettore di flusso, mentre $q(u)$ funzione di flusso.
 	      \begin{equation}
-	      	\mathbf{q} =q( u)\mathbf{i}
+	      	\mathbf{q} =q(u)\mathbf{i}
 	      \end{equation}
 \end{itemize}
 
@@ -4456,19 +4456,19 @@ Se consideriamo un tratto dell'ipotetico canale dove stiamo studiando la concent
 \end{equation}
 mentre l'altro termine si può scrivere naturalmente come\footnote{Teorema fondamentale del calcolo integrale.}
 \begin{equation*}
-	-q( u( x_{1} ,t)) +q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q( u)_{x} \dx
+	-q( u( x_{1} ,t)) +q( u( x_{2} ,t)) =\int ^{x_{2}}_{x_{1}} q(u)_{x} \dx
 \end{equation*}
 che per arbitrarietà dell'intervallo implica proprio la legge di conservazione:
 \begin{equation*}
-	\int ^{x_{2}}_{x_{1}}[ u_{t} +q( u)_{x}] \dx=0,\ \forall x_{1} ,x_{2} \ \ \Rightarrow \ \ u_{t} +q( u)_{x} =0
+	\int ^{x_{2}}_{x_{1}}[ u_{t} +q(u)_{x}] \dx=0,\ \forall x_{1} ,x_{2} \ \ \Rightarrow \ \ u_{t} +q(u)_{x} =0
 \end{equation*}
 Capito il contesto, dobbiamo scegliere con quale $q$ decidiamo di lavorare, in altre parole dobbiamo scegliere una legge costitutiva per $q$.
 
 Consideriamo in particolare il \textbf{trasporto lineare}, anche se in generale la dipendenza da $u$ è non lineare (vedremo più avanti modelli per questi casi). Nel trasporto lineare, $q$ è fatta come segue, con $v$ costante
 \begin{equation}
-	q( u) =vu
+	q(u) =vu
 \end{equation}
-da cui $q( u)_{x} =vu_{x}$.
+da cui $q(u)_{x} =vu_{x}$.
 
 L'equazione differenziale si scrive nei due casi
 \begin{itemize}
@@ -4476,14 +4476,14 @@ L'equazione differenziale si scrive nei due casi
 	      \begin{equation*}
 	      	\begin{cases}
 	      		u_{t} +vu_{x} =\boxed{0} & \text{in} \ \mathbb{R} \times ( 0,+\infty ) \\
-	      		u( x,0) =g( x)   & \text{in} \ \mathbb{R}                      
+	      		u( x,0) =g(x)   & \text{in} \ \mathbb{R}                      
 	      	\end{cases}
 	      \end{equation*}
 	\item \textbf{non omogeneo}
 	      \begin{equation*}
 	      	\begin{cases}
 	      		u_{t} +vu_{x} =\boxed{f(x,t)} & \text{in} \ \mathbb{R} \times ( 0,+\infty ) \\
-	      		u( x,0) =g( x)         & \text{in} \ \mathbb{R}                      
+	      		u( x,0) =g(x)         & \text{in} \ \mathbb{R}                      
 	      	\end{cases}
 	      \end{equation*}
 \end{itemize}
@@ -4534,22 +4534,22 @@ Il profilo di $u$ si mantiene inalterato. In generale la regola del segno è
 
 Non possiamo aspettarci che lungo la caratteristica $u$ sia costante, ciò nonostante consideriamo una caratteristica e consideriamo come varia in funzione di $t$ denotando una nuova funzione $w$
 \begin{equation*}
-	u(x,t) = u( vt+x_{0} ,t) =w( t)
+	u(x,t) = u( vt+x_{0} ,t) =w(t)
 \end{equation*}
 andiamo a calcolare $w'$, che dovrà essere uguale a $f$ sulla caratteristica
 \begin{equation*}
-	w'( t) =u_{t}( vt+x_{0} ,t) +u_{x}( vt+x_{0} ,t) \cdotp v=f( vt+x_{0} ,t)
+	w'(t) =u_{t}( vt+x_{0} ,t) +u_{x}( vt+x_{0} ,t) \cdotp v=f( vt+x_{0} ,t)
 \end{equation*}
 abbiamo l'equazione differenziale per $w$
 \begin{equation*}
 	\begin{cases}
-		w'( t) =f( vt+x_{0} ,t) \\
-		w( 0) =g( x_{0})        
+		w'(t) =f( vt+x_{0} ,t) \\
+		w(0) =g( x_{0})        
 	\end{cases}
 \end{equation*}
 qui si può mettere tranquillamente il pilota automatico e dire che
 \begin{equation*}
-	w( t) =g( x_{0}) +\int ^{t}_{0} f( vs+x_{0} ,s) \ds
+	w(t) =g( x_{0}) +\int ^{t}_{0} f( vs+x_{0} ,s) \ds
 \end{equation*}
 tornando ad $u$, notiamo che $vs+x_{0}=vs+x-vt=x-v(t-s)$
 \begin{equation}
@@ -4578,7 +4578,7 @@ Abbiamo
 \begin{equation}
 	\begin{cases}
 		\rho _{t} +q( \rho )_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
-		\rho ( x,0) =g( x)          & x\in \mathbb{R}         
+		\rho ( x,0) =g(x)          & x\in \mathbb{R}         
 	\end{cases}
 \end{equation}
 
@@ -4598,7 +4598,7 @@ Prendiamo la legge più semplice, ci saranno
 
 ci aspettiamo che
 \begin{equation*}
-	v( 0) =v_{m} \ \ \ \ v( \rho _{m}) =0
+	v(0) =v_{m} \ \ \ \ v( \rho _{m}) =0
 \end{equation*}
 il modello più semplice è l'interpolazione lineare che realizza queste due condizioni
 \begin{equation}
@@ -4644,12 +4644,12 @@ da cui
 \begin{equation*}
 	\begin{cases}
 		\rho _{t} +\underbrace{v_{m}\left( 1-\frac{2\rho }{\rho _{m}}\right)}_{q'( \rho )} \rho _{x} =0 & x\in \mathbb{R} ,\ t >0 \\
-		\rho ( x,0) =g( x)                                                                              & x\in \mathbb{R}         
+		\rho ( x,0) =g(x)                                                                              & x\in \mathbb{R}         
 	\end{cases}
 \end{equation*}
 Cerchiamo di imitare il metodo delle caratteristiche.
 
-Idea: dato $( x,t)$ determinare una linea $x=x( t)$ lungo la quale $\rho $ sia costante, che connetta $( x,t)$ ad un punto $( x_{0} ,0)$
+Idea: dato $( x,t)$ determinare una linea $x=x(t)$ lungo la quale $\rho $ sia costante, che connetta $( x,t)$ ad un punto $( x_{0} ,0)$
 
 \fg{0.4}{leggi-conservazione-traffico-caratteristica}
 
@@ -4657,29 +4657,29 @@ Se tutto va in porto allora $\rho ( x,t) =g( x_{0})$.
 
 \textbf{Il problema sarà se riusciremo ad esprimere $x_{0}$ in funzione di $x,t$} così da ottenere qualcosa di generale. Notiamo anche che non sappiamo nemmeno se sarà una retta.
 
-Imponiamo che lungo $x=x( t)$, $\rho $ sia costante
+Imponiamo che lungo $x=x(t)$, $\rho $ sia costante
 \begin{equation}
-	\rho ( x( t) ,t) =g( x_{0})
+	\rho ( x(t) ,t) =g( x_{0})
 	\label{eq:lc-ro-costante}
 \end{equation}
 deriviamo nel tempo
 \begin{equation*}
-	\rho _{t}( x( t) ,t) +\dot{x}( t) \cdotp \rho _{x}( x( t) ,t) =0
+	\rho _{t}( x(t) ,t) +\dot{x}(t) \cdotp \rho _{x}( x(t) ,t) =0
 \end{equation*}
 ho anche l'equazione differenziale, valutata lungo la curva, imponendo \eqref{eq:lc-ro-costante}
 \begin{align*}
-	\rho _{t}( x( t) ,t) +q'(\textcolor[rgb]{0.82,0.01,0.11}{\rho ( x( t) ,t)}) \rho _{x}( x( t) ,t) &=0\\
-	\rho _{t}( x( t) ,t) +q'(\textcolor[rgb]{0.82,0.01,0.11}{g( x_{0})}) \rho _{x}( x( t) ,t) &=0
+	\rho _{t}( x(t) ,t) +q'(\textcolor[rgb]{0.82,0.01,0.11}{\rho ( x(t) ,t)}) \rho _{x}( x(t) ,t) &=0\\
+	\rho _{t}( x(t) ,t) +q'(\textcolor[rgb]{0.82,0.01,0.11}{g( x_{0})}) \rho _{x}( x(t) ,t) &=0
 \end{align*}
 sottraggo
 \begin{equation*}
-	[\dot{x}( t) -q'( g( x_{0}))] \rho _{x}( x( t) ,t) =0
+	[\dot{x}(t) -q'( g( x_{0}))] \rho _{x}( x(t) ,t) =0
 \end{equation*}
 ma $\rho _{x} =0$ non è ragionevole\footnote{Se lo fosse, allora la PDE si ridurrebbe a $\rho _{t}=0$, ovvero la soluzione sarebbe costante ovunque. Se già il dato iniziale non è costante, è chiaro che ciò non può tornare.}, quindi
 \begin{equation*}
 	\begin{cases}
-		\dot{x}( t) =q'( g( x_{0})) \\
-		x( 0) =x_{0}                
+		\dot{x}(t) =q'( g( x_{0})) \\
+		x(0) =x_{0}                
 	\end{cases}
 \end{equation*}
 quindi le equazioni delle caratteristiche \textbf{sono ancora rette}, ma il coefficiente angolare dipende dal dato iniziale. Si noti che solitamente esprimiamo $x$ in funzione di $t$, mentre i grafici hanno nelle ascisse $x$ e nelle ordinate $t$, al contrario di come usualmente si fa. Nel pensare alla \emph{pendenza} del grafico bisogna quindi fare riferimento alle ordinate.
@@ -4712,7 +4712,7 @@ Modellizziamo il problema come
 \fg{0.4}{leggi-conservazione-coda-semaforo}
 Abbiamo già tutto il modello pronto, dobbiamo solo scegliere il dato iniziale
 \begin{equation}
-	g( x) =
+	g(x) =
 	\begin{cases}
 		\rho _{m} & x< 0 \\
 		0         & x >0 
@@ -4838,7 +4838,7 @@ Strategia per costruire \textbf{una}\footnote{Nesssuno ci dice che sia l'unica, 
 \begin{enumerate}
 	\item Poniamo
 	      \begin{equation*}
-	      	g_{\varepsilon }( x) =
+	      	g_{\varepsilon }(x) =
 	      	\begin{cases}
 	      		\rho _{m}                                         & x\leqslant 0           \\
 	      		\rho _{m}\left( 1-\frac{x}{\varepsilon }\right)   & 0< x< \varepsilon      \\
@@ -4846,7 +4846,7 @@ Strategia per costruire \textbf{una}\footnote{Nesssuno ci dice che sia l'unica, 
 	      	\end{cases}
 	      \end{equation*}segue naturalmente che\footnote{Il valore in $0$ è del tutto irrilevante.}
 	      \begin{equation*}
-	      	\lim\limits _{\varepsilon \rightarrow 0} g_{\varepsilon }( x) =g( x) \ \ \forall x\neq 0
+	      	\lim\limits _{\varepsilon \rightarrow 0} g_{\varepsilon }(x) =g(x) \ \ \forall x\neq 0
 	      \end{equation*}
 	\item Calcoliamo la velocità locale $q'( g_{\varepsilon }( x_{0}))$ per l'unico caso dubbio: $0< x< \varepsilon $
 	      \begin{equation*}
@@ -4895,7 +4895,7 @@ Strategia per costruire \textbf{una}\footnote{Nesssuno ci dice che sia l'unica, 
 
 Si verifica che questa funzione $r$ non è nient'altro che la funzione inversa di $q'$,\footnote{che esiste essendo $q''< 0\Rightarrow q'$ strettamente monotona.}
 \begin{equation*}
-	r( s) =\frac{\rho _{m}}{2}\left( 1-\frac{1}{v_{m}} s\right) =( q')^{-1}( s)
+	r(s) =\frac{\rho _{m}}{2}\left( 1-\frac{1}{v_{m}} s\right) =( q')^{-1}(s)
 \end{equation*}
 Problemi:
 \begin{itemize}
@@ -4906,7 +4906,7 @@ Problemi:
 
 Stavolta le auto si avvicinano e prima del punto di blocco la densità sarà una frazione della densità massima
 \begin{equation*}
-	g( x) =
+	g(x) =
 	\begin{cases}
 		\frac{1}{8} \rho _{m} & x< 0 \\
 		\rho _{m}             & x >0 
@@ -4931,7 +4931,7 @@ Siamo proprio nel caso in cui si intersecano! Vediamo come sbrogliare il mistero
 
 \fg{0.7}{leggi-conservazione-trafico-shock}
 
-Dobbiamo ammettere soluzioni discontinue, la \textit{linea di discontinuità} sarà una funzione $x=s( t)$. Non possiamo più fare come all'inizio in \eqref{eq:lc-passaggio-derivata-integrale} e portare la derivata dentro, perché $\rho $ è \textbf{discontinua}. Tuttavia vale sempre la relazione generale:
+Dobbiamo ammettere soluzioni discontinue, la \textit{linea di discontinuità} sarà una funzione $x=s(t)$. Non possiamo più fare come all'inizio in \eqref{eq:lc-passaggio-derivata-integrale} e portare la derivata dentro, perché $\rho $ è \textbf{discontinua}. Tuttavia vale sempre la relazione generale:
 \begin{equation*}
 	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) \dy=q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
 \end{equation*}
@@ -4966,7 +4966,7 @@ Se l'intervallo $( x_{1} ,x_{2})$ è a cavallo della linea di continuità possia
 	% Text Node
 	\draw (302,92.9) node [anchor=north west][inner sep=0.75pt]    {$0$};
 	% Text Node
-	\draw (356,12.4) node [anchor=north west][inner sep=0.75pt]    {$x=s( t)$};
+	\draw (356,12.4) node [anchor=north west][inner sep=0.75pt]    {$x=s(t)$};
 
 	\end{tikzpicture}
 
@@ -4974,21 +4974,21 @@ Se l'intervallo $( x_{1} ,x_{2})$ è a cavallo della linea di continuità possia
 \FloatBarrier
 
 \begin{align*}
-	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) \dy & =\frac{\de}{\dt}\left(\int ^{s( t)}_{x_{1}} +\int ^{x_{2}}_{s( t)}\right)                                                                                                  \\
-	                                                 & =\int ^{s( t)}_{x_{1}} \rho _{t}( y,t) \dy\textcolor[rgb]{0.82,0.01,0.11}{+} \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) \cdotp \dot{s}( t)         \\
-	                                                 & \ \ \ \ +\int ^{x_{2}}_{s( t)} \rho _{t}( y,t) \dy\textcolor[rgb]{0.82,0.01,0.11}{-} \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right) \cdotp \dot{s}( t) 
+	\frac{\de}{\dt}\int ^{x_{2}}_{x_{1}} \rho ( y,t) \dy & =\frac{\de}{\dt}\left(\int ^{s(t)}_{x_{1}} +\int ^{x_{2}}_{s(t)}\right)                                                                                                  \\
+	                                                 & =\int ^{s(t)}_{x_{1}} \rho _{t}( y,t) \dy\textcolor[rgb]{0.82,0.01,0.11}{+} \rho \left( s(t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) \cdotp \dot{s}(t)         \\
+	                                                 & \ \ \ \ +\int ^{x_{2}}_{s(t)} \rho _{t}( y,t) \dy\textcolor[rgb]{0.82,0.01,0.11}{-} \rho \left( s(t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right) \cdotp \dot{s}(t) 
 \end{align*}
 Riaccorpando l'integrale e sostituendo
 \begin{equation*}
-	\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) \dy+\left[ \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}( t) =q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
+	\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) \dy+\left[ \rho \left( s(t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s(t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}(t) =q( \rho ( x_{1} ,t)) -q( \rho ( x_{2} ,t))
 \end{equation*}
-facendo il limite per $x_{2}\rightarrow s( t)^{+} ,x_{1}\rightarrow s( t)^{-}$
+facendo il limite per $x_{2}\rightarrow s(t)^{+} ,x_{1}\rightarrow s(t)^{-}$
 \begin{equation*}
-	\underbrace{\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) \dy}_{\rightarrow 0} +\left[ \rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s( t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}( t) =q\left( \rho \left( s( t)^{-} ,t\right)\right) -q\left( \rho \left( s( t)^{+} ,t\right)\right)
+	\underbrace{\int ^{x_{2}}_{x_{1}} \rho _{t}( y,t) \dy}_{\rightarrow 0} +\left[ \rho \left( s(t)\textcolor[rgb]{0.82,0.01,0.11}{^{-}} ,t\right) -\rho \left( s(t)\textcolor[rgb]{0.82,0.01,0.11}{^{+}} ,t\right)\right] \cdotp \dot{s}(t) =q\left( \rho \left( s(t)^{-} ,t\right)\right) -q\left( \rho \left( s(t)^{+} ,t\right)\right)
 \end{equation*}
 allora
 \begin{equation}
-	\dot{s}( t) =\frac{q\left( \rho \left( s( t)^{-} ,t\right)\right) -q\left( \rho \left( s( t)^{+} ,t\right)\right)}{\rho \left( s( t)^{-} ,t\right) -\rho \left( s( t)^{+} ,t\right)} =\frac{[ q( \rho )]^{+}_{-}}{[ \rho ]^{+}_{-}}
+	\dot{s}(t) =\frac{q\left( \rho \left( s(t)^{-} ,t\right)\right) -q\left( \rho \left( s(t)^{+} ,t\right)\right)}{\rho \left( s(t)^{-} ,t\right) -\rho \left( s(t)^{+} ,t\right)} =\frac{[ q( \rho )]^{+}_{-}}{[ \rho ]^{+}_{-}}
 \end{equation}
 Questa si chiama \textbf{condizione di Rankine-Hugoniot}, e rappresenta la legge di conservazione per la linea di discontinuità.
 
@@ -4998,11 +4998,11 @@ Nel caso del traffico\footnote{ricordiamo che era $q( \rho ) =v_{m}\left( \rho -
 \end{equation*}
 quindi
 \begin{equation*}
-	\dot{s}( t) =\frac{q\left( \rho ^{-}\right) -q\left( \rho ^{+}\right)}{\rho ^{-} -\rho ^{+}} =\frac{\frac{7}{64} v_{m} \rho _{m} -0}{\frac{1}{8} \rho _{m} -\rho _{m}} =-\frac{1}{8} v_{m}
+	\dot{s}(t) =\frac{q\left( \rho ^{-}\right) -q\left( \rho ^{+}\right)}{\rho ^{-} -\rho ^{+}} =\frac{\frac{7}{64} v_{m} \rho _{m} -0}{\frac{1}{8} \rho _{m} -\rho _{m}} =-\frac{1}{8} v_{m}
 \end{equation*}
-Siccome $s( 0) =0$ la linea d'urto è data da
+Siccome $s(0) =0$ la linea d'urto è data da
 \begin{equation*}
-	s( t) =-\frac{1}{8} v_{m} \cdotp t
+	s(t) =-\frac{1}{8} v_{m} \cdotp t
 \end{equation*}
 
 \fg{0.7}{leggi-conservazione-trafico-urto}
@@ -5023,8 +5023,8 @@ La linea d'urto rappresenta \textit{l'ingorgo} che si propaga all'indietro.
 Riprendiamo la soluzione dell'onda progressiva con velocità locale ottenuta dal metodo delle caratteristiche. Dato il problema di Cauchy
 \begin{equation*}
 	\begin{cases}
-		u_{t} +q( u)_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
-		u( x,0) =g( x)      & x\in \mathbb{R}         
+		u_{t} +q(u)_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
+		u( x,0) =g(x)      & x\in \mathbb{R}         
 	\end{cases}
 \end{equation*}
 la soluzione
@@ -5034,7 +5034,7 @@ la soluzione
 \end{align*}
 non è sempre valida. Nel caso del traffico ad esempio $q$ è concava
 \begin{equation*}
-	q( u) =\left( u-\frac{u^{2}}{\rho _{m}}\right) v_{m}
+	q(u) =\left( u-\frac{u^{2}}{\rho _{m}}\right) v_{m}
 \end{equation*}
 
 \begin{figure}[htpb]
@@ -5146,11 +5146,11 @@ abbiamo che
 \end{equation*}
 perché il dato che trasporta la caratteristica è proprio $\displaystyle g( \xi )$. Quindi posso riscrivere
 \begin{equation*}
-	u( x,t) =g( x-q'( g( \xi )) t) =g( x-q'( u) t)
+	u( x,t) =g( x-q'( g( \xi )) t) =g( x-q'(u) t)
 \end{equation*}
 Se prendo la funzione
 \begin{equation*}
-	G( x,t,u) =u-g( x-q'( u) t) =0
+	G( x,t,u) =u-g( x-q'(u) t) =0
 \end{equation*}
 e la pongo uguale a $0$ ottengo un'equazione che, nel caso in cui il metodo delle caratteristiche funziona, definisce \textbf{implicitamente} $\displaystyle u=u( x,t)$.
 
@@ -5162,7 +5162,7 @@ Ma quando va ``tutto bene''?
 
 Possiamo rispondere a questa domanda col \textbf{teorema di Dini}: $u$ è definita e regolare come funzione di $(x,t)$ se $g$ e $q'$ sono regolari e 
 \begin{equation*}
-	G_{u}(x,t,u) =1+g'(\underbrace{x-q'( u) t}_{\xi }) q''( u) t\neq 0
+	G_{u}(x,t,u) =1+g'(\underbrace{x-q'(u) t}_{\xi }) q''(u) t\neq 0
 \end{equation*}
 possiamo riscrivere la condizione essendo $\displaystyle u=g( \xi )$ lungo la caratteristica:
 \begin{equation}
@@ -5238,7 +5238,7 @@ Formalizziamo in un teorema.
 \begin{theorem}
 	Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'( \xi ) q''( g( \xi )) \geqslant 0\ \forall \xi \in \mathbb{R}$. Allora l'equazione
 	\begin{equation*}
-		G( x,t,u) =u-g( x-q'( u) t) =0
+		G( x,t,u) =u-g( x-q'(u) t) =0
 	\end{equation*}
 	definisce univocamente (\textbf{esistenza e unicità}) $\displaystyle u=u( x,t) \in C^{1}(\mathbb{R} \times [ 0,+\infty ))$.
 \end{theorem}
@@ -5246,8 +5246,8 @@ Qui abbiamo sia esistenza che unicità. Sebbene per il traffico abbiamo trovato 
 \begin{dimostrazione}
 	$u$ è definita univocamente per il teorema del Dini. Dimostriamo che $\displaystyle u\in C^{1}$. Sempre usando il teorema del Dini
 	\begin{gather*}
-		u_{t} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'( u) t) q'( u)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}\\
-		u_{x} =-\frac{G_{x}( x,t,u)}{G_{u}( x,t,u)} =\frac{g'( x-q'( u) t)}{1+\underbrace{tq''( u) g'( x-q'( u) t}_{\geqslant 0})}
+		u_{t} =-\frac{G_{t}( x,t,u)}{G_{u}( x,t,u)} =-\frac{g'( x-q'(u) t) q'(u)}{1+\underbrace{tq''(u) g'( x-q'(u) t}_{\geqslant 0})}\\
+		u_{x} =-\frac{G_{x}( x,t,u)}{G_{u}( x,t,u)} =\frac{g'( x-q'(u) t)}{1+\underbrace{tq''(u) g'( x-q'(u) t}_{\geqslant 0})}
 	\end{gather*}
 	allora
 	\begin{equation*}
@@ -5283,9 +5283,9 @@ Il punto $(x_{s},t_{s})$ ha un interessante significato geometrico, esaminiamo i
 	\end{cases}
 \end{equation*}
 \begin{align*}
-	q( u)   & =u-u^{2} & g( \xi )  & =\arctan \xi          \\
-	q'( u)  & =1-2u    & g'( \xi ) & =\frac{1}{1+\xi ^{2}} \\
-	q''( u) & =-2      &           &                       
+	q(u)   & =u-u^{2} & g( \xi )  & =\arctan \xi          \\
+	q'(u)  & =1-2u    & g'( \xi ) & =\frac{1}{1+\xi ^{2}} \\
+	q''(u) & =-2      &           &                       
 \end{align*}
 Abbiamo $\displaystyle g' >0,q''< 0$ discordi, ci aspettiamo uno shock.
 \begin{equation*}
@@ -5293,7 +5293,7 @@ Abbiamo $\displaystyle g' >0,q''< 0$ discordi, ci aspettiamo uno shock.
 \end{equation*}
 Allora $\displaystyle z( \xi _{M}) =2$ e lo shock parte da
 \begin{equation*}
-	t_{s} =\frac{1}{z( \xi _{M})} =\frac{1}{2} ,\quad x_{s} =q'( g( \xi _{M}))\frac{1}{2} +0=q'( 0)\frac{1}{2} =\frac{1}{2}
+	t_{s} =\frac{1}{z( \xi _{M})} =\frac{1}{2} ,\quad x_{s} =q'( g( \xi _{M}))\frac{1}{2} +0=q'(0)\frac{1}{2} =\frac{1}{2}
 \end{equation*}
 Geometricamente, $u$ è definita da 
 \begin{equation*}
@@ -5304,7 +5304,7 @@ Geometricamente, $u$ è definita da
 
 Dopo $\displaystyle t_{s}$ la linea di livello di $G$ non definisce più il grafico di una funzione.
 \fg[Plot del problema]{0.6}{fig-breaking-time}
-Si può dimostrare però che se tracciamo una retta verticale (tagliando due aree $A$ e $B$ di ugual area) otteniamo $\displaystyle s( t)$ dato dalle condizioni di Rankine-Hugoniot.
+Si può dimostrare però che se tracciamo una retta verticale (tagliando due aree $A$ e $B$ di ugual area) otteniamo $\displaystyle s(t)$ dato dalle condizioni di Rankine-Hugoniot.
 
 \fg[Inserimento di uno shock con la regola di Whitham.]{0.6}{leggi-conservazione-esempio-taglio}
 
@@ -5315,8 +5315,8 @@ Abbiamo notato una serie di problemi nel determinare la soluzione di \eqref{eq:c
 \begin{equation}
 	\tag{P$_{\text{cons,forte}}$}
 	\begin{cases}
-		u_{t} +q( u)_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
-		u( x,0) =g( x)      & x\in \mathbb{R}         
+		u_{t} +q(u)_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
+		u( x,0) =g(x)      & x\in \mathbb{R}         
 	\end{cases}
 	\label{eq:conservazione-formulazione-forte}
 \end{equation}
@@ -5334,22 +5334,22 @@ Allarghiamo il concetto di soluzione introducendo la \textbf{soluzione debole} (
 \end{definition}
 Sia $u$ soluzione classica, $v$ funzione test, moltiplichiamo \eqref{eq:conservazione-formulazione-forte} con la funzione test e integriamo
 \begin{equation*}
-	\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vu_{t} \ \dx\dt}_{A} +\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vq( u)_{x} \ \dx\dt}_{B} =0
+	\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vu_{t} \ \dx\dt}_{A} +\underbrace{\int ^{+\infty }_{0}\int _{\mathbb{R}} vq(u)_{x} \ \dx\dt}_{B} =0
 \end{equation*}
 Integriamo $A$ per parti rispetto a $t$ e usiamo il supporto compatto
 \begin{align*}
 	A & =\int _{\mathbb{R}}[ vu]^{+\infty }_{0} \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt                  \\
-	  & = \cancel{\int _{\mathbb{R}} v( x,\infty ) u(x,\infty ) \dx} -\int _{\mathbb{R}} v( x,0)\underbrace{u( x,0)}_{g( x)} \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt \\
-	  & =-\int _{\mathbb{R}} v( x,0) g( x) \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt                       
+	  & = \cancel{\int _{\mathbb{R}} v( x,\infty ) u(x,\infty ) \dx} -\int _{\mathbb{R}} v( x,0)\underbrace{u( x,0)}_{g(x)} \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt \\
+	  & =-\int _{\mathbb{R}} v( x,0) g(x) \dx-\int ^{+\infty }_{0}\int _{\mathbb{R}} uv_{t} \ \dx\dt                       
 \end{align*}
 Integriamo $B$ per parti rispetto a $x$
 \begin{align*}
-	B & =\cancel{\int ^{+\infty }_{0}[ vq( u)]^{+\infty }_{-\infty } dt} -\int ^{+\infty }_{0}\int _{\mathbb{R}} v_{x} q( u) \ \dx\dt 
+	B & =\cancel{\int ^{+\infty }_{0}[ vq(u)]^{+\infty }_{-\infty } dt} -\int ^{+\infty }_{0}\int _{\mathbb{R}} v_{x} q(u) \ \dx\dt 
 \end{align*}
 Segue che
 \begin{equation}
 	\tag{P$_{\text{cons,debole}}$}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] \dx\dt+\int _{\mathbb{R}} v( x,0) g( x) \dx=0\ \ \forall \ v
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q(u) v_{x}] \dx\dt+\int _{\mathbb{R}} v( x,0) g(x) \dx=0\ \ \forall \ v
 	\label{eq:conservazione-formulazione-debole}
 \end{equation}
 che chiameremo \textbf{formulazione debole}. Notiamo che \textit{non compaiono le derivate di} $u$. Quindi
@@ -5360,24 +5360,24 @@ Possiamo tornare indietro? Sì.
 				
 Partendo dalla formulazione debole \eqref{eq:conservazione-formulazione-debole} e integrando per parti in senso inverso il primo termine, stavolta coi ruoli delle funzioni invertiti rispetto al primo passaggio
 \begin{equation}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t}+q( u)_{x}] v\ \dx\dt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) \dx-\int _{\mathbb{R}} v( x,0) g( x) \dx}_{\int _{\mathbb{R}}[ u( x,0)-g( x)] v( x,0) \dx} =0
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t}+q(u)_{x}] v\ \dx\dt\underbrace{+\int _{\mathbb{R}} v( x,0) u( x,0) \dx-\int _{\mathbb{R}} v( x,0) g(x) \dx}_{\int _{\mathbb{R}}[ u( x,0)-g(x)] v( x,0) \dx} =0
 	\label{eq:formulazione-debole-passaggio-1}
 \end{equation}
 Che è valida per ogni funzione test, scelgo quindi $v$ test con supporto in $\mathbb{R} \times \textcolor[rgb]{0.82,0.01,0.11}{(} 0,+\infty )$, annullando tutto il secondo termine
 \begin{equation*}
-	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t} +q( u)_{x}] v\ \dx\dt=0\ \ \forall \ \text{funzione test}
+	\int ^{+\infty }_{0}\int _{\mathbb{R}}[ u_{t} +q(u)_{x}] v\ \dx\dt=0\ \ \forall \ \text{funzione test}
 \end{equation*}
 Per il lemma di annullamento ritroviamo la prima parte di \eqref{eq:conservazione-formulazione-forte}
 \begin{equation*}
-	u_{t} +q( u)_{x} =0
+	u_{t} +q(u)_{x} =0
 \end{equation*}
 La inseriamo nella \eqref{eq:formulazione-debole-passaggio-1}
 \begin{equation*}
-	\int _{\mathbb{R}}[ g( x) -u( x,0)] v( x,0) =0\ \ \forall \ \text{funzione test}
+	\int _{\mathbb{R}}[ g(x) -u( x,0)] v( x,0) =0\ \ \forall \ \text{funzione test}
 \end{equation*}
 Sempre per il lemma di annullamento ritroviamo la seconda parte (la condizione iniziale) di \eqref{eq:conservazione-formulazione-forte}
 \begin{equation*}
-	u( x,0) =g( x)
+	u( x,0) =g(x)
 \end{equation*}
 In conclusione
 \begin{equation}
@@ -5432,31 +5432,31 @@ assurdo.
 	[Soluzione debole] Sia $u:\mathbb{R} \times [ 0,+\infty ]\rightarrow \mathbb{R}$ localmente limitata\footnote{cioè in ogni compatto.}. Diciamo che $u$ è \textbf{soluzione debole} del problema
 	\begin{equation*}
 		\begin{cases}
-			u_{t} +q( u)_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
-			u( x,0) =g( x)      & x\in \mathbb{R}         
+			u_{t} +q(u)_{x} =0 & x\in \mathbb{R} ,\ t >0 \\
+			u( x,0) =g(x)      & x\in \mathbb{R}         
 		\end{cases}
 	\end{equation*}
 	se vale la \eqref{eq:conservazione-formulazione-debole}, cioè se
 	\begin{equation*}
-		\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] \dx\dt+\int _{\mathbb{R}} v( x,0) g( x) \dx=0\ \ \forall \ \text{funzione test}
+		\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q(u) v_{x}] \dx\dt+\int _{\mathbb{R}} v( x,0) g(x) \dx=0\ \ \forall \ \text{funzione test}
 	\end{equation*}
 \end{definition}
 \subsection{Condizione di Rankine-Hugoniot}
 \begin{theorem}
 	Sia $u$ soluzione debole tale che
 	\begin{enumerate}
-		\item ha una linea di discontinuità a salto $x=s( t)$ di classe $C^{1}$
-		\item fuori da $\Gamma $ è soluzione classica di $u_{t} +q( u)_{x} =0$
+		\item ha una linea di discontinuità a salto $x=s(t)$ di classe $C^{1}$
+		\item fuori da $\Gamma $ è soluzione classica di $u_{t} +q(u)_{x} =0$
 		\item il salto $\left[ u^{+} -u^{-}\right]_{|\Gamma }$ varia con continuità
 	\end{enumerate}
 
 	Allora
 	\begin{equation}
-		\dot{s}( t) =\frac{q\left( u^{+}\right) -q\left( u^{-}\right)}{u^{+} -u^{-}}
+		\dot{s}(t) =\frac{q\left( u^{+}\right) -q\left( u^{-}\right)}{u^{+} -u^{-}}
 	\end{equation}
 \end{theorem}
 \begin{dimostrazione}
-	Consideriamo un aperto $V$ contenuto nel semipiano $t >0$, diviso in due parti $V^{+} ,V^{-}$ da una linea $\Gamma $, definita da un'equazione $x=s( t)$, in cui $u( x,t)$ presenti una discontinuità di tipo salto, mentre al di fuori è soluzione classica.
+	Consideriamo un aperto $V$ contenuto nel semipiano $t >0$, diviso in due parti $V^{+} ,V^{-}$ da una linea $\Gamma $, definita da un'equazione $x=s(t)$, in cui $u( x,t)$ presenti una discontinuità di tipo salto, mentre al di fuori è soluzione classica.
 	
 	Consideriamo $v$ funzione test di supporto $K\subset V$, a cavallo di $\Gamma $.
 
@@ -5488,7 +5488,7 @@ assurdo.
 		% Text Node
 		\draw (206,111.4) node [anchor=north west][inner sep=0.75pt]    {$V^{-}$};
 		% Text Node
-		\draw (382,33.4) node [anchor=north west][inner sep=0.75pt]    {$\Gamma :x=s( t)$};
+		\draw (382,33.4) node [anchor=north west][inner sep=0.75pt]    {$\Gamma :x=s(t)$};
 		% Text Node
 		\draw (427,112.4) node [anchor=north west][inner sep=0.75pt]    {$V$};
 		% Text Node
@@ -5503,34 +5503,34 @@ assurdo.
 
 	Essendo $V$ nel semipiano con $t >0$, e $K\subset V$, allora $v( x,t=0) =0$, allora la FD\footnote{Formulazione Debole.} diventa
 	\begin{equation*}
-		0=\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q( u) v_{x}] \dx\dt+\cancel{\int _{\mathbb{R}} v( x,0) g( x) \dx} =\int _{V} =\int _{V^{+}} +\int _{V^{-}}
+		0=\int ^{+\infty }_{0}\int _{\mathbb{R}}[ uv_{t} +q(u) v_{x}] \dx\dt+\cancel{\int _{\mathbb{R}} v( x,0) g(x) \dx} =\int _{V} =\int _{V^{+}} +\int _{V^{-}}
 	\end{equation*}
 	Lavoriamo separatamente. Notiamo subito che possiamo scrivere la formula di derivata per parti
 	\begin{align*}
 		uv_{t}      & =( uv)_{t} -u_{t} v          \\
-		q( u) v_{x} & =( q( u) v)_{x} -q( u)_{x} v 
+		q(u) v_{x} & =( q(u) v)_{x} -q(u)_{x} v 
 	\end{align*}
 	che possiamo sostituire
 	\begin{align*}
-		0 & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[ uv_{t} +q( u) v_{x}] \ \dx\dt                           \\
-		  & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x} -u_{t} v-q( u)_{x} v] \ \dx\dt 
+		0 & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[ uv_{t} +q(u) v_{x}] \ \dx\dt                           \\
+		  & =\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q(u) v)_{x} -u_{t} v-q(u)_{x} v] \ \dx\dt 
 	\end{align*}
 	sistemiamo i termini e raccogliamo $v$
 	\begin{equation*}
-		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ \dx\dt-\left(\int _{V^{+}} +\int _{V^{-}}\right)[ u_{t} +q( u)_{x}] v\ \dx\dt
+		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q(u) v)_{x}] \ \dx\dt-\left(\int _{V^{+}} +\int _{V^{-}}\right)[ u_{t} +q(u)_{x}] v\ \dx\dt
 	\end{equation*}
-	notiamo ora che $u$ al di fuori di $\Gamma $ è regolare e quindi soluzione classica\footnote{questo passaggio lo abbiamo potuto fare solo grazie al fatto che i due integrali sono separati su $V^{+} ,V^{-}$.} $u_{t} +q( u)_{x} =0$. Questo ci permette di cancellare il secondo termine
+	notiamo ora che $u$ al di fuori di $\Gamma $ è regolare e quindi soluzione classica\footnote{questo passaggio lo abbiamo potuto fare solo grazie al fatto che i due integrali sono separati su $V^{+} ,V^{-}$.} $u_{t} +q(u)_{x} =0$. Questo ci permette di cancellare il secondo termine
 	\begin{equation*}
-		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ \dx\dt
+		0=\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q(u) v)_{x}] \ \dx\dt
 	\end{equation*}
 	Ciò che è in parentesi quadra altro non è che la divergenza di una funzione!
 	\begin{gather*}
 		\mathbf{v}( x,t) =
 		\begin{pmatrix}
-			q( u) v \\
+			q(u) v \\
 			uv      
-		\end{pmatrix} \ \ \Rightarrow \ \ \mathrm{div} \ \mathbf{v} =( q( u) v)_{x} +( uv)_{t}\\
-		\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q( u) v)_{x}] \ \dx\dt=\left(\int _{V^{+}} +\int _{V^{-}}\right)[\mathrm{div} \ \mathbf{v}] \ \dx\dt
+		\end{pmatrix} \ \ \Rightarrow \ \ \mathrm{div} \ \mathbf{v} =( q(u) v)_{x} +( uv)_{t}\\
+		\left(\int _{V^{+}} +\int _{V^{-}}\right)[( uv)_{t} +( q(u) v)_{x}] \ \dx\dt=\left(\int _{V^{+}} +\int _{V^{-}}\right)[\mathrm{div} \ \mathbf{v}] \ \dx\dt
 	\end{gather*}
 	pertanto possiamo applicare il Teorema della Divergenza. Consideriamo $\mathbf{n} =( n_{x} ,n_{t})$ normale, $n_{x}$ in $x$, $n_{t}$ in $t$, e ricordiamoci che
 	\begin{itemize}
@@ -5541,7 +5541,7 @@ assurdo.
 	\begin{align*}
 		\int _{V^{+}}[\mathrm{div} \ \mathbf{v}] \ \dx\dt & =\int _{\partial V^{+}}\mathbf{v} \cdotp \mathbf{n} \ \dl=\left[\cancel{\int _{\partial V^{+} \setminus K}} +\int _{K\cap \Gamma }\right]     
 		\begin{pmatrix}
-		q( u) v\\
+		q(u) v\\
 		uv
 		\end{pmatrix} \cdotp 
 		\begin{pmatrix}
@@ -5552,7 +5552,7 @@ assurdo.
 		                                                &                                                                                                                                              \\
 		\int _{V^{-}}[\mathrm{div} \ \mathbf{v}] \ \dx\dt & =\int _{\partial V^{-}}\mathbf{v} \cdotp ( -\mathbf{n}) \ \dl=\left[\cancel{\int _{\partial V^{-} \setminus K}} +\int _{K\cap \Gamma }\right] 
 		\begin{pmatrix}
-		q( u) v\\
+		q(u) v\\
 		uv
 		\end{pmatrix} \cdotp 
 		\begin{pmatrix}
@@ -5573,30 +5573,30 @@ assurdo.
 	\begin{equation*}
 		0=q\left( u^{+}\right) n_{x} +u^{+} n_{t} -q\left( u^{-}\right) n_{x} -u^{-} n_{t} =\left\{q\left( u^{+}\right) -q\left( u^{-}\right)\right\} n_{x} +\left\{u^{+} -u^{-}\right\} n_{t}
 	\end{equation*}
-	Ci dobbiamo solo ricordare che $\Gamma $ si può esprimere tramite $x=s( t)$ ed essendo $C^{1}$ il versore tangente alla curva è
+	Ci dobbiamo solo ricordare che $\Gamma $ si può esprimere tramite $x=s(t)$ ed essendo $C^{1}$ il versore tangente alla curva è
 	\begin{equation*}
-		\mathbf{t} =\frac{1}{\sqrt{1+(\dot{s}( t))^{2}}}
+		\mathbf{t} =\frac{1}{\sqrt{1+(\dot{s}(t))^{2}}}
 		\begin{pmatrix}
-			\dot{s}( t) \\
+			\dot{s}(t) \\
 			1           
 		\end{pmatrix}
 	\end{equation*}
 	da cui si trova quello normale, sempre facendo riferimento alla figura
 	\begin{equation*}
-		\mathbf{n} =\frac{1}{\sqrt{1+(\dot{s}( t))^{2}}}
+		\mathbf{n} =\frac{1}{\sqrt{1+(\dot{s}(t))^{2}}}
 		\begin{pmatrix}
 			-1          \\
-			\dot{s}( t) 
+			\dot{s}(t) 
 		\end{pmatrix}
 	\end{equation*}
 	Sostituiamo e moltiplichiamo tranquillamente per la radice, il cui unico e triste scopo era quello di avere dei versori
 	\begin{align*}
 		0 & =\left\{q\left( u^{+}\right) -q\left( u^{-}\right)\right\} n_{x} +\left\{u^{+} -u^{-}\right\} n_{t}       \\
-		  & =\left\{q\left( u^{+}\right) -q\left( u^{-}\right)\right\}( -1) +\left\{u^{+} -u^{-}\right\}(\dot{s}( t)) 
+		  & =\left\{q\left( u^{+}\right) -q\left( u^{-}\right)\right\}( -1) +\left\{u^{+} -u^{-}\right\}(\dot{s}(t)) 
 	\end{align*}
 	Allora
 	\begin{equation*}
-		\dot{s}( t) =\frac{q\left( u^{+}\right) -q\left( u^{-}\right)}{u^{+} -u^{-}}
+		\dot{s}(t) =\frac{q\left( u^{+}\right) -q\left( u^{-}\right)}{u^{+} -u^{-}}
 	\end{equation*}
 	che è Rankine-Hugoniot.
 \end{dimostrazione}
@@ -5606,15 +5606,14 @@ assurdo.
 
 Consideriamo l'equazione di Burgers
 \begin{equation}
-	u_{t} +uu_{x} =0\ \ \ \ q( u) =\frac{u^{2}}{2} ,\ \ q'( u) =u,\ \ q''( u) =1
+	u_{t} +uu_{x} =0\ \ \ \ q(u) =\frac{u^{2}}{2} ,\ \ q'(u) =u,\ \ q''(u) =1
 \end{equation}
 risolviamo il seguente problema di Cauchy
 \begin{equation*}
-	\text{(P1)} \ 
 	\begin{cases}
 		u_{t} +uu_{x} =0 \\
-		u( x,0) =g( x)   
-	\end{cases} \ \ \ \ g( x) =
+		u( x,0) =g(x)   
+	\end{cases} \ \ \ \ g(x) =
 	\begin{cases}
 		0, & x< 0 \\
 		1, & x >0 
@@ -5686,7 +5685,7 @@ le caratteristiche sono della forma
 \end{figure}
 \FloatBarrier
 
-inoltre $q'( u) =u$, allora $r( s) =( q'( u))^{-1}( s) =s$ quindi
+inoltre $q'(u) =u$, allora $r(s)=s$ quindi
 \begin{equation*}
 	u( x,t) =r\left(\frac{x}{t}\right) =\frac{x}{t}
 \end{equation*}
@@ -5695,7 +5694,7 @@ abbiamo un'onda di rarefazione dove $u=x$. Ma c'è un'altra soluzione.
 	\begin{array}{ l l l }
 		u^{+} =1                                           &   & u^{-} =0                                 \\
 		q\left( u^{+}\right) =\frac{1^{2}}{2} =\frac{1}{2} &   & q\left( u^{-}\right) =\frac{0^{2}}{2} =0 
-	\end{array} \ \ \Rightarrow \ \ RH:\ \dot{s}( t) =\frac{\frac{1}{2} -0}{1-0} =\frac{1}{2}
+	\end{array} \ \ \Rightarrow \ \ RH:\ \dot{s}(t) =\frac{\frac{1}{2} -0}{1-0} =\frac{1}{2}
 \end{equation*}
 quindi esiste una linea d'urto di equazione
 \begin{equation}
@@ -5773,11 +5772,11 @@ Abbiamo risposto al primo quesito, dando un senso al concetto di soluzione quand
 
 \emph{Esaminiamo prima un caso ideale:} sia $\displaystyle g' >0,\ q''\geqslant q''_{\min}  >0$, l'unica soluzione è assegnata dalla formula 
 \begin{equation}
-	G( x,t,u) =u-g( x-q'( u) t) =0
+	G( x,t,u) =u-g( x-q'(u) t) =0
 \end{equation}
 Grazie al teorema del Dini 
 \begin{equation*}
-	u_{x} =-\frac{G_{x}}{G_{u}} =\frac{g'( x-q'( u) t)}{\underbrace{1+g'( x-q'( u) t) q''( u) t}_{\geqslant \ g'( x-q'( u) t) q''( u) t}} \leqslant \frac{1}{q''( u)}\frac{1}{t} \leqslant \frac{E}{t} \ \ \ \text{dove} \ E=\frac{1}{q''_{\min}}
+	u_{x} =-\frac{G_{x}}{G_{u}} =\frac{g'( x-q'(u) t)}{\underbrace{1+g'( x-q'(u) t) q''(u) t}_{\geqslant \ g'( x-q'(u) t) q''(u) t}} \leqslant \frac{1}{q''(u)}\frac{1}{t} \leqslant \frac{E}{t} \ \ \ \text{dove} \ E=\frac{1}{q''_{\min}}
 \end{equation*}
 Per il teorema del valor medio, se $\displaystyle x,z\in \mathbb{R} ,\ t >0,z >0\ $
 \begin{equation*}
@@ -5884,7 +5883,7 @@ Conseguenze:
 	\sigma ( u_{+} ,u_{-}) =\textcolor[rgb]{0.25,0.46,0.02}{\frac{q( u_{+}) -q( u_{-})}{u_{+} -u_{-}}}
 	\end{equation*}
 
-	ma se $\displaystyle x=s( t)$ è linea d'urto $\displaystyle \sigma ( u_{+} ,u_{-}) =\dot{s}( t)$ è la pendenza della retta tangente sulla linea d'urto (ovvero la velocità con cui si muove la discontinuità lungo la linea d'urto) data da Rankine-Hugoniot. Ottengo la \textbf{disuguaglianza dell'entropia}
+	ma se $\displaystyle x=s(t)$ è linea d'urto $\displaystyle \sigma ( u_{+} ,u_{-}) =\dot{s}(t)$ è la pendenza della retta tangente sulla linea d'urto (ovvero la velocità con cui si muove la discontinuità lungo la linea d'urto) data da Rankine-Hugoniot. Ottengo la \textbf{disuguaglianza dell'entropia}
 	\begin{equation*}
 		q'( u_{+}) < \dot{s} < q'( u_{-})
 	\end{equation*}
@@ -5948,8 +5947,8 @@ Conseguenze:
 	Se $q\in C^{2}(\mathbb{R})$, strettamente concava o convessa, e $g$ è limitata allora \textbf{esiste unica} la soluzione (integrale, cioè debole) del problema
 	\begin{equation}
 		\begin{cases}
-			u_{t} +q( u)_{x} =0 & x\in \mathbb{R} ,t >0 \\
-			u( x,0) =g( x)      & x\in \mathbb{R}       
+			u_{t} +q(u)_{x} =0 & x\in \mathbb{R} ,t >0 \\
+			u( x,0) =g(x)      & x\in \mathbb{R}       
 		\end{cases}
 		\label{eq:teo-quasi-di-riemann}
 	\end{equation}
@@ -5957,7 +5956,7 @@ Conseguenze:
 \end{theorem}
 Possiamo applicare questo teorema per risolvere il problema \eqref{eq:teo-quasi-di-riemann} con dati al bordo 
 \begin{equation*}
-	g( x) =
+	g(x) =
 	\begin{cases}
 		u_{L} , & x< 0 \\
 		u_{R} , & x >0 
@@ -5975,14 +5974,14 @@ Questo è proprio il caso della coda al semaforo e del traffico a valle, non c'�
 		      \begin{equation*}
 		      	u( x,t) =
 		      	\begin{cases}
-		      		u_{L} & x< \sigma ( u_{L} ,u_{R}) t=s( t) \\
-		      		u_{R} & x >\sigma ( u_{L} ,u_{R}) t=s( t) 
+		      		u_{L} & x< \sigma ( u_{L} ,u_{R}) t=s(t) \\
+		      		u_{R} & x >\sigma ( u_{L} ,u_{R}) t=s(t) 
 		      	\end{cases}
 		      \end{equation*}
 		      
 		      dove 
 		      \begin{equation*}
-		      	\sigma ( u_{L} ,u_{R}) =\dot{s} =\frac{q( u_{R}) -q( u_{L})}{u_{R} -u_{L}} ,\ s( 0) =0
+		      	\sigma ( u_{L} ,u_{R}) =\dot{s} =\frac{q( u_{R}) -q( u_{L})}{u_{R} -u_{L}} ,\ s(0) =0
 		      \end{equation*}
 		      
 		      
@@ -6081,13 +6080,13 @@ Prima di fare la dimostrazione esaminiamo i vari casi con dei grafici
 		% Text Node
 		\draw (370.5,105.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x$};
 		% Text Node
-		\draw (185,102.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x=s( t)$};
+		\draw (185,102.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x=s(t)$};
 		% Text Node
 		\draw (321,57.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$u=u_{R}$};
 		% Text Node
 		\draw (71,27.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$u=u_{L}$};
 		% Text Node
-		\draw (144,56.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\dot{s}( t)$};
+		\draw (144,56.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\dot{s}(t)$};
 
 
 		\end{tikzpicture}
@@ -6122,13 +6121,13 @@ Prima di fare la dimostrazione esaminiamo i vari casi con dei grafici
 		% Text Node
 		\draw (370.5,105.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x$};
 		% Text Node
-		\draw (185,102.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x=s( t)$};
+		\draw (185,102.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x=s(t)$};
 		% Text Node
 		\draw (321.5,27.9) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$u=u_{R}$};
 		% Text Node
 		\draw (71,57.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$u=u_{L}$};
 		% Text Node
-		\draw (144,56.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\dot{s}( t)$};
+		\draw (144,56.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\dot{s}(t)$};
 
 
 		\end{tikzpicture}
@@ -6136,7 +6135,7 @@ Prima di fare la dimostrazione esaminiamo i vari casi con dei grafici
 	\FloatBarrier
 
 
-	Se $\displaystyle \dot{s}$ è positiva la trattazione è analoga ma la linea di discontinuità si muove verso destra con velocità $\displaystyle \dot{s}( t)$.
+	Se $\displaystyle \dot{s}$ è positiva la trattazione è analoga ma la linea di discontinuità si muove verso destra con velocità $\displaystyle \dot{s}(t)$.
 	\item Nel caso dell'\textbf{onda di rarefazione} $\displaystyle q'( u_{L}) ,\ q'( u_{R})$ possono essere positivi o negativi, concordi o discordi.
 
 	Supponiamoli \textbf{discordi} e assumiamo $\displaystyle q'( u_{L}) < 0,\ q'( u_{R})  >0$
@@ -6447,7 +6446,7 @@ Nel caso $\displaystyle q''\geqslant h >0$
 
 	Innanzitutto verifichiamo che soddisfa la PDE, ricordando che $r=(q')^{-1}$
 	\begin{equation*}
-		u_{t} +q( u)_{x} =-r'\left(\frac{x}{t}\right)\frac{x}{t^{2}} +q'( r) r'\left(\frac{x}{t}\right)\frac{1}{t} =r'\left(\frac{x}{t}\right)\frac{1}{t}\underbrace{\left[ q'( r) -\frac{x}{t}\right]}_{=0} \equiv 0
+		u_{t} +q(u)_{x} =-r'\left(\frac{x}{t}\right)\frac{x}{t^{2}} +q'(r) r'\left(\frac{x}{t}\right)\frac{1}{t} =r'\left(\frac{x}{t}\right)\frac{1}{t}\underbrace{\left[ q'(r) -\frac{x}{t}\right]}_{=0} \equiv 0
 	\end{equation*}
 
 	Quindi $u$ è soluzione integrale. Per la condizione di entropia
@@ -6460,7 +6459,7 @@ Nel caso $\displaystyle q''\geqslant h >0$
 
 	Per trovare un maggiorante, ricordando che $\displaystyle r=( q')^{-1}$ e usando la regola per la derivata dell'inversa ($r$ è l'inversa di $q'$, quindi $r'$ è la derivata di un'inversa)
 	\begin{gather*}
-	r'( s) =\frac{1}{q''( r)} \quad \text{con} \quad s=q'( r) \qquad \Rightarrow \qquad r'( s) \leqslant \frac{1}{h} \ \text{essendo} \ q''\geqslant h
+	r'(s) =\frac{1}{q''(r)} \quad \text{con} \quad s=q'(r) \qquad \Rightarrow \qquad r'(s) \leqslant \frac{1}{h} \ \text{essendo} \ q''\geqslant h
 	\end{gather*}
 
 	Quindi
@@ -6512,9 +6511,9 @@ Ricaviamo ora l'equazione della corda vibrante unidimensionale (tipicamente cord
 
 
 
-Sia $\displaystyle \rho =\rho ( x,t)$ la densità lineare di massa al tempo $t$ e $\displaystyle \rho _{0} =\rho _{0}( x)$ la densità a riposo. Prendiamo in esame un tratto di corda corrispondente ad un intervallo arbitrario $\displaystyle [ x,x+\Delta x]$ e indichiamo con $\displaystyle \Delta s$ l'elemento di lunghezza corrispondente, al tempo $t$. La legge di conservazione della massa impone
+Sia $\displaystyle \rho =\rho ( x,t)$ la densità lineare di massa al tempo $t$ e $\displaystyle \rho _{0} =\rho _{0}(x)$ la densità a riposo. Prendiamo in esame un tratto di corda corrispondente ad un intervallo arbitrario $\displaystyle [ x,x+\Delta x]$ e indichiamo con $\displaystyle \Delta s$ l'elemento di lunghezza corrispondente, al tempo $t$. La legge di conservazione della massa impone
 \begin{equation*}
-	\rho _{0}( x) \Delta x=\rho ( x,t) \Delta s,\ t\geqslant 0
+	\rho _{0}(x) \Delta x=\rho ( x,t) \Delta s,\ t\geqslant 0
 \end{equation*}
 L'equazione del bilancio del momento si ricava uguagliando la forza totale agente sul generico tratto considerato al tasso di variazione del momento lineare. Poiché il moto è verticale, le componenti orizzontali delle forze devono bilanciarsi: $R_{x}=0$. Indicando con $\displaystyle \tau ( x,t)$ la tensione (scalare, ma non adimensionale) in $x$
 
@@ -6588,23 +6587,23 @@ Dividendo per $\displaystyle \Delta x$ e facendo il limite per $\displaystyle \D
 \end{equation*}
 Questa è la tensione orizzontale, e risulta costante per $x$ fissato
 \begin{equation*}
-\tau _{oriz}( x,t) =\tau ( x,t)\cos \alpha ( x,t) =\tau _{0}( t)
+\tau _{oriz}( x,t) =\tau ( x,t)\cos \alpha ( x,t) =\tau _{0}(t)
 \end{equation*}
-dove $\displaystyle \tau _{0}( t) \geqslant 0$ perché un'intensità.
+dove $\displaystyle \tau _{0}(t) \geqslant 0$ perché un'intensità.
 
 Calcoliamo le componenti verticali delle forze agenti sul tratto considerato
 \begin{equation*}
-\tau _{vert}( x,t) =\tau ( x,t)\sin \alpha ( x,t) =\underbrace{\tau ( x,t)\cos \alpha ( x,t)}_{\tau _{0}( t)}\underbrace{\tan \alpha ( x,t)}_{u_{x}( x,t)} =\tau _{0}( t) u_{x}( x,t)
+\tau _{vert}( x,t) =\tau ( x,t)\sin \alpha ( x,t) =\underbrace{\tau ( x,t)\cos \alpha ( x,t)}_{\tau _{0}(t)}\underbrace{\tan \alpha ( x,t)}_{u_{x}( x,t)} =\tau _{0}(t) u_{x}( x,t)
 \end{equation*}
 Dunque la risultante verticale è
 \begin{align*}
 \text{tensioni} & =\tau _{vert}( x+\Delta x,t) -\tau _{vert}( x,t)\\
- & =\textcolor[rgb]{0.29,0.56,0.89}{\tau _{0}( t)[ u_{x}( x+\Delta x,t) -u_{x}( x,t)}]
+ & =\textcolor[rgb]{0.29,0.56,0.89}{\tau _{0}(t)[ u_{x}( x+\Delta x,t) -u_{x}( x,t)}]
 \end{align*}
 Consideriamo ora le forze esterne di \textbf{volume} \textbf{verticali} come il peso o carichi esterni. Sia $\displaystyle f=f( x,t)$ l'intensità per unità di massa della risultante di tali forze. Per la legge di conservazione della massa, la forza agente sul tratto di corda esaminato è
 \begin{align*}
 \text{forze di volume} & =\rho ( x,t) f( x,t) \Delta s\\
- & =\textcolor[rgb]{0.96,0.65,0.14}{\rho _{0}( x) f( x,t) \Delta x}
+ & =\textcolor[rgb]{0.96,0.65,0.14}{\rho _{0}(x) f( x,t) \Delta x}
 \end{align*}
 Applichiamo ora la seconda legge di Newton: le forze agenti sono
 \begin{align*}
@@ -6612,8 +6611,8 @@ Applichiamo ora la seconda legge di Newton: le forze agenti sono
 \end{align*}
 mentre
 \begin{align*}
-\text{massa} \cdotp \text{accelerazione} & =\rho ( x) u_{tt} \Delta s\\
- & =\textcolor[rgb]{0.56,0.07,1}{\rho _{0}( x) u_{tt} \Delta x}
+\text{massa} \cdotp \text{accelerazione} & =\rho (x) u_{tt} \Delta s\\
+ & =\textcolor[rgb]{0.56,0.07,1}{\rho _{0}(x) u_{tt} \Delta x}
 \end{align*}
 osservando che $\displaystyle u_{tt}$ è l'accelerazione scalare.
 
@@ -6623,15 +6622,15 @@ Quindi
 \end{equation*}
 da cui si ricava
 \begin{equation*}
-\textcolor[rgb]{0.56,0.07,1}{\rho _{0}( x) u_{tt} \Delta x} =\textcolor[rgb]{0.29,0.56,0.89}{\tau }\textcolor[rgb]{0.29,0.56,0.89}{_{0}}\textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{t}\textcolor[rgb]{0.29,0.56,0.89}{)}\textcolor[rgb]{0.29,0.56,0.89}{[}\textcolor[rgb]{0.29,0.56,0.89}{u}\textcolor[rgb]{0.29,0.56,0.89}{_{x}}\textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{x+\Delta x,t}\textcolor[rgb]{0.29,0.56,0.89}{)}\textcolor[rgb]{0.29,0.56,0.89}{-u}\textcolor[rgb]{0.29,0.56,0.89}{_{x}}\textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{x,t}\textcolor[rgb]{0.29,0.56,0.89}{)}] +\textcolor[rgb]{0.96,0.65,0.14}{\rho }\textcolor[rgb]{0.96,0.65,0.14}{_{0}}\textcolor[rgb]{0.96,0.65,0.14}{(}\textcolor[rgb]{0.96,0.65,0.14}{x}\textcolor[rgb]{0.96,0.65,0.14}{)}\textcolor[rgb]{0.96,0.65,0.14}{f}\textcolor[rgb]{0.96,0.65,0.14}{(}\textcolor[rgb]{0.96,0.65,0.14}{x,t}\textcolor[rgb]{0.96,0.65,0.14}{)}\textcolor[rgb]{0.96,0.65,0.14}{\Delta x}
+\textcolor[rgb]{0.56,0.07,1}{\rho _{0}(x) u_{tt} \Delta x} =\textcolor[rgb]{0.29,0.56,0.89}{\tau _{0}(t)[u_{x}(x+\Delta x,t)-u_{x}(x,t)}] +\textcolor[rgb]{0.96,0.65,0.14}{\rho _{0}(x)f(x,t)\Delta x}
 \end{equation*}
 dividendo per $\displaystyle \Delta x$ e passando al limite per $\displaystyle \Delta x\rightarrow 0$ ottengo
 \begin{equation*}
-\rho _{0}( x) u_{tt} =\tau _{0}( t) u_{xx} +\rho _{0} (x)f( x,t)
+\rho _{0}(x) u_{tt} =\tau _{0}(t) u_{xx} +\rho _{0} (x)f( x,t)
 \end{equation*}
 Da cui, definita
 \begin{equation*}
-c^{2} =\frac{\tau _{0}( t)}{\rho _{0}( x)}
+c^{2} =\frac{\tau _{0}(t)}{\rho _{0}(x)}
 \end{equation*}
 arrivo all'equazione della corda vibrante
 \begin{equation}
@@ -6647,15 +6646,15 @@ arrivo all'equazione della corda vibrante
 \begin{nb}
 	Se la corda è omogenea
 	\begin{equation*}
-		\rho _{0}( x) =\rho _{0} \ \text{costante}
+		\rho _{0}(x) =\rho _{0} \ \text{costante}
 	\end{equation*}
 	Se la corda è perfettamente elastica
 	\begin{equation*}
-		\tau _{0}( t) =\tau _{0} \ \text{costante}
+		\tau _{0}(t) =\tau _{0} \ \text{costante}
 	\end{equation*}
 	Allora sotto entrambe le ipotesi
 	\begin{equation*}
-		c^{2} =\frac{\tau _{0}( t)}{\rho _{0}( x)} \ \text{costante}
+		c^{2} =\frac{\tau _{0}(t)}{\rho _{0}(x)} \ \text{costante}
 	\end{equation*}
 	D'ora in poi lavoreremo sempre sotto queste ipotesi.
 \end{nb}
@@ -6663,7 +6662,7 @@ arrivo all'equazione della corda vibrante
 
 Consideriamo una corda a riposo (al tempo $t=0$) in posizione orizzontale sull'asse $x$, occupante un segmento $\displaystyle [ 0,L]$. Essendo $\displaystyle u_{t}( x,t)$ la velocità di vibrazione verticale della particella di corda in $x$, l'\textbf{energia cinetica totale }durante la vibrazione è
 \begin{equation}
-	E_{\text{cin}}( t) =\frac{1}{2}\int ^{L}_{0} \rho _{0} u^{2}_{t} \dx
+	E_{\text{cin}}(t) =\frac{1}{2}\int ^{L}_{0} \rho _{0} u^{2}_{t} \dx
 \end{equation}
 La corda immagazzina anche \textbf{energia potenziale} dovuta al lavoro delle forze elastiche. In un elemento di corda con lunghezza a riposo $\dx$, l'allungamento dovuto alle forze elastiche è pari a
 
@@ -6710,11 +6709,11 @@ Quindi il lavoro compiuto da tali forze elastiche\footnote{Stiamo trattando picc
 \end{equation*}
 Sommando i contributi di tutti gli elementi ottengo l'energia potenziale totale
 \begin{equation}
-	E_{\text{pot}}( t) =\frac{1}{2}\int ^{L}_{0} \tau _{0} u^{2}_{x} \dx
+	E_{\text{pot}}(t) =\frac{1}{2}\int ^{L}_{0} \tau _{0} u^{2}_{x} \dx
 \end{equation}
 L'\textbf{energia meccanica totale }della corda risulta essere
 \begin{equation}
-	E( t) =E_{\text{cin}}( t) +E_{\text{pot}}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] \dx
+	E(t) =E_{\text{cin}}(t) +E_{\text{pot}}(t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] \dx
 \end{equation}
 
 
@@ -6722,11 +6721,11 @@ L'\textbf{energia meccanica totale }della corda risulta essere
 
 Abbiamo calcolato l'energia totale al tempo $t$ immagazzinata nella corda
 \begin{equation*}
-	E_{tot}( t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] \dx
+	E_{tot}(t) =\frac{1}{2}\int ^{L}_{0}\left[ \rho _{0} u^{2}_{t} +\tau _{0} u^{2}_{x}\right] \dx
 \end{equation*}
 La variazione dell'energia totale risulta
 \begin{equation}
-	\dot{E}_{tot}( t) =\int ^{L}_{0}[ \rho _{0} u_{t} u_{tt} +\tau _{0} u_{x} u_{xt}] \dx=\int ^{L}_{0} \rho _{0} u_{t} u_{tt} \ \dx+\int ^{L}_{0} \tau _{0} u_{x} u_{xt} \ \dx
+	\dot{E}_{tot}(t) =\int ^{L}_{0}[ \rho _{0} u_{t} u_{tt} +\tau _{0} u_{x} u_{xt}] \dx=\int ^{L}_{0} \rho _{0} u_{t} u_{tt} \ \dx+\int ^{L}_{0} \tau _{0} u_{x} u_{xt} \ \dx
 	\label{eq:variazione-energia-totale}
 \end{equation}
 integriamo per parti il secondo integrale
@@ -6735,7 +6734,7 @@ integriamo per parti il secondo integrale
 \end{equation*}
 da cui \eqref{eq:variazione-energia-totale} diventa
 \begin{align*}
-	\dot{E}_{tot}( t) & =\int ^{L}_{0} u_{t}\underbrace{[ \rho _{0} u_{tt} -\tau _{0} u_{xx}]}_{\rho _{0}\left[ u_{tt} -c^{2} u_{xx}\right] =\rho _{0} f} \dx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)] \\
+	\dot{E}_{tot}(t) & =\int ^{L}_{0} u_{t}\underbrace{[ \rho _{0} u_{tt} -\tau _{0} u_{xx}]}_{\rho _{0}\left[ u_{tt} -c^{2} u_{xx}\right] =\rho _{0} f} \dx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)] \\
 	                  & =\int ^{L}_{0} u_{t} \rho _{0} f\dx+\tau _{0}[ u_{x}( L,t) u_{t}( L,t) -u_{x}( 0,t) u_{t}( 0,t)]                                                                                                   
 \end{align*}
 Se per esempio $f=0$ e la corda è fissata agli estremi, cioè se
@@ -6744,15 +6743,15 @@ Se per esempio $f=0$ e la corda è fissata agli estremi, cioè se
 \end{equation*}
 allora
 \begin{equation*}
-	\dot{E}_{tot}( t) =0\ \text{conservazione dell'energia meccanica}
+	\dot{E}_{tot}(t) =0\ \text{conservazione dell'energia meccanica}
 \end{equation*}
 Presentiamo i problemi associati all'equazione della corda vibrante\footnote{ci vuole anche $u_{t}$ iniziale, cioè la velocità, un ipotetico impulso per esempio.}
 \begin{equation*}
 	\begin{cases}
 		u_{tt} -c^{2} u_{xx} =f       & x\in ( 0,L) ,\ t >0 \\
 		\begin{array}{l}
-		u( x,0) =g( x) ,\\
-		u_{t}( x,0) =h( x)
+		u( x,0) =g(x) ,\\
+		u_{t}( x,0) =h(x)
 		\end{array}                   & x\in [ 0,L]         \\
 		+\ \text{condizioni al bordo} &                     
 	\end{cases}
@@ -6763,15 +6762,15 @@ Le condizioni al bordo possono essere
 
 	Imponiamo le posizioni degli estremi, $t >0$
 	\begin{align*}
-		u( 0,t) & =a( t) , \\
-		u( L,t) & =b( t) , 
+		u( 0,t) & =a(t) , \\
+		u( L,t) & =b(t) , 
 	\end{align*}
 	\item \textbf{Neumann}
 
 	Imponiamo una tensione scalare verticale agli estremi, $t >0$
 	\begin{align*}
-		\tau _{0} u_{x}( 0,t) & =a( t) , \\
-		\tau _{0} u_{x}( L,t) & =b( t) , 
+		\tau _{0} u_{x}( 0,t) & =a(t) , \\
+		\tau _{0} u_{x}( L,t) & =b(t) , 
 	\end{align*}nel caso omogeneo $\displaystyle a=b=0$, gli estremi della corda sono liberi di muoversi lungo una guida verticale.
 	\item \textbf{Robin}
 
@@ -6832,8 +6831,8 @@ Si dice problema di Cauchy globale
 	\begin{cases}
 		u_{tt} -c^{2} u_{xx} =f & x\in \mathbb{R} ,\ t >0 \\
 		\begin{array}{l}
-		u( x,0) =g( x) ,\\
-		u_{t}( x,0) =h( x)
+		u( x,0) =g(x) ,\\
+		u_{t}( x,0) =h(x)
 		\end{array}             & x\in \mathbb{R}         
 	\end{cases}
 \end{equation*}
@@ -6842,8 +6841,8 @@ Risolviamo il Problema di Cauchy \textit{omogeneo} ($f=0$) per arrivare alla \te
 	\begin{cases}
 	u_{tt} -c^{2} u_{xx} =0 & x\in \mathbb{R} ,\ t >0\\
 	\begin{array}{l}
-		u( x,0) =g( x) ,   \\
-		u_{t}( x,0) =h( x) 
+		u( x,0) =g(x) ,   \\
+		u_{t}( x,0) =h(x) 
 	\end{array} & x\in \mathbb{R}
 	\end{cases}
 \end{equation*}
@@ -6889,33 +6888,33 @@ per sostituzione
 \end{equation*}
 allora
 \begin{equation}
-	u( x,t) =\psi ( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} \varphi ( y) \dy
+	u( x,t) =\psi ( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} \varphi (y) \dy
 	\label{eq:d-alembert-intermedio}
 \end{equation}
 Il problema è ora determinare $\varphi ,\psi $ in modo che siano verificate le condizioni iniziali
 \begin{equation*}
-	u( x,0) =g( x) ,\ \ u_{t}( x,0) =h( x)
+	u( x,0) =g(x) ,\ \ u_{t}( x,0) =h(x)
 \end{equation*}
 da cui
 \begin{align*}
-	u( x,0)     & =\psi ( x) =g( x) \ \ \Rightarrow \ \ \boxed{\psi ( x) =g( x)}                          \\
+	u( x,0)     & =\psi (x) =g(x) \ \ \Rightarrow \ \ \boxed{\psi (x) =g(x)}                          \\
 	            &                                                                                         \\
 	u_{t}( x,t) & =-cg'( x-ct) +\frac{1}{2c}[ \varphi ( x+ct) c-\varphi ( x-ct)( -c)]                     \\
 	            & =-cg'( x-ct) +\frac{1}{2}[ \varphi ( x+ct) +\varphi ( x-ct)]                            \\
-	u_{t}( x,0) & =-cg'( x) +\varphi ( x) =h( x) \ \ \Rightarrow \ \ \boxed{\varphi ( x) =h( x) +cg'( x)} 
+	u_{t}( x,0) & =-cg'(x) +\varphi (x) =h(x) \ \ \Rightarrow \ \ \boxed{\varphi (x) =h(x) +cg'(x)} 
 \end{align*}
 Sostituiamo nella \eqref{eq:d-alembert-intermedio}
 \begin{equation*}
-	u( x,t) =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct}[ h( y) +cg'( y)] \dy
+	u( x,t) =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct}[ h(y) +cg'(y)] \dy
 \end{equation*}
 Ma separando i due termini dell'integrale, per il Teorema Fondamentale del Calcolo
 \begin{align*}
-	u( x,t) & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) \dy+\frac{1}{2}\int ^{x+ct}_{x-ct} g'( y) \dy \\
-	        & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) \dy+\frac{1}{2}[ g( x+ct) -g( x-ct)]         
+	u( x,t) & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h(y) \dy+\frac{1}{2}\int ^{x+ct}_{x-ct} g'(y) \dy \\
+	        & =g( x-ct) +\frac{1}{2c}\int ^{x+ct}_{x-ct} h(y) \dy+\frac{1}{2}[ g( x+ct) -g( x-ct)]         
 \end{align*}
 Ottengo la \textbf{formula di d'Alembert}
 \begin{equation}
-	\boxed{u( x,t) =\frac{1}{2}[ g( x-ct) +g( x+ct)] +\frac{1}{2c}\int ^{x+ct}_{x-ct} h( y) \dy}
+	\boxed{u( x,t) =\frac{1}{2}[ g( x-ct) +g( x+ct)] +\frac{1}{2c}\int ^{x+ct}_{x-ct} h(y) \dy}
 \end{equation}
 $u,g$ sono lunghezze, $h$ è una velocità, l'integrale è spazio$^{2}$/tempo, ma è diviso per $c$ che è spazio/tempo, quindi torna uno spazio.
 
@@ -7037,14 +7036,14 @@ Riprendiamo il \textbf{problema di Cauchy globale} omogeneo.
 	\tag{PCG$_{\text{onde,1D}}$} \ 
 	\begin{cases}
 		u_{tt} -c^{2} u_{xx} =0 & x\in \mathbb{R} ,t >0 \\
-		u( x,0) =g( x)          & x\in \mathbb{R}       \\
-		u_{t}( x,0) =h( x)      & x\in \mathbb{R}       
+		u( x,0) =g(x)          & x\in \mathbb{R}       \\
+		u_{t}( x,0) =h(x)      & x\in \mathbb{R}       
 	\end{cases}
 	\label{eq:pcg-onde-1d}
 \end{equation}
 la soluzione è data dalla \textbf{formula di d'Alembert}
 \begin{equation}
-	u( x,t) =\frac{1}{2}[ g( x+ct) +g( x-ct)] +\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) \dy
+	u( x,t) =\frac{1}{2}[ g( x+ct) +g( x-ct)] +\frac{1}{2c}\int _{x-ct}^{x+ct} h(y) \dy
 	\label{eq:onde-formula-di-dAlembert}
 \end{equation}
 Esaminiamo alcune conseguenze di questa formula:
@@ -7069,8 +7068,8 @@ Esaminiamo alcune conseguenze di questa formula:
 		\end{equation*}
 		per esempio
 		\begin{align*}
-			F( x+ct) & =\frac{1}{2} g( x+ct) +\frac{1}{2c}\int _{0}^{x+ct} h( y) \dy \\
-			G( x-ct) & =\frac{1}{2} g( x-ct) +\frac{1}{2c}\int _{x-ct}^{0} h( y) \dy 
+			F( x+ct) & =\frac{1}{2} g( x+ct) +\frac{1}{2c}\int _{0}^{x+ct} h(y) \dy \\
+			G( x-ct) & =\frac{1}{2} g( x-ct) +\frac{1}{2c}\int _{x-ct}^{0} h(y) \dy 
 		\end{align*}
 		quindi $u$ è sovrapposizione di due onde progressive.
 	\item Nonostante abbiamo assunto $\displaystyle g\in C^{2} ,\ h\in C^{1}$ la Formula di d'Alembert \eqref{eq:onde-formula-di-dAlembert} ha senso anche per $g$ continua e $h$ limitata e soddisfa l'equazione in un senso \textit{debole}
@@ -7157,21 +7156,21 @@ Esaminiamo alcune conseguenze di questa formula:
 
 	deduciamo che sulle rette $\displaystyle x=-ct+\xi $, $G$ è costante, sulle rette $\displaystyle x=ct+\xi $, $F$ è costante. Ma allora:
 	\begin{align*}
-		F( A) & =F( B) \\
-		G( A) & =G( C) \\
-		F( D) & =F( C) \\
-		G( D) & =G( B) 
+		F(A) & =F(B) \\
+		G(A) & =G(C) \\
+		F(D) & =F(C) \\
+		G(D) & =G(B) 
 	\end{align*}
 
 	sommo membro a membro e ottengo
 	\begin{equation*}
-		\underbrace{F( A) +G( A)}_{u( A)} +\underbrace{F( D) +G( D)}_{u( D)} =\underbrace{F( B) +G( B)}_{u( B)} +\underbrace{F( C) +G( C)}_{u( C)}
+		\underbrace{F(A) +G(A)}_{u(A)} +\underbrace{F(D) +G(D)}_{u(D)} =\underbrace{F(B) +G(B)}_{u(B)} +\underbrace{F(C) +G(C)}_{u(C)}
 	\end{equation*}
 
 	cioè:
 
 	\begin{equation}
-		u( A) +u( D) -u( B) -u( C) =0.
+		u(A) +u(D) -u(B) -u(C) =0.
 		\label{eq:onde-uguaglianze-quadrilatero}
 	\end{equation}
 
@@ -7181,10 +7180,10 @@ Esaminiamo alcune conseguenze di questa formula:
 	\begin{equation*}
 		\begin{cases}
 			u_{tt} -u_{xx} =0  & 0< x< L,\ t >0          \\
-			u( x,0) =g( x)     & 0\leqslant x\leqslant L \\
-			u_{t}( x,0) =h( x) & 0\leqslant x\leqslant L \\
-			u( 0,t) =a( t)     & t >0                    \\
-			u( L,t) =b( t)     & t >0                    
+			u( x,0) =g(x)     & 0\leqslant x\leqslant L \\
+			u_{t}( x,0) =h(x) & 0\leqslant x\leqslant L \\
+			u( 0,t) =a(t)     & t >0                    \\
+			u( L,t) =b(t)     & t >0                    
 		\end{cases}
 	\end{equation*}
 
@@ -7251,9 +7250,9 @@ Esaminiamo alcune conseguenze di questa formula:
 			% Text Node
 			\draw (231.49,148.37) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$A$};
 			% Text Node
-			\draw (385.35,139.55) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$u=b( t)$};
+			\draw (385.35,139.55) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$u=b(t)$};
 			% Text Node
-			\draw (80.83,129.05) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$u=a( t)$};
+			\draw (80.83,129.05) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$u=a(t)$};
 			% Text Node
 			\draw (321.13,118.54) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 126; green, 211; blue, 33 }  ,opacity=1 ]  {$B$};
 			
@@ -7263,7 +7262,7 @@ Esaminiamo alcune conseguenze di questa formula:
 	\FloatBarrier
 
 
-	nel triangolo $\displaystyle ( 0,L,A) \ u$ è determinata dalla Formula di d'Alembert. Nel triangolo di destra costruisco il quadrilatero caratteristico verde: conosco il valore di $u$ nei punti cerchiati in verde e \eqref{eq:onde-uguaglianze-quadrilatero} mi permette di trovare anche il valore di $\displaystyle u( B)$. Posso fare lo stesso ragionamento per ogni punto del triangolo di destra e di sinistra. Per il triangolo sopra il procedimento è analogo, costruendo un quadrilatero come quello arancione.
+	nel triangolo $\displaystyle ( 0,L,A) \ u$ è determinata dalla Formula di d'Alembert. Nel triangolo di destra costruisco il quadrilatero caratteristico verde: conosco il valore di $u$ nei punti cerchiati in verde e \eqref{eq:onde-uguaglianze-quadrilatero} mi permette di trovare anche il valore di $\displaystyle u(B)$. Posso fare lo stesso ragionamento per ogni punto del triangolo di destra e di sinistra. Per il triangolo sopra il procedimento è analogo, costruendo un quadrilatero come quello arancione.
 \end{enumerate}
 
 \subsection{Metodo di Duhamel per il problema non omogeneo con IC omogenee.}
@@ -7278,29 +7277,29 @@ Esaminiamo alcune conseguenze di questa formula:
 	Ripassiamo il metodo di variazione delle costanti per il problema:
 	\begin{equation*}
 		\begin{cases}
-			y'( t) +ay( t) =f( t) & t >0 \\
-			y( 0) =0              &      
+			y'(t) +ay(t) =f(t) & t >0 \\
+			y(0) =0              &      
 		\end{cases} .
 	\end{equation*}
 	La formula risolutiva è data da:
 	\begin{equation*}
-		y( t) =\int _{0}^{t}\underbrace{e^{-a( t-s)} f( s)}_{w( t;s)} \ds,
+		y(t) =\int _{0}^{t}\underbrace{e^{-a( t-s)} f(s)}_{w( t;s)} \ds,
 	\end{equation*}
 	esaminiamo l'integranda, trattando $s$ come parametro $\displaystyle ( 0\leqslant s\leqslant t)$:
 	\begin{equation}
-		w( t;s) =e^{-a( t-s)} f( s) .
+		w( t;s) =e^{-a( t-s)} f(s) .
 		\label{eq:osservazione-duhamel}
 	\end{equation}
 	$w$ soddisfa il problema di Cauchy \textit{omogeneo} con dato iniziale il secondo membro dell'equazione \eqref{eq:osservazione-duhamel} calcolato in $t=s$ (e non $t=0$):
 	\begin{equation*}
 		\begin{cases}
 			w_{t} +aw=0    & t >s \\
-			w( s,s) =f( s) & t=s  
+			w( s,s) =f(s) & t=s  
 		\end{cases}
 	\end{equation*}
 	allora possiamo risolvere prima il problema in $w$ e poi calcolare la soluzione
 	\begin{equation*}
-		y( t) =\int _{0}^{t} w( t;s) \ds.
+		y(t) =\int _{0}^{t} w( t;s) \ds.
 	\end{equation*}
 \end{oss}
 
@@ -7453,12 +7452,12 @@ Le condizioni al bordo possono essere Dirichlet, Neumann, Robin o miste, come gi
 
 Mostriamo ora un semplice risultato, che useremo subito dopo nel teorema per l'unicità. Usiamo il `metodo dell'energia', definendo appunto l'energia tramite la formula:
 \begin{equation}
-	E( t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} \dxx ,
+	E(t) =\frac{1}{2}\int _{\Omega }\left\{u_{t}^{2} +c^{2}| \nabla u| ^{2}\right\} \dxx ,
 \end{equation}
 Deriviamo rispetto al tempo e supponiamo di poter fare tutto in modo lecito, formalizzeremo dopo nell'enunciato del teorema:
 \begin{align*}
-	\dot{E}( t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} \dxx                          \\
-	            & =\int _{\Omega } u_{t} u_{tt} \ \dxx +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ \dxx =( *) , 
+	\dot{E}(t) & =\int _{\Omega }\left\{u_{t} u_{tt} +c^{2} \nabla u\cdotp \nabla u_{t}\right\} \dxx                          \\
+	            & =\int _{\Omega } u_{t} u_{tt} \ \dxx +c^{2}\int _{\Omega } \nabla u\cdotp \nabla u_{t} \ \dxx =(*) , 
 \end{align*}
 il secondo termine si può integrare per parti:
 \begin{equation*}
@@ -7466,11 +7465,11 @@ il secondo termine si può integrare per parti:
 \end{equation*}
 sostituendo:
 \begin{equation*}
-	( *) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] \dxx ,
+	(*) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig +\int _{\Omega } u_{t}[\underbrace{u_{tt} -c^{2} \Delta u}_{f}] \dxx ,
 \end{equation*}
 otteniamo infine:
 \begin{equation}
-	\dot{E}( t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig +\int _{\Omega } u_{t} f\ \dxx .
+	\dot{E}(t) =c^{2}\int _{\partial \Omega } u_{t} u_{\bm{\nu }} \ \dsig +\int _{\Omega } u_{t} f\ \dxx .
 	\label{eq:onde-derivata-energia}
 \end{equation}
 \begin{theorem}
@@ -7483,10 +7482,10 @@ otteniamo infine:
 		      
 		      Neumann garantisce che $v_{\bm{\nu }} =0$ su $\partial \Omega \times ( 0,T)$, Dirichlet dice che $v=0$ su $\partial \Omega \times ( 0,T)$, cioè anche che $v_{t} =0$ sul bordo nei punti in cui vale una condizione di Dirichlet. Essendo omogeneo, la $f$ vale $0$, pertanto in questo framework si annullano sempre tutti i termini della \eqref{eq:onde-derivata-energia}:
 		      \begin{equation*}
-		      	\dot{E}( t) =0,
+		      	\dot{E}(t) =0,
 		      \end{equation*}quindi è costante, in particolare è sempre uguale al suo valore iniziale:
 		      \begin{equation*}
-		      	E( t) =E( 0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} \dxx .
+		      	E(t) =E(0) =\frac{1}{2}\int _{\Omega }\left\{v_{t}^{2}(\x ,0) +c^{2}| \nabla v(\x ,0)| ^{2}\right\} \dxx .
 		      \end{equation*}Siccome siamo con \textbf{condizioni iniziali nulle}:
 		      \begin{equation*}
 		      	\begin{cases}
@@ -7498,12 +7497,12 @@ otteniamo infine:
 		      la prima ci permette anche di concludere inizialmente che il gradiente è il vettore nullo
 		      \begin{equation*}
 		      \nabla v(\x ,0) =\zer .
-		\end{equation*}Quindi l'energia iniziale è nulla $E( 0) =0$ e pertanto, essendo costante:
+		\end{equation*}Quindi l'energia iniziale è nulla $E(0) =0$ e pertanto, essendo costante:
 		\begin{equation*}
-			E( t) =0,\ \forall t.
+			E(t) =0,\ \forall t.
 		\end{equation*}
 		
-		Notiamo anche che l'integrale è la somma di due contributi non negativi. Affinché $E( t)$ sia sempre nulla, deve per forza essere che entrambi i due integrali sono nulli\footnote{Non può essere altrimenti: se uno desse contributo positivo, l'altro dovrebbe dare contributo negativo per compensare, ma danno entrambi contributo positivo.}:
+		Notiamo anche che l'integrale è la somma di due contributi non negativi. Affinché $E(t)$ sia sempre nulla, deve per forza essere che entrambi i due integrali sono nulli\footnote{Non può essere altrimenti: se uno desse contributo positivo, l'altro dovrebbe dare contributo negativo per compensare, ma danno entrambi contributo positivo.}:
 		\begin{equation*}
 			\int _{\Omega } v_{t}^{2} \equiv 0,\ \ \int _{\Omega }| \nabla v| ^{2} \equiv 0,\ \ \forall t,
 		\end{equation*}essendo valida per ogni $\Omega $ e per ogni tempo, per forza $v_{t} =0=\nabla v$, cioè $v$ è una quantità costante, e in particolare uguale alla condizione iniziale, che è nulla, come osservato. Quindi:
@@ -7520,9 +7519,9 @@ otteniamo infine:
 		      		v(\x ,0) =0                & \text{in} \ \overline{\Omega }                                  \\
 		      		v_{t}(\x ,0) =0            & \text{in} \ \overline{\Omega }                                  
 		      	\end{cases}
-		      \end{equation*}Sappiamo già che $E( 0) =0$ e che $E( t) \geqslant 0$, vediamo cosa succede questa volta alla derivata temporale di $E( t)$:
+		      \end{equation*}Sappiamo già che $E(0) =0$ e che $E(t) \geqslant 0$, vediamo cosa succede questa volta alla derivata temporale di $E(t)$:
 		      \begin{align*}
-		      	\dot{E}( t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ \dsig +\cancel{\int _{\Omega } v_{t} f\ \dxx} &                                          \\
+		      	\dot{E}(t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\ \dsig +\cancel{\int _{\Omega } v_{t} f\ \dxx} &                                          \\
 		      	            & =c^{2}\int _{\partial \Omega } v_{t}( -\alpha v) \ \dsig                                                           & \text{(sostituendo la condizione)}       \\
 		      	            & =-c^{2} \alpha \int _{\partial \Omega } vv_{t} \ \dsig                                                             &                                          \\
 		      	            & =-\frac{c^{2} \alpha }{2}\int _{\partial \Omega } \partial _{t}\left( v^{2}\right) \ \dsig                         & \text{(riconoscendo una derivata)}       \\
@@ -7531,7 +7530,7 @@ otteniamo infine:
 		      
 		      allora:
 		      \begin{equation*}
-		      	E( t) +\frac{c^{2} \alpha }{2}\int _{\partial \Omega } v^{2} \ \dsig =\text{costante} =0.
+		      	E(t) +\frac{c^{2} \alpha }{2}\int _{\partial \Omega } v^{2} \ \dsig =\text{costante} =0.
 		      \end{equation*}
 		      
 		      Ragionando come prima si conclude analogamente, ricordando $\alpha \geqslant 0$.
@@ -7562,13 +7561,13 @@ Il \textbf{dominio di influenza} all'istante $t$ è $B_{c( t_{0} -t)}(\x_{0})$, 
 \end{equation}
 Non possiamo aspettarci di definire un'energia esattamente come prima, perché essendo in $\Omega =\mathbb{R}^{n}$ gli integrali sarebbero illimitati. Vogliamo qualcosa di più limitato: integriamo su questi cerchi e otteniamo una specie di energia. Si definisce
 \begin{equation}
-	e( t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \dxx
+	e(t) =\frac{1}{2}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \dxx
 	\label{eq:onde-energia-pcg}
 \end{equation}
 \begin{theorem}
 	Se $u\in C^{2}$ è soluzione del problema di Cauchy globale \eqref{eq:pcg-onde-unicita} con $f=0$ (omogeneo), allora per ogni $t\in [ 0,t_{0}]$:
 	\begin{equation}
-		\dot{e}( t) \leqslant 0.
+		\dot{e}(t) \leqslant 0.
 	\end{equation}
 \end{theorem}
 Questo ci assicurerà l'unicità per il problema di Cauchy globale.
@@ -7576,11 +7575,11 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 \begin{nb}
 	Dimostreremo che:
 	\begin{equation*}
-		\frac{\de}{\dt}\int _{h( t)}^{f( t)} g( r,t) \dr=g( f( t) ,t) \cdotp f'( t) -g( h( t) ,t) \cdotp h'( t) +\int _{h( t)}^{f( t)} g_{t}( r,t) \dr.
+		\frac{\de}{\dt}\int _{h(t)}^{f(t)} g( r,t) \dr=g( f(t) ,t) \cdotp f'(t) -g( h(t) ,t) \cdotp h'(t) +\int _{h(t)}^{f(t)} g_{t}( r,t) \dr.
 	\end{equation*}
-	Cominciamo applicando il teorema fondamentale del calcolo integrale, sottintendendo $f=f( t)$ e $h=h( t)$:
+	Cominciamo applicando il teorema fondamentale del calcolo integrale, sottintendendo $f=f(t)$ e $h=h(t)$:
 	\begin{align*}
-	\frac{\de}{\dt}\int _{h( t)}^{f( t)} g( r,t) \dr & =\frac{\de}{\dt}[ G( f,t) -G( h,t)]\\
+	\frac{\de}{\dt}\int _{h(t)}^{f(t)} g( r,t) \dr & =\frac{\de}{\dt}[ G( f,t) -G( h,t)]\\
 	 											 & =\frac{\de}{\dt} G( f,t) -\frac{\de}{\dt} G( h,t) ,
 	\end{align*}
 	applichiamo la regola della catena e ricordiamo che è una derivata totale, infatti stiamo derivando totalmente $G$ rispetto al tempo, ma il tempo compare sia dentro $f$ che nella $t$ al secondo argomento banalmente. Quindi ci sarà la somma di due termini per ogni derivata:
@@ -7597,15 +7596,15 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 \begin{dimostrazione}
 	Bisogna stare attenti perchè in \eqref{eq:onde-energia-pcg} la $t$ sta sia nel dominio di integrazione che nell'ingranda. Sfogliamo la cipolla\footnote{Cit. Gianmaria Verzini.}:
 	\begin{equation*}
-		e( t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ \dsig .
+		e(t) =\frac{1}{2}\int _{0}^{c( t_{0} -t)} dr\int _{\partial B_{r}(\x_{0})}\left[ u_{t}^{2} +c^{2}| \nabla u| ^{2}\right] \ \dsig .
 	\end{equation*}
 	Ricordando che:
 	\begin{equation*}
-		\frac{\de}{\dt}\int _{a}^{f( t)} g( r,t) \dr=g( f( t),t) \cdotp f'( t) +\int _{a}^{f( t)} g_{t}( r,t) \dr,
+		\frac{\de}{\dt}\int _{a}^{f(t)} g( r,t) \dr=g( f(t),t) \cdotp f'(t) +\int _{a}^{f(t)} g_{t}( r,t) \dr,
 	\end{equation*}
-	possiamo derivare $e( t)$, ricordando che nel secondo termine l'integrale si può ricomporre:
+	possiamo derivare $e(t)$, ricordando che nel secondo termine l'integrale si può ricomporre:
 	\begin{align*}
-		\dot{e}( t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \dsig \cdotp \underbrace{\frac{\de}{\dt} c( t_{0} -t)}_{-c} \\
+		\dot{e}(t) & =\frac{1}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \dsig \cdotp \underbrace{\frac{\de}{\dt} c( t_{0} -t)}_{-c} \\
 		            & \ \ \ \ +\frac{1}{\cancel{2}}\int _{B_{c( t_{0} -t)}(\x_{0})}\left[\cancel{2} u_{t} u_{tt} +\cancel{2} c^{2}\textcolor[rgb]{0.82,0.01,0.11}{\nabla u\cdotp \nabla u_{t}}\right] \dxx.                                                                                                                                                                                                 
 	\end{align*}
 	Integriamo per parti il termine rosso:
@@ -7614,7 +7613,7 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
 	\end{equation*}
 	e usiamo l'equazione delle onde omogenea:
 	\begin{align*}
-		\dot{e}( t) & =\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) \dxx                                                                                                                                                                                                                                                                                                                                                                                       \\
+		\dot{e}(t) & =\int _{B_{c( t_{0} -t)}(\x_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) \dxx                                                                                                                                                                                                                                                                                                                                                                                       \\
 		            & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \ \dsig +c^{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})} u_{t} \partial _{\bm{\nu }} u\ \dxx \\
 		            & =-\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] \dsig                                                                          \\
 		            & \leqslant -\frac{c}{2}\int _{\partial B_{c( t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] \dsig                                                                           \\
@@ -7649,13 +7648,13 @@ sappiamo già che la soluzione nella classe $C^{2}\left(\mathbb{R}^{3} \times [ 
 \begin{oss}
 	In $n=1$ la formula di d'Alembert per lo stesso problema forniva la soluzione:
 	\begin{equation}
-		u( x,t) =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[g(x+ct)+g(x-ct)]} +\underbrace{\frac{1}{2c}\int _{x-ct}^{x+ct} h( y) \dy}_{w_{h}}
+		u( x,t) =\textcolor[rgb]{0.82,0.01,0.11}{\frac{1}{2}[g(x+ct)+g(x-ct)]} +\underbrace{\frac{1}{2c}\int _{x-ct}^{x+ct} h(y) \dy}_{w_{h}}
 		\label{eq:onde-pcg-oss-1d-dAlembert}
 	\end{equation}
 	ma $\displaystyle w_{h}$ soddisfa il \eqref{eq:pcg-onde-1d} con profilo iniziale nullo e impulso iniziale $h$
 	\begin{gather*}
 		w_{h}( x,0) =0,\\
-		\partial _{t} w_{h}( x,0) =h( x) ,
+		\partial _{t} w_{h}( x,0) =h(x) ,
 	\end{gather*}
 	calcolando la derivata per un tempo $t$ generico
 	\begin{equation*}
@@ -7760,7 +7759,7 @@ quindi la soluzione è un'onda sferica. Ma abbiamo visto che le onde sferiche in
 \end{equation*}
 Non ci resta che imporre i dati iniziali per determinare $F$ e $G$. Cominciamo imponendo il dato a $t=0$:
 \begin{equation*}
-	w_{\varepsilon }( r,0) =0\ \ \Rightarrow \ \ F( r) +G( r) =0\ \ \Rightarrow \ \ G=-F,
+	w_{\varepsilon }( r,0) =0\ \ \Rightarrow \ \ F(r) +G(r) =0\ \ \Rightarrow \ \ G=-F,
 \end{equation*}
 calcoliamo la derivata nel tempo:
 \begin{equation*}
@@ -7768,15 +7767,15 @@ calcoliamo la derivata nel tempo:
 \end{equation*}
 e imponiamola in $t=0$:
 \begin{equation*}
-	\partial _{t} w_{\varepsilon }( r,0) =-\frac{2c}{r} F'( r) =\Gamma ( r,\varepsilon ) =\frac{1}{( 4\pi \varepsilon )^{3/2}}\exp\left\{-\frac{r^{2}}{4\varepsilon }\right\} ,
+	\partial _{t} w_{\varepsilon }( r,0) =-\frac{2c}{r} F'(r) =\Gamma ( r,\varepsilon ) =\frac{1}{( 4\pi \varepsilon )^{3/2}}\exp\left\{-\frac{r^{2}}{4\varepsilon }\right\} ,
 \end{equation*}
 allora:
 \begin{equation*}
-	F'( r) =-\frac{r}{2c} \Gamma ( x,\varepsilon ) ,
+	F'(r) =-\frac{r}{2c} \Gamma ( x,\varepsilon ) ,
 \end{equation*}
 quest'equazione ci darà $F$ a meno di una costante additiva. Tuttavia, essendo $G=-F$, la costante si eliderà in ogni caso alla fine.
 \begin{align*}
-	F( r) & =\int _{0}^{r} -\frac{s}{2c( 4\pi \varepsilon )^{3/2}} e^{-\frac{s^{2}}{4\varepsilon }} \ds      \\
+	F(r) & =\int _{0}^{r} -\frac{s}{2c( 4\pi \varepsilon )^{3/2}} e^{-\frac{s^{2}}{4\varepsilon }} \ds      \\
 	      & =\frac{1}{4\pi c\sqrt{4\pi \varepsilon }}\left[ e^{-\frac{s^{2}}{4\varepsilon }}\right]_{0}^{r} \\
 	      & =\frac{1}{4\pi c\sqrt{4\pi \varepsilon }}\left[ e^{-\frac{r^{2}}{4\varepsilon }} -1\right] .    
 \end{align*}
@@ -7880,22 +7879,22 @@ Se non uso un impulso unitario ma un impulso di intensità $\displaystyle h(\y)$
 \end{equation*}
 Se uso $h$ espressa come somma di tutti gli impulsi mi basta fare l'integrale:
 \begin{equation*}
-	w_{h}(\x ,t) =\int _{\mathbb{R}^{3}} K(\x ,\y ,t) h(\y) \dyy =\int _{\mathbb{R}^{3}}\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| } h(\y) \dyy =( *)
+	w_{h}(\x ,t) =\int _{\mathbb{R}^{3}} K(\x ,\y ,t) h(\y) \dyy =\int _{\mathbb{R}^{3}}\frac{\delta (| \x -\y| -ct)}{4\pi c| \x -\y| } h(\y) \dyy =(*)
 \end{equation*}
 passando in \textbf{coordinate polari} $\displaystyle (| \x -\y| =r)$ e usando una sorta di teorema di Fubini in coordinate polari:
 \begin{equation*}
-	( *) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\x)} h(\sigg) \dsig =( **)
+	(*) =\int _{0}^{+\infty }\frac{\delta ( r-ct)}{4\pi cr} dr\int _{\partial B_{r}(\x)} h(\sigg) \dsig =( **)
 \end{equation*}
 \begin{oss}
 	Ricordiamo che, per definizione della delta:
 	\begin{equation}
-		\int _{0}^{+\infty } \delta ( r-ct) f( r) \dr=f( ct) .
+		\int _{0}^{+\infty } \delta ( r-ct) f(r) \dr=f( ct) .
 		\label{eq:onde-osservazione-delta}
 	\end{equation}
 \end{oss}
 Nel nostro caso possiamo scrivere:
 \begin{equation*}
-	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\x)} h(\sigg) \dsig\right]}_{f( r)} \dr,
+	( **) =\int _{0}^{+\infty } \delta ( r-ct)\underbrace{\left[\frac{1}{4\pi cr}\int _{\partial B_{r}(\x)} h(\sigg) \dsig\right]}_{f(r)} \dr,
 \end{equation*}
 applicando la formula \eqref{eq:onde-osservazione-delta}\footnote{Il simbolo $\displaystyle \mint{-} $ indica il valor medio sulla superficie della sfera.}:
 \begin{equation*}
@@ -8506,13 +8505,13 @@ Possiamo scegliere due diverse norme, la norma delle funzioni continue, ovvero i
 \begin{itemize}
 \item Con la norma $\displaystyle \Vert \cdotp \Vert _{C([ -1,1])}$
 
-$X$ è uno spazio \textbf{completo}, per dirlo ci serve far vedere che tutte le successioni di Cauchy sono convergenti. In particolare, per ogni $x$ fissato si hanno delle successioni di numeri in $\displaystyle \mathbb{R}$, che è completo, quindi il candidato limite della successione di Cauchy è il limite puntuale $\displaystyle f( x)$
+$X$ è uno spazio \textbf{completo}, per dirlo ci serve far vedere che tutte le successioni di Cauchy sono convergenti. In particolare, per ogni $x$ fissato si hanno delle successioni di numeri in $\displaystyle \mathbb{R}$, che è completo, quindi il candidato limite della successione di Cauchy è il limite puntuale $\displaystyle f(x)$
 \begin{gather*}
 	\underbrace{\forall \varepsilon  >0,\exists M >0:\Vert f_{n} -f_{m}\Vert _{C([ -1,1])} < \varepsilon \ \text{per} \ n,m\geqslant M}_{\text{Cauchy}}\\
 	\text{allora}\\
 	\begin{aligned}
-		\forall m >M,\forall x\in [ -1,1],\quad |f( x) -f_{m}( x) | & =\lim _{n\rightarrow \infty } |f_{n}( x) -f_{m}( x) |\\
-			 & \leqslant \lim _{n\rightarrow \infty }\max_{[ -1,1]} |f_{n}( x) -f_{m}( x) |\\
+		\forall m >M,\forall x\in [ -1,1],\quad |f(x) -f_{m}(x) | & =\lim _{n\rightarrow \infty } |f_{n}(x) -f_{m}(x) |\\
+			 & \leqslant \lim _{n\rightarrow \infty }\max_{[ -1,1]} |f_{n}(x) -f_{m}(x) |\\
 			 & =\lim _{n\rightarrow \infty }\Vert f_{n} -f_{m}\Vert _{C([ -1,1])}\\
 			 & \leqslant \lim _{n\rightarrow \infty } \varepsilon =\varepsilon 
 	\end{aligned}
@@ -8523,7 +8522,7 @@ $X$ \textbf{non è completo}, perché possiamo trovare una successione di Cauchy
 
 Consideriamo la seguente successione
 \begin{equation*}
-v_{n}( x) =
+v_{n}(x) =
 \begin{cases}
 0, & -1\leqslant x\leqslant 0\\
 nx, & 0\leqslant x\leqslant \frac{1}{n}\\
@@ -8573,14 +8572,14 @@ nx, & 0\leqslant x\leqslant \frac{1}{n}\\
 
 Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leqslant n$
 \begin{align*}
-\Vert v_{n} -v_{m}\Vert _{2}^{2} & =\int _{-1}^{1}( v_{n}( x) -v_{m}( x))^{2} \dx\\
+\Vert v_{n} -v_{m}\Vert _{2}^{2} & =\int _{-1}^{1}( v_{n}(x) -v_{m}(x))^{2} \dx\\
  & =\cancel{\int _{-1}^{0}} +\int _{0}^{1/n} +\int _{1/n}^{1/m} +\cancel{\int _{1/m}^{1}}\\
  & =\int _{0}^{1/n}( n-m)^{2} x^{2} \dx+\int _{1/n}^{1/m}( 1-mx)^{2} \dx\rightarrow 0
 \end{align*}Tuttavia è convergente a Heaviside, che non è continua.
 
 Se inoltre consideriamo la norma solita delle funzioni continue notiamo che non è nemmeno di Cauchy
 \begin{equation*}
-\Vert v_{n} -v_{m}\Vert _{C([ -1,1])} =\max_{x\in [ -1,1]}( v_{n}( x) -v_{m}( x)) =1-\frac{m}{n} \nrightarrow 0
+\Vert v_{n} -v_{m}\Vert _{C([ -1,1])} =\max_{x\in [ -1,1]}( v_{n}(x) -v_{m}(x)) =1-\frac{m}{n} \nrightarrow 0
 \end{equation*}per $n,m\rightarrow \infty $, infatti se scegliamo $n=2m$ il limite tenderebbe a $1/2$.
 \end{itemize}
 
@@ -8925,7 +8924,7 @@ Vediamo i due sensi
 
 	allora per proprietà della norma
 	\begin{equation*}
-		\Vert Lx\Vert _{2} =\left\Vert \frac{\Vert x\Vert _{1}}{\delta } L\left(\frac{\delta }{\Vert x\Vert _{1}} x\right)\right\Vert _{2} =\frac{\Vert x\Vert _{1}}{\delta }\left\Vert L\left(\frac{\delta }{\Vert x\Vert _{1}} x\right)\right\Vert _{2} =( *)
+		\Vert Lx\Vert _{2} =\left\Vert \frac{\Vert x\Vert _{1}}{\delta } L\left(\frac{\delta }{\Vert x\Vert _{1}} x\right)\right\Vert _{2} =\frac{\Vert x\Vert _{1}}{\delta }\left\Vert L\left(\frac{\delta }{\Vert x\Vert _{1}} x\right)\right\Vert _{2} =(*)
 	\end{equation*}
 
 	l'argomento dell'operatore ha norma minore o uguale di $\delta $ e quindi rispetta la considerazione di prima
@@ -8935,7 +8934,7 @@ Vediamo i due sensi
 
 	pertanto la norma dell'operatore è minore o uguale di $1$
 	\begin{equation*}
-		( *) \leqslant \frac{\Vert x\Vert _{1}}{\delta } \cdotp 1=\frac{1}{\delta }\Vert x\Vert _{1}
+		(*) \leqslant \frac{\Vert x\Vert _{1}}{\delta } \cdotp 1=\frac{1}{\delta }\Vert x\Vert _{1}
 	\end{equation*}
 
 	che è la definizione di limitatezza.
@@ -9424,7 +9423,7 @@ o, alternativamente
 	Se:
 	\begin{enumerate}
 		\item $\displaystyle \exists K\subset \Omega$ compatto tale che $\text{supp} \varphi _{n} \subset K$ per ogni $n$.
-		\item $\displaystyle \forall k\in \mathbb{N} ,\ \varphi ^{( k)}_{n}\rightarrow \varphi ^{( k)}$ uniformemente per $n\to \infty $.
+		\item $\displaystyle \forall k\in \mathbb{N} ,\ \varphi ^{(k)}_{n}\rightarrow \varphi ^{(k)}$ uniformemente per $n\to \infty $.
 	\end{enumerate}
 \end{definition}
 \begin{definition}
@@ -9810,7 +9809,7 @@ L'obiettivo finale sarà risolvere
 \end{oss}
 Noi tratteremo $2$ situazioni facili:
 \begin{itemize}
-	\item $n=1$, $\Omega =( a,b)$. Daremo un senso alla traccia, cioè quanto vale $u( a) ,u( b)$.
+	\item $n=1$, $\Omega =( a,b)$. Daremo un senso alla traccia, cioè quanto vale $u(a) ,u(b)$.
 	\item $n=n,\Omega =\Omega $, ma $u_{|\partial \Omega } =0$. Non discuteremo se $u=g$.
 \end{itemize}
 
@@ -9822,7 +9821,7 @@ $H^{1}$ è più piccolo e gode di più proprietà: in dimensione $n=1$ le funzio
 		u\in C([ a,b]) , & \text{(cioè esiste un rappresentate continuo)}\\
 		\begin{array}{l}
 			\exists \ w\in L^{2}( a,b) \ \text{t.c.} \\
-			u( x) -u( y) =\int ^{x}_{y} w( s) \ds     
+			u(x) -u(y) =\int ^{x}_{y} w(s) \ds     
 		\end{array} &  \begin{array}{l}
 		\forall x,y\in [ a,b]\\
 		\text{(essenzialmente il TFCI)}
@@ -9843,13 +9842,13 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	
 	Definisco
 	\begin{equation*}
-		v( x) =\int ^{x}_{a} u'( s) \ds
+		v(x) =\int ^{x}_{a} u'(s) \ds
 	\end{equation*}
-	Attenzione: posso dire che $v( x) =u( x) -u( a)$? Non per forza, per applicare il TFCI l'integranda $u'$ deve essere continua, ma sta solo in $L^{2}$. Dimostreremo che sarà vero.
+	Attenzione: posso dire che $v(x) =u(x) -u(a)$? Non per forza, per applicare il TFCI l'integranda $u'$ deve essere continua, ma sta solo in $L^{2}$. Dimostreremo che sarà vero.
 	
 	$v$ è continua fino al bordo:
 	\begin{align*}
-		x_{n}\rightarrow x\ \ \Rightarrow \ \ | v( x_{n}) -v( x)| & =\left| \int ^{x_{n}}_{x} 1\cdot u'( s) \ds\right|                                                                                                 &                                  \\
+		x_{n}\rightarrow x\ \ \Rightarrow \ \ | v( x_{n}) -v(x)| & =\left| \int ^{x_{n}}_{x} 1\cdot u'(s) \ds\right|                                                                                                 &                                  \\
 		                                                          & \leqslant | x_{n} -x| ^{1/2}\left(\int ^{x_{n}}_{x}( u')^{2}\right)^{1/2}                                                                  & \text{(Cauchy-Schwarz)} \\
 		                                                          & \leqslant \underbrace{| x_{n} -x| ^{1/2}}_{\rightarrow 0}\underbrace{\left(\int ^{b}_{a}( u')^{2}\right)^{1/2}}_{\leqslant C,\ u'\in L^{2}} & \text{(l'integrale è positivo)} \\
 		                                                          & \rightarrow 0                                                                                                                              &                                  
@@ -9859,9 +9858,9 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 	Calcolo $v'$ (in $\mathcal{D} '( a,b)$). $\forall \varphi \in \mathcal{D}( a,b)$
 	\begin{align*}
 		\langle v',\varphi \rangle & =-\langle v,\varphi '\rangle \\
-								   & =-\int ^{b}_{a} v( x) \varphi '( x) \dx\\
-								   & =-\int ^{b}_{a}\underbrace{\left[\int ^{x}_{a} u'( s) \ds\right]}_{v(x)} \varphi '( x) \dx \\
-		                           & =-\iint _{T}[ u'( s) \varphi '( x)] \ds\dx=( *)                                                                                           
+								   & =-\int ^{b}_{a} v(x) \varphi '(x) \dx\\
+								   & =-\int ^{b}_{a}\underbrace{\left[\int ^{x}_{a} u'(s) \ds\right]}_{v(x)} \varphi '(x) \dx \\
+		                           & =-\iint _{T}[ u'(s) \varphi '(x)] \ds\dx=(*)                                                                                           
 	\end{align*}
 
 
@@ -9910,10 +9909,10 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
 \FloatBarrier
 
 \begin{align*}
-	( *) & =-\int ^{b}_{a}\left[\int ^{b}_{s} u'( s) \varphi '( x) \dx\right] \ds      &                            \\
-	     & =-\int ^{b}_{a} u'( s)\left[\int ^{b}_{s} \varphi '( x) \dx\right] \ds      &                            \\
-	     & =-\int ^{b}_{a} u'( s)\left[\cancel{\varphi ( b)} -\varphi ( s)\right] \ds &                            \\
-	     & =\int ^{b}_{a} u'( s) \varphi ( s) \ds                                    &                            \\
+	(*) & =-\int ^{b}_{a}\left[\int ^{b}_{s} u'(s) \varphi '(x) \dx\right] \ds      &                            \\
+	     & =-\int ^{b}_{a} u'(s)\left[\int ^{b}_{s} \varphi '(x) \dx\right] \ds      &                            \\
+	     & =-\int ^{b}_{a} u'(s)\left[\cancel{\varphi (b)} -\varphi (s)\right] \ds &                            \\
+	     & =\int ^{b}_{a} u'(s) \varphi (s) \ds                                    &                            \\
 	     & =\langle u',\varphi \rangle                                               & \text{anche} \ u'\in L^{2} 
 \end{align*}
 ho dimostrato che $v'=u'$ in $\mathcal{D} '( a,b)$.
@@ -9938,15 +9937,15 @@ Allora
 \begin{equation*}
 	v-u\ \text{è una funzione costante}
 \end{equation*}
-cioè $v( x) -u( x) =C,\ \forall x\in [ a,b]$.
+cioè $v(x) -u(x) =C,\ \forall x\in [ a,b]$.
 
-Siccome $v$ è continua, anche $u( x) =v( x) -C$ è continua essendo differenza di funzioni continue.
+Siccome $v$ è continua, anche $u(x) =v(x) -C$ è continua essendo differenza di funzioni continue.
 
 In realtà abbiamo dimostrato anche la seconda parte
 \begin{align*}
-	u( x) -u( y) & =[ v( x) -C] -[ v( y) -C] =v( x) -v( y)          \\
-	             & =\int ^{x}_{a} u'( s) \ds-\int ^{y}_{a} u'( s) \ds \\
-	             & =\int ^{x}_{y} u'( s) \ds                         
+	u(x) -u(y) & =[ v(x) -C] -[ v(y) -C] =v(x) -v(y)          \\
+	             & =\int ^{x}_{a} u'(s) \ds-\int ^{y}_{a} u'(s) \ds \\
+	             & =\int ^{x}_{y} u'(s) \ds                         
 \end{align*}
 \end{dimostrazione}
 Definiamo il secondo spazio di Sobolev: un sottospazio di funzioni \textit{nulle al bordo.}
@@ -10025,7 +10024,7 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
 \begin{oss}
 	Un'immediata conseguenza è che l'unica costante che può appartenere ad $H^{1}_{0}$ è la costante nulla, ulteriore indice che \textit{ci stanno le cose che si annullano al bordo.}
 
-	Ovvero, se consideriamo un dominio limitato $( |\Omega |< +\infty )$, le costanti stanno in $H^{1} $: $u( x) \equiv c,u\in H^{1}(\Omega)$,  ma
+	Ovvero, se consideriamo un dominio limitato $( |\Omega |< +\infty )$, le costanti stanno in $H^{1} $: $u(x) \equiv c,u\in H^{1}(\Omega)$,  ma
 	\begin{equation*}
 		u\in H_{0}^{1}(\Omega) \ \ \Leftrightarrow \ \ c=0
 	\end{equation*}
@@ -10308,9 +10307,9 @@ In entrambi i casi mi manca in realtà un ultimo tassello: $F$ deve essere \text
 
 È chiaramente lineare, quindi dimostro la continuità con la limitatezza. Facendo la nostra ultima ipotesi, ovvero $\displaystyle f\in L^{2}(\Omega)$, e applicando \textbf{Cauchy-Schwartz}
 \begin{align*}
-	| Fv| =\left| \int _{\Omega } fv\ \dxx\right| & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =( *)  &                                  \\
-	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{H^{1}(\Omega)}        & \text{(per approccio numerico)}  \\
-	( *)                                                 & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert \nabla v\Vert _{L^{2}(\Omega)} & \text{(per approccio analitico)} 
+	| Fv| =\left| \int _{\Omega } fv\ \dxx\right| & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =(*)  &                                  \\
+	(*)                                                 & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{H^{1}(\Omega)}        & \text{(per approccio numerico)}  \\
+	(*)                                                 & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert \nabla v\Vert _{L^{2}(\Omega)} & \text{(per approccio analitico)} 
 \end{align*}
 In entrambi i casi possiamo concludere:
 \begin{theorem}
@@ -10332,9 +10331,9 @@ Il fatto è che se $\displaystyle f\in L^{2}$ allora esiste un'unica soluzione i
 Solo per completezza (questo argomento sarà trattato nella parte numerica) vediamo cosa succede con condizioni al bordo diverse. Lavoriamo in $n=1$ con un'equazione di diffusione-reazione lineare
 \begin{equation*}
 	\begin{cases}
-		-u''( x) +\mu ( x) u=f( x)   & a< x< b            \\
-		u'( b) +\alpha u( b) =u_{1}  &                    \\
-		-u'( a) +\alpha u( a) =u_{0} & \alpha \geqslant 0 
+		-u''(x) +\mu (x) u=f(x)   & a< x< b            \\
+		u'(b) +\alpha u(b) =u_{1}  &                    \\
+		-u'(a) +\alpha u(a) =u_{0} & \alpha \geqslant 0 
 	\end{cases}
 \end{equation*}
 Con $\displaystyle \alpha =0$ ho Neumann, con $\displaystyle \alpha  >0$ ho Robin.
@@ -10345,7 +10344,7 @@ Sia $\displaystyle v\in C^{\infty }([ a,b])$ (molto regolare, ma non si anulla a
 \end{equation*}
 integrando per parti
 \begin{equation*}
-	-u'( b) v( b) +u'( a) v( a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
+	-u'(b) v(b) +u'(a) v(a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
 \end{equation*}
 per tentare di dare una formulazione debole devo prendere
 \begin{gather*}
@@ -10354,11 +10353,11 @@ per tentare di dare una formulazione debole devo prendere
 \end{gather*}
 allora $v(a)$, $v(b)$ hanno senso (essendo $v$ continua fino al bordo). Le derivate di $u,v$ sono funzioni di $L^{2}$ quindi il problema sta nei termini $u'(a)$, $u'(b)$ che non hanno senso. Posso risolvere utilizzando le condizioni al bordo:
 \begin{equation*}
-	-\underbrace{( u_{1} -\alpha u( b))}_{u'( b)} v( b) +\underbrace{( \alpha u( a) -u_{0})}_{u'( a)} v( a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
+	-\underbrace{( u_{1} -\alpha u(b))}_{u'(b)} v(b) +\underbrace{( \alpha u(a) -u_{0})}_{u'(a)} v(a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
 \end{equation*}
 ora possiamo distinguere cose che sono bilineari e cose che sono semplicemente lineari. Ciò che contiene $u$ va a sinistra, ciò che è senza $u$ va a destra:
 \begin{equation*}
-	\underbrace{\alpha u( b) v( b) +\alpha u( a) v( a) +\int _{a}^{b}[ u'v'+\mu uv]}_{a( u,v)} =\underbrace{u_{1} v( b) +u_{0} v( a) +\int _{a}^{b} fv}_{Fv} .
+	\underbrace{\alpha u(b) v(b) +\alpha u(a) v(a) +\int _{a}^{b}[ u'v'+\mu uv]}_{a( u,v)} =\underbrace{u_{1} v(b) +u_{0} v(a) +\int _{a}^{b} fv}_{Fv} .
 \end{equation*}
 
 
