@@ -3479,7 +3479,7 @@ Sia $\Omega \subseteq \mathbb{R}^{n}$ un dominio, $u$ è armonica in $\Omega $ s
 Quando il passo spaziale $h\rightarrow 0$ le funzioni d-armoniche ``diventano'' armoniche: è ragionevole che versioni appropriate delle proprietà per funzioni d-armoniche continuino a valere nel caso continuo. La prima è la proprietà di media.
 \subsection{Proprietà di media}
 
-Le funzioni d-armoniche sono definite in termini di proprietà di media, quindi ci aspettiamo che le funzioni armoniche ereditino una proprietà di media del tipo: il valore al centro di ogni sfera $B_{R}(x) \subset \subset \Omega $\footnote{Questa notazione è equivalente a $\overline{B_{R}}(x) \subset \Omega $, indica che la supeficie della sfera non tocca la frontiera di $\Omega $.} è uguale alla media artimetica dei valori al bordo della sfera $\partial B_{R}$.
+Le funzioni d-armoniche sono definite in termini di proprietà di media, quindi ci aspettiamo che le funzioni armoniche ereditino una proprietà di media del tipo: il valore al centro di ogni sfera $B_{R}(\x) \subset \subset \Omega $\footnote{Questa notazione è equivalente a $\overline{B_{R}}(x) \subset \Omega $, indica che la supeficie della sfera non tocca la frontiera di $\Omega $.} è uguale alla media artimetica dei valori al bordo della sfera $\partial B_{R}$.
 
 Indichiamo con $\omega _{n}$ la misura di $\partial B_{1}$, la superficie della sfera in $n$ dimensioni di raggio $1$. Quindi $w_{n} =| \partial B_{1}| $:
 \begin{align*}
@@ -3489,7 +3489,7 @@ Indichiamo con $\omega _{n}$ la misura di $\partial B_{1}$, la superficie della 
 \end{align*}
 Dove la funzione Gamma di Eulero è definita come
 \begin{equation*}
-	\Gamma (s) =\int ^{+\infty }_{0} t^{s-1} e^{-t} dt
+	\Gamma (s) =\int ^{+\infty }_{0} t^{s-1} e^{-t} \dt
 \end{equation*}
 \begin{theorem}
 \label{thm:armonica-allora-pdm}
@@ -3606,7 +3606,7 @@ Dove la funzione Gamma di Eulero è definita come
 	\end{equation*}
 	moltiplichiamo per $r^{n-1}$ e integriamo tra $0$ ed $R$:\footnote{Riordinando gli integrali con fubini sul membro di destra otteniamo una formula di "riduzione per bucce" 
 	\begin{equation*}
-		\int _{B_{R}(x)} f(y) \dy=\int _{0}^{R}\left(\int _{\partial B_{r}(x)} f\dsig \right) \dr
+		\int _{B_{R}(\x)} f(y) \dy=\int _{0}^{R}\left(\int _{\partial B_{r}(\x)} f\dsig \right) \dr
 	\end{equation*}
 	}
 	\begin{align*}
@@ -3837,7 +3837,7 @@ Le funzioni del problema diventano
 U(r,\vartheta) =u( p_{1} +r\cos \vartheta,p_{2} +r\sin \vartheta)\\
 G(\vartheta) =g( p_{1} +R\cos \vartheta,p_{2} +R\sin \vartheta)
 \end{gather*}
-L'equazione $\Delta u=0$ in $B_{R}(p)$ diventa\footnote{si veda la sezione precedente.}
+L'equazione $\Delta u=0$ in $B_{R}(\mathbf{p})$ diventa\footnote{si veda la sezione precedente.}
 \begin{equation*}
 U_{rr} +\frac{1}{r} U_{r} +\frac{1}{r^{2}} U_{\vartheta \vartheta } =0,\ \ \ \ \text{in} \ 0< r< R,\ \ 0\leqslant \vartheta \leqslant 2\pi 
 \end{equation*}
@@ -4048,9 +4048,9 @@ Se $\x \in B_{R}(\mathbf{p})$, cioè dentro e non sul bordo
 \end{figure}
 \FloatBarrier
 
-possiamo passare al limite sotto il segno di integrale perché il denominatore non si annulla mai, e in particolare risulta $u\in C^{\infty }(B_{R}(p))$.\footnote{"Why are we still here? Just to suffer?".}
+possiamo passare al limite sotto il segno di integrale perché il denominatore non si annulla mai, e in particolare risulta $u\in C^{\infty }(B_{R}(\mathbf{p}))$.\footnote{"Why are we still here? Just to suffer?".}
 
-\textbf{Caso con }$G\in C([ 0,2\pi ])$, solamente continua. La \eqref{eq:poisson-cerchio-dim} definisce $u\in C^{\infty }(B_{R}(p))$ e armonica in $B_{R}(p)$. L'unica cosa un po' delicata sono le condizioni al bordo, che comunque si possono verificare.
+\textbf{Caso con }$G\in C([0,2\pi])$, solamente continua. La \eqref{eq:poisson-cerchio-dim} definisce $u\in C^{\infty }(B_{R}(\mathbf{p}))$ e armonica in $B_{R}(\mathbf{p})$. L'unica cosa un po' delicata sono le condizioni al bordo, che comunque si possono verificare.
 
 \end{dimostrazione}
 
@@ -4065,7 +4065,7 @@ con $\displaystyle u\in C^{\infty }( B_{R}(\mathbf{p})) \cap C\left(\overline{B_
 
 Come abbiamo trovato e costruito una soluzione fondamentale per l'operatore del calore, cerchiamo una soluzione con proprietà simili per l'operatore di Laplace: questa soluzione fondamentale, armonica in tutto $\displaystyle \mathbb{R}^{n}$ tranne che in un punto, ci servirà per costruire una formula di rappresentazione per la soluzione del problema di Dirichlet che coinvolge dei potenziali.
 
-Sia $\displaystyle u=u(x)$ armonica in $\displaystyle \mathbb{R}^{n}$ e sia $M$ una matrice di rotazione, cioè tale che
+Sia $\displaystyle u=u(\x)$ armonica in $\displaystyle \mathbb{R}^{n}$ e sia $M$ una matrice di rotazione, cioè tale che
 \begin{equation*}
 	M^{T} =M^{-1} \ \ \land \ \ \mathrm{det} M=1
 \end{equation*}
@@ -4073,17 +4073,17 @@ Iniziamo osservando che, definita $\displaystyle D^{2} u$ l'Hessiana di $u$, pos
 \begin{equation*}
 	\Delta u=\mathrm{Tr} D^{2} u
 \end{equation*}
-Definiamo $\displaystyle v(x) =u(Mx)$, allora
+Definiamo $v(\x) =u(M\x)$, allora
 \begin{equation*}
-	D^{2} v(x) =M^{T} D^{2} u(Mx) M
+	D^{2} v(\x) =M^{T} D^{2} u(M\x) M
 \end{equation*}
 inoltre
 \begin{align*}
-	\Delta v(x) & =\mathrm{Tr}\left[ M^{T} D^{2} u(Mx) M\right] &                                        \\
-	             & =\mathrm{Tr} D^{2} u(Mx)                      & M\ \text{ortogonale non varia traccia} \\
-	             & =\Delta u(Mx) =0                              &                                        
+	\Delta v(\x) & =\mathrm{Tr}\left[ M^{T} D^{2} u(M\x) M\right] &                                        \\
+	             & =\mathrm{Tr} D^{2} u(M\x)                      & M\ \text{ortogonale non varia traccia} \\
+	             & =\Delta u(M\x) =0                              &                                        
 \end{align*}
-$v$ è ancora armonica: \textbf{il Laplaciano commuta con le rotazioni} e dunque $\displaystyle \Delta $ è invariante per rotazioni. Si dimostra facilmente che $\displaystyle \Delta $ \textbf{è anche invariante per traslazione}: se $u(x)$ è armonica, $\displaystyle v(x) =u(x-y)$, per ogni $y$ fissato, è armonica.
+$v$ è ancora armonica: \textbf{il Laplaciano commuta con le rotazioni} e dunque $\Delta $ è invariante per rotazioni. Si dimostra facilmente che $\Delta $ \textbf{è anche invariante per traslazione}: se $u(\x)$ è armonica, $v(\x) =u(\x-\y)$, per ogni $\y$ fissato, è armonica.
 
 Per l'operatore del calore la soluzione fondamentale (in $n=3$) era
 \begin{equation*}
@@ -4160,13 +4160,13 @@ Da cui ricaviamo la \textbf{soluzione fondamentale}
 \end{equation}
 $\displaystyle \Phi $ è definita per $\displaystyle x\neq 0$ e ha significato fisico. Se $n=3$, $\displaystyle 4\pi \Phi $ rappresenta il potenziale elettrostatico generato da una carica posta nell'origine che si annulla all'infinito. Se $n=2$, $\displaystyle 2\pi \Phi $ rappresenta il potenziale generato da una carica di densità totale $1$, distribuita lungo l'asse $\displaystyle x_{3}$.
 
-Se la carica è posta in un punto $y$ fissato possiamo sfruttare l'invarianza per traslazione 
+Se la carica è posta in un punto $\y$ fissato possiamo sfruttare l'invarianza per traslazione 
 \begin{equation*}
-	\Delta _{x} \Phi (x-y) =-\delta _{y}
+	\Delta _{\x} \Phi (\x-\y) =-\delta _{\y}
 \end{equation*}
-E per simmetria, con $x$ fissato
+E per simmetria, con $\x$ fissato
 \begin{equation*}
-	\Delta _{y} \Phi (x-y) =-\delta _{x}
+	\Delta _{\y} \Phi (\x-\y) =-\delta _{\x}
 \end{equation*}
 Generalizzando per dimensione $n >3$ la soluzione fondamentale è
 \begin{equation*}
@@ -4176,11 +4176,11 @@ Generalizzando per dimensione $n >3$ la soluzione fondamentale è
 
 Torniamo in dimensione $n=3$. Supponiamo che $\displaystyle \frac{1}{4\pi } f(\y)$ rappresenti la densità di una carica localizzata all'interno di un compatto di $\displaystyle \mathbb{R}^{3}$. Il potenziale in $x$ generato dalla carica presente in un piccolo volumetto $\dy$, centrata in $y$, è dato da
 \begin{equation*}
-	\Phi (\x-\y) f(\y) \dy
+	\Phi (\x-\y) f(\y) \dyy
 \end{equation*}
 Il potenziale totale si ottiene sommando tutti i contributi
 \begin{equation}
-	\mathcal{N}_{f}(\x) =\int _{\mathbb{R}^{3}} \Phi (\x-\y) f(\y) \dy=\frac{1}{4\pi }\int _{\mathbb{R}^{3}}\frac{f(\y)}{|\x-\y| } \dy=(\Phi \ast f)(\x)
+	\mathcal{N}_{f}(\x) =\int _{\mathbb{R}^{3}} \Phi (\x-\y) f(\y) \dyy=\frac{1}{4\pi }\int _{\mathbb{R}^{3}}\frac{f(\y)}{|\x-\y| } \dyy=(\Phi \ast f)(\x)
 \end{equation}
 Questo potenziale è detto \textbf{potenziale Newtoniano} di $f$. Formalmente, nel senso delle distribuzioni e sotto opportune ipotesi per $f$\footnote{Per $x$ fissato $\frac{1}{|\x-\y| } \in L^{1}(B(\zer))$, quindi dovrò controllare solo il comportamento di $f(\y)$.}:
 \begin{equation*}
@@ -4198,7 +4198,7 @@ In generale anche $\mathcal{N}_{f}+c$ è soluzione, ma questa è quella che si a
 \begin{nb}
 	Per $n=2$ il potenziale Newtoniano si chiama potenziale logaritmico
 	\begin{equation}
-		\mathcal{L}_{f}(\x) =-\frac{1}{2\pi }\int _{\mathbb{R}^{2}}\log|\x-\y| f(\y) \dy
+		\mathcal{L}_{f}(\x) =-\frac{1}{2\pi }\int _{\mathbb{R}^{2}}\log|\x-\y| f(\y) \dyy
 	\end{equation}
 	e vale un risultato simile: se $\displaystyle f\in C^{2}(\mathbb{R}^{2})$, allora $\displaystyle \mathcal{L}_{f} \in C^{2}(\mathbb{R}^{2})$ ed è l'unica soluzione di 
 	\begin{equation*}
@@ -4384,10 +4384,10 @@ Ci proponiamo di ottenere una formula di rappresentazione \textbf{in funzione de
 \end{equation}
 Richiamiamo la formula della lezione scorsa
 \begin{equation}
-	u(x) =-\int _{\Omega } \Phi ( \x-\y) \Delta u(y) \ \dyy+\int _{\partial \Omega } \Phi ( \x-\sigg ) \underbrace{\partial _{\nuu} u( \sigg )}_{?} \ \dsig -\int _{\partial \Omega } \partial _{\nuu} \Phi ( \x-\sigg ) u( \sigg ) \ \dsig 
+	u(\x) =-\int _{\Omega } \Phi ( \x-\y) \Delta u(\y) \ \dyy+\int _{\partial \Omega } \Phi ( \x-\sigg ) \underbrace{\partial _{\nuu} u( \sigg )}_{?} \ \dsig -\int _{\partial \Omega } \partial _{\nuu} \Phi ( \x-\sigg ) u( \sigg ) \ \dsig 
 	\label{eq:richiamo-formula-green}
 \end{equation}
-Conosciamo $\Delta u$, essendo uguale a $f$ come dato del problema, e conosciamo anche $u(\sigg )$ sul bordo, essendo uguale al dato $g$, ma non sappiamo nulla del termine $\partial _{\nuu} u( \sigg )$. L'idea è di andare a cercare una funzione $G$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli. Sia $g(x,y)$ la soluzione di un certo problema
+Conosciamo $\Delta u$, essendo uguale a $f$ come dato del problema, e conosciamo anche $u(\sigg )$ sul bordo, essendo uguale al dato $g$, ma non sappiamo nulla del termine $\partial _{\nuu} u( \sigg )$. L'idea è di andare a cercare una funzione $G$ tale che \textit{si annulli sul bordo}, così che il termine centrale si annulli. Sia $g(\x,\y)$ la soluzione di un certo problema
 \begin{equation}
 	\begin{cases}
 		-\Delta _{\y} g=0,                & \text{in} \ \Omega          \\
@@ -4408,12 +4408,12 @@ ottenendo, siccome il laplaciano di $g$ è nullo,
 \end{equation*}
 Dall'identità di Green \eqref{eq:id-green} applicata a $u$ e
 \begin{equation}
-	v(y) =g(\x,\y) \ \text{con} \ x\ \text{fissato}
+	v(\y) =g(\x,\y) \ \text{con} \ x\ \text{fissato}
 	\label{eq:sol-green-v-g}
 \end{equation}
 da cui
 \begin{align*}
-	\int _{\Omega }( v\Delta u-u\Delta v) \dx & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nuu} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nuu} v\right) \\
+	\int _{\Omega }( v\Delta u-u\Delta v) \dxx & =\cancel{-\int _{\Omega } \nabla v\cdotp \nabla u} +\int _{\partial \Omega } v\partial _{\nuu} u-\left(\cancel{-\int _{\Omega } \nabla u\cdotp \nabla v} +\int _{\partial \Omega } u\partial _{\nuu} v\right) \\
 	 & =\int _{\partial \Omega }( v\partial _{\nuu} u-u\partial _{\nuu} v) \dsig                                                                                                                                 
 \end{align*}
 sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-pb-unico}, \eqref{eq:sol-green-v-g} e ricordiamo che $\Delta v=\Delta _{y} g=0$
@@ -4423,11 +4423,11 @@ sostituiamo le relazioni \eqref{eq:sol-green-pb-dirichlet}, \eqref{eq:sol-green-
 \end{align*}
 facendo la differenza tra \eqref{eq:richiamo-formula-green} e questa scompare il termine con la derivata normale sul bordo
 \begin{equation*}
-	u(x) =\int _{\Omega }\underbrace{[ \Phi ( \x-\y) -g(\x,\y)]}_{G(\x,\y)} f(\y) \dyy+0-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu}\underbrace{[ \Phi ( \x-\sigg) -g(\x,\sigg)]}_{G(\x,\sigg)} \dsig 
+	u(\x) =\int _{\Omega }\underbrace{[ \Phi ( \x-\y) -g(\x,\y)]}_{G(\x,\y)} f(\y) \dyy+0-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu}\underbrace{[ \Phi ( \x-\sigg) -g(\x,\sigg)]}_{G(\x,\sigg)} \dsig 
 \end{equation*}
 cioè abbiamo ottenuto la \textbf{formula di rappresentazione di Green}\footnote{Si noti che anche se $G$ è nulla sul bordo, non è detto che la sua derivata normale sia nulla, è facile rendersene conto pensando al caso unidimensionale.}
 \begin{equation*}
-	\boxed{u(\x) =\int _{\Omega } G(\x,\y) f(y) \ \dyy-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu} G(\x,\sigg) \ \dsig }
+	\boxed{u(\x) =\int _{\Omega } G(\x,\y) f(\y) \ \dyy-\int _{\partial \Omega } \varphi ( \sigg ) \partial_{\nuu} G(\x,\sigg) \ \dsig }
 \end{equation*}
 questa formula è utile perché per risolvere qualunque problema di Dirichlet per qualunque coppia di dati $f,\varphi $ è sufficiente risolvere un solo problema, il \eqref{eq:sol-green-pb-unico}, da cui si costruisce la $G$ e si trova $u$.
 \chapter{Leggi di conservazioni scalari}
@@ -8410,8 +8410,8 @@ Sia $X$ spazio vettoriale normato reale, stiamo chiedendo due cose: combinazioni
 
 La norma permette di definire
 \begin{itemize}
-	\item la distanza $\text{dist}(x,y) =\Vert x-y\Vert $
-	\item le palle aperte $B_{r}(x) =\{y\in X:\Vert x-y\Vert < r\}$
+	\item la distanza $\text{dist}(\x,\y) =\Vert \x-\y\Vert $
+	\item le palle aperte $B_{r}(\x) =\{\y\in X:\Vert \x-\y\Vert < r\}$
 	      \begin{itemize}
 	      	\item di conseguenza la topologia (aperto, chiuso, ...)
 	      \end{itemize}
@@ -8791,21 +8791,18 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 		\Vert \overline{v} -\overline{w}\Vert ^{2} +\Vert \overline{v} +\overline{w} -2x\Vert ^{2} =4d^{2}
 		\end{equation*}
 		
-		Sfruttando gli stessi passaggi dell'esistenza osservo che $\Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$ \begin{equation*}
-		\Rightarrow \ \ \Vert \overline{v} -\overline{w}\Vert ^{2} =0\ \ \Rightarrow \ \ \overline{v} =\overline{w}
+		Sfruttando gli stessi passaggi dell'esistenza osservo che $\Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$, ma quindi $\Vert \overline{v} -\overline{w}\Vert ^{2} =0$, infine per proprietà della norma:
+		\begin{equation*}
+			\overline{v} =\overline{w}
 		\end{equation*}
-		\item Inoltre (punto 1)
-		      
-		      conseguenza banale, se $x\in V$ \begin{equation*}
-		      d=\inf_{v\in V}\Vert v-x\Vert =0
+		\item Inoltre (punto 1)\\
+		Conseguenza banale, se $x\in V$
+		\begin{equation*}
+			d=\inf_{v\in V}\Vert v-x\Vert =0
 		\end{equation*}
-		
-		$\displaystyle \Rightarrow \ \Vert x-P_{V} x\Vert =0\ \Rightarrow \ x=P_{V} x$ 
-		\item Inoltre (punto 2)
-		      
-		      $\displaystyle Q_{V} x=x-P_{V} x$
-		      
-		      Osservo che $\displaystyle \forall v\in V,\ t\in \mathbb{R} \Longrightarrow (P_{V} x-tv) \in V$
+		quindi come prima $\Vert x-P_{V} x\Vert =0\ \Rightarrow \ x=P_{V} x$ 
+		\item Inoltre (punto 2)\\
+		Definendo $Q_{V} x=x-P_{V} x$, osserviamo che $\forall v\in V,\ t\in \mathbb{R} \Longrightarrow (P_{V} x-tv) \in V$
 		      
 		      
 		      
@@ -8846,22 +8843,24 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
 		      	
 		      \end{figure}
 		      \FloatBarrier
+		      quindi:
 		      \begin{align*}
 		      	d^{2} & \leqslant \Vert -(P_{V} x-tv) +x\Vert ^{2} =\Vert Q_{V} x+tv\Vert ^{2}                                        \\
 		      	      & =\Vert Q_{V} x\Vert ^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}                                               \\
 		      	      & =d^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}                                                                 \\
 		      	      &                                                                                                               \\
-		      	      & \Rightarrow \ \ \Vert v\Vert ^{2} t^{2} +2(Q_{V} x,v) t\geqslant 0,\ \forall t\in \mathbb{R},\ \forall v\in V 
 		      \end{align*}
-		      
-		      Per analogia con l'equazione di una parabola
-		      \begin{equation*}
-		      at^{2} +bt+c\geqslant 0,\ \forall t\in \mathbb{R} \ \ \Rightarrow \ \ b^{2} -4ac\leqslant 0
-		\end{equation*}
+		    otteniamo che:
+		    \begin{equation*}
+		    	\Vert v\Vert ^{2} t^{2} +2(Q_{V} x,v) t\geqslant 0,\ \forall t\in \mathbb{R},\ \forall v\in V
+		    \end{equation*}
+			Per analogia con l'equazione di una parabola a discriminante non positivo:
+		    \begin{equation*}
+				at^{2} +bt+c\geqslant 0,\ \forall t\in \mathbb{R} \ \ \Rightarrow \ \ b^{2} -4ac\leqslant 0
+			\end{equation*}
+		con $\displaystyle a=\Vert v\Vert ^{2},\ b=2(Q_{V} x,v)$
 		
-		Con $\displaystyle a=\Vert v\Vert ^{2},\ b=2(Q_{V} x,v)$
-		
-		Ma se $\displaystyle c=0\ \Rightarrow \ b\ =0$, da cui la tesi.
+		Nel nostro caso $c=0$, quindi $b=0$, da cui la tesi.
 		\item Teorema di Pitagora
 		\begin{equation*}
 		      \Vert x\Vert ^{2} =\Vert P_{V} x+Q_{V} x\Vert ^{2} =\Vert P_{V} x\Vert ^{2} +2(P_{V} x,Q_{V} x) +\Vert Q_{V} x\Vert ^{2}
