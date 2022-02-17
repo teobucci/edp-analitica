@@ -1,0 +1,188 @@
+%!TEX root = ../main.tex
+\chapter{Formulazione variazionale per l'equazione di Poisson}
+
+Vediamo un'applicazione di quanto visto finora a un caso specifico. Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$ dominio limitato, $\displaystyle f:\Omega \rightarrow \mathbb{R}$, sia dato il problema
+\begin{equation}
+    \begin{cases}
+        -\Delta u=f & \x \in \Omega          \\
+        u=0         & \x \in \partial \Omega
+    \end{cases}
+    \label{eq:af-problema-poisson}
+\end{equation}
+\vspace*{0.5cm}
+\begin{center}
+    \textbf{Nozioni di soluzione.}
+\end{center}
+\begin{center}
+    %\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+    {\renewcommand{\arraystretch}{2.8}% for the vertical padding
+        \begin{tabular}{|l|l|}
+            \hline
+            $u$ soluzione classica        & \makecell[l]{$\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega })$ e verifica il sistema. \\Questo forza che $\displaystyle f\in C(\Omega)$, ci impedisce di studiare\\forzanti con discontinuità.} \\
+            \hline
+            \makecell[l]{$u$ soluzione debole                                                                                                 \\(o variazionale)} & useremo questa! \\
+            \hline
+            $u$ soluzione forte           & \makecell[l]{$\displaystyle u\in H^{2}(\Omega) ,\ f\in L^{2}(\Omega)$                             \\Non si usano molto.} \\
+            \hline
+            $u$ soluzione distribuzionale & \makecell[l]{$\displaystyle u\in \mathcal{D} '(\Omega) ,\ f\in \mathcal{D} '(\Omega)$             \\L'identità vale nel senso delle distribuzioni.\\Non possiamo formalizzare quanto vale al bordo.} \\
+            \hline
+        \end{tabular}
+    }
+\end{center}
+\vspace*{0.5cm}
+La nozione di soluzione debole permette di scaricare eventuali \textit{debolezze} della funzione su proprietà più regolari delle funzione test, tramite integrazione per parti.
+
+Come si costruisce la \textbf{formulazione variazionale}?
+\begin{itemize}
+    \item Scelgo uno spazio di funzioni test adatto al problema. Con Dirichlet si usa $\displaystyle \mathcal{D}(\Omega)$.
+    \item Suppongo $u$ soluzione classica di \eqref{eq:af-problema-poisson}, allora $\displaystyle \forall \varphi \in \mathcal{D}(\Omega)$ moltiplico e integro:
+          \begin{equation*}
+              -\Delta u=f\ \ \Rightarrow \ \ \int _{\Omega } -\Delta u\ \varphi \dxx =\int _{\Omega } f\ \varphi \dxx
+          \end{equation*}
+
+          integro per parti
+          \begin{equation*}
+              -\underbrace{\int _{\partial \Omega } \varphi \partial _{\bm{\nu }} u\dsig }_{=0\ \text{(supp. comp.)}} +\int _{\Omega } \nabla u\cdotp \nabla \varphi \dxx =\int _{\Omega } f\varphi \dxx
+          \end{equation*}
+          \newpage
+          e ottengo\footnote{Vale anche il \textbf{principio di coerenza}: partendo dalla formulazione variazionale posso tornare indietro. Sia $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega })$ e tale che:
+              \begin{equation*}
+                  \int _{\Omega } \nabla u\cdotp \nabla \varphi =\int _{\Omega } f\varphi ,\ \ \forall \varphi \in \mathcal{D} .
+              \end{equation*}
+              Posso integrare per parti
+              \begin{equation*}
+                  \cancel{\int _{\partial \Omega } \partial _{\nuu} u\varphi \dsig } -\int _{\Omega } \Delta u\varphi =\int _{\Omega } f\varphi \ \ \Rightarrow \ \ \int _{\Omega }(-\Delta u-f) \varphi =0,\ \ \forall \varphi
+              \end{equation*}
+              Ho una proprietà vera per tutte le funzioni test, che sono dense in $\displaystyle L^{2}(\Omega)$, posso \textit{portare} questa proprietà in $\displaystyle L^{2}$:
+              \begin{equation*}
+                  (-\Delta u-f,w)_{L^{2}} =\int _{\Omega }(-\Delta u-f) w=0,\ \ \forall w\in L^{2}(\Omega) .
+              \end{equation*}
+              Quindi
+              \begin{equation*}
+                  -\Delta u-f=0\ \text{q.o. in} \ \Omega ,
+              \end{equation*}
+              ma essendo $u$ di classe $\displaystyle C^{2}$ (quindi $\displaystyle \Delta u$ continuo) e $f$ continua, allora abbiamo due \textit{funzioni continue uguali quasi ovunque}, quindi sono \textit{uguali ovunque}:
+              \begin{equation*}
+                  -\Delta u=f\ \text{ovunque in} \ \Omega .
+              \end{equation*}}
+          \begin{equation}
+              \boxed{\int _{\Omega } \nabla u\cdotp \nabla \varphi \dxx =\int _{\Omega } f\varphi \dxx ,\ \ \forall \varphi \in \mathcal{D}(\Omega)}
+          \end{equation}
+\end{itemize}
+
+Ora vorrei passare dallo spazio delle funzioni test a uno spazio di Hilbert: ambientiamo in \textbf{spazi di Sobolev. }So che l'insieme delle funzioni test è denso in $\displaystyle H_{0}^{1}(\Omega)$. Adesso bastano le derivate prime di $u$, e non serve che siano continue, basta che siano integrabili.
+\begin{gather*}
+    \int _{\Omega } \nabla u\cdotp \nabla \varphi _{n} \dxx =\int _{\Omega } f\varphi _{n} \dxx ,\ \ \forall \varphi _{n} \in \mathcal{D}(\Omega)\\
+    \downarrow \varphi _{n}\xrightarrow{H^{1}} v\\
+    \int _{\Omega } \nabla u\cdotp \nabla v\dxx =\int _{\Omega } fv\dxx ,\ \ \forall v\in H_{0}^{1}(\Omega)
+\end{gather*}
+Allora ho finalmente trovato la mia \textbf{formulazione debole (o variazionale)} del problema \eqref{eq:af-problema-poisson}:
+\begin{equation}
+    \boxed{\text{Trovare} \ u\in H_{0}^{1}(\Omega) :\int _{\Omega } \nabla u\cdotp \nabla v\dxx =\int _{\Omega } fv\dxx ,\ \ \forall v\in H_{0}^{1}(\Omega)}
+\end{equation}
+questa formulazione ha senso per funzioni molto \textit{meno regolari} di quelle richieste dal problema classico (basta $\displaystyle u\in H_{0}^{1}(\Omega)$).
+
+Posso risolvere il problema (ovvero dimostrarne unicità ed esistenza) con Lax-Milgram o Riesz. Riscrivendo la formulazione variazionale in termini dei teoremi, dobbiamo trovare:
+\begin{equation*}
+    u\in V\ \text{t.c.} \ a(u,v) =Fv,\ \ \forall v\in V
+\end{equation*}
+con:
+\begin{itemize}
+    \item $\displaystyle V=H_{0}^{1}(\Omega)$ (Hilbert)
+    \item $\displaystyle a(u,v) =\int _{\Omega } \nabla u\cdotp \nabla v\dxx$ (forma bilineare)
+    \item $\displaystyle Fv=\int _{\Omega } fv\dxx$ (lineare)
+\end{itemize}
+
+Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme:
+\begin{enumerate}
+    \item Punto di vista \textbf{``analitico''}:
+          \begin{equation*}
+              \boxed{\Vert u\Vert _{H_{0}^{1}} =\Vert \nabla u\Vert _{L^{2}}} \ \ \Rightarrow \ \ a(u,v) =(u,v)_{H_{0}^{1}} .
+          \end{equation*}
+
+          Per il teorema di \textbf{Riesz }se $\displaystyle F\in V^{*}$\footnote{La notazione indica il duale.}
+          \begin{equation*}
+              \exists !\ u,\ \Vert u\Vert =\Vert F\Vert _{*}
+          \end{equation*}
+    \item Punto di vista \textbf{``numerico''}:
+          \begin{equation*}
+              \boxed{\Vert u\Vert _{H_{0}^{1}} =\Vert u\Vert _{H^{1}}}
+          \end{equation*}
+
+          cioè anche
+          \begin{equation*}
+              \Vert u\Vert _{H_{0}^{1}}^{2} =\Vert u\Vert _{H^{1}}^{2} =\Vert u\Vert _{L^{2}}^{2} +\Vert \nabla u\Vert _{L^{2}}^{2}
+          \end{equation*}
+
+          Applico Lax-Milgram. Devo verificare:\footnote{Con Riesz non era necessario usando il prodotto scalare.}
+          \begin{itemize}
+              \item $a$ continua
+                    \begin{equation*}
+                        | a(u,v)| =\left| \int _{\Omega } \nabla u\cdotp \nabla v\right| \leqslant \Vert \nabla u\Vert _{L^{2}}\Vert \nabla v\Vert _{L^{2}} \leqslant \Vert u\Vert _{H^{1}}\Vert v\Vert _{H^{1}}
+                    \end{equation*}
+              \item $a$ coerciva
+                    \begin{equation*}
+                        a(u,u) =\int _{\Omega }| \nabla u| ^{2} \dx\overset{?}{\geqslant } \alpha \Vert u\Vert _{H^{1}(\Omega)}^{2}
+                    \end{equation*}
+
+                    per Poincaré usato come in \eqref{eq:af-stima-poincare}
+                    \begin{equation*}
+                        \int _{\Omega }| \nabla u| ^{2} \dx\geqslant \underbrace{\frac{1}{1+C_{P}^{2}}}_{\alpha}\Vert u\Vert _{H^{1}(\Omega)}^{2} .
+                    \end{equation*}
+          \end{itemize}
+\end{enumerate}
+
+In entrambi i casi mi manca in realtà un ultimo tassello: $F$ deve essere \textbf{lineare e continuo}.
+
+È chiaramente lineare, quindi dimostro la continuità con la limitatezza. Facendo la nostra ultima ipotesi, ovvero $\displaystyle f\in L^{2}(\Omega)$, e applicando \textbf{Cauchy-Schwartz}
+\begin{align*}
+    | Fv| =\left| \int _{\Omega } fv\dxx\right| & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =(*)   &                                  \\
+    (*)                                         & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{H^{1}(\Omega)}        & \text{(per approccio numerico)}  \\
+    (*)                                         & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert \nabla v\Vert _{L^{2}(\Omega)} & \text{(per approccio analitico)}
+\end{align*}
+In entrambi i casi possiamo concludere:
+\begin{theorem}
+    Data $\displaystyle f\in L^{2}(\Omega) \ \exists !\ u\in H_{0}^{1}(\Omega)$ soluzione variazionale del problema di Dirichlet e ho anche una \textit{stima di stabilità}:
+    \begin{equation*}
+        \Vert u\Vert _{H^{1}(\Omega)} \leqslant \left(1+C_{P}^{2}\right)\Vert f\Vert _{L^{2}(\Omega)}
+    \end{equation*}
+\end{theorem}
+Dove la stima di stabilità è ricavata da
+\begin{equation*}
+    \Vert u\Vert _{V} \leqslant \frac{1}{\alpha }\Vert F\Vert _{*} ,\ \text{con} \ \alpha =\frac{1}{1+C_{P}^{2}} ,\ \Vert F\Vert _{*} \leqslant \Vert f\Vert _{L^{2}} .
+\end{equation*}
+Notiamo anche che $\displaystyle f\in L^{2}$ è una richiesta molto ragionevole e consente, oltre che funzioni discontinue, anche funzioni che esplodono! È già molto meno bella rispetto a quanto chiedevamo che fosse continua.
+
+Il fatto è che se $\displaystyle f\in L^{2}$ allora esiste un'unica soluzione in $\displaystyle H_{0}^{1}$, ma se è continua non è detto che esista (se esiste è unica).
+
+Solo per completezza (questo argomento sarà trattato nella parte numerica) vediamo cosa succede con condizioni al bordo diverse. Lavoriamo in $n=1$ con un'equazione di diffusione-reazione lineare
+\begin{equation*}
+    \begin{cases}
+        -u''(x) +\mu (x) u=f(x)    & a< x< b            \\
+        u'(b) +\alpha u(b) =u_{1}  &                    \\
+        -u'(a) +\alpha u(a) =u_{0} & \alpha \geqslant 0
+    \end{cases}
+\end{equation*}
+Con $\displaystyle \alpha =0$ ho Neumann, con $\displaystyle \alpha  >0$ ho Robin.
+
+Sia $\displaystyle v\in C^{\infty }([ a,b])$ (molto regolare, ma non si anulla al bordo), moltiplico l'equazione e integro
+\begin{equation*}
+    \int _{a}^{b} -u''v+\mu uv=\int _{a}^{b} fv
+\end{equation*}
+integrando per parti
+\begin{equation*}
+    -u'(b) v(b) +u'(a) v(a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
+\end{equation*}
+per tentare di dare una formulazione debole devo prendere
+\begin{gather*}
+    u\in H^{1}(a,b)\\
+    v\in H^{1}(a,b)
+\end{gather*}
+allora $v(a)$, $v(b)$ hanno senso (essendo $v$ continua fino al bordo). Le derivate di $u,v$ sono funzioni di $L^{2}$ quindi il problema sta nei termini $u'(a)$, $u'(b)$ che non hanno senso. Posso risolvere utilizzando le condizioni al bordo:
+\begin{equation*}
+    -\underbrace{(u_{1} -\alpha u(b))}_{u'(b)} v(b) +\underbrace{(\alpha u(a) -u_{0})}_{u'(a)} v(a) +\underbrace{\int _{a}^{b}[ u'v'+\mu uv]}_{\text{forma bilineare}} =\underbrace{\int _{a}^{b} fv}_{\text{forma lineare}}
+\end{equation*}
+ora possiamo distinguere cose che sono bilineari e cose che sono semplicemente lineari. Ciò che contiene $u$ va a sinistra, ciò che è senza $u$ va a destra:
+\begin{equation*}
+    \underbrace{\alpha u(b) v(b) +\alpha u(a) v(a) +\int _{a}^{b}[ u'v'+\mu uv]}_{a(u,v)} =\underbrace{u_{1} v(b) +u_{0} v(a) +\int _{a}^{b} fv}_{Fv} .
+\end{equation*}
