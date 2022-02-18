@@ -1,7 +1,7 @@
 %!TEX root = ../main.tex
 \chapter{Diffusione}
 
-Consideriamo $u(x,t),x\in \mathbb{R}^{n},t\in \mathbb{R},t\geqslant t_{0}$. La seguente equazione è nota come \textbf{equazione di diffusione}, o \textbf{del calore}:
+Consideriamo $u(x,t),x\in \mathbb{R}^{n},t\in \mathbb{R},t\geq t_{0}$. La seguente equazione è nota come \textbf{equazione di diffusione}, o \textbf{del calore}:
 \begin{equation*}
     \boxed{u_{t} -D\Delta u=f(x,t)}
 \end{equation*}
@@ -24,7 +24,7 @@ Casi particolari:
 
           Siano $\alpha,\beta \in \mathbb{R}$ e $u_{1},u_{2}$ soluzioni. Allora $\alpha u_{1} +\beta u_{2}$ sono soluzioni.
 
-          Più in generale, se $a_{k},k\geqslant 0,a_{k}\rightarrow 0$ abbastanza rapidamente e $u_{k},\forall k$, è soluzione dell'omogenea, allora è soluzione anche
+          Più in generale, se $a_{k},k\geq 0,a_{k}\rightarrow 0$ abbastanza rapidamente e $u_{k},\forall k$, è soluzione dell'omogenea, allora è soluzione anche
           \begin{equation*}
               u(x,t) = \sum\limits ^{\infty }_{k=0} a_{k} u_{k}(x,t)
           \end{equation*}
@@ -165,7 +165,7 @@ Da cui l'\textbf{equazione del calore monodimensionale:}
 \begin{itemize}
     \item Condizione \textbf{iniziale} (o di Cauchy) a $t=0$: assegna il profilo iniziale di temperatura
           \begin{equation*}
-              u(x,0) =g(x),\ 0\leqslant x\leqslant L
+              u(x,0) =g(x),\ 0\leq x\leq L
           \end{equation*}
     \item Condizione \textbf{agli estremi} $\displaystyle x=0,\ x=L$
           \begin{itemize}
@@ -243,7 +243,7 @@ Esaminiamo un modello della sbarra in dimensione $n=1$. Sotto opportune ipotesi 
 \begin{equation*}
     \begin{cases}
         u_{t} -Du_{xx} =0             & 0< x< L,\ t >0          \\
-        u(x,0) =u_{0}                 & 0\leqslant x\leqslant L \\
+        u(x,0) =u_{0}                 & 0\leq x\leq L \\
         u(0,t) =u_{0},\ u(L,t) =u_{1} & t >0
     \end{cases}
 \end{equation*}
@@ -421,7 +421,7 @@ esso tenderà a 0 per $\displaystyle s\rightarrow \infty $. $U$ soddisfa ancora 
     \begin{cases}
         U_{s} -U_{yy} =0  & 0< y< 1,\ s >0          \\
         U(0,s) =U(1,s) =0 & s >0                    \\
-        U(y,0) =y         & 0\leqslant y\leqslant 1
+        U(y,0) =y         & 0\leq y\leq 1
     \end{cases}
 \end{equation*}
 \textbf{Applicazione del metodo}
@@ -514,7 +514,7 @@ Considerando una generica funzione $T$-periodica, si scrive in \textbf{serie di 
 \begin{equation*}
     f(y) \sim \frac{a_{0}}{2} +\sum\limits ^{\infty }_{m=1}\left[ a_{m}\cos\left(\frac{2\pi m}{T} y\right) +b_{m}\sin\left(\frac{2\pi m}{T} y\right)\right]
 \end{equation*}
-i cui coefficienti sono, per $m\geqslant 0$
+i cui coefficienti sono, per $m\geq 0$
 \begin{equation*}
     a_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\cos\left(\frac{2\pi m}{T} y\right) \dy\ \ \ \ b_{m} =\frac{2}{T}\int ^{T/2}_{-T/2} f(y)\sin\left(\frac{2\pi m}{T} y\right) \dy
 \end{equation*}
@@ -568,7 +568,7 @@ La nostra soluzione \textit{candidata} è quindi, a seguito di \eqref{eq:diff-co
 \item \textbf{Q1} Consideriamo \eqref{eq:diff-candidata} e \eqref{eq:diff-y-fourier}. Per Parseval
 \begin{gather*}
     \int ^{1}_{0}[ U(y,s) -y]^{2} \dy=\frac{2}{\pi ^{2}}\sum\limits ^{\infty }_{m=1}\frac{\left(e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}}\\
-    \Rightarrow \ \ \frac{\left(e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}} \leqslant \frac{1}{m^{2}} \ \text{per} \ s\geqslant 0
+    \Rightarrow \ \ \frac{\left(e^{-m^{2} \pi ^{2} s} -1\right)^{2}}{m^{2}} \leq \frac{1}{m^{2}} \ \text{per} \ s\geq 0
 \end{gather*}
 
 Allora la serie converge uniformemente per il test di Weierstrass in $[ 0,+\infty)$ rispetto ad $s$, quindi
@@ -582,7 +582,7 @@ Allora la serie converge uniformemente per il test di Weierstrass in $[ 0,+\inft
 
 Il termine generale della serie $\sum U_{m}$ in modulo è maggiorato da
 \begin{equation*}
-    \left| \frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}\right| \leqslant e^{-m^{2} \pi ^{2} s_{0}} \ \ \text{se} \ s >s_{0}
+    \left| \frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}\right| \leq e^{-m^{2} \pi ^{2} s_{0}} \ \ \text{se} \ s >s_{0}
 \end{equation*}
 
 quindi per il test di Weierstrass la serie converge uniformemente.
@@ -590,7 +590,7 @@ quindi per il test di Weierstrass la serie converge uniformemente.
 Inoltre la serie delle derivate $\sum \partial _{s} U_{m},\sum \partial _{yy} U_{m}$ converge uniformemente sempre per il test di Weierstrass
 \begin{gather*}
     \frac{\partial U_{m}}{\partial s} =\frac{\partial ^{2} U_{m}}{\partial y^{2}} =(-1)^{m+2} 2m\pi e^{-m^{2} \pi ^{2} s}\sin(m\pi y)\\
-    \Rightarrow \ \ \left| \frac{\partial U_{m}}{\partial s}\right| =\left| \frac{\partial ^{2} U_{m}}{\partial y^{2}}\right| \leqslant 2m \pi e^{-m^{2} \pi ^{2} s_{0}},\ \ s\geqslant s_{0} \ \text{nella striscia}
+    \Rightarrow \ \ \left| \frac{\partial U_{m}}{\partial s}\right| =\left| \frac{\partial ^{2} U_{m}}{\partial y^{2}}\right| \leq 2m \pi e^{-m^{2} \pi ^{2} s_{0}},\ \ s\geq s_{0} \ \text{nella striscia}
 \end{gather*}
 
 Quindi possiamo scambiare serie e derivata e $U(y,s)$ è anch'essa soluzione.
@@ -623,7 +623,7 @@ Moltiplichiamo per $w$ da entrambi i lati e integriamo
     \textcolor[rgb]{0.82,0.01,0.11}{\int ^{1}_{0}}\textcolor[rgb]{0.82,0.01,0.11}{ww}\textcolor[rgb]{0.82,0.01,0.11}{_{s}}\textcolor[rgb]{0.82,0.01,0.11}{\dy} =\textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{\dy}\\
     \begin{aligned}
         \textcolor[rgb]{0.82,0.01,0.11}{\int ^{1}_{0}}\textcolor[rgb]{0.82,0.01,0.11}{ww}\textcolor[rgb]{0.82,0.01,0.11}{_{s}}\textcolor[rgb]{0.82,0.01,0.11}{\dy}  & =\frac{1}{2}\int ^{1}_{0}\frac{\partial }{\partial s} w^{2}(y,s) \dy=\frac{1}{2}\frac{\de}{\ds}\underbrace{\int ^{1}_{0} w^{2}(y,s) \dy}_{E(s)} =\frac{1}{2} E'(s) \\
-        \textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{\dy} & \overset{\text{ipp}}{=}\cancel{ww_{y} |^{1}_{0}} -\int ^{1}_{0}(w_{y})^{2} \dy\leqslant 0
+        \textcolor[rgb]{0.29,0.56,0.89}{\int ^{1}_{0}}\textcolor[rgb]{0.29,0.56,0.89}{ww}\textcolor[rgb]{0.29,0.56,0.89}{_{yy}}\textcolor[rgb]{0.29,0.56,0.89}{\dy} & \overset{\text{ipp}}{=}\cancel{ww_{y} |^{1}_{0}} -\int ^{1}_{0}(w_{y})^{2} \dy\leq 0
     \end{aligned}
 \end{gather*}
 
@@ -633,8 +633,8 @@ quindi $E(s)$ è non negativa, descrescente (non strettamente), inoltre $E(s)\ri
 \end{equation*}
 
 ma $w^{2}$ è continua per $s >0$ e non negativa. Non può essere che $w=0$ per $s >0$, ovvero $U=V$.
-\item \textbf{Q5} Sempre per la convergenza uniforme della serie: se $\displaystyle s\geqslant 1$, il termine generale \begin{equation*}
-    \left| \frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}\right| \leqslant \frac{e^{-m^{2} \pi ^{2}}}{m}
+\item \textbf{Q5} Sempre per la convergenza uniforme della serie: se $\displaystyle s\geq 1$, il termine generale \begin{equation*}
+    \left| \frac{(-1)^{m+1}}{m}\sin(m\pi y) e^{-m^{2} \pi ^{2} s}\right| \leq \frac{e^{-m^{2} \pi ^{2}}}{m}
 \end{equation*}
 
 quindi per il test di Weierstrass la serie converge uniformemente in $\displaystyle [ 0,1] \times [ 1,\infty)$, posso passare al limite sotto il segno di somma:
@@ -738,7 +738,7 @@ Indichiamo con $C^{2,1}(Q_{T})$ l'insieme delle funzioni di classe
 \begin{theorem}
     [Principio di massimo (risp. minimo) debole] Sia $Q_{T} =\Omega \times (0,T)$, $\Omega $ dominio limitato. Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ tale che
     \begin{equation*}
-        u_{t} -D\Delta u=q\leqslant 0\ \ \text{in} \ Q_{T} \ \ \left(\text{risp.} \ \geqslant 0\right)
+        u_{t} -D\Delta u=q\leq 0\ \ \text{in} \ Q_{T} \ \ \left(\text{risp.} \ \geq 0\right)
     \end{equation*}
     Allora il massimo (risp. minimo) di $u$ è assunto sulla frontiera parabolica di $Q_{T}$
     \begin{equation*}
@@ -788,13 +788,13 @@ La dicitura \emph{debole} è dovuta al fatto che garantisce che il massimo viene
     Supponiamo che esista un punto $(x_{0},t_{0}) \in \overline{Q}_{T-\varepsilon } \setminus \partial _{p} Q_{T-\varepsilon }$ punto di massimo per $w$, tale punto può trovarsi o all'interno o sul tappo superiore. Quindi, per definizione stessa di massimo:
     \begin{equation*}
         \begin{array}{ l l l }
-            \text{all'interno} & w_{t} =0          & \Delta w\leqslant 0 \\
-            \text{sul tappo}   & w_{t} \geqslant 0 & \Delta w\leqslant 0
+            \text{all'interno} & w_{t} =0          & \Delta w\leq 0 \\
+            \text{sul tappo}   & w_{t} \geq 0 & \Delta w\leq 0
         \end{array}
     \end{equation*}
     sul tappo è $w_{t}\geq 0$ perché potrebbe star crescendo ancora. Tuttavia in entrambi i casi
     \begin{equation}
-        w_{t} -D\Delta w\geqslant 0
+        w_{t} -D\Delta w\geq 0
         \label{eq:max-deb-contr-2}
     \end{equation}
     le \eqref{eq:max-deb-contr-1} e \eqref{eq:max-deb-contr-2} sono in contraddizione, quindi il massimo sta sulla frontiera parabolica:
@@ -802,19 +802,19 @@ La dicitura \emph{debole} è dovuta al fatto che garantisce che il massimo viene
         \max_{\overline{Q}_{T-\varepsilon }} w=\max_{\partial _{p} Q_{T-\varepsilon }} w
     \end{equation*}
 
-    Inoltre $w\leqslant u$ e $u=w+\varepsilon t\leqslant w+\varepsilon T$
+    Inoltre $w\leq u$ e $u=w+\varepsilon t\leq w+\varepsilon T$
     \begin{align*}
-        \max_{\overline{Q}_{T-\varepsilon }} u & \leqslant \max_{\overline{Q}_{T-\varepsilon }} w+\varepsilon T    \\
+        \max_{\overline{Q}_{T-\varepsilon }} u & \leq \max_{\overline{Q}_{T-\varepsilon }} w+\varepsilon T    \\
                                                & =\max_{\partial _{p} Q_{T-\varepsilon }} w+\varepsilon T          \\
-                                               & \leqslant \max_{\partial _{p} Q_{T-\varepsilon }} u+\varepsilon T
+                                               & \leq \max_{\partial _{p} Q_{T-\varepsilon }} u+\varepsilon T
     \end{align*}
     Facendo tendere $\varepsilon \rightarrow 0$
     \begin{equation*}
-        \max_{\overline{Q}_{T}} u\leqslant \max_{\partial _{p} Q_{T}} u
+        \max_{\overline{Q}_{T}} u\leq \max_{\partial _{p} Q_{T}} u
     \end{equation*}
     d'altro canto, essendo l'insieme a destra compreso in quello di sinistra, il massimo di sinistra deve essere almeno tanto quanto quello di destra
     \begin{equation*}
-        \max_{\overline{Q}_{T}} u\geqslant \max_{\partial _{p} Q_{T}} u
+        \max_{\overline{Q}_{T}} u\geq \max_{\partial _{p} Q_{T}} u
     \end{equation*}
     da cui la tesi.
 \end{dimostrazione}
@@ -827,7 +827,7 @@ Sia $u\in C^{2,1}(Q_{T}) \cap C(\overline{Q}_{T})$ soluzione di
 \end{equation*}
 allora
 \begin{equation*}
-    \min_{\partial _{p} Q_{T}} u\leqslant \min_{\overline{Q}_{T}} u\leqslant \max_{\overline{Q}_{T}} u\leqslant \max_{\partial _{p} Q_{T}} u
+    \min_{\partial _{p} Q_{T}} u\leq \min_{\overline{Q}_{T}} u\leq \max_{\overline{Q}_{T}} u\leq \max_{\partial _{p} Q_{T}} u
 \end{equation*}
 \subsection{Corollario del massimo debole}
 
@@ -838,18 +838,18 @@ Siano $f_{1},f_{2}$ funzioni limitate in $Q_{T}$ e $u,v$ soluzioni di
 \end{gather*}
 Allora
 \begin{enumerate}
-    \item \textit{Confronto.} Se $f_{1} \leqslant f_{2}$ in $Q_{T}$ e $u\leqslant v$ su $\partial _{p} Q_{T}$ allora
+    \item \textit{Confronto.} Se $f_{1} \leq f_{2}$ in $Q_{T}$ e $u\leq v$ su $\partial _{p} Q_{T}$ allora
           \begin{equation*}
-              u\leqslant v\ \text{in tutto} \ Q_{T}
+              u\leq v\ \text{in tutto} \ Q_{T}
           \end{equation*}
     \item Vale la stima
           \begin{equation*}
-              \max_{\overline{Q}_{T}}| u-v| \leqslant \max_{\partial _{p} Q_{T}}| u-v| +T\sup _{Q_{T}}| f_{1} -f_{2}|
+              \max_{\overline{Q}_{T}}| u-v| \leq \max_{\partial _{p} Q_{T}}| u-v| +T\sup _{Q_{T}}| f_{1} -f_{2}|
           \end{equation*}
 
           È una stabilità in norma $L^{\infty }$
           \begin{equation*}
-              \Vert u-v\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant \Vert u-v\Vert _{L^{\infty }(\partial _{p} Q_{T})} +T\Vert f_{1} -f_{2}\Vert _{L^{\infty }(Q_{T})}
+              \Vert u-v\Vert _{L^{\infty }(\overline{Q}_{T})} \leq \Vert u-v\Vert _{L^{\infty }(\partial _{p} Q_{T})} +T\Vert f_{1} -f_{2}\Vert _{L^{\infty }(Q_{T})}
               \label{diffusione-stima-stabilita}
           \end{equation*}
 
@@ -870,7 +870,7 @@ Allora
           \end{equation*}
           allora \eqref{diffusione-stima-stabilita} diventa
           \begin{equation*}
-              \Vert w\Vert _{L^{\infty }(\overline{Q}_{T})} \leqslant 0+0\ \ \Rightarrow \ \ u=v.
+              \Vert w\Vert _{L^{\infty }(\overline{Q}_{T})} \leq 0+0\ \ \Rightarrow \ \ u=v.
           \end{equation*}
 \end{enumerate}
 \subsection{Principio di massimo forte}
@@ -940,7 +940,7 @@ Se prendiamo un problema del tipo
 \end{figure}
 \FloatBarrier
 
-$u=1$ per $0\leqslant t\leqslant \pi /2$
+$u=1$ per $0\leq t\leq \pi /2$
 
 Il massimo di $u$ sulla frontiera parabolica è
 \begin{equation*}
@@ -955,7 +955,7 @@ Tuttavia nel rettangolo fino a che $t=\pi /2$ il massimo non è assunto solo sul
 
 \section{Soluzione fondamentale \texorpdfstring{$n=1$}{n=1}}
 
-In $x=0$ sia concentrata una sorgente di calore \textbf{istantanea.} Indichiamo con $u^{\star }$ la temperatura della sbarra, vogliamo determinare l'evoluzione di $u^{\star },t\geqslant 0$.
+In $x=0$ sia concentrata una sorgente di calore \textbf{istantanea.} Indichiamo con $u^{\star }$ la temperatura della sbarra, vogliamo determinare l'evoluzione di $u^{\star },t\geq 0$.
 
 \begin{figure}[htpb]
     \centering
@@ -996,7 +996,7 @@ La grandezza $Q$ ha le dimensioni di una temperatura per una lunghezza.
 
 Inoltre $u^{\star }(x,t)$ è una funzione pari in $x$ e non negativa
 \begin{equation*}
-    u^{\star }(-x,t) =u^{\star }(x,t) \ \ \ \ \ \ \ \ u^{\star } \geqslant 0,\forall x\in \mathbb{R},\forall t >0
+    u^{\star }(-x,t) =u^{\star }(x,t) \ \ \ \ \ \ \ \ u^{\star } \geq 0,\forall x\in \mathbb{R},\forall t >0
 \end{equation*}
 Per determinare $u^{\star }$ useremo $2$ passi
 \subsection{Passo \texorpdfstring{$1$}{1}}
@@ -1005,7 +1005,7 @@ Dimostriamo che $u^{\star }$ è della forma
 \begin{equation*}
     u^{\star }(x,t) =\frac{Q}{\sqrt{Dt}} \cdotp U\left(\frac{x}{\sqrt{Dt}}\right)
 \end{equation*}
-ponendo $\xi \in \mathbb{R}$, $U(\xi) \geqslant 0,\forall \xi $ la parità di $u^{\star }$ si riflette su $U$
+ponendo $\xi \in \mathbb{R}$, $U(\xi) \geq 0,\forall \xi $ la parità di $u^{\star }$ si riflette su $U$
 \begin{equation*}
     U(\xi) =U(-\xi)
 \end{equation*}
@@ -1045,7 +1045,7 @@ L'analisi dimensionale è basata sul seguente teorema.
     \end{equation}
     una relazione \textbf{completa} (invariante al cambio di sistema di unità di misura nell'ambito di una stessa classe).
 
-    Sia $1\leqslant k\leqslant n$ il massimo numero di grandezze dimensionalmente indipendenti tra le $q_{1},\dotsc,q_{n}$\footnote{poi si vedrà come determinare quali sono, ci avvarremo dell'algebra lineare.}. Siano per esempio le prime $q_{1},\dotsc,q_{k}$ (si dicono \textbf{quantità primarie}).
+    Sia $1\leq k\leq n$ il massimo numero di grandezze dimensionalmente indipendenti tra le $q_{1},\dotsc,q_{n}$\footnote{poi si vedrà come determinare quali sono, ci avvarremo dell'algebra lineare.}. Siano per esempio le prime $q_{1},\dotsc,q_{k}$ (si dicono \textbf{quantità primarie}).
 
     Allora \eqref{eq:teo-pi-buckingham} si può scrivere nella forma
     \begin{equation*}
@@ -1348,7 +1348,7 @@ Il nostro modello discreto, dato un passo spaziale di lunghezza $h$ e un interva
 
 La particella al tempo $\displaystyle t=N\tau $ (dopo $N$ passi) si troverà in
 \begin{equation*}
-    x=mh,\ m\in \mathbb{Z},\ -N\leqslant m\leqslant N
+    x=mh,\ m\in \mathbb{Z},\ -N\leq m\leq N
 \end{equation*}
 $x,m$ sono variabili aleatorie.
 
@@ -1362,7 +1362,7 @@ Se $x=mh$ è la posizione della particella dopo $N$ passi, avrò fatto:
     \item $N-k$ passi a sinistra
 \end{itemize}
 
-con $\displaystyle 0\leqslant k\leqslant N$.
+con $\displaystyle 0\leq k\leq N$.
 \begin{equation*}
     m=k-(N-k) =2k-N
 \end{equation*}
@@ -1711,7 +1711,7 @@ Consideriamo il problema di Cauchy globale in $n=1$ dimensioni. La generalizzazi
 \begin{equation*}
     \tag{PCG$_{\text{diffusione,1D}}$}
     \begin{cases}
-        u_{t} -Du_{xx} =0 & \text{in} \ \mathbb{R} \times (0,T) \ \ \ \ T\leqslant +\infty \\
+        u_{t} -Du_{xx} =0 & \text{in} \ \mathbb{R} \times (0,T) \ \ \ \ T\leq +\infty \\
         u(x,0) =g(x)      & \text{in} \ \mathbb{R}
     \end{cases}
     \label{eq:pcg-diffusione-1d}
@@ -1791,7 +1791,7 @@ Si trova risposta all'esistenza nel seguente fondamentale teorema, dalla dimostr
     [di Esistenza] Sia $g$ una funzione con un numero \textbf{finito} di punti di \textbf{discontinuità} e tale che $\exists c,a$ che la limitano secondo
     \begin{equation}
         \tag{G}
-        | g(x)| \leqslant ce^{ax^{2}} \ \ \forall x\in \mathbb{R}
+        | g(x)| \leq ce^{ax^{2}} \ \ \forall x\in \mathbb{R}
         \label{eq:pcg-diffusione-condizione-g}
     \end{equation}
     Sia
@@ -1809,7 +1809,7 @@ Si trova risposta all'esistenza nel seguente fondamentale teorema, dalla dimostr
               In particolare se $g\in C(\mathbb{R})$, allora $u\in C(\mathbb{R} \times [ 0,T])$, \textbf{chiuso} a sinistra.
         \item Esistono due costanti $C,A$ tali che
               \begin{equation*}
-                  | u(x,t)| \leqslant Ce^{Ax^{2}} \ \ \forall (x,t) \in \mathbb{R} \times [ 0,T]
+                  | u(x,t)| \leq Ce^{Ax^{2}} \ \ \forall (x,t) \in \mathbb{R} \times [ 0,T]
               \end{equation*}
     \end{enumerate}
 \end{theorem}
@@ -1838,7 +1838,7 @@ In generale non c'è unicità, vediamo il controesempio di Tychonov. Sia $h$ la 
     h(t) =
     \begin{cases}
         e^{-t^{-2}}, & t >0         \\
-        0,           & t\leqslant 0
+        0,           & t\leq 0
     \end{cases} \qquad \text{cioè tale che} \ h^{(k)}(t)\xrightarrow{t\rightarrow 0} 0,\ \forall k=0,1,2\dotsc
 \end{equation*}
 La funzione costruita come
@@ -1856,11 +1856,11 @@ La funzione costruita come
               \end{equation*}
         \item[(IC)] Si dimostra per induzione che $\exists \vartheta  >0$ tale che $\forall t >0$
               \begin{equation*}
-                  \left| h^{(k)}(t)\right| \leqslant \frac{k!}{(\vartheta t)^{k}}\exp\left(-\frac{1}{2} t^{-2}\right)
+                  \left| h^{(k)}(t)\right| \leq \frac{k!}{(\vartheta t)^{k}}\exp\left(-\frac{1}{2} t^{-2}\right)
               \end{equation*}possiamo eseguire una maggiorazione
               \begin{align*}
                   | \Tau (x,t)| & =\sum\limits _{k=0}^{\infty }\frac{1}{(2k) !} x^{2k}\left| h^{(k)}(t)\right|                                                                                                     &                                  \\
-                                & \leqslant \sum\limits _{k=0}^{\infty }\frac{1}{(2k) !} x^{2k}\frac{k!}{(\vartheta t)^{k}}\exp\left(-\frac{1}{2} t^{-2}\right)                                                    & \text{(usando la maggiorazione)} \\
+                                & \leq \sum\limits _{k=0}^{\infty }\frac{1}{(2k) !} x^{2k}\frac{k!}{(\vartheta t)^{k}}\exp\left(-\frac{1}{2} t^{-2}\right)                                                    & \text{(usando la maggiorazione)} \\
                                 & < \sum\limits _{k=0}^{\infty }\frac{1}{k!} x^{2k}\frac{1}{(\vartheta t)^{k}}\exp\left(-\frac{1}{2} t^{-2}\right)                                                                 & \frac{k!}{(2k) !} < \frac{1}{k!} \\
                                 & =\underbrace{\sum\limits _{k=0}^{\infty }\frac{\left(\frac{x^{2}}{\vartheta t}\right)^{k}}{k!}}_{\exp\left(\frac{x^{2}}{\vartheta t}\right)}\exp\left(-\frac{1}{2} t^{-2}\right) &                                  \\
                                 & =\exp\left(\frac{x^{2}}{\vartheta t} -\frac{1}{2} t^{-2}\right)                                                                                                                  & \text{(serie esponenziale)}
@@ -1879,7 +1879,7 @@ Se al posto di $\vartheta t$ ci fosse una costante andrebbe meglio: si definisce
 \begin{definition}
     [Classe di Tychonov]
     \begin{equation*}
-        | u(x,t)| \leqslant Ce^{Ax^{2}},\ \ \forall x\in \mathbb{R},t\in [ 0,T]
+        | u(x,t)| \leq Ce^{Ax^{2}},\ \ \forall x\in \mathbb{R},t\in [ 0,T]
     \end{equation*}
 \end{definition}
 \begin{theorem}
@@ -1887,16 +1887,16 @@ Se al posto di $\vartheta t$ ci fosse una costante andrebbe meglio: si definisce
     \begin{enumerate}
         \item Sia una sottosoluzione dell'equazione del calore
               \begin{equation*}
-                  u_{t} -Du_{xx} \leqslant 0\ \ \ \ (\geqslant)
+                  u_{t} -Du_{xx} \leq 0\ \ \ \ (\geq)
               \end{equation*}
         \item Sia dominata da un esponenziale, $C >0$
               \begin{equation*}
-                  u(x,t) \leqslant Ce^{Ax^{2}} \ \ \ \ \left(\geqslant -Ce^{Ax^{2}}\right)
+                  u(x,t) \leq Ce^{Ax^{2}} \ \ \ \ \left(\geq -Ce^{Ax^{2}}\right)
               \end{equation*}
     \end{enumerate}
     Allora
     \begin{equation*}
-        \sup _{\mathbb{R} \times [ 0,T]} u(x,t) \leqslant \sup _{\mathbb{R}} u(x,0) \qquad \left(\inf_{\mathbb{R} \times [ 0,T]} u(x,t) \geqslant \inf_{\mathbb{R}} u(x,0)\right)
+        \sup _{\mathbb{R} \times [ 0,T]} u(x,t) \leq \sup _{\mathbb{R}} u(x,0) \qquad \left(\inf_{\mathbb{R} \times [ 0,T]} u(x,t) \geq \inf_{\mathbb{R}} u(x,0)\right)
     \end{equation*}
 \end{theorem}
 

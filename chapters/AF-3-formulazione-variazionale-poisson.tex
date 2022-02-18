@@ -118,16 +118,16 @@ Abbiamo due punti di vista, come detto anche prima nell'equivalenza tra le norme
           \begin{itemize}
               \item $a$ continua
                     \begin{equation*}
-                        | a(u,v)| =\left| \int _{\Omega } \nabla u\cdotp \nabla v\right| \leqslant \Vert \nabla u\Vert _{L^{2}}\Vert \nabla v\Vert _{L^{2}} \leqslant \Vert u\Vert _{H^{1}}\Vert v\Vert _{H^{1}}
+                        | a(u,v)| =\left| \int _{\Omega } \nabla u\cdotp \nabla v\right| \leq \Vert \nabla u\Vert _{L^{2}}\Vert \nabla v\Vert _{L^{2}} \leq \Vert u\Vert _{H^{1}}\Vert v\Vert _{H^{1}}
                     \end{equation*}
               \item $a$ coerciva
                     \begin{equation*}
-                        a(u,u) =\int _{\Omega }| \nabla u| ^{2} \dx\overset{?}{\geqslant } \alpha \Vert u\Vert _{H^{1}(\Omega)}^{2}
+                        a(u,u) =\int _{\Omega }| \nabla u| ^{2} \dx\overset{?}{\geq } \alpha \Vert u\Vert _{H^{1}(\Omega)}^{2}
                     \end{equation*}
 
                     per Poincaré usato come in \eqref{eq:af-stima-poincare}
                     \begin{equation*}
-                        \int _{\Omega }| \nabla u| ^{2} \dx\geqslant \underbrace{\frac{1}{1+C_{P}^{2}}}_{\alpha}\Vert u\Vert _{H^{1}(\Omega)}^{2} .
+                        \int _{\Omega }| \nabla u| ^{2} \dx\geq \underbrace{\frac{1}{1+C_{P}^{2}}}_{\alpha}\Vert u\Vert _{H^{1}(\Omega)}^{2} .
                     \end{equation*}
           \end{itemize}
 \end{enumerate}
@@ -136,20 +136,20 @@ In entrambi i casi mi manca in realtà un ultimo tassello: $F$ deve essere \text
 
 È chiaramente lineare, quindi dimostro la continuità con la limitatezza. Facendo la nostra ultima ipotesi, ovvero $\displaystyle f\in L^{2}(\Omega)$, e applicando \textbf{Cauchy-Schwartz}
 \begin{align*}
-    | Fv| =\left| \int _{\Omega } fv\dxx\right| & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =(*)   &                                  \\
-    (*)                                         & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{H^{1}(\Omega)}        & \text{(per approccio numerico)}  \\
-    (*)                                         & \leqslant \Vert f\Vert _{L^{2}(\Omega)}\Vert \nabla v\Vert _{L^{2}(\Omega)} & \text{(per approccio analitico)}
+    | Fv| =\left| \int _{\Omega } fv\dxx\right| & \leq \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{L^{2}(\Omega)} =(*)   &                                  \\
+    (*)                                         & \leq \Vert f\Vert _{L^{2}(\Omega)}\Vert v\Vert _{H^{1}(\Omega)}        & \text{(per approccio numerico)}  \\
+    (*)                                         & \leq \Vert f\Vert _{L^{2}(\Omega)}\Vert \nabla v\Vert _{L^{2}(\Omega)} & \text{(per approccio analitico)}
 \end{align*}
 In entrambi i casi possiamo concludere:
 \begin{theorem}
     Data $\displaystyle f\in L^{2}(\Omega) \ \exists !\ u\in H_{0}^{1}(\Omega)$ soluzione variazionale del problema di Dirichlet e ho anche una \textit{stima di stabilità}:
     \begin{equation*}
-        \Vert u\Vert _{H^{1}(\Omega)} \leqslant \left(1+C_{P}^{2}\right)\Vert f\Vert _{L^{2}(\Omega)}
+        \Vert u\Vert _{H^{1}(\Omega)} \leq \left(1+C_{P}^{2}\right)\Vert f\Vert _{L^{2}(\Omega)}
     \end{equation*}
 \end{theorem}
 Dove la stima di stabilità è ricavata da
 \begin{equation*}
-    \Vert u\Vert _{V} \leqslant \frac{1}{\alpha }\Vert F\Vert _{*} ,\ \text{con} \ \alpha =\frac{1}{1+C_{P}^{2}} ,\ \Vert F\Vert _{*} \leqslant \Vert f\Vert _{L^{2}} .
+    \Vert u\Vert _{V} \leq \frac{1}{\alpha }\Vert F\Vert _{*} ,\ \text{con} \ \alpha =\frac{1}{1+C_{P}^{2}} ,\ \Vert F\Vert _{*} \leq \Vert f\Vert _{L^{2}} .
 \end{equation*}
 Notiamo anche che $\displaystyle f\in L^{2}$ è una richiesta molto ragionevole e consente, oltre che funzioni discontinue, anche funzioni che esplodono! È già molto meno bella rispetto a quanto chiedevamo che fosse continua.
 
@@ -160,7 +160,7 @@ Solo per completezza (questo argomento sarà trattato nella parte numerica) vedi
     \begin{cases}
         -u''(x) +\mu (x) u=f(x)    & a< x< b            \\
         u'(b) +\alpha u(b) =u_{1}  &                    \\
-        -u'(a) +\alpha u(a) =u_{0} & \alpha \geqslant 0
+        -u'(a) +\alpha u(a) =u_{0} & \alpha \geq 0
     \end{cases}
 \end{equation*}
 Con $\displaystyle \alpha =0$ ho Neumann, con $\displaystyle \alpha  >0$ ho Robin.

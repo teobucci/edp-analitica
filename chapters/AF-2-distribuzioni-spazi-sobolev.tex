@@ -3,7 +3,7 @@
 \LezioneV{25/03/21}
 \section{Richiami su funzioni test e distribuzioni}
 
-Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$, $\displaystyle n\geqslant 1$.
+Sia $\displaystyle \Omega \subset \mathbb{R}^{n}$, $\displaystyle n\geq 1$.
 \begin{definition}
     [Funzioni test]
     \begin{equation*}
@@ -282,12 +282,12 @@ Se entrambi i termini tendono a $0$ allora la mia derivata distribuzionale coinc
     \item primo termine
 
           \begin{equation*}
-              \left| \textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x \dsig }\right| \leqslant \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| \dsig
+              \left| \textcolor[rgb]{0.25,0.46,0.02}{-\frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }} \nabla \varphi (\x) \cdotp \x \dsig }\right| \leq \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}| \nabla \varphi (\x)| \cdotp | \x| \dsig
           \end{equation*}
 
-          $\displaystyle | \nabla \varphi | \leqslant c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $
+          $\displaystyle | \nabla \varphi | \leq c$ essendo $\displaystyle \varphi $ una funzione test e su $\displaystyle \partial B_{\varepsilon }$: $\displaystyle | \x| =\varepsilon $
           \begin{equation*}
-              \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}\underbrace{| \nabla \varphi (\x)| }_{\leqslant c} \cdotp \underbrace{| \x| }_{=\varepsilon } \dsig \leqslant \frac{c}{\varepsilon }\underbrace{\int _{\partial B_{\varepsilon }} \dsig }_{4\pi \varepsilon ^{2}} =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\textcolor[rgb]{0.25,0.46,0.02}{\rightarrow 0}
+              \frac{1}{\varepsilon ^{2}}\int _{\partial B_{\varepsilon }}\underbrace{| \nabla \varphi (\x)| }_{\leq c} \cdotp \underbrace{| \x| }_{=\varepsilon } \dsig \leq \frac{c}{\varepsilon }\underbrace{\int _{\partial B_{\varepsilon }} \dsig }_{4\pi \varepsilon ^{2}} =\frac{c}{\varepsilon } 4\pi \varepsilon ^{2}\textcolor[rgb]{0.25,0.46,0.02}{\rightarrow 0}
           \end{equation*}
     \item secondo termine
 
@@ -324,7 +324,7 @@ Questo spazio è dotato di prodotto scalare
 \end{equation*}
 In particolare vale il seguente risultato delle norme
 \begin{equation*}
-    \Vert u\Vert ^{2}_{H^{1}(\Omega)} =\Vert u\Vert ^{2}_{L^{2}} +\Vert \nabla u\Vert ^{2}_{L^{2}} \geqslant \begin{cases}
+    \Vert u\Vert ^{2}_{H^{1}(\Omega)} =\Vert u\Vert ^{2}_{L^{2}} +\Vert \nabla u\Vert ^{2}_{L^{2}} \geq \begin{cases}
         \Vert u\Vert ^{2}_{L^{2}} \\
         \Vert \nabla u\Vert ^{2}_{L^{2}}
     \end{cases}
@@ -344,7 +344,7 @@ Notiamo che $H^{1}$ è, oltre che un sottoinsieme, anche un \textbf{sottospazio 
 
 In generale, anche se non li useremo, si definiscono gli spazi
 \begin{equation*}
-    H^{k}(\Omega) =\left\{v\in L^{2} :D^{\bm{\alpha}} v\in L^{2} ,\ \forall | \bm{\alpha}| \leqslant k\right\}
+    H^{k}(\Omega) =\left\{v\in L^{2} :D^{\bm{\alpha}} v\in L^{2} ,\ \forall | \bm{\alpha}| \leq k\right\}
 \end{equation*}
 La notazione $D^{\bm{\alpha}}$ significa che intendiamo le derivate prime, seconde, terze, ecc, fino alla $n$-esima derivazione
 \begin{equation*}
@@ -354,7 +354,7 @@ Useremo solitamente solo $H^{1} ,H^{2}$.
 
 Ancora più in generale gli \textbf{spazi di Sobolev} sono
 \begin{equation*}
-    W^{k,p}(\Omega) =\left\{v\in L^{p}(\Omega) :D^{\bm{\alpha}} v\in L^{p} ,\ \forall | \bm{\alpha}| \leqslant k\right\}
+    W^{k,p}(\Omega) =\left\{v\in L^{p}(\Omega) :D^{\bm{\alpha}} v\in L^{p} ,\ \forall | \bm{\alpha}| \leq k\right\}
 \end{equation*}
 Facciamo un po' la conoscenza di questi spazi:
 \begin{gather*}
@@ -454,8 +454,8 @@ Il punto del teorema che ci interessa è dire che se $u\in H^{1}$ allora è cont
     $v$ è continua fino al bordo:
     \begin{align*}
         x_{n}\rightarrow x\ \ \Rightarrow \ \ | v(x_{n}) -v(x)| & =\left| \int ^{x_{n}}_{x} 1\cdot u'(s) \ds\right|                                                                                          &                                 \\
-                                                                & \leqslant | x_{n} -x| ^{1/2}\left(\int ^{x_{n}}_{x}(u')^{2}\right)^{1/2}                                                                   & \text{(Cauchy-Schwarz)}         \\
-                                                                & \leqslant \underbrace{| x_{n} -x| ^{1/2}}_{\rightarrow 0}\underbrace{\left(\int ^{b}_{a}(u')^{2}\right)^{1/2}}_{\leqslant C,\ u'\in L^{2}} & \text{(l'integrale è positivo)} \\
+                                                                & \leq | x_{n} -x| ^{1/2}\left(\int ^{x_{n}}_{x}(u')^{2}\right)^{1/2}                                                                   & \text{(Cauchy-Schwarz)}         \\
+                                                                & \leq \underbrace{| x_{n} -x| ^{1/2}}_{\rightarrow 0}\underbrace{\left(\int ^{b}_{a}(u')^{2}\right)^{1/2}}_{\leq C,\ u'\in L^{2}} & \text{(l'integrale è positivo)} \\
                                                                 & \rightarrow 0                                                                                                                              &
     \end{align*}
     $v$ continua implica che è funzione di $L^{1}_{\mathrm{loc}}$, quindi associata a una distribuzione.
@@ -616,7 +616,7 @@ Quindi $H^{1}_{0}(\Omega)$ è un sottospazio chiuso di $H^{1}(\Omega)$.
 \begin{theorem}
     [Disuguaglianza di Poincaré] Sia $\Omega \subset \mathbb{R}^{n}$ un dominio \textbf{limitato}. Allora $\exists C_{P}  >0$ (costante di Poincaré) tale che
     \begin{equation}
-        \Vert u\Vert _{L^{2}(\Omega)} \leqslant C_{P}\Vert \nabla u\Vert _{L^{2}(\Omega)} ,\ \ \forall u\in H^{1}_{0}(\Omega)
+        \Vert u\Vert _{L^{2}(\Omega)} \leq C_{P}\Vert \nabla u\Vert _{L^{2}(\Omega)} ,\ \ \forall u\in H^{1}_{0}(\Omega)
     \end{equation}
 \end{theorem}
 A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le loro derivate\footnote{Funzione che oscilla moltissimo, ma di valori bassi, e funzione costante a valore altissimo, sono due esempi estremi in cui vediamo che è necessario controllarle entrambe.}. In $H^{1}_{0}$ \textbf{la funzione è sempre controllata dalla derivata.}
@@ -700,23 +700,23 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
     \end{align*}
     cioè, usando Cauchy-Schwarz:
     \begin{align*}
-        n\int _{\Omega } \varphi ^{2} \dxx =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \x \dxx & \leqslant 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \x \dxx\right| \\
-                                                                                                    & \leqslant 2\int _{\Omega }| \varphi | | \nabla \varphi | | \x| \dxx ,
+        n\int _{\Omega } \varphi ^{2} \dxx =-2\int _{\Omega } \varphi \nabla \varphi \cdotp \x \dxx & \leq 2\left| \int _{\Omega } \varphi \nabla \varphi \cdotp \x \dxx\right| \\
+                                                                                                    & \leq 2\int _{\Omega }| \varphi | | \nabla \varphi | | \x| \dxx ,
     \end{align*}
-    per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\zer)$, per cui se $\displaystyle \x \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \x| \leqslant M$. Infine per Cauchy-Schwarz:
+    per ipotesi, se il dominio è limitato, $\displaystyle \Omega \subset B_{M}(\zer)$, per cui se $\displaystyle \x \in \Omega $ allora il suo modulo è maggiorato da una certa costante $\displaystyle | \x| \leq M$. Infine per Cauchy-Schwarz:
     \begin{align*}
-        n\int _{\Omega } \varphi ^{2} \dxx & \leqslant 2M\int _{\Omega }| \varphi | | \nabla \varphi | \dxx                                                         \\
-                                           & \leqslant 2M\left(\int _{\Omega } \varphi ^{2}\right)^{1/2}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} ,
+        n\int _{\Omega } \varphi ^{2} \dxx & \leq 2M\int _{\Omega }| \varphi | | \nabla \varphi | \dxx                                                         \\
+                                           & \leq 2M\left(\int _{\Omega } \varphi ^{2}\right)^{1/2}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} ,
     \end{align*}
     quindi semplificando una norma $\displaystyle L^{2}$ di $\displaystyle \varphi $ ottengo:
     \begin{equation*}
-        \left(\int _{\Omega } \varphi ^{2} \dxx\right)^{1/2} \leqslant \underbrace{\frac{2M}{n}}_{C_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
+        \left(\int _{\Omega } \varphi ^{2} \dxx\right)^{1/2} \leq \underbrace{\frac{2M}{n}}_{C_{P}}\left(\int _{\Omega }| \nabla \varphi | ^{2}\right)^{1/2} .
     \end{equation*}
     \textbf{Passo 2.}
 
     Per il passo 1 so che
     \begin{equation*}
-        \exists \ C_{P} :\ \Vert \varphi \Vert _{L^{2}} \leqslant C_{P}\Vert \nabla \varphi \Vert _{L^{2}} ,\ \ \forall \varphi \in \mathcal{D}(\Omega) .
+        \exists \ C_{P} :\ \Vert \varphi \Vert _{L^{2}} \leq C_{P}\Vert \nabla \varphi \Vert _{L^{2}} ,\ \ \forall \varphi \in \mathcal{D}(\Omega) .
     \end{equation*}
     Ma per inclusione densa:
     \begin{equation*}
@@ -724,9 +724,9 @@ A priori per controllare le funzioni di $H^{1}$ bisogna controllare loro e le lo
     \end{equation*}
     allora per continuità della norma, facendo il limite ottengo
     \begin{gather*}
-        \Vert \varphi _{n}\Vert _{L^{2}} \leqslant C_{P}\Vert \nabla \varphi _{n}\Vert _{L^{2}}\\
+        \Vert \varphi _{n}\Vert _{L^{2}} \leq C_{P}\Vert \nabla \varphi _{n}\Vert _{L^{2}}\\
         \downarrow \\
-        \Vert u\Vert _{L^{2}} \leqslant C_{P}\Vert \nabla u\Vert _{L^{2}}
+        \Vert u\Vert _{L^{2}} \leq C_{P}\Vert \nabla u\Vert _{L^{2}}
     \end{gather*}
 \end{dimostrazione}
 Si noti che in realtà\footnote{e questa è una chicca per l'orale.} per ipotesi serve che $\Omega$ sia limitato almeno in una direzione, ma non per forza tutte. Quando costruiamo il campo ausiliario, è sufficiente scegliere un $\x$ tale che abbia componenti nulle direzioni illimitate e $x_{i}$ nella $i$-esima direzione in cui è limitato. I calcoli si svolgono analogamente. Attenzione che in quel caso la divergenza di $\x$ non è più $n$, ma $1,2, \cdots $ a seconda del caso. Si noti che la stima \emph{peggiora} dato che non dividiamo per $n$, ma per qualcosa di più piccolo.
@@ -737,11 +737,11 @@ Si noti che in realtà\footnote{e questa è una chicca per l'orale.} per ipotesi
     \end{equation*}
     Tuttavia non è la migliore costante possibile. Quest'ultima si trova pensando a:
     \begin{equation*}
-        \Vert u\Vert _{L^{2}}^{2} \leqslant C_{P}^{2}\Vert \nabla u\Vert _{L^{2}}^{2}
+        \Vert u\Vert _{L^{2}}^{2} \leq C_{P}^{2}\Vert \nabla u\Vert _{L^{2}}^{2}
     \end{equation*}
     che è equivalente a dire che
     \begin{equation*}
-        \frac{1}{C_{P}^{2}} \leqslant \frac{\Vert \nabla u\Vert _{L^{2}}^{2}}{\Vert u\Vert _{L^{2}}^{2}} ,
+        \frac{1}{C_{P}^{2}} \leq \frac{\Vert \nabla u\Vert _{L^{2}}^{2}}{\Vert u\Vert _{L^{2}}^{2}} ,
     \end{equation*}
     la migliore costante si trova per il valore che minimizza $\displaystyle C_{P}$, cioè che massimizza $\displaystyle 1/C_{P}^{2}$, cioè che minimizza il secondo termine:
     \begin{equation}
@@ -760,7 +760,7 @@ Si noti che in realtà\footnote{e questa è una chicca per l'orale.} per ipotesi
     \end{equation*}
     Se $\displaystyle u\in H_{0}^{1}(\Omega)$, grazie a Poincaré
     \begin{equation}
-        \textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}(\Omega)}^{2}} \leqslant \underbrace{\Vert u\Vert _{L^{2}(\Omega)}^{2} +\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}(\Omega)}^{2}}}_{\textcolor[rgb]{0.25,0.46,0.02}{\Vert u\Vert _{H^{1}(\Omega)}^{2}}} \leqslant \left(C_{P}^{2} +1\right)\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}(\Omega)}^{2}}
+        \textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}(\Omega)}^{2}} \leq \underbrace{\Vert u\Vert _{L^{2}(\Omega)}^{2} +\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}(\Omega)}^{2}}}_{\textcolor[rgb]{0.25,0.46,0.02}{\Vert u\Vert _{H^{1}(\Omega)}^{2}}} \leq \left(C_{P}^{2} +1\right)\textcolor[rgb]{0.82,0.01,0.11}{\Vert \nabla u\Vert _{L^{2}(\Omega)}^{2}}
         \label{eq:af-stima-poincare}
     \end{equation}
     Quindi in $\displaystyle H_{0}^{1}$ (che ricordiamo è spazio di Hilbert essenso sottospazio chiuso di uno spazio di Hilbert) ci sono due norme equivalenti\footnote{Ce ne sono tante, ma ne abbiamo messe in evidenza due.}:

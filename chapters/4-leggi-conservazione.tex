@@ -140,7 +140,7 @@ Ipotesi di base
 \begin{itemize}
     \item una sola corsia, senza sorpassi
     \item assenza di caselli (assenza di \textit{sorgenti} o \textit{pozzi} di auto), quindi problema \emph{omogeneo}
-    \item la velocità è funzione di $\rho $, cioè $v=v(\rho)$, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori. Se aumenta la densità diminuisce la velocità $\frac{\dv}{\drho} \leqslant 0$.
+    \item la velocità è funzione di $\rho $, cioè $v=v(\rho)$, è un'ipotesi un po' controversa perché bisognerebbe considerare un tempo di reazione dei guidatori. Se aumenta la densità diminuisce la velocità $\frac{\dv}{\drho} \leq 0$.
 \end{itemize}
 
 Abbiamo
@@ -407,9 +407,9 @@ Strategia per costruire \textbf{una}\footnote{Nesssuno ci dice che sia l'unica, 
           \begin{equation*}
               g_{\varepsilon }(x) =
               \begin{cases}
-                  \rho _{m}                                      & x\leqslant 0           \\
+                  \rho _{m}                                      & x\leq 0           \\
                   \rho _{m}\left(1-\frac{x}{\varepsilon }\right) & 0< x< \varepsilon      \\
-                  0                                              & x\geqslant \varepsilon
+                  0                                              & x\geq \varepsilon
               \end{cases}
           \end{equation*}segue naturalmente che\footnote{Il valore in $0$ è del tutto irrilevante.}
           \begin{equation*}
@@ -734,7 +734,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g(\xi)$ lungo la cara
 \begin{itemize}
     \item La condizione sarà \textbf{sempre} soddisfatta se
           \begin{equation*}
-              g'(\xi) q''(g(\xi)) \geqslant 0\ \text{in} \ \mathbb{R}
+              g'(\xi) q''(g(\xi)) \geq 0\ \text{in} \ \mathbb{R}
               \label{eq:condizione-tutto-bene}
           \end{equation*}
     \item Avrò problemi (\textbf{da un certo tempo in poi}) se
@@ -745,7 +745,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g(\xi)$ lungo la cara
 \begin{nb}
     La pendenza della caratteristica è $\displaystyle q'(g(\xi)) .$ La condizione \eqref{eq:condizione-tutto-bene} equivale a:
     \begin{equation*}
-        \frac{\de}{\dxi } q'(g(\xi)) =g'(\xi) q''(g(\xi)) \geqslant 0
+        \frac{\de}{\dxi } q'(g(\xi)) =g'(\xi) q''(g(\xi)) \geq 0
     \end{equation*}
     ovvero richiediamo che le pendenze delle caratteristiche siano crescenti con $\xi $: le caratteristiche non si incontrano mai (se la derivata della pendenza è $0$, rimangono parallele, se è $< 0$ si intersecheranno dando origine ad una linea di shock).
 
@@ -798,7 +798,7 @@ possiamo riscrivere la condizione essendo $\displaystyle u=g(\xi)$ lungo la cara
 \end{nb}
 Formalizziamo in un teorema.
 \begin{theorem}
-    Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'(\xi) q''(g(\xi)) \geqslant 0\ \forall \xi \in \mathbb{R}$. Allora l'equazione
+    Sia $\displaystyle q\in C^{2}(\mathbb{R}) ,\ g\in C^{1}(\mathbb{R})$ e $\displaystyle g'(\xi) q''(g(\xi)) \geq 0\ \forall \xi \in \mathbb{R}$. Allora l'equazione
     \begin{equation*}
         G(x,t,u) =u-g(x-q'(u) t) =0
     \end{equation*}
@@ -808,8 +808,8 @@ Qui abbiamo sia esistenza che unicità. Sebbene per il traffico abbiamo trovato 
 \begin{dimostrazione}
     $u$ è definita univocamente per il teorema del Dini. Dimostriamo che $\displaystyle u\in C^{1}$. Sempre usando il teorema del Dini
     \begin{gather*}
-        u_{t} =-\frac{G_{t}(x,t,u)}{G_{u}(x,t,u)} =-\frac{g'(x-q'(u) t) q'(u)}{1+\underbrace{tq''(u) g'(x-q'(u) t}_{\geqslant 0})}\\
-        u_{x} =-\frac{G_{x}(x,t,u)}{G_{u}(x,t,u)} =\frac{g'(x-q'(u) t)}{1+\underbrace{tq''(u) g'(x-q'(u) t}_{\geqslant 0})}
+        u_{t} =-\frac{G_{t}(x,t,u)}{G_{u}(x,t,u)} =-\frac{g'(x-q'(u) t) q'(u)}{1+\underbrace{tq''(u) g'(x-q'(u) t}_{\geq 0})}\\
+        u_{x} =-\frac{G_{x}(x,t,u)}{G_{u}(x,t,u)} =\frac{g'(x-q'(u) t)}{1+\underbrace{tq''(u) g'(x-q'(u) t}_{\geq 0})}
     \end{gather*}
     allora
     \begin{equation*}
@@ -1323,23 +1323,23 @@ Questo è uno \textbf{shock non fisico}. È come se partendo da un punto su una 
 
 Abbiamo risposto al primo quesito, dando un senso al concetto di soluzione quando si presentano discontinuità (grazie alle soluzioni deboli e Rankine-Hugoniot), e dimostrato che l'unicità non è garantita. Ora dobbiamo definire un criterio di selezione che individui possibilmente un'unica soluzione accettabile dal punto di vista del significato fisico del problema.
 
-\emph{Esaminiamo prima un caso ideale:} sia $\displaystyle g' >0,\ q''\geqslant q''_{\min}  >0$, l'unica soluzione è assegnata dalla formula
+\emph{Esaminiamo prima un caso ideale:} sia $\displaystyle g' >0,\ q''\geq q''_{\min}  >0$, l'unica soluzione è assegnata dalla formula
 \begin{equation}
     G(x,t,u) =u-g(x-q'(u) t) =0
 \end{equation}
 Grazie al teorema del Dini
 \begin{equation*}
-    u_{x} =-\frac{G_{x}}{G_{u}} =\frac{g'(x-q'(u) t)}{\underbrace{1+g'(x-q'(u) t) q''(u) t}_{\geqslant \ g'(x-q'(u) t) q''(u) t}} \leqslant \frac{1}{q''(u)}\frac{1}{t} \leqslant \frac{E}{t} \ \ \ \text{dove} \ E=\frac{1}{q''_{\min}}
+    u_{x} =-\frac{G_{x}}{G_{u}} =\frac{g'(x-q'(u) t)}{\underbrace{1+g'(x-q'(u) t) q''(u) t}_{\geq \ g'(x-q'(u) t) q''(u) t}} \leq \frac{1}{q''(u)}\frac{1}{t} \leq \frac{E}{t} \ \ \ \text{dove} \ E=\frac{1}{q''_{\min}}
 \end{equation*}
 Per il teorema del valor medio, se $\displaystyle x,z\in \mathbb{R} ,\ t >0,z >0\ $
 \begin{equation*}
-    u(x+z,t) -u(x,t) =u_{x}(\xi _{z,x} ,t) z\leqslant \frac{E}{t} z
+    u(x+z,t) -u(x,t) =u_{x}(\xi _{z,x} ,t) z\leq \frac{E}{t} z
 \end{equation*}
 Perché questa disuguaglianza valga basta che $u$ sia definita, non è richiesta nessuna regolarità
 \begin{definition}
     [Condizione di entropia] Nel caso $q''>0$, la condizione di entropia è rispettata se $\exists E >0$ tale che per ogni $x,z\in \mathbb{R}$, $z>0$ e per ogni $t>0$:
     \begin{equation}
-        u(x+z,t) -u(x,t) \leqslant \frac{E}{t} z
+        u(x+z,t) -u(x,t) \leq \frac{E}{t} z
         \label{eq:condizione-di-entropia}
     \end{equation}
 \end{definition}
@@ -1356,12 +1356,12 @@ Conseguenze:
 
           è \textbf{non crescente}. Poniamo $\displaystyle x_{2} =x+z,\ x_{1} =x,\ z=x_{2} -x_{1}  >0,\ \text{se} \ x_{2}  >x_{1}$ la \eqref{eq:condizione-di-entropia} diventa
           \begin{equation*}
-              u(x_{2} ,t) -u(x_{1} ,t) \leqslant \frac{E}{t}(x_{2} -x_{1})
+              u(x_{2} ,t) -u(x_{1} ,t) \leq \frac{E}{t}(x_{2} -x_{1})
           \end{equation*}
 
           ovvero
           \begin{equation}
-              u(x_{2} ,t) -\frac{E}{t} x_{2} \leqslant u(x_{1} ,t) -\frac{E}{t} x_{1}
+              u(x_{2} ,t) -\frac{E}{t} x_{2} \leq u(x_{1} ,t) -\frac{E}{t} x_{1}
               \label{eq:conseguenza-entropia}
           \end{equation}
     \item Per il punto precedente $u$ (essendo monotona) ha solo discontinuità a salto. Inoltre se $\displaystyle (x,t)$ è punto di salto per $u$
@@ -1483,9 +1483,9 @@ Conseguenze:
 
 \end{itemize}
 \begin{nb}
-    Nel caso $q''\leqslant q''_{\max} < 0$ la condizione di entropia diventa
+    Nel caso $q''\leq q''_{\max} < 0$ la condizione di entropia diventa
     \begin{equation}
-        u(x+z,t) -u(x,t) \geqslant -\frac{E}{t} z,\quad E=\frac{1}{| q''_{\max}| }
+        u(x+z,t) -u(x,t) \geq -\frac{E}{t} z,\quad E=\frac{1}{| q''_{\max}| }
     \end{equation}
     quindi in un punto $(x,t)$ di discontinuità
     \begin{equation*}
@@ -1516,9 +1516,9 @@ noto come \textbf{Problema di Riemann}, con $\displaystyle u_{L} \neq u_{R}$ e c
 
 Questo è proprio il caso della coda al semaforo e del traffico a valle, non c'è soluzione classica, ma ce n'è una unica in senso debole che ha senso fisico.
 \begin{theorem}
-    Sia $q$ strettamente convessa o concava con $\displaystyle q''\geqslant h >0$ o $\displaystyle q''\leqslant -h< 0$. Allora l'unica soluzione entropica del problema di Riemann è data da:
+    Sia $q$ strettamente convessa o concava con $\displaystyle q''\geq h >0$ o $\displaystyle q''\leq -h< 0$. Allora l'unica soluzione entropica del problema di Riemann è data da:
     \begin{itemize}
-        \item Se $\displaystyle q''\geqslant h >0$ e $\displaystyle u_{R} < u_{L}$, oppure $\displaystyle q''\leqslant -h< 0$ e $\displaystyle u_{R}  >u_{L}$
+        \item Se $\displaystyle q''\geq h >0$ e $\displaystyle u_{R} < u_{L}$, oppure $\displaystyle q''\leq -h< 0$ e $\displaystyle u_{R}  >u_{L}$
 
               \textbf{onda d'urto}
               \begin{equation*}
@@ -1535,15 +1535,15 @@ Questo è proprio il caso della coda al semaforo e del traffico a valle, non c'�
               \end{equation*}
 
 
-        \item Se $\displaystyle q''\geqslant h >0$ e $\displaystyle u_{R}  >u_{L}$ oppure $\displaystyle q''\leqslant -h< 0$ e $\displaystyle u_{R} < u_{L}$
+        \item Se $\displaystyle q''\geq h >0$ e $\displaystyle u_{R}  >u_{L}$ oppure $\displaystyle q''\leq -h< 0$ e $\displaystyle u_{R} < u_{L}$
 
               \textbf{onda di rarefazione}
               \begin{equation*}
                   u(x,t) =
                   \begin{cases}
-                      u_{L}                     & \frac{x}{t}\leqslant q'(u_{L})     \\
+                      u_{L}                     & \frac{x}{t}\leq q'(u_{L})     \\
                       r\left(\frac{x}{t}\right) & q'(u_{L}) < \frac{x}{t}< q'(u_{R}) \\
-                      u_{R}                     & \frac{x}{t}\geqslant q'(u_{R})
+                      u_{R}                     & \frac{x}{t}\geq q'(u_{R})
                   \end{cases}
               \end{equation*}
 
@@ -1934,7 +1934,7 @@ Prima di fare la dimostrazione esaminiamo i vari casi con dei grafici
 \end{itemize}
 
 \begin{dimostrazione}
-    Nel caso $\displaystyle q''\geqslant h >0$
+    Nel caso $\displaystyle q''\geq h >0$
     \begin{itemize}
         \item Poiché abbiamo supposto $q$ convessa siamo nel caso $\displaystyle u_{R} < u_{L}$
 
@@ -1988,19 +1988,19 @@ Prima di fare la dimostrazione esaminiamo i vari casi con dei grafici
               Quindi $u$ è soluzione integrale. Per la condizione di entropia
               \begin{align*}
                   u(x+z,t) -u(x,t) & =r\left(\frac{x+z}{t}\right) -r\left(\frac{x}{t}\right)                     &                                  \\
-                                   & =r'\left(\frac{\xi _{z,t}}{t}\right)\frac{z}{t} \leqslant (\text{qualcosa}) & \text{(Teorema del valor medio)}
+                                   & =r'\left(\frac{\xi _{z,t}}{t}\right)\frac{z}{t} \leq (\text{qualcosa}) & \text{(Teorema del valor medio)}
               \end{align*}
 
               dove $\displaystyle \xi _{z,t} \in \left(\frac{x}{t} ,\frac{x}{t} +\frac{z}{t}\right)$.
 
               Per trovare un maggiorante, ricordando che $\displaystyle r=(q')^{-1}$ e usando la regola per la derivata dell'inversa ($r$ è l'inversa di $q'$, quindi $r'$ è la derivata di un'inversa)
               \begin{gather*}
-                  r'(s) =\frac{1}{q''(r)} \quad \text{con} \quad s=q'(r) \qquad \Rightarrow \qquad r'(s) \leqslant \frac{1}{h} \ \text{essendo} \ q''\geqslant h
+                  r'(s) =\frac{1}{q''(r)} \quad \text{con} \quad s=q'(r) \qquad \Rightarrow \qquad r'(s) \leq \frac{1}{h} \ \text{essendo} \ q''\geq h
               \end{gather*}
 
               Quindi
               \begin{equation*}
-                  r'\left(\frac{\xi _{z,t}}{t}\right)\frac{z}{t} \leqslant \frac{1}{h}\frac{z}{t} = E \frac{z}{t}
+                  r'\left(\frac{\xi _{z,t}}{t}\right)\frac{z}{t} \leq \frac{1}{h}\frac{z}{t} = E \frac{z}{t}
               \end{equation*}
 
               e la condizione di entropia è soddisfatta con $\displaystyle E=\frac{1}{h}$.

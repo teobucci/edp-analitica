@@ -7,9 +7,9 @@ Sia $X$ spazio vettoriale normato reale, stiamo chiedendo due cose: combinazioni
 \begin{definition}
     [Norma] Una norma è un operatore $\Vert \cdotp \Vert :X\rightarrow \mathbb{R}$ tale che
     \begin{itemize}
-        \item $\Vert x\Vert \geqslant 0,\forall x\in X$ e $\Vert x\Vert =0\Leftrightarrow x=0$
+        \item $\Vert x\Vert \geq 0,\forall x\in X$ e $\Vert x\Vert =0\Leftrightarrow x=0$
         \item $\Vert \lambda x\Vert =| \lambda | \Vert x\Vert,\forall x\in X,\forall \lambda \in \mathbb{R}$
-        \item $\Vert x+y\Vert \leqslant \Vert x\Vert +\Vert y\Vert $
+        \item $\Vert x+y\Vert \leq \Vert x\Vert +\Vert y\Vert $
     \end{itemize}
 \end{definition}
 
@@ -45,11 +45,11 @@ Sia $\{x_{n}\}_{n} \subset X$ successione.
 Per la disuguaglianza triangolare:
 \begin{align*}
     \Vert x\Vert & =\Vert x-x_{0} +x_{0}\Vert                     \\
-                 & \leqslant \Vert x-x_{0}\Vert +\Vert x_{0}\Vert
+                 & \leq \Vert x-x_{0}\Vert +\Vert x_{0}\Vert
 \end{align*}
 quindi
 \begin{equation*}
-    \Big| \Vert x\Vert -\Vert x_{0}\Vert \Big|\leqslant \Vert x-x_{0}\Vert
+    \Big| \Vert x\Vert -\Vert x_{0}\Vert \Big|\leq \Vert x-x_{0}\Vert
 \end{equation*}
 Pertanto se $x\rightarrow x_{0}$ allora $\Vert x\Vert \rightarrow \Vert x_{0}\Vert $.
 
@@ -61,7 +61,7 @@ Pertanto se $x\rightarrow x_{0}$ allora $\Vert x\Vert \rightarrow \Vert x_{0}\Ve
 \end{definition}
 $\{x_{n}\}_{n}$ convergente $\Rightarrow \{x_{n}\}_{n}$ è di Cauchy, infatti
 \begin{equation*}
-    0\leqslant \Vert x_{n} -x_{m}\Vert =\Vert x_{n} -\overline{x} +\overline{x} -x_{m}\Vert \leqslant \Vert x_{n} -\overline{x}\Vert +\Vert \overline{x} -x_{m}\Vert \rightarrow 0
+    0\leq \Vert x_{n} -x_{m}\Vert =\Vert x_{n} -\overline{x} +\overline{x} -x_{m}\Vert \leq \Vert x_{n} -\overline{x}\Vert +\Vert \overline{x} -x_{m}\Vert \rightarrow 0
 \end{equation*}
 questa è la parte inutile, è più utile il contrario, vedere il comportamento delle approssimazioni e dedurre se c'è convergenza a qualcosa! In generale non è vero che una successione di Cauchy è convergente, per questo motivo lavoriamo in Spazi di Banach.
 \begin{definition}
@@ -75,7 +75,7 @@ Esempi di spazi di Banach.
     \item $\mathbb{R}^{n}$ con la norma euclidea è completo
     \item $L^{p}(\Omega),\Omega \subset \mathbb{R}^{n}$ dominio\footnote{cioè aperto e connesso.} con la norma
           \begin{equation*}
-              \Vert u\Vert _{L^{p}(\Omega)} =\left(\int _{\Omega }| u| ^{p} \dx\right)^{1/p} \ \ 1\leqslant p< \infty
+              \Vert u\Vert _{L^{p}(\Omega)} =\left(\int _{\Omega }| u| ^{p} \dx\right)^{1/p} \ \ 1\leq p< \infty
           \end{equation*}
     \item $C(\overline{\Omega })$, con $\Omega $ limitato con la norma
           \begin{equation*}
@@ -83,9 +83,9 @@ Esempi di spazi di Banach.
           \end{equation*}
 \end{itemize}
 \begin{definition}
-    Supponiamo di avere due norme $\Vert \cdotp \Vert _{1} :X\rightarrow \mathbb{R}$, $\Vert \cdotp \Vert _{2} :X\rightarrow \mathbb{R}$. Si dicono \textbf{equivalenti} se inducono la stessa convergenza, cioè se $\exists 0< c_{1} \leqslant c_{2}$, non dipendenti da $x$, tali che
+    Supponiamo di avere due norme $\Vert \cdotp \Vert _{1} :X\rightarrow \mathbb{R}$, $\Vert \cdotp \Vert _{2} :X\rightarrow \mathbb{R}$. Si dicono \textbf{equivalenti} se inducono la stessa convergenza, cioè se $\exists 0< c_{1} \leq c_{2}$, non dipendenti da $x$, tali che
     \begin{equation*}
-        c_{1}\Vert x\Vert _{1} \leqslant \Vert x\Vert _{2} \leqslant c_{2}\Vert x\Vert _{1} \ \ \forall x\in X
+        c_{1}\Vert x\Vert _{1} \leq \Vert x\Vert _{2} \leq c_{2}\Vert x\Vert _{1} \ \ \forall x\in X
     \end{equation*}
 \end{definition}
 \begin{nb}
@@ -110,13 +110,13 @@ Possiamo scegliere due diverse norme, la norma delle funzioni continue, ovvero i
 
           $X$ è uno spazio \textbf{completo}, per dirlo ci serve far vedere che tutte le successioni di Cauchy sono convergenti. In particolare, per ogni $x$ fissato si hanno delle successioni di numeri in $\displaystyle \mathbb{R}$, che è completo, quindi il candidato limite della successione di Cauchy è il limite puntuale $\displaystyle f(x)$
           \begin{gather*}
-              \underbrace{\forall \varepsilon  >0,\exists M >0:\Vert f_{n} -f_{m}\Vert _{C([ -1,1])} < \varepsilon \ \text{per} \ n,m\geqslant M}_{\text{Cauchy}}\\
+              \underbrace{\forall \varepsilon  >0,\exists M >0:\Vert f_{n} -f_{m}\Vert _{C([ -1,1])} < \varepsilon \ \text{per} \ n,m\geq M}_{\text{Cauchy}}\\
               \text{allora}\\
               \begin{aligned}
                   \forall m >M,\forall x\in [ -1,1],\quad |f(x) -f_{m}(x) | & =\lim _{n\rightarrow \infty } |f_{n}(x) -f_{m}(x) |                        \\
-                                                                            & \leqslant \lim _{n\rightarrow \infty }\max_{[ -1,1]} |f_{n}(x) -f_{m}(x) | \\
+                                                                            & \leq \lim _{n\rightarrow \infty }\max_{[ -1,1]} |f_{n}(x) -f_{m}(x) | \\
                                                                             & =\lim _{n\rightarrow \infty }\Vert f_{n} -f_{m}\Vert _{C([ -1,1])}         \\
-                                                                            & \leqslant \lim _{n\rightarrow \infty } \varepsilon =\varepsilon
+                                                                            & \leq \lim _{n\rightarrow \infty } \varepsilon =\varepsilon
               \end{aligned}
           \end{gather*}
     \item Con la norma $\displaystyle \Vert \cdotp \Vert _{L^{2}([ -1,1])}$
@@ -127,9 +127,9 @@ Possiamo scegliere due diverse norme, la norma delle funzioni continue, ovvero i
           \begin{equation*}
               v_{n}(x) =
               \begin{cases}
-                  0,  & -1\leqslant x\leqslant 0           \\
-                  nx, & 0\leqslant x\leqslant \frac{1}{n}  \\
-                  1,  & \frac{1}{n} \leqslant x\leqslant 1
+                  0,  & -1\leq x\leq 0           \\
+                  nx, & 0\leq x\leq \frac{1}{n}  \\
+                  1,  & \frac{1}{n} \leq x\leq 1
               \end{cases}
           \end{equation*}
 
@@ -171,7 +171,7 @@ Possiamo scegliere due diverse norme, la norma delle funzioni continue, ovvero i
           \end{figure}
           \FloatBarrier
 
-          Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leqslant n$
+          Verifichiamo che è di Cauchy, supponiamo $\displaystyle m\leq n$
           \begin{align*}
               \Vert v_{n} -v_{m}\Vert _{2}^{2} & =\int _{-1}^{1}(v_{n}(x) -v_{m}(x))^{2} \dx                                            \\
                                                & =\cancel{\int _{-1}^{0}} +\int _{0}^{1/n} +\int _{1/n}^{1/m} +\cancel{\int _{1/m}^{1}} \\
@@ -201,7 +201,7 @@ In questo esempio:
 \begin{definition}
     [Prodotto scalare] $(\cdotp,\cdotp) :X\times X\rightarrow \mathbb{R}$ tale che
     \begin{itemize}
-        \item $(v,v) \geqslant 0$ e $(v,v) =0\Leftrightarrow v=0$
+        \item $(v,v) \geq 0$ e $(v,v) =0\Leftrightarrow v=0$
         \item $(u,v) =(v,u),\forall u,v\in X$
         \item $(\lambda _{1} u_{1} +\lambda _{2} u_{2},v) =\lambda _{1}(u_{1},v) +\lambda _{2}(u_{2},v),\forall \lambda _{1},\lambda _{2} \in \mathbb{R},\forall u_{1},u_{2},v\in X$
     \end{itemize}
@@ -216,7 +216,7 @@ Esercizio. Verificare che il prodotto scalare è continuo rispetto alla norma in
 \begin{theorem}
     Alcune proposizioni
     \begin{enumerate}
-        \item Cauchy-Schwarz $| (u,v)| \leqslant \Vert u\Vert \cdotp \Vert v\Vert $
+        \item Cauchy-Schwarz $| (u,v)| \leq \Vert u\Vert \cdotp \Vert v\Vert $
         \item Identità del parallelogramma\footnote{la somma dei quadrati sulle diagonali è uguale alla somma dei quadrati su tutti i lati.} $\Vert u+v\Vert ^{2} +\Vert u-v\Vert ^{2} =2\Vert u\Vert ^{2} +2\Vert v\Vert ^{2}$, vale solo se la norma è indotta da un prodotto scalare
     \end{enumerate}
 \end{theorem}
@@ -326,18 +326,18 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
     \begin{itemize}
         \item Esistenza
               \begin{equation*}
-                  d=\inf_{v\in V}\Vert v-x\Vert,\ d\geqslant 0
+                  d=\inf_{v\in V}\Vert v-x\Vert,\ d\geq 0
               \end{equation*}
 
               ovvero, per definizione di $\inf$
               \begin{enumerate}
-                  \item $\displaystyle \Vert v-x\Vert \geqslant d,\ \forall v\in V$
-                  \item $\displaystyle \forall \varepsilon \ \exists v_{\varepsilon } \in V$ tale che $\displaystyle \Vert v_{\varepsilon } -x\Vert \leqslant d+\varepsilon $ \ $ $
+                  \item $\displaystyle \Vert v-x\Vert \geq d,\ \forall v\in V$
+                  \item $\displaystyle \forall \varepsilon \ \exists v_{\varepsilon } \in V$ tale che $\displaystyle \Vert v_{\varepsilon } -x\Vert \leq d+\varepsilon $ \ $ $
               \end{enumerate}
 
               uso la definizione per costruire una ``successione minimizzante''
               \begin{equation}
-                  (v_{n})_{n\in \mathbb{N}} \subset V:\ d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n} \ \ \left(\varepsilon =\frac{1}{n},\ n\in \mathbb{N}\right)
+                  (v_{n})_{n\in \mathbb{N}} \subset V:\ d\leq \Vert x-v_{n}\Vert \leq d+\frac{1}{n} \ \ \left(\varepsilon =\frac{1}{n},\ n\in \mathbb{N}\right)
                   \label{eq:teo-proiez-suc-min}
               \end{equation}
 
@@ -350,17 +350,17 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
               \begin{equation*}
                   \begin{array}{ l }
                       \Vert a-b\Vert ^{2} =\Vert v_{n} -v_{m}\Vert ^{2} \\
-                      \Vert a+b\Vert ^{2} =\Vert v_{n} +v_{m} -2x\Vert ^{2} =4\bigg\Vert \underbrace{\frac{v_{n} +v_{m}}{2}}_{\in V} -x\bigg\Vert ^{2} \geqslant 4d^{2}
+                      \Vert a+b\Vert ^{2} =\Vert v_{n} +v_{m} -2x\Vert ^{2} =4\bigg\Vert \underbrace{\frac{v_{n} +v_{m}}{2}}_{\in V} -x\bigg\Vert ^{2} \geq 4d^{2}
                   \end{array}
               \end{equation*}
 
-              dove l'ultima disuguaglianza vale perché $\Vert v-x\Vert \geqslant d,\ \forall v\in V$ (definizione di $\inf$) e $\displaystyle \frac{v_{n} +v_{m}}{2} \in V$, essendo $V$ un sottospazio.
+              dove l'ultima disuguaglianza vale perché $\Vert v-x\Vert \geq d,\ \forall v\in V$ (definizione di $\inf$) e $\displaystyle \frac{v_{n} +v_{m}}{2} \in V$, essendo $V$ un sottospazio.
 
               La norma di $a$ e di $b$ tenderà a $d$ per il teorema dei carabinieri e per \eqref{eq:teo-proiez-suc-min}. Sostituendo nell'identità
               \begin{align*}
-                  0 & \leqslant \Vert v_{n} -v_{m}\Vert ^{2}                                                                       \\
+                  0 & \leq \Vert v_{n} -v_{m}\Vert ^{2}                                                                       \\
                     & =2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4\left\Vert \frac{v_{n} +v_{m}}{2} -x\right\Vert ^{2} \\
-                    & \leqslant 2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4d^{2}                                       \\
+                    & \leq 2\Vert v_{n} -x\Vert ^{2} +2\Vert v_{m} -x\Vert ^{2} -4d^{2}                                       \\
                     & \xrightarrow[n,m\rightarrow \infty ]{} 2d^{2} +2d^{2} -4d^{2} =0
               \end{align*}
 
@@ -370,12 +370,12 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
               \end{equation*}
 
               \textbf{e poiché $V$ è chiuso,} $\overline{v} \in V$. Allora prendendo la definizione della mia successione \begin{equation*}
-                  d\leqslant \Vert x-v_{n}\Vert \leqslant d+\frac{1}{n}
+                  d\leq \Vert x-v_{n}\Vert \leq d+\frac{1}{n}
               \end{equation*}
 
               e facendone il limite per $n\rightarrow \infty $ ottengo, per continuità della norma
               \begin{equation*}
-                  d\leqslant \Vert x-\overline{v}\Vert \leqslant d
+                  d\leq \Vert x-\overline{v}\Vert \leq d
               \end{equation*}
 
               Definisco la proiezione di $x$ su $V$: $\boxed{P_{V} x=\overline{v}}$
@@ -391,7 +391,7 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
                   \Vert \overline{v} -\overline{w}\Vert ^{2} +\Vert \overline{v} +\overline{w} -2x\Vert ^{2} =4d^{2}
               \end{equation*}
 
-              Sfruttando gli stessi passaggi dell'esistenza osservo che $\Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geqslant 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\Vert \overline{v} -\overline{w}\Vert ^{2} \leqslant 0$, ma quindi $\Vert \overline{v} -\overline{w}\Vert ^{2} =0$, infine per proprietà della norma:
+              Sfruttando gli stessi passaggi dell'esistenza osservo che $\Vert \overline{v} +\overline{w} -2x\Vert ^{2} \geq 4d^{2}$. Allora perchè l'identità sia soddisfatta deve essere $\Vert \overline{v} -\overline{w}\Vert ^{2} \leq 0$, ma quindi $\Vert \overline{v} -\overline{w}\Vert ^{2} =0$, infine per proprietà della norma:
               \begin{equation*}
                   \overline{v} =\overline{w}
               \end{equation*}
@@ -445,18 +445,18 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
               \FloatBarrier
               quindi:
               \begin{align*}
-                  d^{2} & \leqslant \Vert -(P_{V} x-tv) +x\Vert ^{2} =\Vert Q_{V} x+tv\Vert ^{2} \\
+                  d^{2} & \leq \Vert -(P_{V} x-tv) +x\Vert ^{2} =\Vert Q_{V} x+tv\Vert ^{2} \\
                         & =\Vert Q_{V} x\Vert ^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}        \\
                         & =d^{2} +2t(Q_{V} x,v) +t^{2}\Vert v\Vert ^{2}                          \\
                         &                                                                        \\
               \end{align*}
               otteniamo che:
               \begin{equation*}
-                  \Vert v\Vert ^{2} t^{2} +2(Q_{V} x,v) t\geqslant 0,\ \forall t\in \mathbb{R},\ \forall v\in V
+                  \Vert v\Vert ^{2} t^{2} +2(Q_{V} x,v) t\geq 0,\ \forall t\in \mathbb{R},\ \forall v\in V
               \end{equation*}
               Per analogia con l'equazione di una parabola a discriminante non positivo:
               \begin{equation*}
-                  at^{2} +bt+c\geqslant 0,\ \forall t\in \mathbb{R} \ \ \Rightarrow \ \ b^{2} -4ac\leqslant 0
+                  at^{2} +bt+c\geq 0,\ \forall t\in \mathbb{R} \ \ \Rightarrow \ \ b^{2} -4ac\leq 0
               \end{equation*}
               con $\displaystyle a=\Vert v\Vert ^{2},\ b=2(Q_{V} x,v)$
 
@@ -477,11 +477,11 @@ Nel caso di prima possiamo approssimare Heaviside con le approssimanti introdott
     In spazi infinito dimensionali $L$ lineare $\displaystyle \nRightarrow $$L$ continuo, per cui lo richiederò come ipotesi.
 \end{nb}
 \begin{definition}
-    [Operatore limitato] $L$ (lineare) si dice limitato se $\displaystyle \exists c\geqslant 0$ t.c. $\displaystyle \Vert Lv\Vert _{H_{2}} \leqslant c\Vert v\Vert _{H_{1}} \forall v\in H_{1}$
+    [Operatore limitato] $L$ (lineare) si dice limitato se $\displaystyle \exists c\geq 0$ t.c. $\displaystyle \Vert Lv\Vert _{H_{2}} \leq c\Vert v\Vert _{H_{1}} \forall v\in H_{1}$
 \end{definition}
 Osserviamo che
 \begin{equation*}
-    c\geqslant \frac{\Vert Lv\Vert _{H_{2}}}{\Vert v\Vert _{H_{1}}} =\left\Vert \frac{1}{\Vert v\Vert _{1}} Lv\right\Vert _{2} =\left\Vert L\left(\frac{v}{\Vert v\Vert _{1}}\right)\right\Vert _{2}
+    c\geq \frac{\Vert Lv\Vert _{H_{2}}}{\Vert v\Vert _{H_{1}}} =\left\Vert \frac{1}{\Vert v\Vert _{1}} Lv\right\Vert _{2} =\left\Vert L\left(\frac{v}{\Vert v\Vert _{1}}\right)\right\Vert _{2}
 \end{equation*}
 dove $\displaystyle \frac{v}{\Vert v\Vert _{1}}$ ha norma 1, quindi $L$ è limitato se e solo se
 \begin{equation*}
@@ -498,9 +498,9 @@ $k$ è la miglior costante di limitatezza e prende il nome di \textbf{norma oper
 \begin{dimostrazione}
     Vediamo i due sensi
     \begin{itemize}
-        \item[($\Leftarrow $)] $L$ è limitato, allora $\Vert Lx\Vert _{2} \leqslant C\Vert x\Vert _{1}$, sia $x=v-v_{0}$
+        \item[($\Leftarrow $)] $L$ è limitato, allora $\Vert Lx\Vert _{2} \leq C\Vert x\Vert _{1}$, sia $x=v-v_{0}$
               \begin{equation*}
-                  0\leqslant \Vert Lv-Lv_{0}\Vert _{2} =\Vert L(v-v_{0})\Vert _{2} \leqslant c\Vert v-v_{0}\Vert _{1}
+                  0\leq \Vert Lv-Lv_{0}\Vert _{2} =\Vert L(v-v_{0})\Vert _{2} \leq c\Vert v-v_{0}\Vert _{1}
               \end{equation*}
 
               quindi se $v\rightarrow v_{0}$ allora $Lv\rightarrow Lv_{0}$.
@@ -518,7 +518,7 @@ $k$ è la miglior costante di limitatezza e prende il nome di \textbf{norma oper
               quindi, scegliendo un certo arbitrario $\varepsilon =1$ segue che
 
               \begin{equation*}
-                  \exists \delta  >0\ \text{tale che se} \ \Vert x\Vert _{1} \leqslant \delta \ \text{allora} \ \Vert Lx\Vert _{2} \leqslant 1=\varepsilon
+                  \exists \delta  >0\ \text{tale che se} \ \Vert x\Vert _{1} \leq \delta \ \text{allora} \ \Vert Lx\Vert _{2} \leq 1=\varepsilon
               \end{equation*}
 
               allora per proprietà della norma
@@ -528,12 +528,12 @@ $k$ è la miglior costante di limitatezza e prende il nome di \textbf{norma oper
 
               l'argomento dell'operatore ha norma minore o uguale di $\delta $ e quindi rispetta la considerazione di prima
               \begin{equation*}
-                  \left\Vert \delta \frac{x}{\Vert x\Vert _{1}}\right\Vert \leqslant \Vert \delta \Vert \left\Vert \frac{x}{\Vert x\Vert _{1}}\right\Vert =\delta
+                  \left\Vert \delta \frac{x}{\Vert x\Vert _{1}}\right\Vert \leq \Vert \delta \Vert \left\Vert \frac{x}{\Vert x\Vert _{1}}\right\Vert =\delta
               \end{equation*}
 
               pertanto la norma dell'operatore è minore o uguale di $1$
               \begin{equation*}
-                  (*) \leqslant \frac{\Vert x\Vert _{1}}{\delta } \cdotp 1=\frac{1}{\delta }\Vert x\Vert _{1}
+                  (*) \leq \frac{\Vert x\Vert _{1}}{\delta } \cdotp 1=\frac{1}{\delta }\Vert x\Vert _{1}
               \end{equation*}
 
               che è la definizione di limitatezza.
@@ -558,7 +558,7 @@ Consideriamo un certo operatore che a $x$ associa se stesso, ma in due spazi con
     L:\ \underbrace{x}_{\in H_{1}} \ \rightarrow \underbrace{x}_{\in H_{2}}
 \end{equation*}
 
-Data un'immersione $\displaystyle L(x) =x$, quando è continua? Per \eqref{eq:continuo-limitato}, è continua se e solo se è limitata, ovvero se $\displaystyle \Vert x\Vert _{H_{2}} \leqslant c\Vert x\Vert _{H_{1}} \forall x\in H_{1}$. In questo caso l'immersione prende il nome di \textbf{immersione continua.}
+Data un'immersione $\displaystyle L(x) =x$, quando è continua? Per \eqref{eq:continuo-limitato}, è continua se e solo se è limitata, ovvero se $\displaystyle \Vert x\Vert _{H_{2}} \leq c\Vert x\Vert _{H_{1}} \forall x\in H_{1}$. In questo caso l'immersione prende il nome di \textbf{immersione continua.}
 
 Un esempio pratico è lo spazio $\displaystyle C([ 0,1]) \subset L^{2}(0,1)$, nel primo usiamo come norma il $\max$, nel secondo la norma $\left(\int | \cdot | ^{2}\right)^{1/2}$, quindi possiamo misurare gli elementi di $\displaystyle C([ 0,1])$ con entrambe le norme. La notazione per indicare l'immersione con continuità è
 \begin{equation*}
@@ -566,7 +566,7 @@ Un esempio pratico è lo spazio $\displaystyle C([ 0,1]) \subset L^{2}(0,1)$, ne
 \end{equation*}
 Dimostriamo ora la limitatezza dell'immersione in questo esempio (e quindi che è continua)
 \begin{equation*}
-    \Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) \dx} \leqslant \sqrt{\left(\max_{[ 0,1]} u\right)^{2} \cdot \int ^{1}_{0} \dx} =\max_{[ 0,1]}| u|
+    \Vert u\Vert _{L^{2}(0,1)} =\sqrt{\int ^{1}_{0} u^{2}(x) \dx} \leq \sqrt{\left(\max_{[ 0,1]} u\right)^{2} \cdot \int ^{1}_{0} \dx} =\max_{[ 0,1]}| u|
 \end{equation*}
 \begin{definition}
     [Funzionale] Sia $\displaystyle H_{1} =H$ spazio di Hilbert, $\displaystyle H_{2} =\mathbb{R}$, allora $\displaystyle L:H\rightarrow \mathbb{R}$ è detto funzionale.
@@ -585,13 +585,13 @@ Dimostriamo ora la limitatezza dell'immersione in questo esempio (e quindi che �
 
 Sia $\displaystyle H=L^{2}(0,1),\ L:L^{2}(0,1)\rightarrow \mathbb{R},\ Lv=\int ^{1/2}_{0} v(x) \dx$. Verifico che $\displaystyle L\in H^{*}$, ovvero che sia lineare, ben definito e continuo (limitato). L'operatore è chiaramente lineare perchè definito con integrale, è ben definito e continuo perché
 \begin{equation*}
-    | Lv| =\left| \int ^{1/2}_{0} v(x) \dx\right| \leqslant \int ^{1/2}_{0}| v(x)| \dx\leqslant \int ^{1}_{0}| v(x)| \dx
+    | Lv| =\left| \int ^{1/2}_{0} v(x) \dx\right| \leq \int ^{1/2}_{0}| v(x)| \dx\leq \int ^{1}_{0}| v(x)| \dx
 \end{equation*}
 Utilizzando la disuguaglianza di Holder posso maggiorare l'ultimo termine
 \begin{equation*}
-    \leqslant \left(\int ^{1}_{0} 1^{2}\right)^{1/2}\left(\int ^{1}_{0} v^{2}\right)^{1/2} =\Vert v\Vert _{L^{2}(0,1)}
+    \leq \left(\int ^{1}_{0} 1^{2}\right)^{1/2}\left(\int ^{1}_{0} v^{2}\right)^{1/2} =\Vert v\Vert _{L^{2}(0,1)}
 \end{equation*}
-Quindi $\displaystyle L\in H^{*},\ \Vert L\Vert _{*} \leqslant 1$.
+Quindi $\displaystyle L\in H^{*},\ \Vert L\Vert _{*} \leq 1$.
 
 \textbf{Esempio 2.}
 
@@ -599,13 +599,13 @@ Sia $H$ spazio di Hilbert, $\displaystyle u\in H$ fissato. Definisco $\displayst
 
 $\displaystyle L:v\rightarrow (u,v)$ è lineare (per linearità del prodotto scalare), inoltre
 \begin{equation*}
-    | Lv| =| (u,v)| \leqslant \Vert u\Vert \Vert v\Vert
+    | Lv| =| (u,v)| \leq \Vert u\Vert \Vert v\Vert
 \end{equation*}
-per Cauchy-Schwartz. Quindi $L$ è lineare e continuo (limitato) allora $\displaystyle L\in H^{*}$, e $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $. Ma possiamo anche osservare che
+per Cauchy-Schwartz. Quindi $L$ è lineare e continuo (limitato) allora $\displaystyle L\in H^{*}$, e $\displaystyle \Vert L\Vert _{*} \leq \Vert u\Vert $. Ma possiamo anche osservare che
 \begin{equation*}
-    \Vert L\Vert _{*} =\sup _{\Vert v\Vert =1}| Lv| \geqslant \left| L\left(\frac{u}{\Vert u\Vert }\right)\right| =\frac{1}{\Vert u\Vert }(u,u) =\frac{1}{\Vert u\Vert }\Vert u\Vert ^{2} =\Vert u\Vert
+    \Vert L\Vert _{*} =\sup _{\Vert v\Vert =1}| Lv| \geq \left| L\left(\frac{u}{\Vert u\Vert }\right)\right| =\frac{1}{\Vert u\Vert }(u,u) =\frac{1}{\Vert u\Vert }\Vert u\Vert ^{2} =\Vert u\Vert
 \end{equation*}
-Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle \Vert L\Vert _{*} \geqslant \Vert u\Vert $ allora $\displaystyle \Vert L\Vert _{*} =\Vert u\Vert $. Il teorema che vedremo ora ci confermerà che questo non è solo un esempio, ma l'unico caso possibile.
+Quindi $\displaystyle \Vert L\Vert _{*} \leq \Vert u\Vert $, $\displaystyle \Vert L\Vert _{*} \geq \Vert u\Vert $ allora $\displaystyle \Vert L\Vert _{*} =\Vert u\Vert $. Il teorema che vedremo ora ci confermerà che questo non è solo un esempio, ma l'unico caso possibile.
 
 \LezioneV{18/03/2021}
 \subsection{Teorema di rappresentazione di Riesz}
@@ -784,12 +784,12 @@ Quindi $\displaystyle \Vert L\Vert _{*} \leqslant \Vert u\Vert $, $\displaystyle
         \item $a$ si dice \textbf{continua} (\textbf{limitata}) se
 
               \begin{equation*}
-                  \exists M:\ \ | a(u,v)| \leqslant M\Vert u\Vert \Vert v\Vert,\ \ \forall v,u
+                  \exists M:\ \ | a(u,v)| \leq M\Vert u\Vert \Vert v\Vert,\ \ \forall v,u
               \end{equation*}
         \item $a$ si dice \textbf{coerciva/coercitiva} se
 
               \begin{equation*}
-                  \exists \alpha  >0\ \text{(costante di coercività)} :\ \ a(u,u) \geqslant \alpha \Vert u\Vert ^{2}
+                  \exists \alpha  >0\ \text{(costante di coercività)} :\ \ a(u,u) \geq \alpha \Vert u\Vert ^{2}
               \end{equation*}
     \end{itemize}
 \end{definition}
@@ -806,7 +806,7 @@ che messe assieme implicano quella col modulo.\footnote{Uno degli autori del doc
 
 Il prodotto scalare è un caso particolare di forma bilineare simmetrica $a(u,v) =(u,v)$, vediamo quanto valgono le costanti $M$ e $\alpha $. Per Cauchy-Schwarz
 \begin{equation*}
-    | (u,v)| \leqslant \Vert u\Vert \Vert v\Vert \ \ \Rightarrow \ \ M=1
+    | (u,v)| \leq \Vert u\Vert \Vert v\Vert \ \ \Rightarrow \ \ M=1
 \end{equation*}
 Per definizione di norma indotta dal prodotto scalare
 \begin{equation*}
@@ -834,7 +834,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
 
     Allora $\exists !\ \overline{u} \in H$ soluzione di \eqref{eq:pva}. Inoltre (\textbf{stima di stabilità})
     \begin{equation*}
-        \Vert \overline{u}\Vert \leqslant \frac{1}{\alpha }\Vert L\Vert _{*}
+        \Vert \overline{u}\Vert \leq \frac{1}{\alpha }\Vert L\Vert _{*}
     \end{equation*}
     dove $\alpha $ è la costante di coercività, ci interessa che sia più grande possibile.
 \end{theorem}
@@ -850,7 +850,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
     \end{equation*}
     La stima di stabilità ci dice che
     \begin{equation*}
-        \Vert u_{1} -u_{2}\Vert \leqslant \frac{1}{\alpha }\Vert L_{1} -L_{2}\Vert _{*}
+        \Vert u_{1} -u_{2}\Vert \leq \frac{1}{\alpha }\Vert L_{1} -L_{2}\Vert _{*}
     \end{equation*}
     Ovvero a \textit{dati vicini} sono associate \textit{soluzioni vicine}, a patto che $\alpha $ sia sufficientemente grande.
 \end{oss}
@@ -870,7 +870,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
 
               Notiamo che la $v$ è una sorta di \textit{funzione test}, infatti vogliamo ottenere una cosa che vale per infiniti $v$. Al secondo membro del \eqref{eq:pva}, per ipotesi $L\in H^{*}$, allora per Riesz $\exists !\ z\in H$ tale che $Lv=(z,v),\forall v$ e inoltre $\Vert z\Vert =\Vert L\Vert _{*}$. Vogliamo applicarlo anche al primo membro. Per definizione di forma bilineare, $\forall u$ fissato, l'applicazione $v\mapsto a(u,v)$ è lineare e inoltre per ipotesi continua in $v$:
               \begin{equation*}
-                  \text{continua} \ \ \Leftrightarrow \ \ | a(u,v)| \leqslant \underbrace{M\Vert u\Vert }_{C}\Vert v\Vert \leqslant C\Vert v\Vert
+                  \text{continua} \ \ \Leftrightarrow \ \ | a(u,v)| \leq \underbrace{M\Vert u\Vert }_{C}\Vert v\Vert \leq C\Vert v\Vert
               \end{equation*}
               allora per Riesz per ogni $u$ fissato $\exists !\ h=A(u) \in H$ tale che
               \begin{equation*}
@@ -915,11 +915,11 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
 
               Notiamo che
               \begin{equation*}
-                  \Vert Au\Vert ^{2} =(Au,Au) =a(u,Au) \leqslant | a(u,Au)| \leqslant M\Vert u\Vert \Vert Au\Vert
+                  \Vert Au\Vert ^{2} =(Au,Au) =a(u,Au) \leq | a(u,Au)| \leq M\Vert u\Vert \Vert Au\Vert
               \end{equation*}
               l'ultima maggiorazione grazie al fatto che $a$ è limitata; allora
               \begin{equation*}
-                  \Vert Au\Vert \leqslant M\Vert u\Vert
+                  \Vert Au\Vert \leq M\Vert u\Vert
               \end{equation*}
               Se $\Vert Au\Vert $ fosse stato $0$ non avrei avuto nulla dimostrare, per cui ho potuto semplificare.
 
@@ -927,17 +927,17 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
 
               È l'unico in cui non possiamo mettere il pilota automatico. Qui troveremo anche la \textbf{stima di stabilità}. Per farlo dobbiamo partire dalla coercività
               \begin{equation*}
-                  \alpha \Vert u\Vert ^{2} \leqslant a(u,u) =(Au,u) \leqslant | (Au,u)| \underbrace{\leqslant }_{\text{C.S.}}\Vert Au\Vert \Vert u\Vert \ \ \alpha  >0
+                  \alpha \Vert u\Vert ^{2} \leq a(u,u) =(Au,u) \leq | (Au,u)| \underbrace{\leq }_{\text{C.S.}}\Vert Au\Vert \Vert u\Vert \ \ \alpha  >0
               \end{equation*}
               Possiamo dividere per $u$ perché se fosse $0$ sarebbe soddisfatta già, otteniamo la stima di stabilità
               \begin{equation*}
-                  \Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert
+                  \Vert u\Vert \leq \frac{1}{\alpha }\Vert Au\Vert
               \end{equation*}
               Nel nuovo \eqref{eq:pva} $Au=z$ e ricordiamo che $z$ era il vettore che rappresentava $L$ (come visto al passo 0)
               \begin{equation*}
-                  \Vert u\Vert \leqslant \frac{1}{\alpha }\Vert Au\Vert =\frac{1}{\alpha }\Vert z\Vert =\frac{1}{\alpha }\Vert L\Vert _{*}
+                  \Vert u\Vert \leq \frac{1}{\alpha }\Vert Au\Vert =\frac{1}{\alpha }\Vert z\Vert =\frac{1}{\alpha }\Vert L\Vert _{*}
               \end{equation*}
-              Se $u\in \mathrm{Ker} A$ allora $Au=0$, usando la stima $\Vert u\Vert \leqslant 0$, allora $u=0$. Quindi $\mathrm{Ker} A=\{0\}$, ovvero $A$ è iniettivo.
+              Se $u\in \mathrm{Ker} A$ allora $Au=0$, usando la stima $\Vert u\Vert \leq 0$, allora $u=0$. Quindi $\mathrm{Ker} A=\{0\}$, ovvero $A$ è iniettivo.
 
         \item[(3.5)]
 
@@ -949,7 +949,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
 
               Ci rivolgiamo nuovamente alla completezza dello spazio, dimostrando che è una successione di Cauchy, usando la stima di stabilità del passo (3)
               \begin{equation*}
-                  0\leqslant \Vert u_{n} -u_{m}\Vert \underbrace{\leqslant }_{(3)}\frac{1}{\alpha }\Vert A(u_{n} -u_{m})\Vert \underbrace{\leqslant }_{\text{lin.}}\frac{1}{\alpha }\Vert Au_{n} -Au_{m}\Vert =\frac{1}{\alpha }\Vert y_{n} -y_{m}\Vert
+                  0\leq \Vert u_{n} -u_{m}\Vert \underbrace{\leq }_{(3)}\frac{1}{\alpha }\Vert A(u_{n} -u_{m})\Vert \underbrace{\leq }_{\text{lin.}}\frac{1}{\alpha }\Vert Au_{n} -Au_{m}\Vert =\frac{1}{\alpha }\Vert y_{n} -y_{m}\Vert
               \end{equation*}
               la successione $y_{n}$ è convergente, quindi anche di Cauchy, allora l'ultimo termine tende a $0$, in particolare quindi anche $u_{n}$ è di Cauchy, ma essendo $H$ completo è anche convergente a un certo $\overline{u} \in H$.
 
@@ -971,7 +971,7 @@ Nel caso di prodotto scalare $a(u,v) =(u,v)$, \eqref{eq:pva} diventa $(u,v) =Lv$
               \end{equation*}
               Andando alla definizione di $A$ e usando la coercività
               \begin{equation*}
-                  (z,Az) =a(z,z) \geqslant \alpha \Vert z\Vert ^{2} =\alpha  >0
+                  (z,Az) =a(z,z) \geq \alpha \Vert z\Vert ^{2} =\alpha  >0
               \end{equation*}
               Ma ciò è assurdo, è quindi negata la supposizione iniziale e $R(A) =H$.
     \end{itemize}

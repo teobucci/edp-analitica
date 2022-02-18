@@ -214,7 +214,7 @@ Sia $E\subseteq \mathbb{R}^{n}$, $E$ si dice
     \item si dice \textbf{chiusura} di $E$ l'insieme $\displaystyle \overline{E} =\partial E\cup E$
     \item si dice \textbf{convesso} se $\forall x,y\in E$ il segmento che li congiunge è contenuto nell'insieme
           \begin{equation*}
-              [ x,y] =\{tx+(1-t) y,0\leqslant t\leqslant 1\} \subseteq E
+              [ x,y] =\{tx+(1-t) y,0\leq t\leq 1\} \subseteq E
           \end{equation*}Un insieme convesso è automaticamente connesso, ma non in generale il contrario.
           \begin{figure}[htpb]
               \centering
@@ -313,7 +313,7 @@ Un'intersezione infinita di aperti può essere un insieme chiuso:
 \begin{gather*}
     C_{k} =\left\{(x,y) \in \mathbb{R}^{2} :x^{2} +y^{2} < 1+\frac{1}{k}\right\}\\
     \\
-    \bigcap\limits ^{\infty }_{k=1} C_{k} =\left\{x^{2} +y^{2} \leqslant 1\right\} \ \text{chiuso!}
+    \bigcap\limits ^{\infty }_{k=1} C_{k} =\left\{x^{2} +y^{2} \leq 1\right\} \ \text{chiuso!}
 \end{gather*}
 \begin{figure}[htpb]
     \centering
@@ -405,23 +405,23 @@ Sia $\Omega \subseteq \mathbb{R}^{n}$, data una successione di funzioni $\displa
           \end{equation*}
     \item \textbf{Test di Weierstrass} (condizione sufficiente per la convergenza uniforme):
 
-          Se $\forall k\geqslant 1$ esiste $a_{k}$ tale che
+          Se $\forall k\geq 1$ esiste $a_{k}$ tale che
           \begin{equation*}
-              | f_{k}(x)| \leqslant a_{k} \ \forall x\in \Omega \ \ \land \ \ \sum\limits ^{\infty }_{k=1} a_{k} < \infty
+              | f_{k}(x)| \leq a_{k} \ \forall x\in \Omega \ \ \land \ \ \sum\limits ^{\infty }_{k=1} a_{k} < \infty
           \end{equation*}
 
           $\Rightarrow \sum f_{k}$ converge uniformemente in $\Omega $
 
     \item \textbf{Scambio serie e limite:}
 
-          Se $\sum f_{k}$ converge uniformemente in $\Omega $ e $f_{k}$, $k\geqslant 1$, è continua in $\Omega $, allora $S$ è continua in $\Omega $ e
+          Se $\sum f_{k}$ converge uniformemente in $\Omega $ e $f_{k}$, $k\geq 1$, è continua in $\Omega $, allora $S$ è continua in $\Omega $ e
           \begin{equation*}
               x_{0} \in \Omega \ \ \lim\limits _{x\rightarrow x_{0}}\sum f_{k}(x) =\sum f_{k}(x_{0})
           \end{equation*}
 
     \item \textbf{Scambio serie e derivata:}
 
-          Siano $f_{k}$ derivabili in $\Omega$ per ogni $k\geqslant 1$, rispetto a $x_{j}$ se inoltre:
+          Siano $f_{k}$ derivabili in $\Omega$ per ogni $k\geq 1$, rispetto a $x_{j}$ se inoltre:
           \begin{itemize}
               \item esiste almeno un $x_{0} \in \Omega :\sum^{\infty }_{k=1} f_{k}(x_{0})$ è convergente, chiamiamo $F(x)$ la funzione a cui converge;
               \item $\sum^{\infty }_{k=1} \frac{\partial f_{k}(x)}{\partial x_{j}}$ è uniformemente convergente a una certa $f(x)$.
@@ -437,14 +437,14 @@ Sia $\Omega \subseteq \mathbb{R}^{n}$, data una successione di funzioni $\displa
 \begin{itemize}
     \item \textbf{Disuguaglianza di Holder}
           \begin{equation*}
-              \left| \int _{\Omega } fg\right| \leqslant \left(\int _{\Omega }| f| ^{p}\right)^{1/p}\left(\int _{\Omega }| g| ^{q}\right)^{1/q}
+              \left| \int _{\Omega } fg\right| \leq \left(\int _{\Omega }| f| ^{p}\right)^{1/p}\left(\int _{\Omega }| g| ^{q}\right)^{1/q}
           \end{equation*}
 
           dove \begin{equation*}
-              \frac{1}{p} +\frac{1}{q} =1\ \ \ p,q\geqslant 1
+              \frac{1}{p} +\frac{1}{q} =1\ \ \ p,q\geq 1
           \end{equation*}
     \item \textbf{Disuguaglianza di Schwarz (}se $p=2=q$) \begin{equation*}
-              \left| \int _{\Omega } fg\right| \leqslant \left(\int _{\Omega } f^{2}\right)^{1/2}\left(\int _{\Omega } g^{2}\right)^{1/2}
+              \left| \int _{\Omega } fg\right| \leq \left(\int _{\Omega } f^{2}\right)^{1/2}\left(\int _{\Omega } g^{2}\right)^{1/2}
           \end{equation*}
 \end{itemize}
 
@@ -462,7 +462,7 @@ Posso estendere le definizioni a ordini di derivazione maggiori:
     \item Per $C^{1}(\overline{\Omega }) \dotsc C^{k}(\overline{\Omega })$ tutte le derivate fino alla $k$-esima sono estendibili con continuità fino al bordo di $\displaystyle \Omega $.
 \end{itemize}
 
-Definisco le norme per gli spazi $L^{p},1\leqslant p\leqslant +\infty $
+Definisco le norme per gli spazi $L^{p},1\leq p\leq +\infty $
 
 \begin{equation*}
     \begin{array}{ l l }
@@ -505,7 +505,7 @@ Se $\varphi _{p}$ è Lipschitziana il dominio si dice \textbf{dominio Lipschitzi
 \begin{definition}
     [Funzione Lipschitziana] Una funzione $u:\Omega \rightarrow \mathbb{R}^{n}$ è Lipschitziana se
     \begin{equation*}
-        | u(\x) -u(\y)| \leqslant L|\x-\y|,\ \ \forall \x,\y\in \Omega
+        | u(\x) -u(\y)| \leq L|\x-\y|,\ \ \forall \x,\y\in \Omega
     \end{equation*}
 \end{definition}
 Poiché il grafico di una funzione Lipschiziana può presentare angoli e/o spigoli, non ci si può aspettare l’esistenza di un iperpiano tangente in ogni suo punto. Tuttavia, l’insieme dei punti ``irregolari'' costituisce un insieme di misura nulla (secondo Lebesgue). Precisamente, vale il seguente teorema.
@@ -559,14 +559,14 @@ Supponiamo che
 \begin{theorem}
     Assumiamo che esistano $g\in L^{1}(\Omega)$ e $h\in L^{1}(\Omega)$\footnote{funzioni della sola $x$.} tali che
     \begin{equation*}
-        | f(x,t)| \leqslant g(x) \ \ \ \ \left| \frac{\partial f}{\partial t}(x,t)\right| \leqslant h(x)
+        | f(x,t)| \leq g(x) \ \ \ \ \left| \frac{\partial f}{\partial t}(x,t)\right| \leq h(x)
     \end{equation*}
     quasi ovunque in $\displaystyle \Omega $, $\displaystyle \forall t\in (a,b)$. Allora
     \begin{equation*}
         \frac{\de}{\dt}\int _{\Omega } f(x,t) \dx=\int _{\Omega }\frac{\partial }{\partial t} f(x,t) \dx
     \end{equation*}
 \end{theorem}
-Per integrali di Riemann, assumiamo $\Omega $ limitato, $f\in C^{1}(\overline{\Omega })$, $f,f_{t}$ R-integrabile e $| f|,| f_{t}| \leqslant M$ in $\Omega $. Allora
+Per integrali di Riemann, assumiamo $\Omega $ limitato, $f\in C^{1}(\overline{\Omega })$, $f,f_{t}$ R-integrabile e $| f|,| f_{t}| \leq M$ in $\Omega $. Allora
 \begin{equation*}
     \frac{\de}{\dt}\int _{\Omega } f(x,t) \dx=\int _{\Omega }\frac{\partial }{\partial t} f(x,t) \dx
 \end{equation*}

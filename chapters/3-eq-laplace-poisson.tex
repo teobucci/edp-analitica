@@ -83,10 +83,10 @@ Sono le condizioni che troviamo nell'equazione del calore nella parte laterale
               Ma dato che $w=0$ su $\displaystyle \partial \Omega $ ed essendo $\displaystyle C^{1}$ fino al bordo, la costante deve essere $0$, da cui $\displaystyle w\equiv 0$.
         \item \textbf{Robin}
               \begin{equation*}
-                  \partial_{\nuu} w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} \dsig \leqslant 0
+                  \partial_{\nuu} w=-\alpha w\ \text{su} \ \partial \Omega \ \ \Rightarrow \ \ \int _{\Omega }| \nabla w| ^{2} =-\alpha \int _{\partial \Omega } w^{2} \dsig \leq 0
               \end{equation*}
 
-              ma essendo il primo integrale $\displaystyle \geqslant 0$, allora deve essere nullo come prima:
+              ma essendo il primo integrale $\displaystyle \geq 0$, allora deve essere nullo come prima:
               \begin{equation*}
                   \int _{\Omega }| \nabla w| ^{2} =0\ \ \Rightarrow \ \ \nabla w=0\ \text{in} \ \mathrm{\Omega } \ \ \Rightarrow \ \ w=\text{cost. in} \ \Omega
               \end{equation*}
@@ -627,7 +627,7 @@ Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprie
 \begin{dimostrazione}
     Sia $\mathbf{p}\in \Omega $ punto di minimo
     \begin{equation*}
-        m=u(\mathbf{p}) \leqslant u(\y) \ \forall \y\in \Omega
+        m=u(\mathbf{p}) \leq u(\y) \ \forall \y\in \Omega
     \end{equation*}
     Vogliamo dimostrare che $u(x) =m\ \forall x\in \Omega $.
 
@@ -670,7 +670,7 @@ Rimarchiamo il fatto che come ipotesi è sufficiente la continuità e la proprie
     \begin{equation*}
         m=u(\mathbf{p}) =\frac{1}{| B(\mathbf{p})| }\int _{B(\mathbf{p})} u(\y) \dyy=\frac{1}{| B(\mathbf{p})| }\left[\textcolor[rgb]{0.29,0.56,0.89}{\int _{B(\mathbf{p}) \backslash B_{r}(z)} u(\y) \dyy} +\textcolor[rgb]{0.82,0.01,0.11}{\int _{B_{r}(\mathbf{z})} u(\y) \dyy}\right]
     \end{equation*}
-    Sul primo integrale $u(y) \geqslant m$.
+    Sul primo integrale $u(y) \geq m$.
 
     Sul secondo integrale posso sfruttare ancora la proprietà della media:
     \begin{equation*}
@@ -696,10 +696,10 @@ Dal principio di massimo segue l'unicità per il problema di Dirichlet.
     \end{equation*}
     ha al massimo una soluzione $\displaystyle u\in C^{2}(\Omega) \cap C(\overline{\Omega})$. Inoltre, siano $\displaystyle g_{1},g_{2} \in C(\partial \Omega)$, e $\displaystyle u_{1},u_{2}$ le corrispondenti soluzioni. Allora
     \begin{enumerate}
-        \item \textbf{Confronto:} se $\displaystyle g_{1} \geqslant g_{2}$ su $\displaystyle \partial \Omega$ e $g_{1}\neq g_{2}$ in almeno un punto di $\Omega$, allora $u_{1} \geqslant u_{2}$ su $\displaystyle \Omega $.
+        \item \textbf{Confronto:} se $\displaystyle g_{1} \geq g_{2}$ su $\displaystyle \partial \Omega$ e $g_{1}\neq g_{2}$ in almeno un punto di $\Omega$, allora $u_{1} \geq u_{2}$ su $\displaystyle \Omega $.
         \item \textbf{Stabilità }(in norma $\displaystyle L^{\infty }(\Omega)$):
               \begin{equation}
-                  \max_{\partial \Omega }| u_{1} -u_{2}| \leqslant \max_{\partial \Omega }| g_{1} -g_{2}| \quad \forall \x\in \overline{\Omega }
+                  \max_{\partial \Omega }| u_{1} -u_{2}| \leq \max_{\partial \Omega }| g_{1} -g_{2}| \quad \forall \x\in \overline{\Omega }
                   \label{eq:lap-stabilita}
               \end{equation}
     \end{enumerate}
@@ -709,17 +709,17 @@ Dal principio di massimo segue l'unicità per il problema di Dirichlet.
     \begin{enumerate}
         \item Sia $w=u_{1} -u_{2}$. Allora $w$ è armonica e uguale a $w=g_{1}-g_{2}$ sul bordo $\partial \Omega$. Poiché $g_{1}$ e $g_{2}$ differiscono in almeno un punto di $\partial \Omega $, $w$ non è costante e per il principio di massimo
               \begin{equation*}
-                  w(x)  >\min_{\partial \Omega } w =\min_{\partial \Omega } \ (g_{1} -g_{2}) \geqslant 0\ \forall x\in \Omega
+                  w(x)  >\min_{\partial \Omega } w =\min_{\partial \Omega } \ (g_{1} -g_{2}) \geq 0\ \forall x\in \Omega
               \end{equation*}
               Quindi
               \begin{equation*}
-                  w(x) \geqslant 0\ \forall x\in \Omega \ \Rightarrow \ u_{1} \geqslant u_{2} \ \mathrm{su} \ \Omega
+                  w(x) \geq 0\ \forall x\in \Omega \ \Rightarrow \ u_{1} \geq u_{2} \ \mathrm{su} \ \Omega
               \end{equation*}
         \item Sempre dal principio di massimo
               \begin{gather*}
-                  u_{1}(x) -u_{2}(x) \leqslant \max_{\partial \Omega } \ (g_{1} -g_{2}) \leqslant \max_{\partial \Omega } \ | g_{1} -g_{2}| \\
-                  u_{2}(x) -u_{1}(x) \leqslant \max_{\partial \Omega } \ (g_{2} -g_{1}) \leqslant \max_{\partial \Omega } \ | g_{1} -g_{2}| \\
-                  \Rightarrow \ | u_{1}(x) -u_{2}(x)| \leqslant \max_{\partial \Omega }| g_{1} -g_{2}|
+                  u_{1}(x) -u_{2}(x) \leq \max_{\partial \Omega } \ (g_{1} -g_{2}) \leq \max_{\partial \Omega } \ | g_{1} -g_{2}| \\
+                  u_{2}(x) -u_{1}(x) \leq \max_{\partial \Omega } \ (g_{2} -g_{1}) \leq \max_{\partial \Omega } \ | g_{1} -g_{2}| \\
+                  \Rightarrow \ | u_{1}(x) -u_{2}(x)| \leq \max_{\partial \Omega }| g_{1} -g_{2}|
               \end{gather*}
               Ora se $\displaystyle g_{1} =g_{2}$ la \eqref{eq:lap-stabilita} diventa
               \begin{equation*}
@@ -808,11 +808,11 @@ Abbiamo visto l'unicità del problema di Dirichlet nel teorema \ref{thm:armonich
     \end{gather*}
     L'equazione $\Delta u=0$ in $B_{R}(\mathbf{p})$ diventa\footnote{si veda la sezione precedente.}
     \begin{equation*}
-        U_{rr} +\frac{1}{r} U_{r} +\frac{1}{r^{2}} U_{\vartheta \vartheta } =0,\ \ \ \ \text{in} \ 0< r< R,\ \ 0\leqslant \vartheta \leqslant 2\pi
+        U_{rr} +\frac{1}{r} U_{r} +\frac{1}{r^{2}} U_{\vartheta \vartheta } =0,\ \ \ \ \text{in} \ 0< r< R,\ \ 0\leq \vartheta \leq 2\pi
     \end{equation*}
     La condizione di Dirichlet diventa
     \begin{equation*}
-        U(R,\vartheta) =G(\vartheta),\ \ \ \ 0\leqslant \vartheta \leqslant 2\pi
+        U(R,\vartheta) =G(\vartheta),\ \ \ \ 0\leq \vartheta \leq 2\pi
     \end{equation*}
     Deve inoltre essere:
     \begin{gather*}
@@ -844,7 +844,7 @@ Abbiamo visto l'unicità del problema di Dirichlet nel teorema \ref{thm:armonich
     \end{align*}
 
     \begin{enumerate}
-        \item [(2)] se $\lambda \geqslant 0$ non ci sono soluzioni non banali
+        \item [(2)] se $\lambda \geq 0$ non ci sono soluzioni non banali
               \begin{enumerate}
                   \item $\lambda  >0$, allora
                         \begin{equation*}
@@ -1265,7 +1265,7 @@ Vediamo la dimostrazione del teorema.
               Con
 
               \begin{equation*}
-                  | g_{\varepsilon }(\y)| \leqslant \max\frac{| f| }{| \x -\y| }
+                  | g_{\varepsilon }(\y)| \leq \max\frac{| f| }{| \x -\y| }
               \end{equation*}
 
               Posso usare il teorema di convergenza dominata e passare al limite sotto il segno di integrale, il primo termine tende a
@@ -1286,13 +1286,13 @@ Vediamo la dimostrazione del teorema.
               Ricordando che
 
               \begin{equation*}
-                  | \partial _{\nuu} u(\sigg)| =| \nabla u(\sigg) \cdotp \nuu| \leqslant \max| \nabla u|
+                  | \partial _{\nuu} u(\sigg)| =| \nabla u(\sigg) \cdotp \nuu| \leq \max| \nabla u|
               \end{equation*}
 
               maggioriamo
               \begin{align*}
-                  \left| \int _{\partial B_{\varepsilon }(\x)}\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig\right| & \leqslant \int _{\partial B_{\varepsilon }(\x)}\frac{| \partial _{\nuu} u(\sigg)| }{\underbrace{| \x -\sigg| }_{=\varepsilon }} \dsig \\
-                                                                                                                           & \leqslant \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\x)}\max| \nabla u| \dsig                                            \\
+                  \left| \int _{\partial B_{\varepsilon }(\x)}\frac{\partial _{\nuu} u(\sigg)}{| \x -\sigg| } \dsig\right| & \leq \int _{\partial B_{\varepsilon }(\x)}\frac{| \partial _{\nuu} u(\sigg)| }{\underbrace{| \x -\sigg| }_{=\varepsilon }} \dsig \\
+                                                                                                                           & \leq \frac{1}{\varepsilon }\int _{\partial B_{\varepsilon }(\x)}\max| \nabla u| \dsig                                            \\
                                                                                                                            & =\frac{\max| \nabla u| }{\varepsilon }\int _{\partial B_{\varepsilon }(\x)} \dsig                                                     \\
                                                                                                                            & =\frac{\max| \nabla u| }{\varepsilon } \cdotp 4\pi \varepsilon ^{2}\rightarrow 0
               \end{align*}

@@ -35,7 +35,7 @@ Ricaviamo ora l'equazione della corda vibrante unidimensionale (tipicamente cord
 
 Sia $\displaystyle \rho =\rho (x,t)$ la densità lineare di massa al tempo $t$ e $\displaystyle \rho _{0} =\rho _{0}(x)$ la densità a riposo. Prendiamo in esame un tratto di corda corrispondente ad un intervallo arbitrario $\displaystyle [ x,x+\Delta x]$ e indichiamo con $\displaystyle \Delta s$ l'elemento di lunghezza corrispondente, al tempo $t$. La legge di conservazione della massa impone
 \begin{equation*}
-    \rho _{0}(x) \Delta x=\rho (x,t) \Delta s,\ t\geqslant 0
+    \rho _{0}(x) \Delta x=\rho (x,t) \Delta s,\ t\geq 0
 \end{equation*}
 L'equazione del bilancio del momento si ricava uguagliando la forza totale agente sul generico tratto considerato al tasso di variazione del momento lineare. Poiché il moto è verticale, le componenti orizzontali delle forze devono bilanciarsi: $R_{x}=0$. Indicando con $\displaystyle \tau (x,t)$ la tensione (scalare, ma non adimensionale) in $x$
 
@@ -109,7 +109,7 @@ Questa è la tensione orizzontale, e risulta costante per $x$ fissato
 \begin{equation*}
     \tau _{\text{oriz}}(x,t) =\tau (x,t)\cos \alpha (x,t) =\tau _{0}(t)
 \end{equation*}
-dove $\displaystyle \tau _{0}(t) \geqslant 0$ perché un'intensità.
+dove $\displaystyle \tau _{0}(t) \geq 0$ perché un'intensità.
 
 Calcoliamo le componenti verticali delle forze agenti sul tratto considerato
 \begin{equation*}
@@ -572,7 +572,7 @@ Esaminiamo alcune conseguenze di questa formula:
           \end{equation*}
           allora
           \begin{equation*}
-              | u_{1}(x,t) -u_{2}(x,t)| \leqslant \Vert g_{1} -g_{2}\Vert _{L^{\infty }(\mathbb{R})} +T\Vert h_{1} -h_{2}\Vert _{L^{\infty }(\mathbb{R})}
+              | u_{1}(x,t) -u_{2}(x,t)| \leq \Vert g_{1} -g_{2}\Vert _{L^{\infty }(\mathbb{R})} +T\Vert h_{1} -h_{2}\Vert _{L^{\infty }(\mathbb{R})}
           \end{equation*}
           per ogni $x\in \mathbb{R}, t\in [0,T]$.
     \item La $u$ si può esprimere come somma di due funzioni
@@ -692,8 +692,8 @@ Esaminiamo alcune conseguenze di questa formula:
           \begin{equation*}
               \begin{cases}
                   u_{tt} -u_{xx} =0 & 0< x< L,\ t >0          \\
-                  u(x,0) =g(x)      & 0\leqslant x\leqslant L \\
-                  u_{t}(x,0) =h(x)  & 0\leqslant x\leqslant L \\
+                  u(x,0) =g(x)      & 0\leq x\leq L \\
+                  u_{t}(x,0) =h(x)  & 0\leq x\leq L \\
                   u(0,t) =a(t)      & t >0                    \\
                   u(L,t) =b(t)      & t >0
               \end{cases}
@@ -796,7 +796,7 @@ Esaminiamo alcune conseguenze di questa formula:
     \begin{equation*}
         y(t) =\int _{0}^{t}\underbrace{e^{-a(t-s)} f(s)}_{w(t;s)} \ds,
     \end{equation*}
-    esaminiamo l'integranda, trattando $s$ come parametro $\displaystyle (0\leqslant s\leqslant t)$:
+    esaminiamo l'integranda, trattando $s$ come parametro $\displaystyle (0\leq s\leq t)$:
     \begin{equation}
         w(t;s) =e^{-a(t-s)} f(s) .
         \label{eq:osservazione-duhamel}
@@ -815,7 +815,7 @@ Esaminiamo alcune conseguenze di questa formula:
 \end{oss}
 
 \begin{theorem}
-    [Metodo di Duhamel] Se $\displaystyle w(x,t;s)$, con $\displaystyle 0\leqslant s\leqslant t$, è soluzione di
+    [Metodo di Duhamel] Se $\displaystyle w(x,t;s)$, con $\displaystyle 0\leq s\leq t$, è soluzione di
     \begin{equation*}
         \begin{cases}
             w_{tt} -c^{2} w_{xx} =\boxed{0} & x\in \mathbb{R} ,\boxed{t >s} \\
@@ -869,7 +869,7 @@ dove ricordiamo che $\displaystyle S_{x,t}$ è il settore.
 
 \LezioneS{12/04/2021}
 % (fatta da Verzini)
-\section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geqslant 2$}{n>2}}
+\section{Equazione delle onde in più dimensioni, \texorpdfstring{$n\geq 2$}{n>2}}
 
 Affrontiamo l'equazione delle onde in più dimensioni. Studieremo l'evoluzione di $u=u(\x ,t)$. L'equazione delle onde prende la forma:
 \begin{equation}
@@ -940,7 +940,7 @@ e infine tornando $w$:
 \begin{equation}
     \boxed{w(r,t) =\underbrace{\frac{F(r+ct)}{r}}_{w_{i}(r,t)} +\underbrace{\frac{G(r-ct)}{r}}_{w_{o}(r,t)} =w_{i}(r,t) +w_{o}(r,t)} .
 \end{equation}
-Qui $r$ deve essere $\geqslant 0$, ed è una limitazione forte.
+Qui $r$ deve essere $\geq 0$, ed è una limitazione forte.
 
 I due termini prendono i nomi di:
 \begin{itemize}
@@ -1026,11 +1026,11 @@ otteniamo infine:
               \begin{equation*}
                   \begin{cases}
                       v_{tt} -c^{2} \Delta v=0           &                                                                \\
-                      \partial _{\bm{\nu }} v+\alpha v=0 & \text{su} \ \partial \Omega \times (0,T) ,\ \alpha \geqslant 0 \\
+                      \partial _{\bm{\nu }} v+\alpha v=0 & \text{su} \ \partial \Omega \times (0,T) ,\ \alpha \geq 0 \\
                       v(\x ,0) =0                        & \text{in} \ \overline{\Omega }                                 \\
                       v_{t}(\x ,0) =0                    & \text{in} \ \overline{\Omega }
                   \end{cases}
-              \end{equation*}Sappiamo già che $E(0) =0$ e che $E(t) \geqslant 0$, vediamo cosa succede questa volta alla derivata temporale di $E(t)$:
+              \end{equation*}Sappiamo già che $E(0) =0$ e che $E(t) \geq 0$, vediamo cosa succede questa volta alla derivata temporale di $E(t)$:
               \begin{align*}
                   \dot{E}(t) & =c^{2}\int _{\partial \Omega } v_{t} \partial _{\bm{\nu }} v\dsig +\cancel{\int _{\Omega } v_{t} f\dxx} &                                          \\
                              & =c^{2}\int _{\partial \Omega } v_{t}(-\alpha v) \dsig                                                   & \text{(sostituendo la condizione)}       \\
@@ -1044,7 +1044,7 @@ otteniamo infine:
                   E(t) +\frac{c^{2} \alpha }{2}\int _{\partial \Omega } v^{2} \dsig =\text{costante} =0.
               \end{equation*}
 
-              Ragionando come prima si conclude analogamente, ricordando $\alpha \geqslant 0$.
+              Ragionando come prima si conclude analogamente, ricordando $\alpha \geq 0$.
     \end{itemize}
 \end{dimostrazione}
 
@@ -1065,9 +1065,9 @@ Ammesso che $c$ sia la velocità di propagazione, possiamo intuire che c'è un i
 
 \fg[Cono retrogrado.]{0.4}{cono-retrogrado}
 
-Il \textbf{dominio di influenza} all'istante $t$ è $B_{c(t_{0} -t)}(\x_{0})$, cioè gli $\x$ tali che $| \x -\x_{0}| \leqslant c| t-t_{0}| $, quelli che mi permettono di raggiungere quel punto. L'intero dominio di influenza è questo cono retrogrado:
+Il \textbf{dominio di influenza} all'istante $t$ è $B_{c(t_{0} -t)}(\x_{0})$, cioè gli $\x$ tali che $| \x -\x_{0}| \leq c| t-t_{0}| $, quelli che mi permettono di raggiungere quel punto. L'intero dominio di influenza è questo cono retrogrado:
 \begin{equation}
-    C_{\x_{0} ,t_{0}} =\{(\x ,t) :\ | \x -\x_{0}| \leqslant c| t-t_{0}| ,\ 0\leqslant t\leqslant t_{0}\}
+    C_{\x_{0} ,t_{0}} =\{(\x ,t) :\ | \x -\x_{0}| \leq c| t-t_{0}| ,\ 0\leq t\leq t_{0}\}
 \end{equation}
 Non possiamo aspettarci di definire un'energia esattamente come prima, perché essendo in $\Omega =\mathbb{R}^{n}$ gli integrali sarebbero illimitati. Vogliamo qualcosa di più limitato: integriamo su questi cerchi e otteniamo una specie di energia. Si definisce
 \begin{equation}
@@ -1077,7 +1077,7 @@ Non possiamo aspettarci di definire un'energia esattamente come prima, perché e
 \begin{theorem}
     Se $u\in C^{2}$ è soluzione del problema di Cauchy globale \eqref{eq:pcg-onde-unicita} con $f=0$ (omogeneo), allora per ogni $t\in [ 0,t_{0}]$:
     \begin{equation}
-        \dot{e}(t) \leqslant 0.
+        \dot{e}(t) \leq 0.
     \end{equation}
 \end{theorem}
 Questo ci assicurerà l'unicità per il problema di Cauchy globale.
@@ -1126,12 +1126,12 @@ Facciamo un richiamo di Analisi 2 che ci servirà nella dimostrazione del teorem
         \dot{e}(t) & =\int _{B_{c(t_{0} -t)}(\x_{0})} u_{t}(\overbrace{u_{tt} -c^{2} \Delta u}^{f=0}) \dxx                                                                                                                                            \\
                    & \ \ \ \ -\frac{c}{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}}\right] \dsig +c^{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})} u_{t} \partial _{\bm{\nu }} u\dxx \\
                    & =-\frac{c}{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c\ u_{t} \partial _{\bm{\nu }} u\right] \dsig                                                      \\
-                   & \leqslant -\frac{c}{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] \dsig                                                       \\
-                   & =-\frac{c}{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})}[| u_{t}| -c| \nabla u| ]^{2} \dsig \leqslant 0.
+                   & \leq -\frac{c}{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})}\left[\textcolor[rgb]{0.29,0.56,0.89}{u_{t}^{2}+c^{2}| \nabla u| ^{2}} -2c| u_{t}| | \nabla u| \right] \dsig                                                       \\
+                   & =-\frac{c}{2}\int _{\partial B_{c(t_{0} -t)}(\x_{0})}[| u_{t}| -c| \nabla u| ]^{2} \dsig \leq 0.
     \end{align*}
     Nell'effettuare la maggiorazione abbiamo usato che:
     \begin{equation*}
-        u_{t} \partial _{\bm{\nu }} u\leqslant |u_{t} \partial _{\bm{\nu }} u|=|u_{t} ||\partial _{\bm{\nu }} u|=|u_{t} ||\nabla u\cdotp \bm{\nu } |\leqslant |u_{t} ||\nabla u|\underbrace{|\bm{\nu } |}_{1}.
+        u_{t} \partial _{\bm{\nu }} u\leq |u_{t} \partial _{\bm{\nu }} u|=|u_{t} ||\partial _{\bm{\nu }} u|=|u_{t} ||\nabla u\cdotp \bm{\nu } |\leq |u_{t} ||\nabla u|\underbrace{|\bm{\nu } |}_{1}.
     \end{equation*}
 \end{dimostrazione}
 \textbf{Corollario.}
