@@ -2,11 +2,13 @@
 
 \input{style}
 
-\usepackage{geometry}
-\geometry{
-	nomarginpar, % Toglie doppi margini
-	margin=1in, % Imposta i margini a 1 inch
-}
+\usepackage[
+	left=2.5cm, % inner
+	right=2.5cm, % outer
+	top=2.5cm,
+	bottom=3cm,
+	%showframe,
+	]{geometry}
 
 % Comandi per numero lezioni automatico
 
@@ -22,9 +24,6 @@
 	\textit{Lezione Verzini \arabic{conteggioV} (#1)}
 	}
 
-
-% Comandi pratici
-
 % Lettere comuni in grassetto
 \newcommand{\x}{\mathbf{x}}
 \newcommand{\y}{\mathbf{y}}
@@ -37,35 +36,31 @@
 \newcommand{\alphaa}{\bm{\alpha}}
 
 % d nell'integrale e i rispettivi usi
-\newcommand{\de}{\,\mathrm d}
-\newcommand{\dx}{\de x}
-\newcommand{\dy}{\de y}
-\newcommand{\dl}{\de l}
-\newcommand{\dr}{\de r}
-\newcommand{\ds}{\de s}
-\newcommand{\dt}{\de t}
-\newcommand{\dv}{\de v}
-\newcommand{\dxi}{\de \xi}
-\newcommand{\drho}{\de \rho}
+\newcommand{\dl}{\dspace \de l}
+\newcommand{\dr}{\dspace \de r}
+\newcommand{\dxi}{\dspace \de \xi}
+\newcommand{\drho}{\dspace \de \rho}
 
 % d nell'integrale con differenziale vettoriale
-\newcommand{\dxx}{\de \x}
-\newcommand{\dyy}{\de \y}
-\newcommand{\dsig}{\de \sigg}
+\newcommand{\dxx}{\dspace \de \x}
+\newcommand{\dyy}{\dspace \de \y}
+\newcommand{\dsig}{\dspace \de \sigg}
 
 \allowdisplaybreaks[4] % Consente di rompere equazioni su più pagine
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \frontmatter
+
 \pagestyle{empty}
+
+% COPERTINA
+
+\hypertarget{mytitlepage}{} % set the hypertarget
+\bookmark[dest=mytitlepage,level=chapter]{Title Page} % add the bookmark
+
 \vspace*{\fill}
+
 \begin{center}
 	{\large \textsc{Appunti di}}\\
 	\vspace*{0.4cm}
@@ -79,74 +74,53 @@
 	\vspace*{0.4cm}
 	{\large {di Teo Bucci \& Filippo Cipriani}}\\
 	\vspace*{1cm}
-	Politecnico di Milano\\A.A. 2020/2021
+	Politecnico di Milano\\
+	A.A. 2020/2021
 \end{center}
 \vspace*{\fill}
-\newpage
+\clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT PAGE
 
-{\Large \textit{Appunti di Equazioni alle Derivate Parziali}}
+\hypertarget{mycopyright}{} % set the hypertarget
+\bookmark[dest=mycopyright,level=chapter]{Copyright Page} % add the bookmark
+\input{firstpages/copyright}
+\clearpage
 
-\vspace*{\fill}
+% PREFAZIONE
 
-\input{licenza}
-
-\vspace*{1cm}
-
-Revisione del \today
-
-Developed by\\
-Teo Bucci - \texttt{teobucci8@gmail.com}\\
-Filippo Cipriani - \texttt{filippo.cipriani99@hotmail.it}\\ \\
-Compiled with \ensuremath\heartsuit \\
-
-%\textbf{Prefazione}
-
-Per segnalare eventuali errori o suggerimenti potete mandare una pull request.
-
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \hypertarget{mypreface}{} % set the hypertarget
+% \bookmark[dest=mypreface,level=chapter]{Prefazione} % add the bookmark
+% \input{firstpages/prefazione}
+% \clearpage
 
 % INDICE
-\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\cleardoublepage
+\pagestyle{toc}
+\hypertarget{mytoc}{} % set the hypertarget
+\bookmark[dest=mytoc,level=chapter]{\contentsname} % add the bookmark
 \tableofcontents
-%\newpage
+\cleardoublepage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN MATTER
 
-% PAGINA VUOTA PER FAR PARTIRE IL CAPITOLO IN UNA PAGINA DISPARI
-%\myNewEmptyPage
-
-\AtEndDocument{\cleardoublepage}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\pagestyle{fancy}
 \mainmatter
-\pagestyle{fancy} % Riswitcha per riavere il numero pagina
-%\setcounter{page}{1} % Fa ripartire il contatore pagina da 1
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \part{Equazioni alle Derivate Parziali}
 
-\input{chapters/1-modelli-matematici}
-\input{chapters/2-diffusione}
-\input{chapters/3-eq-laplace-poisson}
-\input{chapters/4-leggi-conservazione}
-\input{chapters/5-onde}
+\input{chapters/1-modelli-matematici} \cleardoublepage
+\input{chapters/2-diffusione} \cleardoublepage
+\input{chapters/3-eq-laplace-poisson} \cleardoublepage
+\input{chapters/4-leggi-conservazione} \cleardoublepage
+\input{chapters/5-onde} \cleardoublepage
 
 \part{Analisi Funzionale}
 
-\input{chapters/AF-1-introduzione}
-\input{chapters/AF-2-distribuzioni-spazi-sobolev}
-\input{chapters/AF-3-formulazione-variazionale-poisson}
+\input{chapters/AF-1-introduzione} \cleardoublepage
+\input{chapters/AF-2-distribuzioni-spazi-sobolev} \cleardoublepage
+\input{chapters/AF-3-formulazione-variazionale-poisson} \cleardoublepage
 
 % TODO appendice analisi [https://i.pinimg.com/originals/5b/f1/d5/5bf1d5ea326a64ec9579905016680a7a.jpg]
 \end{document}

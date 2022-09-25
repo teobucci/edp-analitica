@@ -18,7 +18,6 @@
 \usepackage{amsmath,amssymb,amsthm} % amssymb carica anche amsfonts
 
 \usepackage{dsfont} % per funzione indicatrice
-\newcommand{\Ind}{\mathds{1}}
 
 \usepackage{tikz}
 \usepackage{mathdots}
@@ -81,14 +80,21 @@
 
 \usepackage{fancyhdr}
 
-\pagestyle{empty} % Il fancy serve a partire al primo capitolo
-\fancyhead{} % Pulisci header
-\fancyfoot{} % Pulisci footer
+\fancypagestyle{toc}{%
+\fancyhf{}%
+\fancyfoot[C]{\thepage}%
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}
+}
 
-\fancyhead[RE]{\nouppercase{\leftmark}}
-%\fancyhead[LO]{}
-\fancyhead[LO]{\nouppercase{\rightmark}}
-\fancyhead[LE,RO]{\thepage}
+\fancypagestyle{fancy}{%
+\fancyhf{}%
+\fancyhead[RE]{\nouppercase{\leftmark}}%
+\fancyhead[LO]{\nouppercase{\rightmark}}%
+\fancyhead[LE,RO]{\thepage}%
+\renewcommand{\footrulewidth}{0pt}%
+\renewcommand{\headrulewidth}{0.4pt}
+}
 
 % Removes the header from odd empty pages at the end of chapters
 \makeatletter
@@ -100,27 +106,157 @@
 \newpage
 \fi}
 
-%----------------------------------------------------------------------------------------
-%	COMANDI PERSONALIZZATI
-%----------------------------------------------------------------------------------------
+%---------------------------
+% CUSTOM
+%---------------------------
 
-\newcommand{\Tau}{\mathcal{T}}
-\newcommand{\myNewEmptyPage}{\newpage $ $}
-\DeclareMathOperator{\sgn}{sgn}
-\newcommand{\degree}{^\circ\text{C}} % SIMBOLO GRADI
-\newcommand{\notimplies}{\mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
-\renewcommand{\qed}{\tag*{$\blacksquare$}}
+\usepackage{xspace}
 \newcommand{\latex}{\LaTeX\xspace}
 \newcommand{\tex}{\TeX\xspace}
-\newcommand{\questeq}{\overset{?}{=}} % è vero che?
-\newcommand{\complementary}{^{\mathrm{C}}}
-\renewcommand{\emptyset}{\varnothing} % simbolo insieme vuoto
-\newcommand{\Bot}{\perp \!\!\! \perp} % indipendenza
 
-\usepackage{mathtools} % Serve per i due comandi dopo
-\DeclarePairedDelimiter{\abs}{\left\lvert}{\right\rvert}
-\DeclarePairedDelimiter{\norm}{\left\lVert}{\right\rVert}
-\DeclarePairedDelimiter{\sca}{\left\langle}{\right\rangle}
+\newcommand{\Tau}{\mathcal{T}}
+\newcommand{\Ind}{\mathds{1}} % indicatrice
+
+\newcommand{\transpose}{^{\mathrm{T}}}
+\newcommand{\complementary}{^{\mathrm{C}}} % alternative ^{\mathrm{C}} ^{\mathrm{c}} ^{\mathsf{c}}
+\newcommand{\degree}{^\circ\text{C}} % simbolo gradi
+
+\newcommand{\notimplies}{\mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+\newcommand{\questeq}{\overset{?}{=}} % è vero che?
+
+\newcommand{\indep}{\perp \!\!\! \perp} % indipendenza
+\newcommand{\iid}{\stackrel{\mathrm{iid}}{\sim}}
+\newcommand{\event}[1]{\emph{``#1''}} % evento
+
+% variazioni del simbolo "="
+\newcommand{\iideq}{\overset{\text{\tiny iid}}{=}}
+\newcommand{\ideq}{\overset{\text{\tiny id}}{=}}
+\newcommand{\indepeq}{\overset{\perp \!\!\! \perp}{=}}
+
+\newcommand{\boxedText}[1]{\noindent\fbox{\parbox{\textwidth}{#1}}}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\hat}{\widehat}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator*{\rank}{rank}
+\DeclareMathOperator*{\eig}{eig}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Span}{span}
+\let\Re\undefined  % redefine \Re
+\DeclareMathOperator{\Re}{Re}
+\let\Im\undefined  % redefine \Im
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\esssup}{ess\ sup}
+\DeclareMathOperator*{\essinf}{ess\ inf}
+\DeclareMathOperator*{\supp}{supp}
+
+\newcommand{\eps}{\varepsilon}
+
+\usepackage{mathtools} % Serve per i comandi dopo
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % absolute value
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert} % norm
+\DeclarePairedDelimiter{\sca}{\langle}{\rangle} % scalar product
+
+% Bold
+\renewcommand{\AA}{\mathbb A}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\II}{\mathbb{I}}
+\newcommand{\JJ}{\mathbb{J}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\LL}{\mathbb{L}}
+\newcommand{\MM}{\mathbb{M}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\renewcommand{\SS}{\mathbb S}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\UU}{\mathbb{U}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\YY}{\mathbb{Y}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+% Calligraphic
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Hc}{\mathcal{H}}
+\newcommand{\Ic}{\mathcal{I}}
+\newcommand{\Jc}{\mathcal{J}}
+\newcommand{\Kc}{\mathcal{K}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\Mc}{\mathcal{M}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Pc}{\mathcal{P}}
+\newcommand{\Qc}{\mathcal{Q}}
+\newcommand{\Rc}{\mathcal{R}}
+\newcommand{\Sc}{\mathcal{S}}
+\newcommand{\Tc}{\mathcal{T}}
+\newcommand{\Uc}{\mathcal{U}}
+\newcommand{\Vc}{\mathcal{V}}
+\newcommand{\Wc}{\mathcal{W}}
+\newcommand{\Xc}{\mathcal{X}}
+\newcommand{\Yc}{\mathcal{Y}}
+\newcommand{\Zc}{\mathcal{Z}}
+
+% differenziale
+\newcommand{\dspace}{\,} % \, aggiunge un piccolo spazio
+\newcommand{\de}{\mathrm{d}}
+\newcommand{\dx}{\dspace \de x}
+\newcommand{\dy}{\dspace \de y}
+\newcommand{\dt}{\dspace \de t}
+\newcommand{\ds}{\dspace \de s}
+\newcommand{\dz}{\dspace \de z}
+\newcommand{\dw}{\dspace \de w}
+\newcommand{\du}{\dspace \de u}
+\newcommand{\dv}{\dspace \de v}
+\newcommand{\dteta}{\dspace \de \vartheta}
+\newcommand{\dxy}{\dspace \de x \de y}
+\newcommand{\duv}{\dspace \de u \de v}
+\newcommand{\dst}{\dspace \de s \de t}
+\newcommand{\dP}{\dspace \de P}
+\newcommand{\dPP}{\dspace \de \PP}
+
+\newcommand{\SDP}{(\Omega,\Ac,\PP)} % spazio di probabilità
+\newcommand{\Cz}{\Cc^0}
+\newcommand{\Cu}{\Cc^1}
+\newcommand{\Lu}{\mathcal{L}^1}
+
+\newcommand{\fXY}{f_{(X,Y)}}
+\newcommand{\fXYxy}{\fXY(x,y)}
+
+% spaziature https://tex.stackexchange.com/questions/438612/space-between-exists-and-forall
+% questo aggiunge un piccolo spazio dopo \forall
+\let\oldforall\forall
+\renewcommand{\forall}{\oldforall \, }
+% questo aggiunge un piccolo spazio dopo \exists
+\let\oldexist\exists
+\renewcommand{\exists}{\oldexist \: }
+% questo aggiunge un comando \existsu per l'esiste ed è unico
+\newcommand\existu{\oldexist! \: }
 
 % Simbolo di integrale barrato
 
@@ -392,15 +528,30 @@ innerbottommargin=5pt]{dimBox}
 \newenvironment{oss}{\begin{oBox}\begin{ossT}}{\end{ossT}\end{oBox}}
 \newenvironment{dimostrazione}{\begin{dimBox}\begin{dimT}}{\[\qed\]\end{dimT}\end{dimBox}}
 
-%----------------------------------------------------------------------------------------
-%	INDICE INIZIALE
-%----------------------------------------------------------------------------------------
+%---------------------------
+% CONTENTS
+%---------------------------
 
-\setcounter{secnumdepth}{3} % DI DEFAULT LE SUBSUBSECTION NON SONO NUMERATE, COSÌ SÌ
-\setcounter{tocdepth}{2} % FISSA LA PROFONDITÀ DELLE COSE MOSTRATE NELL'INDICE
+\setcounter{secnumdepth}{3} % \subsubsection is level 3
+\setcounter{tocdepth}{2}
 
-\usepackage[hidelinks]{hyperref} % Rende l'indice interattivo e hidelinks nasconde il bordo rosso dai riferimenti
+\usepackage{bookmark}% loads hyperref too
+    \hypersetup{
+        %pdftitle={Fundamentos de C\'alculo},
+        %pdfsubject={C\'alculo diferencial},
+        bookmarksnumbered=true,
+        bookmarksopen=true,
+        bookmarksopenlevel=1,
+        hidelinks,% remove border and color
+        pdfstartview=Fit, % Fits the page to the window.
+        pdfpagemode=UseOutlines, %Determines how the file is opening in Acrobat; the possibilities are UseNone, UseThumbs (show thumbnails), UseOutlines (show bookmarks), FullScreen, UseOC (PDF 1.5), and UseAttachments (PDF 1.6). If no mode if explicitly chosen, but the bookmarks option is set, UseOutlines is used.
+    }
 
-% Questo comando e quello dopo servono per avere il comando \tocless da mettere prima di una sezione che non voglio far apparire nell'indice
+\usepackage{glossaries} % certain packages that must be loaded before glossaries, if they are required: hyperref, babel, polyglossia, inputenc and fontenc
+\setacronymstyle{long-short}
+
+% hide section from the ToC \tocless\section{hide}
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+\usepackage[textsize=tiny, textwidth=1.5cm]{todonotes} % add disable to options to not show in pdf
